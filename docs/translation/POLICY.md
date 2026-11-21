@@ -1,12 +1,12 @@
 # 原版 Wiki 中文翻译专区规范
 
-本文件定义 `content/original/` 专区的来源、许可、署名、翻译标准、状态与增量同步方式。规则受 `content/wiki-rules.md` 约束；两者冲突时以 `content/wiki-rules.md` 为准。
+本文件定义 `content/player/original/` 玩家专区原版翻译的来源、许可、署名、翻译标准、状态与增量同步方式。规则受 `content/wiki-rules.md` 约束；两者冲突时以 `content/wiki-rules.md` 为准。
 
 ## 1. 专区边界
 
-- **原版 Wiki 翻译专区**（`content/original/`）：忠实翻译 `https://antimatterdimensions.wiki.gg` 的原版游戏正文。
+- **原版 Wiki 翻译专区**（`content/player/original/`，路由 `/player/original/`）：忠实翻译 `https://antimatterdimensions.wiki.gg` 的原版游戏正文。
 - **Oreki Edition MOD 专题**（其余分类）：MOD 的玩法变化、自动化、技术实现与验证结果。
-- **开发历史档案**（`content/history/`）：Changelog、Release Notes、轮次记录与报告索引。
+- **开发历史档案**（`content/developer/history/`）：Changelog、Release Notes、轮次记录与报告索引。
 
 三者可以通过「相关条目」互相链接，但不得混写：翻译页不得加入 MOD 的数值、结论或自动化描述；MOD 页也不得把翻译页当作 MOD 事实来源。
 
@@ -76,7 +76,7 @@ review_status: "NOT REVIEWED"      # NOT REVIEWED / STRUCTURE CHECKED / REVIEWED
 
 ## 6. 页面路径与命名
 
-- 文件：`content/original/ow-<english-slug>.md`（`ow-` 前缀避免与 MOD 页面同名冲突；URL 稳定）。
+- 文件：`content/player/original/ow-<english-slug>.md`（`ow-` 前缀避免与 MOD 页面同名冲突；旧 `/original/` URL 由兼容入口保持可访问）。
 - 标题：术语表中文名；与 MOD 页面同名冲突时加限定语（例如「反物质维度（游戏机制）」）。
 - 不得移动或覆盖既有 MOD 页面与 URL。
 

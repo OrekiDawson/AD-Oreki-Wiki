@@ -222,11 +222,8 @@ plugins:
     enabled: true
     options:
       links:
-        版权与许可: https://wiki.oreki.net/copyright
-        CC BY-SA 4.0: https://creativecommons.org/licenses/by-sa/4.0/
-        知识库规则: https://wiki.oreki.net/wiki-rules
-        编写指南: https://wiki.oreki.net/getting-started/editorial-guidelines
-        GitHub 源代码: https://github.com/OrekiDawson/AD-Oreki-Knowledge
+        GitHub: https://github.com/OrekiDawson/AD-Oreki-Wiki
+      message: '<a href="https://wiki.oreki.net/player/">玩家专区</a> · <a href="https://wiki.oreki.net/developer/">开发者专区</a> · <a href="https://wiki.oreki.net/wiki-rules">知识库规则</a> · <a href="https://wiki.oreki.net/copyright">版权与许可</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>'
     layout:
       position: footer
       priority: 50

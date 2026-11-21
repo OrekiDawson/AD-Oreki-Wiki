@@ -96,7 +96,14 @@ test("HTTPS 冒烟确实请求生产清单，且不访问已废弃的知识索�
       return { ok: true, status: 200, body: `<title>${SITE_TITLE}</title>` };
     },
   });
-  for (const path of ["/", "/index.html", "/static/contentIndex.json", "/architecture/kotlin-runtime"]) {
+  for (const path of [
+    "/",
+    "/index.html",
+    "/static/contentIndex.json",
+    "/player/",
+    "/developer/",
+    "/developer/architecture/kotlin-runtime",
+  ]) {
     assert.ok(requested.includes(path), `实际请求缺少 ${path}`);
   }
   assert.ok(!requested.includes("/static/knowledge-index.json"), "不可请求已废弃的知识索引");

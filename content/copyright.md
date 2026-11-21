@@ -19,14 +19,14 @@ tags:
 3. **许可链接**：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。
 4. **修改声明**：说明是否经过翻译、删改、整合或其他修改，不暗示原作者认可修改后的观点。
 
-改编作品须按相同或协议认可的兼容许可共享，不能给获授权内容额外施加相冲突的法律或技术限制。文章历史可在[知识库 GitHub 仓库](https://github.com/OrekiDawson/AD-Oreki-Knowledge/tree/main/content)查看。
+改编作品须按相同或协议认可的兼容许可共享，不能给获授权内容额外施加相冲突的法律或技术限制。文章历史可在[知识库 GitHub 仓库](https://github.com/OrekiDawson/AD-Oreki-Wiki/tree/main/content)查看。
 
 ## 授权范围与例外
 
 本许可适用于作者或贡献者有权授权的**原创百科正文、知识说明和编写规则**；不包括以下材料，除非其权利人另行明确授权：
 
 - 游戏本体、游戏资源、商标、第三方图像、截图、文章、引用材料及其他外部作品。
-- 第三方代码、软件包、Quartz 网站生成器和网站脚本。本仓库已有的[MIT 软件许可](https://github.com/OrekiDawson/AD-Oreki-Knowledge/blob/main/LICENSE.txt)及其上游版权声明保持不变。
+- 第三方代码、软件包、Quartz 网站生成器和网站脚本。本仓库已有的[MIT 软件许可](https://github.com/OrekiDawson/AD-Oreki-Wiki/blob/main/LICENSE.txt)及其上游版权声明保持不变。
 - 未经授权的第三方贡献、未审核 AI 草稿、用户私人存档或其他非公开数据。
 
 **把某项第三方内容放在 Wiki 中，并不能把它自动变成 CC BY-SA 4.0。** 引用第三方信息应当保留原有署名及相关许可说明。
@@ -35,10 +35,10 @@ tags:
 
 - [CC BY-SA 4.0 官方许可介绍](https://creativecommons.org/licenses/by-sa/4.0/)
 - [具有法律效力的许可全文](https://creativecommons.org/licenses/by-sa/4.0/legalcode)
-- [本站原创内容许可说明（仓库）](https://github.com/OrekiDawson/AD-Oreki-Knowledge/blob/main/LICENSE-CONTENT.md)
+- [本站原创内容许可说明（仓库）](https://github.com/OrekiDawson/AD-Oreki-Wiki/blob/main/LICENSE-CONTENT.md)
 
 本页只解释基本用法，不取代正式许可文本。
 
 ## 相关条目
 
-[[wiki-rules]] · [[editorial-guidelines]] · [[source-index]]
+[反物质维度MOD Wiki:知识库规则](/wiki-rules) · [知识库编写规范](/developer/editorial-guidelines) · [来源索引](/developer/references/source-index)

@@ -1,0 +1,233 @@
+{
+ "base": "http://127.0.0.1:8092",
+ "mobile": {
+  "title": "反物质维度 MOD 中文知识库",
+  "explorerLinks": 131,
+  "overflow": 0,
+  "sidebar": {
+   "items": [
+    {
+     "label": "玩家专区",
+     "href": "/player/",
+     "truncated": false,
+     "inViewport": true
+    },
+    {
+     "label": "开发者专区",
+     "href": "/developer/",
+     "truncated": false,
+     "inViewport": true
+    },
+    {
+     "label": "知识库规则",
+     "href": "/wiki-rules",
+     "truncated": false,
+     "inViewport": true
+    },
+    {
+     "label": "版权与许可",
+     "href": "/copyright",
+     "truncated": false,
+     "inViewport": true
+    },
+    {
+     "label": "本站使用说明",
+     "href": "/how-to-use",
+     "truncated": false,
+     "inViewport": true
+    }
+   ],
+   "expanded": true
+  },
+  "sidebarCollapsed": true,
+  "sidebarActive": [
+   "/player/gameplay/challenges"
+  ],
+  "aiDraftStatus": 404,
+  "kotlinPage": true,
+  "codeBlocks": 0,
+  "backlinksHeading": true,
+  "graphWidget": true,
+  "overflowKotlin": 0,
+  "challengePageHasZenith": true,
+  "translationHasLicense": true,
+  "codePre": 1,
+  "codeSpans": 48,
+  "tables": 2,
+  "darkmodeToggled": true,
+  "bgBefore": "rgb(250, 248, 248)",
+  "bgAfter": "rgb(22, 22, 24)"
+ },
+ "desktop": {
+  "title": "反物质维度 MOD 中文知识库",
+  "overflow": 0,
+  "hasSearch": true
+ },
+ "errors": [
+  "Failed to load resource: the server responded with a status of 404 (Not Found)"
+ ],
+ "searches": [
+  {
+   "term": "永恒挑战",
+   "expectSlug": "player/gameplay/challenges",
+   "hit": true
+  },
+  {
+   "term": "自动购买器",
+   "expectSlug": "player/gameplay/automation",
+   "hit": true
+  },
+  {
+   "term": "Kotlin",
+   "expectSlug": "developer/architecture/kotlin-runtime",
+   "hit": true
+  },
+  {
+   "term": "AGP",
+   "expectSlug": "developer/build/agp",
+   "hit": true
+  },
+  {
+   "term": "Lai",
+   "expectSlug": "player/gameplay/saves",
+   "hit": true
+  },
+  {
+   "term": "build_mod.py",
+   "expectSlug": "developer/build/build-mod-retirement",
+   "hit": true
+  }
+ ],
+ "urls": [
+  {
+   "url": "/architecture/kotlin-runtime",
+   "ok": true
+  },
+  {
+   "url": "/architecture/android",
+   "ok": true
+  },
+  {
+   "url": "/gameplay/challenges",
+   "ok": true
+  },
+  {
+   "url": "/build/agp",
+   "ok": true
+  },
+  {
+   "url": "/current/project-status",
+   "ok": true
+  },
+  {
+   "url": "/",
+   "ok": true
+  },
+  {
+   "url": "/player/",
+   "ok": true
+  },
+  {
+   "url": "/developer/",
+   "ok": true
+  },
+  {
+   "url": "/player/getting-started/",
+   "ok": true
+  },
+  {
+   "url": "/player/gameplay/celestials",
+   "ok": true
+  },
+  {
+   "url": "/player/gameplay/progression-infinity-eternity",
+   "ok": true
+  },
+  {
+   "url": "/player/gameplay/reality-time-studies",
+   "ok": true
+  },
+  {
+   "url": "/player/gameplay/original-vs-mod",
+   "ok": true
+  },
+  {
+   "url": "/player/mods/",
+   "ok": true
+  },
+  {
+   "url": "/player/download-and-version/",
+   "ok": true
+  },
+  {
+   "url": "/player/faq/",
+   "ok": true
+  },
+  {
+   "url": "/player/original/",
+   "ok": true
+  },
+  {
+   "url": "/player/original/ow-infinity",
+   "ok": true
+  },
+  {
+   "url": "/player/original/ow-dimensions",
+   "ok": true
+  },
+  {
+   "url": "/developer/architecture/parity",
+   "ok": true
+  },
+  {
+   "url": "/developer/build/apk-signing",
+   "ok": true
+  },
+  {
+   "url": "/developer/evidence/",
+   "ok": true
+  },
+  {
+   "url": "/developer/ai-summaries/",
+   "ok": true
+  },
+  {
+   "url": "/history/",
+   "ok": true
+  },
+  {
+   "url": "/history/2026-11-15-r113-180min-fail",
+   "ok": true
+  },
+  {
+   "url": "/developer/history/",
+   "ok": true
+  },
+  {
+   "url": "/developer/history/2026-11-15-r113-180min-fail",
+   "ok": true
+  }
+ ],
+ "categories": [
+  {
+   "label": "玩家专区",
+   "hit": true
+  },
+  {
+   "label": "开发者专区",
+   "hit": true
+  },
+  {
+   "label": "玩法机制",
+   "hit": true
+  },
+  {
+   "label": "架构与运行时",
+   "hit": true
+  },
+  {
+   "label": "运行证据索引",
+   "hit": true
+  }
+ ]
+}

@@ -4,7 +4,7 @@
 set -euo pipefail
 
 BASE_URL="https://wiki.oreki.net"
-REPOSITORY="${GITHUB_REPOSITORY:-OrekiDawson/AD-Oreki-Knowledge}"
+REPOSITORY="${GITHUB_REPOSITORY:-OrekiDawson/AD-Oreki-Wiki}"
 : "${GH_TOKEN:?GH_TOKEN must be provided with at least GitHub Pages read permission}"
 
 echo "Checking Pages custom domain and enforced HTTPS for ${REPOSITORY}"
@@ -22,7 +22,7 @@ echo "custom_domain=${cname}; https_enforced=${enforced}; certificate_state=${ce
 }
 
 # TLS verification is intentionally enabled; no -k, no --insecure, no HTTP fallback.
-for path in "/" "/index.html" "/static/contentIndex.json" "/architecture/kotlin-runtime" "/wiki-rules" "/copyright" "/antimatter-dimensions"; do
+for path in "/" "/index.html" "/static/contentIndex.json" "/player/" "/developer/" "/developer/architecture/kotlin-runtime" "/wiki-rules" "/copyright" "/antimatter-dimensions"; do
   echo "Checking TLS and HTTP 200: ${BASE_URL}${path}"
   code="$(curl --fail --silent --show-error --max-time 30 --output /dev/null --write-out '%{http_code}' "${BASE_URL}${path}")" || {
     echo "::error::HTTPS endpoint failed (including certificate validation): ${BASE_URL}${path}"

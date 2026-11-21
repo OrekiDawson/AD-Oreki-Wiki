@@ -10,7 +10,7 @@ import fs from "node:fs";
 
 const MANIFEST = "docs/translation/source-manifest.json";
 const API = "https://antimatterdimensions.wiki.gg/api.php";
-const UA = "AD-Oreki-Knowledge-translation/1.0 (+https://github.com/OrekiDawson/AD-Oreki-Knowledge)";
+const UA = "AD-Oreki-Wiki-translation/1.0 (+https://github.com/OrekiDawson/AD-Oreki-Wiki)";
 const argv = process.argv.slice(2);
 const write = argv.includes("--write");
 const limitArg = argv.indexOf("--limit");

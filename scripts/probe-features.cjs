@@ -16,14 +16,14 @@ async function main() {
   const ctx = await browser.newContext({ viewport: { width: 412, height: 915 }, isMobile: true, hasTouch: true });
   const page = await ctx.newPage();
   const out = {};
-  await page.goto(BASE + '/build/agp', { waitUntil: 'load' });
+  await page.goto(BASE + '/developer/build/agp', { waitUntil: 'load' });
   await page.waitForTimeout(800);
   out.agp = {
     pre: await page.locator('pre').count(),
     code: await page.locator('pre code, code').count(),
     table: await page.locator('table').count(),
   };
-  await page.goto(BASE + '/architecture/kotlin-runtime', { waitUntil: 'load' });
+  await page.goto(BASE + '/developer/architecture/kotlin-runtime', { waitUntil: 'load' });
   await page.waitForTimeout(800);
   const html = await page.content();
   out.kotlin = {

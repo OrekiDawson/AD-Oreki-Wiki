@@ -9,7 +9,7 @@ import tls from "node:tls";
 import { createHash } from "node:crypto";
 
 const DOMAIN = process.env.KB_DOMAIN || "wiki.oreki.net";
-const REPO = process.env.GITHUB_REPOSITORY || "OrekiDawson/AD-Oreki-Knowledge";
+const REPO = process.env.GITHUB_REPOSITORY || "OrekiDawson/AD-Oreki-Wiki";
 const ALERT_ISSUE = Number(process.env.KB_ALERT_ISSUE || "9");
 const RUN_ID = process.env.GITHUB_RUN_ID || "local";
 const SHA = process.env.GITHUB_SHA || "";
@@ -17,7 +17,14 @@ const FIXTURE = process.env.KB_FIXTURE || "";
 const NOW = process.env.KB_NOW ? new Date(process.env.KB_NOW) : new Date();
 
 // 与 scripts/verify-build.mjs 的 Quartz 发布产物契约保持一致，避免检查不存在的旧 AI 索引。
-export const HTTPS_SMOKE_PATHS = [ "/", "/index.html", "/static/contentIndex.json", "/architecture/kotlin-runtime" ];
+export const HTTPS_SMOKE_PATHS = [
+  "/",
+  "/index.html",
+  "/static/contentIndex.json",
+  "/player/",
+  "/developer/",
+  "/developer/architecture/kotlin-runtime",
+];
 // 站点标题单一来源：与 quartz.config.yaml 的 configuration.pageTitle 保持一致，
 // 供监控判定与回归测试共用，避免测试用虚构字符串掩盖生产判据漂移。
 export const SITE_TITLE = "反物质维度MOD 知识库";

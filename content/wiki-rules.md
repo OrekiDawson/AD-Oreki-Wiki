@@ -59,9 +59,9 @@ tags:
 3. **当前事实及证据**：必要的比较、数据、可复现步骤和直接引用。
 4. **局限与争议**：说明未验证、适用版本或历史修正。
 5. **参考资料与相关条目**：可点击的固定来源和 Wiki 内部链接。
-6. **站内检索**：由 Quartz 内建搜索依据正文及元数据提供，无需文章末尾的 AI 专用摘要。
+6. **专区与检索**：普通玩家正文不嵌入 AI Summary；开发者技术条目可按下方规则提供已审核、默认折叠、带来源的 AI Summary。站内搜索由 Quartz 内建搜索依据正文及元数据提供。
 
-参见 [中文条目模板](https://github.com/OrekiDawson/AD-Oreki-Knowledge/blob/main/docs/ARTICLE_TEMPLATE.md)。新增或大幅修订的正式文章优先采用这一体例；**已有历史文档不要求立刻批量改格式**。
+参见 [中文条目模板](https://github.com/OrekiDawson/AD-Oreki-Wiki/blob/main/docs/ARTICLE_TEMPLATE.md)。新增或大幅修订的正式文章优先采用这一体例；**已有历史文档不要求立刻批量改格式**。
 
 ### 五、编辑与审阅纪律
 
@@ -96,7 +96,7 @@ tags:
 
 - 只有 `REVIEWED` 与 `VERIFIED AGAINST GAME` 计入「已审校覆盖率」；`STRUCTURE CHECKED`、`TRANSLATED` 单独统计，不计入。
 - 没有逐段审校记录时不得标 `REVIEWED`；没有源码/运行证据时不得标 `VERIFIED AGAINST GAME`。机器翻译、格式检查、字符串比对都不等于内容审校。
-- 翻译专区的具体字段与清单口径见 [docs/translation/POLICY.md](https://github.com/OrekiDawson/AD-Oreki-Knowledge/blob/main/docs/translation/POLICY.md)；本页等级定义与 POLICY 冲突时以本页为准。
+- 翻译专区的具体字段与清单口径见 [docs/translation/POLICY.md](https://github.com/OrekiDawson/AD-Oreki-Wiki/blob/main/docs/translation/POLICY.md)；本页等级定义与 POLICY 冲突时以本页为准。
 
 ## 普通条目与历史归档：反日志化规则
 
@@ -113,7 +113,7 @@ tags:
 
 ### 二、历史归档的位置与边界
 
-1. 带有明确时间性的材料（某次长跑结果、某轮发布、某次 CI 阻塞、某次根因定位过程）统一放在 `content/history/`，路由为 `/history/` 与 `/history/<条目>`；条目 `tags` 至少包含 `历史`，frontmatter 的 `title` 用自然中文并以日期或事件名标识，便于检索。
+1. 带有明确时间性的材料（某次长跑结果、某轮发布、某次 CI 阻塞、某次根因定位过程）统一放在 `content/developer/history/`，新路由为 `/developer/history/` 与 `/developer/history/<条目>`，旧 `/history/` 路径通过兼容入口保留；条目 `tags` 至少包含 `历史`，frontmatter 的 `title` 用自然中文并以日期或事件名标识，便于检索。
 2. 历史归档**与专题正文分开**：专题页只在「历史变化」「参考资料」中按需链接历史条目，不把历史条目当作唯一证据；历史归档也**不能代替现行技术解释**。
 3. 历史条目可以保留轮次编号、日期、Commit 与 Run，但必须写清「当时结论 / 现在是否仍然有效 / 适用版本」，便于后来者判断是否过期。
 4. 已被推翻的结论保留必要解释与原始链接，不删除历史；但**现行状态页**只能写当前有效结论，并注明最后核实时间与来源。
@@ -143,16 +143,16 @@ tags:
 - **Oreki Edition 修改**：本项目调整了阈值、放宽了条件或增加了自动化（附 MOD 源码/报告）；
 - **平台差异**：Android 官方 3.21.0 与 Web 冻结上游并非同一版本，行为可能不同。
 
-不得把 MOD 的缩放数值写成「原版规则」，也不得用原版数值判断 MOD 当前状态。集中对照表见 [[original-vs-mod|原版行为与 Oreki Edition 修改]]。
+不得把 MOD 的缩放数值写成「原版规则」，也不得用原版数值判断 MOD 当前状态。集中对照表见 [原版行为与 Oreki Edition 修改](/player/gameplay/original-vs-mod)。
 
 ### 三、版权与署名
 
-- 社区 Wiki 的文本与图像按其版权声明采用 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) 许可。**原版 Wiki 中文翻译专区（`content/original/`）按该许可逐页翻译并署名**；其余专区原则上独立中文撰写，不整页搬运未经核实许可的内容。
+- 社区 Wiki 的文本与图像按其版权声明采用 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) 许可。**原版 Wiki 中文翻译专区（`content/player/original/`）按该许可逐页翻译并署名**；其余专区原则上独立中文撰写，不整页搬运未经核实许可的内容。
 - 转载、翻译或改编其受版权保护的文字，必须核实该页面/文件的许可，保留署名与来源链接，注明修改，并按相同或兼容许可共享；图片、图标与第三方素材须单独核实授权，未核实不转载。
 - 翻译工程允许机器辅助，但**状态必须如实**：未逐段审校只能标 `TRANSLATED` 或 `STRUCTURE CHECKED`，不能标 `REVIEWED`/「已校对」。
 - 仅链接来源不等于取得转载许可；引用少量必要内容时也应说明出处。
 - 游戏本体、素材、商标与第三方代码的版权归各自权利人，本站的 CC BY-SA 4.0 授权不覆盖它们。
-- **原版 Wiki 中文翻译**统一放在 `content/original/` 专区，每页必须标注原文标题、URL、修订 ID、页面历史（贡献者入口）、抓取时间与「已修改（翻译）」；翻译规则、署名模板与状态定义见 [docs/translation/POLICY.md](https://github.com/OrekiDawson/AD-Oreki-Knowledge/blob/main/docs/translation/POLICY.md)，译名见 [glossary.md](https://github.com/OrekiDawson/AD-Oreki-Knowledge/blob/main/docs/translation/glossary.md)。图片与第三方素材不转载。
+- **原版 Wiki 中文翻译**统一放在 `content/player/original/` 专区，页面路由为 `/player/original/`，旧 `/original/` 路径通过兼容入口保留。每页必须标注原文标题、URL、修订 ID、页面历史（贡献者入口）、抓取时间与「已修改（翻译）」；翻译规则、署名模板与状态定义见 [docs/translation/POLICY.md](https://github.com/OrekiDawson/AD-Oreki-Wiki/blob/main/docs/translation/POLICY.md)，译名见 [glossary.md](https://github.com/OrekiDawson/AD-Oreki-Wiki/blob/main/docs/translation/glossary.md)。图片与第三方素材不转载。
 
 ## 借鉴中文维基百科的补充方针
 
@@ -207,7 +207,7 @@ tags:
 
 本站有权授权的**原创百科文字**采用 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。转载须注明作者或贡献者、原文具体网址、许可链接和修改情况；改编作品须按相同或兼容的许可共享。该许可允许商业使用，不得自行附加“禁止商用”等冲突限制。
 
-**原版游戏、第三方素材、其他权利人的文章和代码不因此取得 CC 授权；网站软件已有的 MIT 许可保持不变。** 适用范围、署名方法及完整协议参见[[copyright|版权与许可]]。未审核 AI 草稿不在默认公开授权范围内。
+**原版游戏、第三方素材、其他权利人的文章和代码不因此取得 CC 授权；网站软件已有的 MIT 许可保持不变。** 适用范围、署名方法及完整协议参见[版权与许可](/copyright)。未审核 AI 草稿不在默认公开授权范围内。
 
 ## 关键状态页的更新纪律
 
@@ -223,11 +223,17 @@ tags:
 - AI 建议必须人工核对来源，合格后改写或合并到**独立正式专题**，绝不直接把草稿状态从「待审」批量改成「已验证」。
 - 如无有效证据宁可不发布该条目，保留为待办。
 
+## 已审核 AI Summary
+
+- AI Summary 只允许出现在 `/developer/` 开发者专区；`/player/` 玩家正文不得嵌入机器摘要。
+- 摘要必须依据已核实正文与可打开的固定来源，明确适用版本、验证状态和复核日期，并默认折叠显示。
+- 公开 HTML、搜索索引与 RSS 中不得出现未经审核的 AI 草稿；摘要不能替代正文、源码和真实运行证据。
+
 ## 分批改造顺序
 
 1. **P0 事实止血**：修正当前状态中的已知错误（例如 R113-01 180 分钟长跑 FAIL）、隐藏未审核 AI 草稿，完善最基本的证据链。
 2. **P1 专题深挖**：优先 Kotlin/DEX 混合 ABI、AGP/Signature/存档、挑战真实结算与阶段门禁、180 分钟长跑失败分析、双端等价，每次处理少量条目并逐条核验。
 3. **P2 可用性**：真实来源目录、索引、图谱关联、移动端、导航与历史归档。
-4. **P3 反日志化收敛**：把早期按轮次堆叠的段落提炼为专题正文，时间线迁入 `content/history/`，并让分类显示名与正文语言一致。
+4. **P3 反日志化收敛**：把早期按轮次堆叠的段落提炼为专题正文，时间线迁入 `content/developer/history/`，并让分类显示名与正文语言一致。
 
 本标准不允许借知识库建设重置 R113-01 编号、修改游戏基线、跳过保护门禁、擅自发布 APK 或覆盖 `docs/FACTS.md`。

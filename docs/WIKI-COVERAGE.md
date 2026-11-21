@@ -1,6 +1,6 @@
 # 原版 Wiki 中文翻译：覆盖率与许可台账
 
-> 本页是只读汇总，由 docs/translation/source-manifest.json 与 content/original/ 生成；等级定义见 content/wiki-rules.md「内容验收等级」。由 wiki-editorial 维护，译文与 manifest 由 wiki-translation 维护。
+> 本页是只读汇总，由 docs/translation/source-manifest.json 与 content/player/original/ 生成；等级定义见 content/wiki-rules.md「内容验收等级」。由 wiki-editorial 维护，译文与 manifest 由 wiki-translation 维护。
 
 ## 覆盖总览（最后核对 2026-11-17；依据提交 `2b8a717` 的清单与页面状态）
 
