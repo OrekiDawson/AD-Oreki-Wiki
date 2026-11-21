@@ -2,6 +2,8 @@
 
 [**访问知识库：wiki.oreki.net**](https://wiki.oreki.net)
 
+[中文目录与文件命名约定](docs/目录与中文命名约定.md) · [内容编辑指引](docs/AGENT_GUIDE.md) · [构建维护](docs/MAINTENANCE.md)
+
 本仓库为《反物质维度》（Antimatter Dimensions）及 **Oreki Edition** Android/Web MOD 提供中文百科与技术资料，使用 Quartz 5 构建，并通过 GitHub Pages 发布。欢迎从游戏玩法开始读，也可以查找开发原理与实测证据。
 
 ## 阅读入口
