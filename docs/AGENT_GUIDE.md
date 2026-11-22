@@ -1,46 +1,66 @@
-# Agent 检索指引
+# Wiki Agent 检索与编写指引
 
-## 规则与事实的读取顺序
+本文件说明怎样**找到正确资料并完成一项可审校的文档修改**，不是第二份规则正文。公开规则以 [知识库规则](../content/wiki-rules.md) 为准；跨仓授权、预算、优先级、任务编号依 [Workspace AGENTS.md](https://github.com/OrekiDawson/AD-Oreki-Edition-Workspace/blob/main/AGENTS.md)，本仓执行边界依根 `AGENTS.md`。
 
-1. 本知识库的**唯一权威编写规则**是 `content/wiki-rules.md`（网站 `/wiki-rules`）。旧入口 `docs/CONTENT_QUALITY.md` 已改为兼容页，只做摘要与指向。
-2. 工程规则与交付门禁不在本仓库：Android 端见 [AD-Oreki-Edition-Android](https://github.com/OrekiDawson/AD-Oreki-Edition-Android) 的 `AGENTS.md` 与 `docs/DELIVERY_RULES.md`，Web 端见 [AD-Oreki-Edition-Web](https://github.com/OrekiDawson/AD-Oreki-Edition-Web) 对应文件。本仓库不复制这些规则，避免漂移。
-3. 按关键词检索本站：使用顶部搜索框或 Quartz 正式搜索索引 `/static/contentIndex.json`。旧的 `/static/knowledge-index.json` 不属于当前构建产物契约，线上返回 404，**不得将其当作可用接口**。
-4. 找到专题页后，查看正文中就近的「参考资料」与页底证据区，**回到 GitHub 原始 Commit、PR、Run 与 AVD 报告核对**。
+## 接到任务时先确认范围
 
-## 写作与编辑流程（质量门禁）
+1. 确认用户要求改的是**玩家百科、开发者文档、原版翻译、网站配置**中的哪一种；“质量差”不等于授权自动改写所有页面、自动部署或启动付费 AI 审查。
+2. 确认最新 `main`、现有开放 PR 与文件归属。已有审校中 Draft PR 不得被别的 Agent 覆盖；历史报告不等于现行技术事实。
+3. 记录此页希望让人完成的具体任务，例如“找到 Android 自动购买器的策略入口”“在受支持的环境下运行一次定向测试”。没有明确的读者任务则先缩小主题，不用章节模板凑出一篇文章。
+4. 对大幅改稿，先抽查现有 URL、入站引用、版本适用范围、保留的独有事实与旧证据；确定是**保留、定点精修、历史归档还是合并并重定向**，不盲目迁移或删除。
 
-1. 先判断读者：`/player/` 回答玩法、真实解锁条件、界面操作和下一步；`/developer/` 承接 Kotlin/ABI、CI、PR、构建、源码与测试证据。
-2. 对正式新稿或大幅修订，分别进行有来源的资料整理、自然中文写作和由其他编辑者/Agent/模型承担的独立审校，审校需记录是谁完成、检查了什么，不将 CI PASS 或模型自评冒充人工审校。
-3. 暂停每 48 小时内容数量考核。优先精修《开始游玩》《无限与永恒》《智能自动购买器》并确认移动阅读体验；无合格正文记 `EDITORIAL_BLOCKED`，不凑新条目。
-4. 原版译文 `STRUCTURE CHECKED` 仅说明结构一致，数字、公式、解锁条件和语义逐段核对并留记录后才能宣称 `REVIEWED`。现有文档和站内链接应安全渐进修复，不自动批量搬迁。
+## 事实读取顺序
 
-## 内容地图
+- **原版游戏玩法**：原版官方源码、对应版本的 wiki.gg 原始修订和许可证，再比对本站原版翻译的来源字段；`STRUCTURE CHECKED` 不意味着语义可靠。
+- **Android 实现**：[Android 仓库](https://github.com/OrekiDawson/AD-Oreki-Edition-Android) 的现行 Kotlin、官方基线清单、构建入口、测试源码，再查相关固定 Commit 的报告/PR/Run。混淆符号和历史验证不可凭名称猜语义。
+- **Web 实现**：[Web 仓库](https://github.com/OrekiDawson/AD-Oreki-Edition-Web) 的冻结源码和实际 MOD JS、测试和工作流；不得把 Android 代码路径复制成 Web 入口。
+- **规则与交付**：Workspace `AGENTS.md` 管跨仓规则；Android/Web 各自 `AGENTS.md` 管平台技术细节；Wiki `content/wiki-rules.md` 管文章。Wiki 不复制大段规则制造多个权威版本。
+- **当前状态**：PR、CI、Run、设备日志、真实存档或发布记录按准确候选判定。唯一权威事实来自来源仓库，Wiki 只做可查证的编辑整理。
 
-| 目录 | 读者会在这里找到 |
+## 开发者文章的四种用途
+
+| 读者需求 | 选择 | 验收重点 |
+| --- | --- | --- |
+| 从零完成一个小改动 | 入门教程 | 实际前提、按序操作、可观察的结果 |
+| 完成某个操作 | 操作指南 | 真实命令、输入、预期产物、失败恢复 |
+| 查参数/调用契约 | 技术参考 | 定义、类型、边界、固定源码版本 |
+| 理解设计 | 原理说明 | 主要模块、调用与数据流、权衡、真实依据 |
+
+选用 [不同用途的样板](ARTICLE_TEMPLATE.md)，**不要**让每篇都出现“背景、已确认与未确认、如何验证、历史变化”这些固定章节。真实历史放 `content/developer/history/`，引用但不搬运整篇日志；AI Summary 是可选的末尾附录，不进入主学习路径。
+
+## 开发者内容重构顺序
+
+优先按小批次处理：**开发者入口与上手 → Android/Web 架构和真实模块 → AGP 构建与验证 → 典型问题排查**。这些页面先做出可操作标杆，再逐页处理原有其他页面；现有内容分类和旧路由保持不变，真正迁移到新结构时再测试 alias、搜索、面包屑与移动端。
+
+- 开发者首页不能只是目录：应能从“我要开始贡献 / 定位代码 / 构建测试 / 排查问题”进入相应页面。
+- 架构页须在当前源码中找出实际模块职责、入口和数据路径，不能只抄产品目标或工具名。
+- 构建与排障页须核实命令是否在仓库存在、在何种环境运行、需什么输入、能怎样判断结果；无环境时不宣称“已验证”。
+- 技术参考页不必写教程，但符号、文件、参数、副作用和版本边界必须准确；外链历史依据优先固定 Commit。
+- 若技术材料从玩家页移出，必须先在开发者专题或原仓保存并更新引用，不能边删除边丢掉独有的 ABI/条件/恢复证据。
+
+## 交付与审校
+
+1. 先**核验源资料**，记录关键字段、版本与出处；没有原始来源则将结论列为待核实，不靠旧 Wiki 页面循环引用。
+2. **精修正文**，用具体例子讲明读者如何完成任务；保留简体中文标题和需要的技术原拼写。不一次生成几十篇形式相似的新稿。
+3. **另一位真正执行核查的审校者**按文章用途检查重要事实、实际命令和阅读体验，记录其身份类型、检查过的路径、是否执行了命令、剩余 `NOT RUN/BLOCKED`。模型自检、Kody 审查和 Quartz 构建不等于这一步。
+4. 做最小相关机器检查（frontmatter、断链、隐私扫描、构建）。是否运行 Android/Web 测试应由改动范围决定，纯文档不机械触发游戏长跑。
+5. 只有完成质量和 GitHub 合并门禁才可以公开。缺独立技术审校标 `EDITORIAL_BLOCKED` 并保留候选，不为赶 48 小时/凑页面数量合并；完成后按实际需要验证 Pages/HTTPS。
+6. 向 PR 记录：**更改的读者任务、核对的源代码 Commit 与文件、执行的命令/测试（或 NOT RUN）、审校主体与结论、旧 URL 兼容性、剩余风险**。不得把 PR Ready、CI PASS 或摘要当作网站质量 PASS。
+
+## 现有内容目录（迁移前）
+
+| 路径 | 现有用途 |
 | --- | --- |
-| `content/` 根目录 | 双专区首页、正式规则、版权说明与本站使用说明 |
-| `content/player/` | 玩家专区：游戏百科、MOD 介绍、教程、下载、FAQ 与术语 |
-| `content/player/gameplay/` | 玩法机制：无限与永恒、现实、天神、挑战、自动购买器、存档、阶段门禁 |
-| `content/player/original/` | 原版 Wiki 中文翻译与来源、许可、审校等级 |
-| `content/player/getting-started/` | 玩家开始游玩、平台选择与版本辨识 |
-| `content/player/mods/` | Oreki Edition 产品目标与玩家可见差异 |
-| `content/player/download-and-version/` | Android/Web 下载入口与版本边界 |
-| `content/player/faq/` | 玩家常见问题 |
-| `content/developer/` | 开发者专区：架构、逆向、构建、状态、证据、历史与 AI Summary |
-| `content/developer/architecture/` | Android/Web 架构、Kotlin 混合运行时 ABI、双端一致性与目录迁移 |
-| `content/developer/reverse-engineering/` | 混淆 DEX 的语义映射与 ABI 适配方法 |
-| `content/developer/build/` | AGP/Gradle、APK 签名、CI/CD、R8 与旧构建链退役 |
-| `content/developer/current/` | 当前状态、发布状态与已知问题 |
-| `content/developer/troubleshooting/` | 协程 ABI 与存档兼容排查 |
-| `content/developer/references/` | 开发来源索引；通用术语位于 `/player/terminology` |
-| `content/developer/evidence/` | 运行证据的类型、阅读顺序与门禁边界 |
-| `content/developer/ai-summaries/` | 已审核、默认折叠、带固定来源的 AI Summary |
-| `content/developer/history/` | 历史归档：按日期与事件记录当时结论，**不代表现行状态** |
+| `content/player/` | 玩家教程、机制、原版翻译、下载与 FAQ |
+| `content/developer/` | 开发者专题与分类导航；计划以四种任务型文章重组主要阅读路径 |
+| `content/developer/architecture/` | 架构、混合运行时、双端一致性与目录演进 |
+| `content/developer/build/` | 构建、签名、CI/CD 与迁移约束 |
+| `content/developer/reverse-engineering/` | 逆向与 ABI 来源解释 |
+| `content/developer/troubleshooting/` | 故障与定位 |
+| `content/developer/current/` | 当前状态，必须有实际更新时间与证据 |
+| `content/developer/history/` | 历史档案，不代表现行结论 |
+| `content/developer/references/`、`evidence/` | 可追溯证据和来源索引 |
+| `content/developer/ai-summaries/` | 历史已审核摘要的附属入口，不再作为核心导航 |
+| `content/ai-drafts/` | 未审草稿，禁止公开索引或作为权威引用 |
 
-## 判断纪律
-
-- 状态：已验证 / 进行中 / FAIL / BLOCKED / 待确认 / 已推翻；证据等级：实测 / 读码 / 推断 / 未知。
-- `content/ai-drafts/` 下的页面是 AI 抽取草稿，**不能**直接当权威事实，也不进入公开站点。
-- `content/developer/history/` 是历史归档，**不能**代替现行技术解释；引用前先确认它标注的「是否仍然有效」。
-- 历史结论保留但标注状态；不得用新旧段落推断旧结论失效，也不得把「修复已提交」当成 PASS。
-- 不在知识库里修改 GitHub 已验证结论后反向引用为权威。
+站内全文检索以 Quartz `/static/contentIndex.json` 为准；旧 `/static/knowledge-index.json` 不在现有构建契约中，不能当作接口。技术结论有冲突时返回源仓核对，保留历史但不将历史状态复述成当前事实。
