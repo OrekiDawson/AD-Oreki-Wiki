@@ -22,6 +22,7 @@
 | Infinity（数值 2^1024） | 无限值 / 1.80e308 | 游戏内 | 正文按语境区分 |
 | Infinity Point | 无限点数 | 游戏内 | 缩写 IP |
 | Infinities（次数） | 无限次数 | 游戏内 | 与无限点数区分 |
+| Infinity Power | 无限之力 | 游戏内 | 第一无限维度产出的货币 |
 | Break Infinity | 打破无限 | 游戏内 | 原文 Breaking Infinity 同义 |
 | Infinity Upgrade | 无限升级 | 游戏内 | — |
 | Infinity Challenge | 无限挑战 | 游戏内 | 缩写 IC |
@@ -74,6 +75,7 @@
 | Doomed | 被毁灭的 | 游戏内 | Doomed Reality = 被毁灭的现实 |
 | Replicanti | 复制器 | 游戏内 | — |
 | Replicanti Galaxy | 复制器星系 | 游戏内 | — |
+| Matter | 正物质 | 游戏内 | 普通挑战 11 与无限挑战 6 的特殊资源；不译「普通物质」 |
 | Prestige | 威望 | Wiki | 本作语境下常译「重置成长」；首次出现写「威望（Prestige）」 |
 | Prestige layer | 威望层 | Wiki | — |
 | Notation | 记数法 | Wiki | — |
