@@ -42,10 +42,10 @@
 | 维度献祭 | [Dimensional Sacrifice](https://antimatterdimensions.wiki.gg/index.php?title=Dimensional_Sacrifice&oldid=3397) | 3397 | `docs/translation/reviews/2026-11-23-无限成长第二批.md` |
 | 反物质星系 | [Antimatter Galaxies](https://antimatterdimensions.wiki.gg/index.php?title=Antimatter_Galaxies&oldid=3335) | 3335 | `docs/translation/reviews/2026-11-23-无限成长第二批.md` |
 | 计数频率 | [Tickspeed](https://antimatterdimensions.wiki.gg/index.php?title=Tickspeed&oldid=3334) | 3334 | `docs/translation/reviews/2026-11-23-无限成长第二批.md` |
-| 打破无限 | [Break Infinity](https://antimatterdimensions.wiki.gg/index.php?title=Break_Infinity&oldid=3349) | 3349 | `docs/translation/reviews/2026-11-23-无限阶段第三批.md` |
+| 打破无限 | [Break Infinity](https://antimatterdimensions.wiki.gg/index.php?title=Break_Infinity&oldid=3349)（本次直连受 403 限制，按审校记录交叉核对） | 3349 | `docs/translation/reviews/2026-11-23-无限阶段第三批.md` |
 | 无限维度 | [Infinity Dimensions](https://antimatterdimensions.wiki.gg/index.php?title=Infinity_Dimensions&oldid=3344) | 3344 | `docs/translation/reviews/2026-11-23-无限阶段第三批.md` |
 | 普通挑战 | [Normal Challenges](https://antimatterdimensions.wiki.gg/index.php?title=Normal_Challenges&oldid=3341) | 3341 | `docs/translation/reviews/2026-11-23-无限阶段第三批.md` |
-| 无限挑战 | [Infinity Challenges](https://antimatterdimensions.wiki.gg/index.php?title=Infinity_Challenges&oldid=3359) | 3359 | `docs/translation/reviews/2026-11-23-无限阶段第三批.md` |
+| 无限挑战 | [Infinity Challenges](https://antimatterdimensions.wiki.gg/index.php?title=Infinity_Challenges&oldid=3359)（本次直连受 403 限制，按审校记录交叉核对） | 3359 | `docs/translation/reviews/2026-11-23-无限阶段第三批.md` |
 
 ## 已 STRUCTURE CHECKED 页面（按中文标题）
 

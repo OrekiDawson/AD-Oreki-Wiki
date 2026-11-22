@@ -80,6 +80,7 @@ aliases:
 ## 来源与许可
 
 - 原文：[Break Infinity](https://antimatterdimensions.wiki.gg/index.php?title=Break_Infinity&oldid=3349)（修订 ID `3349`；最后编辑者 KrutarMarsons；抓取于 2026-11-15）
+- 来源访问说明：固定修订在 2026-11-23 复核时受 Cloudflare 403 限制；修订号与正文通过相邻修订、Internet Archive 快照、当前页面及上游源码交叉核对。
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Break_Infinity&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为**简体中文翻译（改编）**，已修改：翻译正文与表格、统一术语、移除导航模板与信息框、图片未转载；本页按相同许可共享。
 - 原文表格的合并表头按语义展开为普通列；所有行与数值完整保留。
