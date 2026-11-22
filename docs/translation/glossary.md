@@ -46,6 +46,25 @@
 | Glyph | 符文 | 游戏内 | — |
 | Glyph Sacrifice | 符文献祭 | 游戏内 | — |
 | Glyph Alchemy | 符文炼金 | 游戏内 | — |
+| Glyph Alchemy Resource | 炼金资源 | 游戏内 | 化学反应式资源，不等于普通游戏货币 |
+| Refinement Value | 满额精炼价值 | 项目 | 符文等级立方换算后的理论上限；实际精炼只取得其 5% 并按稀有度缩放 |
+| Power (Glyph Alchemy) | 力量 | 游戏内 | 与无限之力（Infinity Power）不同 |
+| Replication (Glyph Alchemy) | 复制 | 游戏内 | 与复制器（Replicanti）区分 |
+| Dilation (Glyph Alchemy) | 膨胀 | 游戏内 | 与时间膨胀（Time Dilation）区分 |
+| Effarig (Glyph Alchemy) | 鹿颈长 | 游戏内 | 资源名沿用天神名 |
+| Cardinality | 基数 | 游戏内 | — |
+| Dimensionality | 维度 | 游戏内 | 炼金资源名 |
+| Inflation | 暴胀 | 游戏内 | 不译「膨胀率」 |
+| Alternation | 交变 | 游戏内 | 不译「交替」 |
+| Synergism | 协同 | 游戏内 | — |
+| Decoherence | 退相干 | 游戏内 | — |
+| Momentum | 动量 | 游戏内 | — |
+| Multiversal | 诸界奥义 | 游戏内 | 不译「多元」 |
+| Force | 神秘力场 | 游戏内 | 炼金资源名 |
+| Exponential | 增幅秘术 | 游戏内 | 不译「指数」 |
+| Uncountability | 无尽奥秘 | 游戏内 | 不译「不可数」 |
+| Boundless | Boundless | 游戏内 | 官方简中界面暂保留英文 |
+| Unpredictability | 未知预言 | 游戏内 | 不译「不可预测」 |
 | Perk | 复兴 | 游戏内 | 原文 Perk；Perk Point = 复兴点数，Perk Tree = 复兴树 |
 | Automator | 自动机 | 游戏内 | 不译「自动化器」 |
 | Autobuyer | 自动购买器 | 游戏内 | — |
