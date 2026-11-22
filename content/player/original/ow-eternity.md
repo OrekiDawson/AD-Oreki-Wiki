@@ -62,7 +62,7 @@ $$\left\lfloor EP_{mult} \times 5^{\frac{\log_{10}\left( IP_{\text{highest this 
 
 ## 来源与许可
 
-- 原文：[Eternity](/player/original/ow-eternity)（修订 ID 3118；最后编辑者 The1AndOnly6030；抓取于 2026-11-15）
+- 原文：[Eternity](https://antimatterdimensions.wiki.gg/index.php?title=Eternity&oldid=3118)（修订 ID 3118；最后编辑者 The1AndOnly6030；抓取于 2026-11-15）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Eternity&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为**简体中文翻译（改编）**，已修改：翻译正文与公式，统一术语，把原式中的中文变量名改为原文英文变量名并加中文解释，移除导航模板与信息框，图片未转载；本页按相同许可共享。
 - 原文图片未转载：原文该页不含图片或其它媒体，仅有文字与公式。

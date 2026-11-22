@@ -105,7 +105,7 @@ $$nerfFactor = 3 * \left( 1-\frac{c}{c+\sqrt{\log_{10}\left(resource\right)}} \r
 
 ## 来源与许可
 
-- 原文：[Effarig](/player/original/ow-effarig)（页面 ID 378；修订 ID 3371；最后编辑者 KrutarMarsons；抓取于 2026-11-15）
+- 原文：[Effarig](https://antimatterdimensions.wiki.gg/index.php?title=Effarig&oldid=3371)（页面 ID 378；修订 ID 3371；最后编辑者 KrutarMarsons；抓取于 2026-11-15）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Effarig&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为**简体中文翻译（改编）**，已修改：翻译正文、表格与公式，统一术语，把信息框内容改写为要点表，把模板内脚注改为页内脚注，移除导航模板与模板结构，图片未转载；本页按相同许可共享。
 - 原文图片未转载：原页含天神动画（Cel2-runreality-static--desktop.gif、Cel2-runreality-active--desktop.gif）、导航图（Cel2-navigation-complete--desktop.png）与界面截图（Cel2-interface--darktheme-desktop.png）。请到原页查看图片。

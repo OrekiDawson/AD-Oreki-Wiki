@@ -166,7 +166,7 @@ aliases:
 
 ## 来源与许可
 
-- 原文：[Notations](/player/original/ow-notations)（修订 ID `3133`；最后编辑者 SheldonLikesToBeNoob；抓取于 2026-11-15）
+- 原文：[Notations](https://antimatterdimensions.wiki.gg/index.php?title=Notations&oldid=3133)（修订 ID `3133`；最后编辑者 SheldonLikesToBeNoob；抓取于 2026-11-15）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Notations&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为**简体中文翻译（改编）**，已修改：翻译正文与表格、统一术语、保留记数法英文名称与表情符号、移除导航模板；图片未转载。
 - 说明：表情符号属于游戏内容字符，按原样保留；「ALL」记数法的缩写与标准记数法相同，原文亦如此标注。

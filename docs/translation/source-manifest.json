@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generated_at": "2026-11-17T10:54:18.017Z",
+ "generated_at": "2026-11-22T18:23:17.000Z",
  "source": {
   "site": "https://antimatterdimensions.wiki.gg",
   "api": "https://antimatterdimensions.wiki.gg/api.php",
@@ -13,6 +13,7 @@
   "zone": "content/original/",
   "glossary": "docs/translation/glossary.md",
   "policy": "docs/translation/POLICY.md",
+  "source_api_audit": "docs/translation/reviews/2026-11-23-原文来源核对.md",
   "attribution_template": "页面底部：原文标题 / 原页 URL / 修订 ID / 页面历史（贡献者）/ CC BY-SA 4.0 / 已修改（翻译）",
   "coverage_formula": "REVIEWED 的合规正文页 / 合规正文页总数"
  },
@@ -26,8 +27,8 @@
  "coverage": {
   "total_pages": 68,
   "translated": 0,
-  "structure_checked": 60,
-  "reviewed": 0,
+   "structure_checked": 57,
+   "reviewed": 3,
   "verified": 0,
   "blocked": 0,
   "not_started": 8
@@ -1142,13 +1143,13 @@
    "zh_title": "维度提升",
    "path": "content/player/original/ow-dimension-boosts.md",
    "priority": 1,
-   "status": "STRUCTURE CHECKED",
-   "review_status": "STRUCTURE CHECKED",
+   "status": "REVIEWED",
+   "review_status": "REVIEWED",
    "license_status": "CC-BY-SA-4.0-CONFIRMED",
    "third_party": "NONE-DETECTED-TEXT-ONLY",
    "media_omitted": true,
-   "last_source_check": "2026-11-15",
-   "notes": "batch1：正文完整翻译并校对；图片/信息框未转载；2026-11-15 质量门禁：仅有结构核对（章节/表格/公式/来源字段），未做逐段语义审校，按 wiki-rules 等级降为 STRUCTURE CHECKED"
+   "last_source_check": "2026-11-23",
+   "notes": "2026-11-23 对照英文修订 3333 逐段审校；修正初始需求与来源链接；见 docs/translation/reviews/2026-11-23-基础机制.md"
   },
   {
    "title": "Dimensional Sacrifice",
@@ -1196,13 +1197,13 @@
    "zh_title": "维度",
    "path": "content/player/original/ow-dimensions.md",
    "priority": 1,
-   "status": "STRUCTURE CHECKED",
-   "review_status": "STRUCTURE CHECKED",
+   "status": "REVIEWED",
+   "review_status": "REVIEWED",
    "license_status": "CC-BY-SA-4.0-CONFIRMED",
    "third_party": "NONE-DETECTED-TEXT-ONLY",
    "media_omitted": true,
-   "last_source_check": "2026-11-15",
-   "notes": "batch1：正文完整翻译并校对；图片/信息框未转载；2026-11-15 质量门禁：仅有结构核对（章节/表格/公式/来源字段），未做逐段语义审校，按 wiki-rules 等级降为 STRUCTURE CHECKED"
+   "last_source_check": "2026-11-23",
+   "notes": "2026-11-23 对照英文修订 3102 逐段审校；修正计数频率价格表述、正文链接与来源链接；见 docs/translation/reviews/2026-11-23-基础机制.md"
   },
   {
    "title": "Effarig",
@@ -1733,13 +1734,13 @@
    "zh_title": "无限",
    "path": "content/player/original/ow-infinity.md",
    "priority": 1,
-   "status": "STRUCTURE CHECKED",
-   "review_status": "STRUCTURE CHECKED",
+   "status": "REVIEWED",
+   "review_status": "REVIEWED",
    "license_status": "CC-BY-SA-4.0-CONFIRMED",
    "third_party": "NONE-DETECTED-TEXT-ONLY",
    "media_omitted": true,
-   "last_source_check": "2026-11-15",
-   "notes": "batch1：正文完整翻译并校对；图片/信息框未转载；2026-11-15 质量门禁：仅有结构核对（章节/表格/公式/来源字段），未做逐段语义审校，按 wiki-rules 等级降为 STRUCTURE CHECKED"
+   "last_source_check": "2026-11-23",
+   "notes": "2026-11-23 对照英文修订 3113 逐段审校；修正成就链接、倍率写法与十倍门槛表述；见 docs/translation/reviews/2026-11-23-基础机制.md"
   },
   {
    "title": "Infinity (disambiguation)",

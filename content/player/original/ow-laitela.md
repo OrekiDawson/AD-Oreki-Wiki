@@ -5,7 +5,7 @@ tags:
   - 原版Wiki翻译
   - 天神
 original_title: "Laitela"
-original_url: "https://antimatterdimensions.wiki.gg/wiki/Lai%27tela"
+original_url: "https://antimatterdimensions.wiki.gg/wiki/Laitela"
 original_revid: 3375
 original_fetched_at: "2026-11-15T21:24:00+08:00"
 original_license: "CC BY-SA 4.0"
@@ -195,8 +195,8 @@ $$Max\left(100^{Completions}~*~\left(\frac{360}{Seconds}\right)^2,~1\right)$$
 
 ## 来源与许可
 
-- 原文：[Lai'tela](https://antimatterdimensions.wiki.gg/wiki/Lai%27tela)（页面 ID 919；修订 ID 3375；最后编辑者 KrutarMarsons；抓取于 2026-11-15）
-- 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Lai%27tela&action=history)
+- 原文：[Laitela](https://antimatterdimensions.wiki.gg/index.php?title=Laitela&oldid=3375)（页面 ID 919；修订 ID 3375；最后编辑者 KrutarMarsons；抓取于 2026-11-15）
+- 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Laitela&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为**简体中文翻译（改编）**，已修改：翻译正文与全部表格，统一术语，把信息框内容改写为要点表，把 FontAwesome 图标改为文字描述、模板脚注改为页内脚注，移除导航模板与模板结构，图片未转载；本页按相同许可共享。
 - 原文图片未转载：原页含天神静态图（Cel6-runreality-static--desktop.gif）、动画（Cel6-runreality-active--desktop.gif）、导航图（Cel6-navigation-complete--desktop.png）、界面图（Cel6-interface--darktheme-desktop.png）与奇点里程碑弹窗图（Cel6-singularitymilestones-modal--darktheme-desktop.png）。原图注含义：「身处莱特拉的现实之中」「莱特拉的完整界面」「桌面版中的奇点里程碑弹窗」。请到原页查看图片。
 

@@ -145,7 +145,7 @@ $$\max\left ( 1,~\frac{\left\lfloor RealTime_{\text{Stored}} \right\rfloor}{\max
 
 ## 来源与许可
 
-- 原文：[The Nameless Ones](/player/original/ow-nameless-ones)（页面 ID 380；修订 ID 3372；最后编辑者 KrutarMarsons；抓取于 2026-11-15）
+- 原文：[The Nameless Ones](https://antimatterdimensions.wiki.gg/index.php?title=The_Nameless_Ones&oldid=3372)（页面 ID 380；修订 ID 3372；最后编辑者 KrutarMarsons；抓取于 2026-11-15）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=The_Nameless_Ones&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为**简体中文翻译（改编）**，已修改：翻译正文与表格，统一术语，把信息框内容改写为要点表，把模板内脚注改为页内脚注，移除导航模板与模板结构，图片未转载；本页按相同许可共享。
 - 原文图片未转载：原页含天神动画（Cel3-runreality-static--desktop.gif、Cel3-runreality-active--desktop.gif）、导航图（Cel3-navigation-complete--desktop.png）、界面截图（Cel3-interface--darktheme-desktop.png）与超立方体按钮图（Cel3-tesseract-button--darktheme-modern-desktop.png、Cel3-tesseract-button-buyable--darktheme-modern-desktop.png）。原图注含义：「静止状态的无名氏符号，此处大约加速 60 倍」「无限维度页签上的新按钮」「可购买超立方体时按钮会变化」。请到原页查看图片。

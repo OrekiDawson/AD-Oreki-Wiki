@@ -75,7 +75,7 @@ aliases:
 
 ## 来源与许可
 
-- 原文：[Celestial Navigation/Gallery](https://antimatterdimensions.wiki.gg/wiki/Celestial_Navigation/Gallery)（修订 ID 2816；抓取于 2026-11-15）
+- 原文：[Celestial Navigation/Gallery](https://antimatterdimensions.wiki.gg/index.php?title=Celestial_Navigation%2FGallery&oldid=2816)（修订 ID 2816；抓取于 2026-11-15）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Celestial_Navigation/Gallery&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为简体中文翻译（改编），已修改：翻译全部图注、把图片画廊改为有序列表、统一术语、**47 张截图全部未转载**；本页按相同许可共享。
 - 原文图片未转载：原页为纯图库，含 47 张 PNG（Cels-navigation-01…47 系列，外加最终帧），译文仅保留图注文字。

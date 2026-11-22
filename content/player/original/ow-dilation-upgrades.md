@@ -44,7 +44,7 @@ aliases:
 
 ## 来源与许可
 
-- 原文：[Dilation/Upgrades](/player/original/ow-dilation-upgrades)（修订 ID `3158`；最后编辑者 KrutarMarsons；抓取于 2026-11-15）
+- 原文：[Dilation/Upgrades](https://antimatterdimensions.wiki.gg/index.php?title=Dilation%2FUpgrades&oldid=3158)（修订 ID `3158`；最后编辑者 KrutarMarsons；抓取于 2026-11-15）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Dilation/Upgrades&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为**简体中文翻译（改编）**，已修改：翻译正文与表格、统一术语、移除导航与信息框、图片未转载；本页按相同许可共享。
 - 本页是主条目的嵌入子页面；原表合并表头按语义展开为普通列。

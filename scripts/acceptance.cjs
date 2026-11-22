@@ -94,6 +94,7 @@ async function run() {
     '玩家专区',
     '开发者专区',
     '知识库规则',
+    '本站不是什么',
     '版权与许可',
     '本站使用说明',
   ];
@@ -216,6 +217,13 @@ async function run() {
   await page.goto(BASE + '/player/original/ow-infinity', { waitUntil: 'load' });
   const trHtml = await page.content();
   results.mobile.translationHasLicense = trHtml.includes('CC BY-SA 4.0') && trHtml.includes('来源与许可');
+  await page.goto(BASE + '/player/original/', { waitUntil: 'load' });
+  results.mobile.translationFolderListingHidden = await page.locator('.page-listing').evaluate(
+    (el) => getComputedStyle(el).display === 'none'
+  );
+  results.mobile.translationPropertiesHidden = await page.locator('.note-properties').evaluate(
+    (el) => getComputedStyle(el).display === 'none'
+  );
   await page.goto(BASE + '/developer/build/agp', { waitUntil: 'load' });
   await page.waitForTimeout(800);
   results.mobile.codePre = await page.locator('pre').count();
@@ -256,6 +264,8 @@ async function run() {
   if (results.urls.some((u) => !u.ok)) bad.push('urls:' + results.urls.filter((u) => !u.ok).map((u) => u.url).join(','));
   if (results.mobile.aiDraftStatus !== 404) bad.push('ai-draft-public:' + results.mobile.aiDraftStatus);
   if (!results.mobile.translationHasLicense) bad.push('translation-license-block');
+  if (!results.mobile.translationFolderListingHidden) bad.push('translation-folder-listing-visible');
+  if (!results.mobile.translationPropertiesHidden) bad.push('translation-properties-visible');
   if (!results.mobile.kotlinPage) bad.push('kotlin-nav');
   if (!results.mobile.sidebar) bad.push('sidebar-missing');
   else {

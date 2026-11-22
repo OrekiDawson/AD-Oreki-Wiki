@@ -14,7 +14,7 @@ tags:
 
 首次接触游戏，可以先读[维度](/player/original/ow-dimensions)，理解生产方式；准备第一次大坍缩时看[无限](/player/original/ow-infinity)；再往后依次是[永恒](/player/original/ow-eternity)、[现实](/player/original/ow-reality)与[天神](/player/original/ow-celestials)。已经在某个阶段游玩，直接跳到对应分类即可。
 
-**关于译文准确性：**现有译文已做过结构核对，但**尚未完成逐段语义审校**。特别是数值、公式、挑战条件或界面操作，使用前应与各译文页标注的英文原文对照。结构核对不等于游戏实测；详细状态由[翻译来源清单](https://github.com/OrekiDawson/AD-Oreki-Wiki/blob/main/docs/translation/source-manifest.json)记录。
+部分条目仍在逐段审校中。遇到数值、公式或解锁条件时，可以点开文末的“原文”链接核对英文修订；结构检查不等于游戏实测。首批完成逐段审校的是[维度](/player/original/ow-dimensions)、[维度提升](/player/original/ow-dimension-boosts)和[无限](/player/original/ow-infinity)。
 
 ## 从维度增长到第一次大坍缩
 

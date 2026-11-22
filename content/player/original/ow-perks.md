@@ -97,7 +97,7 @@ aliases:
 
 ## 来源与许可
 
-- 原文：[Perks](https://antimatterdimensions.wiki.gg/wiki/Perks)（修订 ID 3354；抓取于 2026-11-15）
+- 原文：[Perks](https://antimatterdimensions.wiki.gg/index.php?title=Perks&oldid=3354)（修订 ID 3354；抓取于 2026-11-15）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Perks&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为简体中文翻译（改编），已修改：翻译正文与 48 行节点表、把节点图标改为中文节点名、图库改为图注列表、界面图未转载；本页按相同许可共享。
 - 原文图片未转载：原页含桌面深色/浅色与移动版复兴树截图、七种布局截图与两个主题截图，此处仅保留文字说明。

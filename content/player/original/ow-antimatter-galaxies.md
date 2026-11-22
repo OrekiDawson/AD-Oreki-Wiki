@@ -63,7 +63,7 @@ aliases:
 
 ## 来源与许可
 
-- 原文：[Antimatter Galaxies](/player/original/ow-antimatter-galaxies)（修订 ID `3335`；最后编辑者 KrutarMarsons；抓取于 2026-11-15）
+- 原文：[Antimatter Galaxies](https://antimatterdimensions.wiki.gg/index.php?title=Antimatter_Galaxies&oldid=3335)（修订 ID `3335`；最后编辑者 KrutarMarsons；抓取于 2026-11-15）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Antimatter_Galaxies&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为**简体中文翻译（改编）**，已修改：翻译正文与表格、统一术语、移除导航模板与信息框、图片未转载；本页按相同许可共享。
 - 原文表格中的跨行标题按普通表格展开；原文首段脚注以破折号说明保留。

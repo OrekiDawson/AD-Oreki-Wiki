@@ -46,7 +46,7 @@ aliases:
 
 ## 来源与许可
 
-- 原文：[Challenges](/player/original/ow-challenges)（修订 ID `3106`；最后编辑者 The1AndOnly6030；抓取于 2026-11-15）
+- 原文：[Challenges](https://antimatterdimensions.wiki.gg/index.php?title=Challenges&oldid=3106)（修订 ID `3106`；最后编辑者 The1AndOnly6030；抓取于 2026-11-15）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Challenges&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为**简体中文翻译（改编）**，已修改：翻译正文与表格、统一术语、移除导航模板与信息框、图片未转载；本页按相同许可共享。
 - 原文中的「主条目」模板在转换为 Markdown 后丢失目标，译文按上下文补回对应条目名称。

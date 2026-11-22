@@ -21,7 +21,12 @@ function compare(a, b) {
     "developer", // 2 开发者专区
   ];
   // 末尾独立站务区（页脚也有固定链接）。
-  const STATION = { "wiki-rules": 200, copyright: 201, "how-to-use": 202 };
+  const STATION = {
+    "wiki-rules": 200,
+    "wiki-not": 201,
+    copyright: 202,
+    "how-to-use": 203,
+  };
   const rank = (node) => {
     if (!node || !node.slugSegment) return 100;
     if (STATION[node.slugSegment] !== undefined) return STATION[node.slugSegment];
@@ -44,6 +49,7 @@ function mapNode(node) {
     player: "玩家专区",
     developer: "开发者专区",
     "wiki-rules": "知识库规则",
+    "wiki-not": "本站不是什么",
     copyright: "版权与许可",
     "how-to-use": "本站使用说明",
   };

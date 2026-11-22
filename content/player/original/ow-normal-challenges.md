@@ -72,7 +72,7 @@ aliases:
 
 ## 来源与许可
 
-- 原文：[Normal Challenges](https://antimatterdimensions.wiki.gg/wiki/Normal_Challenges)（修订 ID 3341；抓取于 2026-11-15）
+- 原文：[Normal Challenges](https://antimatterdimensions.wiki.gg/index.php?title=Normal_Challenges&oldid=3341)（修订 ID 3341；抓取于 2026-11-15）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Normal_Challenges&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为简体中文翻译（改编），已修改：翻译正文与表格、统一术语、公式保留原式、界面图与成就图标未转载；本页按相同许可共享。
 - 原文图片未转载：原页含桌面现代/经典与移动版挑战界面截图，以及成就图标；译文仅保留文字说明。
