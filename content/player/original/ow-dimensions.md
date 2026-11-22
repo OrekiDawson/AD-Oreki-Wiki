@@ -10,8 +10,8 @@ original_revid: 3102
 original_fetched_at: "2026-11-15T21:10:00+08:00"
 original_license: "CC BY-SA 4.0"
 original_license_url: "https://creativecommons.org/licenses/by-sa/4.0/"
-translation_status: "STRUCTURE CHECKED"
-review_status: "STRUCTURE CHECKED"
+translation_status: "REVIEWED"
+review_status: "REVIEWED"
 aliases:
   - "/original/ow-dimensions"
 ---
@@ -28,11 +28,11 @@ $at^8 + bt^7 + ct^6 + dt^5 + et^4 + ft^3 + gt^2 + ht$，
 
 其中 $t$ 可以粗略理解为「时间」。
 
-宽泛地说，这意味着**任何**影响**所有**维度类型的倍率，等价于该倍率的 $x^8$ 次方，或 $x^n$ 次方，其中 $n$ 是该类型中处于活动状态的维度数量。最能体现这一点的机制是[计数频率](https://antimatterdimensions.wiki.gg/wiki/Tickspeed)：它影响*所有*[反物质维度](/player/original/ow-antimatter-dimensions)的产出速度。计数频率初始为 $\times 1.1245$，在假设所有反物质维度层级都已解锁的前提下，单次购买最终会收敛为反物质获取的 $\times 2.5567$ 倍率。虽然这一效果不算特别显著，但需要提醒的是：在[无限后的价格成长](/player/original/ow-break-infinity)之前，每次计数频率购买只按约 10 反物质成长；这相对于反物质增长已经具有 $0.4077$ 的[膨胀指数](https://en.wikipedia.org/wiki/Big_O_notation)。
+宽泛地说，这意味着**任何**影响**所有**维度类型的倍率，等价于该倍率的 $x^8$ 次方，或 $x^n$ 次方，其中 $n$ 是该类型中处于活动状态的维度数量。最能体现这一点的机制是[计数频率](/player/original/ow-tickspeed)：它影响*所有*[反物质维度](/player/original/ow-antimatter-dimensions)的产出速度。计数频率初始为 $\times 1.1245$，在假设所有反物质维度层级都已解锁的前提下，单次购买最终会收敛为反物质获取的 $\times 2.5567$ 倍率。这一效果不算特别显著，但需要注意：[打破无限](/player/original/ow-break-infinity)后的价格成长机制启用前，每次购买计数频率的价格只以约 10 反物质为底数增长；相对于当时的反物质增长，这已经具有 $0.4077$ 的[膨胀指数](https://en.wikipedia.org/wiki/Big_O_notation)。
 
 ## 来源与许可
 
-- 原文：[Dimensions](/player/original/ow-dimensions)（修订 ID `3102`；最后编辑者 The1AndOnly6030；抓取于 2026-11-15）
+- 原文：[Dimensions](https://antimatterdimensions.wiki.gg/wiki/Dimensions)（修订 ID `3102`；最后编辑者 The1AndOnly6030；抓取于 2026-11-15）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Dimensions&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为**简体中文翻译（改编）**，已修改：翻译正文与表格、统一术语、移除导航模板与信息框、图片未转载；本页按相同许可共享。
 

@@ -130,7 +130,7 @@ $$
 
 ## 来源与许可
 
-- 原文：[Teresa](/player/original/ow-teresa)（页面 ID `292`；修订 ID `3370`；最后编辑者 KrutarMarsons；抓取于 2026-11-15）
+- 原文：[Teresa](https://antimatterdimensions.wiki.gg/wiki/Teresa)（页面 ID `292`；修订 ID `3370`；最后编辑者 KrutarMarsons；抓取于 2026-11-15）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Teresa&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为**简体中文翻译（改编）**，已修改：翻译正文、表格与引语，统一术语，把信息框内容改写为要点表，移除导航模板与模板结构，图片未转载；本页按相同许可共享。
 - 原文图片未转载：原页含天神动画（`Cel1-runreality-static--desktop.gif`、`Cel1-runreality-active--desktop.gif`）、导航图（`Cel1-navigation-complete--desktop.png`）与界面截图（`Cel1-interface--darktheme-desktop.png`）。其图注含义为：「身处特蕾莎的现实之中」「两个同心圆，颜色为群青色，中间由一道笔画相连，正中是特蕾莎的符号——黑色叠于另一圆之上」「特蕾莎的完整界面；最高反物质所在现实的符文组合记录在特蕾莎的现实界面中」。请到原页查看图片。

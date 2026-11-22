@@ -103,7 +103,7 @@ $$e^{\left(\ln(r)+\left[\left(1+t\right)\times r\times\ln(c+1)\times interval\di
 
 ## 来源与许可
 
-- 原文：[Replicanti](/player/original/ow-replicanti)（修订 ID `3350`；最后编辑者 KrutarMarsons；抓取于 2026-11-15）
+- 原文：[Replicanti](https://antimatterdimensions.wiki.gg/wiki/Replicanti)（修订 ID `3350`；最后编辑者 KrutarMarsons；抓取于 2026-11-15）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Replicanti&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为**简体中文翻译（改编）**，已修改：翻译正文与表格、统一术语、移除导航模板与信息框、图片未转载；本页按相同许可共享。
 - 原文中的公式排版不统一（如 0,032 与 1e5 等写法）按 LaTeX 规范化；数值与逻辑未改动。

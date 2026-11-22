@@ -136,6 +136,12 @@ plugins:
     enabled: true
   - source: "@quartz-community/folder-page"
     enabled: true
+  - source: "./scripts/quartz-plugins/translation-folder-cleanup"
+    enabled: true
+    layout:
+      position: afterBody
+      priority: 90
+      display: all
   - source: "@quartz-community/tag-page"
     enabled: true
   - source: "@quartz-community/explorer"

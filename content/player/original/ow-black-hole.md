@@ -44,7 +44,7 @@ aliases:
 
 ## 来源与许可
 
-- 原文：[Black Hole](/player/original/ow-black-hole)（修订 ID `3360`；最后编辑者 KrutarMarsons；抓取于 2026-11-15）
+- 原文：[Black Hole](https://antimatterdimensions.wiki.gg/wiki/Black_Hole)（修订 ID `3360`；最后编辑者 KrutarMarsons；抓取于 2026-11-15）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Black_Hole&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为**简体中文翻译（改编）**，已修改：翻译正文与表格、统一术语、移除导航模板与信息框、图片未转载；本页按相同许可共享。
 - 原文两张升级表的「$1.80e308$ RM 之后」列为空，译文按原样保留空列，未虚构数据。

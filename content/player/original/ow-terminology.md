@@ -59,7 +59,7 @@ aliases:
 
 ## 来源与许可
 
-- 原文：[Terminology](/player/original/ow-terminology)（修订 ID `3098`；最后编辑者 KrutarMarsons；抓取于 2026-11-15）
+- 原文：[Terminology](https://antimatterdimensions.wiki.gg/wiki/Terminology)（修订 ID `3098`；最后编辑者 KrutarMarsons；抓取于 2026-11-15）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Terminology&action=history)
 - 原文图片未转载：原文该页不含图片、图标或图表等媒体素材（仅有文字与词表），因此本页无媒体转载问题。
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为**简体中文翻译（改编）**，已修改：翻译表格与含义说明、统一术语、移除导航模板；原文中的方括号多义词保留原样，未擅自选定其一。

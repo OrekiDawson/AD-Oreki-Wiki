@@ -1,0 +1,34 @@
+{
+  "name": "translation-folder-cleanup",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "quartz": {
+    "name": "translation-folder-cleanup",
+    "displayName": "Translation Folder Cleanup",
+    "category": "component",
+    "version": "1.0.0",
+    "quartzVersion": ">=5.0.0",
+    "dependencies": [],
+    "defaultOrder": 90,
+    "defaultEnabled": true,
+    "defaultOptions": {},
+    "components": {
+      "TranslationFolderCleanup": {
+        "displayName": "Translation Folder Cleanup",
+        "defaultPosition": "afterBody",
+        "defaultPriority": 90
+      }
+    }
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.js"
+    },
+    "./components": {
+      "import": "./dist/components.js"
+    },
+    "./package.json": "./package.json"
+  }
+}
