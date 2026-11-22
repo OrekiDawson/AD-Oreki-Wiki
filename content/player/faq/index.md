@@ -52,7 +52,7 @@ Oreki Edition 的统一调度器默认每 **10 秒**重新检查一次受管策�
 
 **但手动关闭“自动永恒”应受到专门保护。** 原版现实结算有时会复位自动永恒开关，MOD 会在符合条件时修复这种复位；如果玩家明确手动关闭了自动永恒，当前的专用托管逻辑应保留这一选择。它不是普通受管字段的下一 tick 覆盖。如果手动关闭后无故又被打开，请记录当前版本、发生阶段和操作顺序并反馈。
 
-是否受管、哪些字段由策略接管，仍以当前版本为准。具体规则见[智能自动购买器](/player/gameplay/automation)及 [Android R120 受管字段记录](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/main/reports/R120-01/scheduler-managed-authority.md)。
+是否受管、哪些字段由策略接管，仍以当前版本为准。具体规则见[智能自动购买器](/player/gameplay/automation)及 [Android R120 受管字段记录](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/3b2d8284f2aca7132168998ee32497b3c4c17b8e/reports/R120-01/scheduler-managed-authority.md)。
 
 ## 永恒挑战买不了，是不是资源不够？
 
