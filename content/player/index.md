@@ -12,7 +12,7 @@ tags:
 
 | 目的 | 入口 | 适合什么时候读 |
 | --- | --- | --- |
-| 从零开始 | [开始游玩 Oreki Edition](/player/getting-started/) | 第一次打开游戏，准备完成第一次大坍缩 |
+| 从零开始 | [开始游玩 Oreki Edition](/player/getting-started/) · [MOD 介绍](/player/mods/) | 第一次打开游戏，准备完成第一次大坍缩 |
 | 理解机制 | [玩法机制](/player/gameplay/) 与 [游戏总览](/player/antimatter-dimensions) | 想知道资源、重置、保留项和系统解锁为什么这样设计 |
 | 当前阶段推进 | [无限与永恒](/player/gameplay/progression-infinity-eternity) → [现实与时间研究](/player/gameplay/reality-time-studies) → [天神系统](/player/gameplay/celestials) | 已经进入某个阶段，但不知道下一步选择 |
 | 处理异常 | [玩家常见问题](/player/faq/)、[阶段解锁与页面显示](/player/gameplay/stage-gates)、[存档兼容与自动保存](/player/gameplay/saves) | 按钮不可用、自动化没有动作、更新或导入存档前 |

@@ -37,4 +37,4 @@ tags:
 
 本站区分原版规则、Oreki Edition 修改、历史结论和当前实测边界。**代码合并、CI 成功、真实通关和正式发布不能互相替代。**
 
-[知识库规则](/wiki-rules) · [版权与许可](/copyright) · [本站使用说明](/how-to-use) · [全站页面台账](https://github.com/OrekiDawson/AD-Oreki-Wiki/blob/main/docs/全站重构页面台账.md)
+[知识库规则](/wiki-rules) · [版权与许可](/copyright) · [本站使用说明](/how-to-use) · [全站页面台账](https://github.com/OrekiDawson/AD-Oreki-Wiki/blob/7b9f6a013cde399c01cca8e972128527d378e834/docs/全站重构页面台账.md)（2026-11-23 核对，修订 `7b9f6a0`）
