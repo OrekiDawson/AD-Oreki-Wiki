@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// 构建产物检查：首页 / Quartz 原生搜索 / 页面数量 / 中文类目 / 历史归档 / 旧 URL / 草稿隔离
+// 构建产物检查：双专区 / Quartz 原生搜索 / 中文类目 / 历史归档 / 旧 URL / 草稿隔离
 import fs from "node:fs";
 import path from "node:path";
 
@@ -41,26 +41,44 @@ try {
 } catch (error) { fail("无法可靠校验 Quartz 搜索索引: " + error.message); }
 
 const home = fs.readFileSync(path.join(PUB, "index.html"), "utf8");
-for (const term of ["反物质维度MOD 知识库", "知识库规则", "玩法机制"]) {
+for (const term of ["玩家专区", "开发者专区", "知识库规则", "玩法机制"]) {
   if (!home.includes(term)) fail("首页缺少文案: " + term);
+}
+for (const href of [
+  "https://wiki.oreki.net/player/",
+  "https://wiki.oreki.net/developer/",
+  "https://wiki.oreki.net/wiki-rules",
+  "https://wiki.oreki.net/copyright",
+]) {
+  if (!home.includes('href="' + href + '"') && !home.includes("href='" + href + "'")) {
+    fail("首页页脚缺少关键链接: " + href);
+  }
 }
 
 // 规则页、版权页、游戏总览、类目页
 for (const slug of ["wiki-rules", "copyright", "antimatter-dimensions"]) {
   if (!pageExists(slug)) fail("缺少页面 /" + slug);
 }
+for (const slug of ["player", "developer", "player/getting-started", "developer/ai-summaries", "developer/evidence"]) {
+  if (!pageExists(slug)) fail("缺少双专区页面: /" + slug);
+}
 // 类目显示名必须是中文（由各目录 index.md 的 title 提供）
 const CATEGORY_TITLES = {
-  "getting-started": "入门指南",
-  current: "当前状态",
-  architecture: "架构与运行时",
-  "reverse-engineering": "逆向与语义映射",
-  build: "构建与交付",
-  gameplay: "玩法机制",
-  troubleshooting: "故障排查",
-  references: "参考资料",
-  history: "历史归档",
-  original: "原版 Wiki 中文翻译",
+  "player/getting-started": "开始游玩 Oreki Edition",
+  "player/gameplay": "玩法机制",
+  "player/original": "原版 Wiki 中文翻译",
+  "player/mods": "Oreki Edition 介绍",
+  "player/download-and-version": "下载与版本说明",
+  "player/faq": "玩家常见问题",
+  "developer/architecture": "架构与运行时",
+  "developer/reverse-engineering": "逆向与语义映射",
+  "developer/build": "构建与交付",
+  "developer/current": "当前状态",
+  "developer/troubleshooting": "故障排查",
+  "developer/references": "参考资料",
+  "developer/history": "历史归档",
+  "developer/evidence": "运行证据索引",
+  "developer/ai-summaries": "AI Summary 索引",
 };
 for (const [dir, title] of Object.entries(CATEGORY_TITLES)) {
   const file = path.join(PUB, dir, "index.html");
@@ -71,15 +89,28 @@ for (const [dir, title] of Object.entries(CATEGORY_TITLES)) {
   if (!fs.readFileSync(file, "utf8").includes(title)) fail("类目页 /" + dir + "/ 未显示中文类目名: " + title);
 }
 
-// 历史归档必须独立存在，且至少有一条历史条目
-if (!exists(path.join("history", "index.html"))) fail("缺少历史归档索引 /history/");
+// 历史归档必须位于开发者专区，且至少有一条历史条目
+if (!exists(path.join("developer", "history", "index.html"))) fail("缺少历史归档索引 /developer/history/");
 const historyEntries = htmlFiles.filter(
-  (f) => f.includes(path.sep + "history" + path.sep) && path.basename(f) !== "index.html",
+  (f) => f.includes(path.sep + "developer" + path.sep + "history" + path.sep) &&
+    path.basename(f) !== "index.html",
 );
-if (historyEntries.length < 3) fail("历史归档条目不足（应把时间性材料移入 content/history/）: " + historyEntries.length);
+if (historyEntries.length < 3) {
+  fail("历史归档条目不足（应把时间性材料移入 content/developer/history/）: " + historyEntries.length);
+}
 
 // 旧 URL 兼容：既有页面路径不得因专题化改造而消失
 const LEGACY_URLS = [
+  "gameplay",
+  "original",
+  "architecture",
+  "reverse-engineering",
+  "build",
+  "current",
+  "troubleshooting",
+  "references",
+  "history",
+  "getting-started",
   "architecture/android",
   "architecture/kotlin-runtime",
   "architecture/web",
@@ -107,39 +138,126 @@ const LEGACY_URLS = [
 ];
 for (const slug of LEGACY_URLS) if (!pageExists(slug)) fail("旧页面 URL 丢失: /" + slug);
 
+const LEGACY_URL_TARGETS = {
+  "architecture/android": "developer/architecture/android",
+  "architecture/kotlin-runtime": "developer/architecture/kotlin-runtime",
+  "architecture/web": "developer/architecture/web",
+  "architecture/directory-migration": "developer/architecture/directory-migration",
+  "reverse-engineering/dex-abi": "developer/reverse-engineering/dex-abi",
+  "build/agp": "developer/build/agp",
+  "build/ci-cd": "developer/build/ci-cd",
+  "build/r8": "developer/build/r8",
+  "build/signature-backfill": "developer/build/signature-backfill",
+  "build/build-mod-retirement": "developer/build/build-mod-retirement",
+  "gameplay/automation": "player/gameplay/automation",
+  "gameplay/challenges": "player/gameplay/challenges",
+  "gameplay/saves": "player/gameplay/saves",
+  "gameplay/stage-gates": "player/gameplay/stage-gates",
+  "current/project-status": "developer/current/project-status",
+  "current/release-status": "developer/current/release-status",
+  "current/known-issues": "developer/current/known-issues",
+  "getting-started/editorial-guidelines": "developer/editorial-guidelines",
+  "getting-started/how-to-use": "how-to-use",
+  "getting-started/project-overview": "developer/project-overview",
+  "references/source-index": "developer/references/source-index",
+  "references/terminology": "player/terminology",
+  "troubleshooting/coroutine-abi": "developer/troubleshooting/coroutine-abi",
+  "troubleshooting/save-compatibility": "developer/troubleshooting/save-compatibility",
+};
+for (const [legacy, target] of Object.entries(LEGACY_URL_TARGETS)) {
+  const aliasFile = path.join(PUB, legacy + ".html");
+  if (!fs.existsSync(aliasFile)) continue;
+  const html = fs.readFileSync(aliasFile, "utf8");
+  if (!html.includes(target) || !html.includes('http-equiv="refresh"')) {
+    fail("旧页面兼容目标错误: /" + legacy + " -> /" + target);
+  }
+}
+
 // 新增主题条目
 for (const slug of [
-  "architecture/parity",
-  "build/apk-signing",
-  "gameplay/progression-infinity-eternity",
-  "gameplay/reality-time-studies",
-  "gameplay/celestials",
-  "gameplay/original-vs-mod",
-  "original/index",
-  "original/ow-infinity",
-  "original/ow-dimensions",
-  "original/ow-replicanti",
-  "original/ow-eternity",
-  "original/ow-break-infinity",
-  "original/ow-time-dimensions",
-  "original/ow-eternity-challenges",
-  "original/ow-dilation",
+  "player/index",
+  "developer/index",
+  "developer/architecture/parity",
+  "developer/build/apk-signing",
+  "player/gameplay/progression-infinity-eternity",
+  "player/gameplay/reality-time-studies",
+  "player/gameplay/celestials",
+  "player/gameplay/original-vs-mod",
+  "player/original/index",
+  "player/original/ow-infinity",
+  "player/original/ow-dimensions",
+  "player/original/ow-replicanti",
+  "player/original/ow-eternity",
+  "player/original/ow-break-infinity",
+  "player/original/ow-time-dimensions",
+  "player/original/ow-eternity-challenges",
+  "player/original/ow-dilation",
 ]) {
   if (!pageExists(slug)) fail("缺少新增主题条目: /" + slug);
 }
 
 // 原版翻译专区：类目页与译文必须显示 CC BY-SA 4.0 与来源说明
-if (fs.existsSync(path.join(PUB, "original", "index.html"))) {
-  const originalIndex = fs.readFileSync(path.join(PUB, "original", "index.html"), "utf8");
+if (fs.existsSync(path.join(PUB, "player", "original", "index.html"))) {
+  const originalIndex = fs.readFileSync(path.join(PUB, "player", "original", "index.html"), "utf8");
   if (!originalIndex.includes("CC BY-SA 4.0")) fail("原版翻译专区首页缺少 CC BY-SA 4.0 说明");
   if (!originalIndex.includes("来源")) fail("原版翻译专区首页缺少来源说明");
 }
-for (const rel of ["original/ow-infinity.html", "original/ow-dimensions.html"]) {
+for (const rel of ["player/original/ow-infinity.html", "player/original/ow-dimensions.html"]) {
   const full = path.join(PUB, rel);
   if (!fs.existsSync(full)) { fail("缺少翻译页: " + rel); continue; }
   const html = fs.readFileSync(full, "utf8");
   if (!html.includes("来源与许可")) fail("翻译页缺少来源与许可块: " + rel);
   if (!html.includes("antimatterdimensions.wiki.gg")) fail("翻译页缺少原文链接: " + rel);
+}
+
+// 旧目录页继续可访问，并明确指向新专区。
+for (const [legacy, zone] of Object.entries({
+  gameplay: "player/gameplay",
+  original: "player/original",
+  "getting-started": "player/getting-started",
+  architecture: "developer/architecture",
+  "reverse-engineering": "developer/reverse-engineering",
+  build: "developer/build",
+  current: "developer/current",
+  troubleshooting: "developer/troubleshooting",
+  references: "developer/references",
+  history: "developer/history",
+})) {
+  const file = path.join(PUB, legacy, "index.html");
+  if (!fs.existsSync(file)) {
+    fail("旧目录入口丢失: /" + legacy + "/");
+    continue;
+  }
+  if (!fs.readFileSync(file, "utf8").includes(`/${zone}/`)) {
+    fail("旧目录入口未链接新专区: /" + legacy + "/");
+  }
+}
+
+// AI Summary 仅允许在开发者专区公开，并须默认折叠、带审核标识。
+const aiSummary = path.join(PUB, "developer", "ai-summaries", "index.html");
+if (fs.existsSync(aiSummary)) {
+  const html = fs.readFileSync(aiSummary, "utf8");
+  if (!html.includes("审核日期") || !html.includes("<details")) {
+    fail("AI Summary 索引缺少审核标识或默认折叠结构");
+  }
+}
+
+// 旧兼容 stub、AI 草稿均不得进入 Quartz 搜索索引。
+const contentIndexPath = path.join(PUB, "static/contentIndex.json");
+if (fs.existsSync(contentIndexPath)) {
+  const searchIndex = JSON.parse(fs.readFileSync(contentIndexPath, "utf8"));
+  const keys = Object.keys(searchIndex);
+  if (!keys.some(key => key === "player" || key.startsWith("player/"))) {
+    fail("Quartz 搜索索引缺少玩家专区");
+  }
+  if (!keys.some(key => key === "developer" || key.startsWith("developer/"))) {
+    fail("Quartz 搜索索引缺少开发者专区");
+  }
+  for (const legacy of ["gameplay", "original", "architecture", "history"]) {
+    if (keys.some(key => key === legacy || key.startsWith(legacy + "/"))) {
+      fail("旧兼容目录仍出现在搜索索引: /" + legacy + "/");
+    }
+  }
 }
 
 if (failed > 0) {

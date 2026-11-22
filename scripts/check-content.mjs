@@ -6,7 +6,7 @@
 //   4) 敏感信息与私有路径扫描
 //   5) 未审核 AI 草稿隔离（不得被正式条目引用、必须带待审标记）
 //   6) 反日志化：普通条目不得用 R 轮次/日期章节充当正文，必须有主题导语
-//   7) 历史归档分类清楚（只在 content/history/、必须带「历史」标签、文件名以日期开头）
+//   7) 历史归档分类清楚（只在 content/developer/history/、必须带「历史」标签、文件名以日期开头）
 //   8) 非历史条目不得带「历史」标签、标题不得以 R 编号或日期开头
 //   9) 标题唯一（防止同一事实复制成多页）
 //  10) 关键检索术语仍存在（不破坏既有搜索）
@@ -17,18 +17,28 @@ import path from "node:path";
 const ROOT = "content";
 const RULE_PAGE_TITLE = "反物质维度MOD Wiki:知识库规则";
 const RULE_PAGE = "content/wiki-rules.md";
-const HISTORY_DIR = "content/history/";
+const HISTORY_DIR = "content/developer/history/";
 const DRAFT_DIR = "content/ai-drafts/";
+const PLAYER_DIR = "content/player/";
+const DEVELOPER_DIR = "content/developer/";
 const CATEGORY_DIRS = [
-  "content/getting-started/",
-  "content/current/",
-  "content/architecture/",
-  "content/reverse-engineering/",
-  "content/build/",
-  "content/gameplay/",
-  "content/troubleshooting/",
-  "content/references/",
-  "content/history/",
+  "content/player/",
+  "content/player/getting-started/",
+  "content/player/gameplay/",
+  "content/player/original/",
+  "content/player/mods/",
+  "content/player/download-and-version/",
+  "content/player/faq/",
+  "content/developer/",
+  "content/developer/architecture/",
+  "content/developer/reverse-engineering/",
+  "content/developer/build/",
+  "content/developer/current/",
+  "content/developer/troubleshooting/",
+  "content/developer/references/",
+  "content/developer/history/",
+  "content/developer/evidence/",
+  "content/developer/ai-summaries/",
 ];
 const REQUIRED_TERMS = ["永恒挑战", "自动购买器", "AGP", "Kotlin", "Lai Tela", "build_mod.py"];
 const MIN_PAGES = 15;
@@ -75,6 +85,11 @@ const fail = (msg) => {
 if (!fs.existsSync(RULE_PAGE)) fail("网站根目录缺少公开知识库规则页 content/wiki-rules.md");
 if (!fs.existsSync("content/copyright.md")) fail("网站根目录缺少版权与许可页面");
 if (!fs.existsSync("LICENSE-CONTENT.md")) fail("缺少 CC BY-SA 4.0 原创内容许可说明");
+if (!fs.existsSync(PLAYER_DIR + "index.md")) fail("缺少玩家专区首页 content/player/index.md");
+if (!fs.existsSync(DEVELOPER_DIR + "index.md")) fail("缺少开发者专区首页 content/developer/index.md");
+if (!fs.existsSync(DEVELOPER_DIR + "ai-summaries/index.md")) {
+  fail("缺少开发者 AI Summary 索引 content/developer/ai-summaries/index.md");
+}
 for (const dir of CATEGORY_DIRS) {
   const index = dir + "index.md";
   if (!fs.existsSync(index)) fail("分类目录缺少中文类目页（index.md 提供显示名）: " + dir);
@@ -89,6 +104,7 @@ for (const f of files) {
   const text = fs.readFileSync(f, "utf8");
   const isDraft = f.startsWith(DRAFT_DIR);
   const isHistory = f.startsWith(HISTORY_DIR);
+  const isPlayer = f.startsWith(PLAYER_DIR);
   const isRule = f === RULE_PAGE;
   const isIndex = path.basename(f) === "index.md";
   const isCategoryIndex = isIndex && CATEGORY_DIRS.includes(path.dirname(f) + "/");
@@ -109,7 +125,7 @@ for (const f of files) {
     } else if (!isDraft) {
       if (fm.title.startsWith("反物质维度MOD Wiki:")) fail("普通条目标题不应带规则页命名空间前缀: " + f);
       if (!isHistory && ROUND_LEAD_TITLE.test(fm.title)) {
-        fail("专题条目标题不应以 R 轮次或日期开头（历史材料请放 content/history/）: " + f);
+        fail("专题条目标题不应以 R 轮次或日期开头（历史材料请放 content/developer/history/）: " + f);
       }
       if (!CJK.test(fm.title)) fail("条目标题应使用简体中文: " + f);
     }
@@ -128,7 +144,7 @@ for (const f of files) {
     if (!fm.tags.includes("历史")) fail("历史归档条目必须带「历史」标签: " + f);
     if (!/^\d{4}-\d{2}-\d{2}-/.test(path.basename(f))) fail("历史归档文件名必须以日期 YYYY-MM-DD- 开头: " + f);
   } else if (!isDraft && !isHistory) {
-    if (fm.tags.includes("历史")) fail("非历史目录条目不应带「历史」标签（历史材料请放 content/history/）: " + f);
+    if (fm.tags.includes("历史")) fail("非历史目录条目不应带「历史」标签（历史材料请放 content/developer/history/）: " + f);
   }
 
   // 内部链接
@@ -149,6 +165,11 @@ for (const f of files) {
     if (!/待人工审核|AI 草稿/.test(text)) fail("AI 草稿必须标注「待人工审核 / AI 草稿」: " + f);
   }
 
+  // AI Summary 只属于开发者专区；玩家正文不得嵌入机器摘要。
+  if (isPlayer && /AI\s*Summary|AI 摘要/i.test(text)) {
+    fail("玩家专区不得出现 AI Summary: " + f);
+  }
+
   // 反日志化：专题条目（非历史、非草稿、非首页/规则/版权/分类页）
   const isTopic = !isDraft && !isHistory && !isIndex && !isRule && f !== "content/copyright.md";
   if (isTopic) {
@@ -162,7 +183,7 @@ for (const f of files) {
       fail("专题条目缺少主题导语（正文开头需有一至三句说明「这是什么」）: " + f);
     }
     if (CHANGELOG_HEADING.test(text)) {
-      fail("专题条目出现 R 轮次/日期/Release Notes 式章节，应迁入 content/history/: " + f);
+      fail("专题条目出现 R 轮次/日期/Release Notes 式章节，应迁入 content/developer/history/: " + f);
     }
     if (!/https?:\/\//.test(text)) fail("专题条目缺少可点击的原始来源链接: " + f);
   }
@@ -172,6 +193,24 @@ for (const f of files) {
 }
 
 for (const term of REQUIRED_TERMS) if (!allText.includes(term)) fail("缺少检索术语: " + term);
+
+const playerHome = "content/player/index.md";
+const developerHome = "content/developer/index.md";
+const rootHome = "content/index.md";
+for (const file of [playerHome, developerHome, rootHome]) {
+  const text = fs.existsSync(file) ? fs.readFileSync(file, "utf8") : "";
+  if (!text.includes("player") || !text.includes("developer")) {
+    fail("双专区首页必须同时链接 /player/ 与 /developer/: " + file);
+  }
+}
+
+const aiIndex = "content/developer/ai-summaries/index.md";
+if (fs.existsSync(aiIndex)) {
+  const text = fs.readFileSync(aiIndex, "utf8");
+  if (!text.includes("<details>") || !text.includes("审核日期")) {
+    fail("开发者 AI Summary 索引缺少默认折叠或审核标识: " + aiIndex);
+  }
+}
 
 if (failed > 0) {
   console.error("内容检查未通过: " + failed + " 项");

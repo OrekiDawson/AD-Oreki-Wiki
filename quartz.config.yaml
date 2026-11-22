@@ -222,11 +222,12 @@ plugins:
     enabled: true
     options:
       links:
+        GitHub: https://github.com/OrekiDawson/AD-Oreki-Wiki
+        玩家专区: https://wiki.oreki.net/player/
+        开发者专区: https://wiki.oreki.net/developer/
+        知识库规则: https://wiki.oreki.net/wiki-rules
         版权与许可: https://wiki.oreki.net/copyright
         CC BY-SA 4.0: https://creativecommons.org/licenses/by-sa/4.0/
-        知识库规则: https://wiki.oreki.net/wiki-rules
-        编写指南: https://wiki.oreki.net/getting-started/editorial-guidelines
-        GitHub 源代码: https://github.com/OrekiDawson/AD-Oreki-Knowledge
     layout:
       position: footer
       priority: 50

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // 知识库本地/线上验收：Chromium 手机视口 + 桌面
-// 覆盖：首页→专题、搜索、旧 URL、类目中文名、历史归档、新条目、反向链接、图谱、暗色、溢出、AI 草稿未公开
+// 覆盖：双专区、搜索、旧 URL、类目中文名、历史归档、AI 草稿隔离、暗色与移动端溢出
 const path = require('node:path');
 const fs = require('node:fs');
 
@@ -21,30 +21,39 @@ const BASE = process.env.KB_URL || 'http://localhost:8081';
 const OUT = process.env.KB_OUT || 'evidence/playwright-mobile.json';
 
 const SEARCH_TERMS = [
-  ['永恒挑战', 'challenges'],
-  ['自动购买器', 'automation'],
-  ['Kotlin', 'kotlin-runtime'],
-  ['AGP', 'agp'],
-  ['Lai', 'saves'],
-  ['build_mod.py', 'build-mod-retirement'],
+  ['永恒挑战', 'player/gameplay/challenges'],
+  ['自动购买器', 'player/gameplay/automation'],
+  ['Kotlin', 'developer/architecture/kotlin-runtime'],
+  ['AGP', 'developer/build/agp'],
+  ['Lai', 'player/gameplay/saves'],
+  ['build_mod.py', 'developer/build/build-mod-retirement'],
 ];
 
 const OLD_URLS = ['/architecture/kotlin-runtime', '/architecture/android', '/gameplay/challenges', '/build/agp', '/current/project-status'];
 const NEW_PAGES = [
-  '/gameplay/celestials',
-  '/gameplay/progression-infinity-eternity',
-  '/gameplay/reality-time-studies',
-  '/gameplay/original-vs-mod',
-  '/architecture/parity',
-  '/build/apk-signing',
-  '/original/',
-  '/original/ow-infinity',
-  '/original/ow-dimensions',
+  '/',
+  '/player/',
+  '/developer/',
+  '/player/getting-started/',
+  '/player/gameplay/celestials',
+  '/player/gameplay/progression-infinity-eternity',
+  '/player/gameplay/reality-time-studies',
+  '/player/gameplay/original-vs-mod',
+  '/player/mods/',
+  '/player/download-and-version/',
+  '/player/faq/',
+  '/player/original/',
+  '/player/original/ow-infinity',
+  '/player/original/ow-dimensions',
+  '/developer/architecture/parity',
+  '/developer/build/apk-signing',
+  '/developer/evidence/',
+  '/developer/ai-summaries/',
 ];
-const CATEGORY_LABELS = ['玩法机制', '架构与运行时', '构建与交付', '历史归档', '原版 Wiki 中文翻译'];
+const CATEGORY_LABELS = ['玩家专区', '开发者专区', '玩法机制', '架构与运行时', '运行证据索引'];
 
 function weakMustSee(items) {
-  return ['入门指南', '原版 Wiki 中文翻译'].some((label) => {
+  return ['玩家专区', '开发者专区'].some((label) => {
     const item = items.find((i) => i.label === label);
     return !item || item.inViewport !== true;
   });
@@ -69,7 +78,7 @@ async function run() {
   await page.goto(BASE + '/', { waitUntil: 'load' });
   await page.waitForTimeout(1200);
   results.mobile.title = await page.title();
-  results.mobile.explorerLinks = await page.locator('a[href*="architecture/android"], a[href*="./architecture"]').count();
+  results.mobile.explorerLinks = await page.locator('a[href*="player"], a[href*="developer"]').count();
   results.mobile.overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
 
   // 左侧目录的类目显示名应为中文
@@ -82,19 +91,11 @@ async function run() {
 
   // 移动端侧栏：真实 DOM 渲染顺序断言（不读配置文本）
   const EXPECTED_SIDEBAR = [
-    '游戏总览',
-    '入门指南',
-    '原版 Wiki 中文翻译',
-    'MOD 玩法与机制',
-    '当前项目状态',
-    '架构与运行时',
-    '逆向与语义映射',
-    '构建与交付',
-    '故障排查',
-    '参考资料',
-    '历史归档',
+    '玩家专区',
+    '开发者专区',
     '知识库规则',
     '版权与许可',
+    '本站使用说明',
   ];
   const sidebarToggle = page.locator('.explorer .explorer-toggle').first();
   if (await sidebarToggle.count()) {
@@ -129,7 +130,7 @@ async function run() {
     }
     if (!sidebar.expanded) results.errors.push('sidebar-not-expanded');
     if (sidebar.items.some((i) => i.truncated)) results.errors.push('sidebar-truncated');
-    const mustSee = ['入门指南', '原版 Wiki 中文翻译'];
+    const mustSee = ['玩家专区', '开发者专区'];
     for (const label of mustSee) {
       const item = sidebar.items.find((i) => i.label === label);
       if (!item || item.inViewport !== true) results.errors.push('sidebar-not-visible:' + label);
@@ -146,8 +147,8 @@ async function run() {
     if (!results.mobile.sidebarCollapsed) results.errors.push('sidebar-collapse-failed');
   }
 
-  // 当前页高亮：进入具体文章页（/gameplay/challenges）后侧栏应有 active 链接指向它
-  await page.goto(BASE + '/gameplay/challenges', { waitUntil: 'load' });
+  // 当前页高亮：进入具体文章页后侧栏应有 active 链接指向它
+  await page.goto(BASE + '/player/gameplay/challenges', { waitUntil: 'load' });
   await page.waitForTimeout(900);
   const toggle2 = page.locator('.explorer .explorer-toggle').first();
   if (await toggle2.count()) { await toggle2.click({ force: true }).catch(() => {}); await page.waitForTimeout(600); }
@@ -155,7 +156,9 @@ async function run() {
     const links = [...document.querySelectorAll('.explorer-content a.active, .explorer-content a.is-active')];
     return links.map((a) => a.getAttribute('href'));
   });
-  if (!results.mobile.sidebarActive.includes('/gameplay/challenges')) results.errors.push('sidebar-active-highlight');
+  if (!results.mobile.sidebarActive.includes('/player/gameplay/challenges')) {
+    results.errors.push('sidebar-active-highlight');
+  }
   if (await toggle2.count()) { await toggle2.click({ force: true }).catch(() => {}); await page.waitForTimeout(400); }
 
   // 搜索
@@ -181,7 +184,14 @@ async function run() {
   }
 
   // 旧 URL 与新增页面可达
-  for (const url of [...OLD_URLS, ...NEW_PAGES, '/history/', '/history/2026-11-15-r113-180min-fail']) {
+  for (const url of [
+    ...OLD_URLS,
+    ...NEW_PAGES,
+    '/history/',
+    '/history/2026-11-15-r113-180min-fail',
+    '/developer/history/',
+    '/developer/history/2026-11-15-r113-180min-fail',
+  ]) {
     const resp = await page.goto(BASE + url, { waitUntil: 'load' }).catch(() => null);
     results.urls.push({ url, ok: !!resp && resp.status() === 200 });
   }
@@ -191,7 +201,7 @@ async function run() {
   results.mobile.aiDraftStatus = draftResp ? draftResp.status() : 'ERR';
 
   // 专题页：代码块、表格、反向链接、图谱
-  await page.goto(BASE + '/architecture/kotlin-runtime', { waitUntil: 'load' });
+  await page.goto(BASE + '/developer/architecture/kotlin-runtime', { waitUntil: 'load' });
   await page.waitForTimeout(800);
   results.mobile.kotlinPage = (await page.title()).includes('Kotlin');
   results.mobile.codeBlocks = await page.locator('pre code').count();
@@ -199,21 +209,21 @@ async function run() {
   results.mobile.graphWidget = (await page.content()).includes('Global Graph');
   results.mobile.overflowKotlin = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
 
-  await page.goto(BASE + '/gameplay/challenges', { waitUntil: 'load' });
+  await page.goto(BASE + '/player/gameplay/challenges', { waitUntil: 'load' });
   results.mobile.challengePageHasZenith = (await page.content()).includes('永恒挑战');
 
   // 原版翻译页：来源与许可必须可见
-  await page.goto(BASE + '/original/ow-infinity', { waitUntil: 'load' });
+  await page.goto(BASE + '/player/original/ow-infinity', { waitUntil: 'load' });
   const trHtml = await page.content();
   results.mobile.translationHasLicense = trHtml.includes('CC BY-SA 4.0') && trHtml.includes('来源与许可');
-  await page.goto(BASE + '/build/agp', { waitUntil: 'load' });
+  await page.goto(BASE + '/developer/build/agp', { waitUntil: 'load' });
   await page.waitForTimeout(800);
   results.mobile.codePre = await page.locator('pre').count();
   results.mobile.codeSpans = await page.locator('pre code span').count();
   results.mobile.tables = await page.locator('table').count();
 
   // 暗色模式
-  await page.goto(BASE + '/architecture/kotlin-runtime', { waitUntil: 'load' });
+  await page.goto(BASE + '/developer/architecture/kotlin-runtime', { waitUntil: 'load' });
   await page.waitForTimeout(500);
   const beforeBg = await page.evaluate(() => getComputedStyle(document.body).backgroundColor);
   const darkBtn = page.locator('button[aria-label*="暗色"], button[aria-label*="dark" i]').first();
@@ -255,7 +265,8 @@ async function run() {
     if (weakMustSee(results.mobile.sidebar.items)) bad.push('sidebar-visibility');
   }
   if (!results.mobile.sidebarCollapsed) bad.push('sidebar-collapse');
-  if (!results.mobile.sidebarActive || !results.mobile.sidebarActive.includes('/gameplay/challenges')) bad.push('sidebar-active');
+  if (!results.mobile.sidebarActive ||
+    !results.mobile.sidebarActive.includes('/player/gameplay/challenges')) bad.push('sidebar-active');
   if (!results.mobile.darkmodeToggled) bad.push('darkmode');
   if (results.errors.length > 3) bad.push('console-errors');
   console.log(JSON.stringify({ bad, results }, null, 1).slice(0, 6000));

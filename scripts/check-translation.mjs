@@ -4,7 +4,7 @@ import fs from "node:fs";
 import path from "node:path";
 
 const MANIFEST = "docs/translation/source-manifest.json";
-const PAGES_DIR = "content/original";
+const PAGES_DIR = "content/player/original";
 // 等级定义见 content/wiki-rules.md「内容验收等级」；STRUCTURE CHECKED 明确不算语义审校
 const ALLOWED_STATUS = new Set(["NOT STARTED", "IN PROGRESS", "TRANSLATED", "STRUCTURE CHECKED", "REVIEWED", "VERIFIED AGAINST GAME", "BLOCKED"]);
 const ALLOWED_REVIEW = new Set(["NOT REVIEWED", "TRANSLATED", "STRUCTURE CHECKED", "REVIEWED", "VERIFIED AGAINST GAME"]);

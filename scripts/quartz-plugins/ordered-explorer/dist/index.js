@@ -17,20 +17,11 @@ const Explorer = explorerModule.Explorer;
 // 一级目录固定语义顺序（slug = 目录名/文件名；不随显示名变化，URL 不变）。
 function compare(a, b) {
   const ROOT_ORDER = [
-    "antimatter-dimensions", // 1 游戏总览
-    "getting-started", // 2 入门指南
-    "original", // 3 原版 Wiki 中文翻译
-    "gameplay", // 4 MOD 玩法与机制
-    "current", // 5 当前项目状态
-    "architecture", // 6 架构与运行时
-    "reverse-engineering", // 7 逆向与语义映射
-    "build", // 8 构建与交付
-    "troubleshooting", // 9 故障排查
-    "references", // 10 参考资料
-    "history", // 11 历史归档
+    "player", // 1 玩家专区
+    "developer", // 2 开发者专区
   ];
   // 末尾独立站务区（页脚也有固定链接）。
-  const STATION = { "wiki-rules": 200, copyright: 201 };
+  const STATION = { "wiki-rules": 200, copyright: 201, "how-to-use": 202 };
   const rank = (node) => {
     if (!node || !node.slugSegment) return 100;
     if (STATION[node.slugSegment] !== undefined) return STATION[node.slugSegment];
@@ -50,10 +41,11 @@ function compare(a, b) {
 // 仅侧栏显示名覆盖：站务规则标题过长→短名；其余保持页面标题不变。
 function mapNode(node) {
   const SIDEBAR_LABEL = {
-    "antimatter-dimensions": "游戏总览",
-    gameplay: "MOD 玩法与机制",
-    current: "当前项目状态",
+    player: "玩家专区",
+    developer: "开发者专区",
     "wiki-rules": "知识库规则",
+    copyright: "版权与许可",
+    "how-to-use": "本站使用说明",
   };
   if (node && node.slugSegment && SIDEBAR_LABEL[node.slugSegment]) {
     node.displayName = SIDEBAR_LABEL[node.slugSegment];

@@ -8,7 +8,7 @@
 
 获授权内容可以复制、传播、修改、翻译，也可以商业使用。转载或改编时应合理注明原作者或贡献者、原文网址、许可链接与修改情况。改编成果须按 CC BY-SA 4.0 或协议允许的兼容许可分享，不得添加与该许可冲突的额外限制。
 
-建议署名：**反物质维度MOD 知识库贡献者**，原文链接指向对应具体条目（例如 https://wiki.oreki.net/architecture/kotlin-runtime ），注明“CC BY-SA 4.0”，有修改时注明改动。若文章有更具体的作者或来源标注，应一并保留。作者与改动记录可参阅[仓库提交历史](https://github.com/OrekiDawson/AD-Oreki-Knowledge/commits/main/content/)。
+建议署名：**反物质维度MOD 知识库贡献者**，原文链接指向对应具体条目（例如 https://wiki.oreki.net/developer/architecture/kotlin-runtime ），注明“CC BY-SA 4.0”，有修改时注明改动。若文章有更具体的作者或来源标注，应一并保留。作者与改动记录可参阅[仓库提交历史](https://github.com/OrekiDawson/AD-Oreki-Wiki/commits/main/content/)。
 
 ## 不适用的部分
 

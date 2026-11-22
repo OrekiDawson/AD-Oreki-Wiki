@@ -2,17 +2,29 @@
 
 [**访问知识库：wiki.oreki.net**](https://wiki.oreki.net)
 
+反物质维度 MOD（Oreki Edition）双专区知识库。GitHub 是权威事实源，本仓库是 Quartz 5 玩家专区与开发者专区的展示和检索层。
+
 [中文目录与文件命名约定](docs/目录与中文命名约定.md) · [内容编辑指引](docs/AGENT_GUIDE.md) · [构建维护](docs/MAINTENANCE.md)
 
-本仓库为《反物质维度》（Antimatter Dimensions）及 **Oreki Edition** Android/Web MOD 提供中文百科与技术资料，使用 Quartz 5 构建，并通过 GitHub Pages 发布。欢迎从游戏玩法开始读，也可以查找开发原理与实测证据。
+本仓库为《反物质维度》（Antimatter Dimensions）及 **Oreki Edition** Android/Web MOD 提供中文百科与技术资料，使用 Quartz 5 构建并通过 GitHub Pages 发布。
+
+- 站点：https://wiki.oreki.net（自定义域名；仓库地址 `OrekiDawson/AD-Oreki-Wiki`）
+- 玩家专区：https://wiki.oreki.net/player/
+- 开发者专区：https://wiki.oreki.net/developer/
+- **公开的正式知识库规则**：https://wiki.oreki.net/wiki-rules（网站首页、目录与页脚均可进入）
+- **规则页专用名称**：`反物质维度MOD Wiki:知识库规则`；普通条目标题、正文保持自然简体中文，不加前缀，URL 保持不变。
+- 构建：Quartz 5 + Node 24（本地 Node 26 时 esbuild service 会 SIGBUS，请用 Node 24 构建）
+- 内容：content/ 下 Markdown，frontmatter + 证据区
+- 检查：scripts/check-content.mjs（页面/链接/敏感信息/术语）、scripts/verify-build.mjs（产物）
+- 验收：`node scripts/acceptance.cjs`（Chromium 手机视口，搜索/导航/反向链接/图谱/暗色/溢出）；首次使用先运行 `npm i -D playwright`，或设置 `KB_PLAYWRIGHT=<已安装 Playwright 模块路径>`。
 
 ## 阅读入口
 
-- **玩家内容**：原版游戏介绍、[原版 Wiki 中文翻译](https://wiki.oreki.net/original/)、[玩法机制](https://wiki.oreki.net/gameplay/)、MOD 教程和常见问题。
-- **开发者内容**：[项目架构](https://wiki.oreki.net/architecture/)、[逆向与技术映射](https://wiki.oreki.net/reverse-engineering/)、[构建交付](https://wiki.oreki.net/build/)及[历史证据](https://wiki.oreki.net/history/)。
-- **事实与发布**：[当前项目状态](https://wiki.oreki.net/current/)、[知识库规则](https://wiki.oreki.net/wiki-rules)、[版权与许可](https://wiki.oreki.net/copyright)。
+- **玩家内容**：原版游戏介绍、[原版 Wiki 中文翻译](https://wiki.oreki.net/player/original/)、[玩法机制](https://wiki.oreki.net/player/gameplay/)、MOD 教程和常见问题。
+- **开发者内容**：[项目架构](https://wiki.oreki.net/developer/architecture/)、[逆向与技术映射](https://wiki.oreki.net/developer/reverse-engineering/)、[构建交付](https://wiki.oreki.net/developer/build/)及[历史证据](https://wiki.oreki.net/developer/history/)。
+- **事实与发布**：[当前项目状态](https://wiki.oreki.net/developer/current/project-status)、[知识库规则](https://wiki.oreki.net/wiki-rules)、[版权与许可](https://wiki.oreki.net/copyright)。
 
-**信息架构正在渐进调整为 `/player/` 与 `/developer/` 双专区。** 上面列出的是当前已有的阅读路径，不能把规划中的新 URL 当成已经上线。迁移必须保留旧页面的链接兼容，并验证移动端导航与搜索。
+**双专区现已正式提供。** 首页、`/player/`、`/developer/`、旧 URL 兼容与移动端导航均通过构建和本地 Chromium 验收；正式线上状态以合并部署后的 HTTPS 验证为准。
 
 **审查配额：** Wiki 的 Kody 审查独立统计，不占用 Android/Web 每日共享的 100 次额度；已由 Kody 确认跳过的审查不计项目额度。实际审查仍受用户授权、Balanced 模式、平台额度及收费规则约束，不能解释为无限免费审查。
 
@@ -27,15 +39,11 @@
 
 ## 本地构建
 
-使用 Node.js **24**（项目文档记录 Node 26 环境曾触发 esbuild SIGBUS），按仓库现有依赖和 Quartz 插件配置执行：
+使用 Node.js **24** 构建；运行：
 
-```bash
-npm ci
-npx quartz plugin install --from-config
-node scripts/check-content.mjs
-npx quartz build
-node scripts/verify-build.mjs
-```
+~~~bash
+bash scripts/build-site.sh
+~~~
 
 需要 Chromium 手机视口验证时，运行 `node scripts/acceptance.cjs`；首次使用 Playwright 或采用已安装模块的配置见 [维护说明](docs/MAINTENANCE.md)。
 
@@ -54,5 +62,45 @@ node scripts/verify-build.mjs
 - [docs/AGENT_GUIDE.md](docs/AGENT_GUIDE.md)：编辑与事实核查指引。
 - [docs/MAINTENANCE.md](docs/MAINTENANCE.md)：构建、PR、部署与回滚流程。
 - [LICENSE-CONTENT.md](LICENSE-CONTENT.md)：原创内容许可范围；`LICENSE.txt` 的软件许可及上游声明另行适用。
+
+正式域名：**https://wiki.oreki.net**。GitHub Pages 必须启用服务器端 `Enforce HTTPS`，不能用 Quartz 链接或浏览器端 JavaScript 跳转代替。
+
+仓库管理员在 [Settings → Pages](https://github.com/OrekiDawson/AD-Oreki-Wiki/settings/pages) 中确认：
+
+1. Custom domain 为 `wiki.oreki.net`，DNS 的 `wiki` CNAME 指向 `orekidawson.github.io`。
+2. GitHub Pages 的 HTTPS 证书签发完成后，选中 **Enforce HTTPS**。
+3. 完成后重新运行 `.github/workflows/deploy-wiki.yml`，`verify-online` 必须通过。
+
+`scripts/verify-https.sh` 会从 GitHub Pages API 检查 `https_enforced=true`，并使用正常 TLS 证书校验访问 HTTPS 页面，确认 HTTP 请求收到指向相同域名 HTTPS 的 301/302/307/308 跳转。证书尚未签发、设置未开启或出现 HTTP 回退时，验收明确 FAIL，不得以 HTTP 200 代替。
+
+GitHub Actions 的普通 `GITHUB_TOKEN` 不具备修改 Pages 管理设置所需的 Administration 写权限，因此正式 Enforce HTTPS 开关由具有仓库管理权限的账户操作，不向 Actions 添加个人管理员 Token。
+
+## 版权与内容许可
+
+**本站有权授权的原创百科文字采用 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)**，允许署名转载、改写、翻译和商业使用，改编作品按相同或兼容许可共享。转载应说明作者、具体条目地址、许可链接与修改情况。
+
+- [版权与许可（公开页面）](https://wiki.oreki.net/copyright)
+- [原创文字许可范围（仓库文件）](LICENSE-CONTENT.md)
+- 本仓库既有 [LICENSE.txt](LICENSE.txt) 中的 **MIT 软件许可及上游版权声明不变**；第三方游戏素材、代码和图片不由本站再授权。
+
+## 中文百科式写作
+
+本站正文以简体中文、通俗解释、客观核查为主。统一依据 [知识库规则全文](content/wiki-rules.md)（旧路径 [docs/CONTENT_QUALITY.md](docs/CONTENT_QUALITY.md) 为兼容入口），新条目参考 [中文知识条目模板](docs/ARTICLE_TEMPLATE.md)。Quartz 网站的 [知识库编写规范](https://wiki.oreki.net/developer/editorial-guidelines) 介绍这些原则。
+
+**人类读者优先**：技术名称、API、哈希保持原文并附中文解释；每条重大结论可点到原始证据。玩家正文不嵌入 AI Summary；开发者专区可使用已审核、默认折叠、带固定来源的摘要。站内检索依赖 Quartz 原生搜索。
+
+知识库已从中文维基百科的官方方针中选择适合技术文档的原则：中立表述、可供查证、来源质量、禁止无证据推断、文明协作与版权署名。具体改写和原始方针链接统一放在公开的 [知识库规则页](content/wiki-rules.md)，不复制方针原文，也不直接套用百科条目收录门槛。
+
+## 内容质量门禁
+
+正式知识条目的验收标准见 [docs/CONTENT_QUALITY.md](docs/CONTENT_QUALITY.md)。核心标准是：**可点击的固定来源、具体机制和验证步骤、事实等级、适用范围、最新状态**，不能以页面数量或构建 PASS 代替事实正确性。
+
+未经人工审核的 AI 草稿仍存于 GitHub 的 `content/ai-drafts/` 供回查，但不得发布到 Quartz、公开搜索索引或问答检索。当前状态必须以真实上游 PR / 运行报告为准。
+
+## 内容纪律
+
+- 不编造 Commit、行号、ABI 描述符与测试结果。
+- 被推翻结论保留历史解释，标注「旧结论 → 新证据 → 当前判断」。
+- 不把私有构建产物、用户存档、Token、内部路径写入公开仓库。
 
 问题反馈请附具体页面、失效链接、原始证据与建议修正，不包含 Token、私钥、私人路径或用户存档。

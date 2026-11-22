@@ -1,26 +1,9 @@
 ---
-title: "逆向与语义映射"
-description: "官方混淆 DEX 的类、方法、字段映射与可安全使用的 ABI 适配方法"
+title: "旧入口：逆向与语义映射"
+description: "逆向与语义映射旧 URL 的兼容入口"
 tags:
-  - 逆向
-  - 导航
+  - 兼容
+unlisted: true
 ---
 
-
-本分类说明怎样在不猜测的前提下理解和复用官方 3.21.0 混淆 DEX：哪些类与方法已经被核对，语义映射记录在哪里，以及新增业务代码应当怎样与混淆 ABI 隔离。
-
-## 页面
-
-| 页面 | 主题 |
-| --- | --- |
-| [[dex-abi|DEX 与 ABI 反混淆]] | 混淆名、真实描述符、语义映射与适配层纪律 |
-
-## 与其他分类的关系
-
-- 运行时冲突的机制与修复见 [[kotlin-runtime|Kotlin 混合运行时 ABI]]。
-- 具体崩溃与 livelock 的排查流程见 [[coroutine-abi|协程 ABI 崩溃排查]]。
-- 构建期如何使用这些映射见 [[agp|AGP 构建管线]]。
-
-## 相关分类
-
-[架构与运行时](/architecture/) · [构建与交付](/build/) · [参考资料](/references/)
+逆向内容已迁移到 [开发者专区的逆向与语义映射](/developer/reverse-engineering/)。本页只用于保持旧地址可访问。
