@@ -5,6 +5,10 @@ tags:
   - index
 ---
 
+![《反物质维度》游戏图标](https://raw.githubusercontent.com/IvarK/AntimatterDimensionsSourceCode/5409e320cecef96a917cca1dfb68f1f183e499ca/public/icon.png)
+
+> 游戏图标来自原版源码仓的 `public/icon.png`；游戏与图标版权归相关权利人。本 Wiki 仅用于识别游戏，并保留[原始来源](https://github.com/IvarK/AntimatterDimensionsSourceCode/blob/5409e320cecef96a917cca1dfb68f1f183e499ca/public/icon.png)。
+
 这里是《反物质维度》（Antimatter Dimensions）与 **Oreki Edition MOD** 的中文知识库。内容按读者用途分为两个一级专区；**原版规则、MOD 修改、开发证据和历史结论分别说明**，避免把玩游戏与做开发需要的资料混在一起。
 
 ## 玩家专区
