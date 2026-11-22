@@ -39,7 +39,7 @@ aliases:
 
 随着 IP 和反物质不断增加，无限阶段还会出现**无限维度、无限挑战和复制器**等内容。它们不是第一次大坍缩后就能全部用上的功能，而是各有自己的开放条件。
 
-无限维度与反物质维度是两套不同的生产系统。前者参与无限阶段的成长，购买需要 IP；更高等级的无限维度会在后续进度中逐步解锁。[原版机制：无限维度](https://antimatterdimensions.wiki.gg/wiki/Infinity?oldid=3113_Dimensions)。
+无限维度与反物质维度是两套不同的生产系统。前者参与无限阶段的成长，购买需要 IP；更高等级的无限维度会在后续进度中逐步解锁。[原版机制：无限维度](https://antimatterdimensions.wiki.gg/wiki/Infinity_Dimensions?oldid=3344)。
 
 无限挑战则要求玩家在特殊限制下完成目标，奖励会帮助后续推进。看见挑战入口时，先阅读它的条件；如果当前生产能力不足，不必一直在同一关里等待。
 
@@ -64,7 +64,7 @@ aliases:
 
 **时间之理（Time Theorems，TT）**用于购买**时间研究**。时间研究是一棵有前置关系和分支选择的升级树。买研究前，先看需要哪些前置研究；只盯着最远处的高级研究，可能会发现按钮一直无法购买。
 
-**永恒挑战（Eternity Challenges，EC）**比普通挑战和无限挑战更讲究准备。它们往往需要足够的资源、正确的时间研究路径，以及各自额外的进入条件。某些永恒挑战可以重复完成以取得更多收益，并不是完成一次就全部结束。[原版机制：永恒挑战](https://antimatterdimensions.wiki.gg/wiki/Eternity?oldid=3118_Challenges)。
+**永恒挑战（Eternity Challenges，EC）**比普通挑战和无限挑战更讲究准备。它们往往需要足够的资源、正确的时间研究路径，以及各自额外的进入条件。某些永恒挑战可以重复完成以取得更多收益，并不是完成一次就全部结束。[原版机制：永恒挑战](https://antimatterdimensions.wiki.gg/wiki/Eternity_Challenges?oldid=3347)。
 
 如果某个挑战入口无法使用，先检查研究树和它列出的要求，再决定是换一条研究路径，还是继续积累资源。一直等待不一定能弥补缺少的前置条件。
 
@@ -80,9 +80,9 @@ Oreki Edition 会用额外的策略调度减少重复购买和重置操作，后
 
 - [Antimatter Dimensions Wiki：Infinity](https://antimatterdimensions.wiki.gg/wiki/Infinity?oldid=3113)（大坍缩和 IP）。
 - [Antimatter Dimensions Wiki：Break Infinity](https://antimatterdimensions.wiki.gg/wiki/Break_Infinity?oldid=3349)（打破无限的前置条件）。
-- [Antimatter Dimensions Wiki：Infinity Dimensions](https://antimatterdimensions.wiki.gg/wiki/Infinity?oldid=3113_Dimensions)（无限维度）。
+- [Antimatter Dimensions Wiki：Infinity Dimensions](https://antimatterdimensions.wiki.gg/wiki/Infinity_Dimensions?oldid=3344)（无限维度）。
 - [Antimatter Dimensions Wiki：Eternity](https://antimatterdimensions.wiki.gg/wiki/Eternity?oldid=3118)（第一次永恒的条件与奖励）。
-- [Antimatter Dimensions Wiki：Eternity Challenges](https://antimatterdimensions.wiki.gg/wiki/Eternity?oldid=3118_Challenges)（挑战解锁与重复完成）。
+- [Antimatter Dimensions Wiki：Eternity Challenges](https://antimatterdimensions.wiki.gg/wiki/Eternity_Challenges?oldid=3347)（挑战解锁与重复完成）。
 
 ## 相关条目
 
