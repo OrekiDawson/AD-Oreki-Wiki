@@ -8,10 +8,10 @@
 | --- | --- |
 | 合规原版正文页总数（article） | 68 |
 | 已与游戏源码/运行证据核实（VERIFIED AGAINST GAME） | 0 |
-| 已完成逐段语义审校（REVIEWED） | 3 |
-| **已审校覆盖率（REVIEWED + VERIFIED）** | **3 / 68（4.4%）** |
-| 已完成翻译与结构核对（STRUCTURE CHECKED） | 57 |
-| 结构核对覆盖率 | 57 / 68（83.8%） |
+| 已完成逐段语义审校（REVIEWED） | 7 |
+| **已审校覆盖率（REVIEWED + VERIFIED）** | **7 / 68（10.3%）** |
+| 已完成翻译与结构核对（STRUCTURE CHECKED） | 53 |
+| 结构核对覆盖率 | 53 / 68（77.9%） |
 | 已翻译未核对（TRANSLATED） | 0 |
 | 尚未开始（NOT STARTED） | 8 |
 | 许可阻塞（BLOCKED） | 0 |
@@ -20,9 +20,9 @@
 ## 等级口径
 
 - **STRUCTURE CHECKED**：章节/小节/表格/公式/来源字段与原站结构一致；**不算语义审校**，不计入已审校覆盖率。
-- **REVIEWED**：已对照原文逐段审校（术语、数字、公式、解锁条件、语义），必须有页面级审校记录；当前 3 篇。
+- **REVIEWED**：已对照原文逐段审校（术语、数字、公式、解锁条件、语义），必须有页面级审校记录；当前 7 篇。
 - **VERIFIED AGAINST GAME**：关键机制/数值已与源码或真实运行证据交叉核实；当前 0 篇。
-- 因此本台账如实显示：翻译已覆盖 60/68，**审校覆盖率为 3/68（4.4%）**；其余 STRUCTURE CHECKED 页面仍不得宣传为「已校对」。
+- 因此本台账如实显示：翻译已覆盖 60/68，**审校覆盖率为 7/68（10.3%）**；其余 STRUCTURE CHECKED 页面仍不得宣传为「已校对」。
 
 ## 许可与署名状态
 
@@ -38,6 +38,10 @@
 | 维度 | [Dimensions](https://antimatterdimensions.wiki.gg/index.php?title=Dimensions&oldid=3102) | 3102 | `docs/translation/reviews/2026-11-23-基础机制.md` |
 | 维度提升 | [Dimension Boosts](https://antimatterdimensions.wiki.gg/index.php?title=Dimension_Boosts&oldid=3333) | 3333 | `docs/translation/reviews/2026-11-23-基础机制.md` |
 | 无限 | [Infinity](https://antimatterdimensions.wiki.gg/index.php?title=Infinity&oldid=3113) | 3113 | `docs/translation/reviews/2026-11-23-基础机制.md` |
+| 无限升级 | [Infinity Upgrades](https://antimatterdimensions.wiki.gg/index.php?title=Infinity_Upgrades&oldid=3348) | 3348 | `docs/translation/reviews/2026-11-23-无限成长第二批.md` |
+| 维度献祭 | [Dimensional Sacrifice](https://antimatterdimensions.wiki.gg/index.php?title=Dimensional_Sacrifice&oldid=3397) | 3397 | `docs/translation/reviews/2026-11-23-无限成长第二批.md` |
+| 反物质星系 | [Antimatter Galaxies](https://antimatterdimensions.wiki.gg/index.php?title=Antimatter_Galaxies&oldid=3335) | 3335 | `docs/translation/reviews/2026-11-23-无限成长第二批.md` |
+| 计数频率 | [Tickspeed](https://antimatterdimensions.wiki.gg/index.php?title=Tickspeed&oldid=3334) | 3334 | `docs/translation/reviews/2026-11-23-无限成长第二批.md` |
 
 ## 已 STRUCTURE CHECKED 页面（按中文标题）
 
@@ -48,13 +52,11 @@
 | 存档库 | [Save Bank](https://antimatterdimensions.wiki.gg/wiki/Save_Bank) | 3131 | 是 |
 | 打破无限 | [Break Infinity](https://antimatterdimensions.wiki.gg/wiki/Break_Infinity) | 3349 | 是 |
 | 反物质维度（游戏机制） | [Antimatter Dimensions](https://antimatterdimensions.wiki.gg/wiki/Antimatter_Dimensions) | 3325 | 是 |
-| 反物质星系 | [Antimatter Galaxies](https://antimatterdimensions.wiki.gg/wiki/Antimatter_Galaxies) | 3335 | 是 |
 | 符文炼金 | [Glyph Alchemy](https://antimatterdimensions.wiki.gg/wiki/Glyph_Alchemy) | 3388 | 是 |
 | 复兴 | [Perks](https://antimatterdimensions.wiki.gg/wiki/Perks) | 3354 | 是 |
 | 复制器 | [Replicanti](https://antimatterdimensions.wiki.gg/wiki/Replicanti) | 3350 | 是 |
 | 广告加成 | [Ad Bonus](https://antimatterdimensions.wiki.gg/wiki/Ad_Bonus) | 3096 | 否 |
 | 黑洞 | [Black Hole](https://antimatterdimensions.wiki.gg/wiki/Black_Hole) | 3360 | 是 |
-| 计数频率 | [Tickspeed](https://antimatterdimensions.wiki.gg/wiki/Tickspeed) | 3334 | 是 |
 | 计数频率·星系数量明细（被毁灭的现实） | [Tickspeed/Galaxy count breakdown (Doomed)](https://antimatterdimensions.wiki.gg/wiki/Tickspeed%2FGalaxy_count_breakdown_(Doomed)) | 3059 | 是 |
 | 记数法 | [Notations](https://antimatterdimensions.wiki.gg/wiki/Notations) | 3133 | 否 |
 | 快捷键 | [Shortcuts](https://antimatterdimensions.wiki.gg/wiki/Shortcuts) | 3108 | 是 |
@@ -81,10 +83,8 @@
 | 挑战 | [Challenges](https://antimatterdimensions.wiki.gg/wiki/Challenges) | 3106 | 是 |
 | 薇 | [V](https://antimatterdimensions.wiki.gg/wiki/V) | 3373 | 是 |
 | 薇·引语 | [V/Quotes](https://antimatterdimensions.wiki.gg/wiki/V%2FQuotes) | 2784 | 是 |
-| 维度献祭 | [Dimensional Sacrifice](https://antimatterdimensions.wiki.gg/wiki/Dimensional_Sacrifice) | 3397 | 是 |
 | 无名氏 | [The Nameless Ones](https://antimatterdimensions.wiki.gg/wiki/The_Nameless_Ones) | 3372 | 是 |
 | 无名氏·引语 | [The Nameless Ones/Quotes](https://antimatterdimensions.wiki.gg/wiki/The_Nameless_Ones%2FQuotes) | 2790 | 是 |
-| 无限升级 | [Infinity Upgrades](https://antimatterdimensions.wiki.gg/wiki/Infinity_Upgrades) | 3348 | 否 |
 | 无限升级（升级表） | [Infinity Upgrades/Upgrades](https://antimatterdimensions.wiki.gg/wiki/Infinity_Upgrades%2FUpgrades) | 2909 | 否 |
 | 无限挑战 | [Infinity Challenges](https://antimatterdimensions.wiki.gg/wiki/Infinity_Challenges) | 3359 | 是 |
 | 无限维度 | [Infinity Dimensions](https://antimatterdimensions.wiki.gg/wiki/Infinity_Dimensions) | 3344 | 是 |
@@ -105,10 +105,12 @@
 
 - 结构核对记录：`docs/translation/reviews/audit-2026-11-15.md`（历史结构核对；未做逐段语义审校的页面仍未升级）。
 - 逐页语义审校记录：`docs/translation/reviews/2026-11-23-基础机制.md`（维度、维度提升、无限，共 3 篇）。
+- 逐页语义审校记录：`docs/translation/reviews/2026-11-23-无限成长第二批.md`（无限升级、维度献祭、反物质星系、计数频率，共 4 篇）。
 - 60 篇固定来源 API 核对记录：`docs/translation/reviews/2026-11-23-原文来源核对.md`。
 
 ## 维护说明
 
+- 2026-11-23：完成第二批逐段语义审校；按 `source-manifest.json` 更新为 REVIEWED 7 篇、STRUCTURE CHECKED 53 篇，并新增四篇的页面级审校记录。
 - 2026-11-23：按当前 `source-manifest.json` 更新为 REVIEWED 3 篇、STRUCTURE CHECKED 57 篇；新增三篇基础机制的逐段审校记录与 60 篇固定来源 API 核对记录。
 - 2026-11-17：本表按 `docs/translation/source-manifest.json` 重新生成，补齐批次 16–21 的已结构核对页面与第十五批 5 篇引语页。
 - 时间线更正：此前「19:20 / 19:10」为误记；现改为依据提交 `2b8a717` 的清单状态记录，避免写入晚于提交时刻的时间。

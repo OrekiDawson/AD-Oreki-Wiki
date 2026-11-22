@@ -10,13 +10,15 @@ original_revid: 3348
 original_fetched_at: "2026-11-15T23:00:00+08:00"
 original_license: "CC BY-SA 4.0"
 original_license_url: "https://creativecommons.org/licenses/by-sa/4.0/"
-translation_status: "STRUCTURE CHECKED"
-review_status: "STRUCTURE CHECKED"
+translation_status: "REVIEWED"
+review_status: "REVIEWED"
 aliases:
   - "/original/ow-infinity-upgrades"
 ---
 
-**无限升级（Infinity Upgrades）**在玩家第一次[大坍缩](/player/original/ow-infinity)后解锁。游戏共有 16 个无限升级，另有 2 个由成就「No DLC Required」解锁，合计 18 个。所有无限升级都必须按每一列从上到下的顺序购买。
+**无限升级（Infinity Upgrades）**在玩家第一次[大坍缩](/player/original/ow-infinity)后解锁。游戏共有 16 个常规无限升级，另有 2 个由成就 r41「No DLC Required」解锁，合计 18 个。
+
+每列第一行的升级一开始就能购买；从第二行起，升级必须先购买同一列紧邻的上一个项目。购买顺序因此是逐列从上到下。
 
 > 升级名称是游戏内标签，保留英文原名；效果与数值已翻译。
 
@@ -26,9 +28,9 @@ aliases:
 
 ## 特殊升级
 
-由[成就 r41](https://antimatterdimensions.wiki.gg/wiki/Achievements)「No DLC Required」解锁——会额外开放一些可购买的无限升级。
+由[成就 r41](/player/original/ow-achievements)「No DLC Required」解锁——会额外开放一些可购买的无限升级。
 
-`ipMult` 与其他升级不同：无限升级（最后一项）可以重复购买，但每次购买成本都会 ×10。在 $\text{e}3,000,000$ [无限点数](/player/original/ow-infinity)以上，*成本成长*会增加 $\times\text{e}10$；在 $\text{e}6,000,000$ 以上，该升级达到上限。
+`ipMult` 与一次性升级不同，可以重复购买：初始成本为 10 IP，每次购买后成本 ×10。成本超过 $\text{e}3,000,000$ [无限点数](/player/original/ow-infinity)后，后续成本成长会再叠加 $\times\text{e}10$；达到 $\text{e}6,000,000$ 时封顶。
 
 | ID | 成本（IP） | 效果 |
 | --- | --- | --- |

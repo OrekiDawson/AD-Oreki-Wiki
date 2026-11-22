@@ -10,7 +10,7 @@
   "license_note": "站点版权页声明其可合法授权的全部文本与图像内容按 CC BY-SA 4.0 提供；本清单逐页记录修订并检查第三方素材。图片不转载。"
  },
  "translation": {
-  "zone": "content/original/",
+  "zone": "content/player/original/",
   "glossary": "docs/translation/glossary.md",
   "policy": "docs/translation/POLICY.md",
   "source_api_audit": "docs/translation/reviews/2026-11-23-原文来源核对.md",
@@ -27,8 +27,8 @@
  "coverage": {
   "total_pages": 68,
   "translated": 0,
-   "structure_checked": 57,
-   "reviewed": 3,
+  "structure_checked": 53,
+  "reviewed": 7,
   "verified": 0,
   "blocked": 0,
   "not_started": 8
@@ -501,13 +501,13 @@
    "zh_title": "反物质星系",
    "path": "content/player/original/ow-antimatter-galaxies.md",
    "priority": 1,
-   "status": "STRUCTURE CHECKED",
-   "review_status": "STRUCTURE CHECKED",
+   "status": "REVIEWED",
+   "review_status": "REVIEWED",
    "license_status": "CC-BY-SA-4.0-CONFIRMED",
    "third_party": "NONE-DETECTED-TEXT-ONLY",
    "media_omitted": true,
-   "last_source_check": "2026-11-15",
-   "notes": "batch1：正文完整翻译并校对；图片/信息框未转载；2026-11-15 质量门禁：仅有结构核对（章节/表格/公式/来源字段），未做逐段语义审校，按 wiki-rules 等级降为 STRUCTURE CHECKED"
+   "last_source_check": "2026-11-23",
+   "notes": "2026-11-23 第二批逐段语义审校：核对固定英文修订、星系成本、远距/遥距边界、时间研究 42、resetBoost 与相关升级；修正时间研究编号和成本说明；见 docs/translation/reviews/2026-11-23-无限成长第二批.md"
   },
   {
    "title": "Antimatter Galaxy",
@@ -1170,13 +1170,13 @@
    "zh_title": "维度献祭",
    "path": "content/player/original/ow-dimensional-sacrifice.md",
    "priority": 3,
-   "status": "STRUCTURE CHECKED",
-   "review_status": "STRUCTURE CHECKED",
+   "status": "REVIEWED",
+   "review_status": "REVIEWED",
    "license_status": "CC-BY-SA-4.0-CONFIRMED",
    "third_party": "NONE-DETECTED-TEXT-ONLY",
    "media_omitted": true,
-   "last_source_check": "2026-11-15",
-   "notes": "batch5：正文完整翻译并校对；图片未转载；2026-11-15 质量门禁：仅有结构核对（章节/表格/公式/来源字段），未做逐段语义审校，按 wiki-rules 等级降为 STRUCTURE CHECKED"
+   "last_source_check": "2026-11-23",
+   "notes": "2026-11-23 第二批逐段语义审校：核对普通/无限挑战重置差异、挑战 8 公式、献祭系数、按钮条件与来源；补充挑战 12、成就 118 和挑战 8 规则；见 docs/translation/reviews/2026-11-23-无限成长第二批.md"
   },
   {
    "title": "Dimensions",
@@ -1885,13 +1885,13 @@
    "zh_title": "无限升级",
    "path": "content/player/original/ow-infinity-upgrades.md",
    "priority": 3,
-   "status": "STRUCTURE CHECKED",
-   "review_status": "STRUCTURE CHECKED",
+   "status": "REVIEWED",
+   "review_status": "REVIEWED",
    "license_status": "CC-BY-SA-4.0-CONFIRMED",
    "third_party": "NONE-DETECTED-TEXT-ONLY",
    "media_omitted": false,
-   "last_source_check": "2026-11-15",
-   "notes": "batch11：正文与升级表完整翻译并校对；2026-11-15 质量门禁：仅有结构核对（章节/表格/公式/来源字段），未做逐段语义审校，按 wiki-rules 等级降为 STRUCTURE CHECKED"
+   "last_source_check": "2026-11-23",
+   "notes": "2026-11-23 第二批逐段语义审校：核对 16+2 升级数量、购买前提、ipOffline、ipMult 成本阈值与上限；见 docs/translation/reviews/2026-11-23-无限成长第二批.md"
   },
   {
    "title": "Infinity Upgrades/Upgrades",
@@ -2710,13 +2710,13 @@
    "zh_title": "计数频率",
    "path": "content/player/original/ow-tickspeed.md",
    "priority": 2,
-   "status": "STRUCTURE CHECKED",
-   "review_status": "STRUCTURE CHECKED",
+   "status": "REVIEWED",
+   "review_status": "REVIEWED",
    "license_status": "CC-BY-SA-4.0-CONFIRMED",
    "third_party": "NONE-DETECTED-TEXT-ONLY",
    "media_omitted": true,
-   "last_source_check": "2026-11-15",
-   "notes": "batch19：正文/表格/公式/来源字段完整翻译并结构核对；未做逐段语义审校，记 STRUCTURE CHECKED"
+   "last_source_check": "2026-11-23",
+   "notes": "2026-11-23 第二批逐段语义审校：核对基础价格、星系分段公式、有效星系数与强度来源、超光速粒子星系术语、无限后价格成长；见 docs/translation/reviews/2026-11-23-无限成长第二批.md"
   },
   {
    "title": "Tickspeed/Galaxy count breakdown (Doomed)",

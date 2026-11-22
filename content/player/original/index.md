@@ -14,7 +14,7 @@ tags:
 
 首次接触游戏，可以先读[维度](/player/original/ow-dimensions)，理解生产方式；准备第一次大坍缩时看[无限](/player/original/ow-infinity)；再往后依次是[永恒](/player/original/ow-eternity)、[现实](/player/original/ow-reality)与[天神](/player/original/ow-celestials)。已经在某个阶段游玩，直接跳到对应分类即可。
 
-部分条目仍在逐段审校中。遇到数值、公式或解锁条件时，可以点开文末的“原文”链接核对英文修订；结构检查不等于游戏实测。首批完成逐段审校的是[维度](/player/original/ow-dimensions)、[维度提升](/player/original/ow-dimension-boosts)和[无限](/player/original/ow-infinity)。
+部分条目仍在逐段审校中。遇到数值、公式或解锁条件时，可以点开文末的“原文”链接核对英文修订；结构检查不等于游戏实测。第一批完成逐段审校的是[维度](/player/original/ow-dimensions)、[维度提升](/player/original/ow-dimension-boosts)和[无限](/player/original/ow-infinity)；第二批为[无限升级](/player/original/ow-infinity-upgrades)、[维度献祭](/player/original/ow-dimensional-sacrifice)、[反物质星系](/player/original/ow-antimatter-galaxies)与[计数频率](/player/original/ow-tickspeed)。
 
 ## 从维度增长到第一次大坍缩
 
@@ -75,7 +75,7 @@ tags:
 
 ## 来源与版权
 
-本站译文取材于 [Antimatter Dimensions Wiki](https://antimatterdimensions.wiki.gg/wiki/Antimatter_Dimensions) 的原版游戏条目。每篇译文都应保留原文链接、修订记录、贡献者历史和许可说明；原站未转载的图片、图标等素材仍应到原页查看。
+本站译文取材于 [Antimatter Dimensions Wiki](https://antimatterdimensions.wiki.gg/wiki/Antimatter_Dimensions) 的原版游戏条目。每篇译文都应保留原文链接、修订记录、贡献者历史和许可说明；本站未转载的原站图片、图标等素材，仍可到原页查看。
 
 译文按原站相应内容的 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) 许可提供，属于**简体中文翻译与改编**，不代表原站认可 MOD。有关来源、翻译和署名的详细要求见[版权与许可](/copyright)。
 

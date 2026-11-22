@@ -10,8 +10,8 @@ original_revid: 3334
 original_fetched_at: "2026-11-16T01:00:00+08:00"
 original_license: "CC BY-SA 4.0"
 original_license_url: "https://creativecommons.org/licenses/by-sa/4.0/"
-translation_status: "STRUCTURE CHECKED"
-review_status: "STRUCTURE CHECKED"
+translation_status: "REVIEWED"
+review_status: "REVIEWED"
 aliases:
   - "/original/ow-tickspeed"
 ---
@@ -92,7 +92,7 @@ $$BM * 0.965^{(G - 2) * S - 2}$$
 | --- | --- | --- | --- |
 | 反物质星系 | 等于反物质星系的购买次数 | $A$ |  |
 | 复制器星系 | 等于复制器星系数量；时间研究 131 给出的星系也计入 | $R$ | 另有一个值记录「不含时间研究 131」的复制器星系数量，某些公式里记作 $r$ |
-| 速子星系 | 等于速子星系数量；仅解锁时间膨胀后适用 | $D$ |  |
+| 超光速粒子星系 | 等于超光速粒子星系数量；仅解锁时间膨胀后适用 | $D$ |  |
 | 时间研究 132 | 复制器星系 +40%，把复制器星系的一部分加到有效星系数 | $0.4 * R$ |  |
 | 时间研究 133 | 复制器星系 +50%，把复制器星系的一部分加到有效星系数 | $0.5 * R$ |  |
 | 永恒挑战 8 | 按无限之力强化复制器星系 | $r * \max\left(0,~\left(\log_{10}\left(\log_{10}(InfinityPower) + 1\right)\right)^{0.03n} - 1\right)$ | 不会强化时间研究 131 给出的星系 |
@@ -114,7 +114,7 @@ $$BM * 0.965^{(G - 2) * S - 2}$$
 | 加成来源 | 说明 | 公式 | 其它细节 |
 | --- | --- | --- | --- |
 | 三体研究 303 | 从时间研究 225、226 与鹿颈长的无限层多获得 50% 星系 | $bonusRG * 0.5$ | 游戏内实际是先乘 1.5 再向下取整；此处按加法写法展示 |
-| 符文炼金·交替 | 按复制器数量强化速子星系 | $D * Alternation * \frac{\log_{10}(Replicanti)}{1,000,000}$ |  |
+| 符文炼金·交替 | 按复制器数量强化超光速粒子星系 | $D * Alternation * \frac{\log_{10}(Replicanti)}{1,000,000}$ |  |
 
 **太阳神（第 5 位天神）**
 
@@ -143,7 +143,7 @@ $$BM * 0.965^{(G - 2) * S - 2}$$
 | 打破无限升级 | 所有星系 +50% | $\times 1.5$ |
 | 无限挑战 5 | 所有星系 +10% | $\times 1.1$ |
 | 成就 86 | 所有星系 +1% | $\times 1.01$ |
-| 时间研究 212 | 按时间碎片强化所有星系 | $\times min(\log_2(TimeShards)^{0.005},~1.1)$ |
+| 时间研究 212 | 按时间碎片强化所有星系 | $\times \min(\log_2(TimeShards)^{0.005},~1.1)$ |
 | 时间研究 232 | 按反物质星系强化所有星系 | $\times \left(1+\frac{AntimatterGalaxies}{1,000}\right)^{0.2}$ |
 
 **太阳神 / 莱特拉**
@@ -156,9 +156,8 @@ $$BM * 0.965^{(G - 2) * S - 2}$$
 | 打破无限升级 | 所有星系 +50% | $\times 1.5$ |
 | 无限挑战 5 | 所有星系 +10% | $\times 1.1$ |
 | 成就 86 | 所有星系 +1% | $\times 1.01$ |
-| 时间研究 212 | 按时间碎片强化所有星系 | $\times min(\log_2(TimeShards)^{0.005},~1.1)$ |
+| 时间研究 212 | 按时间碎片强化所有星系 | $\times \min(\log_2(TimeShards)^{0.005},~1.1)$ |
 | 时间研究 232 | 按反物质星系强化所有星系 | $\times \left(1+\frac{AntimatterGalaxies}{1,000}\right)^{0.2}$ |
-| 无限升级 | 所有星系按特蕾莎等级变强 | $\times \left(2 + \frac{\sqrt{Level}}{100}\right)$ |
 | 诅咒符文 | 所有星系变弱 | 每个符文 $\times 0.768$ |
 | 现实符文 | 所有星系变强 | 最多 $\times 1.5$ |
 | 成就 178 | 所有星系 +1% | $\times 1.01$ |
@@ -170,13 +169,13 @@ $$BM * 0.965^{(G - 2) * S - 2}$$
 
 ## 价格成长
 
-每次购买计数频率升级，成本乘以 $10$。
+每次购买计数频率升级，成本乘以 $10$。游戏内计数频率的基准购买费用为 $1,000$ 反物质。
 
 ### 无限之后的成长
 
 主条目：[打破无限](/player/original/ow-break-infinity)·无限之后的成长。
 
-当成本超过无限值后，成本成长系数本身开始变大，每次升级再乘以 $10$。这个数字可以被对应的[打破无限](/player/original/ow-break-infinity)升级压低，后期还能被某个[永恒挑战](/player/original/ow-eternity-challenges)继续压低。
+当成本超过无限值（$1.80\text{e}308$）后，价格成长开始额外累积：默认每级再乘以 $10$。对应的[打破无限](/player/original/ow-break-infinity)升级可以把该倍率从 $10$ 降下来，[永恒挑战 11](/player/original/ow-eternity-challenges)还会继续降低价格增速。
 
 ## 琐事
 
@@ -184,7 +183,7 @@ $$BM * 0.965^{(G - 2) * S - 2}$$
 
 ## 来源与许可
 
-- 原文：[Tickspeed](https://antimatterdimensions.wiki.gg/index.php?title=Tickspeed&oldid=3334)（修订 ID 3334；抓取于 2026-11-15）
+- 原文：[Tickspeed](https://antimatterdimensions.wiki.gg/index.php?title=Tickspeed&oldid=3334)（修订 ID 3334；最后编辑者 KrutarMarsons；抓取于 2026-11-15）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Tickspeed&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为简体中文翻译（改编），已修改：翻译正文与全部表格公式、把原文按天神分页的多标签表格展开为小节、统一术语、界面图与信息框未转载；本页按相同许可共享。
 - 原文图片未转载：原页含桌面版与移动版计数频率界面截图（Antimatter-tickspeed-interface--darktheme-desktop/mobile.jpg），此处仅保留文字说明。
