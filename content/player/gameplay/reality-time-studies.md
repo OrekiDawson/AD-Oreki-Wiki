@@ -1,6 +1,6 @@
 ---
 title: "现实与时间研究"
-description: "解释现实重置、时间之理、DS1/DS6 与自动化节奏如何互相影响，以及为什么现实次数会卡住"
+description: "从永恒研究树走向时间膨胀、第一次现实，认识现实机器、符文与重置后的新起点"
 tags:
   - 玩法
   - 现实
@@ -9,76 +9,85 @@ aliases:
   - "/gameplay/reality-time-studies"
 ---
 
+第一次永恒之后，游戏不再只考验反物质和无限点数的增长。你会得到新的资源**时间之理**，并开始购买一棵可以选择路线的**时间研究树**。沿着这棵树继续推进，最终会接触时间膨胀和第三层重大重置：**现实（Reality）**。
 
-**现实（Reality）**是永恒之上的重置层：每次现实会清空时间研究、时间膨胀研究、最大膨胀时间等进度，并可能增加符文（Glyph）、现实机器（RM）与后续天神系统的成长。本条目解释现实与时间研究如何互相牵制，以及 Oreki Edition 为什么会出现「现实次数停在 2」的问题。
+这一阶段的关键不是一味等待资源上涨，而是搞清楚当前研究树允许走哪条路，以及每个新入口还缺什么条件。
 
-## 现实何时可以执行
+## 时间研究该怎样买？
 
-原生判据是 `isRealityAvailable()`：`maxEP.exponent >= 4000` **且** `TimeStudy.reality`（DS6）已经买上。换句话说，DS6 一被买上就代表「现实可打」，而现实重置会`Currency.timeTheorems.reset()`，把整棵时间研究树清空——DS6 也随之消失。[读码，[FACTS §22](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/main/docs/facts/game/eternity.md#f-22)]
+时间之理（Time Theorems，简称 TT）用于购买时间研究。原版允许用反物质、无限点数或永恒点数等资源取得 TT；研究本身则为维度、资源获取和其他机制提供加成。[原版时间研究资料](https://antimatterdimensions.wiki.gg/wiki/Time_Studies?oldid=3343)。（外部页面/API 核对：`NOT RUN`；当前回执未取得 HTTP 200、页面标题与 revid 归属证明，暂不将该修订号视为已验证证据。）
 
-这个「只存在一帧」的状态很重要：如果自动化用低频轮询去等「DS6 在位 + 某条件同时成立」，很可能永远采不到那一帧。正确做法是提前压住现实、让 DS6 买上后留得住，再在同一现实内完成后续目标；不是反复等它出现。
+研究从树的上方逐步向下开放。要买下方的研究，通常得先买通向它的上方节点。有些位置还会出现分叉：
 
-### 原版的完整解锁条件
+- **维度路线**侧重不同类型的维度，在当前阶段通常只能选一条主要分支。
+- **节奏路线**偏向不同的推进方式，可能更适合主动重置、稳定生产或长时间挂机。
+- **后期研究**会逐步连接永恒挑战、时间膨胀等系统，还可能有其他限制。
 
-原版买下最终时间研究（DS6）并不只看 EP：
+如果某项研究点不了，先沿线往上看。问题不一定是 TT 不够，也可能是缺少前置研究、所选路线不兼容，或者相关永恒挑战还未完成。
 
-- 已经买上第 8 时间维度对应的膨胀研究；
-- `player.records.thisReality.maxEP.exponent >= 4000`；
-- **前 13 排成就全部解锁**（或拥有 START Perk 免除成就要求）；
-- 当前不处于 Pelle 的毁灭态。
+研究选择并非一旦点错就无法挽回。你可以在游戏允许的时机重置研究配置（Respec），再按新目标购买。具体操作入口和重置时机随平台界面有所不同，重新分配前先看清当前提示。
 
-也就是说，原版现实解锁同时是「资源条件 + 成就条件」。Oreki Edition 发现自动化与其中一部分成就**在逻辑上互斥**（例如「无限次数 < 10 时永恒」「只买过第一维度」），于是加入一条 MOD 放宽：**当 EC11 与 EC12 都已完成 5/5 时，豁免「全部 preReality 成就」这一项**，其余条件不变。该放宽实现在 Kotlin 业务代码 `OrekiRealityUnlock.kt` 中，只包装这一个布尔项，不修改 `isRealityAvailable`、不改现实重置、不写成就字段。[MOD 源码注释](https://github.com/IvarK/AntimatterDimensionsSourceCode/blob/5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/secret-formula/eternity/time-studies/dilation-time-studies.js) · 对照见 [原版行为与 Oreki Edition 修改](/player/gameplay/original-vs-mod)
+## 永恒挑战为什么会挡住研究路线？
 
-原版现实完成后会获得现实机器（RM）、一枚符文（Glyph）与一个复兴点数（Perk Point），并逐步开放符文、现实升级、Perk、黑洞与 Automator 等系统。这些系统的具体规则不属于本条目范围，但会影响自动化设计：例如符文装备与卸下本身会触发一次完整现实，不能当作「无代价操作」。
+在研究树的部分位置会遇到**永恒挑战**（EC）。购买挑战入口通常需要 TT、相应的前置研究，还要满足该挑战自己的额外条件。
 
-## 现实重置会清掉什么
+完成挑战后会获得长期收益，并可能开放研究树后面的路。每个永恒挑战最多可完成五次，后续次数的要求通常更高。
 
-- 时间之理与时间研究树（`reality.js` 的 `Currency.timeTheorems.reset()`）；
-- 膨胀研究列表与 `active` 状态；`maxDT` 清零；
-- `requirementChecks.reality` 整个对象被替换，其中包含 `maxID1`。
+例如，看到一个高级挑战无法购买时，可以这样检查：
 
-最后一条对 MOD 尤其关键：**`maxID1` 每个现实重置**，所以「莱特拉入口被 maxID1 锁死」不是不可逆的，而是需要按现实分阶段处理。[读码，[FACTS §8.10](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/main/docs/facts/game/endgame.md#f-8-10)]
+1. 先确认通往挑战位置的普通研究已经买齐。
+2. 再看当前 TT 和挑战列出的额外要求是否达标。
+3. 如果研究树分叉走错了，考虑重新选择研究路线。
+4. 能进入但打不过时，先提升当前层的生产能力，再回来尝试。
 
-## 时间研究树与常见故障
+遇到挑战卡关，不必在挑战内部无限等待；有些门槛缺的是特定条件，而不是时间。更完整的说明见[挑战与真实结算](/player/gameplay/challenges)。
 
-### DS1 与膨胀
+## 时间膨胀是什么？
 
-DS1 需要 5000 TT，是时间膨胀的入口；`PlayerProgress.dilationUnlocked()` 实际就是 DS1。没有 DS1 就不会有 `startDilatedEternity`，也不会产生 `maxDT > 0`，天神 V 的「膨胀时间」条件就永远不达标。
+**时间膨胀（Dilation）**是进入现实之前的重要玩法。它会压低常规生产加成的效果，让你在较受限制的情况下重新积累膨胀资源，并通过膨胀升级逐步变强。
 
-### 研究树抖动（respec jitter）
+原版解锁条件较明确：永恒挑战 **EC11 和 EC12 都完成五次**，累计取得至少 **12,900 TT**，走到研究树相应位置后，花费 **5,000 TT** 买下时间膨胀研究。[原版时间膨胀资料](https://antimatterdimensions.wiki.gg/wiki/Dilation?oldid=3323)。（外部页面/API 核对：`NOT RUN`；当前回执未取得 HTTP 200、页面标题与 revid 归属证明，暂不将该修订号视为已验证证据。）
 
-当两套自动化对「当前该打哪一关 EC」定义不同时，会出现「A 认为该保留 71，B 认为 71 妨碍 EC12」的冲突：一边清空 38 个研究，另一边 1 秒内再买回来，形成每 6 秒左右一次的循环。实测中 7 次 respec、间隔 6.17～6.32 秒、EC 完成数一次未变。[读码 + 实测，[FACTS §23](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/main/docs/facts/automation/strategy.md#f-23)]
+解锁之后，还需要真正进入膨胀状态进行游戏，才能取得相应的资源和成长。单纯看到入口，并不等于已经获得了膨胀收益。
 
-这类问题靠「多等一会儿」不会自愈，需要把目标 EC 的定义统一、并对清空行为加会话内节流。
+时间膨胀打开后，后续还会逐步解锁**第五至第八时间维度**。它们也是继续前往现实的重要准备，不宜只盯着现实按钮而跳过中间的研究和资源积累。
 
-## MOD 的「现实次数卡住」问题
+## 第一次现实还缺什么？
 
-2026-11-15 的真实新档长跑中，第 1 次现实（576.7 秒）与第 2 次现实（1218.6 秒）都能发生，但之后 `realities` 长时间停在 2，`canReality=false` 持续，RM 顶到原版硬上限。随后定位到「现实之后原版自动永恒复位」把现实条件反复重置；[PR #92](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/pull/92) 已合并，后续又用 [PR #158](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/pull/158) 修正现实后 IP 死锁，并加入首次现实前的永恒里程碑门槛。
+在原版中，购买最后的**现实时间研究**，需要先走过时间膨胀之后的研究路线，解锁第八时间维度，并达到至少 **1e4000 永恒点数（EP）**。原版通常还要求完成前十三排成就，或者获得能免除这一要求的相关复兴能力。[原版现实机制](https://antimatterdimensions.wiki.gg/wiki/Reality?oldid=3235)。（外部页面/API 核对：`NOT RUN`；当前回执未取得 HTTP 200、页面标题与 revid 归属证明，暂不将该修订号视为已验证证据。）
 
-这些修复解释了历史上“现实次数停在 2”和“现实后 IP 冻结”的机制，但不能推出所有 Android 构建都已通过终局。R121 仍有一次真实跑次在首现实后暴露了阶段判据停滞，见 [2026-11-20 · R121 Android KVM 新档阶段推进与 P1 停滞](/developer/history/2026-11-20-r121-android-kvm)；现行 Android 结论仍以完整新档验收为准。
+Oreki Edition 对其中的成就条件做过专门调整：**EC11 与 EC12 都达到五次完成记录时，可以豁免原版这一项成就要求**。这属于 MOD 的规则差异，不是原版通用机制；其他所需资源、研究和实际现实结算不会因此自动完成。[MOD 差异说明](/player/gameplay/original-vs-mod)。
 
-## 已确认与未确认
+到这里要分清两件事：**现实入口可购买**与**已经进行了一次现实**不同。前者表示准备条件基本齐备，后者则意味着你真正执行了重置，并收到了相应奖励。
 
-- **已确认**：现实可用判据、重置清空范围、`maxID1` 每现实重置、respec 抖动机制与频率。
-- **未确认**：Android R121 修复后的完整终局与通关后持续确认（NOT RUN）；Android 与 Web 自动化是否逐场景等价（NOT RUN，见 [双端行为一致性](/developer/architecture/parity)）。
-- **不适用**：不同平台版本的阈值可能不同，引用具体数字时请同时对版本与来源。
+## 现实之后会发生什么？
 
-## 如何核查
+第一次现实会把你送回较早的成长阶段，但也会带来新的长期能力。原版现实的主要收获包括：
 
-1. 采样 `player.realities`、`maxEP`、`timeTheorems` 与 `TimeStudy.reality` 状态，区分「资源不够」与「条件被反复清空」。
-2. 记录 respec 调用栈与间隔，判断是否存在多套自动化互相清树。
-3. 对照稳定构建的同一时间窗口，避免把构建差异当成机制问题。
+- **现实机器（RM）**：用于购买现实层的升级，以及后续系统。
+- **符文（Glyph）**：可提供不同的强化效果，之后会成为重要的成长选择。
+- **复兴点数（Perk Points）**：用来逐步打开能缩短重复流程的长期便利能力。
+
+现实重置会清除许多永恒及以下的进度，包括当前时间研究配置。因此，下次打开研究树时发现它又需要重新购买，通常属于正常重置，而不是存档丢失。[原版现实机制](https://antimatterdimensions.wiki.gg/wiki/Reality?oldid=3235)。（外部页面/API 核对：`NOT RUN`；当前回执未取得 HTTP 200、页面标题与 revid 归属证明，暂不将该修订号视为已验证证据。）
+
+你会逐渐发现，之前需要很久才能完成的无限和永恒阶段，随着现实升级、符文与复兴能力的积累，可以变得越来越快。**现实并没有废掉之前的玩法，而是让这些玩法成为更高层成长的起点。**
+
+## 进度不再增长时怎么办？
+
+如果研究买不上，先核对上方路径和挑战要求；如果时间膨胀还不能购买，重点看 EC11、EC12 的完成次数和累计 TT；如果现实无法执行，则检查最后的研究、时间维度、EP 和当前版本的成就条件。
+
+对于使用自动化的玩家，还要留意**重置以后策略是否已经切换到适合的新阶段**。策略可以代替重复点击，但不会代替真实的研究前置条件和资源积累。
+
+若屏幕提前出现了显然不属于当前阶段的按钮，不要依赖它强行推进。遇到重复卡住、按钮与实际进度不符等情况，可以记录平台、版本和当时的研究树状态，参照[玩家常见问题](/player/faq/)反馈。
 
 ## 参考资料
 
-- [docs/FACTS.md §22（DS6 只活一帧）](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/main/docs/facts/game/eternity.md#f-22)
-- [docs/FACTS.md §23（EC 分叉抖动）](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/main/docs/facts/automation/strategy.md#f-23)
-- [docs/FACTS.md §8.10（IU15 与 `maxID1`）](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/main/docs/facts/game/endgame.md#f-8-10)
-- [Android PR #92（现实自动永恒复位修复，已合并）](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/pull/92)
-
-- [社区 Wiki：Reality](https://antimatterdimensions.wiki.gg/wiki/Reality)
-- [官方源码：现实时间研究 DS6](https://github.com/IvarK/AntimatterDimensionsSourceCode/blob/5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/secret-formula/eternity/time-studies/dilation-time-studies.js)
+- [Antimatter Dimensions Wiki：Time Studies](https://antimatterdimensions.wiki.gg/wiki/Time_Studies?oldid=3343)（TT、研究树与分叉）。（外部页面/API 核对：`NOT RUN`；当前回执未取得 HTTP 200、页面标题与 revid 归属证明，暂不将该修订号视为已验证证据。）
+- [Antimatter Dimensions Wiki：Eternity Challenges](https://antimatterdimensions.wiki.gg/wiki/Eternity_Challenges?oldid=3347)（挑战研究与五次完成）。（外部页面/API 核对：`NOT RUN`；当前回执未取得 HTTP 200、页面标题与 revid 归属证明，暂不将该修订号视为已验证证据。）
+- [Antimatter Dimensions Wiki：Dilation](https://antimatterdimensions.wiki.gg/wiki/Dilation?oldid=3323)（12,900 TT、5,000 TT、EC11/12 前置与膨胀）。（外部页面/API 核对：`NOT RUN`；当前回执未取得 HTTP 200、页面标题与 revid 归属证明，暂不将该修订号视为已验证证据。）
+- [Antimatter Dimensions Wiki：Reality](https://antimatterdimensions.wiki.gg/wiki/Reality?oldid=3235)（现实解锁、重置与奖励）。（外部页面/API 核对：`NOT RUN`；当前回执未取得 HTTP 200、页面标题与 revid 归属证明，暂不将该修订号视为已验证证据。）
+- [原版与 MOD 的区别](/player/gameplay/original-vs-mod)（MOD 成就条件调整，具体行为需按版本核实）。
 
 ## 相关条目
 
-[原版行为与 Oreki Edition 修改](/player/gameplay/original-vs-mod) · [无限与永恒](/player/gameplay/progression-infinity-eternity) · [天神系统](/player/gameplay/celestials) · [挑战与真实结算](/player/gameplay/challenges) · [智能自动购买器](/player/gameplay/automation) · [2026-11-15 · R114-01 现实自动永恒复位修复](/developer/history/2026-11-15-r114-reality-autoeternity)
+[无限与永恒](/player/gameplay/progression-infinity-eternity) · [挑战与真实结算](/player/gameplay/challenges) · [智能自动购买器](/player/gameplay/automation) · [天神系统](/player/gameplay/celestials) · [存档兼容与自动保存](/player/gameplay/saves)
