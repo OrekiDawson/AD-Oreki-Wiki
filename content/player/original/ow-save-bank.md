@@ -24,7 +24,7 @@ aliases:
 
 ## 来源与许可
 
-- 原文：[Save Bank](https://antimatterdimensions.wiki.gg/wiki/Save_Bank)（修订 ID 3131；抓取于 2026-11-15）
+- 原文：[Save Bank](https://antimatterdimensions.wiki.gg/index.php?title=Save_Bank&oldid=3131)（修订 ID 3131；抓取于 2026-11-15）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Save_Bank&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为简体中文翻译（改编），已修改：翻译正文、界面图与信息框未转载；本页按相同许可共享。
 - 原文图片未转载：原页含 2026 年初与 2024 年 5 月的存档库界面截图（Misc-savebank--darktheme-desktop.png、Misc-savebankold--darktheme-desktop.png），此处仅保留文字说明。

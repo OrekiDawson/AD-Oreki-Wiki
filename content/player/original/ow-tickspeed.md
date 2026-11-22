@@ -184,7 +184,7 @@ $$BM * 0.965^{(G - 2) * S - 2}$$
 
 ## 来源与许可
 
-- 原文：[Tickspeed](https://antimatterdimensions.wiki.gg/wiki/Tickspeed)（修订 ID 3334；抓取于 2026-11-15）
+- 原文：[Tickspeed](https://antimatterdimensions.wiki.gg/index.php?title=Tickspeed&oldid=3334)（修订 ID 3334；抓取于 2026-11-15）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Tickspeed&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为简体中文翻译（改编），已修改：翻译正文与全部表格公式、把原文按天神分页的多标签表格展开为小节、统一术语、界面图与信息框未转载；本页按相同许可共享。
 - 原文图片未转载：原页含桌面版与移动版计数频率界面截图（Antimatter-tickspeed-interface--darktheme-desktop/mobile.jpg），此处仅保留文字说明。

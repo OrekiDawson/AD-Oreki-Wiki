@@ -32,7 +32,7 @@ $at^8 + bt^7 + ct^6 + dt^5 + et^4 + ft^3 + gt^2 + ht$，
 
 ## 来源与许可
 
-- 原文：[Dimensions](https://antimatterdimensions.wiki.gg/wiki/Dimensions)（修订 ID `3102`；最后编辑者 The1AndOnly6030；抓取于 2026-11-15）
+- 原文：[Dimensions](https://antimatterdimensions.wiki.gg/index.php?title=Dimensions&oldid=3102)（修订 ID `3102`；最后编辑者 The1AndOnly6030；抓取于 2026-11-15）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Dimensions&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为**简体中文翻译（改编）**，已修改：翻译正文与表格、统一术语、移除导航模板与信息框、图片未转载；本页按相同许可共享。
 

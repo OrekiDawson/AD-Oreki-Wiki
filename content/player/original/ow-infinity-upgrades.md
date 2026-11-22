@@ -37,7 +37,7 @@ aliases:
 
 ## 来源与许可
 
-- 原文：[Infinity Upgrades](https://antimatterdimensions.wiki.gg/wiki/Infinity_Upgrades)（修订 ID `3348`；最后编辑者 KrutarMarsons；抓取于 2026-11-15）
+- 原文：[Infinity Upgrades](https://antimatterdimensions.wiki.gg/index.php?title=Infinity_Upgrades&oldid=3348)（修订 ID `3348`；最后编辑者 KrutarMarsons；抓取于 2026-11-15）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Infinity_Upgrades&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为**简体中文翻译（改编）**，已修改：翻译正文与表格、统一术语、移除导航与信息框、图片未转载；本页按相同许可共享。
 - 原页通过子模板嵌入 16 项不可重复升级表；本页链接到已翻译的子页面，避免重复内容。

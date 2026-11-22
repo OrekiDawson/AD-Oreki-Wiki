@@ -198,7 +198,7 @@ aliases:
 
 ## 来源与许可
 
-- 原文：[Achievements](https://antimatterdimensions.wiki.gg/wiki/Achievements)（修订 ID 3363；抓取于 2026-11-15）
+- 原文：[Achievements](https://antimatterdimensions.wiki.gg/index.php?title=Achievements&oldid=3363)（修订 ID 3363；抓取于 2026-11-15）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Achievements&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为简体中文翻译（改编），已修改：翻译全部 144 项成就的名称/条件/奖励、把图标列合并为文字说明、昵称保留英文原名、剧透折叠块按原文标注、图片未转载；本页按相同许可共享。
 - 原文图片未转载：原页含成就界面截图与每项成就的原始/手绘图标（共 288 张），此处仅保留文字。

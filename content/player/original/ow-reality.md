@@ -85,7 +85,7 @@ aliases:
 
 ## 来源与许可
 
-- 原文：[Reality](https://antimatterdimensions.wiki.gg/wiki/Reality)（修订 ID 3235；最后编辑者 KrutarMarsons；抓取于 2026-11-15）
+- 原文：[Reality](https://antimatterdimensions.wiki.gg/index.php?title=Reality&oldid=3235)（修订 ID 3235；最后编辑者 KrutarMarsons；抓取于 2026-11-15）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Reality&action=history)
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Reality&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为简体中文翻译（改编），已修改：正文按中文习惯重写、统一术语、公式与数值及表格保留原文、导航模板与信息框及缩略图未转载、图片未转载；本页按相同许可共享。

@@ -64,7 +64,7 @@ aliases:
 
 ## 来源与许可
 
-- 原文：[Mods](https://antimatterdimensions.wiki.gg/wiki/Mods)（修订 ID 3129；抓取于 2026-11-15）
+- 原文：[Mods](https://antimatterdimensions.wiki.gg/index.php?title=Mods&oldid=3129)（修订 ID 3129；抓取于 2026-11-15）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Mods&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为简体中文翻译（改编），已修改：翻译正文与表格、把 MOD 信息框模板合并为列表条目、统一术语、看板图与加载图未转载；本页按相同许可共享。
 - 原文图片未转载：原页含四个 MOD 的加载画面截图（Mod-loadingscreen-faster/puzzled/rewarded/smooth/space.png），此处仅保留文字说明。

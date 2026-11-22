@@ -91,7 +91,7 @@ $$\frac{Level^3}{100,000,000} \times \frac{RarityPercentage}{100} \times 0.05$$
 
 ## 来源与许可
 
-- 原文：[Glyph Alchemy](https://antimatterdimensions.wiki.gg/wiki/Glyph_Alchemy)（修订 ID 3388；抓取于 2026-11-15）
+- 原文：[Glyph Alchemy](https://antimatterdimensions.wiki.gg/index.php?title=Glyph_Alchemy&oldid=3388)（修订 ID 3388；抓取于 2026-11-15）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Glyph_Alchemy&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为简体中文翻译（改编），已修改：翻译正文与 22 行资源表、统一术语、公式保留原式、动态占位符保留、界面图与信息框未转载；本页按相同许可共享。
 - 原文图片未转载：原页含桌面版、满级版与移动版炼金界面截图（Cel5-alchemy-interface--*），此处仅保留文字说明。

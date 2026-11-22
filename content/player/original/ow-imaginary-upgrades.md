@@ -89,7 +89,7 @@ $$Max\left(\log_{10}\left({RM_{uncapped}}\right)-1000, 0\right)^2~*~Max\left(\lo
 
 ## 来源与许可
 
-- 原文：[Imaginary Upgrades](https://antimatterdimensions.wiki.gg/wiki/Imaginary_Upgrades)（修订 ID 3358；抓取于 2026-11-15）
+- 原文：[Imaginary Upgrades](https://antimatterdimensions.wiki.gg/index.php?title=Imaginary_Upgrades&oldid=3358)（修订 ID 3358；抓取于 2026-11-15）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Imaginary_Upgrades&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为简体中文翻译（改编），已修改：翻译正文与全部表格、统一术语、公式保留原式并加译注、界面图与信息框未转载；本页按相同许可共享。
 - 原文图片未转载：原页含桌面/移动界面图（Reality-imaginaryupgrades-interface--darktheme-desktop.png、-mobile.webp、buttonstates--darktheme-desktop.png）与现实按钮图，此处仅保留文字说明。

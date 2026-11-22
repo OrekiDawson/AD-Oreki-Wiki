@@ -49,7 +49,7 @@ aliases:
 
 ## 来源与许可
 
-- 原文：[Celestial Navigation](https://antimatterdimensions.wiki.gg/wiki/Celestial_Navigation)（修订 ID `3361`；最后编辑者 KrutarMarsons；抓取于 2026-11-15）
+- 原文：[Celestial Navigation](https://antimatterdimensions.wiki.gg/index.php?title=Celestial_Navigation&oldid=3361)（修订 ID `3361`；最后编辑者 KrutarMarsons；抓取于 2026-11-15）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Celestial_Navigation&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为**简体中文翻译（改编）**，已修改：翻译正文与表格、统一术语、移除页签/导航模板、图片未转载；本页按相同许可共享。
 - 原页的节点清单与画廊为子页面内容，未随主条目展开；已注明并列入后续批次。
