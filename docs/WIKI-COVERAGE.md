@@ -2,16 +2,16 @@
 
 > 本页是只读汇总，由 docs/translation/source-manifest.json 与 content/player/original/ 生成；等级定义见 content/wiki-rules.md「内容验收等级」。由 wiki-editorial 维护，译文与 manifest 由 wiki-translation 维护。
 
-## 覆盖总览（最后核对 2026-11-17；依据提交 `2b8a717` 的清单与页面状态）
+## 覆盖总览（最后核对 2026-11-23；依据当前 `source-manifest.json` 与页面状态）
 
 | 指标 | 数值 |
 | --- | --- |
 | 合规原版正文页总数（article） | 68 |
 | 已与游戏源码/运行证据核实（VERIFIED AGAINST GAME） | 0 |
-| 已完成逐段语义审校（REVIEWED） | 0 |
-| **已审校覆盖率（REVIEWED + VERIFIED）** | **0 / 68（0.0%）** |
-| 已完成翻译与结构核对（STRUCTURE CHECKED） | 60 |
-| 结构核对覆盖率 | 60 / 68（88.2%） |
+| 已完成逐段语义审校（REVIEWED） | 3 |
+| **已审校覆盖率（REVIEWED + VERIFIED）** | **3 / 68（4.4%）** |
+| 已完成翻译与结构核对（STRUCTURE CHECKED） | 57 |
+| 结构核对覆盖率 | 57 / 68（83.8%） |
 | 已翻译未核对（TRANSLATED） | 0 |
 | 尚未开始（NOT STARTED） | 8 |
 | 许可阻塞（BLOCKED） | 0 |
@@ -20,9 +20,9 @@
 ## 等级口径
 
 - **STRUCTURE CHECKED**：章节/小节/表格/公式/来源字段与原站结构一致；**不算语义审校**，不计入已审校覆盖率。
-- **REVIEWED**：已对照原文逐段审校（术语、数字、公式、解锁条件、语义），必须有页面级审校记录；当前 0 篇。
+- **REVIEWED**：已对照原文逐段审校（术语、数字、公式、解锁条件、语义），必须有页面级审校记录；当前 3 篇。
 - **VERIFIED AGAINST GAME**：关键机制/数值已与源码或真实运行证据交叉核实；当前 0 篇。
-- 因此本台账如实显示：翻译已覆盖 60/68，但**审校覆盖率为 0%**；不得把 STRUCTURE CHECKED 宣传为「已校对」。
+- 因此本台账如实显示：翻译已覆盖 60/68，**审校覆盖率为 3/68（4.4%）**；其余 STRUCTURE CHECKED 页面仍不得宣传为「已校对」。
 
 ## 许可与署名状态
 
@@ -30,6 +30,14 @@
 - 逐页记录：原文标题、URL、页面 ID、修订 ID、最后编辑者、页面历史入口、抓取时间、翻译/结构状态与目标路径（见 manifest）。
 - 每篇译文页底均有「来源与许可」块：原文链接、修订 ID、贡献者历史、CC BY-SA 4.0、已修改（翻译）与相同方式共享说明。
 - 图片、图标、信息框与导航模板一律未转载；媒体缺失逐页标注；许可状态均为 CC-BY-SA-4.0-CONFIRMED，BLOCKED 为 0。
+
+## 已 REVIEWED 页面（按中文标题）
+
+| 中文条目 | 原文固定修订 | 修订 ID | 审校记录 |
+| --- | --- | --- | --- |
+| 维度 | [Dimensions](https://antimatterdimensions.wiki.gg/index.php?title=Dimensions&oldid=3102) | 3102 | `docs/translation/reviews/2026-11-23-基础机制.md` |
+| 维度提升 | [Dimension Boosts](https://antimatterdimensions.wiki.gg/index.php?title=Dimension_Boosts&oldid=3333) | 3333 | `docs/translation/reviews/2026-11-23-基础机制.md` |
+| 无限 | [Infinity](https://antimatterdimensions.wiki.gg/index.php?title=Infinity&oldid=3113) | 3113 | `docs/translation/reviews/2026-11-23-基础机制.md` |
 
 ## 已 STRUCTURE CHECKED 页面（按中文标题）
 
@@ -73,12 +81,9 @@
 | 挑战 | [Challenges](https://antimatterdimensions.wiki.gg/wiki/Challenges) | 3106 | 是 |
 | 薇 | [V](https://antimatterdimensions.wiki.gg/wiki/V) | 3373 | 是 |
 | 薇·引语 | [V/Quotes](https://antimatterdimensions.wiki.gg/wiki/V%2FQuotes) | 2784 | 是 |
-| 维度 | [Dimensions](https://antimatterdimensions.wiki.gg/wiki/Dimensions) | 3102 | 是 |
-| 维度提升 | [Dimension Boosts](https://antimatterdimensions.wiki.gg/wiki/Dimension_Boosts) | 3333 | 是 |
 | 维度献祭 | [Dimensional Sacrifice](https://antimatterdimensions.wiki.gg/wiki/Dimensional_Sacrifice) | 3397 | 是 |
 | 无名氏 | [The Nameless Ones](https://antimatterdimensions.wiki.gg/wiki/The_Nameless_Ones) | 3372 | 是 |
 | 无名氏·引语 | [The Nameless Ones/Quotes](https://antimatterdimensions.wiki.gg/wiki/The_Nameless_Ones%2FQuotes) | 2790 | 是 |
-| 无限 | [Infinity](https://antimatterdimensions.wiki.gg/wiki/Infinity) | 3113 | 是 |
 | 无限升级 | [Infinity Upgrades](https://antimatterdimensions.wiki.gg/wiki/Infinity_Upgrades) | 3348 | 否 |
 | 无限升级（升级表） | [Infinity Upgrades/Upgrades](https://antimatterdimensions.wiki.gg/wiki/Infinity_Upgrades%2FUpgrades) | 2909 | 否 |
 | 无限挑战 | [Infinity Challenges](https://antimatterdimensions.wiki.gg/wiki/Infinity_Challenges) | 3359 | 是 |
@@ -98,12 +103,14 @@
 
 ## 审校记录
 
-- 结构核对记录：docs/translation/reviews/audit-2026-11-15.md（已更正为 STRUCTURE CHECKED，未做逐句语义审校）。
-- 逐页语义审校记录：**尚不存在**（REVIEWED 需逐页记录后方可标注）。
+- 结构核对记录：`docs/translation/reviews/audit-2026-11-15.md`（历史结构核对；未做逐段语义审校的页面仍未升级）。
+- 逐页语义审校记录：`docs/translation/reviews/2026-11-23-基础机制.md`（维度、维度提升、无限，共 3 篇）。
+- 60 篇固定来源 API 核对记录：`docs/translation/reviews/2026-11-23-原文来源核对.md`。
 
 ## 维护说明
 
-- 2026-11-17：本表按 `docs/translation/source-manifest.json` 重新生成，补齐批次 16–21 的已结构核对页面与第十五批 5 篇引语页；不改变任何页面的验收等级。
+- 2026-11-23：按当前 `source-manifest.json` 更新为 REVIEWED 3 篇、STRUCTURE CHECKED 57 篇；新增三篇基础机制的逐段审校记录与 60 篇固定来源 API 核对记录。
+- 2026-11-17：本表按 `docs/translation/source-manifest.json` 重新生成，补齐批次 16–21 的已结构核对页面与第十五批 5 篇引语页。
 - 时间线更正：此前「19:20 / 19:10」为误记；现改为依据提交 `2b8a717` 的清单状态记录，避免写入晚于提交时刻的时间。
 - 覆盖率口径与等级见 content/wiki-rules.md；只有 REVIEWED / VERIFIED AGAINST GAME 计入已审校覆盖率。
 - 原文更新后由 scripts/translation/sync-original.mjs --check 比对修订，标记「待复核」；不得无条件覆盖人工校对结果。

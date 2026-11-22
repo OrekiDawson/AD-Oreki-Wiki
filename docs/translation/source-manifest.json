@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generated_at": "2026-11-17T10:54:18.017Z",
+ "generated_at": "2026-11-22T18:23:17.000Z",
  "source": {
   "site": "https://antimatterdimensions.wiki.gg",
   "api": "https://antimatterdimensions.wiki.gg/api.php",
@@ -13,6 +13,7 @@
   "zone": "content/original/",
   "glossary": "docs/translation/glossary.md",
   "policy": "docs/translation/POLICY.md",
+  "source_api_audit": "docs/translation/reviews/2026-11-23-原文来源核对.md",
   "attribution_template": "页面底部：原文标题 / 原页 URL / 修订 ID / 页面历史（贡献者）/ CC BY-SA 4.0 / 已修改（翻译）",
   "coverage_formula": "REVIEWED 的合规正文页 / 合规正文页总数"
  },
