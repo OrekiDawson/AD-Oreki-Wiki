@@ -15,7 +15,7 @@ aliases:
 
 ## 时间研究该怎样买？
 
-时间之理（Time Theorems，简称 TT）用于购买时间研究。原版允许用反物质、无限点数或永恒点数等资源取得 TT；研究本身则为维度、资源获取和其他机制提供加成。[原版时间研究资料](https://antimatterdimensions.wiki.gg/wiki/Time_Studies)。
+时间之理（Time Theorems，简称 TT）用于购买时间研究。原版允许用反物质、无限点数或永恒点数等资源取得 TT；研究本身则为维度、资源获取和其他机制提供加成。[原版时间研究资料](https://antimatterdimensions.wiki.gg/wiki/Time_Studies?oldid=3343)。
 
 研究从树的上方逐步向下开放。要买下方的研究，通常得先买通向它的上方节点。有些位置还会出现分叉：
 
@@ -46,7 +46,7 @@ aliases:
 
 **时间膨胀（Dilation）**是进入现实之前的重要玩法。它会压低常规生产加成的效果，让你在较受限制的情况下重新积累膨胀资源，并通过膨胀升级逐步变强。
 
-原版解锁条件较明确：永恒挑战 **EC11 和 EC12 都完成五次**，累计取得至少 **12,900 TT**，走到研究树相应位置后，花费 **5,000 TT** 买下时间膨胀研究。[原版时间膨胀资料](https://antimatterdimensions.wiki.gg/wiki/Dilation)。
+原版解锁条件较明确：永恒挑战 **EC11 和 EC12 都完成五次**，累计取得至少 **12,900 TT**，走到研究树相应位置后，花费 **5,000 TT** 买下时间膨胀研究。[原版时间膨胀资料](https://antimatterdimensions.wiki.gg/wiki/Dilation?oldid=3323)。
 
 解锁之后，还需要真正进入膨胀状态进行游戏，才能取得相应的资源和成长。单纯看到入口，并不等于已经获得了膨胀收益。
 
@@ -54,7 +54,7 @@ aliases:
 
 ## 第一次现实还缺什么？
 
-在原版中，购买最后的**现实时间研究**，需要先走过时间膨胀之后的研究路线，解锁第八时间维度，并达到至少 **1e4000 永恒点数（EP）**。原版通常还要求完成前十三排成就，或者获得能免除这一要求的相关复兴能力。[原版现实机制](https://antimatterdimensions.wiki.gg/wiki/Reality)。
+在原版中，购买最后的**现实时间研究**，需要先走过时间膨胀之后的研究路线，解锁第八时间维度，并达到至少 **1e4000 永恒点数（EP）**。原版通常还要求完成前十三排成就，或者获得能免除这一要求的相关复兴能力。[原版现实机制](https://antimatterdimensions.wiki.gg/wiki/Reality?oldid=3235)。
 
 Oreki Edition 对其中的成就条件做过专门调整：**EC11 与 EC12 都达到五次完成记录时，可以豁免原版这一项成就要求**。这属于 MOD 的规则差异，不是原版通用机制；其他所需资源、研究和实际现实结算不会因此自动完成。[MOD 差异说明](/player/gameplay/original-vs-mod)。
 
@@ -68,7 +68,7 @@ Oreki Edition 对其中的成就条件做过专门调整：**EC11 与 EC12 都�
 - **符文（Glyph）**：可提供不同的强化效果，之后会成为重要的成长选择。
 - **复兴点数（Perk Points）**：用来逐步打开能缩短重复流程的长期便利能力。
 
-现实重置会清除许多永恒及以下的进度，包括当前时间研究配置。因此，下次打开研究树时发现它又需要重新购买，通常属于正常重置，而不是存档丢失。[原版现实机制](https://antimatterdimensions.wiki.gg/wiki/Reality)。
+现实重置会清除许多永恒及以下的进度，包括当前时间研究配置。因此，下次打开研究树时发现它又需要重新购买，通常属于正常重置，而不是存档丢失。[原版现实机制](https://antimatterdimensions.wiki.gg/wiki/Reality?oldid=3235)。
 
 你会逐渐发现，之前需要很久才能完成的无限和永恒阶段，随着现实升级、符文与复兴能力的积累，可以变得越来越快。**现实并没有废掉之前的玩法，而是让这些玩法成为更高层成长的起点。**
 
@@ -82,10 +82,10 @@ Oreki Edition 对其中的成就条件做过专门调整：**EC11 与 EC12 都�
 
 ## 参考资料
 
-- [Antimatter Dimensions Wiki：Time Studies](https://antimatterdimensions.wiki.gg/wiki/Time_Studies)（TT、研究树与分叉）。
-- [Antimatter Dimensions Wiki：Eternity Challenges](https://antimatterdimensions.wiki.gg/wiki/Eternity_Challenges)（挑战研究与五次完成）。
-- [Antimatter Dimensions Wiki：Dilation](https://antimatterdimensions.wiki.gg/wiki/Dilation)（12,900 TT、5,000 TT、EC11/12 前置与膨胀）。
-- [Antimatter Dimensions Wiki：Reality](https://antimatterdimensions.wiki.gg/wiki/Reality)（现实解锁、重置与奖励）。
+- [Antimatter Dimensions Wiki：Time Studies](https://antimatterdimensions.wiki.gg/wiki/Time_Studies?oldid=3343)（TT、研究树与分叉）。
+- [Antimatter Dimensions Wiki：Eternity Challenges](https://antimatterdimensions.wiki.gg/wiki/Eternity_Challenges?oldid=3347)（挑战研究与五次完成）。
+- [Antimatter Dimensions Wiki：Dilation](https://antimatterdimensions.wiki.gg/wiki/Dilation?oldid=3323)（12,900 TT、5,000 TT、EC11/12 前置与膨胀）。
+- [Antimatter Dimensions Wiki：Reality](https://antimatterdimensions.wiki.gg/wiki/Reality?oldid=3235)（现实解锁、重置与奖励）。
 - [原版与 MOD 的区别](/player/gameplay/original-vs-mod)（MOD 成就条件调整，具体行为需按版本核实）。
 
 ## 相关条目
