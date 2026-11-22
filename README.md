@@ -53,7 +53,7 @@ bash scripts/build-site.sh
 
 - `main` 分支触发 `.github/workflows/deploy-wiki.yml` 发布 GitHub Pages；PR 使用 `pr-check.yml` 验证，不直接部署。
 - 正式站点必须使用 `https://wiki.oreki.net` 并通过服务器端 Enforce HTTPS 和线上核验；[Pages 设置](https://github.com/OrekiDawson/AD-Oreki-Wiki/settings/pages)。
-- **内容质量优先**：暂停“每 48 小时交付一版”的内容频率考核。新稿/大幅修订必须经过原始资料核查、自然中文写作、作者自检与 Kody 审查；宁可精修一篇旧条目，也不按数量发布 AI 生成稿。优先完成玩家标杆《开始游玩》《无限与永恒》《智能自动购买器》，缺少独立审稿人不得单独标 `EDITORIAL_BLOCKED`；网站维护、事实纠错与安全修复不因此停止。
+- **内容质量优先**：暂停“每 48 小时交付一版”的内容频率考核。新稿/大幅修订必须经过原始资料核查、自然中文写作与作者自检；实际文件改动的 Wiki PR 在 Kody 可用且已授权时必须取得 Balanced 真实 PASS，宁可精修一篇旧条目，也不按数量发布 AI 生成稿。优先完成玩家标杆《开始游玩》《无限与永恒》《智能自动购买器》，缺少独立审稿人不得单独标 `EDITORIAL_BLOCKED`；Kody 为 `skipped`、`KODY NOT RUN`、运行中、失败或 Provider 不可用时不得记为 PASS，PR 不得合并；网站维护、事实纠错与安全修复不因此停止。
 - 旧定时 AI 草稿生成保持停用。付费 Kody 审查和其他自动化以最新用户授权、实际云端配置和 GitHub 工作流为准，不能从 README 推断当前已启用。
 
 ## 仓库与贡献
