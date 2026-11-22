@@ -8,10 +8,10 @@
 | --- | --- |
 | 合规原版正文页总数（article） | 68 |
 | 已与游戏源码/运行证据核实（VERIFIED AGAINST GAME） | 0 |
-| 已完成逐段语义审校（REVIEWED） | 11 |
-| **已审校覆盖率（REVIEWED + VERIFIED）** | **11 / 68（16.2%）** |
-| 已完成翻译与结构核对（STRUCTURE CHECKED） | 49 |
-| 结构核对覆盖率 | 49 / 68（72.1%） |
+| 已完成逐段语义审校（REVIEWED） | 15 |
+| **已审校覆盖率（REVIEWED + VERIFIED）** | **15 / 68（22.1%）** |
+| 已完成翻译与结构核对（STRUCTURE CHECKED） | 45 |
+| 结构核对覆盖率 | 45 / 68（66.2%） |
 | 已翻译未核对（TRANSLATED） | 0 |
 | 尚未开始（NOT STARTED） | 8 |
 | 许可阻塞（BLOCKED） | 0 |
@@ -20,9 +20,9 @@
 ## 等级口径
 
 - **STRUCTURE CHECKED**：章节/小节/表格/公式/来源字段与原站结构一致；**不算语义审校**，不计入已审校覆盖率。
-- **REVIEWED**：已对照原文逐段审校（术语、数字、公式、解锁条件、语义），必须有页面级审校记录；当前 11 篇。
+- **REVIEWED**：已对照原文逐段审校（术语、数字、公式、解锁条件、语义），必须有页面级审校记录；当前 15 篇。
 - **VERIFIED AGAINST GAME**：关键机制/数值已与源码或真实运行证据交叉核实；当前 0 篇。
-- 因此本台账如实显示：翻译已覆盖 60/68，**审校覆盖率为 11/68（16.2%）**；其余 STRUCTURE CHECKED 页面仍不得宣传为「已校对」。
+- 因此本台账如实显示：翻译已覆盖 60/68，**审校覆盖率为 15/68（22.1%）**；其余 STRUCTURE CHECKED 页面仍不得宣传为「已校对」。
 
 ## 许可与署名状态
 
@@ -46,6 +46,10 @@
 | 无限维度 | [Infinity Dimensions](https://antimatterdimensions.wiki.gg/index.php?title=Infinity_Dimensions&oldid=3344) | 3344 | `docs/translation/reviews/2026-11-23-无限阶段第三批.md` |
 | 普通挑战 | [Normal Challenges](https://antimatterdimensions.wiki.gg/index.php?title=Normal_Challenges&oldid=3341) | 3341 | `docs/translation/reviews/2026-11-23-无限阶段第三批.md` |
 | 无限挑战 | [Infinity Challenges](https://antimatterdimensions.wiki.gg/index.php?title=Infinity_Challenges&oldid=3359)（本次直连受 403 限制，按审校记录交叉核对） | 3359 | `docs/translation/reviews/2026-11-23-无限阶段第三批.md` |
+| 永恒 | [Eternity](https://antimatterdimensions.wiki.gg/index.php?title=Eternity&oldid=3118) | 3118 | `docs/translation/reviews/2026-11-23-永恒阶段第四批.md` |
+| 时间维度 | [Time Dimensions](https://antimatterdimensions.wiki.gg/index.php?title=Time_Dimensions&oldid=3345)（本次直连受 403 限制，按审校记录交叉核对） | 3345 | `docs/translation/reviews/2026-11-23-永恒阶段第四批.md` |
+| 时间研究 | [Time Studies](https://antimatterdimensions.wiki.gg/index.php?title=Time_Studies&oldid=3343)（本次直连受 403 限制，按审校记录交叉核对） | 3343 | `docs/translation/reviews/2026-11-23-永恒阶段第四批.md` |
+| 永恒挑战 | [Eternity Challenges](https://antimatterdimensions.wiki.gg/index.php?title=Eternity_Challenges&oldid=3347)（本次直连受 403 限制，按审校记录交叉核对） | 3347 | `docs/translation/reviews/2026-11-23-永恒阶段第四批.md` |
 
 ## 已 STRUCTURE CHECKED 页面（按中文标题）
 
@@ -73,8 +77,6 @@
 | 膨胀升级 | [Dilation/Upgrades](https://antimatterdimensions.wiki.gg/wiki/Dilation%2FUpgrades) | 3158 | 否 |
 | 膨胀升级（被毁灭的现实） | [Dilation/Upgrades (Doomed)](https://antimatterdimensions.wiki.gg/wiki/Dilation%2FUpgrades_(Doomed)) | 3159 | 是 |
 | 时间膨胀 | [Dilation](https://antimatterdimensions.wiki.gg/wiki/Dilation) | 3323 | 是 |
-| 时间维度 | [Time Dimensions](https://antimatterdimensions.wiki.gg/wiki/Time_Dimensions) | 3345 | 是 |
-| 时间研究 | [Time Studies](https://antimatterdimensions.wiki.gg/wiki/Time_Studies) | 3343 | 否 |
 | 术语（佩勒用词） | [Terminology](https://antimatterdimensions.wiki.gg/wiki/Terminology) | 3098 | 否 |
 | 太阳神 | [Ra](https://antimatterdimensions.wiki.gg/wiki/Ra) | 3387 | 是 |
 | 太阳神·引语 | [Ra/Quotes](https://antimatterdimensions.wiki.gg/wiki/Ra%2FQuotes) | 2782 | 是 |
@@ -91,10 +93,8 @@
 | 现实 | [Reality](https://antimatterdimensions.wiki.gg/wiki/Reality) | 3235 | 是 |
 | 现实升级 | [Reality Upgrades](https://antimatterdimensions.wiki.gg/wiki/Reality_Upgrades) | 3357 | 是 |
 | 映像升级 | [Imaginary Upgrades](https://antimatterdimensions.wiki.gg/wiki/Imaginary_Upgrades) | 3358 | 是 |
-| 永恒 | [Eternity](https://antimatterdimensions.wiki.gg/wiki/Eternity) | 3118 | 是 |
 | 永恒里程碑 | [Eternity Milestones](https://antimatterdimensions.wiki.gg/wiki/Eternity_Milestones) | 3321 | 是 |
 | 永恒升级 | [Eternity Upgrades](https://antimatterdimensions.wiki.gg/wiki/Eternity_Upgrades) | 3346 | 是 |
-| 永恒挑战 | [Eternity Challenges](https://antimatterdimensions.wiki.gg/wiki/Eternity_Challenges) | 3347 | 是 |
 | 永恒挑战·挑战明细 | [Eternity Challenges/Challenges](https://antimatterdimensions.wiki.gg/wiki/Eternity_Challenges%2FChallenges) | 3157 | 是 |
 | 永恒挑战·挑战明细（被毁灭的现实） | [Eternity Challenges/Challenges (Pelle)](https://antimatterdimensions.wiki.gg/wiki/Eternity_Challenges%2FChallenges_(Pelle)) | 3156 | 是 |
 | 重置成长（威望） | [Prestige](https://antimatterdimensions.wiki.gg/wiki/Prestige) | 3398 | 是 |
@@ -107,10 +107,12 @@
 - 逐页语义审校记录：`docs/translation/reviews/2026-11-23-基础机制.md`（维度、维度提升、无限，共 3 篇）。
 - 逐页语义审校记录：`docs/translation/reviews/2026-11-23-无限成长第二批.md`（无限升级、维度献祭、反物质星系、计数频率，共 4 篇）。
 - 逐页语义审校记录：`docs/translation/reviews/2026-11-23-无限阶段第三批.md`（打破无限、无限维度、普通挑战、无限挑战，共 4 篇）。
+- 逐页语义审校记录：`docs/translation/reviews/2026-11-23-永恒阶段第四批.md`（永恒、时间维度、时间研究、永恒挑战，共 4 篇）。
 - 60 篇固定来源 API 核对记录：`docs/translation/reviews/2026-11-23-原文来源核对.md`。
 
 ## 维护说明
 
+- 2026-11-23：完成第四批逐段语义审校；按 `source-manifest.json` 更新为 REVIEWED 15 篇、STRUCTURE CHECKED 45 篇，并新增四篇的页面级审校记录。
 - 2026-11-23：完成第三批逐段语义审校；按 `source-manifest.json` 更新为 REVIEWED 11 篇、STRUCTURE CHECKED 49 篇，并新增四篇的页面级审校记录。
 - 2026-11-23：完成第二批逐段语义审校；按 `source-manifest.json` 更新为 REVIEWED 7 篇、STRUCTURE CHECKED 53 篇，并新增四篇的页面级审校记录。
 - 2026-11-23：按当前 `source-manifest.json` 更新为 REVIEWED 3 篇、STRUCTURE CHECKED 57 篇；新增三篇基础机制的逐段审校记录与 60 篇固定来源 API 核对记录。

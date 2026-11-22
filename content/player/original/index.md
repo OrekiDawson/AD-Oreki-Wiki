@@ -14,7 +14,7 @@ tags:
 
 首次接触游戏，可以先读[维度](/player/original/ow-dimensions)，理解生产方式；准备第一次大坍缩时看[无限](/player/original/ow-infinity)；再往后依次是[永恒](/player/original/ow-eternity)、[现实](/player/original/ow-reality)与[天神](/player/original/ow-celestials)。已经在某个阶段游玩，直接跳到对应分类即可。
 
-部分条目仍在逐段审校中。遇到数值、公式或解锁条件时，可以点开文末的“原文”链接核对英文修订；结构检查不等于游戏实测。第一批完成逐段审校的是[维度](/player/original/ow-dimensions)、[维度提升](/player/original/ow-dimension-boosts)和[无限](/player/original/ow-infinity)；第二批为[无限升级](/player/original/ow-infinity-upgrades)、[维度献祭](/player/original/ow-dimensional-sacrifice)、[反物质星系](/player/original/ow-antimatter-galaxies)与[计数频率](/player/original/ow-tickspeed)；第三批为[打破无限](/player/original/ow-break-infinity)、[无限维度](/player/original/ow-infinity-dimensions)、[普通挑战](/player/original/ow-normal-challenges)与[无限挑战](/player/original/ow-infinity-challenges)。
+部分条目仍在逐段审校中。遇到数值、公式或解锁条件时，可以点开文末的“原文”链接核对英文修订；结构检查不等于游戏实测。第一批完成逐段审校的是[维度](/player/original/ow-dimensions)、[维度提升](/player/original/ow-dimension-boosts)和[无限](/player/original/ow-infinity)；第二批为[无限升级](/player/original/ow-infinity-upgrades)、[维度献祭](/player/original/ow-dimensional-sacrifice)、[反物质星系](/player/original/ow-antimatter-galaxies)与[计数频率](/player/original/ow-tickspeed)；第三批为[打破无限](/player/original/ow-break-infinity)、[无限维度](/player/original/ow-infinity-dimensions)、[普通挑战](/player/original/ow-normal-challenges)与[无限挑战](/player/original/ow-infinity-challenges)；第四批为[永恒](/player/original/ow-eternity)、[时间维度](/player/original/ow-time-dimensions)、[时间研究](/player/original/ow-time-studies)与[永恒挑战](/player/original/ow-eternity-challenges)。
 
 ## 从维度增长到第一次大坍缩
 

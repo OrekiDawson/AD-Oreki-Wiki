@@ -27,8 +27,8 @@
  "coverage": {
   "total_pages": 68,
   "translated": 0,
-  "structure_checked": 49,
-  "reviewed": 11,
+  "structure_checked": 45,
+  "reviewed": 15,
   "verified": 0,
   "blocked": 0,
   "not_started": 8
@@ -1294,13 +1294,13 @@
    "zh_title": "永恒",
    "path": "content/player/original/ow-eternity.md",
    "priority": 2,
-   "status": "STRUCTURE CHECKED",
-   "review_status": "STRUCTURE CHECKED",
+   "status": "REVIEWED",
+   "review_status": "REVIEWED",
    "license_status": "CC-BY-SA-4.0-CONFIRMED",
    "third_party": "NONE-DETECTED-TEXT-ONLY",
    "media_omitted": true,
-   "last_source_check": "2026-11-15",
-   "notes": "batch2：正文完整翻译并校对；图片/信息框未转载；2026-11-15 质量门禁：仅有结构核对（章节/表格/公式/来源字段），未做逐段语义审校，按 wiki-rules 等级降为 STRUCTURE CHECKED"
+   "last_source_check": "2026-11-23",
+   "notes": "2026-11-23 第四批逐段语义审校：对照目标修订 3118 的固定归档与原文、机与源码，核对首次永恒入口、EP 公式、重置范围、永恒次数；站内链接改指已翻译条目；见 docs/translation/reviews/2026-11-23-永恒阶段第四批.md"
   },
   {
    "title": "Eternity Challenges",
@@ -1323,13 +1323,13 @@
    "zh_title": "永恒挑战",
    "path": "content/player/original/ow-eternity-challenges.md",
    "priority": 2,
-   "status": "STRUCTURE CHECKED",
-   "review_status": "STRUCTURE CHECKED",
+   "status": "REVIEWED",
+   "review_status": "REVIEWED",
    "license_status": "CC-BY-SA-4.0-CONFIRMED",
    "third_party": "NONE-DETECTED-TEXT-ONLY",
    "media_omitted": true,
-   "last_source_check": "2026-11-15",
-   "notes": "batch3：正文完整翻译并校对；嵌入子页/图片未转载，已在页面注明；2026-11-15 质量门禁：仅有结构核对（章节/表格/公式/来源字段），未做逐段语义审校，按 wiki-rules 等级降为 STRUCTURE CHECKED"
+   "last_source_check": "2026-11-23",
+   "notes": "2026-11-23 第四批逐段语义审校：核对 12 个挑战的研究前置、次要条件、快捷重置、挑战 4/12 失败条件与奖励显示；修正明细子页“尚未翻译”的错误说明并链接现有译文；见 docs/translation/reviews/2026-11-23-永恒阶段第四批.md"
   },
   {
    "title": "Eternity Challenges/Challenges",
@@ -2807,13 +2807,13 @@
    "zh_title": "时间维度",
    "path": "content/player/original/ow-time-dimensions.md",
    "priority": 2,
-   "status": "STRUCTURE CHECKED",
-   "review_status": "STRUCTURE CHECKED",
+   "status": "REVIEWED",
+   "review_status": "REVIEWED",
    "license_status": "CC-BY-SA-4.0-CONFIRMED",
    "third_party": "NONE-DETECTED-TEXT-ONLY",
    "media_omitted": true,
-   "last_source_check": "2026-11-15",
-   "notes": "batch3：正文完整翻译并校对；嵌入子页/图片未转载，已在页面注明；2026-11-15 质量门禁：仅有结构核对（章节/表格/公式/来源字段），未做逐段语义审校，按 wiki-rules 等级降为 STRUCTURE CHECKED"
+   "last_source_check": "2026-11-23",
+   "notes": "2026-11-23 第四批逐段语义审校：核对时间碎片、免费计数频率、无限/永恒保留范围、三段成本阈值与 5～8 维解锁；修正“时间”错字和成本阈值误读；见 docs/translation/reviews/2026-11-23-永恒阶段第四批.md"
   },
   {
    "title": "Time Studies",
@@ -2835,13 +2835,13 @@
    "zh_title": "时间研究",
    "path": "content/player/original/ow-time-studies.md",
    "priority": 2,
-   "status": "STRUCTURE CHECKED",
-   "review_status": "STRUCTURE CHECKED",
+   "status": "REVIEWED",
+   "review_status": "REVIEWED",
    "license_status": "CC-BY-SA-4.0-CONFIRMED",
    "third_party": "NONE-DETECTED-TEXT-ONLY",
    "media_omitted": false,
-   "last_source_check": "2026-11-15",
-   "notes": "batch9：正文与全部研究表完整翻译并校对；2026-11-15 质量门禁：仅有结构核对（章节/表格/公式/来源字段），未做逐段语义审校，按 wiki-rules 等级降为 STRUCTURE CHECKED"
+   "last_source_check": "2026-11-23",
+   "notes": "2026-11-23 第四批逐段语义审校：逐项核对研究前置、TT/ST 成本与公式封顶，补充三体研究、空间之理成本和隐藏研究说明；修正多项误导性公式表述；见 docs/translation/reviews/2026-11-23-永恒阶段第四批.md"
   },
   {
    "title": "Time Theorems",

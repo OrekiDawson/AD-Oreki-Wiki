@@ -10,8 +10,8 @@ original_revid: 3343
 original_fetched_at: "2026-11-15T22:45:00+08:00"
 original_license: "CC BY-SA 4.0"
 original_license_url: "https://creativecommons.org/licenses/by-sa/4.0/"
-translation_status: "STRUCTURE CHECKED"
-review_status: "STRUCTURE CHECKED"
+translation_status: "REVIEWED"
+review_status: "REVIEWED"
 aliases:
   - "/original/ow-time-studies"
 ---
@@ -37,16 +37,18 @@ aliases:
 - [无限点数](/player/original/ow-infinity)：初始成本 $1$ IP，成长倍率 $\times \text{e}100$；
 - [永恒点数](/player/original/ow-eternity)：初始成本 $1$ EP，成长倍率 $\times 2$。
 
+首次进入永恒层后，玩家必须先购买至少 1 个第 1 时间维度，才能开始购买时间之理；解锁现实后不再有这个前置限制。
+
 时间之理会在[永恒](/player/original/ow-eternity)重置后保留。玩家可以重置研究树（respec），返还所有已花费的时间之理，并重新选择研究。此功能对推进与尝试不同配置特别有用。
 
 ## 时间研究一览
 
 | 时间研究 ID | 前置研究 | 描述 | 公式 | 成本 |
 | --- | --- | --- | --- | --- |
-| 11 | 无 | 计数频率影响第 1 时间维度，但效果降低 | $\frac{1}{\frac{0.95}{T^{0.005}}+\frac{0.05}{T^{0.0003}}}$ | 1 |
+| 11 | 无 | 计数频率影响第 1 时间维度，但效果降低 | $\min\left(\frac{1}{\frac{0.95}{T^{0.005}}+\frac{0.05}{T^{0.0003}}},~\text{e}2500\right)$ | 1 |
 | 21 | 11 | 改进复制器倍率公式 | $\log_2(x)^2 \to \log_2(x)^2+x^{0.032}$ | 3 |
 | 22 | 11 | 复制器基础间隔上限从 $50$ 毫秒降低到 $1$ 毫秒 | $50 \to 1$ | 2 |
-| 31 | 21 | 基于无限次数强化加成（加成自乘 4 次） | $4$ | 3 |
+| 31 | 21 | 基于无限次数的加成按 4 次方强化 | $\text{相关加成}^{4}$ | 3 |
 | 32 | 22 | 基于维度提升为每次大坍缩获得的无限次数提供倍率 | $\max(1,~DimensionBoosts)$ | 2 |
 | 33 | 22 | 无限时保留一半复制器星系 | N/A | 2 |
 | 41 | 31 | 所有星系为获得的无限点数提供 $1.2$ 倍率 | $1.2^{Total Galaxies}$ | 4 |
@@ -55,18 +57,18 @@ aliases:
 | 61 | 51 | 获得 $\times 15$ 更多永恒点数 | $15$ | 3 |
 | 62 | 42 且完成 1 次 EC5 | 复制器成长速度变为 3 倍 | $3$ | 3 |
 | **维度分叉** |  |  |  |  |
-| 71（反物质） | 61 | 维度献祭以降低的效果影响其他所有反物质维度 | $Sacrifice^{0.25}$ | 4 |
+| 71（反物质） | 61 | 维度献祭以降低的效果影响其他所有反物质维度 | $\min(\max(Sacrifice^{0.25},1),~\text{e}210000)$ | 4 |
 | 81 | 71 | 维度提升的基础威力变为 ×10 | $4 \to 10$ | 4 |
 | 91 | 81 | 基于本永恒已用时间为反物质维度提供倍率 | $10^{(\min(minutes,20)\times15)}$ | 4 |
 | 101 | 91 | 反物质维度获得等于复制器数量的倍率 | $\max(Replicanti,1)$ | 4 |
-| 72（无限） | 61 | 维度献祭以大幅降低的效果影响第 4 无限维度 | $Sacrifice^{0.04}$ | 6 |
-| 82 | 72 | 维度提升影响无限维度 | $1.0000109^{Total Boosts^2}$ | 6 |
+| 72（无限） | 61 | 维度献祭以大幅降低的效果影响第 4 无限维度 | $\min(\max(Sacrifice^{0.04},1),~\text{e}30000)$ | 6 |
+| 82 | 72 | 维度提升影响无限维度 | $\min(1.0000109^{Total Boosts^2},~\text{e}1\text{e}7)$ | 6 |
 | 92 | 82 | 基于最快永恒时间为无限维度提供倍率 | $2^{(60/\max(seconds,2))}$ | 5 |
 | 102 | 92 | 复制器星系强化复制器倍率 | $5^{RGs}$ | 6 |
-| 73（时间） | 61 | 维度献祭以大幅降低的效果影响第 3 时间维度 | $Sacrifice^{0.005}$ | 5 |
-| 83 | 73 | 基于时间维度提供的计数频率升级为维度提升提供倍率 | $1.0004^{Free Tickspeed}$ | 5 |
+| 73（时间） | 61 | 维度献祭以大幅降低的效果影响第 3 时间维度 | $\min(\max(Sacrifice^{0.005},1),~\text{e}1300)$ | 5 |
+| 83 | 73 | 基于时间维度提供的计数频率升级为维度提升提供倍率 | $\min(1.0004^{Free Tickspeed},~\text{e}30)$ | 5 |
 | 93 | 83 | 基于获得的计数频率升级为时间维度提供倍率 | $Free Tickspeed^{0.25}$ | 7 |
-| 103 | 93 | 时间维度获得等于复制器星系数量的倍率 | $ReplicantiGalaxies$ | 6 |
+| 103 | 93 | 时间维度获得等于复制器星系数量的倍率 | $\max(ReplicantiGalaxies,1)$ | 6 |
 | **分叉终点** |  |  |  |  |
 | 111 | 101、102 或 103 | 改进无限点数公式 | 见[《无限》](/player/original/ow-infinity)条目 | 12 |
 | **节奏分叉** |  |  |  |  |
@@ -87,10 +89,10 @@ aliases:
 | 181 | 171 且完成 1 次 EC1、EC2 与 EC3 | 每秒获得大坍缩时无限点数获取的 1% | $\frac{IP\times time}{100}$ | 200 |
 | 191 | 181 且完成 1 次 EC10 | 永恒之后永久保留 5% 的无限次数作为「银行存款」 | $\lfloor Infinities\times0.05\rfloor$ | 400 |
 | 192 | 181 且完成 1 次 EC10 | 复制器可超过 1.80e308，但数量越高成长越慢 | 超过上限后间隔立即 ×10，并按每个无限因子 ×1.2 继续增加 | 730 |
-| 193 | 181 且完成 1 次 EC10 | 基于永恒次数为反物质维度提供倍率 | $1\text{e}13000^{\frac{Eternities}{1\text{e}6}}$ | 300 |
+| 193 | 181 且完成 1 次 EC10 | 基于永恒次数为反物质维度提供倍率，最高 $\times 1\text{e}13000$ | $1\text{e}13000^{\min(Eternities/1\text{e}6,1)}$ | 300 |
 | 201 | 192 | 从维度分叉中选择第二条路径 | N/A | 900 |
 | 211 | 191 | 维度提升需求成长降低 5 | $-5$ | 120 |
-| 212 | 191 | 所有星系基于时间碎片变强 | $\log_2(TimeShards)^{0.005}$ | 150 |
+| 212 | 191 | 所有星系基于时间碎片变强，最高 $+10\%$ | $\min\left(\left(\log_2(\max(TimeShards,2))\right)^{0.005},~1.1\right)$ | 150 |
 | 213 | 193 | 复制器成长速度变为 20 倍 | $20$ | 200 |
 | 214 | 193 | 维度献祭对第 8 反物质维度的加成更强 | $\min(Sacrifice^{7.6},\text{e}44,000)\times\min(Sacrifice^{1.05},\text{e}120,000)$ | 120 |
 | **光明** |  |  |  |  |
@@ -102,7 +104,7 @@ aliases:
 | 233 | 225 或 226 | 最大复制器星系升级基于当前复制器变便宜 | $Replicanti^{0.3}$ | 500 |
 | **黑暗** |  |  |  |  |
 | 222 | 211 | 维度提升成本成长再降低 2 | 2 | 900 |
-| 224 | 212 | 每 2000 次维度提升使远距星系成本成长推迟 1 个星系 | $\frac{DimensionBoosts}{2000}$ | 900 |
+| 224 | 212 | 每 2000 次维度提升使远距星系成本成长推迟 1 个星系 | $\left\lfloor\frac{DimensionBoosts}{2000}\right\rfloor$ | 900 |
 | 226 | 213 | 基于最大复制器星系获得额外复制器星系 | $\left\lfloor\frac{BoughtRG}{15}\right\rfloor$ | 900 |
 | 228 | 214 | 维度献祭公式成长更好 | $+20\%$（与成就 88 加算，与其他效果乘算） | 900 |
 | 232 | 223 或 224 | 所有星系基于反物质星系变强 | $\left(1+\frac{AntimatterGalaxies}{1000}\right)^{0.2}$ | 500 |
@@ -128,12 +130,30 @@ aliases:
 | EC11 | 231 或 232 | — | — | $1$ |
 | EC12 | 233 或 234 | — | — | $1$ |
 
+## 隐藏研究
+
+在[无名氏的现实](/player/original/ow-nameless-ones)中，时间研究 11 附近还会出现一条隐藏研究路径。购买这条隐藏研究后，玩家获得 100 TT。它的位置会随桌面与移动端布局变化，未购买前连路径也不可见；虽然图上看似从时间研究 11 延伸，但它实际上不要求已购买时间研究 11。
+
+## 三体研究与空间之理
+
+进入现实后，时间研究树还会出现 4 个**三体研究（Triad Studies）**。它们位于分叉末端，使用空间之理（Space Theorems）购买，不消耗普通时间之理：
+
+| 三体研究 | 前置与解锁 | 效果 | 空间之理成本 |
+| --- | --- | --- | --- |
+| 301 | 221、222、231，且薇达到 6 级 | 时间研究 231 强化时间研究 221 的效果 | 12 |
+| 302 | 223、224、232，且薇达到 12 级 | 远距星系成本成长再推迟 3,000 个反物质星系 | 12 |
+| 303 | 225、226、233，且薇达到 18 级 | 时间研究 225、226 与鹿颈长的无限额外提供 50% 复制器星系 | 12 |
+| 304 | 227、228、234，且薇达到 24 级 | 维度献祭倍率平方化 | 12 |
+
+三体研究由太阳神中薇的 6 级奖励解锁：薇每达到 6 的倍数等级，开放一个三体研究。光明/黑暗研究右侧的分支在进入现实后也会要求空间之理：121～123 与 141～143 各需 2 ST，131～133 各需 8 ST，221～222/223～224/225～226/227～228 各需 4 ST，231～234 各需 5 ST。购买时仍需同时满足表中列出的时间之理成本。
+
 ## 来源与许可
 
 - 原文：[Time Studies](https://antimatterdimensions.wiki.gg/index.php?title=Time_Studies&oldid=3343)（修订 ID `3343`；最后编辑者 KrutarMarsons；抓取于 2026-11-15）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Time_Studies&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为**简体中文翻译（改编）**，已修改：翻译正文与全部研究表、统一术语、按原文修正公式排版；图片未转载。
 - 说明：部分研究的公式原文以子模板/主条目链接给出（如 111 指向《无限》、228 指向《维度献祭》），译文保留指向并注明；研究 ID 与数值未改动。
+- 源码核对：[`src/core/secret-formula/eternity/time-studies/normal-time-studies.js`](https://github.com/IvarK/AntimatterDimensionsSourceCode/blob/5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/secret-formula/eternity/time-studies/normal-time-studies.js) 与 [`src/core/time-theorems.js`](https://github.com/IvarK/AntimatterDimensionsSourceCode/blob/5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/time-theorems.js)。
 
 ## 相关条目
 

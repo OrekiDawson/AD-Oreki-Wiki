@@ -10,8 +10,8 @@ original_revid: 3347
 original_fetched_at: "2026-11-15T21:55:00+08:00"
 original_license: "CC BY-SA 4.0"
 original_license_url: "https://creativecommons.org/licenses/by-sa/4.0/"
-translation_status: "STRUCTURE CHECKED"
-review_status: "STRUCTURE CHECKED"
+translation_status: "REVIEWED"
+review_status: "REVIEWED"
 aliases:
   - "/original/ow-eternity-challenges"
 ---
@@ -24,25 +24,24 @@ aliases:
 
 ## 时间研究树
 
-永恒挑战与此前的挑战类型（[普通挑战](/player/original/ow-challenges)与[无限挑战](/player/original/ow-challenges)）区别很大：单个永恒挑战可以重复五次，购买要求也更复杂——除了要在当时之前购买过相应研究，还要满足次要条件。
+永恒挑战与此前的挑战类型（[普通挑战](/player/original/ow-normal-challenges)与[无限挑战](/player/original/ow-infinity-challenges)）区别很大：单个永恒挑战可以重复五次，购买要求也更复杂——除了要在当时之前购买过相应研究，还要满足次要条件。
 
-| ID | 前置时间研究 | 成本（TT） |  | 次要条件 |  |  |
-| --- | --- | --- | --- | --- | --- | --- |
-| 研究 | 最低总量 | 资源 | 初始 | 成长 | 最终 |
+| EC | 前置时间研究 | 研究成本（TT） | 最低累计 TT | 次要条件 | 完成 0 次 | 每次增加 | 完成 4 次以上 |
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | 1 | 171 | $30$ | $123$ | [永恒次数](/player/original/ow-eternity) | $20,000$ | $+20,000$ | $100,000$ |
 | 2 | 171 | $35$ | $128$ | [时间维度提供的计数频率升级](/player/original/ow-time-dimensions) | $1,300$ | $+150$ | $1,900$ |
 | 3 | 171 | $40$ | $133$ | [第 8 反物质维度](/player/original/ow-antimatter-dimensions) | $17,300$ | $+1,250$ | $22,300$ |
 | 4 | 143 | $70$ | $133$ | [无限次数](/player/original/ow-infinity) | $100,000,000$ | $+25,000,000$ | $200,000,000$ |
 | 5 | 42 | $130$ | $141$ | [反物质星系](/player/original/ow-antimatter-galaxies) | $160$ | $+14$ | $216$ |
-| 6 | 121 | $85$ | $139$ | [复制器星系](https://antimatterdimensions.wiki.gg/wiki/Replicanti_Galaxies) | $40$ | $+5$ | $60$ |
+| 6 | 121 | $85$ | $139$ | 复制器星系 | $40$ | $+5$ | $60$ |
 | 7 | 111 | $115$ | $160$ | 反物质 | $\text{e}500,000$ | $\times\text{e}300,000$ | $\text{e}1,700,000$ |
 | 8 | 123 | $115$ | $169$ | 无限点数 | $\text{e}4,000$ | $\times\text{e}1,000$ | $\text{e}8,000$ |
 | 9 | 151 | $415$ | $486$ | [无限之力](/player/original/ow-infinity-dimensions) | $\text{e}17,500$ | $\times\text{e}2,000$ | $\text{e}25,500$ |
 | 10 | 181 | $550$ | $843$ | 永恒点数 | $\text{e}100$ | $\times\text{e}20$ | $\text{e}180$ |
-| 11 | 231 或 232 | $1$ | $1,814$ | 仅使用反物质维度路径 |  |  |
-| 12 | 231 或 232 | $1$ | $1,820$ | 仅使用时间维度路径 |  |  |
+| 11 | 231 或 232 | $1$ | $1,814$ | 仅使用反物质维度路径 | — | — | — |
+| 12 | 231 或 232 | $1$ | $1,820$ | 仅使用时间维度路径 | — | — | — |
 
-### 各完成次数下的要求
+### 各完成次数对应的次要解锁条件
 
 | EC | 资源 | 完成 0 次 | 完成 1 次 | 完成 2 次 | 完成 3 次 | 完成 ≥4 次 |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -61,16 +60,16 @@ aliases:
 
 ## 挑战
 
-永恒挑战 4 与 12 有失败条件：一旦失败，会自动把玩家送回普通永恒并重置时间研究。这两个挑战在完成之后会进一步强化其附加条件。与[普通挑战](/player/original/ow-challenges)和[无限挑战](/player/original/ow-challenges)不同，奖励在玩家完成该挑战一次之前不会显示，即使效果数值已经超过 $1$。
+永恒挑战 4 与 12 有失败条件：一旦失败，会自动把玩家送回普通永恒并重置时间研究。这两个挑战在完成之后会进一步强化其附加条件。与[普通挑战](/player/original/ow-normal-challenges)和[无限挑战](/player/original/ow-infinity-challenges)不同，奖励在玩家完成该挑战一次之前不会显示，即使效果数值已经超过 $1$。
 
-> 原页通过子模板嵌入《Eternity Challenges/Challenges》与《Eternity Challenges/Challenges (Pelle)》的完整挑战条件表；这两个子页尚未翻译（已列入后续批次）。本页保留主条目正文、前置条件与各完成次数门槛表。
+原页通过子模板嵌入完整挑战条件表。本站已经分别翻译了[永恒挑战·挑战明细](/player/original/ow-eternity-challenges-challenges)和[佩勒中的挑战明细](/player/original/ow-eternity-challenges-challenges-pelle)；各挑战的最终 IP 目标、限制、奖励与效果细节可在这些页面查阅。
 
 ## 相关成就
 
 | ID | 名称 | 描述 | 奖励 |
 | --- | --- | --- | --- |
 | 114 | You're a mistake | 让一次永恒挑战失败。 | 一种逐渐消退的成就感。 |
-| 115 | I wish I had gotten 7 eternities | 在永恒挑战中开始一个[无限挑战](/player/original/ow-challenges)。 | — |
+| 115 | I wish I had gotten 7 eternities | 在永恒挑战中开始一个[无限挑战](/player/original/ow-infinity-challenges)。 | — |
 | 123 | 5 more eternities until the update | 完成 $50$ 个不同的永恒挑战层级。 | — |
 | 163 | Actually, super easy! Barely an inconvenience! | 在当前[现实](/player/original/ow-reality)中用时少于 $1$ 秒（游戏时间）完成全部永恒挑战各 $5$ 次。 | — |
 | S26 | You're a failure | 不刷新页面的情况下让永恒挑战失败 $10$ 次。你到底在拿人生做什么…… | — |
@@ -87,8 +86,9 @@ aliases:
 - 原文：[Eternity Challenges](https://antimatterdimensions.wiki.gg/index.php?title=Eternity_Challenges&oldid=3347)（修订 ID `3347`；最后编辑者 KrutarMarsons；抓取于 2026-11-15）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Eternity_Challenges&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为**简体中文翻译（改编）**，已修改：翻译正文与表格、统一术语、移除导航模板与信息框、图片未转载；本页按相同许可共享。
-- 原文以子模板嵌入完整挑战条件表与图标；本页保留可独立翻译的正文与两张主表，子页列入后续批次。
+- 原文以子模板嵌入完整挑战条件表与图标；本页保留主条目正文、前置条件与各完成次数门槛，完整挑战明细链接到已翻译子页。
+- 源码核对：[`src/core/eternity-challenge.js`](https://github.com/IvarK/AntimatterDimensionsSourceCode/blob/5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/eternity-challenge.js) 与 [`src/core/secret-formula/challenges/eternity-challenges.js`](https://github.com/IvarK/AntimatterDimensionsSourceCode/blob/5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/secret-formula/challenges/eternity-challenges.js)。
 
 ## 相关条目
 
-[挑战](/player/original/ow-challenges) · [永恒](/player/original/ow-eternity) · [时间维度](/player/original/ow-time-dimensions) · [时间膨胀](/player/original/ow-dilation)
+[永恒挑战·挑战明细](/player/original/ow-eternity-challenges-challenges) · [佩勒中的挑战明细](/player/original/ow-eternity-challenges-challenges-pelle) · [永恒](/player/original/ow-eternity) · [时间研究](/player/original/ow-time-studies)
