@@ -35,6 +35,10 @@ Oreki Edition 有 Android 与 Web 两套实现，目标是保持玩家可见的�
 
 **从仓库源码出发，而不是从历史结论倒推代码。** 例如想知道当前调度器是否会修改自动购买器的启用状态，应先看当前 Kotlin 或 JS 的受管状态实现，再核实具体游戏行为；不能仅凭早期报告中的一句“手动优先”判断所有版本。
 
+## 面向玩家的内容在哪里？
+
+本站分为两个入口：[开发者专区](/developer/) 保存实现、构建与问题定位方法；[玩家专区](/player/) 解释游戏机制、解锁和实际操作。如果你只是想了解某项游戏功能如何使用，应先读玩家版，再按需要回到这里查源码与验证证据。
+
 ## 两套代码在哪里？
 
 **Android**：[OrekiDawson/AD-Oreki-Edition-Android](https://github.com/OrekiDawson/AD-Oreki-Edition-Android)。MOD 的生产业务代码集中在 `app/src/main/kotlin/`，AGP 工程在 `agp/`。官方 3.21.0 DEX 属于冻结基线，不允许用新 Java/Smali 业务直接覆盖。源码阅读可从 [`OrekiStageAuto.kt`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/3b2d8284f2aca7132168998ee32497b3c4c17b8e/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiStageAuto.kt) 开始。
