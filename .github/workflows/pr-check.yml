@@ -16,7 +16,7 @@ jobs:
     timeout-minutes: 5
     steps:
       - name: 只读汇总 PR 元数据
-        uses: actions/github-script@v8
+        uses: actions/github-script@v9
         with:
           script: |
             const pr=context.payload.pull_request;
