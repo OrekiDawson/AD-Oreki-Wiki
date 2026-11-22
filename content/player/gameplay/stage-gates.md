@@ -27,7 +27,7 @@ aliases:
 | 现实 | 完成时间膨胀后的研究前置、满足现实研究的相关条件，并执行第一次现实 | 现实机器、符文、复兴能力和更高层成长 |
 | 天神 | 随现实层及相关特殊挑战的进度逐步开放 | 七位天神各自的特殊现实和奖励 |
 
-表格是**阶段顺序示意**，并不代表每行列出了全部按钮条件。例如，现实研究还涉及永恒点数、时间维度和成就等前置要求；有些内容的界面入口会早于该阶段第一次真正完成时出现。[原版无限](https://antimatterdimensions.wiki.gg/wiki/Infinity) · [原版永恒](https://antimatterdimensions.wiki.gg/wiki/Eternity) · [原版现实](https://antimatterdimensions.wiki.gg/wiki/Reality)
+表格是**阶段顺序示意**，并不代表每行列出了全部按钮条件。例如，现实研究还涉及永恒点数、时间维度和成就等前置要求；有些内容的界面入口会早于该阶段第一次真正完成时出现。[原版无限](https://antimatterdimensions.wiki.gg/wiki/Infinity?oldid=3113) · [原版永恒](https://antimatterdimensions.wiki.gg/wiki/Eternity?oldid=3118) · [原版现实](https://antimatterdimensions.wiki.gg/wiki/Reality?oldid=3235)
 
 更详细的逐步玩法分别见[开始游玩](/player/getting-started/)、[无限与永恒](/player/gameplay/progression-infinity-eternity)和[现实与时间研究](/player/gameplay/reality-time-studies)。
 
@@ -37,7 +37,7 @@ aliases:
 
 正常情况下，此时仍需要积累 IP、购买无限升级、解锁更多无限维度，并继续推进才能达到永恒的要求。**首次无限后立即出现可以随意使用的永恒或现实功能，不应被当作正常进度。**
 
-Oreki Edition 的 Android 历史测试中曾遇到过类似的页面过早显示问题。它可能让人误以为功能已经解锁，实际却没有足够的资源或真实进度。不同候选版本的修复与验证状态并不相同，不能用一次旧版的成功测试保证现在使用的 APK 完全不存在这个问题。[开发者技术说明](/developer/current/known-issues)
+Oreki Edition 的 Android 历史测试中曾遇到过类似的页面过早显示问题。它可能让人误以为功能已经解锁，实际却没有足够的资源或真实进度。不同候选版本的修复与验证状态并不相同，不能用一次旧版的成功测试保证现在使用的 APK 完全不存在这个问题。[Android 门禁技术判据](/developer/architecture/gui-stage-gates)
 
 遇到这种情况，先不要依赖异常页面继续推进。可以正常返回目前已经解锁的内容，并记录当时的进度与版本以便反馈。
 
@@ -70,7 +70,7 @@ Oreki Edition 的 Android 历史测试中曾遇到过类似的页面过早显示
 
 ## 参考资料与相关条目
 
-- [Antimatter Dimensions Wiki：Infinity](https://antimatterdimensions.wiki.gg/wiki/Infinity)、[Break Infinity](https://antimatterdimensions.wiki.gg/wiki/Break_Infinity)、[Eternity](https://antimatterdimensions.wiki.gg/wiki/Eternity)（前期阶段和重置条件）。
-- [Antimatter Dimensions Wiki：Reality](https://antimatterdimensions.wiki.gg/wiki/Reality)、[Celestials](https://antimatterdimensions.wiki.gg/wiki/Celestials)（现实后的解锁体系）。
-- [Oreki Edition：原版与 MOD 的区别](/player/gameplay/original-vs-mod)、[开发者已知问题](/developer/current/known-issues)（版本差异和已记录的历史问题）。
+- [Antimatter Dimensions Wiki：Infinity](https://antimatterdimensions.wiki.gg/wiki/Infinity?oldid=3113)、[Break Infinity](https://antimatterdimensions.wiki.gg/wiki/Break_Infinity?oldid=3349)、[Eternity](https://antimatterdimensions.wiki.gg/wiki/Eternity?oldid=3118)（前期阶段和重置条件）。
+- [Antimatter Dimensions Wiki：Reality](https://antimatterdimensions.wiki.gg/wiki/Reality?oldid=3235)、[Celestials](https://antimatterdimensions.wiki.gg/wiki/Celestials?oldid=3187)（现实后的解锁体系）。
+- [Oreki Edition：原版与 MOD 的区别](/player/gameplay/original-vs-mod)、[Android 阶段判据与历史验证](/developer/architecture/gui-stage-gates)、[开发者已知问题](/developer/current/known-issues)（版本差异和已记录的历史问题）。
 - [玩家常见问题](/player/faq/) · [智能自动购买器](/player/gameplay/automation) · [存档兼容与自动保存](/player/gameplay/saves)。
