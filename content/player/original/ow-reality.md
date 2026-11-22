@@ -10,15 +10,15 @@ original_revid: 3235
 original_fetched_at: "2026-11-15T22:00:00+08:00"
 original_license: "CC BY-SA 4.0"
 original_license_url: "https://creativecommons.org/licenses/by-sa/4.0/"
-translation_status: "STRUCTURE CHECKED"
-review_status: "STRUCTURE CHECKED"
+translation_status: "REVIEWED"
+review_status: "REVIEWED"
 aliases:
   - "/original/ow-reality"
 ---
 
-现实是游戏第三个、也是最后一个主要威望层。买下最后一项[时间研究](/player/original/ow-time-studies)——需要 $\text{e}4,000$ [永恒点数](/player/original/ow-eternity)和前 13 行[成就](https://antimatterdimensions.wiki.gg/wiki/Achievements)——之后才能开启。每执行一次新现实，此前攒下的一切都会归零，换来现实机器、一枚符文和一个复兴点数。
+现实是游戏第三个、也是最后一个主要威望层。买下最后一项[时间研究](/player/original/ow-time-studies)「解锁现实」后开启；这项研究要求已购买第 8 时间维度、本次现实达到 $\text{e}4,000$ [永恒点数](/player/original/ow-eternity)，并完成前 13 行[成就](https://antimatterdimensions.wiki.gg/wiki/Achievements)。取得资格后，每执行一次新现实，此前攒下的大部分进度都会归零，换来现实机器、一枚符文和一个复兴点数。
 
-第一次进入现实时，游戏同时开放[符文](https://antimatterdimensions.wiki.gg/wiki/Glyphs)、[现实升级](/player/original/ow-reality-upgrades)与复兴；[黑洞](/player/original/ow-black-hole)和自动机也会出现，但要另外满足条件才能完整使用。在真正重置之前买下现实时间研究，玩家只能先看到现实页签和它的前三个子页签，黑洞与自动机页签要等第一次现实结束才亮起。
+第一次完成现实重置时，游戏同时开放[符文](https://antimatterdimensions.wiki.gg/wiki/Glyphs)、[现实升级](/player/original/ow-reality-upgrades)与复兴；[黑洞](/player/original/ow-black-hole)和自动机也会出现，但要另外满足条件才能完整使用。买下「解锁现实」研究后，玩家可以先看到现实页签和它的前三个子页签；黑洞与自动机页签要等第一次现实结算后才亮起。
 
 这个层是「现实更新」带来的。那次更新是桌面版最后一块主要内容，前后做了四年半，2022 年 12 月 17 日与 Steam 版同步上线网页版，2024 年 4 月 1 日移植到 Android。
 
@@ -39,6 +39,8 @@ aliases:
 - 首次现实的缩减段（$\text{e}6,000$ EP 以上）：$\left\lfloor1,000^{\frac{\log_{10}(EP)-0.75\left(\log_{10}(EP)-6,000\right)}{4,000}-1}\right\rfloor$
 
 开局前 10 个现实机器落在 $1.00\text{e}4,000$ 到 $2.15\text{e}5,333$ EP 之间，走线性；过了 10 RM 改走指数式。指数式在 $2.15\text{e}5,333$ EP 之后反超线性式。缩减只在第一次现实生效：$\text{e}6,000$ EP 以上开始打折，$\text{e}8,000$ EP 封顶，这是现实更新为平衡难度顺手加的——同一时期时间维度的成本成长也被调高了。按这条公式，$\text{e}6,000$ EP 给 $31$ RM，$\text{e}8,000$ EP 给 $74$ RM。
+
+现实机器的基础硬上限是 $\text{e}1,000$，部分[映像升级](/player/original/ow-imaginary-upgrades)可以继续提高它；一次现实能结算的数量不会超过当时的上限。现实机器已经到达上限后，游戏开始积攒**虚幻机器（Imaginary Machines，iM）**。虚幻机器不会在现实结算时直接增加，而是逐秒逼近当前产出上限；默认情况下，每 60 秒把“上限与当前数量之差”缩小一半。相关升级可以改变这个速度。
 
 | 线性成长（1–10 RM）：RM | 对应 EP | 指数成长（>10 RM）：RM | 对应 EP | 缩减成长（首次现实 >e6,000 EP）：EP | RM |
 | --- | --- | --- | --- | --- | --- |
@@ -87,7 +89,7 @@ aliases:
 
 - 原文：[Reality](https://antimatterdimensions.wiki.gg/index.php?title=Reality&oldid=3235)（修订 ID 3235；最后编辑者 KrutarMarsons；抓取于 2026-11-15）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Reality&action=history)
-- 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为简体中文翻译（改编），已修改：正文按中文习惯重写、统一术语、公式与数值及表格保留原文、导航模板与信息框及缩略图未转载、图片未转载；本页按相同许可共享。
+- 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为简体中文翻译（改编），已修改：正文按中文习惯重写、统一术语、公式与数值及表格保留原文、补充官方源码可确认的现实解锁前置与虚幻机器边界、导航模板与信息框及缩略图未转载、图片未转载；本页按相同许可共享。
 - 译者注：原文把符文、现实升级、复兴、黑洞与自动机作为子模板整页嵌入；这里只保留主线正文与入口说明，子系统的完整内容留给各自条目。
 
 ## 相关条目

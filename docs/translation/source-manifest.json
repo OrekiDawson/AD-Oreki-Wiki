@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generated_at": "2026-11-22T18:23:17.000Z",
+ "generated_at": "2026-11-22T22:41:52.000Z",
  "source": {
   "site": "https://antimatterdimensions.wiki.gg",
   "api": "https://antimatterdimensions.wiki.gg/api.php",
@@ -27,8 +27,8 @@
  "coverage": {
   "total_pages": 68,
   "translated": 0,
-  "structure_checked": 45,
-  "reviewed": 15,
+  "structure_checked": 41,
+  "reviewed": 19,
   "verified": 0,
   "blocked": 0,
   "not_started": 8
@@ -619,13 +619,13 @@
    "zh_title": "黑洞",
    "path": "content/player/original/ow-black-hole.md",
    "priority": 3,
-   "status": "STRUCTURE CHECKED",
-   "review_status": "STRUCTURE CHECKED",
+   "status": "REVIEWED",
+   "review_status": "REVIEWED",
    "license_status": "CC-BY-SA-4.0-CONFIRMED",
    "third_party": "NONE-DETECTED-TEXT-ONLY",
    "media_omitted": true,
-   "last_source_check": "2026-11-15",
-   "notes": "batch5：正文完整翻译并校对；图片未转载；2026-11-15 质量门禁：仅有结构核对（章节/表格/公式/来源字段），未做逐段语义审校，按 wiki-rules 等级降为 STRUCTURE CHECKED"
+   "last_source_check": "2026-11-23",
+   "notes": "第五批：已逐段语义审校；补齐现实解锁前置、现实机器硬上限与虚幻机器边界；审校记录见 docs/translation/reviews/2026-11-23-现实阶段第五批.md"
   },
   {
    "title": "Break Infinity",
@@ -1541,13 +1541,13 @@
    "zh_title": "符文炼金",
    "path": "content/player/original/ow-glyph-alchemy.md",
    "priority": 3,
-   "status": "STRUCTURE CHECKED",
-   "review_status": "STRUCTURE CHECKED",
+   "status": "REVIEWED",
+   "review_status": "REVIEWED",
    "license_status": "CC-BY-SA-4.0-CONFIRMED",
    "third_party": "NONE-DETECTED-TEXT-ONLY",
    "media_omitted": true,
-   "last_source_check": "2026-11-15",
-   "notes": "batch17：正文/表格/公式/来源字段完整翻译并结构核对；未做逐段语义审校，记 STRUCTURE CHECKED"
+   "last_source_check": "2026-11-23",
+   "notes": "第五批：已逐段语义审校；按游戏内中文统一资源名，修正精炼价值、反应触发和现实符文说明；审校记录见 docs/translation/reviews/2026-11-23-现实阶段第五批.md"
   },
   {
    "title": "Glyph Sacrifice",
@@ -2338,13 +2338,13 @@
    "zh_title": "现实",
    "path": "content/player/original/ow-reality.md",
    "priority": 3,
-   "status": "STRUCTURE CHECKED",
-   "review_status": "STRUCTURE CHECKED",
+   "status": "REVIEWED",
+   "review_status": "REVIEWED",
    "license_status": "CC-BY-SA-4.0-CONFIRMED",
    "third_party": "NONE-DETECTED-TEXT-ONLY",
    "media_omitted": true,
-   "last_source_check": "2026-11-15",
-   "notes": "batch4：正文完整翻译并校对；嵌入子页/图片未转载，已在页面注明；2026-11-15 质量门禁：仅有结构核对（章节/表格/公式/来源字段），未做逐段语义审校，按 wiki-rules 等级降为 STRUCTURE CHECKED"
+   "last_source_check": "2026-11-23",
+   "notes": "第五批：已逐段语义审校；补齐现实解锁入口、RM 硬上限与虚幻机器；审校记录见 docs/translation/reviews/2026-11-23-现实阶段第五批.md"
   },
   {
    "title": "Reality Upgrades",
@@ -2364,13 +2364,13 @@
    "zh_title": "现实升级",
    "path": "content/player/original/ow-reality-upgrades.md",
    "priority": 3,
-   "status": "STRUCTURE CHECKED",
-   "review_status": "STRUCTURE CHECKED",
+   "status": "REVIEWED",
+   "review_status": "REVIEWED",
    "license_status": "CC-BY-SA-4.0-CONFIRMED",
    "third_party": "NONE-DETECTED-TEXT-ONLY",
    "media_omitted": true,
-   "last_source_check": "2026-11-15",
-   "notes": "batch10：可重复/不可重复升级与全部条件表完整翻译并校对；2026-11-15 质量门禁：仅有结构核对（章节/表格/公式/来源字段），未做逐段语义审校，按 wiki-rules 等级降为 STRUCTURE CHECKED"
+   "last_source_check": "2026-11-23",
+   "notes": "第五批：已逐段语义审校；修正五项公式与前置、统一游戏内中文升级名、修复复兴与符文链接；审校记录见 docs/translation/reviews/2026-11-23-现实阶段第五批.md"
   },
   {
    "title": "Replicanti",
