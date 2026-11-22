@@ -15,7 +15,7 @@ aliases:
 
 ## 大坍缩后先做什么？
 
-首次反物质达到约 **1.80 × 10³⁰⁸**，就能执行大坍缩（Big Crunch），获得最初的无限点数（Infinity Points，简称 IP）。第一次执行后，新的无限与普通挑战内容会开放。[原版机制：无限](https://antimatterdimensions.wiki.gg/wiki/Infinity?oldid=3113)。
+首次反物质达到约 **1.80 × 10³⁰⁸**，就能执行大坍缩（Big Crunch），获得最初的无限点数（Infinity Points，简称 IP）。第一次执行后，新的无限与普通挑战内容会开放。[原版机制：无限](https://antimatterdimensions.wiki.gg/wiki/Infinity?oldid=3113)。（外部页面/API 核对：`NOT RUN`；当前回执未取得 HTTP 200、页面标题与 revid 归属证明，暂不将该修订号视为已验证证据。）
 
 这时候不用急着寻找下一个大系统。可以先做三件事：
 
@@ -29,7 +29,7 @@ aliases:
 
 最初反物质会在约 **1.80 × 10³⁰⁸** 处遇到上限，执行大坍缩后再开始一轮。
 
-想继续向上增长，必须解锁**打破无限（Break Infinity）**。在原版中，需要先把大坍缩自动购买器的间隔升级到 **0.1 秒**，之后才能启用打破无限。[原版机制：打破无限](https://antimatterdimensions.wiki.gg/wiki/Break_Infinity?oldid=3349)。
+想继续向上增长，必须解锁**打破无限（Break Infinity）**。在原版中，需要先把大坍缩自动购买器的间隔升级到 **0.1 秒**，之后才能启用打破无限。[原版机制：打破无限](https://antimatterdimensions.wiki.gg/wiki/Break_Infinity?oldid=3349)。（外部页面/API 核对：`NOT RUN`；当前回执未取得 HTTP 200、页面标题与 revid 归属证明，暂不将该修订号视为已验证证据。）
 
 打破之后，反物质可以越过原来的数值上限，一次大坍缩也可以获得更多基础 IP。此时更有意义的问题变成：**这次还要继续积累多少反物质，再执行大坍缩？**
 
@@ -39,7 +39,7 @@ aliases:
 
 随着 IP 和反物质不断增加，无限阶段还会出现**无限维度、无限挑战和复制器**等内容。它们不是第一次大坍缩后就能全部用上的功能，而是各有自己的开放条件。
 
-无限维度与反物质维度是两套不同的生产系统。前者参与无限阶段的成长，购买需要 IP；更高等级的无限维度会在后续进度中逐步解锁。[原版机制：无限维度](https://antimatterdimensions.wiki.gg/wiki/Infinity_Dimensions?oldid=3344)。
+无限维度与反物质维度是两套不同的生产系统。前者参与无限阶段的成长，购买需要 IP；更高等级的无限维度会在后续进度中逐步解锁。[原版机制：无限维度](https://antimatterdimensions.wiki.gg/wiki/Infinity_Dimensions?oldid=3344)。（外部页面/API 核对：`NOT RUN`；当前回执未取得 HTTP 200、页面标题与 revid 归属证明，暂不将该修订号视为已验证证据。）
 
 无限挑战则要求玩家在特殊限制下完成目标，奖励会帮助后续推进。看见挑战入口时，先阅读它的条件；如果当前生产能力不足，不必一直在同一关里等待。
 
@@ -49,7 +49,7 @@ aliases:
 
 ## 什么时候能够永恒？
 
-**永恒（Eternity）**是位于无限之上的第二层重大重置。在原版中，当 IP 推进到约 **1 × 10²⁸⁰**、解锁第八无限维度之后，相关入口会提示继续朝 **1.80 × 10³⁰⁸ IP** 前进。达到条件后，便可以进行第一次永恒。[原版机制：永恒](https://antimatterdimensions.wiki.gg/wiki/Eternity?oldid=3118)。
+**永恒（Eternity）**是位于无限之上的第二层重大重置。在原版中，当 IP 推进到约 **1 × 10²⁸⁰**、解锁第八无限维度之后，相关入口会提示继续朝 **1.80 × 10³⁰⁸ IP** 前进。达到条件后，便可以进行第一次永恒。[原版机制：永恒](https://antimatterdimensions.wiki.gg/wiki/Eternity?oldid=3118)。（外部页面/API 核对：`NOT RUN`；当前回执未取得 HTTP 200、页面标题与 revid 归属证明，暂不将该修订号视为已验证证据。）
 
 注意这里比较的是**无限点数（IP）**，而不是反物质。两个阶段都出现了「1.80 × 10³⁰⁸」这个数字，但使用的资源不同：
 
@@ -64,7 +64,7 @@ aliases:
 
 **时间之理（Time Theorems，TT）**用于购买**时间研究**。时间研究是一棵有前置关系和分支选择的升级树。买研究前，先看需要哪些前置研究；只盯着最远处的高级研究，可能会发现按钮一直无法购买。
 
-**永恒挑战（Eternity Challenges，EC）**比普通挑战和无限挑战更讲究准备。它们往往需要足够的资源、正确的时间研究路径，以及各自额外的进入条件。某些永恒挑战可以重复完成以取得更多收益，并不是完成一次就全部结束。[原版机制：永恒挑战](https://antimatterdimensions.wiki.gg/wiki/Eternity_Challenges?oldid=3347)。
+**永恒挑战（Eternity Challenges，EC）**比普通挑战和无限挑战更讲究准备。它们往往需要足够的资源、正确的时间研究路径，以及各自额外的进入条件。某些永恒挑战可以重复完成以取得更多收益，并不是完成一次就全部结束。[原版机制：永恒挑战](https://antimatterdimensions.wiki.gg/wiki/Eternity_Challenges?oldid=3347)。（外部页面/API 核对：`NOT RUN`；当前回执未取得 HTTP 200、页面标题与 revid 归属证明，暂不将该修订号视为已验证证据。）
 
 如果某个挑战入口无法使用，先检查研究树和它列出的要求，再决定是换一条研究路径，还是继续积累资源。一直等待不一定能弥补缺少的前置条件。
 
@@ -78,11 +78,11 @@ Oreki Edition 会用额外的策略调度减少重复购买和重置操作，后
 
 ## 参考资料
 
-- [Antimatter Dimensions Wiki：Infinity](https://antimatterdimensions.wiki.gg/wiki/Infinity?oldid=3113)（大坍缩和 IP）。
-- [Antimatter Dimensions Wiki：Break Infinity](https://antimatterdimensions.wiki.gg/wiki/Break_Infinity?oldid=3349)（打破无限的前置条件）。
-- [Antimatter Dimensions Wiki：Infinity Dimensions](https://antimatterdimensions.wiki.gg/wiki/Infinity_Dimensions?oldid=3344)（无限维度）。
-- [Antimatter Dimensions Wiki：Eternity](https://antimatterdimensions.wiki.gg/wiki/Eternity?oldid=3118)（第一次永恒的条件与奖励）。
-- [Antimatter Dimensions Wiki：Eternity Challenges](https://antimatterdimensions.wiki.gg/wiki/Eternity_Challenges?oldid=3347)（挑战解锁与重复完成）。
+- [Antimatter Dimensions Wiki：Infinity](https://antimatterdimensions.wiki.gg/wiki/Infinity?oldid=3113)（大坍缩和 IP）。（外部页面/API 核对：`NOT RUN`；当前回执未取得 HTTP 200、页面标题与 revid 归属证明，暂不将该修订号视为已验证证据。）
+- [Antimatter Dimensions Wiki：Break Infinity](https://antimatterdimensions.wiki.gg/wiki/Break_Infinity?oldid=3349)（打破无限的前置条件）。（外部页面/API 核对：`NOT RUN`；当前回执未取得 HTTP 200、页面标题与 revid 归属证明，暂不将该修订号视为已验证证据。）
+- [Antimatter Dimensions Wiki：Infinity Dimensions](https://antimatterdimensions.wiki.gg/wiki/Infinity_Dimensions?oldid=3344)（无限维度）。（外部页面/API 核对：`NOT RUN`；当前回执未取得 HTTP 200、页面标题与 revid 归属证明，暂不将该修订号视为已验证证据。）
+- [Antimatter Dimensions Wiki：Eternity](https://antimatterdimensions.wiki.gg/wiki/Eternity?oldid=3118)（第一次永恒的条件与奖励）。（外部页面/API 核对：`NOT RUN`；当前回执未取得 HTTP 200、页面标题与 revid 归属证明，暂不将该修订号视为已验证证据。）
+- [Antimatter Dimensions Wiki：Eternity Challenges](https://antimatterdimensions.wiki.gg/wiki/Eternity_Challenges?oldid=3347)（挑战解锁与重复完成）。（外部页面/API 核对：`NOT RUN`；当前回执未取得 HTTP 200、页面标题与 revid 归属证明，暂不将该修订号视为已验证证据。）
 
 ## 相关条目
 
