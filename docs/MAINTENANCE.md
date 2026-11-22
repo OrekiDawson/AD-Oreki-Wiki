@@ -17,13 +17,25 @@
 
 1. 修改/新增 Markdown（必须含 frontmatter `title`；专题条目要有中文导语与就近来源）。
 2. 内部链接用 `[[页面名]]`；CI 会检查断链。
-3. 专题条目写当前有效结论；玩家内容放 `content/player/`，开发者内容放 `content/developer/`，时间线、逐日改动与轮次结案写进 `content/developer/history/`。
+3. 专题条目按读者任务写当前可验证的知识：玩家教程讲实际玩法；开发者文档按入门教程、操作指南、技术参考或原理说明择一组织，技术时间线归 `content/developer/history/`，不要把单一“项目状态报告”模板套遍全站。
 4. PR -> `KB PR check`（构建 + 内容检查 + 产物检查）。
 5. 合并 main -> `Deploy wiki to GitHub Pages`（构建、部署、线上验收）。
 
 浏览器验收脚本不把 Playwright 写进生产依赖。干净检出首次运行前执行
 `npm i -D playwright`；若使用外部已安装模块，设置
 `KB_PLAYWRIGHT=<模块绝对路径>`。站点地址可用 `KB_URL=<URL>` 覆盖。
+
+## 开发者专区重构的最小编辑流程
+
+**规则写入 PR 不代表 37 篇旧文已经合格。** 每批只选一组直接相关的页面，按以下顺序操作：
+
+1. 读现有文章与真实 Android/Web 仓库，在 PR 说明本批的读者任务、目标类型、所读源码 Commit、保留/精修/归档/合并判定。先做开发者首页与入门路线，再做 Android/Web 架构、构建和故障排查。
+2. 为**架构/原理说明**确认关键模块和数据流；为**操作/排障指南**确认脚本、命令前提、输入、输出与失败恢复；为**参考**核实接口、字段与参数。可执行步骤尚未跑过则写 `NOT RUN`，不得用占位参数假装已验。
+3. 原始取证放源仓或历史档案，Wiki 保留准确解释和固定源码链接。不删除唯一证据、不把 AI Summary 当成文章，不因统一排版改动无关页面。
+4. 写完请**非撰稿审校者**按任务核对事实、源码、可操作性、语言质量，附实际审校主体、检查范围和未运行项目。失败标 `EDITORIAL_BLOCKED`，与 CI/Review Check 分开。
+5. 迁移前保留旧 `aliases`，定向检查链接、索引、Quartz 构建；上线后才可声称 Pages/HTTPS 已验。纯规则修改无需真实游戏长跑。
+
+编辑规范只在 `content/wiki-rules.md` 维护；示例和选题方法见 `docs/ARTICLE_TEMPLATE.md` 与 `docs/AGENT_GUIDE.md`。不为了防止人为错误新增昂贵的全文 AI 检查或复杂生成流水线。
 
 ## 内容检查（`scripts/check-content.mjs`）
 
