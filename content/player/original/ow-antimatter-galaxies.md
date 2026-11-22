@@ -10,15 +10,15 @@ original_revid: 3335
 original_fetched_at: "2026-11-15T21:10:00+08:00"
 original_license: "CC BY-SA 4.0"
 original_license_url: "https://creativecommons.org/licenses/by-sa/4.0/"
-translation_status: "STRUCTURE CHECKED"
-review_status: "STRUCTURE CHECKED"
+translation_status: "REVIEWED"
+review_status: "REVIEWED"
 aliases:
   - "/original/ow-antimatter-galaxies"
 ---
 
 **反物质星系**是游戏中的第二个威望（Prestige）机制——如果把可从游戏早期使用的[维度献祭](/player/original/ow-dimensional-sacrifice)也算作威望机制，则它是第三个。在获得 $80$ 个第 8 反物质维度之前，玩家无法与之交互。
 
-购买一个反物质星系会重置[反物质维度](/player/original/ow-antimatter-dimensions)、[计数频率](https://antimatterdimensions.wiki.gg/wiki/Tickspeed)、[维度献祭](/player/original/ow-dimensional-sacrifice)与[维度提升](/player/original/ow-dimension-boosts)，但会让所有计数频率升级的效果少量提高。
+购买一个反物质星系会重置[反物质维度](/player/original/ow-antimatter-dimensions)、[计数频率](/player/original/ow-tickspeed)、[维度献祭](/player/original/ow-dimensional-sacrifice)与[维度提升](/player/original/ow-dimension-boosts)，但会让所有计数频率升级的效果少量提高。
 
 ## 机制
 
@@ -39,17 +39,17 @@ aliases:
 
 ## 反物质星系的成长加剧
 
-超过 $100$ 个反物质星系后，成本成长会改变：成本增量本身每个星系增加 $+2$，使得下一个星系比上一个贵 $62$、再下一个贵 $64$、$66$，依此类推。界面会相应变化，反物质星系显示为**远距（Distant）**反物质星系。
+达到 $100$ 个反物质星系后，成本成长会改变：成本增量本身每个星系增加 $+2$，使得下一个星系比上一个贵 $62$、再下一个贵 $64$、$66$，依此类推。界面会相应变化，反物质星系显示为**远距（Distant）**反物质星系。
 
-超过 $800$ 个反物质星系后，成本成长再次改变：在远距成长生效之后，总成本本身每个星系再增加 $+0.2\%$。界面会相应变化，反物质星系显示为**遥距（Remote）**。
+达到 $800$ 个反物质星系后，成本成长再次改变：在远距成长生效之后，总成本本身每个星系再增加 $+0.2\%$。界面会相应变化，反物质星系显示为**遥距（Remote）**。
 
 ## 相关升级
 
 反物质星系的初始价格与成长增量，可以被游戏更后期的某些升级降低：
 
-- 第一列的第 4 个[无限升级](/player/original/ow-infinity-upgrades)会把[维度提升](/player/original/ow-dimension-boosts)与反物质星系的初始价格降低 $9$ 个维度，使其变为 $11$ 个而不是 $20$ 个；
+- 第一列的第 4 个[无限升级](/player/original/ow-infinity-upgrades)会把[维度提升](/player/original/ow-dimension-boosts)与反物质星系的初始价格各降低 $9$ 个维度：维度提升的首次需求从 $20$ 个第 4 维度降为 $11$ 个，反物质星系则从 $80$ 个第 8 维度降为 $71$ 个；
 - [无限挑战 5](/player/original/ow-challenges)会把[维度提升](/player/original/ow-dimension-boosts)与反物质星系的初始价格降低 $1$；
-- [时间研究 41](/player/original/ow-time-studies)把反物质星系的成长从 $60$ 降到 $52$。
+- [时间研究 42](/player/original/ow-time-studies)把反物质星系的成长从 $60$ 降到 $52$。
 
 远距星系成长可以被游戏更后期的某些升级缓和：
 

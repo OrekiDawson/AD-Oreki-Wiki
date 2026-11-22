@@ -75,7 +75,7 @@ tags:
 
 ## 来源与版权
 
-本站译文取材于 [Antimatter Dimensions Wiki](https://antimatterdimensions.wiki.gg/wiki/Antimatter_Dimensions) 的原版游戏条目。每篇译文都应保留原文链接、修订记录、贡献者历史和许可说明；原站未转载的图片、图标等素材仍应到原页查看。
+本站译文取材于 [Antimatter Dimensions Wiki](https://antimatterdimensions.wiki.gg/wiki/Antimatter_Dimensions) 的原版游戏条目。每篇译文都应保留原文链接、修订记录、贡献者历史和许可说明；本站未转载的原站图片、图标等素材，仍可到原页查看。
 
 译文按原站相应内容的 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) 许可提供，属于**简体中文翻译与改编**，不代表原站认可 MOD。有关来源、翻译和署名的详细要求见[版权与许可](/copyright)。
 

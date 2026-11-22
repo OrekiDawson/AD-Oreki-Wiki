@@ -36,6 +36,8 @@
 | Eternity Milestone | 永恒里程碑 | 游戏内 | — |
 | Time Dimension | 时间维度 | 游戏内 | 缩写 TD |
 | Time Dilation | 时间膨胀 | 游戏内 | 简称「膨胀」 |
+| Tachyon Particle | 超光速粒子 | 游戏内 | 缩写 TP；不译「速子」 |
+| Tachyon Galaxy / Galaxies | 超光速粒子星系 | 游戏内 | 缩写 TG；不译「速子星系」 |
 | Reality | 现实 | 游戏内 | — |
 | Reality Machine | 现实机器 | 游戏内 | 缩写 RM |
 | Reality Upgrade | 现实升级 | 游戏内 | — |
