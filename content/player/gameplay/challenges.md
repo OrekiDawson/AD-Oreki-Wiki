@@ -14,7 +14,7 @@ aliases:
 
 ## 普通挑战：先练习在限制下达到无限
 
-普通挑战（Normal Challenges）是最先接触到的类型。第一次大坍缩后，挑战界面会开放。原版有 **12 个普通挑战**；后面三个需要累计 **16 次无限**才开放。[原版普通挑战](https://antimatterdimensions.wiki.gg/wiki/Normal_Challenges)。
+普通挑战（Normal Challenges）是最先接触到的类型。第一次大坍缩后，挑战界面会开放。原版有 **12 个普通挑战**；后面三个需要累计 **16 次无限**才开放。[原版普通挑战](https://antimatterdimensions.wiki.gg/wiki/Normal_Challenges?oldid=3341)。
 
 进入普通挑战后，游戏会在特定限制下重新开始一段无限前的成长。目标依然是把反物质推到约 **1.80 × 10³⁰⁸**，完成一次对应的大坍缩。
 
@@ -24,7 +24,7 @@ aliases:
 
 ## 无限挑战：在更高的反物质规模下作战
 
-**无限挑战（Infinity Challenges，简称 IC）**会在打破无限之后的推进过程中逐渐开放。原版共有 **8 个无限挑战**，各自需要先达到一定的反物质条件，挑战期间也会施加额外限制。[原版无限挑战](https://antimatterdimensions.wiki.gg/wiki/Infinity_Challenges)。
+**无限挑战（Infinity Challenges，简称 IC）**会在打破无限之后的推进过程中逐渐开放。原版共有 **8 个无限挑战**，各自需要先达到一定的反物质条件，挑战期间也会施加额外限制。[原版无限挑战](https://antimatterdimensions.wiki.gg/wiki/Infinity_Challenges?oldid=3359)。
 
 无限挑战与普通挑战很像，都是从受限的无限成长出发；不同的是，它们可能要求在大坍缩前达到高于最初无限上限的反物质目标。
 
@@ -34,11 +34,11 @@ aliases:
 
 ## 永恒挑战：研究树也是门槛的一部分
 
-**永恒挑战（Eternity Challenges，简称 EC）**在永恒阶段出现，共有 **12 关**，每关最多可以完成 **5 次**。重复完成会提高奖励，但下一次的要求通常也更严格。[原版永恒挑战](https://antimatterdimensions.wiki.gg/wiki/Eternity_Challenges)。
+**永恒挑战（Eternity Challenges，简称 EC）**在永恒阶段出现，共有 **12 关**，每关最多可以完成 **5 次**。重复完成会提高奖励，但下一次的要求通常也更严格。[原版永恒挑战](https://antimatterdimensions.wiki.gg/wiki/Eternity_Challenges?oldid=3347)。
 
 这组挑战比前两类更容易卡住，因为除了准备足够的资源，还必须考虑**时间研究树的路线**。
 
-想要进入某个永恒挑战，通常需要先买到通向挑战的研究、支付相应的时间之理（TT），并满足它自己的额外条件。举例来说，研究树上第 **151** 号研究是 EC9 的前置路径，而 EC10 需要经过第 **181** 号研究；少了前置研究，只攒够资源也无法购买挑战入口。[原版时间研究表](https://antimatterdimensions.wiki.gg/wiki/Time_Studies)。
+想要进入某个永恒挑战，通常需要先买到通向挑战的研究、支付相应的时间之理（TT），并满足它自己的额外条件。举例来说，研究树上第 **151** 号研究是 EC9 的前置路径，而 EC10 需要经过第 **181** 号研究；少了前置研究，只攒够资源也无法购买挑战入口。[原版时间研究表](https://antimatterdimensions.wiki.gg/wiki/Time_Studies?oldid=3343)。
 
 进入永恒挑战后，需要在该关限制下达到对应的**无限点数（IP）目标**，才能完成这一轮的挑战。它的目标资源与普通挑战、无限挑战并不相同。
 
@@ -74,11 +74,11 @@ Oreki Edition 的自动化负责在允许的条件下购买、选择与推进，
 
 ## 参考资料
 
-- [Antimatter Dimensions Wiki：Challenges](https://antimatterdimensions.wiki.gg/wiki/Challenges)（三类挑战总览）。
-- [Antimatter Dimensions Wiki：Normal Challenges](https://antimatterdimensions.wiki.gg/wiki/Normal_Challenges)（普通挑战、首次无限与 16 次无限条件）。
-- [Antimatter Dimensions Wiki：Infinity Challenges](https://antimatterdimensions.wiki.gg/wiki/Infinity_Challenges)（八个无限挑战）。
-- [Antimatter Dimensions Wiki：Eternity Challenges](https://antimatterdimensions.wiki.gg/wiki/Eternity_Challenges)（研究前置、额外条件与五次完成）。
-- [Antimatter Dimensions Wiki：Time Studies](https://antimatterdimensions.wiki.gg/wiki/Time_Studies)（挑战入口在研究树上的位置）。
+- [Antimatter Dimensions Wiki：Challenges](https://antimatterdimensions.wiki.gg/wiki/Challenges?oldid=3106)（三类挑战总览）。
+- [Antimatter Dimensions Wiki：Normal Challenges](https://antimatterdimensions.wiki.gg/wiki/Normal_Challenges?oldid=3341)（普通挑战、首次无限与 16 次无限条件）。
+- [Antimatter Dimensions Wiki：Infinity Challenges](https://antimatterdimensions.wiki.gg/wiki/Infinity_Challenges?oldid=3359)（八个无限挑战）。
+- [Antimatter Dimensions Wiki：Eternity Challenges](https://antimatterdimensions.wiki.gg/wiki/Eternity_Challenges?oldid=3347)（研究前置、额外条件与五次完成）。
+- [Antimatter Dimensions Wiki：Time Studies](https://antimatterdimensions.wiki.gg/wiki/Time_Studies?oldid=3343)（挑战入口在研究树上的位置）。
 
 ## 相关条目
 
