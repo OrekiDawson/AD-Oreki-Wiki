@@ -68,7 +68,7 @@ Oreki Edition 还提供统一调度策略，按当前阶段和目标决定受管
 
 ## 参考资料
 
-- [原版社区 Wiki：反物质维度](https://antimatterdimensions.wiki.gg/wiki/Antimatter_Dimensions)（生产链、维度数量与解锁）。
-- [原版社区 Wiki：重置成长](https://antimatterdimensions.wiki.gg/wiki/Prestige)（维度提升、星系与大坍缩；来源修订尚待核对）。
+- [原版社区 Wiki：反物质维度](https://antimatterdimensions.wiki.gg/wiki/Antimatter_Dimensions?oldid=3325)（生产链、维度数量与解锁）。
+- [原版社区 Wiki：重置成长](https://antimatterdimensions.wiki.gg/wiki/Prestige?oldid=3398)（维度提升、星系与大坍缩；来源修订尚待核对）。
 - [原版社区 Wiki：无限](https://antimatterdimensions.wiki.gg/wiki/Infinity?oldid=3113)（首次大坍缩）。
 - [Oreki Edition Android、Web 源码](https://github.com/OrekiDawson/AD-Oreki-Edition-Android)（MOD 调度器的适用范围以实际版本为准）。
