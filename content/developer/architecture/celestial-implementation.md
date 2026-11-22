@@ -26,7 +26,7 @@ Oreki Edition 缩放了三项：现实次数 **60**、膨胀时间 **`1e30`**、
 
 ### Ra：36 空间之理的来源
 
-Ra 的空间之理只可能来自 RU0～RU5：`v.js` 中 `if (!V.isFlipped && isHard) continue;` 使 RU6/7/8 在 `unlockHardV` 之前永远无法完成。36 条正好由 RU0～RU5 各 6 层给出，所以不要指望用后面的 slot 补数。[读码，[FACTS §8.5](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/main/docs/facts/game/reality.md#f-8-5)]
+Ra 的空间之理只可能来自 RU0～RU5：`v.js` 中 `if (!V.isFlipped && isHard) continue;` 使 RU6/7/8 在 `unlockHardV` 之前永远无法完成。36 条正好由 RU0～RU5 各 6 层给出，所以不要指望用后面的 slot 补数。[读码，[FACTS §8.5](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/3b2d8284f2aca7132168998ee32497b3c4c17b8e/docs/facts/game/reality.md#f-8-5)]
 
 ### Lai'tela：唯一入口是 IU15
 
@@ -37,15 +37,15 @@ Lai'tela 的入口是**虚构升级 IU15**（成本 `1e9`），它有两道门�
 
 原版门 B 的反物质指数门槛是 `1.5e12`；Oreki Edition 改为 `1e8`。原版 IM 上限约 `9.4517e7`，不足以覆盖 IU15/IU25 的成本，MOD 因此把 IM 上限倍率设为 `OREKI_IM_CAP_MULT = 3000`。[官方 IU15](https://github.com/IvarK/AntimatterDimensionsSourceCode/blob/5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/secret-formula/reality/imaginary-upgrades.js) · MOD 值见 [原版行为与 Oreki Edition 修改](/player/gameplay/original-vs-mod)。
 
-「买 ID1 会让 `maxID1 > 0`」这条死锁链是原版设计：一旦买过第一无限维度，IU15 就永久失败（本现实内），莱特拉进度也会被砍到 50%。因为 `maxID1` 每个现实重置，这个问题可以按现实分阶段处理。[读码，[FACTS §8.10](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/main/docs/facts/game/endgame.md#f-8-10)]
+「买 ID1 会让 `maxID1 > 0`」这条死锁链是原版设计：一旦买过第一无限维度，IU15 就永久失败（本现实内），莱特拉进度也会被砍到 50%。因为 `maxID1` 每个现实重置，这个问题可以按现实分阶段处理。[读码，[FACTS §8.10](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/3b2d8284f2aca7132168998ee32497b3c4c17b8e/docs/facts/game/endgame.md#f-8-10)]
 
-莱特拉的熵速率在原版是 `clamp((log10(AM) / 1e11)^2, 0, 100) / 200`，MOD 把除数改为 `2e7`；原版升层要求「在 30 秒真实时间内完成一次莱特拉现实」，MOD 将窗口放宽到 300 秒，原因与实测见 [FACTS §25](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/main/docs/facts/game/celestials.md#f-25) 与 MOD 源码注释。
+莱特拉的熵速率在原版是 `clamp((log10(AM) / 1e11)^2, 0, 100) / 200`，MOD 把除数改为 `2e7`；原版升层要求「在 30 秒真实时间内完成一次莱特拉现实」，MOD 将窗口放宽到 300 秒，原因与实测见 [FACTS §25](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/3b2d8284f2aca7132168998ee32497b3c4c17b8e/docs/facts/game/celestials.md#f-25) 与 MOD 源码注释。
 
 ### Pelle：真终局与 break 死锁
 
 Pelle 的入口是 IU25「Omnipresent Obliteration」（原版成本 `1.6e15`，MOD 改为 `5e9`），要求 `Laitela.isRunning`、`maxAllowedDimension === 0`、`Glyphs.activeWithoutCompanion.length <= 1` 且 `TimeStudy.reality` 已买。[官方 IU25](https://github.com/IvarK/AntimatterDimensionsSourceCode/blob/5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/secret-formula/reality/imaginary-upgrades.js)
 
-进入毁灭态后，`player.break` 会被关闭，反物质被夹在 `1.8e308` 附近，`endState` 封顶约 `0.75`。原版唯一能重新打开 break 的路径是：`isDoomed && keepAutobuyers.canBeApplied && hasMaxedInterval`，而 `keepAutobuyers` 是 Pelle 升级 id 2，需要 `5e6` 遗迹碎片（来自 Armageddon）。**因此正确推进序列是：反复末日拿碎片 → 买 `keepAutobuyers` → 下一次现实重置自动恢复 break**。任何「不重置、只囤产量」的自动化都会卡在这一步；单纯去掉 `!Pelle.isDoomed` 守卫也无效，因为 `breakInfinity()` 会先因 `hasMaxedInterval=false` 直接返回。[实测 + 读码，[FACTS §32](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/main/docs/facts/game/pelle.md#f-32)]
+进入毁灭态后，`player.break` 会被关闭，反物质被夹在 `1.8e308` 附近，`endState` 封顶约 `0.75`。原版唯一能重新打开 break 的路径是：`isDoomed && keepAutobuyers.canBeApplied && hasMaxedInterval`，而 `keepAutobuyers` 是 Pelle 升级 id 2，需要 `5e6` 遗迹碎片（来自 Armageddon）。**因此正确推进序列是：反复末日拿碎片 → 买 `keepAutobuyers` → 下一次现实重置自动恢复 break**。任何「不重置、只囤产量」的自动化都会卡在这一步；单纯去掉 `!Pelle.isDoomed` 守卫也无效，因为 `breakInfinity()` 会先因 `hasMaxedInterval=false` 直接返回。[实测 + 读码，[FACTS §32](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/3b2d8284f2aca7132168998ee32497b3c4c17b8e/docs/facts/game/pelle.md#f-32)]
 
 原版 `game-end.js` 的终局判据基于 `log10(9e15) - 8.7`，反物质指数约 `9e15` 时过线；Oreki Edition 把目标改为 `OREKI_PELLE_END_TARGET_EXP = 1e3` 并相应调整公式。**下调 MOD 目标之外，不允许再改动通关定义。**
 
@@ -97,7 +97,7 @@ Pelle 的入口是 IU25「Omnipresent Obliteration」（原版成本 `1.6e15`，
 - [官方源码：虚构升级 IU15 / IU25](https://github.com/IvarK/AntimatterDimensionsSourceCode/blob/5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/secret-formula/reality/imaginary-upgrades.js)
 - [官方源码：莱特拉熵速率](https://github.com/IvarK/AntimatterDimensionsSourceCode/blob/5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/celestials/laitela/laitela.js)
 - [官方源码：终局判定](https://github.com/IvarK/AntimatterDimensionsSourceCode/blob/5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/celestials/pelle/game-end.js)
-- [docs/FACTS.md §8.3–8.10](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/main/docs/facts/game/reality.md#f-8-3)、[§25](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/main/docs/facts/game/celestials.md#f-25)、[§32](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/main/docs/facts/game/pelle.md#f-32)
+- [docs/FACTS.md §8.3–8.10](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/3b2d8284f2aca7132168998ee32497b3c4c17b8e/docs/facts/game/reality.md#f-8-3)、[§25](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/3b2d8284f2aca7132168998ee32497b3c4c17b8e/docs/facts/game/celestials.md#f-25)、[§32](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/3b2d8284f2aca7132168998ee32497b3c4c17b8e/docs/facts/game/pelle.md#f-32)
 
 ## 相关条目
 
