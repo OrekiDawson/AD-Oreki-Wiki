@@ -49,7 +49,7 @@ Oreki Edition 保留了原版从反物质、无限、永恒到后期系统的成
 
 Oreki Edition 还提供统一调度策略，按当前阶段和目标决定受管项目何时动作。**自动化不是跳过解锁条件**：资源不够时仍然买不了，挑战也必须按照游戏本来的条件完成。
 
-如果你发现刚改过的某项受管自动购买器设置又恢复了，不一定是操作失败。调度器会在下一次节拍重新应用大多数受管字段；想持续调整这些项目，应检查调度器自身的配置，而不是反复改受管项目。**自动永恒的手动关闭另有专门保护**，并不等同于普通字段恢复。详细说明见[智能自动购买器](/player/gameplay/automation)。
+如果你发现刚改过的某项受管自动购买器设置又恢复了，不一定是操作失败。调度器会在下一次节拍重新应用大多数受管字段；想持续调整这些项目，应检查调度器自身的配置，而不是反复改受管项目。**在已有该保护的平台（当前为 Android 实现）上，自动永恒的手动关闭另有专门保护**，并不等同于普通字段恢复。详细说明见[智能自动购买器](/player/gameplay/automation)。
 
 ## 开始前，顺手保护好存档
 
@@ -69,6 +69,6 @@ Oreki Edition 还提供统一调度策略，按当前阶段和目标决定受管
 ## 参考资料
 
 - [原版社区 Wiki：反物质维度](https://antimatterdimensions.wiki.gg/wiki/Antimatter_Dimensions?oldid=3325)（生产链、维度数量与解锁）。
-- [原版社区 Wiki：重置成长](https://antimatterdimensions.wiki.gg/wiki/Prestige?oldid=3398)（维度提升、星系与大坍缩；来源修订尚待核对）。
+- [原版社区 Wiki：重置成长](https://antimatterdimensions.wiki.gg/wiki/Prestige?oldid=3398)（维度提升、星系与大坍缩；本站归档修订 ID `3398`，抓取于 2026-11-15）。
 - [原版社区 Wiki：无限](https://antimatterdimensions.wiki.gg/wiki/Infinity?oldid=3113)（首次大坍缩）。
 - [Oreki Edition Android、Web 源码](https://github.com/OrekiDawson/AD-Oreki-Edition-Android)（MOD 调度器的适用范围以实际版本为准）。
