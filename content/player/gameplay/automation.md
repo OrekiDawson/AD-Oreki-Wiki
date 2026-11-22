@@ -23,7 +23,7 @@ Oreki Edition 在原版自动购买器之外，又加入了一层**统一调度�
 
 自动购买器不会因为开启了就凭空买到东西。没有足够的反物质或点数时，它仍然需要等待资源；还没解锁的功能，也不能靠打开开关提前使用。
 
-不同自动器的开放条件与选项不完全相同，详细列表可以查看[原版自动化资料](https://antimatterdimensions.wiki.gg/wiki/Automation)。
+不同自动器的开放条件与选项不完全相同，详细列表可以查看[原版自动化资料](https://antimatterdimensions.wiki.gg/wiki/Automation?oldid=3396)。
 
 ## Oreki Edition 的调度器多做了什么？
 
@@ -53,13 +53,13 @@ Oreki Edition 的统一调度节拍可以设为 **1～60 秒，默认 10 秒**�
 
 ## 为什么我刚关闭或修改的设置又变回去了？
 
-**由 Oreki Edition 调度器管理的自动购买器配置，以调度器的策略为准。** 玩家临时修改受管设置后，调度器会在下一个节拍重新应用它所管理的值。
+**调度器对明确受管的自动购买器拥有策略控制权。** 对受管维度、计数频率、维度提升、星系等项目，策略可管理启用状态、购买方式和间隔等指定字段；玩家临时修改这些受管字段后，通常会在下一个有效调度节拍重新应用策略值。未纳入托管的项目不受这一规则影响。
 
-这通常不是存档忘记了你的操作，而是你改动的地方仍然由统一策略接管。默认节拍为 10 秒，因此短时间内看见设置恢复是预期行为。
+这通常不是存档忘记了你的操作，而是你改动的项目仍然由统一策略接管。默认节拍为 10 秒，因此短时间内看见受管设置恢复可能是预期行为。但**自动永恒是需要单独理解的例外**：在当前 Android 实现中，玩家明确手动关闭自动永恒后应被持续尊重；只有原版现实结算造成的复位，才由专门托管逻辑按条件恢复。
 
-想让行为持续改变，应当**调整调度器本身的目标、管理设置或总开关**（以你所用版本实际提供的选项为准），而不是只在一个受管自动购买器上反复打开、关闭或修改间隔。
+想让普通受管项目的行为持续改变，应当**调整调度器本身的目标、管理设置或总开关**（以当前版本的实际界面为准），而不是反复修改它管理的字段。**如果手动关闭自动永恒后它又在没有合理复位的情况下自行打开，请记录版本、操作与存档状态并反馈**，不要一概当作正常策略纠偏。
 
-这里有一个边界：**不是每个原版自动购买器的每个选项都必然被 MOD 托管。** 如果某项没有纳入调度器，就应按它自身的原版规则理解。不能因为一次设置变化，就断言所有自动购买器都受同一种控制。
+这里有一个边界：**不是每个原版自动购买器的每个选项都被 MOD 托管；自动永恒的手动关闭保护也不是普通受管字段的下一 tick 恢复。** Android 具体依据见 [R120 受管字段清单](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/main/reports/R120-01/scheduler-managed-authority.md) 与 [自动永恒托管实现](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/main/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiAutoEternityAdoption.kt)。
 
 ## 自动化没有动作时，先看什么？
 
@@ -85,7 +85,7 @@ Oreki Edition 希望缩短无意义的等待，而不是用假资源或假结算
 
 ## 参考资料与延伸阅读
 
-- [原版社区 Wiki：Automation](https://antimatterdimensions.wiki.gg/wiki/Automation)：原版自动器的解锁、间隔和批量。
+- [原版社区 Wiki：Automation](https://antimatterdimensions.wiki.gg/wiki/Automation?oldid=3396)：原版自动器的解锁、间隔和批量（本站历史资料记录修订 ID 3396，2026-11-16）。
 - [Oreki Edition Android 源码](https://github.com/OrekiDawson/AD-Oreki-Edition-Android)：MOD 调度器与受管配置的具体实现；各版本行为以真实构建为准。
 - [原版与 MOD 的区别](/player/gameplay/original-vs-mod)：统一调度器属于 MOD 新增能力。
 - [阶段门禁](/player/gameplay/stage-gates)：为什么部分系统必须等到真正解锁才能使用。
