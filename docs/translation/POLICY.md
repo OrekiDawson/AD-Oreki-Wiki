@@ -89,7 +89,7 @@ review_status: "NOT REVIEWED"      # NOT REVIEWED / STRUCTURE CHECKED / REVIEWED
 
 ## 8. 批次与验收
 
-- 每批 5–10 页，附带清单更新；每批必须通过：
+- 每批数量依独立逐段审校能力而定，历史的 5–10 页仅供安排工作，**不得为凑页数扩大批次或绕过审校**。更新时附清单及真实来源和审校状态；每批机器检查仍必须通过：
   - `node scripts/check-content.mjs`（全站内容规则）
   - `node scripts/check-translation.mjs`（翻译专区来源/许可/状态一致性）
   - `node scripts/verify-build.mjs`（构建产物、旧 URL、类目）
