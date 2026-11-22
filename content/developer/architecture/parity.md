@@ -37,7 +37,7 @@ Oreki Edition 在 Android 与 Web 两端并行开发。所谓「双端行为一�
 ## 已知的跨端差异类型
 
 1. **实现位置不同**：同一机制在 Android 可能是 Kotlin 模块，在 Web 是上游 JS 模块加 MOD 补丁。
-2. **字段编码不同**：例如 `imaginaryUpgradeBits` 的位号在两端不同（Android 移植版莱特拉 bit4 / 佩勒 bit14，Web 是 15/25），照抄另一端会得到恒 false 的策略叶子。见 [天神系统](/player/gameplay/celestials)。
+2. **字段编码不同**：例如 `imaginaryUpgradeBits` 的位号在两端不同（Android 移植版莱特拉 bit4 / 佩勒 bit14，Web 是 15/25），照抄另一端会得到恒 false 的策略叶子。见 [天神解锁与跨端实现细节](/developer/architecture/celestial-implementation)。
 3. **原版能力不同**：Android 原版与 Web 原版的自动购买器、UI 结构并不完全一样。
 4. **环境差异**：浏览器会冻结后台页面（Page Lifecycle），Android 是 Activity 生命周期，不能用同一套时序假设。
 
@@ -56,4 +56,4 @@ Oreki Edition 在 Android 与 Web 两端并行开发。所谓「双端行为一�
 
 ## 相关条目
 
-[Android 架构](/developer/architecture/android) · [Web 架构](/developer/architecture/web) · [挑战与真实结算](/player/gameplay/challenges) · [智能自动购买器](/player/gameplay/automation) · [阶段门禁](/player/gameplay/stage-gates) · [天神系统](/player/gameplay/celestials)
+[Android 架构](/developer/architecture/android) · [Web 架构](/developer/architecture/web) · [挑战与真实结算](/player/gameplay/challenges) · [智能自动购买器](/player/gameplay/automation) · [Android 阶段门禁技术判据](/developer/architecture/gui-stage-gates) · [天神系统](/player/gameplay/celestials)

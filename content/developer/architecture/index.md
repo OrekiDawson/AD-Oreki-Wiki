@@ -28,3 +28,8 @@ tags:
 ## 相关分类
 
 [逆向与语义映射](/developer/reverse-engineering/) · [构建与交付](/developer/build/) · [玩法机制](/player/gameplay/)
+
+## 专题补充
+
+- [Android 阶段门禁与 GUI 判据](/developer/architecture/gui-stage-gates)：阶段判定、非法页面直达及兼容存档故障的技术依据。
+- [天神解锁与跨端实现细节](/developer/architecture/celestial-implementation)：V、莱特拉、佩勒的源码条件与 Android/Web 位号差异。
