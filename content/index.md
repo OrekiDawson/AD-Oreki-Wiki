@@ -29,6 +29,6 @@ tags:
 
 ## 公共信息
 
-[知识库规则](/wiki-rules) · [版权与许可](/copyright) · [本站使用说明](/how-to-use)
+[知识库规则](/wiki-rules) · [本站不是什么](/wiki-not) · [版权与许可](/copyright) · [本站使用说明](/how-to-use)
 
 使用顶部搜索可查中文名称、英文游戏术语或 Kotlin / DEX / AGP 等技术词。重要玩家结论尽量给出可追溯来源；开发者事实优先链接固定 Commit、PR、Run、报告或存档测试。**代码合并、CI 成功、真实通关和正式发布不能互相替代。**
