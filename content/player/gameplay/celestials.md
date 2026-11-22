@@ -63,7 +63,7 @@ Ra 会把你带回此前接触过的天神能力，并通过**记忆（Memories�
 
 ## 最后两位：莱特拉与佩勒
 
-### 莱特拉（Lai'tela）：暗物质与新的生产方式
+### 莱特拉（Lai'tela，检索别名 Lai Tela）：暗物质与新的生产方式
 
 莱特拉会引入**暗物质维度（Dark Matter Dimensions）**、奇点（Singularities）和连续统（Continuum）等机制。她的特殊现实还有独特的完成和速度要求。
 
