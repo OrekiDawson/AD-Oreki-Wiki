@@ -1,6 +1,6 @@
 ---
 title: "挑战与真实结算"
-description: "解释普通、无限与永恒挑战为什么必须走原版结算入口，以及 MOD 自动化怎样在不伪造结果的前提下加速挑战"
+description: "了解普通挑战、无限挑战、永恒挑战怎样解锁、怎样完成，以及卡关时应该检查哪些条件"
 tags:
   - 玩法
   - 挑战
@@ -8,89 +8,78 @@ aliases:
   - "/gameplay/challenges"
 ---
 
+在《反物质维度》里，**挑战**不是单独打怪的关卡，而是让你在特殊限制下重新推进某一段成长。限制可能让生产变慢、某些升级失效，或要求你采用平时不常用的策略。完成挑战后，你会获得能帮助后续成长的奖励。
 
-挑战是《反物质维度》中期成长的主要来源之一：玩家在额外限制下重新完成目标，以换取奖励、解锁条件与更高的成长上限。Oreki Edition 的自动化可以加速挑战，但**不能改写结算结果**——本条目解释原版结算入口、MOD 自动化的分工与验收边界。
+挑战分成三大类：**普通挑战、无限挑战和永恒挑战**。它们逐步开放，进入条件与目标也不一样。Oreki Edition 可以帮你减少重复操作，但仍须按实际规则完成挑战。
 
-## 挑战的类型与关系
+## 普通挑战：先练习在限制下达到无限
 
-- **普通挑战**：早期在限制条件下重新完成成长目标。
-- **无限挑战（IC）**：无限层之后开放，单个挑战可多次完成。
-- **永恒挑战（EC1～EC12）**：永恒层之后开放，每关最多 5 次完成；EC 的完成数与 **DS1（时间膨胀）**、现实与天神链都有关（见 [无限与永恒](/player/gameplay/progression-infinity-eternity)）。
-- 部分挑战还与膨胀研究条件、二级条件（如禁用某些时间研究）绑定。
+普通挑战（Normal Challenges）是最先接触到的类型。第一次大坍缩后，挑战界面会开放。原版有 **12 个普通挑战**；后面三个需要累计 **16 次无限**才开放。[原版普通挑战](https://antimatterdimensions.wiki.gg/wiki/Normal_Challenges)。
 
-EC 不是「点一下就开始」的独立副本，而是由原版状态机判定：资源、当前是否已有 EC 在进行、**前置普通时间研究是否买上**、二级条件是否满足。缺一项，`canBeBought` 就为 false。
+进入普通挑战后，游戏会在特定限制下重新开始一段无限前的成长。目标依然是把反物质推到约 **1.80 × 10³⁰⁸**，完成一次对应的大坍缩。
 
-## 原版的挑战体系
+普通挑战值得早做，是因为它们与基础自动购买器的解锁和升级密切相关。完成后重复操作会越来越省事。
 
-原版把挑战分成三类，各自的入口与奖励不同：
+遇到明显减速的挑战，不妨先看限制说明，再决定改变购买顺序还是暂时退出。挑战不是要求你永远在同一种策略里坚持下去。
 
-| 类型 | 原版入口 | 奖励方向 |
-| --- | --- | --- |
-| 普通挑战 | 前 9 个在至少完成 1 次无限后开放；第 10～12 个需要累计 16 次无限 | 解锁并强化无限层的基础自动购买器 |
-| 无限挑战（IC） | 在无限层满足各自的资源条件后进入 | 强化此前的多种机制（产量、速度、解锁等） |
-| 永恒挑战（EC） | 需要足够的时间之理，并满足各自的二级条件；每关最多完成 5 次 | 强化此前机制；完成度影响后续解锁 |
+## 无限挑战：在更高的反物质规模下作战
 
-[来源：社区 Wiki：Challenges](https://antimatterdimensions.wiki.gg/wiki/Challenges)
+**无限挑战（Infinity Challenges，简称 IC）**会在打破无限之后的推进过程中逐渐开放。原版共有 **8 个无限挑战**，各自需要先达到一定的反物质条件，挑战期间也会施加额外限制。[原版无限挑战](https://antimatterdimensions.wiki.gg/wiki/Infinity_Challenges)。
 
-「挑战是修改过的重置层运行」这一点很关键：进入挑战会强制一次对应层级的重置，而不是在一个平行副本里打。因此自动化的挑战推进必须理解重置层级，否则会把不该清的进度清掉。
+无限挑战与普通挑战很像，都是从受限的无限成长出发；不同的是，它们可能要求在大坍缩前达到高于最初无限上限的反物质目标。
 
-Oreki Edition 保留这套分类与奖励语义，但把「补发奖励」做成一条真实结算路径：临时抬高与原版收益函数相关的记录值 → 调用**原版收益函数** → 立刻还原，而不是直接写完成标志。见下方「为什么必须真实结算」。
+完成对应无限挑战后，会取得有利于后续成长的永久奖励。某个挑战暂时打不过，通常可以先去购买无限升级、推进无限维度，再回来试。
 
-## 为什么必须真实结算
+**已经通过的挑战，不等于反复进入就会不断叠加新的首通奖励。** 先检查完成记录与奖励说明，避免白白重复劳动。
 
-「挑战完成」在原版里不是一个可以随便写的布尔值，它牵动：
+## 永恒挑战：研究树也是门槛的一部分
 
-- 完成次数与奖励（影响 IP/EP 产量与后续解锁）；
-- 成就与阶段门禁；
-- 天神系统与终局链的前置条件。
+**永恒挑战（Eternity Challenges，简称 EC）**在永恒阶段出现，共有 **12 关**，每关最多可以完成 **5 次**。重复完成会提高奖励，但下一次的要求通常也更严格。[原版永恒挑战](https://antimatterdimensions.wiki.gg/wiki/Eternity_Challenges)。
 
-直接写完成标志、直接发资源或跳过奖励函数，会让进度「看起来推进了」但实际上与原版规则不一致，后续阶段会出现无法解释的卡死。因此 MOD 的纪律是：**自动化只加速真实流程，不改变结算语义**。
+这组挑战比前两类更容易卡住，因为除了准备足够的资源，还必须考虑**时间研究树的路线**。
 
-对于需要「补发历史奖励」的场合，MOD 采用的做法是：临时抬高与原版收益函数相关的记录值 → 调用**原版收益函数** → **立刻还原**。还原本身是幂等性的一部分，而不是「先改数据再假装完成」。[读码 + 实测，[FACTS §8.7](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/main/docs/facts/game/challenges.md#f-8-7)]
+想要进入某个永恒挑战，通常需要先买到通向挑战的研究、支付相应的时间之理（TT），并满足它自己的额外条件。举例来说，研究树上第 **151** 号研究是 EC9 的前置路径，而 EC10 需要经过第 **181** 号研究；少了前置研究，只攒够资源也无法购买挑战入口。[原版时间研究表](https://antimatterdimensions.wiki.gg/wiki/Time_Studies)。
 
-## Android 端自动化的分工
+进入永恒挑战后，需要在该关限制下达到对应的**无限点数（IP）目标**，才能完成这一轮的挑战。它的目标资源与普通挑战、无限挑战并不相同。
 
-Android 3.21 的自动化已按 Kotlin 模块拆分：
+如果同一关已经通过一次，下一次却突然变难，这是正常现象。你需要按新的完成次数检查奖励、额外门槛与目标，而不是只重复上一次的操作。
 
-| 模块 | 作用 |
-| --- | --- |
-| `OrekiAutomationScheduler.kt` | 全局统一节拍（1～60 秒），所有真实购买动作要经过 `allow()` |
-| `OrekiStageAuto.kt` | 首次无限之后的阶段自动化（购买、升级、尝试突破） |
-| `OrekiEcAutomation.kt` | 永恒挑战推进，按原版购买 ABI 调用真实入口 |
-| `OrekiStrategyLeaves.kt` | 策略叶子（目标判定所需的布尔条件） |
+## 挑战按什么顺序做比较好？
 
-这些文件保留了旧调用点的 ABI（`invoke-static`），因此类名与签名必须逐字一致；业务逻辑不得再写回 Smali。旧类 `OrekiChallengeAuto` 属于静默实现，缺少可观测日志，代码中专门加了探针注释用于判断「到底有没有买前置研究」。
+游戏并不要求所有挑战都在第一次出现时立刻通关。可以遵循一个较稳妥的原则：
 
-## 验收口径
+**先做当前资源和研究条件足够的挑战；不够时继续正常成长，再回来完成。**
 
-**功能性验收（已确认）**：修复混合运行时 livelock 后的同一 APK 连续运行 5 分钟，0 FATAL / 0 NoSuchFieldError / 0 NoSuchMethodError / 0 ClassCastException / 0 ANR，自动化标记持续输出。修复前该路径会在新档约 6 秒必崩 `NoSuchFieldError`。[P0 闭环报告](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/ae734966bf712faca3ff7bbb389d8724a8efe7e5/reports/R113-01/P0-CLOSURE.md)
+在无限阶段，普通挑战能提供基础自动化能力，无限挑战则补充更多永久奖励。在永恒阶段，挑战的选择还要和时间研究路线配合。
 
-**不等于通关**：5 分钟功能性验收只证明这条路径在当前 APK 上不崩、能有响应，**不证明**全部挑战族都完成了原版真实结算，也不证明 180 分钟内能通关。
+如果一个永恒挑战迟迟无法进入，先不要只看 IP 或 EP 数量。检查研究树是否走到了正确的分支、额外条件有没有满足，再决定是否重新分配研究。研究树的基本用法见[现实与时间研究](/player/gameplay/reality-time-studies)。
 
-**当前未验证（NOT RUN）**：在 2026-11-15 之后的构建上，普通挑战、无限挑战与 EC1～EC12 的**完整真实结算链**没有重新做逐项验收；历史轮次（R40 等）的 EC12 夹具结论只作历史证据，不当作当前版本结论。
+## 看见“完成”才算过关吗？
 
-## 已知限制与常见问题
+挑战能否完成，取决于**游戏实际达到规定目标，并执行对应的正常结算**。单纯进入挑战、看见某个新页面，或者让自动购买器不停工作，都不等于挑战已经完成。
 
-- **EC9～EC12 买不上**：常见原因是前置普通时间研究没被买上，而不是资源墙；自动化必须按 `requirement` 主动补前置链。([FACTS §8.8](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/main/docs/facts/game/challenges.md#f-8-8))
-- **研究树被反复清空**：多套自动化对目标 EC 的定义不一致会导致 respec 抖动，见 [现实与时间研究](/player/gameplay/reality-time-studies)。
-- **静默失败**：旧实现把异常吞掉时，界面看起来「在跑」但没有任何推进；排查时要看日志标记与存档字段，而不是只看按钮。
-- **不得伪造**：不能手工生成完成记录、不能直接置成就位、不能把界面显示当作结算证据。
+完成后应该能在挑战界面看到相应的进度或奖励变化。对于可重复完成的永恒挑战，还要留意记录的是第几次完成。
 
-## 如何核查
+Oreki Edition 的自动化负责在允许的条件下购买、选择与推进，不应直接替玩家生成挑战完成记录或额外资源。这里的区别对玩家也很重要：**加速操作可以，跳过真正的挑战条件不行。**
 
-1. 读存档里的挑战完成数组与奖励字段，确认是真实结算产物。
-2. 在 logcat 中确认自动化标记持续、无 ABI 异常，并核对前置研究是否被买上。
-3. 用稳定构建做对照；只在真实存档上验证，不使用手工构造的「已完成」存档。
+## 常见卡关怎么处理？
+
+**挑战入口是灰的。** 先检查这一关是否已经解锁，资源和时间研究是否足够，以及有没有额外的进入要求。
+
+**进去了但增长极慢。** 仔细读挑战限制。有些平时有效的升级在挑战里会被削弱或禁用；可以先退出，靠正常成长获得更多能力再试。
+
+**永恒挑战明明通过过，却还显示未完成全部次数。** 这是因为每关最多有五次完成目标。一次通过只代表该关第一层奖励，后面还有更高的目标。
+
+**自动化好像一直在尝试，却没有推进。** 可能是目标尚未满足、研究前置缺失或当前资源不足。先以挑战界面的状态为准，不要为了“让自动化继续”而编辑存档或强行跳转到未解锁页面。
 
 ## 参考资料
 
-- [docs/FACTS.md §8.7（挑战必须真实结算）](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/main/docs/facts/game/challenges.md#f-8-7)
-- [docs/FACTS.md §8.8（EC9～EC12 前置研究）](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/main/docs/facts/game/challenges.md#f-8-8)
-- [P0 闭环报告（5 分钟功能性验收）](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/ae734966bf712faca3ff7bbb389d8724a8efe7e5/reports/R113-01/P0-CLOSURE.md)
-
-- [社区 Wiki：Challenges](https://antimatterdimensions.wiki.gg/wiki/Challenges)
-- [官方网页源码（固定 Commit）](https://github.com/IvarK/AntimatterDimensionsSourceCode/blob/5409e320cecef96a917cca1dfb68f1f183e499ca)
+- [Antimatter Dimensions Wiki：Challenges](https://antimatterdimensions.wiki.gg/wiki/Challenges)（三类挑战总览）。
+- [Antimatter Dimensions Wiki：Normal Challenges](https://antimatterdimensions.wiki.gg/wiki/Normal_Challenges)（普通挑战、首次无限与 16 次无限条件）。
+- [Antimatter Dimensions Wiki：Infinity Challenges](https://antimatterdimensions.wiki.gg/wiki/Infinity_Challenges)（八个无限挑战）。
+- [Antimatter Dimensions Wiki：Eternity Challenges](https://antimatterdimensions.wiki.gg/wiki/Eternity_Challenges)（研究前置、额外条件与五次完成）。
+- [Antimatter Dimensions Wiki：Time Studies](https://antimatterdimensions.wiki.gg/wiki/Time_Studies)（挑战入口在研究树上的位置）。
 
 ## 相关条目
 
-[原版行为与 Oreki Edition 修改](/player/gameplay/original-vs-mod) · [无限与永恒](/player/gameplay/progression-infinity-eternity) · [现实与时间研究](/player/gameplay/reality-time-studies) · [智能自动购买器](/player/gameplay/automation) · [阶段门禁](/player/gameplay/stage-gates)
+[无限与永恒](/player/gameplay/progression-infinity-eternity) · [现实与时间研究](/player/gameplay/reality-time-studies) · [智能自动购买器](/player/gameplay/automation) · [原版行为与 Oreki Edition 修改](/player/gameplay/original-vs-mod)
