@@ -69,8 +69,8 @@ Pelle 的入口是 IU25「Omnipresent Obliteration」（原版成本 `1.6e15`，
 
 | 解锁 | Web（上游 id） | Android 3.21 移植版（内部 id） |
 | --- | --- | --- |
-| 莱特拉入口（IU15） | bit15 | **bit4**（`0x4`） |
-| Pelle（IU25） | bit25 | **bit14**（`0xe`） |
+| 莱特拉入口（IU15） | bit15 | **bit4**（`0x10`，十进制 16） |
+| Pelle（IU25） | bit25 | **bit14**（`0x4000`，十进制 16384） |
 
 早期实现按 Web 位号写入策略叶子，导致 `celestial.laitelaUnlocked / pelleUnlocked` 恒为 false；后续按 Android 反编译修正了位号。存档印证：`savestates/late/player-r109-m3-206.json`（Lai'tela 已解锁、Pelle 未解锁）的 `imaginaryUpgradeBits` 为 16 = `1<<4`。[读码 + 存档对照，修正提交 `53febade`]
 
