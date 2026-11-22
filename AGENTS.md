@@ -31,6 +31,8 @@
 - **Kody 跳过一律不计额度**：所有 Kody 已确认 `skipped` 的审查均不计入项目主动审查额度。触发前跳过不占位；已预占或已发 `@kody start-review` 而 Kody 官方 Check Run 最终确认为 `skipped` 的，按仓库、PR、HEAD 与 Kody Check Run 证据幂等退额；Android/Web 共享 100 次池与 Wiki 独立统计均遵守。未完成审查可临时预占防并发超额；真正完成的审查（即使无问题）仍计数。只有 GitHub Actions 的 `skipped`、缺失回执或不明状态不足以认定 Kody 已跳过，不得擅自退额或把 `SKIPPED` 写为审查 PASS。Kody 平台实际收费另行遵循其规则。
 - **Wiki Kody 自动审查**：Wiki 通过 Kodus 仓库级原生自动审查，为具备实际文件改动且进入 Ready 状态的 PR 发起 Kody；Draft 不提前审查，转 Ready 或 Ready PR 新提交后按仓库配置自动审查，同一 HEAD 与配置不得重复主动请求。确实无文件改动的 PR 是唯一常规豁免。配置由 Kodus 平台设置维护，GitHub 规则只约束监督与兜底，不伪造平台开关。自动 `Kody Code Review` 为 `skipped`、运行中、超时、Provider 不可用或只有 Codex Review 时均不得视为 Kody PASS；Agent 必须核对真实回执，在确认未重复、授权与预算允许时人工兜底。Wiki 审查额度独立统计，仍遵守 Balanced、80%/100% 预警停付；未被触发记为 `KODY NOT RUN`，执行失败记为 `FAIL`，仅当审查确实尝试并被外部阻断时才记为 `BLOCKED`，三者均不代表 PASS，并在对应任务记录中注明原因与兜底条件。
 
+- **Wiki `main` 原生 CI 与审查线程锁（长期强制）**：`main` 必须由 GitHub 原生 Ruleset/受保护分支约束，要求通过 PR 合并、**Required Status Check `Wiki PR CI`（GitHub Actions 的 `KB PR check` 工作流）**以及 **Require conversation resolution before merging（所有 Review Threads 解决后才可合并）**；禁止强推、删除、绕过保护或使用 CI 绿灯冒充 Kody 审查通过。该工作流 `build` Job 的显示名必须唯一，避免与 Pages 部署 `build` 混淆；权限与实际门禁状态必须在合并前由 GitHub API 验证。Ruleset 缺失、未启用、检查名称不匹配或未完成线程时，记录 `PROTECTION_BLOCKED`，不得声称已经上锁；不通过新增付费 AI 审查实现线程锁。完整启用与验证方法见 `docs/GitHub合并门禁.md`。
+
 ## 3. 执行效率与反馈
 
 - 先按路径/符号/Diff 缩小任务范围，复用未失效的测试及日志；工具相同失败两次应先诊断，不做无价值全量扫描、重试或无关重构。脚本尽量单责复用，不为假想需求提前增加复杂度。
@@ -42,7 +44,7 @@
 
 ## 4. Wiki 内容、双专区与发布
 
-- 本仓是中文知识库，公开内容规范依 `content/wiki-rules.md`，写作前核实正文、原始来源、模板和 `docs/AGENT_GUIDE.md`。区分原版、MOD、历史、当前实测与推断；禁止虚构 SHA、ABI、测试结果、下载或上线状态。遵守 CC BY-SA 4.0 与各原始资料的许可、署名、翻译术语和版本溯源。
+- 本仓是中文知识库，公开内容规范以 `content/wiki-rules.md` 为总纲，另以 `content/wiki-not.md`（本站不是什么）明确正文收录边界：不以 PR 日志、宣传稿、未经审核 AI 草稿或资料堆砌充当百科；允许经核验的玩家攻略、开发者手册与可复核工程研究。写作前核实正文、原始来源、模板和 `docs/AGENT_GUIDE.md`。区分原版、MOD、历史、当前实测与推断；禁止虚构 SHA、ABI、测试结果、下载或上线状态。遵守 CC BY-SA 4.0 与各原始资料的许可、署名、翻译术语和版本溯源。
 - **单站双专区**：`/player/` 面向普通玩家，含游戏百科、中文译文、MOD 玩法、教程、下载与 FAQ；`/developer/` 面向开发者，含架构、逆向、ABI、构建、故障、CI 和运行证据。共同规则/版权放公共区。混合文章按用途拆分，以来源和交叉链接避免事实重复与漂移。
 - **下一次正式交付 P0 门禁**：下一次 Wiki 正式交付前，必须真实上线 `https://wiki.oreki.net/player/` 与 `https://wiki.oreki.net/developer/`，两个专区均有真实正文、独立分类导航和明确首页入口；验证移动端、搜索、面包屑、旧 URL 兼容、Quartz 构建、GitHub Required Checks、Pages HTTPS 和实际线上响应。关键项任一失败均为 `BLOCKED`；空目录、占位页、README 计划或仅 CI PASS 不能冒充双专区正式上线。完成后继续长期维护。
 - **阅读体验与专区边界**：玩家专区以“新玩家能开始、当前阶段能推进、遇到困难能处理”为目标；开发者专区帮助真实开发者上手、理解架构、定位源码、验证与排障。玩家正文不塞 Kotlin/ABI/PR 流水账或项目审计，开发者正文不靠历史 PR/Run 和统一状态表凑篇幅。共同规则/版权独立；一项事实只维护一个权威解释，保留重要来源、旧 URL 和别名；纯文档 PR 不触发无关游戏长跑。

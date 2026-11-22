@@ -60,6 +60,7 @@ jobs:
               .write();
             core.info(warnings.join("；")||"PR 范围未触发预警");
   build:
+    name: Wiki PR CI
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
