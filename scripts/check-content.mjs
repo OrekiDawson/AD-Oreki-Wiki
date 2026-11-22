@@ -17,6 +17,8 @@ import path from "node:path";
 const ROOT = "content";
 const RULE_PAGE_TITLE = "反物质维度MOD Wiki:知识库规则";
 const RULE_PAGE = "content/wiki-rules.md";
+const POLICY_PAGE = "content/wiki-not.md";
+const POLICY_PAGE_TITLE = "反物质维度MOD Wiki:本站不是什么";
 const HISTORY_DIR = "content/developer/history/";
 const DRAFT_DIR = "content/ai-drafts/";
 const PLAYER_DIR = "content/player/";
@@ -83,6 +85,7 @@ const fail = (msg) => {
 };
 
 if (!fs.existsSync(RULE_PAGE)) fail("网站根目录缺少公开知识库规则页 content/wiki-rules.md");
+if (!fs.existsSync(POLICY_PAGE)) fail("网站根目录缺少公开内容边界方针 content/wiki-not.md");
 if (!fs.existsSync("content/copyright.md")) fail("网站根目录缺少版权与许可页面");
 if (!fs.existsSync("LICENSE-CONTENT.md")) fail("缺少 CC BY-SA 4.0 原创内容许可说明");
 if (!fs.existsSync(PLAYER_DIR + "index.md")) fail("缺少玩家专区首页 content/player/index.md");
@@ -106,6 +109,7 @@ for (const f of files) {
   const isHistory = f.startsWith(HISTORY_DIR);
   const isPlayer = f.startsWith(PLAYER_DIR);
   const isRule = f === RULE_PAGE;
+  const isPolicy = f === POLICY_PAGE;
   const isIndex = path.basename(f) === "index.md";
   const isCategoryIndex = isIndex && CATEGORY_DIRS.includes(path.dirname(f) + "/");
   const fm = frontmatterOf(text);
@@ -120,8 +124,9 @@ for (const f of files) {
 
   // 标题与页面类型
   if (fm.title) {
-    if (isRule) {
-      if (fm.title !== RULE_PAGE_TITLE) fail("规则页标题必须为 " + RULE_PAGE_TITLE + ": " + f);
+    if (isRule || isPolicy) {
+      const expectedTitle = isRule ? RULE_PAGE_TITLE : POLICY_PAGE_TITLE;
+      if (fm.title !== expectedTitle) fail("正式规则或方针页标题必须为 " + expectedTitle + ": " + f);
     } else if (!isDraft) {
       if (fm.title.startsWith("反物质维度MOD Wiki:")) fail("普通条目标题不应带规则页命名空间前缀: " + f);
       if (!isHistory && ROUND_LEAD_TITLE.test(fm.title)) {
