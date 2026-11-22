@@ -134,7 +134,7 @@ tags:
 
 本仓 `main` 当前有 `content/player/` **77 个 Markdown 文件**，其中 `original/` **61 个（含索引）**。它们是文件数，不能冒充已审校译文数；原版译文进度一律依 `docs/translation/source-manifest.json` 的规范口径。已公开但仅结构核对的历史译文不自动删除，必须清楚显示原有审校等级，未来大改按本规则执行。
 
-先检查玩家首页/玩法导航、原版与 MOD 对照、下载与存档安全，再逐篇审校已有 [#81](https://github.com/OrekiDawson/AD-Oreki-Wiki/pull/81)、[#82](https://github.com/OrekiDawson/AD-Oreki-Wiki/pull/82)、[#83](https://github.com/OrekiDawson/AD-Oreki-Wiki/pull/83) 的九篇玩家候选稿。**PR Ready 只表示可送审，不代表文章事实与可用性已合格，更不是可合并许可证。** 所有页面按“保留、定点精修、保留别名后合并/归档”分批处理，不能在同一轮批量 AI 重写。台账见 `docs/玩家专区重构台账.md`，本次规则修改不代表九篇正文审校 PASS。
+先逐篇处理已有 [#81](https://github.com/OrekiDawson/AD-Oreki-Wiki/pull/81)、[#82](https://github.com/OrekiDawson/AD-Oreki-Wiki/pull/82)、[#83](https://github.com/OrekiDawson/AD-Oreki-Wiki/pull/83) 的九篇玩家候选稿，再检查玩家首页/玩法导航、原版与 MOD 对照、下载与存档安全。**PR Ready 只表示可送审，不代表文章事实与可用性已合格，更不是可合并许可证。** 所有页面按“保留、定点精修、保留别名后合并/归档”分批处理，不能在同一轮批量 AI 重写。台账见 `docs/玩家专区重构台账.md`，本次规则修改不代表九篇正文审校 PASS。
 
 ## 开发者文档质量与重构（2026-11-22）
 
