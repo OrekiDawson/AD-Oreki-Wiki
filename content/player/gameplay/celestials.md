@@ -35,13 +35,13 @@ aliases:
 
 艾法瑞格更强调**符文选择**。他的特殊现实会限制你的符文，并给正常成长附加逐步变化的削弱效果。
 
-如果进度卡住，可以先回头调整可用符文，而不是只等待反物质或 IP 增长。此阶段还会接触遗迹碎片（Relic Shards）等资源，帮助改善符文相关能力。[艾法瑞格的原版资料](https://antimatterdimensions.wiki.gg/wiki/Effarig)
+如果进度卡住，可以先回头调整可用符文，而不是只等待反物质或 IP 增长。此阶段还会接触遗迹碎片（Relic Shards）等资源，帮助改善符文相关能力。[艾法瑞格的原版资料](https://antimatterdimensions.wiki.gg/wiki/Effarig?oldid=3371)
 
 ### 无名者（The Nameless Ones）
 
 第三位天神围绕**时间储存与释放**展开，也包含需要观察规则才能解决的难题。其特殊现实的限制很重，平时有效的购买路线可能在这里走不通。
 
-值得留意的不是「挂机了多久」，而是**游戏时间怎样储存、何时释放，以及哪些限制正在阻止正常增长**。遇到反常缓慢的进度，先检查本次特殊现实的提示和时间机制。[无名者的原版资料](https://antimatterdimensions.wiki.gg/wiki/The_Nameless_Ones)
+值得留意的不是「挂机了多久」，而是**游戏时间怎样储存、何时释放，以及哪些限制正在阻止正常增长**。遇到反常缓慢的进度，先检查本次特殊现实的提示和时间机制。[无名者的原版资料](https://antimatterdimensions.wiki.gg/wiki/The_Nameless_Ones?oldid=3372)
 
 ## 第四、第五位：V 与 Ra
 
@@ -59,7 +59,7 @@ Oreki Edition 为缩短重复等待，调整过其中部分门槛：例如 V 所
 
 Ra 会把你带回此前接触过的天神能力，并通过**记忆（Memories）**等系统逐渐提高它们的效果。它还会逐步解锁新的便利能力及后期成长内容。
 
-这段时间适合重新查看此前的奖励和已开放的系统。你并不是把前四位天神重新从零挑战一遍，而是在 Ra 的机制里进一步利用它们。[Ra 的原版资料](https://antimatterdimensions.wiki.gg/wiki/Ra)
+这段时间适合重新查看此前的奖励和已开放的系统。你并不是把前四位天神重新从零挑战一遍，而是在 Ra 的机制里进一步利用它们。[Ra 的原版资料](https://antimatterdimensions.wiki.gg/wiki/Ra?oldid=3387)
 
 ## 最后两位：莱特拉与佩勒
 
@@ -67,7 +67,7 @@ Ra 会把你带回此前接触过的天神能力，并通过**记忆（Memories�
 
 莱特拉会引入**暗物质维度（Dark Matter Dimensions）**、奇点（Singularities）和连续统（Continuum）等机制。她的特殊现实还有独特的完成和速度要求。
 
-这一阶段不只是增加现实机器，也要理解暗物质维度怎样成长，以及新的系统如何影响原先的购买方式。莱特拉的部分挑战还会对允许使用的维度提出限制。[原版莱特拉资料](https://antimatterdimensions.wiki.gg/wiki/Lai%27tela)
+这一阶段不只是增加现实机器，也要理解暗物质维度怎样成长，以及新的系统如何影响原先的购买方式。莱特拉的部分挑战还会对允许使用的维度提出限制。[原版莱特拉资料](https://antimatterdimensions.wiki.gg/wiki/Lai%27tela?oldid=3375)
 
 Oreki Edition 对莱特拉相关的部分解锁条件、熵增长和计时要求做过缩放，但**不代表完成入口出现后就能忽略挑战条件**。遇到无法解锁的情况，应先核对当前现实是否满足特殊要求，再决定是否换一轮现实准备。[MOD 差异](/player/gameplay/original-vs-mod)
 
@@ -96,9 +96,9 @@ Oreki Edition 对莱特拉相关的部分解锁条件、熵增长和计时要求
 ## 参考资料
 
 - [Antimatter Dimensions Wiki：Celestials](https://antimatterdimensions.wiki.gg/wiki/Celestials?oldid=3187)（七位天神及其成长顺序）。
-- [Teresa](https://antimatterdimensions.wiki.gg/wiki/Teresa?oldid=3370)、[Effarig](https://antimatterdimensions.wiki.gg/wiki/Effarig)、[The Nameless Ones](https://antimatterdimensions.wiki.gg/wiki/The_Nameless_Ones)（前三位的机制）。
-- [V](https://antimatterdimensions.wiki.gg/wiki/V?oldid=3373)、[Ra](https://antimatterdimensions.wiki.gg/wiki/Ra)（空间之理、记忆等机制）。
-- [Lai'tela](https://antimatterdimensions.wiki.gg/wiki/Lai%27tela)、[Pelle](https://antimatterdimensions.wiki.gg/wiki/Pelle?oldid=3376)（后期机制与终局）。
+- [Teresa](https://antimatterdimensions.wiki.gg/wiki/Teresa?oldid=3370)、[Effarig](https://antimatterdimensions.wiki.gg/wiki/Effarig?oldid=3371)、[The Nameless Ones](https://antimatterdimensions.wiki.gg/wiki/The_Nameless_Ones?oldid=3372)（前三位的机制）。
+- [V](https://antimatterdimensions.wiki.gg/wiki/V?oldid=3373)、[Ra](https://antimatterdimensions.wiki.gg/wiki/Ra?oldid=3387)（空间之理、记忆等机制）。
+- [Lai'tela](https://antimatterdimensions.wiki.gg/wiki/Lai%27tela?oldid=3375)、[Pelle](https://antimatterdimensions.wiki.gg/wiki/Pelle?oldid=3376)（后期机制与终局）。
 - [原版官方源码：V 的门槛定义](https://github.com/IvarK/AntimatterDimensionsSourceCode/blob/5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/secret-formula/celestials/v.js)。
 
 ## 相关条目
