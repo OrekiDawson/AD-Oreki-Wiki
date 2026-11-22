@@ -13,7 +13,7 @@ aliases:
 
 经历多次现实之后，你会逐渐接触《反物质维度》的**天神（Celestials）**。它们不是七个数值越来越大的普通升级，而是七段玩法不同的后期挑战：有的考验符文搭配，有的要求在严苛限制下重新推进游戏，还有的会带来全新的资源与成长方式。
 
-天神按游戏进度逐步开放，顺序大致是：**特蕾莎 → 艾法瑞格 → 无名者 → V → Ra → 莱特拉 → 佩勒**。最后的佩勒通向原版游戏的结局。刚进入现实阶段时，通常还看不到后面的全部内容，不必急着寻找它们。[原版天神总览](https://antimatterdimensions.wiki.gg/wiki/Celestials)
+天神按游戏进度逐步开放，顺序大致是：**特蕾莎 → 艾法瑞格 → 无名者 → V → Ra → 莱特拉 → 佩勒**。最后的佩勒通向原版游戏的结局。刚进入现实阶段时，通常还看不到后面的全部内容，不必急着寻找它们。[原版天神总览](https://antimatterdimensions.wiki.gg/wiki/Celestials?oldid=3187)
 
 ## 开始前，先准备什么？
 
@@ -29,7 +29,7 @@ aliases:
 
 特蕾莎是第一位天神。她围绕**现实机器、符文与特殊现实**展开玩法。你需要积累相应资源，逐步获得奖励，并尝试在受限制的现实中达到目标。
 
-面对她的现实，单靠增加一次普通现实的收益不一定足够。留意符文能否互相配合，以及容器、升级和当前特殊现实之间的关系。完成相关内容后，符文和后续成长会获得帮助。[特蕾莎的原版资料](https://antimatterdimensions.wiki.gg/wiki/Teresa)
+面对她的现实，单靠增加一次普通现实的收益不一定足够。留意符文能否互相配合，以及容器、升级和当前特殊现实之间的关系。完成相关内容后，符文和后续成长会获得帮助。[特蕾莎的原版资料](https://antimatterdimensions.wiki.gg/wiki/Teresa?oldid=3370)
 
 ### 艾法瑞格（Effarig）
 
@@ -51,7 +51,7 @@ V 的玩法围绕一组特殊成就与目标展开。完成不同目标可以获
 
 V 的页签解锁后，**要进入 V 的特殊现实，还需要在同一次现实中满足六项要求**：现实次数、永恒次数、无限次数，以及若干后期资源分别达到门槛。**不是某一个数字达标就能进入，也不能把不同现实的临时进度简单相加**。
 
-Oreki Edition 为缩短重复等待，调整过其中部分门槛：例如 V 所需现实次数从原版的 **10,000 次**降低到 MOD 规则中的 **60 次**，膨胀时间与复制器数量门槛也有缩放。其他要求仍须逐项检查，最终以所用版本显示的条件为准。[原版 V 资料](https://antimatterdimensions.wiki.gg/wiki/V) · [MOD 差异](/player/gameplay/original-vs-mod)
+Oreki Edition 为缩短重复等待，调整过其中部分门槛：例如 V 所需现实次数从原版的 **10,000 次**降低到 MOD 规则中的 **60 次**，膨胀时间与复制器数量门槛也有缩放。其他要求仍须逐项检查，最终以所用版本显示的条件为准。[原版 V 资料](https://antimatterdimensions.wiki.gg/wiki/V?oldid=3373) · [MOD 差异](/player/gameplay/original-vs-mod)
 
 如果 V 的进度显示为「接近完成」，却一直没有开放，不要只重复现实。检查尚未满足的那一项，以及它需要的是累计次数、当前这次现实里的资源还是其他特殊条件。
 
@@ -77,7 +77,7 @@ Oreki Edition 对莱特拉相关的部分解锁条件、熵增长和计时要求
 
 **原版的毁灭状态不能像普通挑战那样随意退出。** 在按下相关入口前，先阅读游戏内的警告和条件，不要把它当作一次可以轻松撤销的普通现实。
 
-毁灭阶段需要通过自身的资源、升级与重置逐步打开前进道路，而不是只靠之前的符文或现实升级。Oreki Edition 调整过终局相关数值，目的是缩短不必要的等待；实际结局仍应由游戏的正常终局过程触发。[佩勒的原版资料](https://antimatterdimensions.wiki.gg/wiki/Pelle)
+毁灭阶段需要通过自身的资源、升级与重置逐步打开前进道路，而不是只靠之前的符文或现实升级。Oreki Edition 调整过终局相关数值，目的是缩短不必要的等待；实际结局仍应由游戏的正常终局过程触发。[佩勒的原版资料](https://antimatterdimensions.wiki.gg/wiki/Pelle?oldid=3376)
 
 ## 遇到难关时怎么判断？
 
@@ -91,14 +91,14 @@ Oreki Edition 对莱特拉相关的部分解锁条件、熵增长和计时要求
 
 本页对七位天神的基本玩法采用原版概念。Oreki Edition 的变化集中在**部分门槛、资源倍率、计时窗口及自动化操作**，并不意味着原版所有数值都仍然适用。
 
-具体差异可能随着 MOD 版本更新，尤其在 V、莱特拉和佩勒阶段，核对数值时应先确认当前 Android 或 Web 版本。集中比较见[原版行为与 Oreki Edition 修改](/player/gameplay/original-vs-mod)，玩家不必阅读 Kotlin 类名或开发历史才能理解本页。
+具体差异可能随着 MOD 版本更新，尤其在 V、莱特拉和佩勒阶段，核对数值时应先确认当前 Android 或 Web 版本。集中比较见[原版行为与 Oreki Edition 修改](/player/gameplay/original-vs-mod)，玩家不必阅读 Kotlin 类名或开发历史才能理解本页。源代码门槛、两端解锁位号和历史故障链集中在[天神技术参考](/developer/architecture/celestial-implementation)。
 
 ## 参考资料
 
-- [Antimatter Dimensions Wiki：Celestials](https://antimatterdimensions.wiki.gg/wiki/Celestials)（七位天神及其成长顺序）。
-- [Teresa](https://antimatterdimensions.wiki.gg/wiki/Teresa)、[Effarig](https://antimatterdimensions.wiki.gg/wiki/Effarig)、[The Nameless Ones](https://antimatterdimensions.wiki.gg/wiki/The_Nameless_Ones)（前三位的机制）。
-- [V](https://antimatterdimensions.wiki.gg/wiki/V)、[Ra](https://antimatterdimensions.wiki.gg/wiki/Ra)（空间之理、记忆等机制）。
-- [Lai'tela](https://antimatterdimensions.wiki.gg/wiki/Lai%27tela)、[Pelle](https://antimatterdimensions.wiki.gg/wiki/Pelle)（后期机制与终局）。
+- [Antimatter Dimensions Wiki：Celestials](https://antimatterdimensions.wiki.gg/wiki/Celestials?oldid=3187)（七位天神及其成长顺序）。
+- [Teresa](https://antimatterdimensions.wiki.gg/wiki/Teresa?oldid=3370)、[Effarig](https://antimatterdimensions.wiki.gg/wiki/Effarig)、[The Nameless Ones](https://antimatterdimensions.wiki.gg/wiki/The_Nameless_Ones)（前三位的机制）。
+- [V](https://antimatterdimensions.wiki.gg/wiki/V?oldid=3373)、[Ra](https://antimatterdimensions.wiki.gg/wiki/Ra)（空间之理、记忆等机制）。
+- [Lai'tela](https://antimatterdimensions.wiki.gg/wiki/Lai%27tela)、[Pelle](https://antimatterdimensions.wiki.gg/wiki/Pelle?oldid=3376)（后期机制与终局）。
 - [原版官方源码：V 的门槛定义](https://github.com/IvarK/AntimatterDimensionsSourceCode/blob/5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/secret-formula/celestials/v.js)。
 
 ## 相关条目
