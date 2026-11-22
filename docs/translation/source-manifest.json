@@ -27,8 +27,8 @@
  "coverage": {
   "total_pages": 68,
   "translated": 0,
-  "structure_checked": 53,
-  "reviewed": 7,
+  "structure_checked": 49,
+  "reviewed": 11,
   "verified": 0,
   "blocked": 0,
   "not_started": 8
@@ -647,13 +647,13 @@
    "zh_title": "打破无限",
    "path": "content/player/original/ow-break-infinity.md",
    "priority": 2,
-   "status": "STRUCTURE CHECKED",
-   "review_status": "STRUCTURE CHECKED",
+   "status": "REVIEWED",
+   "review_status": "REVIEWED",
    "license_status": "CC-BY-SA-4.0-CONFIRMED",
    "third_party": "NONE-DETECTED-TEXT-ONLY",
    "media_omitted": true,
-   "last_source_check": "2026-11-15",
-   "notes": "batch2：正文完整翻译并校对；图片/信息框未转载；2026-11-15 质量门禁：仅有结构核对（章节/表格/公式/来源字段），未做逐段语义审校，按 wiki-rules 等级降为 STRUCTURE CHECKED"
+   "last_source_check": "2026-11-23",
+   "notes": "2026-11-23 第三批逐段语义审校：核对打破无限门槛、无限后价格成长、升级成本与公式、慢挑战倍率上限；站内链接改指本区译文；见 docs/translation/reviews/2026-11-23-无限阶段第三批.md"
   },
   {
    "title": "Breaking Infinity",
@@ -1786,13 +1786,13 @@
    "zh_title": "无限挑战",
    "path": "content/player/original/ow-infinity-challenges.md",
    "priority": 3,
-   "status": "STRUCTURE CHECKED",
-   "review_status": "STRUCTURE CHECKED",
+   "status": "REVIEWED",
+   "review_status": "REVIEWED",
    "license_status": "CC-BY-SA-4.0-CONFIRMED",
    "third_party": "NONE-DETECTED-TEXT-ONLY",
    "media_omitted": true,
-   "last_source_check": "2026-11-15",
-   "notes": "batch17：正文/表格/公式/来源字段完整翻译并结构核对；未做逐段语义审校，记 STRUCTURE CHECKED"
+   "last_source_check": "2026-11-23",
+   "notes": "2026-11-23 第三批逐段语义审校：核对解锁/目标、普通挑战限制、快捷重置、奖励、成就和挑战 8 公式；正物质术语统一；见 docs/translation/reviews/2026-11-23-无限阶段第三批.md"
   },
   {
    "title": "Infinity Dimensions",
@@ -1815,13 +1815,13 @@
    "zh_title": "无限维度",
    "path": "content/player/original/ow-infinity-dimensions.md",
    "priority": 2,
-   "status": "STRUCTURE CHECKED",
-   "review_status": "STRUCTURE CHECKED",
+   "status": "REVIEWED",
+   "review_status": "REVIEWED",
    "license_status": "CC-BY-SA-4.0-CONFIRMED",
    "third_party": "NONE-DETECTED-TEXT-ONLY",
    "media_omitted": true,
-   "last_source_check": "2026-11-15",
-   "notes": "batch2：正文完整翻译并校对；图片/信息框未转载；2026-11-15 质量门禁：仅有结构核对（章节/表格/公式/来源字段），未做逐段语义审校，按 wiki-rules 等级降为 STRUCTURE CHECKED"
+   "last_source_check": "2026-11-23",
+   "notes": "2026-11-23 第三批逐段语义审校：核对首次永恒前 e8 IP 解锁条件、大坍缩/永恒重置范围、无限之力公式与每个基础维度产量、八维数据表；修正顶部解锁入口；见 docs/translation/reviews/2026-11-23-无限阶段第三批.md"
   },
   {
    "title": "Infinity Point",
@@ -2078,13 +2078,13 @@
    "zh_title": "普通挑战",
    "path": "content/player/original/ow-normal-challenges.md",
    "priority": 3,
-   "status": "STRUCTURE CHECKED",
-   "review_status": "STRUCTURE CHECKED",
+   "status": "REVIEWED",
+   "review_status": "REVIEWED",
    "license_status": "CC-BY-SA-4.0-CONFIRMED",
    "third_party": "NONE-DETECTED-TEXT-ONLY",
    "media_omitted": true,
-   "last_source_check": "2026-11-15",
-   "notes": "batch18：正文/表格/公式/来源字段完整翻译并结构核对；未做逐段语义审校，记 STRUCTURE CHECKED"
+   "last_source_check": "2026-11-23",
+   "notes": "2026-11-23 第三批逐段语义审校：核对 12 个普通挑战限制、奖励、快捷重置、成就条件和正物质术语；消除正物质/普通物质混用；见 docs/translation/reviews/2026-11-23-无限阶段第三批.md"
   },
   {
    "title": "Notations",

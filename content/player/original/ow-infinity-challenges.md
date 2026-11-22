@@ -10,8 +10,8 @@ original_revid: 3359
 original_fetched_at: "2026-11-16T00:10:00+08:00"
 original_license: "CC BY-SA 4.0"
 original_license_url: "https://creativecommons.org/licenses/by-sa/4.0/"
-translation_status: "STRUCTURE CHECKED"
-review_status: "STRUCTURE CHECKED"
+translation_status: "REVIEWED"
+review_status: "REVIEWED"
 aliases:
   - "/original/ow-infinity-challenges"
 ---
@@ -24,7 +24,7 @@ aliases:
 
 八个挑战都要先攒到指定反物质才能进入。规则与普通挑战类似：挑战内[无限升级](/player/original/ow-infinity-upgrades)最右一列被禁用；如果开着大坍缩自动购买器，达到目标时会立刻执行一次无限重置，无视其设置。
 
-和普通挑战一样，部分无限挑战支持「快捷重置」：不用从头开始，可以丢掉一次维度提升，代价是自动补做一次维度提升动作。看着别扭，但它能帮你撤销前面的失误，避免成长卡死。
+和普通挑战一样，部分无限挑战支持「快捷重置」：不用从头开始，而是先失去一次维度提升，再执行一次维度提升重置作为补偿。看着别扭，但它能帮你撤销前面的失误，避免成长卡死。
 
 | ID | 解锁（反物质） | 目标（反物质） | 描述 | 奖励 | 快捷重置 | 细节 |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -33,8 +33,8 @@ aliases:
 | 3 | e12,000 | e5,000 | 计数频率升级恒为 ×1；每次购买计数频率升级改为给所有反物质维度一个静态乘数，强度按反物质星系计算 | 按反物质星系与计数频率购买次数提供反物质维度乘数 | 否 | 公式 (1.05 + AG×0.005)^购买次数；该式同时用于挑战本身与奖励 |
 | 4 | e14,000 | e13,000 | 只有最近购买的那层反物质维度产量正常，其余维度产量降为 x^0.25 | 所有反物质维度乘数变为 乘数^1.05 | 是 |  |
 | 5 | e18,000 | e16,500 | 购买第 1–4 层反物质维度会抬高所有更便宜的 AD 成本；购买第 5–8 层会抬高所有更贵的 AD 成本 | 所有星系效果 +10%，且星系与维度提升的需求各降 1 | 是 |  |
-| 6 | e22,500 | 2e22,222 | 一旦拥有至少 1 个第 2 层反物质维度，指数增长的物质会不断压低所有反物质维度乘数 | 按计数频率提供无限维度乘数 | 是 | 计数频率^0.0005 |
-| 7 | e23,000 | e10,000 | 不能购买反物质星系；维度提升的基础乘数上限提高到 10 | 维度提升乘数下限提高到 ×4 | 否 |  |
+| 6 | e22,500 | 2e22,222 | 一旦拥有至少 1 个第 2 层反物质维度，指数增长的「正物质（Matter）」会不断压低所有反物质维度乘数 | 按计数频率提供无限维度乘数 | 是 | 计数频率^0.0005 |
+| 7 | e23,000 | e10,000 | 不能购买反物质星系；维度提升的基础乘数上限提高到 ×10 | 维度提升乘数下限提高到 ×4 | 否 |  |
 | 8 | e28,000 | e27,000 | AD 产量随时间持续快速下降；购买反物质维度或计数频率升级会把产量重置回 100%，然后再次下降 | 按第 1 与第 8 层 AD 乘数给 AD 2–7 提供乘数 | 是 | 下降公式 0.8446303389034288^max(0, 毫秒−上次购买毫秒)；奖励 (AD1乘数×AD8乘数)^0.02 |
 
 ## 相关成就
@@ -54,7 +54,7 @@ aliases:
 
 ## 来源与许可
 
-- 原文：[Infinity Challenges](https://antimatterdimensions.wiki.gg/index.php?title=Infinity_Challenges&oldid=3359)（修订 ID 3359；抓取于 2026-11-15）
+- 原文：[Infinity Challenges](https://antimatterdimensions.wiki.gg/index.php?title=Infinity_Challenges&oldid=3359)（修订 ID 3359；最后编辑者 KrutarMarsons；抓取于 2026-11-15）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Infinity_Challenges&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为简体中文翻译（改编），已修改：翻译正文与表格、统一术语、公式保留原式、界面图与信息框未转载；本页按相同许可共享。
 - 原文图片未转载：原页含桌面现代/经典与移动版界面截图（Break-infinitychallenges-interface--*），此处仅保留文字说明。
