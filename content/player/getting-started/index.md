@@ -39,7 +39,7 @@ Oreki Edition 保留了原版从反物质、无限、永恒到后期系统的成
 
 接下来要做的事情也很直观：**用无限点数购买升级，再重复推进与大坍缩。** 随着进度提高，你会逐步接触打破无限、无限维度、无限挑战和其他系统。它们不会因为完成第一次大坍缩就全部具备使用条件。
 
-尤其要注意，**「打破无限」不是第一次大坍缩后就应当立即执行的动作**。原版还要求先提升大坍缩自动购买器的间隔等条件；按钮尚不可用时，先继续正常推进。[打破无限的原版条件](https://antimatterdimensions.wiki.gg/wiki/Break_Infinity?oldid=3349)。（外部页面/API 核对：`NOT RUN`；当前回执未取得 HTTP 200、页面标题与 revid 归属证明，暂不将该修订号视为已验证证据。）
+尤其要注意，**「打破无限」不是第一次大坍缩后就应当立即执行的动作**。原版还要求先提升大坍缩自动购买器的间隔等条件；按钮尚不可用时，先继续正常推进。[打破无限的原版条件](https://antimatterdimensions.wiki.gg/wiki/Break_Infinity?oldid=3349)。
 
 想了解接下来的完整阶段，可以阅读[无限与永恒](/player/gameplay/progression-infinity-eternity)。
 
@@ -68,7 +68,7 @@ Oreki Edition 还提供统一调度策略，按当前阶段和目标决定受管
 
 ## 参考资料
 
-- [原版社区 Wiki：反物质维度](https://antimatterdimensions.wiki.gg/wiki/Antimatter_Dimensions?oldid=3325)（生产链、维度数量与解锁）。（外部页面/API 核对：`NOT RUN`；当前回执未取得 HTTP 200、页面标题与 revid 归属证明，暂不将该修订号视为已验证证据。）
-- [原版社区 Wiki：重置成长](https://antimatterdimensions.wiki.gg/wiki/Prestige?oldid=3398)（维度提升、星系与大坍缩；本站归档修订 ID `3398`，抓取于 2026-11-15）。（外部页面/API 核对：`NOT RUN`；当前回执未取得 HTTP 200、页面标题与 revid 归属证明，暂不将该修订号视为已验证证据。）
-- [原版社区 Wiki：无限](https://antimatterdimensions.wiki.gg/wiki/Infinity?oldid=3113)（首次大坍缩）。（外部页面/API 核对：`NOT RUN`；当前回执未取得 HTTP 200、页面标题与 revid 归属证明，暂不将该修订号视为已验证证据。）
+- [原版社区 Wiki：反物质维度](https://antimatterdimensions.wiki.gg/wiki/Antimatter_Dimensions?oldid=3325)（生产链、维度数量与解锁）。
+- [原版社区 Wiki：重置成长](https://antimatterdimensions.wiki.gg/wiki/Prestige?oldid=3398)（维度提升、星系与大坍缩；本站归档修订 ID `3398`，抓取于 2026-11-15）。
+- [原版社区 Wiki：无限](https://antimatterdimensions.wiki.gg/wiki/Infinity?oldid=3113)（首次大坍缩）。
 - [Oreki Edition Android、Web 源码](https://github.com/OrekiDawson/AD-Oreki-Edition-Android)（MOD 调度器的适用范围以实际版本为准）。
