@@ -40,7 +40,7 @@ MOD 因此引入 `OrekiGuiStage.kt` 作为**全游戏 GUI 阶段判定的唯一�
 - **不写存档、不清零永恒字段、不改资源、不扫描 View**；
 - 恢复后玩家能继续正常游戏。
 
-R101 曾针对「非法永恒页签直达」实现并验收过这条路径：候选 APK 实测「pm clear 新档」自动运行到首次大坍缩后，存档仍是 `eternities=0`、`bigEternities=0`、`EP=0`，跨版本复验也保持 0/0/0，官方 GUI 没有永恒页签。[历史证据，[FACTS §R101 记录](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/main/docs/facts/history/r100-r105.md#f-r101)、[R101 P0 修复报告](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/tree/main/reports/R101-p0-fix)]
+R101 曾针对「非法永恒页签直达」实现并验收过这条路径：候选 APK 实测「pm clear 新档」自动运行到首次大坍缩后，存档仍是 `eternities=0`、`bigEternities=0`、`EP=0`，跨版本复验也保持 0/0/0，官方 GUI 没有永恒页签。[历史证据，[FACTS §R101 记录](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/3b2d8284f2aca7132168998ee32497b3c4c17b8e/docs/facts/history/r100-r105.md#f-r101)、[R101 P0 修复报告](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/tree/3b2d8284f2aca7132168998ee32497b3c4c17b8e/reports/R101-p0-fix)]
 
 ## 当前验收范围（重要）
 
@@ -62,8 +62,8 @@ R101 曾针对「非法永恒页签直达」实现并验收过这条路径：候
 
 ## 后续核验
 
-- 最新实现应核对 [Android Kotlin 业务代码](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/tree/main/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki) 与本仓对应发行版本，特别是 `OrekiGuiStage.kt` 及页面切换判据。
-- 旧 [R101 P0 取证](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/tree/main/reports/R101-p0-fix) 说明曾修过非法直达，不代表当前构建完整回归已通过。
+- 最新实现应核对 [Android Kotlin 业务代码](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/tree/3b2d8284f2aca7132168998ee32497b3c4c17b8e/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki) 与本仓对应发行版本，特别是 `OrekiGuiStage.kt` 及页面切换判据。
+- 旧 [R101 P0 取证](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/tree/3b2d8284f2aca7132168998ee32497b3c4c17b8e/reports/R101-p0-fix) 说明曾修过非法直达，不代表当前构建完整回归已通过。
 - 双端比较与当前状态见[双端行为一致性](/developer/architecture/parity)及[待核实事项与已知问题](/developer/current/known-issues)。
 
 原始技术内容迁自 [2026-11-22 前玩家条目](https://github.com/OrekiDawson/AD-Oreki-Wiki/blob/8726646c9701bc2ebad4d90faa5f9bbe5317f215/content/player/gameplay/stage-gates.md)，为避免删除既有证据，保留其中的历史轮次与 `NOT RUN` 边界。
