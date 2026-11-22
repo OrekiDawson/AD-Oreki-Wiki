@@ -1,6 +1,6 @@
 ---
 title: "天神系统"
-description: "介绍七位天神的原版定位、进入条件与关键机制，并区分原版行为与 Oreki Edition 的数值和自动化差异"
+description: "现实之后的七位天神依次带来什么玩法、怎样准备，以及 Oreki Edition 与原版有哪些重要区别"
 tags:
   - 玩法
   - 天神
@@ -11,113 +11,96 @@ aliases:
 
 # 天神系统
 
-「天神（Celestials）」是《反物质维度》在现实之后的后期成长体系，也是原版游戏的最终目标：**击败全部 7 位天神才算通关**。本条目先按原版介绍每位天神的定位与机制，再单独说明 Oreki Edition 做了哪些调整，避免把 MOD 的缩放数值当成原版规则。
+经历多次现实之后，你会逐渐接触《反物质维度》的**天神（Celestials）**。它们不是七个数值越来越大的普通升级，而是七段玩法不同的后期挑战：有的考验符文搭配，有的要求在严苛限制下重新推进游戏，还有的会带来全新的资源与成长方式。
 
-> 来源说明：原版概念参考[社区 Wiki 的天神条目](https://antimatterdimensions.wiki.gg/wiki/Celestials)；关键判据用[官方网页源码（固定 Commit）](https://github.com/IvarK/AntimatterDimensionsSourceCode/blob/5409e320cecef96a917cca1dfb68f1f183e499ca)交叉核对；MOD 差异以本项目 Web 源码、Kotlin 业务代码与 `docs/FACTS.md` 为准。社区 Wiki 内容按 CC BY-SA 4.0 提供，本页为独立中文撰写，未复制其正文或图片。
+天神按游戏进度逐步开放，顺序大致是：**特蕾莎 → 艾法瑞格 → 无名者 → V → Ra → 莱特拉 → 佩勒**。最后的佩勒通向原版游戏的结局。刚进入现实阶段时，通常还看不到后面的全部内容，不必急着寻找它们。[原版天神总览](https://antimatterdimensions.wiki.gg/wiki/Celestials)
 
-## 七位天神与原版定位
+## 开始前，先准备什么？
 
-| 天神 | 原版定位（简述） |
-| --- | --- |
-| Teresa（特蕾莎） | 第一位天神；现实难度更高，完成后大幅强化符文献祭，并开放「撤销符文装备」「现实开始即拥有全部永恒升级」等便利升级 |
-| Effarig（艾法瑞格） | 第二位；其现实限制符文并提供逐步增强的削弱效果，完成后开放符文自动筛选与过滤，货币为遗迹碎片（Relic Shards） |
-| The Nameless Ones（无名者，常称 Enslaved） | 第三位；现实惩罚极重、含大量谜题，完成后可购买 Tesseracts 扩展无限维度购买上限，并改造黑洞以储存时间 |
-| V（薇） | 第四位；其现实按里程碑给奖励，产出「空间之理（Space Theorems）」，可突破时间研究的路径限制 |
-| Ra（拉） | 第五位；其现实按资源总量产出「记忆碎片（Memory Chunks）」，重点强化前四位天神的升级与自动化 |
-| Lai'tela（常写作 Lai Tela，莱特拉） | 第六位；现实完成条件不同，按完成速度给缩放奖励，开放暗物质维度、连续统（Continuum）与奇点（Singularities） |
-| Pelle（佩勒） | 第七位、最终天神；永久「毁灭（Doom）」现实，玩家几乎失去全部后期能力，需要在极强惩罚下推进到游戏结局 |
+如果现实层的升级、符文与复兴能力还很弱，进入天神相关的特殊现实往往会寸步难行。在尝试新天神之前，先确认三件事：**当前有哪些可用的符文、现有现实能否稳定推进、下一项升级要求什么资源**。
 
-**天神是「无时间」的**：除非特别说明，天神引入的机制不受游戏速度倍率影响，而以真实时间计算。这一点会影响自动化设计（见 [智能自动购买器](/player/gameplay/automation)）。
+特殊现实可能让你熟悉的生产倍数突然失效，这通常是挑战设计，而不是普通存档坏了。进入前读一遍限制说明，比进入后盲目重复大坍缩有效得多。
 
-## 原版进入条件
+天神之间也不是互不相干。前面天神的奖励往往能帮助后面的挑战，有些奖励还会反过来强化早已解锁的系统。
 
-### Teresa
+## 前三位：符文、遗迹和时间谜题
 
-原版中，购买全部现实升级会解锁第一位天神；成就 147「Master of Reality」的奖励就是解锁 Teresa。网页源码里，只要拥有该成就，游戏会自动解锁 Teresa 页签，而不要求玩家真的买齐全部现实升级。[官方源码](https://github.com/IvarK/AntimatterDimensionsSourceCode/blob/5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/celestials/teresa.js)
+### 特蕾莎（Teresa）
 
-### V：六项解锁条件
+特蕾莎是第一位天神。她围绕**现实机器、符文与特殊现实**展开玩法。你需要积累相应资源，逐步获得奖励，并尝试在受限制的现实中达到目标。
 
-V 的解锁是六项 `mainUnlock` 同时达到 `progress() >= 1`：现实次数、永恒次数、无限次数、膨胀时间、复制体与现实机器。原版门槛分别是 **10000 次现实、`1e70` 永恒、`1e160` 无限、`1e320` 膨胀时间、`1e320000` 复制体、`1e60` 现实机器**。[官方源码](https://github.com/IvarK/AntimatterDimensionsSourceCode/blob/5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/secret-formula/celestials/v.js)
+面对她的现实，单靠增加一次普通现实的收益不一定足够。留意符文能否互相配合，以及容器、升级和当前特殊现实之间的关系。完成相关内容后，符文和后续成长会获得帮助。[特蕾莎的原版资料](https://antimatterdimensions.wiki.gg/wiki/Teresa)
 
-还有一个读数陷阱：`emphasizeEnd(fraction) = Math.pow(fraction, 10)`，所以除现实次数外，多数项目的进度是**比值的 10 次方**，不是线性百分比。
+### 艾法瑞格（Effarig）
 
-Oreki Edition 缩放了三项：现实次数 **60**、膨胀时间 **`1e30`**、复制体 **`1e20000`**；其余三项保持原版。缩放原因与取舍记录在 MOD 源码注释里，集中对照见 [原版行为与 Oreki Edition 修改](/player/gameplay/original-vs-mod)。
+艾法瑞格更强调**符文选择**。他的特殊现实会限制你的符文，并给正常成长附加逐步变化的削弱效果。
 
-### Ra：36 空间之理的来源
+如果进度卡住，可以先回头调整可用符文，而不是只等待反物质或 IP 增长。此阶段还会接触遗迹碎片（Relic Shards）等资源，帮助改善符文相关能力。[艾法瑞格的原版资料](https://antimatterdimensions.wiki.gg/wiki/Effarig)
 
-Ra 的空间之理只可能来自 RU0～RU5：`v.js` 中 `if (!V.isFlipped && isHard) continue;` 使 RU6/7/8 在 `unlockHardV` 之前永远无法完成。36 条正好由 RU0～RU5 各 6 层给出，所以不要指望用后面的 slot 补数。[读码，[FACTS §8.5](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/main/docs/facts/game/reality.md#f-8-5)]
+### 无名者（The Nameless Ones）
 
-### Lai'tela：唯一入口是 IU15
+第三位天神围绕**时间储存与释放**展开，也包含需要观察规则才能解决的难题。其特殊现实的限制很重，平时有效的购买路线可能在这里走不通。
 
-Lai'tela 的入口是**虚构升级 IU15**（成本 `1e9`），它有两道门：
+值得留意的不是「挂机了多久」，而是**游戏时间怎样储存、何时释放，以及哪些限制正在阻止正常增长**。遇到反常缓慢的进度，先检查本次特殊现实的提示和时间机制。[无名者的原版资料](https://antimatterdimensions.wiki.gg/wiki/The_Nameless_Ones)
 
-- 门 A：IM 存量与当前 IM 上限都不低于 `1e9`；
-- 门 B：`maxID1 == 0`（从未买过第一无限维度）且反物质指数达到门槛。
+## 第四、第五位：V 与 Ra
 
-原版门 B 的反物质指数门槛是 `1.5e12`；Oreki Edition 改为 `1e8`。原版 IM 上限约 `9.4517e7`，不足以覆盖 IU15/IU25 的成本，MOD 因此把 IM 上限倍率设为 `OREKI_IM_CAP_MULT = 3000`。[官方 IU15](https://github.com/IvarK/AntimatterDimensionsSourceCode/blob/5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/secret-formula/reality/imaginary-upgrades.js) · MOD 值见 [原版行为与 Oreki Edition 修改](/player/gameplay/original-vs-mod)。
+### V：不是只完成一次现实
 
-「买 ID1 会让 `maxID1 > 0`」这条死锁链是原版设计：一旦买过第一无限维度，IU15 就永久失败（本现实内），莱特拉进度也会被砍到 50%。因为 `maxID1` 每个现实重置，这个问题可以按现实分阶段处理。[读码，[FACTS §8.10](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/main/docs/facts/game/endgame.md#f-8-10)]
+V 的玩法围绕一组特殊成就与目标展开。完成不同目标可以获得**空间之理（Space Theorems）**等奖励，让时间研究的选择更加灵活。
 
-莱特拉的熵速率在原版是 `clamp((log10(AM) / 1e11)^2, 0, 100) / 200`，MOD 把除数改为 `2e7`；原版升层要求「在 30 秒真实时间内完成一次莱特拉现实」，MOD 将窗口放宽到 300 秒，原因与实测见 [FACTS §25](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/main/docs/facts/game/celestials.md#f-25) 与 MOD 源码注释。
+V 的入口本身也有多项前置条件，原版要求现实次数、永恒次数、无限次数，以及若干后期资源分别达到门槛。**不是某一个数字达标就自动全部解锁**。
 
-### Pelle：真终局与 break 死锁
+Oreki Edition 为缩短重复等待，调整过其中部分门槛：例如 V 所需现实次数从原版的 **10,000 次**降低到 MOD 规则中的 **60 次**，膨胀时间与复制器数量门槛也有缩放。其他要求仍须逐项检查，最终以所用版本显示的条件为准。[原版 V 资料](https://antimatterdimensions.wiki.gg/wiki/V) · [MOD 差异](/player/gameplay/original-vs-mod)
 
-Pelle 的入口是 IU25「Omnipresent Obliteration」（原版成本 `1.6e15`，MOD 改为 `5e9`），要求 `Laitela.isRunning`、`maxAllowedDimension === 0`、`Glyphs.activeWithoutCompanion.length <= 1` 且 `TimeStudy.reality` 已买。[官方 IU25](https://github.com/IvarK/AntimatterDimensionsSourceCode/blob/5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/secret-formula/reality/imaginary-upgrades.js)
+如果 V 的进度显示为「接近完成」，却一直没有开放，不要只重复现实。检查尚未满足的那一项，以及它需要的是累计次数、当前资源还是历史最高值。
 
-进入毁灭态后，`player.break` 会被关闭，反物质被夹在 `1.8e308` 附近，`endState` 封顶约 `0.75`。原版唯一能重新打开 break 的路径是：`isDoomed && keepAutobuyers.canBeApplied && hasMaxedInterval`，而 `keepAutobuyers` 是 Pelle 升级 id 2，需要 `5e6` 遗迹碎片（来自 Armageddon）。**因此正确推进序列是：反复末日拿碎片 → 买 `keepAutobuyers` → 下一次现实重置自动恢复 break**。任何「不重置、只囤产量」的自动化都会卡在这一步；单纯去掉 `!Pelle.isDoomed` 守卫也无效，因为 `breakInfinity()` 会先因 `hasMaxedInterval=false` 直接返回。[实测 + 读码，[FACTS §32](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/main/docs/facts/game/pelle.md#f-32)]
+### Ra：重新强化先前的天神
 
-原版 `game-end.js` 的终局判据基于 `log10(9e15) - 8.7`，反物质指数约 `9e15` 时过线；Oreki Edition 把目标改为 `OREKI_PELLE_END_TARGET_EXP = 1e3` 并相应调整公式。**下调 MOD 目标之外，不允许再改动通关定义。**
+Ra 会把你带回此前接触过的天神能力，并通过**记忆（Memories）**等系统逐渐提高它们的效果。它还会逐步解锁新的便利能力及后期成长内容。
 
-## 原版行为与 Oreki Edition 的差异
+这段时间适合重新查看此前的奖励和已开放的系统。你并不是把前四位天神重新从零挑战一遍，而是在 Ra 的机制里进一步利用它们。[Ra 的原版资料](https://antimatterdimensions.wiki.gg/wiki/Ra)
 
-| 项 | 原版 | Oreki Edition |
-| --- | --- | --- |
-| V 现实次数 / 膨胀时间 / 复制体 | 10000 / `1e320` / `1e320000` | 60 / `1e30` / `1e20000` |
-| IU15 反物质指数门槛 | `1.5e12` | `1e8` |
-| IU25 成本 | `1.6e15` | `5e9` |
-| IM 上限倍率 | 原版上限 | `OREKI_IM_CAP_MULT = 3000` |
-| 莱特拉熵除数 / 升层窗口 | `1e11` / 30 秒 | `2e7` / 300 秒 |
-| 终局判据 | 反物质指数约 `9e15` | `OREKI_PELLE_END_TARGET_EXP = 1e3` |
-| 自动化 | 原版自动购买器与 Automator | 额外加入统一调度、策略叶子与佩勒/莱特拉驱动 |
+## 最后两位：莱特拉与佩勒
 
-这些调整的集中来源与核对方式见 [原版行为与 Oreki Edition 修改](/player/gameplay/original-vs-mod)。
+### 莱特拉（Lai'tela）：暗物质与新的生产方式
 
-## 两端位号不同：最容易被忽略的陷阱
+莱特拉会引入**暗物质维度（Dark Matter Dimensions）**、奇点（Singularities）和连续统（Continuum）等机制。她的特殊现实还有独特的完成和速度要求。
 
-同一字段 `imaginaryUpgradeBits` 在 Web 与 Android 移植版的位号**不一样**：
+这一阶段不只是增加现实机器，也要理解暗物质维度怎样成长，以及新的系统如何影响原先的购买方式。莱特拉的部分挑战还会对允许使用的维度提出限制。[原版莱特拉资料](https://antimatterdimensions.wiki.gg/wiki/Lai%27tela)
 
-| 解锁 | Web（上游 id） | Android 3.21 移植版（内部 id） |
-| --- | --- | --- |
-| 莱特拉入口（IU15） | bit15 | **bit4**（`0x4`） |
-| Pelle（IU25） | bit25 | **bit14**（`0xe`） |
+Oreki Edition 对莱特拉相关的部分解锁条件、熵增长和计时要求做过缩放，但**不代表完成入口出现后就能忽略挑战条件**。遇到无法解锁的情况，应先核对当前现实是否满足特殊要求，再决定是否换一轮现实准备。[MOD 差异](/player/gameplay/original-vs-mod)
 
-早期实现按 Web 位号写入策略叶子，导致 `celestial.laitelaUnlocked / pelleUnlocked` 恒为 false；后续按 Android 反编译修正了位号。存档印证：`savestates/late/player-r109-m3-206.json`（Lai'tela 已解锁、Pelle 未解锁）的 `imaginaryUpgradeBits` 为 16 = `1<<4`。[读码 + 存档对照，修正提交 `53febade`]
+### 佩勒（Pelle）：通向结局的最终挑战
 
-这提醒读者：**「同一字段」不等于「同一编码」。** 跨端移植位号、枚举与常量时必须逐项核对本端反编译或源码，而不是照抄另一端。
+佩勒是最后一位天神。进入他的**毁灭（Doom）**状态之后，你会失去许多原本依赖的后期强化，必须在新的限制下重新建立成长。
 
-## 已确认与未确认
+**原版的毁灭状态不能像普通挑战那样随意退出。** 在按下相关入口前，先阅读游戏内的警告和条件，不要把它当作一次可以轻松撤销的普通现实。
 
-- **已确认**：七位天神的原版定位、V 六项条件与原版数值、Ra 的 RU0～RU5 限制、IU15 双门与死锁链、IU25 条件、莱特拉熵公式、Pelle 的 break 死锁链与正确推进序列、两端位号差异。
-- **未确认**：Android 端全部机制的等价复验（部分为 Web 冻结上游读码）；Pelle 终局从进入到通关的完整真实运行证据（NOT RUN）。
-- **不要引用为攻略**：本条目解释机制与已知陷阱，不保证任意策略都能通关。
+毁灭阶段需要通过自身的资源、升级与重置逐步打开前进道路，而不是只靠之前的符文或现实升级。Oreki Edition 调整过终局相关数值，目的是缩短不必要的等待；实际结局仍应由游戏的正常终局过程触发。[佩勒的原版资料](https://antimatterdimensions.wiki.gg/wiki/Pelle)
 
-## 如何核查
+## 遇到难关时怎么判断？
 
-1. 读 `player.json` 的 `celestials`、`reality.imaginaryUpgradeBits`、`laitela`、`pelle` 字段，确认解锁状态。
-2. 用 `BitSet.f()J` 之类的方式读位掩码，而不是把 `BitSet` 当数字强转。
-3. 在毁灭态采样 `player.break`、`endState`、反物质指数与 `keepAutobuyers`，区分「产量不够」与「break 没有恢复」。
-4. 数值差异一律回源码确认，不以本页表格代替当前实现。
+天神阶段最容易出现一种误会：**「上一位天神能靠多买升级推进，这一位也应该一样。」** 实际上，不同天神经常要求不同的准备方式。
+
+进入新天神前，先读它的特殊现实说明；挑战内部进展缓慢时，查看本次限制是否禁用了某项常用能力；如果入口不开放，优先检查**当前显示的缺失条件**，而不是反复切换页面或修改存档。已经完成的其他天神奖励也可能是突破关键。
+
+在 Oreki Edition 中，自动化可以减少重复购买，但不会替你跳过天神的真实条件。某个功能提前显示却无法使用，也不能仅凭它出现在界面上就认定已解锁；发生异常时可以参考[阶段解锁与页面显示](/player/gameplay/stage-gates)。
+
+## 原版与 MOD 的区别
+
+本页对七位天神的基本玩法采用原版概念。Oreki Edition 的变化集中在**部分门槛、资源倍率、计时窗口及自动化操作**，并不意味着原版所有数值都仍然适用。
+
+具体差异可能随着 MOD 版本更新，尤其在 V、莱特拉和佩勒阶段，核对数值时应先确认当前 Android 或 Web 版本。集中比较见[原版行为与 Oreki Edition 修改](/player/gameplay/original-vs-mod)，玩家不必阅读 Kotlin 类名或开发历史才能理解本页。
 
 ## 参考资料
 
-- [社区 Wiki：Celestials](https://antimatterdimensions.wiki.gg/wiki/Celestials)
-- [社区 Wiki：Pelle](https://antimatterdimensions.wiki.gg/wiki/Pelle)
-- [官方源码：V 解锁条件](https://github.com/IvarK/AntimatterDimensionsSourceCode/blob/5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/secret-formula/celestials/v.js)
-- [官方源码：虚构升级 IU15 / IU25](https://github.com/IvarK/AntimatterDimensionsSourceCode/blob/5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/secret-formula/reality/imaginary-upgrades.js)
-- [官方源码：莱特拉熵速率](https://github.com/IvarK/AntimatterDimensionsSourceCode/blob/5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/celestials/laitela/laitela.js)
-- [官方源码：终局判定](https://github.com/IvarK/AntimatterDimensionsSourceCode/blob/5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/celestials/pelle/game-end.js)
-- [docs/FACTS.md §8.3–8.10](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/main/docs/facts/game/reality.md#f-8-3)、[§25](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/main/docs/facts/game/celestials.md#f-25)、[§32](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/main/docs/facts/game/pelle.md#f-32)
+- [Antimatter Dimensions Wiki：Celestials](https://antimatterdimensions.wiki.gg/wiki/Celestials)（七位天神及其成长顺序）。
+- [Teresa](https://antimatterdimensions.wiki.gg/wiki/Teresa)、[Effarig](https://antimatterdimensions.wiki.gg/wiki/Effarig)、[The Nameless Ones](https://antimatterdimensions.wiki.gg/wiki/The_Nameless_Ones)（前三位的机制）。
+- [V](https://antimatterdimensions.wiki.gg/wiki/V)、[Ra](https://antimatterdimensions.wiki.gg/wiki/Ra)（空间之理、记忆等机制）。
+- [Lai'tela](https://antimatterdimensions.wiki.gg/wiki/Lai%27tela)、[Pelle](https://antimatterdimensions.wiki.gg/wiki/Pelle)（后期机制与终局）。
+- [原版官方源码：V 的门槛定义](https://github.com/IvarK/AntimatterDimensionsSourceCode/blob/5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/secret-formula/celestials/v.js)。
 
 ## 相关条目
 
-[原版行为与 Oreki Edition 修改](/player/gameplay/original-vs-mod) · [现实与时间研究](/player/gameplay/reality-time-studies) · [无限与永恒](/player/gameplay/progression-infinity-eternity) · [2026-11-15 · 天神策略叶子缺失与补实现](/developer/history/2026-11-15-celestial-leaves-fix) · [双端行为一致性](/developer/architecture/parity/)
+[现实与时间研究](/player/gameplay/reality-time-studies) · [挑战与真实结算](/player/gameplay/challenges) · [智能自动购买器](/player/gameplay/automation) · [原版行为与 Oreki Edition 修改](/player/gameplay/original-vs-mod)
