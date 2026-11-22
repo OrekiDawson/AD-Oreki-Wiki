@@ -1,6 +1,6 @@
 ---
 title: "智能自动购买器"
-description: "解释 Oreki Edition 自动化的统一节拍、阶段感知、手动优先与开关托管设计"
+description: "认识原版自动购买器和 Oreki Edition 调度器，了解自动化何时动作、怎样调整，以及为什么手动设置会恢复"
 tags:
   - 玩法
   - 自动化
@@ -8,84 +8,85 @@ aliases:
   - "/gameplay/automation"
 ---
 
+玩到后面，你可能要反复购买维度、升级、执行大坍缩，甚至在重置后重新配置一批东西。**自动购买器**负责减少这些重复操作，让你把注意力留给下一次解锁、升级路线和挑战选择。
 
-Oreki Edition 的自动化不是一组每帧都去购买的脚本，而是一套分层的调度系统：它只处理当前阶段允许的操作，按目标决定优先级，并且尊重玩家的手动设置。
+Oreki Edition 在原版自动购买器之外，又加入了一层**统一调度器**。理解这两层的区别，就能解释为什么有些购买执行得很快，有些策略要过几秒才更新，以及为什么刚手动改过的设置又会恢复。
 
-调度器每 1～60 秒（默认 10 秒）执行一次策略动作，不跟着游戏帧率反复抢操作。每个动作都要先通过阶段判定与 allow() 检查，确认当前阶段允许购买、且不会越阶段解锁；总开关关闭后立即停止，配置修改在下一个节拍生效。玩家手动关闭某个受管开关时，调度层不会马上覆盖，而是等到下一个节拍才按最新策略恢复——这一条是为了避免玩家刚点完就被自动逻辑改回去。所有购买都必须走原版入口并真实扣费，不能直接写资源、挑战完成或成就字段。
+## 先认识原版自动购买器
 
-## 原版自动化怎样工作
+原版游戏会随着进度逐步开放不同自动购买器。例如，前期能够解锁反物质维度和计数频率的自动购买器；完成相应挑战后，还能获得维度提升、反物质星系、大坍缩等重置操作的自动化。
 
-原版的自动化在游戏早期就会解锁，核心概念是 **interval（间隔）** 与 **bulk（单次批量）**：
+它们通常有两个常见设置：
 
-- **interval** 决定自动器多久执行一次；它不能比游戏更新率更快——移动端更新率固定约 25 毫秒，网页/Steam 可在约 33～200 毫秒之间调整。当 interval 小于更新率时，界面会显示「Instant」，表示每个 tick 都会触发。
-- **bulk** 决定一次触发能买多少；例如反物质维度自动器初始为 `×1`，可升级到无限。
-- 自动器不能一帧内触发多次，因此实际间隔不会小于更新率。
+- **间隔（Interval）**：两次自动操作之间至少隔多久。间隔越短，通常检查得越频繁。
+- **批量（Bulk）**：一次自动操作尝试购买多少个。有的自动购买器能从少量购买升级为一次尽可能买满。
 
-[来源：社区 Wiki：Automation](https://antimatterdimensions.wiki.gg/wiki/Automation)
+自动购买器不会因为开启了就凭空买到东西。没有足够的反物质或点数时，它仍然需要等待资源；还没解锁的功能，也不能靠打开开关提前使用。
 
-这套机制描述的是「**原版自动器本身多快**」。它和 Oreki Edition 额外加入的「策略层多快」是两件事，见下一节。
+不同自动器的开放条件与选项不完全相同，详细列表可以查看[原版自动化资料](https://antimatterdimensions.wiki.gg/wiki/Automation?oldid=3396)。
 
-## 模块分工（Android）
+## Oreki Edition 的调度器多做了什么？
 
-Android 端的自动化已经从历史 Smali 实现迁移到 Kotlin 业务代码，主要模块如下：
+原版自动购买器解决的是「这个项目是否自动执行、执行得多快」。Oreki Edition 的调度器还要解决另一个问题：**当前阶段应该优先做什么，以及哪些受管操作该按什么目标运行。**
 
-| 模块 | 职责 |
+可以把它们理解为两个层次：
+
+| 功能 | 负责什么 |
 | --- | --- |
-| `OrekiAutomationScheduler.kt` | 全局统一节拍；提供 `beginFrame()`、`allow(项)`、`noteActed/noteNoop/noteFail` 等接口，决定某一帧是否允许某个受管动作 |
-| `OrekiStageAuto.kt` | 「首次无限之后」的阶段自动化：购买、升级、尝试突破等 14 个 public static 入口，所有真实购买动作纳入全局节拍 |
-| `OrekiAutobuyerBeat.kt` | 受管项的节拍恢复：只恢复**明确受管**的工作间隔配置，不在下一帧抢写，不碰原版自动器的 `isActive` |
-| `OrekiAutoEternityAdoption.kt` | 托管原版「自动永恒」开关：区分「原版 Reality 复位」与「玩家手动关闭」，后者粘滞尊重 |
-| `OrekiEcAutomation.kt` | 永恒挑战推进，按原版购买入口与 ABI 调用 |
-| `OrekiIu15Sprint.kt` | IU15 冲刺状态机：在干净现实窗口内拦住全部无限维度购买入口 |
+| 原版自动购买器 | 按自身设置执行已经解锁的购买或重置 |
+| Oreki Edition 调度器 | 定期检查当前阶段和目标，向受管项目应用策略设置 |
 
-这些类的 public static 方法签名必须与原调用点逐字一致（调用方都是 `invoke-static`），否则整条链失效；因此 Kotlin 实现大量使用 `object` + `@JvmStatic` 来对齐字节码形态。
+Oreki Edition 的统一调度节拍可以设为 **1～60 秒，默认 10 秒**。这里的 10 秒不是说「所有自动购买都必须等 10 秒」：原版自动购买器仍有自己的工作间隔。**调度节拍**指的是 MOD 多久重新判断一次策略和受管配置。
 
-## 原版自动器与 MOD 调度器的关系
+例如，原版维度自动购买器可能持续快速购买，而调度器每隔一段时间才检查目标有没有变化。两种速度同时存在，并不矛盾。
 
-可以把两层分开理解：
+## 怎样开始使用？
 
-| 层 | 归属 | 作用 |
-| --- | --- | --- |
-| 原版自动购买器 | 原版游戏 | 按自己的 interval/bulk 执行购买与重置；MOD 不改变其结算语义 |
-| MOD 统一调度器 | Oreki Edition 新增 | 以 1～60 秒（默认 10 秒）的节拍决定「策略动作」何时执行，避免逐帧抢操作 |
-| MOD 目标驱动策略 | Oreki Edition 新增 | 根据阶段与目标决定买什么、何时重置；遵守手动优先 |
+刚接触自动化时，不需要把所有选项一次调完。推荐从实际观察开始：
 
-因此，「原版自动器很快」不等于「MOD 策略会每帧动手」；反过来，MOD 调度器变慢也不代表原版自动器停止工作。排查时需要说明在看哪一层。
+1. **先确认已解锁什么。** 还没开放的自动购买器不会因为 MOD 有调度器就提前出现。先正常购买升级、完成能完成的挑战。
+2. **查看自动购买器与调度器设置。** 分清哪些是原版自动器自己的间隔或购买方式，哪些由 Oreki Edition 的统一策略管理。具体选项随平台和版本可能有所差别，以当前界面为准。
+3. **确认调度器是否启用、当前目标是否合适。** 调度器每次检查时，会按照当前阶段决定受管项目的行为。
+4. **观察一两个调度节拍。** 默认每隔约 10 秒检查一次，不要刚修改设置就连续反复切换。看看资源是否足够、目标是否发生变化，以及设置有没有被策略重新应用。
 
-## 手动优先与「不抢开关」
+如果你只是想手动试一次购买，可以直接操作游戏当前允许的按钮。自动化并不意味着所有事情都必须交给它。
 
-一个容易误解的点是：**自动化不应该替玩家打开原版自动器**。当前实现的纪律是：
+## 为什么我刚关闭或修改的设置又变回去了？
 
-- 只管理明确的受管项（如某些工作间隔配置），不把原版自动器的启用状态纳入策略范围；
-- 玩家手动关闭「自动永恒」后，托管层必须**粘滞尊重**，直到玩家自己重新打开；
-- 原版 Reality 结算会把自动永恒开关复位（这是原版设计行为，不是 MOD 写坏），MOD 托管层只负责在**确认是原版复位**时补回开关，并区分玩家手动关闭的情况。
+**调度器对明确受管的自动购买器拥有策略控制权。** 对受管维度、计数频率、维度提升、星系等项目，策略可管理启用状态、购买方式和间隔等指定字段；玩家临时修改这些受管字段后，通常会在下一个有效调度节拍重新应用策略值。未纳入托管的项目不受这一规则影响。
 
-这条区分由 `OrekiAutoEternityAdoption` 落盘到 `oreki_prefs` 实现，不依赖一次性内存标记，因此应用重启后仍然有效。Reality 复位后的补回和玩家手动关闭的粘滞语义已在 [PR #92](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/pull/92) 合入，并有 AVD 状态变化记录。后续首次现实门槛与坍缩策略又分别在 [PR #158](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/pull/158)、[PR #179](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/pull/179) 修正；这些提交完成不等于所有版本的真实终局均已通过。
+这通常不是存档忘记了你的操作，而是你改动的项目仍然由统一策略接管。默认节拍为 10 秒，因此短时间内看见受管设置恢复可能是预期行为。但**自动永恒是需要单独理解的例外**：在当前 Android 实现中，玩家明确手动关闭自动永恒后应被持续尊重；只有原版现实结算造成的复位，才由专门托管逻辑按条件恢复。
 
-## 重置后的“曾完成无限”必须保留
+想让普通受管项目的行为持续改变，应当**调整调度器本身的目标、管理设置或总开关**（以当前版本的实际界面为准），而不是反复修改它管理的字段。**如果手动关闭自动永恒后它又在没有合理复位的情况下自行打开，请记录版本、操作与存档状态并反馈**，不要一概当作正常策略纠偏。
 
-自动化的早期门禁需要判断当前是否仍处于“第一次无限之前”。问题在于，永恒挑战和 Reality 会合法清空当前 `infinities`、IP、Break，甚至清空低层永恒计数；如果门禁只用这些**当前值**，历史进度会在重置后看起来像新档。
+这里有一个边界：**不是每个原版自动购买器的每个选项都被 MOD 托管；自动永恒的手动关闭保护也不是普通受管字段的下一 tick 恢复。** Android 具体依据见 [R120 受管字段清单](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/3b2d8284f2aca7132168998ee32497b3c4c17b8e/reports/R120-01/scheduler-managed-authority.md) 与 [自动永恒托管实现](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/3b2d8284f2aca7132168998ee32497b3c4c17b8e/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiAutoEternityAdoption.kt)。
 
-正确判据必须承认不可逆结算产物：大永恒次数、永恒次数和现实次数都能证明无限层曾经完成。运行期的 `OrekiStageAuto.onAutoBuyerTick()` 一旦误判为新档就会提前返回，后续挑战、Reality 与终局逻辑都不会执行。R121 KVM 新档因此先后在 EC5 后停约 649 秒、首现实后停约 570 秒；第二个停点只剩 `realities=1` 可识别。
+## 自动化没有动作时，先看什么？
 
-R121 的源码修复只扩展这个只读阶段判据，不写资源、不改门槛、不跳过挑战，也没有把“已修复”扩展成“已通关”。当前证据、失败时间线与 PR 状态见 [2026-11-20 · R121 Android KVM 新档阶段推进与 P1 停滞](/developer/history/2026-11-20-r121-android-kvm)。
+最常见的情况并不复杂。
 
-## 验证与已知限制
+**第一种：资源不够。** 自动购买器能替你点击，但不能替你创造 IP、EP 或其他货币。先检查当前能否手动合法购买。
 
-验证分几层做。功能层是同一 APK 连续运行 5 分钟，确认 0 FATAL、0 ABI 崩溃、0 ANR，并检查 logcat 里 `OREKI_SCHED`、`OREKI_ACHAUDIT`、`OREKI_GUI` 等标记持续输出。行为层要确认资源真实扣费、购买来自原版入口、阶段切换后行为正确（见 [阶段门禁](/player/gameplay/stage-gates)）。持久化层看重启与读档后的开关状态，尤其是玩家手动关闭的项不被覆盖。这些检查不能只看界面表现，最终以存档字段和日志为准。
+**第二种：尚未解锁。** 比如第一次大坍缩后，还需要继续推进无限升级、挑战和相应条件，不能期待自动化直接跳到永恒。
 
-阶段判断依赖 GUI 阶段真值（`OrekiGuiStage.kt`），而阶段判定本身出过缺陷，所以自动化是否正确首先取决于阶段判定是否正确；相关排查见 [阶段门禁](/player/gameplay/stage-gates)。部分历史模块（例如静默的 `OrekiChallengeAuto`）没有日志，只能靠额外探针观察。R121 已完成 Web 真实新档终局，但 Android 重置后阶段判据 P1 的运行复验为 **NOT RUN**（源码修复已提交，等待新构建实跑）；EC 切换固定等待 P1 的定向复验为 **PASS**（约 10 秒触发坍缩、约 30 秒恢复 Break，[固定报告](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/a1617a9e0d652a16ba050be25bb3f5b1a5ef1c43/reports/R121-01/R121-01-P1-break-recovery.md)），完整终局仍为 **NOT RUN**；不能用 Web 的通关时间替代 Android 自动化验收，Android 与 Web 的自动化等价性也尚未独立验收（见 [双端行为一致性](/developer/architecture/parity)）。
+**第三种：目标与阶段不一致。** 有些操作只在特定阶段有意义；重置后，调度器也可能要等下一个节拍才能重新应用策略。先观察当前阶段，再看受管目标是否正确。
 
-实际核查时，抓 logcat 确认动作经过 `allow()` 而不是逐帧直调，再对比存档中的资源与购买记录确认扣费真实发生，最后手动关闭总开关或单项配置，确认立即停止且不会被自动恢复。
+**第四种：正在进行有限制的挑战。** 挑战可能改变正常购买规则。自动化不应绕过这些限制。遇到购买失败，先读挑战说明，而不是不断提高购买频率。
 
-## 参考资料
+如果某个行为长期不正常，可以记录平台、版本、当前阶段、调度节拍以及你预期它会做什么。通常这比只说「自动购买器失灵」更容易排查；问题反馈入口见[玩家常见问题](/player/faq/)。
 
-- [Android 仓库 Kotlin 业务目录](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/tree/main/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki)
-- [docs/FACTS.md 自动化与已修复根因](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/main/docs/facts/methodology.md#f-10)
+## 它会自己把游戏全部玩完吗？
 
-- [社区 Wiki：Automation](https://antimatterdimensions.wiki.gg/wiki/Automation)
-- [官方网页源码（固定 Commit）](https://github.com/IvarK/AntimatterDimensionsSourceCode/blob/5409e320cecef96a917cca1dfb68f1f183e499ca)
+自动购买器主要减少重复劳动，但并不改变游戏必须满足的解锁、资源和挑战条件。某些阶段仍需要你决定研究路线、理解新系统，或者在自动化策略尚不适用时手动操作。
 
-## 相关条目
+Oreki Edition 希望缩短无意义的等待，而不是用假资源或假结算跳过游戏本身。**自动化能替你操作，不能替你免除规则。**
 
-[原版行为与 Oreki Edition 修改](/player/gameplay/original-vs-mod) · [挑战与真实结算](/player/gameplay/challenges) · [阶段门禁](/player/gameplay/stage-gates) · [存档兼容与自动保存](/player/gameplay/saves) · [双端行为一致性](/developer/architecture/parity/) · [2026-11-15 · R114-01 现实自动永恒复位修复](/developer/history/2026-11-15-r114-reality-autoeternity)
+想知道第一次大坍缩后应该把注意力放在哪里，可以接着读[无限与永恒](/player/gameplay/progression-infinity-eternity)。
+
+## 参考资料与延伸阅读
+
+- [原版社区 Wiki：Automation](https://antimatterdimensions.wiki.gg/wiki/Automation?oldid=3396)：原版自动器的解锁、间隔和批量（本站历史资料记录修订 ID 3396，2026-11-16）。
+- [Oreki Edition Android 源码](https://github.com/OrekiDawson/AD-Oreki-Edition-Android)：MOD 调度器与受管配置的具体实现；各版本行为以真实构建为准。
+- [原版与 MOD 的区别](/player/gameplay/original-vs-mod)：统一调度器属于 MOD 新增能力。
+- [阶段门禁](/player/gameplay/stage-gates)：为什么部分系统必须等到真正解锁才能使用。
+- [存档兼容与自动保存](/player/gameplay/saves)：更新、导入存档之前需要注意什么。
