@@ -1,6 +1,6 @@
 # Wiki Agent 检索与编写指引
 
-本文件说明怎样**找到正确资料并完成一项可审校的文档修改**，不是第二份规则正文。公开规则以 [知识库规则](../content/wiki-rules.md) 为准；跨仓授权、预算、优先级、任务编号依 [Workspace AGENTS.md](https://github.com/OrekiDawson/AD-Oreki-Edition-Workspace/blob/main/AGENTS.md)，本仓执行边界依根 `AGENTS.md`。
+本文件说明怎样**找到正确资料并完成一项可审校的文档修改**，不是第二份规则正文。公开规则以 [知识库规则](../content/wiki-rules.md) 为准；跨仓授权、预算、优先级、任务编号依 [Workspace AGENTS.md](https://github.com/OrekiDawson/AD-Oreki-Edition-Workspace/blob/3652a9589251281c231f9b133ccd412ab83b7580/AGENTS.md)，本仓执行边界依根 `AGENTS.md`。
 
 ## 接到任务时先确认范围
 
