@@ -39,7 +39,7 @@ Oreki Edition 保留了原版从反物质、无限、永恒到后期系统的成
 
 接下来要做的事情也很直观：**用无限点数购买升级，再重复推进与大坍缩。** 随着进度提高，你会逐步接触打破无限、无限维度、无限挑战和其他系统。它们不会因为完成第一次大坍缩就全部具备使用条件。
 
-尤其要注意，**「打破无限」不是第一次大坍缩后就应当立即执行的动作**。原版还要求先提升大坍缩自动购买器的间隔等条件；按钮尚不可用时，先继续正常推进。[打破无限的原版条件](https://antimatterdimensions.wiki.gg/wiki/Break_Infinity)。
+尤其要注意，**「打破无限」不是第一次大坍缩后就应当立即执行的动作**。原版还要求先提升大坍缩自动购买器的间隔等条件；按钮尚不可用时，先继续正常推进。[打破无限的原版条件](https://antimatterdimensions.wiki.gg/wiki/Break_Infinity?oldid=3349)。
 
 想了解接下来的完整阶段，可以阅读[无限与永恒](/player/gameplay/progression-infinity-eternity)。
 
@@ -49,7 +49,7 @@ Oreki Edition 保留了原版从反物质、无限、永恒到后期系统的成
 
 Oreki Edition 还提供统一调度策略，按当前阶段和目标决定受管项目何时动作。**自动化不是跳过解锁条件**：资源不够时仍然买不了，挑战也必须按照游戏本来的条件完成。
 
-如果你发现刚改过的某项受管自动购买器设置又恢复了，不一定是操作失败。调度器会在下一次节拍重新应用它管理的设置；想持续调整行为，应检查调度器自身的配置，而不是只反复改受管项目。详细说明见[智能自动购买器](/player/gameplay/automation)。
+如果你发现刚改过的某项受管自动购买器设置又恢复了，不一定是操作失败。调度器会在下一次节拍重新应用大多数受管字段；想持续调整这些项目，应检查调度器自身的配置，而不是反复改受管项目。**自动永恒的手动关闭另有专门保护**，并不等同于普通字段恢复。详细说明见[智能自动购买器](/player/gameplay/automation)。
 
 ## 开始前，顺手保护好存档
 
@@ -69,6 +69,6 @@ Oreki Edition 还提供统一调度策略，按当前阶段和目标决定受管
 ## 参考资料
 
 - [原版社区 Wiki：反物质维度](https://antimatterdimensions.wiki.gg/wiki/Antimatter_Dimensions)（生产链、维度数量与解锁）。
-- [原版社区 Wiki：重置成长](https://antimatterdimensions.wiki.gg/wiki/Prestige)（维度提升、星系与大坍缩）。
-- [原版社区 Wiki：无限](https://antimatterdimensions.wiki.gg/wiki/Infinity)（首次大坍缩）。
+- [原版社区 Wiki：重置成长](https://antimatterdimensions.wiki.gg/wiki/Prestige)（维度提升、星系与大坍缩；来源修订尚待核对）。
+- [原版社区 Wiki：无限](https://antimatterdimensions.wiki.gg/wiki/Infinity?oldid=3113)（首次大坍缩）。
 - [Oreki Edition Android、Web 源码](https://github.com/OrekiDawson/AD-Oreki-Edition-Android)（MOD 调度器的适用范围以实际版本为准）。
