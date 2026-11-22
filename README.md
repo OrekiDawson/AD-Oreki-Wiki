@@ -4,6 +4,10 @@
 
 反物质维度 MOD（Oreki Edition）双专区知识库。GitHub 是权威事实源，本仓库是 Quartz 5 玩家专区与开发者专区的展示和检索层。
 
+[中文目录与文件命名约定](docs/目录与中文命名约定.md) · [内容编辑指引](docs/AGENT_GUIDE.md) · [构建维护](docs/MAINTENANCE.md)
+
+本仓库为《反物质维度》（Antimatter Dimensions）及 **Oreki Edition** Android/Web MOD 提供中文百科与技术资料，使用 Quartz 5 构建并通过 GitHub Pages 发布。
+
 - 站点：https://wiki.oreki.net（自定义域名；仓库地址 `OrekiDawson/AD-Oreki-Wiki`）
 - 玩家专区：https://wiki.oreki.net/player/
 - 开发者专区：https://wiki.oreki.net/developer/
@@ -21,6 +25,8 @@
 - **事实与发布**：[当前项目状态](https://wiki.oreki.net/developer/current/project-status)、[知识库规则](https://wiki.oreki.net/wiki-rules)、[版权与许可](https://wiki.oreki.net/copyright)。
 
 **双专区现已正式提供。** 首页、`/player/`、`/developer/`、旧 URL 兼容与移动端导航均通过构建和本地 Chromium 验收；正式线上状态以合并部署后的 HTTPS 验证为准。
+
+**审查配额：** Wiki 的 Kody 审查独立统计，不占用 Android/Web 每日共享的 100 次额度；已由 Kody 确认跳过的审查不计项目额度。实际审查仍受用户授权、Balanced 模式、平台额度及收费规则约束，不能解释为无限免费审查。
 
 ## 内容原则
 
