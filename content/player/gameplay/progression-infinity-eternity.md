@@ -1,6 +1,6 @@
 ---
 title: "无限与永恒"
-description: "解释大坍缩、无限点数、永恒点数、时间研究与挑战如何逐层衔接，以及为什么自动化必须尊重这些重置层级"
+description: "第一次大坍缩后如何使用无限点数、打破无限，并逐步进入永恒和时间研究"
 tags:
   - 玩法
   - 无限
@@ -9,86 +9,81 @@ aliases:
   - "/gameplay/progression-infinity-eternity"
 ---
 
+第一次大坍缩以后，你又回到了熟悉的反物质生产界面，但游戏已经不再是从头开始。新获得的**无限点数**能购买更强的升级，让每一轮推进得更远。继续突破无限阶段，才会遇到下一层重置：**永恒**。
 
-「无限」与「永恒」是《反物质维度》最早出现的两层重置成长：玩家放弃当前的部分进度，换取新的货币与更强的成长能力。本条目解释这两层的入口、代价与关键机制，以及 Oreki Edition 的自动化为什么不能跳过它们。
+这两个阶段的共同点是「用一次重置换下一轮更强的起点」。区别在于，你面对的资源、升级和挑战会一步步增加。
 
-这里的结论分两类：**原版机制**来自官方代码与社区资料；**MOD 行为与阈值**来自本项目的读码与实测，会单独标注来源和适用版本。
+## 大坍缩后先做什么？
 
-## 从反物质到大坍缩
+首次反物质达到约 **1.80 × 10³⁰⁸**，就能执行大坍缩（Big Crunch），获得最初的无限点数（Infinity Points，简称 IP）。第一次执行后，新的无限与普通挑战内容会开放。[原版机制：无限](https://antimatterdimensions.wiki.gg/wiki/Infinity)。
 
-游戏早期通过八级反物质维度生产反物质：第一维度直接产出反物质，第二维度生产第一维度，依此类推。玩家用维度提升与星系重置换取更高的生产效率，直到反物质达到约 `1.80e308`，可以执行**大坍缩（Big Crunch）**进入无限阶段。[来源：游戏总览与社区 Wiki](https://antimatterdimensions.wiki.gg/wiki/Infinity_Point)
+这时候不用急着寻找下一个大系统。可以先做三件事：
 
-大坍缩不是通关，而是把玩法从「堆反物质」扩展为「用无限点数购买新的成长体系」。
+1. **花 IP 买无限升级。** 它们可以改善维度生产或提升之后的大坍缩收益。买完升级，再从反物质开始跑一轮，通常会比上次快。
+2. **留意普通挑战。** 挑战会为玩法添加限制；对应奖励有助于解锁或强化自动购买器。能挑战时试一试，暂时做不到则先回来积累升级。
+3. **升级大坍缩自动购买器。** 它能减少重复操作，也是以后打破无限所需的准备之一。
 
-## 无限层
+首次大坍缩和「打破无限」是两件不同的事。**不要因为已经得到 IP，就以为打破无限必须立即可用。**
 
-进入无限后获得**无限点数（Infinity Points，IP）**，可以购买无限升级、解锁无限维度与无限挑战。无限维度同样逐级生产：第一无限维度产出无限点数，更高层维度支撑下一层。
+## 打破无限：让反物质继续增长
 
-一个容易忽略的细节是 **`maxID1`**：它记录「第一无限维度的购买量」，而不是某种临时统计。这个字段会在后面的天神系统中成为**硬性失败条件**（见 [天神系统](/player/gameplay/celestials) 的 IU15），因此自动化「无脑买满无限维度」并不总是安全。[读码：`antimatter-dimension.js`、`infinity-dimension.js`；见 [FACTS §8.9](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/main/docs/facts/game/endgame.md#f-8-9)]
+最初反物质会在约 **1.80 × 10³⁰⁸** 处遇到上限，执行大坍缩后再开始一轮。
 
-## 永恒层
+想继续向上增长，必须解锁**打破无限（Break Infinity）**。在原版中，需要先把大坍缩自动购买器的间隔升级到 **0.1 秒**，之后才能启用打破无限。[原版机制：打破无限](https://antimatterdimensions.wiki.gg/wiki/Break_Infinity)。
 
-在无限层继续推进后解锁**永恒（Eternity）**。永恒带来永恒点数（EP）、时间之理（Time Theorems，TT）与**时间研究**树，并开放永恒挑战（EC）。
+打破之后，反物质可以越过原来的数值上限，一次大坍缩也可以获得更多基础 IP。此时更有意义的问题变成：**这次还要继续积累多少反物质，再执行大坍缩？**
 
-### 永恒挑战的真实结算条件
+如果继续增长明显变慢，可以先领取这一轮的 IP，购买新的升级，再开始下一轮。解锁更多内容后，自动购买器可以帮助重复这套过程。
 
-EC 不是「点一下就打」的独立副本，它由原版状态机判定。以 `ec-time-study.js` 的 `canBeBought` 为例，一关要同时满足：资源足够、当前没有别的 EC 在进行、**前置普通时间研究已经买上**、二级条件满足。
+## 无限维度和无限挑战
 
-EC9 的前置研究是普通研究 **151**，EC10～EC12 是 **181**。如果自动化只调用 `purchase()` 而不补前置研究，`canBeBought` 会恒为 false，EC9～EC12 就永远买不上——这一条曾让自动化在 `ecUnlocked=8` 上停住。[读码 + 实测，[FACTS §8.8](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/main/docs/facts/game/challenges.md#f-8-8)]
+随着 IP 和反物质不断增加，无限阶段还会出现**无限维度、无限挑战和复制器**等内容。它们不是第一次大坍缩后就能全部用上的功能，而是各有自己的开放条件。
 
-EC 的门槛按下式增长：`1e17500 × 1e2000^min(completions,4)`，也就是 0 次完成时约 `1e17500`。某些升级的 `/100` 只把第 0 档变成约 `1e17498`，对后续档位几乎没有影响，所以「多跑一会儿资源就够了」对 EC 并不成立。
+无限维度与反物质维度是两套不同的生产系统。前者参与无限阶段的成长，购买需要 IP；更高等级的无限维度会在后续进度中逐步解锁。[原版机制：无限维度](https://antimatterdimensions.wiki.gg/wiki/Infinity_Dimensions)。
 
-### 时间研究与时间膨胀
+无限挑战则要求玩家在特殊限制下完成目标，奖励会帮助后续推进。看见挑战入口时，先阅读它的条件；如果当前生产能力不足，不必一直在同一关里等待。
 
-时间研究用 TT 购买，是永恒层的核心成长树。**DS1（时间膨胀解锁）需要 5000 TT**，买上它才会打开膨胀（Dilation）相关路径；而天神 V 的「膨胀时间」条件依赖膨胀真正运行过。
+这段时期很容易产生「有好多按钮，却不知道先点哪个」的感觉。可以用一个简单顺序判断：
 
-时间之理的总量还与「在膨胀状态中完成一次真实永恒」有关：`rewardTP()` 只在那个时机触发，DT 速率又由 TP 决定。因此「TP 死了」往往是采样口径问题，而不是机制真的停摆。[读码 + 实测，[FACTS §8.6](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/main/docs/facts/game/mechanics.md#f-8-6)]
+**检查当前可负担的升级 → 试可完成的挑战 → 继续积累 IP → 解锁下一项无限维度。**
 
-## 原版数值与 Oreki Edition 的差异
+## 什么时候能够永恒？
 
-原版的关键门槛可以直接从官方源码与社区 Wiki 核对：
+**永恒（Eternity）**是位于无限之上的第二层重大重置。在原版中，当 IP 推进到约 **1 × 10²⁸⁰**、解锁第八无限维度之后，相关入口会提示继续朝 **1.80 × 10³⁰⁸ IP** 前进。达到条件后，便可以进行第一次永恒。[原版机制：永恒](https://antimatterdimensions.wiki.gg/wiki/Eternity)。
 
-| 层 | 原版条件 | 首次完成时发生什么 |
-| --- | --- | --- |
-| 无限 | 反物质达到「无限」，即 `2^1024`（约 `1.797e308`） | 出现 Big Crunch 按钮；执行后解锁无限页签（无限升级、Breaking Infinity、Replicanti）与普通挑战页签，获得 1 无限点数 |
-| 永恒 | 解锁第 8 无限维度后，无限点数达到 `1.80e308` | 解锁永恒页签（时间研究、永恒升级、永恒里程碑），获得永恒点数；永恒会重置无限点数、无限维度购买、无限升级、挑战完成记录等 |
+注意这里比较的是**无限点数（IP）**，而不是反物质。两个阶段都出现了「1.80 × 10³⁰⁸」这个数字，但使用的资源不同：
 
-来源：[社区 Wiki：Infinity](https://antimatterdimensions.wiki.gg/wiki/Infinity)、[Eternity](https://antimatterdimensions.wiki.gg/wiki/Eternity)；[官方源码：V 解锁条件](https://github.com/IvarK/AntimatterDimensionsSourceCode/blob/5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/secret-formula/celestials/v.js)（其中也包含永恒/无限次数相关常量）。
+- **大坍缩**看反物质。
+- **第一次永恒**看无限点数，且需要先完成相应的无限维度解锁。
 
-Oreki Edition 在这一层**不改变大坍缩与永恒的触发门槛**，但增加了自动化与节奏控制，并把「≤180 分钟真实通关」作为工程目标：自动化必须在不伪造结算的前提下，把上述层级真实推进完。相关的 MOD 调整（例如 V 的现实次数、莱特拉入口、终局判据）集中在 [原版行为与 Oreki Edition 修改](/player/gameplay/original-vs-mod)，不在本页重复。
+第一次永恒会重置不少低层进度，同时给你新的成长资源**永恒点数（Eternity Points，EP）**，并开放永恒相关内容。不要被重置后的低数字吓到。IP 阶段的反复成长，现在变成了赚取 EP 的基础。
 
-另一个平台差异需要注意：Android 原版自带无限维度自动购买器，而 Web 原版没有；Web 端的相关能力是 MOD 补上的。因此「两端都能自动买无限维度」不能证明两端实现等价，见 [双端行为一致性](/developer/architecture/parity/)。
+## 永恒之后：时间研究和永恒挑战
 
-## 为什么 MOD 自动化必须尊重这些层级
+进入永恒后，值得先认识两个新概念。
 
-Oreki Edition 的目标是**在不伪造资源、进度与结算的前提下**，让全新存档在 180 分钟内真实通关。自动购买器与自动化只能加速真实流程，不能直接写「已完成」标志。因此：
+**时间之理（Time Theorems，TT）**用于购买**时间研究**。时间研究是一棵有前置关系和分支选择的升级树。买研究前，先看需要哪些前置研究；只盯着最远处的高级研究，可能会发现按钮一直无法购买。
 
-- 挑战必须走原版结算入口（见 [挑战与真实结算](/player/gameplay/challenges)）；
-- 阶段与页面必须经过原版门禁（见 [阶段门禁](/player/gameplay/stage-gates)）；
-- 自动化要正确处理重置后清空的字段，否则会出现「现实次数不增长」「研究树被反复清空」等现象（见 [现实与时间研究](/player/gameplay/reality-time-studies)）。
+**永恒挑战（Eternity Challenges，EC）**比普通挑战和无限挑战更讲究准备。它们往往需要足够的资源、正确的时间研究路径，以及各自额外的进入条件。某些永恒挑战可以重复完成以取得更多收益，并不是完成一次就全部结束。[原版机制：永恒挑战](https://antimatterdimensions.wiki.gg/wiki/Eternity_Challenges)。
 
-## 已确认与未确认
+如果某个挑战入口无法使用，先检查研究树和它列出的要求，再决定是换一条研究路径，还是继续积累资源。一直等待不一定能弥补缺少的前置条件。
 
-- **已确认**：大坍缩阈值、无限维度与 `maxID1` 语义、EC 前置研究条件、DS1 的 5000 TT 门槛与膨胀入口，均有源码读码与运行采样支持。
-- **未确认（适用范围）**：上述行号与公式来自 Web 冻结上游与 Android 3.21.0 的反编译对照；两端自动化实现不同，Android 与 Web 的行为等价仍需单独验收（NOT RUN，见 [双端行为一致性](/developer/architecture/parity)）。
-- **不代表攻略**：本条目描述机制，不给出最优路线，也不承诺某一策略一定能在 180 分钟内通关。
+## 在 Oreki Edition 里，这些阶段有什么不同？
 
-## 如何核查
+Oreki Edition 会用额外的策略调度减少重复购买和重置操作，后期也有部分经过调整的玩法条件。不过，**第一次大坍缩与第一次永恒仍应经过各自真正的资源和解锁条件**，不能靠提前出现的页面或自动化按钮跳过。
 
-1. 读 `player.json` 中的 `infinities`、`eternities`、`eternityPoints`、`timeTheorems`、`challenge.eternity.completed` 等字段，确认进度不是界面缓存。
-2. 在长时间运行中采样 `EC` 完成数组与 `totalTimeTheoremRequirement`，判断是被资源卡住还是被前置研究卡住。
-3. 用稳定构建做对照，避免把构建期差异当成机制问题。
+如果你刚大坍缩就看到了无法合理使用的永恒界面，这可能是特定版本的解锁显示问题。先核对实际进度，不建议靠强行切换页面继续玩。需要报告时，附上使用的平台、版本和出现问题前做过的操作即可。
+
+自动购买器如何配合这些阶段，可读[智能自动购买器](/player/gameplay/automation)；原版与 MOD 的具体差异则集中在[原版行为与 Oreki Edition 修改](/player/gameplay/original-vs-mod)。
 
 ## 参考资料
 
-- [Android 仓库 docs/FACTS.md §8.4–8.10](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/main/docs/facts/game/eternity.md#f-8-4)：时间研究、EC 与终局链的读码记录。
-- [社区 Wiki《Infinity Point》](https://antimatterdimensions.wiki.gg/wiki/Infinity_Point)：大坍缩与无限点数的公开说明。
-- [社区 Wiki《Eternity》](https://antimatterdimensions.wiki.gg/wiki/Eternities)：永恒层公开说明。
-
-- [社区 Wiki：Infinity](https://antimatterdimensions.wiki.gg/wiki/Infinity)
-- [社区 Wiki：Eternity](https://antimatterdimensions.wiki.gg/wiki/Eternity)
-- [官方网页源码（固定 Commit）](https://github.com/IvarK/AntimatterDimensionsSourceCode/blob/5409e320cecef96a917cca1dfb68f1f183e499ca)
+- [Antimatter Dimensions Wiki：Infinity](https://antimatterdimensions.wiki.gg/wiki/Infinity)（大坍缩和 IP）。
+- [Antimatter Dimensions Wiki：Break Infinity](https://antimatterdimensions.wiki.gg/wiki/Break_Infinity)（打破无限的前置条件）。
+- [Antimatter Dimensions Wiki：Infinity Dimensions](https://antimatterdimensions.wiki.gg/wiki/Infinity_Dimensions)（无限维度）。
+- [Antimatter Dimensions Wiki：Eternity](https://antimatterdimensions.wiki.gg/wiki/Eternity)（第一次永恒的条件与奖励）。
+- [Antimatter Dimensions Wiki：Eternity Challenges](https://antimatterdimensions.wiki.gg/wiki/Eternity_Challenges)（挑战解锁与重复完成）。
 
 ## 相关条目
 
-[原版行为与 Oreki Edition 修改](/player/gameplay/original-vs-mod) · [反物质维度](/player/antimatter-dimensions) · [现实与时间研究](/player/gameplay/reality-time-studies) · [天神系统](/player/gameplay/celestials) · [挑战与真实结算](/player/gameplay/challenges) · [智能自动购买器](/player/gameplay/automation) · [双端行为一致性](/developer/architecture/parity/)
+[开始游玩](/player/getting-started/) · [智能自动购买器](/player/gameplay/automation) · [现实与时间研究](/player/gameplay/reality-time-studies) · [挑战与真实结算](/player/gameplay/challenges) · [原版与 MOD 的区别](/player/gameplay/original-vs-mod)
