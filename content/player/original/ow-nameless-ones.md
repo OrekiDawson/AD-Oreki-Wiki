@@ -20,7 +20,7 @@ aliases:
 
 他们引入了[黑洞放电](#黑洞放电)，由此解锁[「储存的游戏时间」](#储存的游戏时间)——这种资源也可用来购买[无名氏的升级](#升级)，其中第二项升级会解锁他们的[现实](#现实)。
 
-原页另有子页面「引语（Quotes）」，本轮批次未译，见文末相关条目。原文此页带有「需要清理/改进」的站点维护标记（Cleanup），属于原站编辑提示，不是玩法内容。
+原页另有独立的引语子页面；本站已收录[无名氏的引语](/player/original/ow-nameless-ones-quotes)。原文此页带有「需要清理/改进」的站点维护标记（Cleanup），属于原站编辑提示，不是玩法内容。
 
 ## 档案
 
@@ -34,7 +34,7 @@ aliases:
 
 储存游戏时间会禁用[黑洞](/player/original/ow-black-hole)带来的游戏速度乘数效果。该游戏速度乘数随后会被转换为储存的游戏时间；更准确地说，假设黑洞开启时一个现实秒等于五个游戏年，那么每秒储存的游戏时间也是五个游戏年。
 
-储存起来的时间随后可以释放，游戏会「跳过」所储存的那段时间，就像游戏被放置运行了那么久——这只影响游戏时间，因此[自动购买器](https://antimatterdimensions.wiki.gg/wiki/Autobuyers)这类现实时间机制不受影响。
+储存起来的时间随后可以释放，游戏会「跳过」所储存的那段时间，就像游戏被放置运行了那么久——这只影响游戏时间，因此[自动化](/player/original/ow-automation)涉及的自动购买器这类现实时间机制不受影响。
 
 如果利用[时间符文的](https://antimatterdimensions.wiki.gg/wiki/Glyphs#Types)第二效果「游戏速度乘以 ×N」或[鹿颈长符文](https://antimatterdimensions.wiki.gg/wiki/Glyphs#Types)的第三效果「游戏速度幂 +N」，这会很有用：可以花掉一次[现实](/player/original/ow-reality)去积累尽可能多的储存游戏时间，然后用更合适的符文组合释放这些储存时间，从而获得远超没有释放的现实所能得到的资源。
 
@@ -83,7 +83,7 @@ $$\max\left ( 1,~\frac{\left\lfloor RealTime_{\text{Stored}} \right\rfloor}{\max
 | [黑洞](/player/original/ow-black-hole)被禁用。 |  |
 | [超光速粒子](/player/original/ow-dilation)与[膨胀时间](/player/original/ow-dilation)产出被严重削减。 | 超光速粒子：降为 $\text{TP}^{0.3}$；膨胀时间：降为 $10^{\log_{10}\left(\text{DT/s}+1\right)^{0.85}-1}$ |
 | 来自膨胀符文的[时间之理](/player/original/ow-time-studies)产出被禁用。 |  |
-| 某些[挑战](/player/original/ow-challenges)目标被提高。 | 除 1、6、9 之外的所有[普通挑战](/player/original/ow-challenges)都会「损坏」，其目标被设为 1e1e15 反物质；按钮外观出现裂纹、文字变为「Broken」、颜色改变。普通挑战 10 的裂纹看起来与其他不同[^fn-broken]。永恒挑战 1 可以完成 1,000 次[^fn-ec1]。 |
+| 某些[挑战](/player/original/ow-challenges)目标被提高。 | 除 1、6、9 之外的所有[普通挑战](/player/original/ow-normal-challenges)都会「损坏」，其目标被设为 1e1e15 反物质；按钮外观出现裂纹、文字变为「Broken」、颜色改变。普通挑战 10 的裂纹看起来与其他不同[^fn-broken]。永恒挑战 1 可以完成 1,000 次[^fn-ec1]。 |
 | 储存的游戏时间以降低的效率释放（$\left(\text{exponent}^{0.55}\right)$）。 |  |
 
 [^fn-broken]: 损坏的普通挑战只在 Web/Steam 版本上显示裂纹。
