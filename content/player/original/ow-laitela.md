@@ -18,7 +18,7 @@ aliases:
 
 > 与我之下的其他存在不同，我不需要现实。
 
-原页另有子页面「引语（Quotes）」，本轮批次未译，见文末相关条目。
+原页另有独立的引语子页面；本站已收录[莱特拉的引语](/player/original/ow-laitela-quotes)。
 
 ## 档案
 
@@ -63,7 +63,7 @@ $$Max\left(100^{Completions}~*~\left(\frac{360}{Seconds}\right)^2,~1\right)$$
 
 ## 暗物质维度
 
-**暗物质维度（Dark Matter Dimensions）**是第四种也是最后一种维度，随莱特拉一同解锁。与其他三类维度不同，暗物质维度**只有 4 个**，而不是 8 个。玩家开始莱特拉时只有第 1 个暗物质维度，更高层通过对应的[虚幻升级](https://antimatterdimensions.wiki.gg/wiki/Imaginary_Upgrades)解锁，分别是「**Massless Momentum**」「**Chiral Oscillation**」与「**Dimensional Symmetry**」。解锁维度时，玩家会获得 1 个该维度，若不从上一级维度产出，就无法获得更多。
+**暗物质维度（Dark Matter Dimensions）**是第四种也是最后一种维度，随莱特拉一同解锁。与其他三类维度不同，暗物质维度**只有 4 个**，而不是 8 个。玩家开始莱特拉时只有第 1 个暗物质维度，更高层通过对应的[虚幻升级](/player/original/ow-imaginary-upgrades)解锁，分别是「**无质动量（Massless Momentum）**」「**手性振荡（Chiral Oscillation）**」与「**维度对称（Dimensional Symmetry）**」。解锁维度时，玩家会获得 1 个该维度，若不从上一级维度产出，就无法获得更多。
 
 第 1 个暗物质维度产出**暗物质**，它按玩家历史最高暗物质量为[连续统](https://antimatterdimensions.wiki.gg/wiki/Continuum)的效果提供乘数。暗物质维度整体还会产出**暗能量**，用于产生**奇点**。每次间隔内暗物质与暗物质维度的产量等于「暗物质乘数 × 玩家拥有的维度数量」，而暗能量产量与维度数量无关。
 
@@ -181,7 +181,7 @@ $$Max\left(100^{Completions}~*~\left(\frac{360}{Seconds}\right)^2,~1\right)$$
 
 ## 琐事
 
-- 莱特拉的名字源自芬兰电视剧《Salatut elämät》中的角色「Ismo Laitela」。把该角色的名字倒过来就得到「Omsi」；Omsi 是本作的主要开发者之一，她同时负责[成就](https://antimatterdimensions.wiki.gg/wiki/Achievements)的美术，以及移动版上呈现的整体美术风格[^laitela-name]。
+- 莱特拉的名字源自芬兰电视剧《Salatut elämät》中的角色「Ismo Laitela」。把该角色的名字倒过来就得到「Omsi」；Omsi 是本作的主要开发者之一，她同时负责[成就](/player/original/ow-achievements)的美术，以及移动版上呈现的整体美术风格[^laitela-name]。
 
 [^laitela-name]: 原文参考资料：AD 开发日志第 4 篇 <https://cyip92.github.io/site/#/ADdevlog/4>（外部链接，未转载内容）。
 
