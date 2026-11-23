@@ -28,7 +28,7 @@ aliases:
 
 - 成就 55：无限维度也吃成就乘数；
 - [永恒升级 4](/player/original/ow-eternity-upgrades)：时间维度也吃成就乘数；
-- 现实升级「Paradoxically Attain」：按成就乘数提升速子粒子；
+- 现实升级「Paradoxically Attain」：按成就乘数提升超光速粒子；
 - 鹿颈长符文效果「成就乘数幂」：把成就乘数取幂；
 - [薇成就](/player/original/ow-v) 30 项里程碑：黑洞强度吃成就乘数（两个黑洞都算）；
 - [太阳神](/player/original/ow-ra) 的薇记忆 25 级里程碑：成就乘数再 ^1.5。
@@ -136,7 +136,7 @@ aliases:
 | 127 | 但我还想要另一个威望层…… / But I wanted another prestige layer... | 达到 ∞ 永恒点数。 |  |
 | 128 | 我得怎么做才能摆脱你 / What do I have to do to get rid of you | 在没有任何时间研究的情况下达到 $\text{e}22,000$ 无限点数。 | 时间维度乘以时间研究数量（EC 与膨胀研究不计，因此该效果最高为（剧透）$62$）。 |
 | 131 | 没有伦理的消费 / No ethical consumption | 获得 $2\text{e}9~(2~\text{B})$ 储存无限次数。 | 无限次数 ×2；永恒后永久保留 5% 无限次数作为储存无限。 |
-| 132 | 独特的雪花 / Unique snowflakes | 在当前永恒中不获得任何复制器星系的情况下拥有 569 个反物质星系。 | 按反物质星系给速子粒子与膨胀时间乘数：$1.22*Max\left({AG}^{0.04},~1\right)$。 |
+| 132 | 独特的雪花 / Unique snowflakes | 在当前永恒中不获得任何复制器星系的情况下拥有 569 个反物质星系。 | 按反物质星系给超光速粒子与膨胀时间乘数：$1.22*Max\left({AG}^{0.04},~1\right)$。 |
 | 133 | 我从来不喜欢这些无限玩意 / I never liked this infinity stuff anyway | 在不购买任何无限维度或 ×2 IP 升级的情况下达到 $\text{e}200,000$ 无限点数。 | 永恒开局时全部无限挑战已解锁并完成。 |
 | 134 | 什么时候才够？/ When will it be enough? | 达到 $\text{e}18,000$ 复制器。 | 在 ∞ 复制器以下时复制器获取速度快 2 倍。 |
 | 135 | 比土豆快 286078 次方 / Faster than a potato^286078 | 每秒 tick 数超过 $\text{e}8,296,262$。 | 条件是成就 45 条件的 286,078 次方（$\text{e}29^{286,078}$）。 |

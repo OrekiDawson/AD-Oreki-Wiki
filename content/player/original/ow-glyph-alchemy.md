@@ -103,4 +103,4 @@ $$V=\left(\frac{Level}{10000}\right)^3 \times 10000=\frac{Level^3}{10^8}$$
 
 ## 相关条目
 
-[太阳神](/player/original/ow-ra) · [映像升级](/player/original/ow-imaginary-upgrades) · [莱特拉](/player/original/ow-laitela) · [现实](/player/original/ow-reality)
+[太阳神](/player/original/ow-ra) · [虚幻升级](/player/original/ow-imaginary-upgrades) · [莱特拉](/player/original/ow-laitela) · [现实](/player/original/ow-reality)

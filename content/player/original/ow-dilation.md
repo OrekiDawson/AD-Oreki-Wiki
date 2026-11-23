@@ -10,17 +10,17 @@ original_revid: 3323
 original_fetched_at: "2026-11-15T21:55:00+08:00"
 original_license: "CC BY-SA 4.0"
 original_license_url: "https://creativecommons.org/licenses/by-sa/4.0/"
-translation_status: "STRUCTURE CHECKED"
-review_status: "STRUCTURE CHECKED"
+translation_status: "REVIEWED"
+review_status: "REVIEWED"
 aliases:
   - "/original/ow-dilation"
 ---
 
 **时间膨胀（Time Dilation）**是[永恒威望层](/player/original/ow-eternity)引入的最后一个主要机制。它包含一个被修改、被削弱的永恒；首次完成它会解锁两种新货币——超光速粒子（Tachyon Particles）与膨胀时间（Dilated Time），可用于购买膨胀升级。
 
-购买 [EC11 与 EC12](/player/original/ow-eternity-challenges)研究下方的对应[时间研究](/player/original/ow-time-studies)即可解锁膨胀；这需要总共 $12,900$ [时间之理](/player/original/ow-time-studies)，并且已经各完成永恒挑战 11 与 12 五（5）次。该研究本身消耗 $5,000$ 时间之理，但会永久解锁这个机制。
+购买 [EC11 与 EC12](/player/original/ow-eternity-challenges)研究下方的“解锁时间膨胀”[时间研究](/player/original/ow-time-studies)即可解锁膨胀。该研究要求已经购买 231～234 中的任意一项、累计拥有 $12,900$ [时间之理](/player/original/ow-time-studies)，并在没有对应复兴节点豁免时各完成永恒挑战 11 与 12 五（5）次。研究本身消耗 $5,000$ 时间之理，但会永久解锁这个机制。
 
-它还会解锁时间之理的被动生成，使最后四个[时间维度](/player/original/ow-time-dimensions)在现实中可用（玩家在获得膨胀研究后可以购买最后四个时间维度，成本从 $\text{1e6}$ 到 $\text{1e9}$ 时间之理不等）。此外，该机制的一项升级还带来一个优势：可以同时购买[维度分叉](/player/original/ow-time-studies)的全部三条时间研究路径。
+解锁膨胀后，最后四个[时间维度](/player/original/ow-time-dimensions)可以购买，解锁研究分别消耗 $\text{1e6}$ 到 $\text{1e9}$ 时间之理。膨胀升级第 10 项可以按超光速粒子被动生成时间之理；第 8 项则允许同时购买[维度分叉](/player/original/ow-time-studies)的全部三条路径。
 
 ## 膨胀永恒
 
@@ -28,13 +28,13 @@ aliases:
 
 膨胀后的数值用下式计算：$10^x \to 10^{x^{0.75}}$，左侧的值被变换为右侧的值。例如倍率 $1\text{e}10,000$ 会降低为 $1\text{e}1,000$，因为 $10,000^{0.75}=1,000$。这个指数常数可以通过一项膨胀升级提高，以减轻膨胀惩罚。
 
-时间膨胀的初始目标是达到 1.80e308 IP 来完成这次永恒，奖励玩家超光速粒子。在膨胀状态下执行永恒会退出该挑战。
+时间膨胀的初始目标是达到 $1.80\text{e}308$ 无限点数来完成这次永恒，奖励玩家超光速粒子。在膨胀状态下执行永恒会退出该挑战。
 
 ## 超光速粒子
 
 **超光速粒子（TP）**是通过完成一次膨胀永恒获得的资源，数量取决于其中产出的[反物质](https://antimatterdimensions.wiki.gg/wiki/antimatter)数量。它们会根据自身数量生产膨胀时间。
 
-与其他可以「刷」的资源不同，这个数值严格基于在时间膨胀中达到的最高反物质与 TP 倍率。如果没有超过此前的最高反物质，或者没有购买 TP 倍率，就不会获得额外超光速粒子。超光速粒子只会增加，不会减少。
+与其他可以「刷」的资源不同，这个数值严格基于在时间膨胀中达到的最高反物质与 TP 倍率。如果没有超过此前的最高反物质，或者没有购买 TP 倍率，就不会获得额外超光速粒子。在同一段进度中，超光速粒子只增不减；普通现实重置仍会把它们清零，只有特定佩勒升级可以保留。
 
 $$Tachyons = TP_{Mult}\times\left(\frac{\log_{10}\left(AM_{\text{膨胀中最高}}\right)}{400}\right)^{1.5}$$
 
@@ -44,23 +44,25 @@ $$Tachyons = TP_{Mult}\times\left(\frac{\log_{10}\left(AM_{\text{膨胀中最高
 
 ## 超光速星系
 
-**超光速星系（TG）**是第三种提升[计数频率](https://antimatterdimensions.wiki.gg/wiki/Tickspeed)的星系。它们的行为与此前[两种星系变体](https://antimatterdimensions.wiki.gg/wiki/Galaxies)相同：影响计数频率，但不提高下一个反物质星系的原始成本。初始阈值为 $1$，每新增一个星系所需 DT 比上一个多 $\times 1.35$；这可以通过一项可重复的膨胀升级降低。
+**超光速星系（TG）**是第三种提升[计数频率](/player/original/ow-tickspeed)的星系。它们和此前两种星系一样影响计数频率，但不会提高下一个反物质星系的原始成本。第一枚在 $1,000$ DT 时获得；基础阈值成长约为 $\times5$，可通过第 2 项可重复膨胀升级逐级降低，最终趋近 $\times1.35$。
+
+> 译注：原页写作“初始阈值为 1，每个星系所需 DT 增加 ×1.35”。当前原版源码实际从 $1,000$ DT 起算，初始阈值倍率约为 $\times5$，升级第 2 项后才逐步接近 $\times1.35$；这里按源码校正，同时保留差异说明。
 
 ## 升级
 
-> 原页通过子模板嵌入膨胀升级表。普通模式升级已翻译：[膨胀升级](/player/original/ow-dilation-upgrades)；《Dilation/Upgrades (Doomed)》尚未翻译（已列入后续批次）。
+> 原页通过子模板嵌入膨胀升级表。普通模式见[膨胀升级](/player/original/ow-dilation-upgrades)，被毁灭的现实见[膨胀升级（被毁灭的现实）](/player/original/ow-dilation-upgrades-doomed)。
 
 ## 相关成就
 
 | ID | 名称 | 描述 | 奖励 |
 | --- | --- | --- | --- |
-| 136 | I told you already, time is relative | 膨胀时间。 | — |
-| 137 | Now you're thinking with dilation! | 在膨胀状态下于 $1$ 分钟或更短时间内获得 $\text{e}260,000$ 反物质。 | 膨胀状态下获得 $\times 2$ 膨胀时间与时间之理。 |
-| 138 | This is what I have to do to get rid of you. | 在膨胀状态下、没有任何时间研究时达到 $\text{e}26,000$ [无限点数](/player/original/ow-infinity)。 | 移除主动与挂机时间研究路径中时间研究 131 与 133 的负面效果。 |
-| 161 | that's where you're wrong kiddo | 在膨胀状态下获得 $\text{e}100,000,000$ 反物质。 | — |
-| 187 | The One with Dilated Time | 在[被毁灭](/player/original/ow-pelle)状态下解锁膨胀。 | 每项可重复膨胀时间倍率升级的倍率提高 $\times 1.35$。 |
+| 136 | 我跟你讲，时间是相对的（I told you already, time is relative） | 进入时间膨胀。 | — |
+| 137 | 你终于考虑到时间膨胀了！（Now you're thinking with dilation!） | 在膨胀状态下于 $1$ 分钟或更短时间内获得 $\text{e}260,000$ 反物质。 | 膨胀状态下获得 $\times 2$ 膨胀时间与时间之理。 |
+| 138 | 这是我为了摆脱你必须做的事。（This is what I have to do to get rid of you.） | 在膨胀状态下、没有任何时间研究时达到 $\text{e}26,000$ [无限点数](/player/original/ow-infinity)。 | 移除主动与挂机时间研究路径中时间研究 131 与 133 的负面效果。 |
+| 161 | 小伙子，你来错地儿了（that's where you're wrong kiddo） | 在膨胀状态下获得 $\text{e}100,000,000$ 反物质。 | — |
+| 187 | 膨胀时间持有者（The One with Dilated Time） | 在[被毁灭](/player/original/ow-pelle)状态下解锁膨胀。 | 每项可重复膨胀时间倍率升级的倍率提高 $\times 1.35$。 |
 
-> 成就名称保留英文原文（游戏内名称为英文），描述与奖励已翻译；图标为媒体，未转载。
+> 成就名称采用游戏内简体中文，并附原页英文；描述与奖励已翻译；图标为媒体，未转载。
 
 ## 琐事
 
@@ -70,8 +72,8 @@ $$Tachyons = TP_{Mult}\times\left(\frac{\log_{10}\left(AM_{\text{膨胀中最高
 
 - 原文：[Dilation](https://antimatterdimensions.wiki.gg/index.php?title=Dilation&oldid=3323)（修订 ID `3323`；最后编辑者 KrutarMarsons；抓取于 2026-11-15）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Dilation&action=history)
-- 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为**简体中文翻译（改编）**，已修改：翻译正文与表格、统一术语、移除导航模板与信息框、图片未转载；本页按相同许可共享。
-- 原页以子模板嵌入膨胀升级表；本页保留主条目正文、公式与相关成就，升级子页列入后续批次。
+- 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为**简体中文翻译（改编）**，已修改：翻译正文与表格、统一术语、依据官方源码校正超光速星系阈值并补充现实重置边界、修复升级子页链接、移除导航模板与信息框、图片未转载；本页按相同许可共享。
+- 原页以子模板嵌入膨胀升级表；本页保留主条目正文、公式与相关成就，并链接本区现有的普通与被毁灭现实升级表。
 
 ## 相关条目
 

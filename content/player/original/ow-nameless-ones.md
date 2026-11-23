@@ -81,7 +81,7 @@ $$\max\left ( 1,~\frac{\left\lfloor RealTime_{\text{Stored}} \right\rfloor}{\max
 | 反物质维度乘数始终处于[膨胀](/player/original/ow-dilation)状态（[符文效果](https://antimatterdimensions.wiki.gg/wiki/Glyphs#Effects)仍只在真正的[时间膨胀](/player/original/ow-dilation)中生效）。 | 处于膨胀状态时，反物质维度乘数不会被膨胀两次。 |
 | [时间研究 192](/player/original/ow-time-studies)（不设上限的[复制器](/player/original/ow-replicanti)）被锁定。 |  |
 | [黑洞](/player/original/ow-black-hole)被禁用。 |  |
-| [速子粒子](/player/original/ow-dilation)与[膨胀时间](/player/original/ow-dilation)产出被严重削减。 | 速子粒子：降为 $\text{TP}^{0.3}$；膨胀时间：降为 $10^{\log_{10}\left(\text{DT/s}+1\right)^{0.85}-1}$ |
+| [超光速粒子](/player/original/ow-dilation)与[膨胀时间](/player/original/ow-dilation)产出被严重削减。 | 超光速粒子：降为 $\text{TP}^{0.3}$；膨胀时间：降为 $10^{\log_{10}\left(\text{DT/s}+1\right)^{0.85}-1}$ |
 | 来自膨胀符文的[时间之理](/player/original/ow-time-studies)产出被禁用。 |  |
 | 某些[挑战](/player/original/ow-challenges)目标被提高。 | 除 1、6、9 之外的所有[普通挑战](/player/original/ow-challenges)都会「损坏」，其目标被设为 1e1e15 反物质；按钮外观出现裂纹、文字变为「Broken」、颜色改变。普通挑战 10 的裂纹看起来与其他不同[^fn-broken]。永恒挑战 1 可以完成 1,000 次[^fn-ec1]。 |
 | 储存的游戏时间以降低的效率释放（$\left(\text{exponent}^{0.55}\right)$）。 |  |

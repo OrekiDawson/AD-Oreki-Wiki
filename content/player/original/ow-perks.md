@@ -10,13 +10,13 @@ original_revid: 3354
 original_fetched_at: "2026-11-16T01:05:00+08:00"
 original_license: "CC BY-SA 4.0"
 original_license_url: "https://creativecommons.org/licenses/by-sa/4.0/"
-translation_status: "STRUCTURE CHECKED"
-review_status: "STRUCTURE CHECKED"
+translation_status: "REVIEWED"
+review_status: "REVIEWED"
 aliases:
   - "/original/ow-perks"
 ---
 
-复兴（Perks）与[现实](/player/original/ow-reality)同时解锁，说白了就是一张「便利与自动化」的升级树：买它不会让数字变猛多少，但能省掉大量重复操作。
+**复兴（Perks）**与[现实](/player/original/ow-reality)同时解锁，是一张以便利、自动化与阶段加速为主的升级树；其中少数节点也会直接改善开局资源或倍率。
 
 点数来自每次现实重置，花在树的节点上，起点是 START。
 
@@ -24,11 +24,11 @@ aliases:
 
 ## 树的结构
 
-只能买与已拥有节点**直接相邻**的节点，但树里有环，可以顺着两个方向绕。与时间研究不同，**选择是永久的，不能重洗**。
+只能买与已拥有节点**直接相邻**的节点；连接是无向的，树里也有环路，因此可以沿两个方向推进。与时间研究不同，**选择是永久的，不能重洗**。
 
 节点有圆形与菱形两种。菱形节点在正常效果之外还会给[自动机](https://antimatterdimensions.wiki.gg/wiki/Automation)点数。不同节点颜色不同，大致对应它主要影响的家族。所有节点都只要 1 点复兴点数。游戏内共 48 个节点，其中 21 个给自动机点数。
 
-| 节点 | 内部 ID | 家族 | 前置（解锁） | 描述 | AP | 其它细节 | 编号 |
+| 节点 | 内部 ID | 家族 | 原页列出的相邻节点 | 描述 | AP | 其它细节 | 编号 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | START | firstPerk | 现实 | SAM, ACH1, EC5R, EU1 | 移除现实研究的成就要求，并允许在现实时从 4 枚符文中挑选 |  |  | 0 |
 | SAM | startAM | 反物质 | SIP1, ANR | 每次重置都以 $5\text{e}130$ 反物质开局 |  |  | 10 |
@@ -37,9 +37,9 @@ aliases:
 | SEP1 | startEP1 | 永恒 | SIP1, SEP2, ANR, STP | 每次现实都以 $10$ 永恒点数开局 | $5$ |  | 14 |
 | SEP2 | startEP2 | 永恒 | SEP3 | 每次现实都以 $5\text{e}3~(5~\text{K})$ 永恒点数开局 |  |  | 15 |
 | SEP3 | startEP3 | 永恒 | — | 每次现实都以 $5\text{e}9~(5~\text{B})$ 永恒点数开局 | $10$ |  | 16 |
-| STP | startTP | 膨胀 | SEP1, TP1 | 解锁膨胀后获得 $10$ 速子粒子 | $5$ | 无名氏的现实里改为只给 $1$ 速子粒子，但提示文字不变 | 17 |
+| STP | startTP | 膨胀 | SEP1, TP1 | 解锁膨胀后获得 $10$ 超光速粒子 | $5$ | 无名氏的现实里改为只给 $1$ 超光速粒子；简短说明可能仍显示原有数值 | 17 |
 | ANR | antimatterNoReset | 反物质 | SEP1 | 维度提升与反物质星系不再重置反物质、反物质维度、计数频率与维度献祭 |  |  | 30 |
-| PASS | studyPassive | 永恒 | EC1R | 把时间研究 122 强化到 $\times50$ 永恒点数、时间研究 142 强化到 $\times\text{e}50$ 无限点数；时间研究 132 还会让复制器快 $3$ 倍 |  | 次要效果在被毁灭的现实中禁用 | 31 |
+| PASS | studyPassive | 永恒 | EC1R | 把时间研究 122 强化到 $\times50$ 永恒点数、时间研究 142 强化到 $\times\text{e}50$ 无限点数；时间研究 132 还会让复制器快 $3$ 倍 |  | 被毁灭的现实中不提供时间研究 132 的复制器加速 | 31 |
 | EU1 | autounlockEU1 | 永恒 | EU2 | 拥有永恒次数后，自动免费解锁永恒升级第一行 |  |  | 40 |
 | EU2 | autounlockEU2 | 永恒 | EU1, DAU | 第二行永恒升级按原价的 $\times\text{e}10~(10~\text{B})$ 分之一自动购买 |  |  | 41 |
 | DU1 | autounlockDilation1 | 膨胀 | DU2 | 解锁膨胀后，自动免费解锁膨胀升级第二行 |  |  | 42 |
@@ -61,10 +61,10 @@ aliases:
 | IDL | studyIdleEP | 永恒 | PEC1, EC3R | 闲置路径乘数从「本次无限/永恒已过 15 分钟」开始算 |  |  | 71 |
 | ECR | studyECRequirement | 永恒 | ECB | 移除解锁永恒挑战的非时间之理要求 | $10$ |  | 72 |
 | ECB | studyECBulk | 永恒 | — | 达到更高完成档的目标时可一次完成多档永恒挑战 | $15$ |  | 73 |
-| TP1 | retroactiveTP1 | 膨胀 | STP, TGR, TP2 | 购买第 3 项可重复膨胀升级时，当前速子粒子 ×1.5 |  |  | 80 |
-| TP2 | retroactiveTP2 | 膨胀 | TP3 | 购买第 3 项可重复膨胀升级时，当前速子粒子 ×2 |  |  | 81 |
-| TP3 | retroactiveTP3 | 膨胀 | TP4 | 购买第 3 项可重复膨胀升级时，当前速子粒子 ×2.5 |  |  | 82 |
-| TP4 | retroactiveTP4 | 膨胀 | — | 购买第 3 项可重复膨胀升级时，当前速子粒子 ×3 | $10$ |  | 83 |
+| TP1 | retroactiveTP1 | 膨胀 | STP, TGR, TP2 | 购买第 3 项可重复膨胀升级时，当前超光速粒子 ×1.5 |  |  | 80 |
+| TP2 | retroactiveTP2 | 膨胀 | TP3 | 购买第 3 项可重复膨胀升级时，当前超光速粒子 ×2 |  |  | 81 |
+| TP3 | retroactiveTP3 | 膨胀 | TP4 | 购买第 3 项可重复膨胀升级时，当前超光速粒子 ×2.5 |  |  | 82 |
+| TP4 | retroactiveTP4 | 膨胀 | — | 购买第 3 项可重复膨胀升级时，当前超光速粒子 ×3 | $10$ |  | 83 |
 | DAU | autobuyerDilation | 自动化 | DAB, DILR, DU1, TGR, EU2 | 解锁可重复膨胀升级的自动购买器 | $5$ |  | 100 |
 | IDAS | autobuyerFasterID | 自动化 | — | 无限维度自动购买器快 $\times3$ | $5$ |  | 101 |
 | REPAS | autobuyerFasterReplicanti | 自动化 | — | 复制器自动购买器快 $\times3$ | $5$ |  | 102 |
@@ -78,6 +78,8 @@ aliases:
 | ACH3 | achievementGroup3 | 成就 | ACH4 | 成就计时降到每个 $6$ 分钟（减少 6 分钟） |  |  | 203 |
 | ACH4 | achievementGroup4 | 成就 | ACHNR | 成就计时降到每个 $2$ 分钟（减少 4 分钟） |  |  | 204 |
 | ACHNR | achievementGroup5 | 成就 | — | 立即解锁前 13 行成就，且现实不再重置它们 | $10$ |  | 205 |
+
+“相邻节点”按原页每组列出的连接方向整理。复兴图本身是无向的：如果 A 出现在 B 的相邻节点中，A 与 B 也可以互相作为购买前置；只需其中任意一个节点已经拥有即可解锁。表中的“—”表示该节点没有向外的附加连线，例如 ACHNR 仍可通过 ACH4 购买。
 
 ## 布局与主题截图
 
@@ -99,7 +101,7 @@ aliases:
 
 - 原文：[Perks](https://antimatterdimensions.wiki.gg/index.php?title=Perks&oldid=3354)（修订 ID 3354；抓取于 2026-11-15）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Perks&action=history)
-- 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为简体中文翻译（改编），已修改：翻译正文与 48 行节点表、把节点图标改为中文节点名、图库改为图注列表、界面图未转载；本页按相同许可共享。
+- 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为简体中文翻译（改编），已修改：翻译正文与 48 行节点表、把节点图标改为中文节点名、依据官方源码澄清无向相邻关系与部分游戏内术语、图库改为图注列表、界面图未转载；本页按相同许可共享。
 - 原文图片未转载：原页含桌面深色/浅色与移动版复兴树截图、七种布局截图与两个主题截图，此处仅保留文字说明。
 - 原文脚注说明「七种布局中一种锁在隐藏主题后」；译注：桌面版的节点拖拽依赖 vis.js 实现。
 
