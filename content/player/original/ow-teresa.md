@@ -161,6 +161,7 @@ $
 
 - 原文：[Teresa](https://antimatterdimensions.wiki.gg/index.php?title=Teresa&oldid=3370)（页面 ID `292`；修订 ID `3370`；最后编辑者 KrutarMarsons；抓取于 2026-11-15）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Teresa&action=history)
+- 本次校对补充参考：[英文 Wiki 后续修订 `3442`](https://antimatterdimensions.wiki.gg/wiki/Teresa?oldid=3442)（用户提供的原页 MHTML 存档）。容器灌注、里程碑与进阶商店的补充和纠错已参考该较新修订；本页原有修订 `3370` 仍作为清单基线，二者**不是同一修订**，完整同步校验前不冒充只依据 `3370` 的逐段翻译。
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为**简体中文翻译（改编）**，已修改：翻译正文、表格与引语，统一术语，把信息框内容改写为要点表，移除导航模板与模板结构，图片未转载；本页按相同许可共享。
 - 原文图片未转载：原页含天神动画（`Cel1-runreality-static--desktop.gif`、`Cel1-runreality-active--desktop.gif`）、导航图（`Cel1-navigation-complete--desktop.png`）与界面截图（`Cel1-interface--darktheme-desktop.png`）。其图注含义为：「身处特蕾莎的现实之中」「两个同心圆，颜色为群青色，中间由一道笔画相连，正中是特蕾莎的符号——黑色叠于另一圆之上」「特蕾莎的完整界面；最高反物质所在现实的符文组合记录在特蕾莎的现实界面中」。请到原页查看图片。
 
