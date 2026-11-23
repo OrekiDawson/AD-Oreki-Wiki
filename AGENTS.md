@@ -1,5 +1,11 @@
 # 中文 Wiki / Quartz 5 · Agent 长期规则
 
+## 跨仓协作：Android P0 目录与构建退役（2026-11-23）
+
+- Android [#61](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/issues/61) 目录标准化列为 **P0 架构任务**，与 [#52](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/issues/52) `build_mod.py` 完全退役同步执行「迁移即清理」。迁移批次删除旧生产入口、无用独占工具和失效目录引用；仍有消费者的共享工具不得误删。跨仓 Owner/PR 见 [Workspace #20](https://github.com/OrekiDawson/AD-Oreki-Edition-Workspace/issues/20)。
+- Wiki 仅在文档确实引用已变更 Android 路径、构建命令或工具时据实更新内链/开发者指南；保留历史事实及引用，不借 Android P0 开展无关大规模内容改写。尊重 Wiki 编辑质量、Kody 与 Pages 门禁。规则合并后立即发起本机安全同步，未经回读不能宣称完成。
+
+
 > 适用于 `wiki.oreki.net` 的长期编辑规范；当前内容轮次、实际 Kody 开关、PR 和 Pages 状态按实时证据判定，不写死在这里。
 
 ## 持续执行与有效验证（2026-11-23，长期强制）
