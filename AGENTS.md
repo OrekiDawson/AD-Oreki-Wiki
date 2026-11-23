@@ -1,5 +1,12 @@
 # 中文 Wiki / Quartz 5 · Agent 长期规则
 
+## Android P0 应用包名迁移的 Wiki 文档规则（2026-11-23）
+
+- Android MOD 的 P0 正式包名为 `net.oreki.antimatterdimensions`（来自 `oreki.net`），Debug 为 `net.oreki.antimatterdimensions.debug`；原旧版 `com.oreki.antimatterdimensions`、原版 `kajfosz.antimatterdimensions` 仍可出现在准确的历史/迁移说明与 ABI 记录，**不能无差别全文替换**。Android #52/#61/#17 和 PR #276 主责实施；Workspace #20 统筹。
+- 仅当官方新包实际构建/分发并验证后，更新相应玩家安装指南、下载链接、包名说明、旧版存档导出→新版导入与新版不可覆盖安装的警示；在此之前清楚区分**目标包名**和**已发布包名**，不写成已经迁移成功。开发者文档按真实 AGP 源码与验证结果更新，引用有效内链，避免将审查状态写进玩家正文。
+- 不因 Android P0 牺牲 Wiki 自身内容质量、版权/翻译、Kody/Quartz/Pages 门禁。规则合并后立即发起本机安全同步，实际回读通过后才记成功。
+
+
 ## 跨仓协作：Android P0 目录与构建退役（2026-11-23）
 
 - Android [#61](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/issues/61) 目录标准化列为 **P0 架构任务**，与 [#52](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/issues/52) `build_mod.py` 完全退役同步执行「迁移即清理」。迁移批次删除旧生产入口、无用独占工具和失效目录引用；仍有消费者的共享工具不得误删。跨仓 Owner/PR 见 [Workspace #20](https://github.com/OrekiDawson/AD-Oreki-Edition-Workspace/issues/20)。
