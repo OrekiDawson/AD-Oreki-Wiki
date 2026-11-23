@@ -59,7 +59,7 @@ $
 
 ### 复兴点数商店
 
-当容器灌注的 RM 超过 $\text{e}21$ 后，即可用[复兴点数](https://antimatterdimensions.wiki.gg/wiki/Perks)购买升级，其中许多升级可以多次购买。
+当容器灌注的 RM 达到 $\text{e}21$ 后，即可用[复兴点数](https://antimatterdimensions.wiki.gg/wiki/Perks)购买升级，其中许多升级可以多次购买。
 
 | ID | PP 成本（成长） | 描述 | 等级上限 | 上限时效果 |
 | --- | --- | --- | --- | --- |
@@ -67,13 +67,30 @@ $
 | rmMult | $1\left ( \times 2 \right )$ | 现实机器获取翻倍 | $11$ | $\times 2.05\text{e}3~(2.05~\text{K})$ |
 | bulkDilation | $100\left ( \times 2 \right )$ | 膨胀自动购买器一次购买两倍的膨胀升级 | $4$ | $\times 16.00$ |
 | autoSpeed | $1,000\left ( \times 2 \right )$ | 无限维度、时间维度、膨胀与复制器自动购买器速度 $\times 2$ | $2$ | $\times 4.00$ |
-| musicGlyph | $1$ | 获得一个随机类型的音乐符文，其等级为你最高符文的 $80\%$[^music-glyph-generation] | $\infin$ | 不适用 |
+| musicGlyph | $1$ | 获得一个随机类型的音乐符文，其等级为你最高符文的 $80\%$[^music-glyph-generation] | 不适用 | 不适用 |
 
 [^music-glyph-generation]: 音乐符文遵循符文生成规则，点击时会发出声音，且其外观不可更改。
 
+### 太阳神记忆强化后的商店上限
+
+当玩家在太阳神系统内将**特蕾莎的记忆等级提升至 15 级**后，商店中部分可重复升级的购买上限会提高，同时解锁一次填满未保护空槽的音乐符文购买选项。以下按英文原页补齐此前未收录的完整进阶表：
+
+| ID | 初始成本（PP） | 最后一次成本（PP） | 等级上限 | 达到上限的效果 |
+| --- | ---: | ---: | ---: | --- |
+| `glyphLevel` | $1$ | $524,288$ | $20$ | 不稳定前的符文等级 $\times 2.65$ |
+| `rmMult` | $1$ | $524,288$ | $20$ | 现实机器获取 $\times 1.05\text{e}6$ |
+| `bulkDilation` | $100$ | $819,200$ | $14$ | 单次购买膨胀升级数量 $\times 1.64\text{e}4$（约 $16,384$ 倍） |
+| `autoSpeed` | $1,000$ | $32,000$ | $6$ | 对应自动购买器速度 $\times 64$ |
+| `musicGlyph` | $1$ | $1$ | 不适用 | 随机生成音乐符文，效果与原商店条目一致 |
+| `fillMusicGlyph` | 未保护的空符文库存格数量 | 不适用 | 不适用 | 用音乐符文填满库存中的所有空槽 |
+
+前四项可重复升级的单次效果与上表原有升级一致；此处列出的是强化后购买上限与最终累计效果，并非新增的六种不同加成。详细机制和条件以英文原页修订为准。
+
+
+
 ## 现实
 
-向容器灌注超过 $1\text{e}14$ RM 后，会引入一种类似[挑战](/player/original/ow-challenges)的新机制。不过与[无限](/player/original/ow-infinity)、[永恒](/player/original/ow-eternity)这类层数更多、处境更艰难的挑战不同：进入被削弱的[现实](/player/original/ow-reality)所带的缺点与削弱比普通挑战、无限挑战与永恒挑战都多。特蕾莎的现实一旦进入就会施加这些惩罚：
+向容器灌注至少 $1\text{e}14$ RM 后，会引入一种类似[挑战](/player/original/ow-challenges)的新机制。不过与[无限](/player/original/ow-infinity)、[永恒](/player/original/ow-eternity)这类层数更多、处境更艰难的挑战不同：进入被削弱的[现实](/player/original/ow-reality)所带的缺点与削弱比普通挑战、无限挑战与永恒挑战都多。特蕾莎的现实一旦进入就会施加这些惩罚：
 
 - 时间之理产出<sup>（来自[膨胀符文](https://antimatterdimensions.wiki.gg/wiki/Glyphs)）</sup>被禁用。
 - [无限点数](/player/original/ow-infinity)与[永恒点数](/player/original/ow-eternity)获取被开方：$p^{0.55}$。
