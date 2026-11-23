@@ -24,13 +24,13 @@ aliases:
 
 ## 档案
 
-特蕾莎，现实之神，别号「谄媚者」。买齐全部[现实升级](/player/original/ow-reality-upgrades)、拿到[成就 147](https://antimatterdimensions.wiki.gg/wiki/Achievements)之后，玩家才会见到她。她管两样东西：一是 RM 容器（把现实机器抽走灌注，换取 RM 乘数），二是复兴点数商店——两者都围绕现实机器与符文展开。她的[现实](#现实)要把容器灌到 $1\text{e}14$ RM 才开，进去之后 IP 与 EP 获取变成 $x^{0.55}$、来自符文的时间之理产出被禁用，完成条件是现实内 EP 超过 $\text{e}4,000$，奖励则是强化符文献祭。这个现实可以反复打，打得越好奖励越高。网页版与 Android 分别随 2022 年 12 月 17 日、2024 年 4 月 1 日的现实更新加入，Steam 与 iOS 首发即有。
+特蕾莎，现实之神，别号「谄媚者」。买齐全部[现实升级](/player/original/ow-reality-upgrades)、拿到[成就 147](/player/original/ow-achievements)之后，玩家才会见到她。她管两样东西：一是 RM 容器（把现实机器抽走灌注，换取 RM 乘数），二是复兴点数商店——两者都围绕现实机器与符文展开。她的[现实](#现实)要把容器灌到 $1\text{e}14$ RM 才开，进去之后 IP 与 EP 获取变成 $x^{0.55}$、来自符文的时间之理产出被禁用，完成条件是现实内 EP 超过 $\text{e}4,000$，奖励则是强化符文献祭。这个现实可以反复打，打得越好奖励越高。网页版与 Android 分别随 2022 年 12 月 17 日、2024 年 4 月 1 日的现实更新加入，Steam 与 iOS 首发即有。
 
 ## 机制
 
 ### RM 容器灌注
 
-该机制允许把已获得的[现实机器](/player/original/ow-reality)抽走灌注，把灌注的 RM 转化为 RM 获取加成；加成上限为 $1\text{e}24$ RM，提供 $\times 250$ 的 RM 乘数。容器是对数式的：要让容器达到 $50\%$ 的容量，需要灌注 $1\text{e}12$ RM。
+该机制允许把已获得的[现实机器](/player/original/ow-reality)抽走灌注，把灌注的 RM 转化为 RM 获取加成。原文同时说明，灌注过程中大多数资源会被重置；加成上限为 $1\text{e}24$ RM，提供 $\times 250$ 的 RM 乘数。容器是对数式的：要让容器达到 $50\%$ 的容量，需要灌注 $1\text{e}12$ RM。
 
 来自容器的 RM 乘数：
 
@@ -46,7 +46,7 @@ $$
 | undo | $1\text{e}10$ | 解锁装备[符文](https://antimatterdimensions.wiki.gg/wiki/Glyphs)的「撤销」选项 | $\times 9.95$ |  |
 | run | $1\text{e}14$ | 解锁[特蕾莎的现实](#现实) | $\times 25.00$ |  |
 | epGen | $1\text{e}18$ | 解锁被动[永恒点数](/player/original/ow-eternity)产出 | $\times 62.80$ | 本现实内，每秒获得「本现实峰值 EP」在每分钟维度下的 $1\%$ |
-| shop | $1\text{e}21$ | 解锁[复兴点数商店](#复兴点数商店) | $\times 125.00$ |  |
+| shop | $1\text{e}21$ | 解锁[复兴点数商店](#复兴点数商店) | $\times 125.30$ |  |
 | effarig | $1\text{e}24$ | 解锁[鹿颈长](/player/original/ow-effarig)，远古遗物之神 | $\times 250.00$ |  |
 
 ### 复兴点数商店
