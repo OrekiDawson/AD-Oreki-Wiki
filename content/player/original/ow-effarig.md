@@ -22,11 +22,11 @@ aliases:
 
 他们的称号「远古遗物之神（Celestial of Ancient Relics）」与其主题——[符文](https://antimatterdimensions.wiki.gg/wiki/Glyphs)——相关。
 
-原页另有子页面「引语（Quotes）」，本轮批次未译，见文末相关条目。
+原页另有独立的引语子页面；本站已收录[鹿颈长的引语](/player/original/ow-effarig-quotes)。
 
 ## 档案
 
-鹿颈长，远古遗物之神，别号「疲惫者」。把特蕾莎的 RM 容器灌满（$1\text{e}24$ RM），他们就出现了；同时带来的还有新资源[遗迹碎片](#遗迹碎片)，每次现实重置都会结算。他们的主题是符文：商店卖的都是符文相关的便利功能，从调整等级因子权重到筛选、预设，最后一项「run」用来开启自己的现实。那个现实分无限、永恒、现实三层，进去后维度、游戏速度与计数频率全被膨胀削弱，层数越高削得越轻；完成三层分别解锁复制器相关增益、无名氏，以及鹿颈长符文。加入版本同特蕾莎。
+鹿颈长，远古遗物之神，别号「疲惫者」。把特蕾莎的 RM 容器灌满（$1\text{e}24$ RM），他们就出现了；同时带来的还有新资源[遗迹碎片](#遗迹碎片)，每次现实重置都会结算。他们的主题是符文：商店卖的都是符文相关的便利功能，从调整等级因子权重到筛选、预设，最后一项「run」用来开启自己的现实。那个现实分无限、永恒、现实三层，进去后维度、游戏速度与计数频率全被膨胀削弱，更高层的膨胀与符文等级限制较轻，但仍有各自的挑战目标；完成三层分别解锁复制器相关增益、无名氏，以及鹿颈长符文。加入版本同特蕾莎。
 
 ## 遗迹碎片
 
@@ -55,7 +55,7 @@ $$Rarities \mathrel{+}= 5 \cdot \log_{10}\left ( \log_{10}\left ( RS + 10 \right
 
 鹿颈长的现实有三个可完成的部分，称为「层」，每层对应到目前为止出现的一个[威望层](/player/original/ow-prestige)——即[无限](/player/original/ow-infinity)、[永恒](/player/original/ow-eternity)与[现实](/player/original/ow-reality)。完成前一层即可进入下一层，其中鹿颈长的无限层最先可进入。
 
-进入鹿颈长现实的任何一层时，施加的惩罚是对全部[维度乘数](/player/original/ow-dimensions)、游戏速度与[计数频率](https://antimatterdimensions.wiki.gg/wiki/Tickspeed)的强力[膨胀削弱](/player/original/ow-dilation)。[符文等级](https://antimatterdimensions.wiki.gg/wiki/Glyphs)在鹿颈长的现实中也会被设上限。鹿颈长现实的层数越高，这两种效果都会减弱。
+进入鹿颈长现实的任何一层时，施加的惩罚是对全部[维度乘数](/player/original/ow-dimensions)、游戏速度与[计数频率](/player/original/ow-tickspeed)的强力[膨胀削弱](/player/original/ow-dilation)。[符文等级](https://antimatterdimensions.wiki.gg/wiki/Glyphs)在鹿颈长的现实中也会被设上限。鹿颈长现实的层数越高，这两种效果都会减弱。
 
 膨胀惩罚可以被[无限之力](/player/original/ow-infinity-dimensions)与[时间碎片](/player/original/ow-time-dimensions)动态削弱：该层中无限之力越多，维度产量与游戏速度的惩罚越低；时间碎片则降低计数频率的惩罚。
 
