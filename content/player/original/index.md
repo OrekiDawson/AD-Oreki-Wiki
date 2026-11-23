@@ -1,24 +1,34 @@
 ---
 title: "原版 Wiki 中文翻译"
-description: "按游戏进度和主题查阅《反物质维度》社区 Wiki 的中文译文"
+description: "先认识《反物质维度》原版游戏，再按主题查阅社区 Wiki 的简体中文译文"
 tags:
   - 原版Wiki翻译
   - 导航
 ---
 
-这里收录《反物质维度》社区 Wiki 的简体中文译文。**如果你想查一个游戏机制，从下面的阶段或主题进入即可**；不需要知道译文是在第几批完成的。
+## 欢迎来到原版《反物质维度》资料区
 
-译文介绍的是**原版游戏**，不代表 Oreki Edition 中的实际数值和解锁条件。想确认 MOD 改了什么，请看[原版与 Oreki Edition 的区别](/player/gameplay/original-vs-mod)。
+**《反物质维度》（Antimatter Dimensions）**是一款放置增量游戏。玩家从少量反物质开始，逐渐建立自动生产资源的系统；当增长遇到瓶颈时，可以通过升级和重置获得新的能力，进入更高一层的游戏内容。
 
-## 第一次阅读，从这里开始
+游戏的世界会随着进度逐步展开。早期的重点是反物质生产和第一次大坍缩；之后依次接触**无限、永恒、现实**等成长体系，后期还有天神及与之相关的挑战。不同平台和版本的具体界面、开放次序可能有差异，这里的导航不把其中一种版本的细节当作所有版本的通用规则。
 
-首次接触游戏，可以先读[维度](/player/original/ow-dimensions)，理解生产方式；准备第一次大坍缩时看[无限](/player/original/ow-infinity)；再往后依次是[永恒](/player/original/ow-eternity)、[现实](/player/original/ow-reality)与[天神](/player/original/ow-celestials)。已经在某个阶段游玩，直接跳到对应分类即可。
+这里收录来自 [Antimatter Dimensions Wiki（英文社区 Wiki）](https://antimatterdimensions.wiki.gg/) 的中文译文，方便查阅原版机制、数值、挑战与游戏资料。**本页是本站编写的中文导览，不是英文 Wiki 首页的逐字翻译。** 想先浏览原站的介绍和导航，可直接阅读[原版 Wiki 首页](https://antimatterdimensions.wiki.gg/wiki/Main_Page)。
 
-部分条目仍在逐段审校中。遇到数值、公式或解锁条件时，可以点开文末的“原文”链接核对英文修订；结构检查不等于游戏实测。第一批完成逐段审校的是[维度](/player/original/ow-dimensions)、[维度提升](/player/original/ow-dimension-boosts)和[无限](/player/original/ow-infinity)；第二批为[无限升级](/player/original/ow-infinity-upgrades)、[维度献祭](/player/original/ow-dimensional-sacrifice)、[反物质星系](/player/original/ow-antimatter-galaxies)与[计数频率](/player/original/ow-tickspeed)；第三批为[打破无限](/player/original/ow-break-infinity)、[无限维度](/player/original/ow-infinity-dimensions)、[普通挑战](/player/original/ow-normal-challenges)与[无限挑战](/player/original/ow-infinity-challenges)；第四批为[永恒](/player/original/ow-eternity)、[时间维度](/player/original/ow-time-dimensions)、[时间研究](/player/original/ow-time-studies)与[永恒挑战](/player/original/ow-eternity-challenges)；第五批为[现实](/player/original/ow-reality)、[现实升级](/player/original/ow-reality-upgrades)、[符文炼金](/player/original/ow-glyph-alchemy)与[黑洞](/player/original/ow-black-hole)；第六批为[复兴](/player/original/ow-perks)、[虚幻升级](/player/original/ow-imaginary-upgrades)、[充能无限升级](/player/original/ow-charged-infinity-upgrades)与[时间膨胀](/player/original/ow-dilation)。
+## 如何使用这份目录
 
-## 从维度增长到第一次大坍缩
+如果你刚认识《反物质维度》，先读上面的游戏介绍，知道这是一款不断解锁新系统的增量游戏，不必立刻钻进维度公式。想进一步了解原版的玩法，可以从下方的**基础玩法**读起；正在玩无限、永恒或现实阶段，则直接进入对应章节，不需要从头按顺序阅读所有条目。
 
-刚开始玩时，先理解八层维度怎样生产反物质，随后再看重置和加速机制。
+这是一份**百科式资料目录**，而不是要求玩家依次完成的攻略。每个链接对应一个具体主题，也可以用本站搜索直接查找「挑战」「时间研究」「符文」「天神」等术语。
+
+## 译文与版本说明
+
+本专区以英文社区 Wiki 的原版条目为依据，不将 **Oreki Edition** 的加速、自动化或专属规则写进原版译文。需要了解 MOD 的变化，请参阅[原版与 Oreki Edition 的区别](/player/gameplay/original-vs-mod)。
+
+译文正在逐篇校对，**章节结构核对不等于逐段语义审校**。遇到重要数值、公式和解锁条件时，请以条目所列英文原文与修订为核对依据；尚未核查的内容不应被描述为已经验证。详细审校记录保存在[翻译来源清单](https://github.com/OrekiDawson/AD-Oreki-Wiki/blob/main/docs/translation/source-manifest.json)，不占用玩家的阅读目录。
+
+## 基础玩法：反物质、生产与重置
+
+理解游戏全貌后，可以从生产与成长机制查起。最初接触的反物质维度负责生产资源；维度提升、星系与其他重置机制帮助玩家突破早期增长限制。
 
 - **生产与速度：**[反物质维度（游戏机制）](/player/original/ow-antimatter-dimensions) · [维度](/player/original/ow-dimensions) · [计数频率](/player/original/ow-tickspeed)
 - **重置与成长：**[维度提升](/player/original/ow-dimension-boosts) · [反物质星系](/player/original/ow-antimatter-galaxies) · [维度献祭](/player/original/ow-dimensional-sacrifice) · [重置成长（威望）](/player/original/ow-prestige)
@@ -75,7 +85,7 @@ tags:
 
 ## 来源与版权
 
-本站译文取材于 [Antimatter Dimensions Wiki](https://antimatterdimensions.wiki.gg/wiki/Antimatter_Dimensions) 的原版游戏条目。每篇译文都应保留原文链接、修订记录、贡献者历史和许可说明；本站未转载的原站图片、图标等素材，仍可到原页查看。
+本页是本站编写的中文导航，并非英文 Wiki 首页的逐段翻译。各篇译文来自 [Antimatter Dimensions Wiki](https://antimatterdimensions.wiki.gg/) 的对应原版游戏条目。每篇译文都应保留原文链接、修订记录、贡献者历史和许可说明；本站未转载的原站图片、图标等素材，仍可到原页查看。
 
 译文按原站相应内容的 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) 许可提供，属于**简体中文翻译与改编**，不代表原站认可 MOD。有关来源、翻译和署名的详细要求见[版权与许可](/copyright)。
 
