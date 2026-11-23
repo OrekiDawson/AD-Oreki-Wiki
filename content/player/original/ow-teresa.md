@@ -30,22 +30,30 @@ aliases:
 
 ### RM 容器灌注
 
-该机制允许把已获得的[现实机器](/player/original/ow-reality)抽走灌注，把灌注的 RM 转化为 RM 获取加成。原文同时说明，灌注过程中大多数资源会被重置；加成上限为 $1\text{e}24$ RM，提供 $\times 250$ 的 RM 乘数。容器是对数式的：要让容器达到 $50\%$ 的容量，需要灌注 $1\text{e}12$ RM。
+该机制允许把已获得的[现实机器](/player/original/ow-reality)抽走灌注，把灌注的 RM 转化为 RM 获取加成。**已注入容器的现实机器无法取回**；加成上限为 $1\text{e}24$ RM，提供 $\times 250$ 的 RM 乘数。容器是对数式的：要让容器达到 $50\%$ 的容量，需要灌注 $1\text{e}12$ RM。
 
 来自容器的 RM 乘数：
 
-$$
+$
 \max\left ( 250\left ( \frac{RM_{poured}}{1\text{e}24} \right )^{0.1}, 1 \right )
-$$
+$
+
+按住「灌注（Pour）」按钮即可将现实机器持续注入容器，按住越久注入速度越快。每个 tick 增加的灌注量（同时从当前 RM 中扣除）为：
+
+$
+\min\left(0.01\left(RM_{poured}+10^6\right)\cdot TimePoured_{ms}^{2},\ RM_{current}\right)
+$
+
+松开按钮时按住时间重新计为零；容器注满后按钮显示「已满（Filled）」。
 
 当容器中灌注的 RM 达到若干区间时，可以取得六个里程碑，提供额外的便利性或帮助推进游戏的新机制。
 
 | ID | 需求 | 奖励 | 提供的 RM 加成 | 详情 |
 | --- | --- | --- | --- | --- |
-| glyphLevel | $1\text{e}6$ | 开始现实时已解锁全部[永恒升级](https://antimatterdimensions.wiki.gg/wiki/Eternity_Upgrades) | $\times 3.97$ |  |
-| undo | $1\text{e}10$ | 解锁装备[符文](https://antimatterdimensions.wiki.gg/wiki/Glyphs)的「撤销」选项 | $\times 9.95$ |  |
+| startEU | $1\text{e}6$ | 开始现实时已解锁全部[永恒升级](/player/original/ow-eternity-upgrades) | $\times 3.96$ | 达到里程碑时自动解锁全部永恒升级 |
+| undo | $1\text{e}10$ | 解锁装备[符文](https://antimatterdimensions.wiki.gg/wiki/Glyphs)的「撤销」选项 | $\times 9.95$ | 可撤销上一次装备符文，并使现实回退到装备时的状态；**此时多数资源会重置** |
 | run | $1\text{e}14$ | 解锁[特蕾莎的现实](#现实) | $\times 25.00$ |  |
-| epGen | $1\text{e}18$ | 解锁被动[永恒点数](/player/original/ow-eternity)产出 | $\times 62.80$ | 本现实内，每秒获得「本现实峰值 EP」在每分钟维度下的 $1\%$ |
+| epGen | $1\text{e}18$ | 解锁被动[永恒点数](/player/original/ow-eternity)产出 | $\times 62.79$ | 本现实内，每秒获得「本现实峰值 EP」在每分钟维度下的 $1\%$ |
 | shop | $1\text{e}21$ | 解锁[复兴点数商店](#复兴点数商店) | $\times 125.30$ |  |
 | effarig | $1\text{e}24$ | 解锁[鹿颈长](/player/original/ow-effarig)，远古遗物之神 | $\times 250.00$ |  |
 
