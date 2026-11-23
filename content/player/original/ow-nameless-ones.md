@@ -34,7 +34,7 @@ aliases:
 
 储存游戏时间会禁用[黑洞](/player/original/ow-black-hole)带来的游戏速度乘数效果。该游戏速度乘数随后会被转换为储存的游戏时间；更准确地说，假设黑洞开启时一个现实秒等于五个游戏年，那么每秒储存的游戏时间也是五个游戏年。
 
-储存起来的时间随后可以释放，游戏会「跳过」所储存的那段时间，就像游戏被放置运行了那么久——这只影响游戏时间，因此[自动化](/player/original/ow-automation)涉及的自动购买器这类现实时间机制不受影响。
+储存起来的时间随后可以释放，游戏会「跳过」所储存的那段时间，就像游戏被放置运行了那么久——这只影响游戏时间，因此[自动购买器](/player/original/ow-automation)这类现实时间机制不受影响。
 
 如果利用[时间符文的](https://antimatterdimensions.wiki.gg/wiki/Glyphs#Types)第二效果「游戏速度乘以 ×N」或[鹿颈长符文](https://antimatterdimensions.wiki.gg/wiki/Glyphs#Types)的第三效果「游戏速度幂 +N」，这会很有用：可以花掉一次[现实](/player/original/ow-reality)去积累尽可能多的储存游戏时间，然后用更合适的符文组合释放这些储存时间，从而获得远超没有释放的现实所能得到的资源。
 
