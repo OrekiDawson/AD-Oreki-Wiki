@@ -17,6 +17,13 @@
 - **BLOCKED 的证据门槛**：只有确认硬件、权限、资源、外部服务、安全限制或不可安全修复的实际阻断，才标记 `ENVIRONMENT_BLOCKED`，附已尝试的互不重复方案、日志/退出码、已排除原因、剩余根因、Owner 和可执行恢复步骤；否则保持 `DIAGNOSING`。受峰时或截止限制应标 `DEFERRED`，不伪称永久阻断。
 - **隔离与持续推进**：环境故障期间继续其他合法、不冲突任务；恢复后重跑受影响的最小真实验证。环境修复成功、CI PASS 或 APK 构建成功均不得代替 Android AVD/真机、Web 真实浏览器、Wiki 线上功能等各自的实际验收。
 
+## 仅 AGENTS.md 变更的 Kody skipped 快速合并规则（2026-11-23）
+
+- 对当前 PR HEAD 的**实际完整 Diff** 核验：仅新增/修改 `AGENTS.md`（含子目录同名文件），不得混入代码、CI、其他文档、构建或发布文件；若混入任何其他路径，不适用本例外。
+- 当 Kody **官方**针对该 HEAD/配置确认因纯规则文件而 `skipped`，该结果不计付费审查配额，亦不等于 Review PASS；不为取得形式上的 PASS 重复触发 Kody。若 Kody skipped 的原因不明、服务故障或未返回官方结论，不得套用本例外。
+- 只要当前 HEAD 的适用 Required Checks、审批、分支保护、Ruleset、合并冲突及其他人工阻断均已核验满足，允许直接自动合并纯 AGENTS.md PR，无需额外等待 Kody 的 PASS 或逐项向用户征询。**不得**绕过 GitHub 强制要求的 Kody Check 或任何其他保护规则；若平台仍将其判为 Required 且未满足，保持 BLOCKED。
+- 合并后回读 GitHub 验证 merged 状态、merge commit 和 main；记录 Kody skipped 的真实原因、HEAD、门禁证据及结果。规则本身的授权不等于任何 PR 已满足合并条件。
+
 
 ## 跨仓统一核心规则入口（强制）
 
