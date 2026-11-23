@@ -24,7 +24,7 @@ aliases:
 
 ## 档案
 
-特蕾莎，现实之神，别号「谄媚者」。买齐全部[现实升级](/player/original/ow-reality-upgrades)、拿到[成就 147](/player/original/ow-achievements)之后，玩家才会见到她。她管两样东西：一是 RM 容器（把现实机器抽走灌注，换取 RM 乘数），二是复兴点数商店——两者都围绕现实机器与符文展开。她的[现实](#现实)要把容器灌到 $1\text{e}14$ RM 才开，进去之后 IP 与 EP 获取变成 $x^{0.55}$、来自符文的时间之理产出被禁用，完成条件是现实内 EP 超过 $\text{e}4,000$，奖励则是强化符文献祭。这个现实可以反复打，打得越好奖励越高。网页版与 Android 分别随 2022 年 12 月 17 日、2024 年 4 月 1 日的现实更新加入，Steam 与 iOS 首发即有。
+特蕾莎，现实之神，别号「谄媚者」。买齐全部 **20 项一次性[现实升级](/player/original/ow-reality-upgrades)**、拿到[成就 147](/player/original/ow-achievements)之后，玩家才会见到她。她管两样东西：一是 RM 容器（把现实机器抽走灌注，换取 RM 乘数），二是复兴点数商店——两者都围绕现实机器与符文展开。她的[现实](#现实)要把容器灌到 $1\text{e}14$ RM 才开，进去之后 IP 与 EP 获取变成 $x^{0.55}$、来自符文的时间之理产出被禁用，完成条件是**购买需花费 $\text{e}4,000$ EP 的现实时间研究**，奖励则是强化符文献祭。这个现实可以反复打，打得越好奖励越高。网页版与 Android 分别随 2022 年 12 月 17 日、2024 年 4 月 1 日的现实更新加入，Steam 与 iOS 首发即有。
 
 ## 机制
 
@@ -95,7 +95,7 @@ $
 - 时间之理产出<sup>（来自[膨胀符文](https://antimatterdimensions.wiki.gg/wiki/Glyphs)）</sup>被禁用。
 - [无限点数](/player/original/ow-infinity)与[永恒点数](/player/original/ow-eternity)获取被开方：$p^{0.55}$。
 
-完成特蕾莎的现实的方式，是在该现实内取得超过 $\text{e}4,000$ [永恒点数](/player/original/ow-eternity)，完成会提供[符文献祭](https://antimatterdimensions.wiki.gg/wiki/Glyph_Sacrifice)加成。
+要完成特蕾莎的现实，需要在该现实中**购买现实时间研究（Reality Time Study）**；这项研究的花费为 $\text{e}4,000$ [永恒点数](/player/original/ow-eternity)。完成后会提供[符文献祭](https://antimatterdimensions.wiki.gg/wiki/Glyph_Sacrifice)加成。
 
 特蕾莎的现实可以无限次重复进入，也就是说可以反复挑战她的现实。达到新的最高[反物质](https://antimatterdimensions.wiki.gg/wiki/Antimatter)数量可以提升该现实给予的奖励。
 
