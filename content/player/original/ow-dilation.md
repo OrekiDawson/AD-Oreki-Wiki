@@ -18,7 +18,7 @@ aliases:
 
 **时间膨胀（Time Dilation）**是[永恒威望层](/player/original/ow-eternity)引入的最后一个主要机制。它包含一个被修改、被削弱的永恒；首次完成它会解锁两种新货币——超光速粒子（Tachyon Particles）与膨胀时间（Dilated Time），可用于购买膨胀升级。
 
-购买 [EC11 与 EC12](/player/original/ow-eternity-challenges)研究下方的“解锁时间膨胀”[时间研究](/player/original/ow-time-studies)即可解锁膨胀。该研究要求已经购买 231～234 中的任意一项、累计拥有 $12,900$ [时间之理](/player/original/ow-time-studies)，并在没有对应复兴节点豁免时各完成永恒挑战 11 与 12 五（5）次。研究本身消耗 $5,000$ 时间之理，但会永久解锁这个机制。
+购买 [EC11 与 EC12](/player/original/ow-eternity-challenges)研究下方的“解锁时间膨胀”[时间研究](/player/original/ow-time-studies)即可解锁膨胀。该研究要求已经购买 231～234 中的任意一项；若没有 DILR 复兴节点豁免，还需要累计拥有 $12,900$ [时间之理](/player/original/ow-time-studies)，并各完成永恒挑战 11 与 12 五（5）次。研究本身消耗 $5,000$ 时间之理，但会永久解锁这个机制。
 
 解锁膨胀后，最后四个[时间维度](/player/original/ow-time-dimensions)可以购买，解锁研究分别消耗 $\text{1e6}$ 到 $\text{1e9}$ 时间之理。膨胀升级第 10 项可以按超光速粒子被动生成时间之理；第 8 项则允许同时购买[维度分叉](/player/original/ow-time-studies)的全部三条路径。
 
@@ -74,6 +74,7 @@ $$Tachyons = TP_{Mult}\times\left(\frac{\log_{10}\left(AM_{\text{膨胀中最高
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Dilation&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为**简体中文翻译（改编）**，已修改：翻译正文与表格、统一术语、依据官方源码校正超光速星系阈值并补充现实重置边界、修复升级子页链接、移除导航模板与信息框、图片未转载；本页按相同许可共享。
 - 原页以子模板嵌入膨胀升级表；本页保留主条目正文、公式与相关成就，并链接本区现有的普通与被毁灭现实升级表。
+- 源码核对：[时间膨胀研究解锁条件](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/91d5bed01509cd730a3158075c9b05c19a7a3260/src/core/secret-formula/eternity/time-studies/dilation-time-studies.js#L15) 与 [DILR 豁免定义](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/91d5bed01509cd730a3158075c9b05c19a7a3260/src/core/secret-formula/reality/perks.js#L215)（提交 `91d5bed01509cd730a3158075c9b05c19a7a3260`，2026-11-24 核对）。
 
 ## 相关条目
 

@@ -29,9 +29,9 @@ aliases:
 $$\max\left(\log_{10}(RM_{uncapped})-1000,0\right)^2
 \times\max\left(\log_{10}(RM_{uncapped})-100000,1\right)^{0.2}$$
 
-两项下限分别取 0 与 1；第二项在未截断 RM 还没达到 $\text{e}1,000,000$ 时保持为 1。
+两项下限分别取 0 与 1；第二项在未截断 RM 的 $\log_{10}$ 不超过 $100,001$（约 $\text{e}100,001$）时保持为 1。
 
-> 译注：部分旧文把第二个下限写成 0。原版源码使用 `max(..., 1)`，否则 RM 尚未达到 $\text{e}1,000,000$ 时会让整条上限错误地归零；本页按源码与后续镜像校正。
+> 译注：部分旧文把第二个下限写成 0。源码使用 `max(..., 1)`，否则 RM 尚未超过上述阈值时会让整条上限错误地归零；本页按源码校正。
 
 和硬上限之前的现实机器不同，虚幻机器没法靠反复新现实刷出来：它只会随时间朝上限爬升，越接近上限越慢。默认速度是**每 60 秒把“上限与当前值之差”减半**，而且这个速度不受游戏速度修正影响；相关虚幻升级可以缩短这个时间。
 
@@ -97,6 +97,7 @@ $$\max\left(\log_{10}(RM_{uncapped})-1000,0\right)^2
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为简体中文翻译（改编），已修改：翻译正文与全部表格、按游戏内简体中文统一为“虚幻机器/虚幻升级”、依据官方源码修正虚幻机器上限公式与状态、界面图与信息框未转载；本页按相同许可共享。
 - 原文图片未转载：原页含桌面/移动界面图（Reality-imaginaryupgrades-interface--darktheme-desktop.png、-mobile.webp、buttonstates--darktheme-desktop.png）与现实按钮图，此处仅保留文字说明。
 - 原文中的动态占位符（如解锁条件里的 {current value}）是游戏实时显示的数值，译文保留占位写法。
+- 源码核对：[虚幻机器上限公式](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/91d5bed01509cd730a3158075c9b05c19a7a3260/src/core/machines.js#L108)（提交 `91d5bed01509cd730a3158075c9b05c19a7a3260`，2026-11-24 核对）。
 
 ## 相关条目
 
