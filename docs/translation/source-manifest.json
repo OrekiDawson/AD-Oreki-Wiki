@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generated_at": "2026-11-22T22:41:52.000Z",
+ "generated_at": "2026-11-23T00:40:02.000Z",
  "source": {
   "site": "https://antimatterdimensions.wiki.gg",
   "api": "https://antimatterdimensions.wiki.gg/api.php",
@@ -27,8 +27,8 @@
  "coverage": {
   "total_pages": 68,
   "translated": 0,
-  "structure_checked": 41,
-  "reviewed": 19,
+  "structure_checked": 37,
+  "reviewed": 23,
   "verified": 0,
   "blocked": 0,
   "not_started": 8
@@ -1046,13 +1046,13 @@
    "zh_title": "时间膨胀",
    "path": "content/player/original/ow-dilation.md",
    "priority": 2,
-   "status": "STRUCTURE CHECKED",
-   "review_status": "STRUCTURE CHECKED",
+   "status": "REVIEWED",
+   "review_status": "REVIEWED",
    "license_status": "CC-BY-SA-4.0-CONFIRMED",
    "third_party": "NONE-DETECTED-TEXT-ONLY",
    "media_omitted": true,
-   "last_source_check": "2026-11-15",
-   "notes": "batch3：正文完整翻译并校对；嵌入子页/图片未转载，已在页面注明；2026-11-15 质量门禁：仅有结构核对（章节/表格/公式/来源字段），未做逐段语义审校，按 wiki-rules 等级降为 STRUCTURE CHECKED"
+   "last_source_check": "2026-11-23",
+   "notes": "第六批：已逐段语义审校；补齐 231～234 前置、修正超光速星系阈值与现实重置边界、链接现有升级子页；见 docs/translation/reviews/2026-11-23-现实扩展第六批.md"
   },
   {
    "title": "Dilation/Upgrades",
@@ -1661,16 +1661,16 @@
     "Pages with navboxes"
    ],
    "type": "article",
-   "zh_title": "映像升级",
+   "zh_title": "虚幻升级",
    "path": "content/player/original/ow-imaginary-upgrades.md",
    "priority": 3,
-   "status": "STRUCTURE CHECKED",
-   "review_status": "STRUCTURE CHECKED",
+   "status": "REVIEWED",
+   "review_status": "REVIEWED",
    "license_status": "CC-BY-SA-4.0-CONFIRMED",
    "third_party": "NONE-DETECTED-TEXT-ONLY",
    "media_omitted": true,
-   "last_source_check": "2026-11-15",
-   "notes": "batch17：正文/表格/公式/来源字段完整翻译并结构核对；未做逐段语义审校，记 STRUCTURE CHECKED"
+   "last_source_check": "2026-11-23",
+   "notes": "第六批：已逐段语义审校；统一为游戏内“虚幻机器/虚幻升级”，修正上限公式与时间边界；见 docs/translation/reviews/2026-11-23-现实扩展第六批.md"
   },
   {
    "title": "Infinite",
@@ -1929,13 +1929,13 @@
    "zh_title": "充能无限升级",
    "path": "content/player/original/ow-charged-infinity-upgrades.md",
    "priority": 3,
-   "status": "STRUCTURE CHECKED",
-   "review_status": "STRUCTURE CHECKED",
+   "status": "REVIEWED",
+   "review_status": "REVIEWED",
    "license_status": "CC-BY-SA-4.0-CONFIRMED",
    "third_party": "NONE-DETECTED-TEXT-ONLY",
    "media_omitted": true,
-   "last_source_check": "2026-11-15",
-   "notes": "batch16：正文/表格/公式/来源字段完整翻译并结构核对；未做逐段语义审校，记 STRUCTURE CHECKED"
+   "last_source_check": "2026-11-23",
+   "notes": "第六批：已逐段语义审校；核对 12 项公式、充能位、普通效果替换与时间单位；见 docs/translation/reviews/2026-11-23-现实扩展第六批.md"
   },
   {
    "title": "Lai'tela",
@@ -2232,13 +2232,13 @@
    "zh_title": "复兴",
    "path": "content/player/original/ow-perks.md",
    "priority": 2,
-   "status": "STRUCTURE CHECKED",
-   "review_status": "STRUCTURE CHECKED",
+   "status": "REVIEWED",
+   "review_status": "REVIEWED",
    "license_status": "CC-BY-SA-4.0-CONFIRMED",
    "third_party": "NONE-DETECTED-TEXT-ONLY",
    "media_omitted": true,
-   "last_source_check": "2026-11-15",
-   "notes": "batch19：正文/表格/公式/来源字段完整翻译并结构核对；未做逐段语义审校，记 STRUCTURE CHECKED"
+   "last_source_check": "2026-11-23",
+   "notes": "第六批：已逐段语义审校；核对 48 节点、21 个 AP 节点共 150 AP、无向相邻关系与特殊效果；见 docs/translation/reviews/2026-11-23-现实扩展第六批.md"
   },
   {
    "title": "Prestige",

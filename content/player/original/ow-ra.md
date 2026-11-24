@@ -122,13 +122,13 @@ $$\left\lfloor\left({n+\frac{n^2}{10}}\right)^{5.52}*\left({n^{Max(0,n-15)}}\rig
 | ID（名称） | 图标 | 等级 | 描述 | 效果 / 其它细节 | ID（编号） |
 | --- | --- | --- | --- | --- | --- |
 | **特蕾莎的记忆解锁** |  |  |  |  |  |
-| autoTP | 原子 | 1 | 时间膨胀处于激活状态时立即给予[速子粒子](/player/original/ow-dilation) |  | 0 |
+| autoTP | 原子 | 1 | 时间膨胀处于激活状态时立即给予[超光速粒子](/player/original/ow-dilation) |  | 0 |
 | chargedInfinityUpgrades | 无限 | 2 | 解锁[充能无限升级](/player/original/ow-infinity-upgrades)；每 2 级增加 1 个可充能上限 | 玩家在 24 级时可以给全部 12 个可充能无限升级充能 | 1 |
 | teresaXP | Ϟ | 5 | 所有记忆碎片按[现实机器](/player/original/ow-reality)数量产出更多记忆 | $1+\sqrt{\frac{\log_{10}({RM})}{100}}$；移动版对该里程碑使用不同图标（Δ） | 2 |
 | effarigUnlock | Ϙ | 8 | 解锁鹿颈长的记忆 |  | 4 |
 | alteredGlyphs | 闪电 | 10 | 解锁[改造符文（Altered Glyphs）](https://antimatterdimensions.wiki.gg/wiki/Glyphs#Glyph_Sacrifice)，按符文献祭为符文赋予新效果 |  | 3 |
 | perkShopIncrease | 流程图 | 15 | 提高[特蕾莎复兴点数商店](/player/original/ow-teresa)的购买上限 |  | 5 |
-| unlockDilationStartingTP | 圆点圈 | 25 | 在非天神现实中，按「在膨胀中达到全部反物质平方根」的水平获得速子粒子；任何 TP 获取乘数都会追溯生效，即使在膨胀之外 |  | 6 |
+| unlockDilationStartingTP | 圆点圈 | 25 | 在非天神现实中，按「在膨胀中达到全部反物质平方根」的水平获得超光速粒子；任何 TP 获取乘数都会追溯生效，即使在膨胀之外 |  | 6 |
 | **鹿颈长的记忆解锁** |  |  |  |  |  |
 | extraGlyphChoicesAndRelicShardRarityAlwaysMax | 横排握把 | 1 | 符文选择项 $\times2$，且[遗迹碎片](/player/original/ow-effarig)提供的符文稀有度加成始终为最大值 | 该升级的 ID 名称最长，共 45 个字符 | 7 |
 | unlockGlyphAlchemy | 药瓶 | 2 | 解锁[符文炼金](https://antimatterdimensions.wiki.gg/wiki/Glyph_Alchemy)，通过精炼符文提升炼金资源；随鹿颈长等级解锁更多资源。入口位于新的现实页签 |  | 8 |

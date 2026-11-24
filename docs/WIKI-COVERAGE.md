@@ -8,10 +8,10 @@
 | --- | --- |
 | 合规原版正文页总数（article） | 68 |
 | 已与游戏源码/运行证据核实（VERIFIED AGAINST GAME） | 0 |
-| 已完成逐段语义审校（REVIEWED） | 19 |
-| **已审校覆盖率（REVIEWED + VERIFIED）** | **19 / 68（27.9%）** |
-| 已完成翻译与结构核对（STRUCTURE CHECKED） | 41 |
-| 结构核对覆盖率 | 41 / 68（60.3%） |
+| 已完成逐段语义审校（REVIEWED） | 23 |
+| **已审校覆盖率（REVIEWED + VERIFIED）** | **23 / 68（33.8%）** |
+| 已完成翻译与结构核对（STRUCTURE CHECKED） | 37 |
+| 结构核对覆盖率 | 37 / 68（54.4%） |
 | 已翻译未核对（TRANSLATED） | 0 |
 | 尚未开始（NOT STARTED） | 8 |
 | 许可阻塞（BLOCKED） | 0 |
@@ -20,9 +20,9 @@
 ## 等级口径
 
 - **STRUCTURE CHECKED**：章节/小节/表格/公式/来源字段与原站结构一致；**不算语义审校**，不计入已审校覆盖率。
-- **REVIEWED**：已对照原文逐段审校（术语、数字、公式、解锁条件、语义），必须有页面级审校记录；当前 19 篇。
+- **REVIEWED**：已对照原文逐段审校（术语、数字、公式、解锁条件、语义），必须有页面级审校记录；当前 23 篇。
 - **VERIFIED AGAINST GAME**：关键机制/数值已与源码或真实运行证据交叉核实；当前 0 篇。
-- 因此本台账如实显示：翻译已覆盖 60/68，**审校覆盖率为 19/68（27.9%）**；其余 STRUCTURE CHECKED 页面仍不得宣传为「已校对」。
+- 因此本台账如实显示：翻译已覆盖 60/68，**审校覆盖率为 23/68（33.8%）**；其余 STRUCTURE CHECKED 页面仍不得宣传为「已校对」。
 
 ## 许可与署名状态
 
@@ -54,16 +54,18 @@
 | 现实升级 | [Reality Upgrades](https://antimatterdimensions.wiki.gg/index.php?title=Reality_Upgrades&oldid=3357)（本次直连受 403 限制，按归档快照与源码交叉核对） | 3357 | `docs/translation/reviews/2026-11-23-现实阶段第五批.md` |
 | 符文炼金 | [Glyph Alchemy](https://antimatterdimensions.wiki.gg/index.php?title=Glyph_Alchemy&oldid=3388)（本次直连受 403 限制，按现有全量快照、Fandom 正文与源码交叉核对） | 3388 | `docs/translation/reviews/2026-11-23-现实阶段第五批.md` |
 | 黑洞 | [Black Hole](https://antimatterdimensions.wiki.gg/index.php?title=Black_Hole&oldid=3360)（本次直连受 403 限制，按归档快照与源码交叉核对） | 3360 | `docs/translation/reviews/2026-11-23-现实阶段第五批.md` |
+| 复兴 | [Perks](https://antimatterdimensions.wiki.gg/index.php?title=Perks&oldid=3354)（本次直连受 403 限制，按现有全量正文、镜像与源码交叉核对） | 3354 | `docs/translation/reviews/2026-11-23-现实扩展第六批.md` |
+| 虚幻升级 | [Imaginary Upgrades](https://antimatterdimensions.wiki.gg/index.php?title=Imaginary_Upgrades&oldid=3358)（本次直连受 403 限制，按现有全量正文、镜像与源码交叉核对） | 3358 | `docs/translation/reviews/2026-11-23-现实扩展第六批.md` |
+| 充能无限升级 | [Infinity Upgrades/Upgrades (Charged)](https://antimatterdimensions.wiki.gg/index.php?title=Infinity_Upgrades%2FUpgrades_%28Charged%29&oldid=3386)（本次直连受 403 限制，按现有全量正文与源码交叉核对） | 3386 | `docs/translation/reviews/2026-11-23-现实扩展第六批.md` |
+| 时间膨胀 | [Dilation](https://antimatterdimensions.wiki.gg/index.php?title=Dilation&oldid=3323)（本次直连受 403 限制，按现有全量快照、归档与源码交叉核对） | 3323 | `docs/translation/reviews/2026-11-23-现实扩展第六批.md` |
 
 ## 已 STRUCTURE CHECKED 页面（按中文标题）
 
 | 中文条目 | 原文 | 修订 ID | 媒体未转载 |
 | --- | --- | --- | --- |
 | 成就 | [Achievements](https://antimatterdimensions.wiki.gg/wiki/Achievements) | 3363 | 是 |
-| 充能无限升级 | [Infinity Upgrades/Upgrades (Charged)](https://antimatterdimensions.wiki.gg/wiki/Infinity_Upgrades%2FUpgrades_(Charged)) | 3386 | 是 |
 | 存档库 | [Save Bank](https://antimatterdimensions.wiki.gg/wiki/Save_Bank) | 3131 | 是 |
 | 反物质维度（游戏机制） | [Antimatter Dimensions](https://antimatterdimensions.wiki.gg/wiki/Antimatter_Dimensions) | 3325 | 是 |
-| 复兴 | [Perks](https://antimatterdimensions.wiki.gg/wiki/Perks) | 3354 | 是 |
 | 复制器 | [Replicanti](https://antimatterdimensions.wiki.gg/wiki/Replicanti) | 3350 | 是 |
 | 广告加成 | [Ad Bonus](https://antimatterdimensions.wiki.gg/wiki/Ad_Bonus) | 3096 | 否 |
 | 计数频率·星系数量明细（被毁灭的现实） | [Tickspeed/Galaxy count breakdown (Doomed)](https://antimatterdimensions.wiki.gg/wiki/Tickspeed%2FGalaxy_count_breakdown_(Doomed)) | 3059 | 是 |
@@ -78,7 +80,6 @@
 | 佩勒升级 | [Pelle/Upgrades](https://antimatterdimensions.wiki.gg/wiki/Pelle%2FUpgrades) | 2707 | 是 |
 | 膨胀升级 | [Dilation/Upgrades](https://antimatterdimensions.wiki.gg/wiki/Dilation%2FUpgrades) | 3158 | 否 |
 | 膨胀升级（被毁灭的现实） | [Dilation/Upgrades (Doomed)](https://antimatterdimensions.wiki.gg/wiki/Dilation%2FUpgrades_(Doomed)) | 3159 | 是 |
-| 时间膨胀 | [Dilation](https://antimatterdimensions.wiki.gg/wiki/Dilation) | 3323 | 是 |
 | 术语（佩勒用词） | [Terminology](https://antimatterdimensions.wiki.gg/wiki/Terminology) | 3098 | 否 |
 | 太阳神 | [Ra](https://antimatterdimensions.wiki.gg/wiki/Ra) | 3387 | 是 |
 | 太阳神·引语 | [Ra/Quotes](https://antimatterdimensions.wiki.gg/wiki/Ra%2FQuotes) | 2782 | 是 |
@@ -92,7 +93,6 @@
 | 无名氏 | [The Nameless Ones](https://antimatterdimensions.wiki.gg/wiki/The_Nameless_Ones) | 3372 | 是 |
 | 无名氏·引语 | [The Nameless Ones/Quotes](https://antimatterdimensions.wiki.gg/wiki/The_Nameless_Ones%2FQuotes) | 2790 | 是 |
 | 无限升级（升级表） | [Infinity Upgrades/Upgrades](https://antimatterdimensions.wiki.gg/wiki/Infinity_Upgrades%2FUpgrades) | 2909 | 否 |
-| 映像升级 | [Imaginary Upgrades](https://antimatterdimensions.wiki.gg/wiki/Imaginary_Upgrades) | 3358 | 是 |
 | 永恒里程碑 | [Eternity Milestones](https://antimatterdimensions.wiki.gg/wiki/Eternity_Milestones) | 3321 | 是 |
 | 永恒升级 | [Eternity Upgrades](https://antimatterdimensions.wiki.gg/wiki/Eternity_Upgrades) | 3346 | 是 |
 | 永恒挑战·挑战明细 | [Eternity Challenges/Challenges](https://antimatterdimensions.wiki.gg/wiki/Eternity_Challenges%2FChallenges) | 3157 | 是 |
@@ -109,10 +109,12 @@
 - 逐页语义审校记录：`docs/translation/reviews/2026-11-23-无限阶段第三批.md`（打破无限、无限维度、普通挑战、无限挑战，共 4 篇）。
 - 逐页语义审校记录：`docs/translation/reviews/2026-11-23-永恒阶段第四批.md`（永恒、时间维度、时间研究、永恒挑战，共 4 篇）。
 - 逐页语义审校记录：`docs/translation/reviews/2026-11-23-现实阶段第五批.md`（现实、现实升级、符文炼金、黑洞，共 4 篇）。
+- 逐页语义审校记录：`docs/translation/reviews/2026-11-23-现实扩展第六批.md`（复兴、虚幻升级、充能无限升级、时间膨胀，共 4 篇）。
 - 60 篇固定来源 API 核对记录：`docs/translation/reviews/2026-11-23-原文来源核对.md`。
 
 ## 维护说明
 
+- 2026-11-23：完成第六批逐段语义审校；按 `source-manifest.json` 更新为 REVIEWED 23 篇、STRUCTURE CHECKED 37 篇，并新增四篇的页面级审校记录。
 - 2026-11-23：完成第五批逐段语义审校；按 `source-manifest.json` 更新为 REVIEWED 19 篇、STRUCTURE CHECKED 41 篇，并新增四篇的页面级审校记录。
 - 2026-11-23：完成第四批逐段语义审校；按 `source-manifest.json` 更新为 REVIEWED 15 篇、STRUCTURE CHECKED 45 篇，并新增四篇的页面级审校记录。
 - 2026-11-23：完成第三批逐段语义审校；按 `source-manifest.json` 更新为 REVIEWED 11 篇、STRUCTURE CHECKED 49 篇，并新增四篇的页面级审校记录。
