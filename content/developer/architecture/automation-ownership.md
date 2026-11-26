@@ -119,4 +119,4 @@ wantCrunch=true,  ownedByMod=false, pausedByStagePolicy=true  → false
 - [`OrekiManagedAutobuyerAuthority.kt`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiManagedAutobuyerAuthority.kt)：托管目标的纯判据。
 - [`OrekiAutomationScheduler.kt`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiAutomationScheduler.kt)：执行节拍、预约和结果记账。
 
-本文只完成源码阅读与文档写作，未执行 Android APK 构建、设备操作或长时间自动化验收。
+本文讨论的是源码中的所有权边界；要判断某个候选 APK 的设备行为，还需将这些判据与对应版本的构建产物和运行记录对照。

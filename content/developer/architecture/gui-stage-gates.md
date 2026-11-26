@@ -80,7 +80,7 @@ OrekiStageAuto 的阶段与目标选择
 
 ## 来源与边界
 
-主要实现见 [`OrekiGuiStage.kt`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiGuiStage.kt)、[`OrekiStageAuto.kt`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiStageAuto.kt) 与 [`GameApi.kt`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/GameApi.kt)（已用 GitHub API 核对，HTTP 200，核对日 2026-11-26）。玩家向说明见[阶段解锁与页面显示](/player/gameplay/stage-gates)。历史门禁证据仍可从[旧版事实记录](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/tree/3b2d8284f2aca7132168998ee32497b3c4c17b8e/reports/R101-p0-fix)追溯，但历史结果不等于当前候选 APK 的复验结果。
+主要实现见 [`OrekiGuiStage.kt`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiGuiStage.kt)、[`OrekiStageAuto.kt`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiStageAuto.kt) 与 [`GameApi.kt`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/GameApi.kt)。这些源码说明阶段判定如何读取状态；玩家向说明见[阶段解锁与页面显示](/player/gameplay/stage-gates)。历史门禁证据仍可从[旧版事实记录](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/tree/3b2d8284f2aca7132168998ee32497b3c4c17b8e/reports/R101-p0-fix)追溯，但历史运行结果不等于当前候选 APK 的行为。
 
 ## 相关条目
 
