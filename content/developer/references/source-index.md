@@ -1,90 +1,76 @@
 ---
-title: "源码索引：从问题反推证据"
-description: "按读者问题定位 Android/Web 源码、构建产物、存档样本和历史证据"
+title: "来源索引：怎样从证据找到真正的代码"
+description: "把源码、构建资料、产物、存档样本与历史记录分层，建立可复核的 Android/Web 技术调查路径"
 tags:
+  - 开发者
   - 参考
   - 源码
-  - 证据
 aliases:
   - "/references/source-index"
 ---
 
-源码索引不是文件名目录，而是一张“问题 → 证据 → 验证”的路线图。先明确要证明什么，再选择最接近问题的证据层：源码解释实现，构建配置解释是否会进入产物，APK/DEX 解释运行时实际装进了什么，样本和设备行为解释某次运行发生了什么，历史记录只解释变化背景。
+来源索引是开发者参考区的规范证据页。它不复制源码，也不把旧报告改写成结论，而是回答一个更实际的问题：当你看到一句技术说明时，应该回到哪一层材料确认它。
 
-## 先写出要证明的句子
+## 先固定问题和版本
 
-把“我想查一下存档”改写成可检验的问题，检索会立刻收敛：
+先写清楚平台、版本、候选 Commit 和要回答的问题：
 
-| 问题                         | 第一入口                                      | 必须补的证据                             |
-| ---------------------------- | --------------------------------------------- | ---------------------------------------- |
-| 一个按钮最终改了哪个状态？   | Web 组件或 Android Kotlin 入口                | 调用链、状态写入点、一次行为复现         |
-| 某字段为什么在旧档里不存在？ | Web `migrations.js`                           | 输入版本、迁移函数、迁移前后字段差异     |
-| 存档文本属于哪个平台？       | Web `serializer.js` 或 Android `savecodec-rs` | 前缀、编码步骤、固定样本                 |
-| Kotlin 代码真的进 APK 了吗？ | `app/build.gradle.kts` 与源码接管清单         | APK/DEX、映射或产物检查                  |
-| 一个旧结论今天还成立吗？     | 当前固定提交的源码                            | 当前构建或运行证据；历史报告不能单独作答 |
+- “谁改变了这个状态？”应从固定提交的源码入口沿调用链读到实际状态改变；
+- “这段代码是否进入 APK？”应继续查看 `app` 构建配置、生成输入和产物；
+- “存档是否能读写？”源码只能说明格式和迁移意图，还需要固定样本与真实读写证据；
+- “为什么过去这样设计？”才进入 Issue、PR 和历史归档。
 
-Issue、PR、Commit 和 CI 页面适合保存证据链接与变化背景，不应代替正文解释技术原理。读者需要的是能复现的入口，而不是一串工作流水账。
+固定版本不是形式主义。混淆名、构建输入、Web 存储字段和组件入口都会变化；没有版本边界的“源码路径”很可能只是另一个候选的事实。
 
-## Android：从语义入口走到产物
+## 四层证据
 
-[AD-Oreki-Edition-Android](https://github.com/OrekiDawson/AD-Oreki-Edition-Android) 的本文核查基线为 [`fb1299a132f134eb4fab009643ee3fc3d6c57edf`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/tree/fb1299a132f134eb4fab009643ee3fc3d6c57edf)。建议按下面的顺序查：
+| 层次   | 能回答什么                                               | 不能单独证明什么                         |
+| ------ | -------------------------------------------------------- | ---------------------------------------- |
+| 实现层 | 当前源码、构建脚本和固定版本的上游代码怎样设计、怎样调用 | 不能证明代码已经进入产物或设备运行正常   |
+| 产物层 | APK、DEX、mapping、资源和构建输出是否包含某个实现        | 不能单独证明玩家流程、存档兼容或结算正确 |
+| 行为层 | 设备、浏览器、日志和固定样本在特定候选下实际做了什么     | 不能把一次候选结果推广为所有版本         |
+| 历史层 | Issue、PR、报告和旧版本为什么发生变化                    | 不能覆盖当前实现的直接证据               |
 
-1. 从 `app/src/main/kotlin/` 的接管层开始。先找游戏事件、状态容器和反射入口，弄清 MOD 代码试图控制什么；不要把混淆类名本身当作稳定 API。
-2. 用 `baseline/versions/3.21/bindings.json` 和 `docs/deobfuscation/data/first-party-3.21-index.csv` 对照符号。它们是特定版本的映射证据，不是未来版本的兼容承诺。
-3. 查看 `app/build.gradle.kts`、`build-logic/` 和源码接管清单，确认源码是否被编译、哪个变体会打包它、是否还有 Smali/Dex 后处理。
-4. 最后检查 APK/DEX 产物。源码存在只能证明工作树里有文件；只有产物中出现预期类、方法和资源，才证明它进入了运行时。
+遇到冲突时，先写清版本和问题边界，再回到离问题最近的证据层。一个“源码看起来合理”的解释，不能代替一次真实导入、安装或运行验证；一份 CI 记录也不能自动证明玩家流程。
 
-涉及 ABI 或反射时，引用应至少包含固定提交、仓库相对路径、符号名和版本边界。行号可以作为辅助，但不应成为唯一定位方式；短 SHA 也应链接到完整提交。
+## Android：从入口、映射到产物
 
-## Web：从循环和组件走到状态边界
+[AD-Oreki-Edition-Android](https://github.com/OrekiDawson/AD-Oreki-Edition-Android) 的本批核查基线是 [`9d8fc46`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/tree/9d8fc46ce99279720b5b3068027bb76bceb35756)。建议按三步调查：
 
-[AD-Oreki-Edition-Web](https://github.com/OrekiDawson/AD-Oreki-Edition-Web) 的本文核查基线为 [`e1c93caa758de6c39cf814582123d4a35319eb25`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/tree/e1c93caa758de6c39cf814582123d4a35319eb25)。`src/core/` 是主入口，但不同问题要落到不同边界：
+1. 先读 `app/src/main/kotlin/` 中的 Kotlin 接管层。`GameApi.kt` 集中缓存混淆宿主的类、字段和方法解析；架构页解释这些入口怎样被调度器使用。
+2. 再读基线绑定和 DEX/Smali 证据，确认一个短名类的真实签名、继承关系和调用契约。绑定表是这个版本的映射，不是未来版本的永久 API。
+3. 最后读 [`app/build.gradle.kts`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/9d8fc46ce99279720b5b3068027bb76bceb35756/app/build.gradle.kts)、`build-logic/`、`app/proguard-rules.pro` 和产物检查，确认代码怎样进入变体、APK 和运行时。
 
-- 游戏循环和数值变化：从循环调度进入具体机制模块，追踪“读状态 → 计算 → 写状态”。
-- 读档与保存：读 [`storage.js`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/e1c93caa758de6c39cf814582123d4a35319eb25/src/core/storage/storage.js)，再读 [`serializer.js`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/e1c93caa758de6c39cf814582123d4a35319eb25/src/core/storage/serializer.js) 和 [`migrations.js`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/e1c93caa758de6c39cf814582123d4a35319eb25/src/core/storage/migrations.js)。只有三者合起来，才能解释“文本能解码、对象能迁移、状态能恢复”之间的差异。
-- 用户操作：从组件事件进入服务或状态模块，确认是否存在保存条件、阶段门禁或异步模拟。
-- 视觉异常：先确认状态是否正确，再沿渲染层追查；不要用截图反推数据结构。
+源码能证明设计和调用关系；只有构建输入、APK/DEX 与运行证据都对上，才可以继续声称“该实现到达设备”。
 
-一个实用的检索组合是：先搜功能名，再搜状态字段，最后搜写入点和测试。只搜 `save` 会把自动保存、导出文件、备份槽和云端状态混在一起；按边界分组能显著减少误判。
+## Web：从游戏循环走到存档边界
 
-## 证据的四层关系
+[AD-Oreki-Edition-Web](https://github.com/OrekiDawson/AD-Oreki-Edition-Web) 的调查应固定一个具体 Commit，从 `src/core/` 的游戏循环和机制模块开始，再进入存储目录。存档问题不要只搜索 `save`：应同时核对槽位/备份、序列化编码和字段迁移，区分“文本无法解码”“对象能解码但缺少字段”“读档后阶段重新计算”三类故障。
 
-### 实现层：它应该怎样工作
+Web 源码说明状态怎样变化，浏览器实际行为才说明某个候选怎样运行。不要用源码仓库的分支或 CI 成功替代正式站点验收。
 
-固定提交中的源码、配置和迁移函数解释设计意图与控制流。适合回答“为什么会这样”，不单独证明某个 APK 或浏览器实例真的运行了这段代码。
+## 一条可复核的调查链
 
-### 产物层：它实际装进了什么
-
-APK、DEX、R8 映射、资源包和构建输出解释编译链的结果。它能发现源码与产物脱节，但不能单独解释用户操作后的状态变化。
-
-### 行为层：它在这个条件下做了什么
-
-设备日志、浏览器复现、固定存档样本和测试结果解释现实行为。必须同时记录版本、输入、步骤和成功判据；“我点过一次”不是可复核证据。
-
-### 历史层：它为什么曾经这样做
-
-PR、Issue、报告和旧版本归档有助于理解迁移背景、已知回归和弃用路径。它们不能覆盖当前源码，也不能把历史 PASS 迁移成当前版本 PASS。
-
-当证据冲突时，先固定版本和问题边界，再选择距离问题最近的层交叉验证。例如“旧档读入后显示新档”不能只引用迁移报告：需要同时看当前迁移源码、原始存档哈希和一次重启后的行为。
-
-## 原版资料与许可证边界
-
-涉及原版机制时，优先核对固定版本的[官方源码](https://github.com/IvarK/AntimatterDimensionsSourceCode/tree/5409e320cecef96a917cca1dfb68f1f183e499ca)，社区 Wiki 用于术语和页面结构对照。改编 Wiki 内容遵守 [CC BY-SA 4.0](https://antimatterdimensions.wiki.gg/wiki/Meta:Copyrights)；代码、截图、构建报告和存档样本分别遵守各自仓库或来源的许可。索引应把读者带回原始证据，不复制受限材料，也不把内部审查记录混进技术正文。
-
-## 一次调查的最短闭环
+一次可靠调查通常沿着这条链走：
 
 ```text
-症状
-  -> 固定版本与输入
-  -> 找到语义入口
-  -> 追到状态/编码/构建边界
-  -> 选择最小可复现样本
-  -> 记录实际行为
-  -> 用产物或源码交叉验证
+可观察症状
+  → 固定平台、版本和 Commit
+  → 找到源码入口与调用者
+  → 确认构建/编码/存档边界
+  → 准备最小样本
+  → 记录真实行为
+  → 用另一层证据交叉验证
 ```
 
-报告结论时，把“源码显示的设计”“本次运行观察到的行为”和“尚未验证的推断”分开写。旧 URL、历史文件和废弃入口保留在历史或迁移记录中，公开导航只指向规范页面。
+调查记录应保留相对路径、符号、适用版本和证据类型。行号会随着编辑移动，短 SHA 也容易失去上下文；优先链接固定 Commit 的具体文件，并说明该链接支持什么、不支持什么。
 
-## 相关条目
+## 原版资料与许可
 
-[Android 架构](/developer/architecture/android) · [Web 架构](/developer/architecture/web) · [DEX 与 ABI](/developer/reverse-engineering/dex-abi) · [存档兼容排查](/developer/troubleshooting/save-compatibility) · [故障排查](/developer/troubleshooting/) · [历史归档](/developer/history/)
+涉及原版机制时，优先核对固定版本的[官方网页源码](https://github.com/IvarK/AntimatterDimensionsSourceCode/tree/5409e320cecef96a917cca1dfb68f1f183e499ca)，社区 Wiki 主要用于术语和分类参考。改编社区 Wiki 内容须遵守其 [CC BY-SA 4.0 说明](https://antimatterdimensions.wiki.gg/wiki/Meta:Copyrights)；代码、图像和报告分别遵守各自来源的许可证与署名要求。
+
+来源索引的职责是把读者带回原文，而不是复制受版权保护的材料。旧入口、历史报告和不再公开的页面可在迁移记录或历史档案中追溯；正式正文应链接当前规范页面。
+
+## 继续阅读
+
+[参考资料入口](/developer/references/) · [Android 架构](/developer/architecture/android) · [Web 架构](/developer/architecture/web) · [DEX 与 ABI](/developer/reverse-engineering/dex-abi) · [构建与交付](/developer/build/) · [故障排查](/developer/troubleshooting/)

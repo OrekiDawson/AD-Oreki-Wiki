@@ -1,5 +1,5 @@
 // 本地最小扩展：复用官方 @quartz-community/explorer，仅注入固定的一级目录语义顺序。
-// 目的：稳定语义顺序（游戏总览 → … → 历史归档 → 站务），不移动文件、不改 URL、不做 DOM hack。
+// 目的：稳定语义顺序（玩家专区 → 开发者专区 → 站务），不移动文件、不改 URL、不做 DOM hack。
 // 说明：官方 Explorer 通过 options.sortFn / mapFn 支持自定义排序与显示名（见其 dist/index.d.ts），
 // 但 quartz.config.yaml 无法表达函数；因此以本地组件插件方式注入。未修改官方包。
 //
@@ -14,7 +14,7 @@ const explorerModule = await import(
 );
 const Explorer = explorerModule.Explorer;
 
-// 一级目录固定语义顺序（slug = 目录名/文件名；不随显示名变化，URL 不变）。
+// 一级目录和开发者专区固定语义顺序（slug = 目录名/文件名；不随显示名变化，URL 不变）。
 function compare(a, b) {
   const ROOT_ORDER = [
     "player", // 1 玩家专区
@@ -22,13 +22,31 @@ function compare(a, b) {
   ];
   // 末尾独立站务区（页脚也有固定链接）。
   const STATION = {
+    "all-entries": 90,
+    "recent-updates": 91,
     "wiki-rules": 200,
     "wiki-not": 201,
     copyright: 202,
     "how-to-use": 203,
   };
+  const DEVELOPER_ORDER = {
+    "developer": 0,
+    "developer/first-contribution": 10,
+    "developer/project-overview": 20,
+    "developer/architecture": 30,
+    "developer/reverse-engineering": 40,
+    "developer/build": 50,
+    "developer/troubleshooting": 60,
+    "developer/current": 70,
+    "developer/references": 80,
+    "developer/evidence": 90,
+    "developer/ai-summaries": 100,
+    "developer/editorial-guidelines": 110,
+  };
   const rank = (node) => {
     if (!node || !node.slugSegment) return 100;
+    const key = (node.slug || "").replace(/\/index$/, "");
+    if (DEVELOPER_ORDER[key] !== undefined) return DEVELOPER_ORDER[key];
     if (STATION[node.slugSegment] !== undefined) return STATION[node.slugSegment];
     const idx = ROOT_ORDER.indexOf(node.slugSegment);
     return idx === -1 ? 100 : idx;
@@ -52,13 +70,72 @@ function mapNode(node) {
     "wiki-not": "本站不是什么",
     copyright: "版权与许可",
     "how-to-use": "本站使用说明",
+    "developer/first-contribution": "第一次改动",
+    "developer/project-overview": "项目概览",
+    "developer/architecture": "系统架构",
+    "developer/reverse-engineering": "源码与逆向",
+    "developer/build": "构建与发布",
+    "developer/troubleshooting": "故障排查",
+    "developer/current": "项目状态",
+    "developer/references": "参考资料",
+    "developer/evidence": "运行证据",
+    "developer/ai-summaries": "AI 摘要",
+    "developer/editorial-guidelines": "编辑指南",
+    "developer/architecture/android": "Android 架构",
+    "developer/architecture/web": "Web 架构",
+    "developer/architecture/parity": "双端一致性",
+    "developer/architecture/celestial-implementation": "天神实现",
+    "developer/architecture/numeric-model": "超大数值",
+    "developer/architecture/kotlin-runtime": "Kotlin 运行时",
+    "developer/reverse-engineering/dex-abi": "DEX 与 ABI",
+    "developer/build/agp": "AGP 构建",
+    "developer/build/r8": "R8",
+    "developer/build/apk-signing": "APK 签名",
+    "developer/build/ci-cd": "CI/CD",
+    "developer/troubleshooting/coroutine-abi": "协程 ABI",
+    "developer/troubleshooting/save-compatibility": "存档兼容",
+    "developer/current/known-issues": "已知问题",
+    "developer/current/project-status": "双端状态",
+    "developer/current/release-status": "发布资格",
+    "developer/references/source-index": "来源索引",
   };
-  if (node && node.slugSegment && SIDEBAR_LABEL[node.slugSegment]) {
-    node.displayName = SIDEBAR_LABEL[node.slugSegment];
+  // 只有存在真实下级页面的节点才是分类；仅有 index.md 的目录降级为普通链接。
+  if (node && node.isFolder && (!node.children || node.children.length === 0) && node.data) {
+    node.isFolder = false;
+  }
+  const labelKey = node?.slug?.replace(/\/index$/, "");
+  if (node && labelKey && SIDEBAR_LABEL[labelKey]) {
+    node.displayName = SIDEBAR_LABEL[labelKey];
   }
   return node;
 }
 
 export function OrderedExplorer(opts = {}) {
-  return Explorer({ ...opts, sortFn: compare, mapFn: mapNode });
+  const explorer = Explorer({
+    ...opts,
+    sortFn: compare,
+    mapFn: mapNode,
+    filterFn: (node) => !(node.isFolder && (!node.children || node.children.length === 0) && !node.data),
+  });
+  const expandCurrent = `
+document.addEventListener("nav", () => {
+  window.setTimeout(() => {
+    const explorer = document.querySelector(".explorer");
+    if (!explorer) return;
+    const current = location.pathname.replace(/^\\/+|\\/+$/g, "").split("/").filter(Boolean);
+    for (const outer of explorer.querySelectorAll(".folder-outer")) {
+      const path = outer.previousElementSibling?.dataset.folderpath || "";
+      const parts = path.split("/").filter(Boolean);
+      // 正式分类与条目始终可见；当前路径仍由 Explorer 自带 active 类高亮并滚动定位。
+      const open = parts.length > 0;
+      outer.classList.toggle("open", open);
+      const parent = outer.previousElementSibling;
+      if (parent) parent.querySelector(".folder-icon")?.setAttribute("aria-expanded", open ? "true" : "false");
+    }
+  }, 0);
+}, { passive: true });
+// current-page-ancestors: all formal folders remain visible after SPA navigation; active is positioned by Explorer.
+`;
+  explorer.afterDOMLoaded = [explorer.afterDOMLoaded || "", expandCurrent];
+  return explorer;
 }

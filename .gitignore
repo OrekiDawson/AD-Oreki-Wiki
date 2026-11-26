@@ -2,6 +2,8 @@ node_modules
 public
 .quartz
 .quartz-build
+/Wikipedia/
 quartz/
 .DS_Store
 *.log
+/Wikipedia/

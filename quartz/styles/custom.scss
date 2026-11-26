@@ -1,0 +1,195 @@
+@use "./variables.scss" as *;
+
+// 全站使用操作系统原生字体；数学公式的 KaTeX 字体由数学插件单独管理。
+:root {
+  --headerFont: sans-serif;
+  --bodyFont: sans-serif;
+  --codeFont: ui-monospace, monospace;
+}
+
+// 普通内容统一走系统无衬线字体。代码和 KaTeX 在更具体的选择器中保留自己的字体，
+// 避免 Android 对中文、拉丁字母和数字分别套用 Quartz 的网页字体。
+:where(body, button, input, textarea, select, .page, .sidebar, .search, article, article p,
+  article li, article td, article th, article blockquote, article a, article strong, article em,
+  .explorer, .explorer-content, .table-of-contents) {
+  font-family: var(--bodyFont);
+}
+
+:where(h1, h2, h3, h4, h5, h6, .page-title, .article-title, .folder-container div > a,
+  .folder-container div > button, .nav-folder-title) {
+  font-family: var(--headerFont);
+}
+
+:where(pre, code, kbd, samp) {
+  font-family: var(--codeFont);
+}
+
+:where(.katex, .katex-display, .math-inline, .math-block) {
+  font-family: KaTeX_Main, KaTeX_Math, var(--bodyFont);
+}
+
+// 百科页面切换应立即显示目标内容；保留 Quartz enableSPA 的客户端导航，不显示进度条或过渡动画。
+.navigation-progress,
+.page-transition,
+#quartz-body.page-transition {
+  display: none !important;
+  animation: none !important;
+  transition: none !important;
+}
+
+// 目录独立滚动，正文不随长导航被挤出视口。
+@media not all and ($mobile) {
+  .sidebar.left:has(.explorer) .explorer-content {
+    max-height: calc(100vh - 5.5rem);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+}
+
+::view-transition-group(root),
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none !important;
+}
+
+body[data-slug="index"] {
+  .page-header { margin-bottom: 0; }
+  .popover-hint > h1 { display: none; }
+  .home-shell { max-width: 70rem; margin: 0 auto; }
+  .home-hero {
+    position: relative;
+    overflow: hidden;
+    padding: clamp(2.4rem, 7vw, 5.5rem) clamp(1.25rem, 5vw, 4.5rem);
+    border: 1px solid color-mix(in srgb, var(--secondary) 20%, transparent);
+    border-radius: 1.5rem;
+    background: radial-gradient(circle at 84% 18%, color-mix(in srgb, var(--tertiary) 22%, transparent), transparent 32%), linear-gradient(135deg, color-mix(in srgb, var(--secondary) 13%, var(--light)), var(--light));
+  }
+  .home-hero::after {
+    position: absolute;
+    right: -8rem;
+    bottom: -10rem;
+    width: 22rem;
+    height: 22rem;
+    border: 1px solid color-mix(in srgb, var(--secondary) 20%, transparent);
+    border-radius: 50%;
+    content: "";
+  }
+  .home-mark {
+    float: right;
+    width: clamp(4.5rem, 12vw, 8rem);
+    margin: 0 0 1rem 2rem;
+    filter: drop-shadow(0 0 1.4rem color-mix(in srgb, var(--secondary) 28%, transparent));
+  }
+  .home-kicker {
+    margin: 0 0 0.8rem;
+    color: var(--secondary);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+  .home-hero h1 { margin: 0; font-size: clamp(2.1rem, 6vw, 4.3rem); letter-spacing: -0.04em; }
+  .home-lede { max-width: 38rem; margin: 1.2rem 0 0; font-size: clamp(1.05rem, 2.2vw, 1.35rem); line-height: 1.75; }
+  .home-choices { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin: 1.25rem 0 2.4rem; }
+  .home-card {
+    display: flex;
+    min-height: 13rem;
+    flex-direction: column;
+    padding: 1.4rem;
+    border: 1px solid var(--lightgray);
+    border-radius: 1.1rem;
+    background: color-mix(in srgb, var(--light) 92%, var(--secondary));
+    box-shadow: 0 0.6rem 1.6rem color-mix(in srgb, var(--dark) 7%, transparent);
+    text-decoration: none;
+    transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+  }
+  .home-card:hover, .home-card:focus-visible {
+    transform: translateY(-0.2rem);
+    border-color: var(--secondary);
+    box-shadow: 0 1rem 2rem color-mix(in srgb, var(--secondary) 16%, transparent);
+  }
+  .home-card-index { color: var(--tertiary); font-family: var(--bodyFont); font-size: 0.8rem; }
+  .home-card-title { margin-top: 1.8rem; color: var(--dark); font-size: 1.55rem; font-weight: 750; }
+  .home-card-copy { margin-top: 0.6rem; color: var(--darkgray); line-height: 1.65; }
+  .home-card-link { margin-top: auto; padding-top: 1rem; color: var(--secondary); font-weight: 700; }
+  .home-section { margin: clamp(2.5rem, 6vw, 4.5rem) 0; }
+  .home-section-heading { margin-bottom: 1.2rem; }
+  .home-section-heading .home-kicker { margin-bottom: 0.35rem; }
+  .home-section h2 { margin: 0; font-size: clamp(1.45rem, 3vw, 2.1rem); letter-spacing: -0.025em; }
+  .home-feature-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.85rem; }
+  .home-feature, .home-tech-grid a {
+    display: flex;
+    min-height: 8rem;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1.1rem 1.15rem;
+    border-left: 3px solid var(--tertiary);
+    background: color-mix(in srgb, var(--lightgray) 30%, transparent);
+    text-decoration: none;
+  }
+  .home-feature:hover, .home-feature:focus-visible, .home-tech-grid a:hover, .home-tech-grid a:focus-visible {
+    background: color-mix(in srgb, var(--secondary) 10%, var(--light));
+  }
+  .home-feature strong, .home-tech-grid b { color: var(--dark); font-size: 1.1rem; }
+  .home-feature span, .home-tech-grid span { color: var(--darkgray); line-height: 1.6; }
+  .home-facts { padding: clamp(1.2rem, 4vw, 2rem); border-radius: 1rem; background: color-mix(in srgb, var(--tertiary) 9%, var(--light)); }
+  .home-fact-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.9rem 2rem; margin: 0; padding-left: 1.2rem; }
+  .home-fact-list li { padding-left: 0.25rem; line-height: 1.75; }
+  .home-fact-list a { white-space: nowrap; }
+  .home-journey { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 0.5rem; }
+  .home-journey a { display: flex; min-height: 7rem; flex-direction: column; justify-content: space-between; padding: 0.9rem; border-top: 2px solid var(--secondary); background: color-mix(in srgb, var(--secondary) 7%, var(--light)); text-decoration: none; }
+  .home-journey b { color: var(--dark); font-size: 1.05rem; }
+  .home-journey span { color: var(--darkgray); font-size: 0.9rem; line-height: 1.5; }
+  .home-tech-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.85rem; }
+  .home-reference, .home-contribute { padding-top: 1.4rem; border-top: 1px solid var(--lightgray); }
+  .home-inline-links { display: flex; flex-wrap: wrap; gap: 0.55rem 1rem; }
+  .home-inline-links a { white-space: nowrap; }
+  @media all and ($mobile) {
+    .home-hero { padding: 2rem 1.1rem 2.2rem; border-radius: 1rem; }
+    .home-mark { width: 4.5rem; margin-left: 1rem; }
+    .home-choices { grid-template-columns: 1fr; gap: 0.8rem; margin-bottom: 1.8rem; }
+    .home-card { min-height: 10rem; }
+    .home-card-title { margin-top: 1.1rem; }
+    .home-section { margin: 2.5rem 0; }
+    .home-feature-grid, .home-fact-list, .home-tech-grid { grid-template-columns: 1fr; }
+    .home-journey { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .home-journey a { min-height: 6.2rem; }
+  }
+}
+
+// MediaWiki 式百科组件：统一语义外观，页面正文只需使用对应 class。
+.infobox {
+  float: right;
+  width: min(20rem, 38%);
+  margin: 0 0 1rem 1.5rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--lightgray);
+  border-top: 3px solid var(--secondary);
+  background: color-mix(in srgb, var(--lightgray) 22%, var(--light));
+  font-size: 0.92rem;
+}
+.infobox caption, .infobox-title { margin-bottom: 0.55rem; color: var(--dark); font-weight: 700; text-align: center; }
+.infobox th { color: var(--darkgray); font-weight: 600; text-align: left; }
+.wikitable { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+.wikitable th, .wikitable td { border: 1px solid var(--lightgray); padding: 0.45rem 0.65rem; vertical-align: top; }
+.wikitable th { background: color-mix(in srgb, var(--secondary) 10%, var(--light)); color: var(--dark); }
+.hatnote, .disambig, .main-article, .see-also { margin: 0 0 1rem; padding: 0.65rem 0.9rem; border-left: 3px solid var(--tertiary); color: var(--darkgray); background: color-mix(in srgb, var(--tertiary) 8%, var(--light)); }
+.navbox { margin: 1.5rem 0 0; padding: 0.75rem 1rem; border: 1px solid var(--lightgray); background: color-mix(in srgb, var(--lightgray) 20%, var(--light)); }
+.navbox-title { color: var(--dark); font-weight: 700; }
+.gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr)); gap: 0.75rem; margin: 1rem 0; }
+.gallery figure { margin: 0; text-align: center; }
+.gallery img { max-width: 100%; height: auto; border: 1px solid var(--lightgray); }
+@media all and ($mobile) {
+  // 移动端导航只保留必要层级，避免长标题换行挤占目录空间。
+  .sidebar.left:has(.explorer) { padding: 0.35rem 0 !important; }
+  .explorer-content { padding: 3.25rem 0.7rem 1rem !important; }
+  .explorer-content .folder-container div > a,
+  .explorer-content .folder-container div > button span,
+  .explorer-content ul li > a { font-size: 0.9rem; line-height: 1.3rem; }
+  .explorer-content .folder-outer > ul { margin-left: 4px; padding-left: 0.55rem; }
+  // 移动端只提供整个导航面板的开关；正式分类和条目保持完整展开。
+  .explorer-content .folder-icon { display: none; }
+  .explorer-content .folder-outer { visibility: visible; grid-template-rows: 1fr; }
+  .infobox { float: none; width: auto; margin: 1rem 0; }
+  .wikitable { display: block; overflow-x: auto; }
+}

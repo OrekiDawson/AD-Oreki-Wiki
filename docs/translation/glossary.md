@@ -2,6 +2,8 @@
 
 本表是 `content/player/original/` 翻译专区的统一译名来源。优先级：
 
+机器可读的同步源为 [`terminology.json`](./terminology.json)；批量检查、导航和图注应优先读取该文件，本文用于人工审阅和解释依据。
+
 1. **游戏内官方简体中文文本**（Android 官方 3.21.0 资源 `values-zh-rCN`，见本表「依据」列标 `游戏内`）；
 2. 本项目既有 MOD 技术条目的既有中文术语（标 `项目`）；
 3. 社区 Wiki 英文条目的通用译法（标 `Wiki`）。
