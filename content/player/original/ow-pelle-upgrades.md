@@ -1,6 +1,6 @@
 ---
 title: "佩勒升级"
-description: "原版 Wiki《Pelle/Upgrades》子页面的完整简体中文翻译：22 项不可重复佩勒升级与成本"
+description: "原版 Wiki《Pelle/Upgrades》子页面的简体中文翻译：22 项不可重复佩勒升级与成本"
 tags:
   - 原版Wiki翻译
   - 天神
@@ -22,31 +22,31 @@ aliases:
 
 ## 不可重复升级
 
-| ID | Key | 成本（RS） | 描述 |
-| --- | --- | --- | --- |
-| 0 | antimatterDimAutobuyers1 | 1e5（100 K） | 获得第 1–4 反物质维度的永久自动购买器 |
-| 1 | dimBoostAutobuyer | 5e5（500 K） | 获得维度提升的永久自动购买器 |
-| 2 | keepAutobuyers | 5e6（5 M） | 自动购买器升级不再在末日时重置 |
-| 3 | antimatterDimAutobuyers2 | 2.5e7（25 M） | 获得第 5–8 反物质维度的永久自动购买器 |
-| 4 | galaxyAutobuyer | 1e8（100 M） | 获得反物质星系的永久自动购买器 |
-| 5 | tickspeedAutobuyer | 1e9（1 B） | 获得计数频率升级的永久自动购买器 |
-| 6 | keepInfinityUpgrades | 1e10（10 B） | 无限升级不再在末日时重置 |
-| 7 | dimBoostResetsNothing | 1e11（100 B） | 维度提升不再重置任何内容 |
-| 8 | keepBreakInfinityUpgrades | 1e12（1 T） | 打破无限升级不再在末日时重置 |
-| 9 | IDAutobuyers | 1e14（100 T） | 获得无限维度的永久自动购买器 |
-| 10 | keepInfinityChallenges | 1e15（1 Qa） | 无限挑战的解锁与完成记录不再在末日时重置 |
-| 11 | galaxyNoResetDimboost | 1e16（10 Qa） | 星系不再重置维度提升 |
-| 12 | replicantiAutobuyers | 1e17（100 Qa） | 获得复制器升级的永久自动购买器 |
-| 13 | replicantiGalaxyNoReset | 1e19（10 Qt） | 复制器星系不再在无限时重置 |
-| 14 | eternitiesNoReset | 1e20（100 Qt） | 永恒次数不再在末日时重置 |
-| 15 | timeStudiesNoReset | 1e21（1 Sx） | 时间研究与时间之理不再在末日时重置 |
-| 16 | replicantiStayUnlocked | 1e22（10 Sx） | 复制器永久解锁 |
-| 17 | keepEternityUpgrades | 1e24（1 Sp） | 永恒升级不再在末日时重置 |
-| 18 | TDAutobuyers | 1e25（10 Sp） | 获得时间维度的永久自动购买器 |
-| 19 | keepEternityChallenges | 1e26（100 Sp） | 永恒挑战完成记录不再在末日时重置 |
-| 22 | replicantiGalaxyEM40 | 1e30（1 No） | 复制器星系不再重置其通常重置的任何内容 |
-| 20 | dilationUpgradesNoReset | 1e45 | 膨胀升级不再在末日时重置 |
-| 21 | tachyonParticlesNoReset | 1e50 | 超光速粒子不再在末日时重置 |
+| ID  | Key                       | 成本（RS）     | 描述                                     |
+| --- | ------------------------- | -------------- | ---------------------------------------- |
+| 0   | antimatterDimAutobuyers1  | 1e5（100 K）   | 获得第 1–4 反物质维度的永久自动购买器    |
+| 1   | dimBoostAutobuyer         | 5e5（500 K）   | 获得维度提升的永久自动购买器             |
+| 2   | keepAutobuyers            | 5e6（5 M）     | 自动购买器升级不再在末日时重置           |
+| 3   | antimatterDimAutobuyers2  | 2.5e7（25 M）  | 获得第 5–8 反物质维度的永久自动购买器    |
+| 4   | galaxyAutobuyer           | 1e8（100 M）   | 获得反物质星系的永久自动购买器           |
+| 5   | tickspeedAutobuyer        | 1e9（1 B）     | 获得计数频率升级的永久自动购买器         |
+| 6   | keepInfinityUpgrades      | 1e10（10 B）   | 无限升级不再在末日时重置                 |
+| 7   | dimBoostResetsNothing     | 1e11（100 B）  | 维度提升不再重置任何内容                 |
+| 8   | keepBreakInfinityUpgrades | 1e12（1 T）    | 打破无限升级不再在末日时重置             |
+| 9   | IDAutobuyers              | 1e14（100 T）  | 获得无限维度的永久自动购买器             |
+| 10  | keepInfinityChallenges    | 1e15（1 Qa）   | 无限挑战的解锁与完成记录不再在末日时重置 |
+| 11  | galaxyNoResetDimboost     | 1e16（10 Qa）  | 星系不再重置维度提升                     |
+| 12  | replicantiAutobuyers      | 1e17（100 Qa） | 获得复制器升级的永久自动购买器           |
+| 13  | replicantiGalaxyNoReset   | 1e19（10 Qt）  | 复制器星系不再在无限时重置               |
+| 14  | eternitiesNoReset         | 1e20（100 Qt） | 永恒次数不再在末日时重置                 |
+| 15  | timeStudiesNoReset        | 1e21（1 Sx）   | 时间研究与时间之理不再在末日时重置       |
+| 16  | replicantiStayUnlocked    | 1e22（10 Sx）  | 复制器永久解锁                           |
+| 17  | keepEternityUpgrades      | 1e24（1 Sp）   | 永恒升级不再在末日时重置                 |
+| 18  | TDAutobuyers              | 1e25（10 Sp）  | 获得时间维度的永久自动购买器             |
+| 19  | keepEternityChallenges    | 1e26（100 Sp） | 永恒挑战完成记录不再在末日时重置         |
+| 22  | replicantiGalaxyEM40      | 1e30（1 No）   | 复制器星系不再重置其通常重置的任何内容   |
+| 20  | dilationUpgradesNoReset   | 1e45           | 膨胀升级不再在末日时重置                 |
+| 21  | tachyonParticlesNoReset   | 1e50           | 超光速粒子不再在末日时重置               |
 
 ## 来源与许可
 
