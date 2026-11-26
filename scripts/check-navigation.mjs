@@ -24,6 +24,7 @@ const updatedAt = (file) => {
     Math.floor(fs.statSync(file).mtimeMs / 1000)
   )
 }
+const compareRoutes = (a, b) => (a === b ? 0 : a < b ? -1 : 1)
 const walk = (dir) =>
   fs.readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
     const full = path.join(dir, entry.name)
@@ -105,7 +106,7 @@ for (const route of recentRoutes)
   if (!formalRoutes.has(route)) errors.push(`最近更新索引包含非正式页面：${route}`)
 const expectedRecentRoutes = formal
   .map((file) => ({ route: routeFor(file), updatedAt: updatedAt(file) }))
-  .sort((a, b) => b.updatedAt - a.updatedAt || a.route.localeCompare(b.route))
+  .sort((a, b) => b.updatedAt - a.updatedAt || compareRoutes(a.route, b.route))
   .slice(0, 24)
   .map((page) => page.route)
 const expectedRecentSet = new Set(expectedRecentRoutes)
