@@ -37,13 +37,13 @@ aliases:
 
 薇（V）的玩法围绕特殊成就和目标展开，奖励包括空间之理（Space Theorems），会让时间研究拥有更大的选择空间。[薇资料](https://antimatterdimensions.wiki.gg/wiki/V?oldid=3373)
 
-V 的特殊现实要求在**同一次现实**里同时满足多项条件。不同现实里积攒的临时条件不能简单相加，接近完成也不等于已经具备资格。Oreki Edition 调整过部分门槛，具体数值应以正在使用的版本和游戏内页面为准。
+薇的特殊现实要求在**同一次现实**里同时满足多项条件。不同现实里积攒的临时条件不能简单相加，接近完成也不等于已经具备资格。Oreki Edition 调整过部分门槛，具体数值应以正在使用的版本和游戏内页面为准。
 
 ### 太阳神：把旧系统变成研究对象
 
 太阳神（Ra）会重新利用此前天神的能力，并通过记忆（Memories）等系统逐步强化它们。[太阳神资料](https://antimatterdimensions.wiki.gg/wiki/Ra?oldid=3387)
 
-这不是把前四位天神简单重打一遍。Ra 更像一座研究站：你要判断哪些记忆或强化最能改善下一次现实，而早期奖励也会重新成为成长材料。
+这不是把前四位天神简单重打一遍。太阳神更像一座研究站：你要判断哪些记忆或强化最能改善下一次现实，而早期奖励也会重新成为成长材料。
 
 ### 莱特拉：暗物质带来另一条生产曲线
 
@@ -68,6 +68,6 @@ V 的特殊现实要求在**同一次现实**里同时满足多项条件。不�
 ## 参考资料与相关条目
 
 - [Celestials](https://antimatterdimensions.wiki.gg/wiki/Celestials?oldid=3187)
-- [V 的原版门槛定义](https://github.com/IvarK/AntimatterDimensionsSourceCode/blob/5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/secret-formula/celestials/v.js)
+- [薇的原版门槛定义](https://github.com/IvarK/AntimatterDimensionsSourceCode/blob/5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/secret-formula/celestials/v.js)
 
 [现实与时间研究](/player/gameplay/reality-time-studies) · [挑战与真实结算](/player/gameplay/challenges) · [智能自动购买器](/player/gameplay/automation) · [原版行为与 Oreki Edition 修改](/player/gameplay/original-vs-mod)
