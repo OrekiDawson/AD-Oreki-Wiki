@@ -1,49 +1,35 @@
 ---
 title: "玩家专区"
-description: "从第一次开始游戏到无限、永恒、现实和天神：《反物质维度》与 Oreki Edition 的玩法教程、机制百科、FAQ 和原版中文译文"
+description: "一份可以从头读起、也能随时查阅的《反物质维度》与 Oreki Edition 玩家百科"
 tags:
   - 玩家
   - 导航
 ---
 
-这里是给《反物质维度》与 **Oreki Edition** 玩家阅读的内容。你不需要了解开发编号或构建流程，也能从当前问题直接找到答案。
+欢迎来到玩家专区。这里把《反物质维度》的资源、重置、挑战和后期系统写成可以直接阅读的中文条目；如果你玩的是 Oreki Edition，涉及 MOD 差异的地方会单独说明，不把两套规则混在一起。
 
-## 现在最需要哪一类内容？
+## 先从你眼前的问题开始
 
-| 目的 | 入口 | 适合什么时候读 |
-| --- | --- | --- |
-| 从零开始 | [开始游玩 Oreki Edition](/player/getting-started/) · [MOD 介绍](/player/mods/) | 第一次打开游戏，准备完成第一次大坍缩 |
-| 理解机制 | [玩法机制](/player/gameplay/) 与 [游戏总览](/player/antimatter-dimensions) | 想知道资源、重置、保留项和系统解锁为什么这样设计 |
-| 当前阶段推进 | [无限与永恒](/player/gameplay/progression-infinity-eternity) → [现实与时间研究](/player/gameplay/reality-time-studies) → [天神系统](/player/gameplay/celestials) | 已经进入某个阶段，但不知道下一步选择 |
-| 处理异常 | [玩家常见问题](/player/faq/)、[阶段解锁与页面显示](/player/gameplay/stage-gates)、[存档兼容与自动保存](/player/gameplay/saves) | 按钮不可用、自动化没有动作、更新或导入存档前 |
-| 查原版原文 | [原版 Wiki 中文翻译](/player/original/) | 想核对原版规则，或读写作者保留的原始修订 |
+| 你现在想做什么                     | 从这里开始                                                                                                                                                       |
+| ---------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 第一次打开游戏，不知道该点什么     | [开始游玩 Oreki Edition](/player/getting-started/)                                                                                                               |
+| 想确认下载的是哪个版本             | [下载与版本说明](/player/download-and-version/)                                                                                                                  |
+| 想知道一个资源或重置究竟改变了什么 | [玩法机制](/player/gameplay/) · [游戏总览](/player/antimatter-dimensions)                                                                                        |
+| 已经进入无限、永恒或现实阶段       | [无限与永恒](/player/gameplay/progression-infinity-eternity) · [现实与时间研究](/player/gameplay/reality-time-studies) · [天神系统](/player/gameplay/celestials) |
+| 按钮不可用、存档异常或更新后不放心 | [玩家常见问题](/player/faq/) · [存档兼容与自动保存](/player/gameplay/saves)                                                                                      |
+| 看不懂一个词                       | [术语表](/player/terminology)                                                                                                                                    |
+| 想核对原版规则                     | [原版 Wiki 中文翻译](/player/original/)                                                                                                                          |
 
-## 第一次开始游玩
+## 一条循序渐进的阅读路线
 
-先看 [下载与版本说明](/player/download-and-version/)，确认 Android 正式版、测试版或 Web 入口以及存档注意事项；再按 [开始游玩 Oreki Edition](/player/getting-started/) 操作。
+新档最初的目标很朴素：让低阶维度产出反物质，再用反物质购买更高阶的维度。随着维度提升、维度献祭和反物质星系出现，游戏会不断让你把“这一轮积累”换成“下一轮更快的起点”。[游戏总览](/player/antimatter-dimensions)适合先建立这张地图，再回到具体机制页查公式和条件。
 
-如果你不确定当前版本改了什么，先读 [原版与 Oreki Edition 的区别](/player/gameplay/original-vs-mod)。这部分只解释玩家能看到的规则，不展开开发历史。
+第一次大坍缩后，可以沿着[无限与永恒](/player/gameplay/progression-infinity-eternity)阅读；进入时间研究与现实阶段后，再看[现实与时间研究](/player/gameplay/reality-time-studies)。[挑战与真实结算](/player/gameplay/challenges)解释那些会改变规则的特殊关卡，[智能自动购买器](/player/gameplay/automation)和[存档兼容与自动保存](/player/gameplay/saves)则负责把日常操作和存档风险讲清楚。你不必按顺序读完，知道自己正处在哪个阶段，就能从对应条目继续。
 
-## 按游戏进度阅读
+如果你玩的是 Oreki Edition，先读[MOD 介绍](/player/mods/)和[原版与 Oreki Edition 的区别](/player/gameplay/original-vs-mod)。这两页帮助你判断：眼前的数值是原版设计、MOD 调整，还是某个版本的界面差异。
 
-1. **新档到无限**：维度、维度提升、星系、计数频率与第一次大坍缩。
-2. **打破无限到永恒**：[无限与永恒](/player/gameplay/progression-infinity-eternity)。
-3. **挑战与时间研究**：[挑战与真实结算](/player/gameplay/challenges)、[现实与时间研究](/player/gameplay/reality-time-studies)。
-4. **现实、符文与天神**：[天神系统](/player/gameplay/celestials)。
-5. **自动化与存档**：[智能自动购买器](/player/gameplay/automation)、[存档兼容与自动保存](/player/gameplay/saves)。
+## 原版译文与本站条目的边界
 
-这是阅读路线，不是强制时间表。你可以随时用顶部搜索查找具体术语，或从 [玩法机制总览](/player/gameplay/) 跳到单个系统。
+[原版 Wiki 中文翻译](/player/original/)忠实呈现原版页面。译文保留原文的修订信息、贡献者与 CC BY-SA 4.0 许可说明；它不会为了迎合本站的 MOD 玩法而把原创解释混入译文正文。原版机制与 Oreki Edition 的实际差异，请回到玩家专区的对应条目阅读。
 
-## 原版 Wiki 中文译文
-
-[原版 Wiki 中文翻译](/player/original/) 收藏维度、无限、永恒、现实、挑战、时间研究、天神等原版条目。译文只讲原版内容；MOD 的缩放、自动化和界面差异在玩家机制页单独说明。
-
-每篇译文保留原文来源、修订、贡献者与许可信息。页面标注的 `TRANSLATED`、`STRUCTURE CHECKED`、`REVIEWED` 和 `VERIFIED AGAINST GAME` 表示不同核查深度，不应混为“全部审完”。
-
-## 遇到问题先保护存档
-
-更新、导入或切换版本前，先阅读 [存档兼容与自动保存](/player/gameplay/saves)。按钮或页面看似异常时，不要反复切页、清档或直接修改存档；先按 [玩家常见问题](/player/faq/) 核对版本、资源、前置条件和自动化状态。
-
-如果问题需要核对固定版本、源码或运行记录，可转到 [开发者专区](/developer/)；开发者专区的构建、ABI 和测试记录不是玩家操作步骤的替代品。
-
-[术语表](/player/terminology) · [知识库规则](/wiki-rules) · [版权与许可](/copyright)
+如果你还想阅读源码、构建项目或理解双端实现，可以转到[开发者专区](/developer/)。页面顶部的搜索可以查找具体名称；读到一个陌生机制时，也可以沿着正文中的链接继续探索。这里的目标不是把所有数字堆在一张表里，而是让你知道每次重置失去了什么、留下了什么，以及下一次为什么会更快。
