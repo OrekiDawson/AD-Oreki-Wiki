@@ -120,7 +120,7 @@ for (const f of files) {
   }
   if (!fm.title) fail("缺少 title: " + f);
   if (!fm.description) fail("缺少 description: " + f);
-  if (!fm.tags.length) fail("缺少 tags: " + f);
+  if (!fm.tags.length && !isIndex) fail("缺少 tags: " + f);
 
   // 标题与页面类型
   if (fm.title) {
