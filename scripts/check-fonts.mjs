@@ -19,9 +19,9 @@ for (const { file, text } of configs) {
 }
 if (process.argv[2] !== "--built" && deps["@quartz-community/quartz-fonts"])
   errors.push("package.json 仍依赖 @quartz-community/quartz-fonts")
-if (!/--headerFont:\s*sans-serif\s*;/.test(fs.readFileSync(path.join(root, "quartz/styles/custom.scss"), "utf8")))
+if (!/--headerFont:\s*system-ui\s*,\s*sans-serif\s*;/.test(fs.readFileSync(path.join(root, "quartz/styles/custom.scss"), "utf8")))
   errors.push("标题未绑定系统原生无衬线字体")
-if (!/--bodyFont:\s*sans-serif\s*;/.test(fs.readFileSync(path.join(root, "quartz/styles/custom.scss"), "utf8")))
+if (!/--bodyFont:\s*system-ui\s*,\s*sans-serif\s*;/.test(fs.readFileSync(path.join(root, "quartz/styles/custom.scss"), "utf8")))
   errors.push("正文未绑定系统原生无衬线字体")
 if (!/--codeFont:\s*ui-monospace/.test(fs.readFileSync(path.join(root, "quartz/styles/custom.scss"), "utf8")))
   errors.push("代码未绑定系统原生等宽字体")

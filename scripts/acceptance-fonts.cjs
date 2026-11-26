@@ -53,7 +53,7 @@ function familyAllowed(kind, family) {
   if (kind === 'code') return /ui-monospace|monospace|menlo|consolas|cascadia|sfmono/.test(value);
   if (kind === 'math') return /\bkatex[-_ ]?(?:ams|cal(?:igraphic)?|fraktur|main|math|sans[- ]?serif|script|size[1-4]|typewriter)\b/i.test(value)
     && !/^\s*sans-serif\b/i.test(value.trim());
-  return /system-ui|sans-serif|-apple-system|blinkmacsystemfont|segoe ui|microsoft yahei|noto sans/.test(value)
+  return /system-ui/.test(value)
     && !/source sans|schibsted|roboto|ibm plex|inter|open sans|lato|poppins|nunito/.test(value);
 }
 

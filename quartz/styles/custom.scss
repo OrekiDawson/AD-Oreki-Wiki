@@ -2,10 +2,10 @@
 
 // 全站使用操作系统原生字体；数学公式的 KaTeX 字体由数学插件单独管理。
 :root {
-  // 使用单一系统无衬线族名，避免 Android 将同一段文字分别按
-  // system-ui 与备用族解析，造成中英文、数字看起来不在同一套字形中。
-  --headerFont: sans-serif;
-  --bodyFont: sans-serif;
+  // 让 Android、桌面浏览器直接选择平台 UI 字体；sans-serif 仅作老旧
+  // 浏览器的通用无衬线兜底，不指定任何第三方或网页字体。
+  --headerFont: system-ui, sans-serif;
+  --bodyFont: system-ui, sans-serif;
   --codeFont: ui-monospace, monospace;
 }
 
@@ -14,6 +14,17 @@
 // 拉丁字母在 Android 上出现不同字形，因此这里明确覆盖所有非代码/非数学节点。
 :where(body, body *):not(pre):not(pre *):not(code):not(code *):not(kbd):not(kbd *):not(samp):not(samp *):not(.katex):not(.katex *) {
   font-family: var(--bodyFont) !important;
+  font-synthesis: none;
+  font-variant-numeric: proportional-nums;
+}
+
+// 部分移动浏览器会给表单控件和表格单独套用 UA 字体；这些元素仍属于
+// 普通百科界面，必须走同一套平台无衬线字体。
+:where(button, input, select, textarea, table, th, td, caption, blockquote,
+  figcaption, summary, nav, aside, footer, small, label) {
+  font-family: var(--bodyFont) !important;
+  font-synthesis: none;
+  font-variant-numeric: proportional-nums;
 }
 
 :where(h1, h2, h3, h4, h5, h6, .page-title, .article-title, .folder-container div > a,

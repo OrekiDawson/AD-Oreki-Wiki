@@ -107,7 +107,7 @@
 
 ## 全站字体验收
 
-普通正文、标题、导航、搜索、表格、引用、链接及行内科学记数法统一继承单一的 `sans-serif` 系统无衬线字体族；程序代码使用系统等宽字体，KaTeX 使用其功能性数学字体。不得引入 Google Fonts、Quartz 网页字体或其他固定网页字体，也不得在普通文本链路混用 `system-ui` 与备用族。除 `check-fonts.mjs` 的源代码与构建产物门禁外，Lead 必须用 Playwright Android Chrome 视口读取实际 computed style，至少覆盖玩家、开发者、原版译文、表格、数学表达式和代码块，并查看修改前后截图；CI 通过不等于视觉验收通过。
+普通正文、标题、导航、搜索、表格、引用、链接及行内科学记数法统一继承平台 `system-ui, sans-serif` 无衬线字体栈；程序代码使用系统等宽字体，KaTeX 使用其功能性数学字体。不得引入 Google Fonts、Quartz 网页字体或其他固定网页字体，也不得让普通组件各自声明不同字体。除 `check-fonts.mjs` 的源代码与构建产物门禁外，Lead 必须用 Playwright Android Chrome 视口读取实际 computed style，至少覆盖玩家、开发者、原版译文、表格、数学表达式和代码块，并查看修改前后截图；CI 通过不等于视觉验收通过。
 
 `scripts/acceptance-fonts.cjs` 会强制检查正文、标题、导航、搜索框、表格、代码块和数学表达式样本实际存在，验证每个样本的系统字体类别并断言 HTTP 200。默认目标是本地预览（`KB_URL=http://127.0.0.1:8080`）；完成部署后，只有明确设置 `KB_URL=https://wiki.oreki.net KB_ALLOW_PRODUCTION=1` 才能验收线上版本，避免把旧线上站点当作当前候选构建。
 
