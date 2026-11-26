@@ -23,7 +23,7 @@ Oreki Edition 是基于原版制作的 MOD，不是原版的官方更新。Andro
 
 ## 继续阅读
 
-- [无限与永恒](/player/gameplay/progression-infinity-eternity)：按成长顺序理解前两层重置。
+- [阶段进度](/player/gameplay/stage-progression)：按成长顺序理解从新档到天神的各层重置。
 - [现实与时间研究](/player/gameplay/reality-time-studies)：时间研究、时间膨胀和第一次现实。
 - [挑战与真实结算](/player/gameplay/challenges)：特殊限制和挑战奖励。
 - [智能自动购买器](/player/gameplay/automation)：把重复操作变成可调整的策略。

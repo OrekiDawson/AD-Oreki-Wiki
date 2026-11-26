@@ -20,4 +20,4 @@ Oreki Edition 的界面、自动化或数值改动，以[原版行为与 Oreki E
 
 原版阶段资料可对照[Antimatter Dimensions Wiki](https://antimatterdimensions.wiki.gg/wiki/Main_Page)；具体研究前置和现实条件以当前游戏版本为准。
 
-继续阅读：[无限与永恒](/player/gameplay/progression-infinity-eternity) · [挑战与真实结算](/player/gameplay/challenges) · [存档兼容与自动保存](/player/gameplay/saves)
+继续阅读：[阶段进度](/player/gameplay/stage-progression) · [挑战与真实结算](/player/gameplay/challenges) · [存档兼容与自动保存](/player/gameplay/saves)

@@ -51,4 +51,4 @@ EC 的目标资源是该关要求的 IP，而不是普通挑战里熟悉的“�
 - [Infinity Challenges](https://antimatterdimensions.wiki.gg/wiki/Infinity_Challenges?oldid=3359)
 - [Eternity Challenges](https://antimatterdimensions.wiki.gg/wiki/Eternity_Challenges?oldid=3347)
 
-[无限与永恒](/player/gameplay/progression-infinity-eternity) · [智能自动购买器](/player/gameplay/automation) · [挑战完成判定与卡关排障](/player/gameplay/challenge-troubleshooting)
+[阶段进度](/player/gameplay/stage-progression) · [智能自动购买器](/player/gameplay/automation) · [挑战完成判定与卡关排障](/player/gameplay/challenge-troubleshooting)

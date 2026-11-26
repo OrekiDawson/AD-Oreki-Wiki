@@ -14,7 +14,7 @@ aliases:
 
 | 你的目标 | 建议路径 |
 | --- | --- |
-| 不熟悉游戏，想先理解玩法 | [游戏总览](/player/antimatter-dimensions) → [无限与永恒](/player/gameplay/progression-infinity-eternity) |
+| 不熟悉游戏，想先理解玩法 | [游戏总览](/player/antimatter-dimensions) → [阶段进度](/player/gameplay/stage-progression) |
 | 想知道 MOD 现在做到哪一步 | [当前项目状态](/developer/current/project-status) → [发布状态](/developer/current/release-status) |
 | 想理解构建与发布 | [构建与交付](/developer/build/) → [AGP 构建管线](/developer/build/agp) → [APK 签名](/developer/build/apk-signing) |
 | 想理解 Kotlin 与官方 DEX 的兼容 | [Kotlin 混合运行时 ABI](/developer/architecture/kotlin-runtime) → [DEX 与 ABI 反混淆](/developer/reverse-engineering/dex-abi) |

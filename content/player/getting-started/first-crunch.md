@@ -37,7 +37,7 @@ aliases:
 
 结算完成后进入无限阶段。先用 IP 购买当前买得起的无限升级，再做几轮生产与大坍缩，观察每次 IP 是否增加。第一次大坍缩不等于立刻可以打破无限；后者还需要自己的自动购买器间隔等前置。
 
-后续路线见[无限与永恒](/player/gameplay/progression-infinity-eternity)。如果自动购买器只尝试不推进，阅读[智能自动购买器](/player/gameplay/automation)；如果重置后阶段显示不对，先备份并看[阶段解锁与页面显示](/player/gameplay/stage-gates)。
+后续路线见[阶段进度](/player/gameplay/stage-progression)。如果自动购买器只尝试不推进，阅读[智能自动购买器](/player/gameplay/automation)；如果重置后阶段显示不对，先备份并看[阶段解锁与页面显示](/player/gameplay/stage-gates)。
 
 ## 相关条目
 

@@ -7,6 +7,7 @@ tags:
   - 重置
 aliases:
   - "/gameplay/stage-progression"
+  - "/gameplay/progression-infinity-eternity"
 ---
 
 《反物质维度》的成长不是一条不断变大的数字，而是一串会“换尺子”的重置。新档里你盯着反物质和维度；大坍缩后开始积累无限点数；永恒和现实又会清空更低层的进度，换来能影响整套系统的长期资源。

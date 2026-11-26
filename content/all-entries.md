@@ -1,12 +1,12 @@
 ---
 title: "全部条目"
-description: "按主题与中文标题浏览 反物质维度 MOD Wiki 的 152 个正式条目"
+description: "按主题与中文标题浏览 反物质维度 MOD Wiki 的 151 个正式条目"
 tags:
   - 导航
   - 索引
 ---
 
-这里列出当前公开发布的 **152** 个正式条目。草稿、内部归档、兼容入口和重定向不计入索引。
+这里列出当前公开发布的 **151** 个正式条目。草稿、内部归档、兼容入口和重定向不计入索引。
 
 ## 玩家专区
 
@@ -82,7 +82,6 @@ tags:
 - [无限升级（升级表）](/player/original/ow-infinity-upgrades-upgrades)
 - [无限挑战](/player/original/ow-infinity-challenges)
 - [无限维度](/player/original/ow-infinity-dimensions)
-- [无限与永恒：两层重置的阅读地图](/player/gameplay/progression-infinity-eternity)
 - [下载与版本：先选平台，再核对来源](/player/download-and-version)
 - [现实](/player/original/ow-reality)
 - [现实升级](/player/original/ow-reality-upgrades)

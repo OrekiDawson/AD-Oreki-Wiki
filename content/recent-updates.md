@@ -24,7 +24,6 @@ tags:
 - [效果对象与倍率组合：从一项奖励到完整公式](/developer/architecture/effect-model)
 - [构建与交付：从源码到可交付产物](/developer/build)
 - [原版与 Oreki Edition：差异阅读地图](/player/gameplay/original-vs-mod)
-- [无限与永恒：两层重置的阅读地图](/player/gameplay/progression-infinity-eternity)
 - [自动化状态所有权：玩家意图、托管配置与执行闸门](/developer/architecture/automation-ownership)
 - [从 Smali 调用点恢复可用 API](/developer/reverse-engineering/smali-recovery)
 - [FAQ：自动化与存档](/player/faq/automation-and-saves)
@@ -32,3 +31,4 @@ tags:
 - [阶段解锁：进度地图与排障入口](/player/gameplay/stage-gates)
 - [第一次进入与前几分钟](/player/getting-started/first-session)
 - [FAQ：下载、平台与版本](/player/faq/platform)
+- [Web 模块启动链：全局兼容桥与初始化故障排查](/developer/troubleshooting/web-module-startup)

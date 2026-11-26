@@ -50,5 +50,5 @@ aliases:
 - [Reality](https://antimatterdimensions.wiki.gg/wiki/Reality)
 - [Time Studies](https://antimatterdimensions.wiki.gg/wiki/Time_Studies)
 - [时间研究：分叉、挑战与时间膨胀](/player/gameplay/time-studies)
-- [无限与永恒](/player/gameplay/progression-infinity-eternity)
+- [阶段进度](/player/gameplay/stage-progression)
 - [天神系统](/player/gameplay/celestials)

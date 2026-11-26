@@ -81,7 +81,7 @@ Oreki Edition 的统一调度节拍可以设为 **1～60 秒，默认 10 秒**�
 
 Oreki Edition 希望缩短无意义的等待，而不是用假资源或假结算跳过游戏本身。**自动化能替你操作，不能替你免除规则。**
 
-想知道第一次大坍缩后应该把注意力放在哪里，可以接着读[无限与永恒](/player/gameplay/progression-infinity-eternity)。
+想知道第一次大坍缩后应该把注意力放在哪里，可以接着读[阶段进度](/player/gameplay/stage-progression)。
 
 ## 参考资料与延伸阅读
 

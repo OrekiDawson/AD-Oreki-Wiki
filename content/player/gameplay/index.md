@@ -13,7 +13,7 @@ aliases:
 
 建议先读 [原版行为与 Oreki Edition 修改](/player/gameplay/original-vs-mod)，它集中列出两端的差异；之后按需要进入具体条目：
 
-- [无限与永恒](/player/gameplay/progression-infinity-eternity)：大坍缩、无限点数、永恒点数与时间研究的入口。
+- [阶段进度](/player/gameplay/stage-progression)：从大坍缩、无限点数一路看到永恒、现实与天神。
 - [无限阶段](/player/gameplay/infinity)：第一次大坍缩、打破无限和无限挑战。
 - [永恒阶段](/player/gameplay/eternity)：永恒点数、研究树、永恒挑战和时间膨胀。
 - [现实与时间研究](/player/gameplay/reality-time-studies)：时间研究树、永恒挑战、时间膨胀与第一次现实。
