@@ -35,7 +35,7 @@ aliases:
 
 ## Android：从入口、映射到产物
 
-[AD-Oreki-Edition-Android](https://github.com/OrekiDawson/AD-Oreki-Edition-Android) 的本批核查基线是 [`9d8fc46`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/tree/9d8fc46ce99279720b5b3068027bb76bceb35756)。建议按三步调查：
+[AD-Oreki-Edition-Android](https://github.com/OrekiDawson/AD-Oreki-Edition-Android) 的当前源码引用基线是 [`9d8fc46`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/tree/9d8fc46ce99279720b5b3068027bb76bceb35756)。建议按三步调查：
 
 1. 先读 `app/src/main/kotlin/` 中的 Kotlin 接管层。`GameApi.kt` 集中缓存混淆宿主的类、字段和方法解析；架构页解释这些入口怎样被调度器使用。
 2. 再读基线绑定和 DEX/Smali 证据，确认一个短名类的真实签名、继承关系和调用契约。绑定表是这个版本的映射，不是未来版本的永久 API。
