@@ -1,12 +1,12 @@
 ---
 title: "全部条目"
-description: "按主题与中文标题浏览 反物质维度 MOD Wiki 的 146 个正式条目"
+description: "按主题与中文标题浏览 反物质维度 MOD Wiki 的 147 个正式条目"
 tags:
   - 导航
   - 索引
 ---
 
-这里列出当前公开发布的 **146** 个正式条目。草稿、内部归档、兼容入口和重定向不计入索引。
+这里列出当前公开发布的 **147** 个正式条目。草稿、内部归档、兼容入口和重定向不计入索引。
 
 ## 玩家专区
 
@@ -114,6 +114,7 @@ tags:
 - [参考资料](/developer/references)
 - [超大数值：从尾数与指数到跨端一致性](/developer/architecture/numeric-model)
 - [从 DEX 到 Kotlin：混淆 Android 游戏的 ABI 适配](/developer/reverse-engineering/dex-abi)
+- [从 Smali 调用点恢复可用 API](/developer/reverse-engineering/smali-recovery)
 - [从脚本补丁到 AGP：为什么 build_mod.py 必须退役](/developer/build/build-mod-retirement)
 - [从源码到可发布 APK：CI/CD 的分层设计](/developer/build/ci-cd)
 - [存档兼容排查：先辨认格式，再追踪迁移](/developer/troubleshooting/save-compatibility)
