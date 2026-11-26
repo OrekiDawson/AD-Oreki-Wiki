@@ -72,4 +72,4 @@ aliases:
 
 ## 相关条目
 
-[智能自动购买器](/player/gameplay/automation)解释玩家可见的自动化行为；[阶段门禁](/player/gameplay/stage-gates)解释挑战与阶段条件；[Kotlin 混合运行时 ABI](/developer/architecture/kotlin-runtime)解释运行时接口类故障；[运行证据索引](/developer/evidence)说明如何保存和交叉核对一次调查的证据。
+[智能自动购买器](/player/gameplay/automation)解释玩家可见的自动化行为；[阶段门禁](/player/gameplay/stage-gates)解释挑战与阶段条件；[Kotlin 混合运行时 ABI](/developer/architecture/kotlin-runtime)解释运行时接口类故障；[运行证据索引](/developer/evidence/)说明如何保存和交叉核对一次调查的证据。
