@@ -8,6 +8,7 @@ tags:
 
 这里显示最近进入当前内容树的正式条目；文章的具体修订记录仍以页面正文与仓库历史为准。
 
+- [来源索引：怎样从证据找到真正的代码](/developer/references/source-index)
 - [构建与交付：从源码到可交付产物](/developer/build)
 - [如何阅读当前工程状态](/developer/current)
 - [Oreki Edition 项目地图](/developer/project-overview)
@@ -31,4 +32,3 @@ tags:
 - [天神判据与跨端编码](/developer/architecture/celestial-implementation)
 - [生产链与重置：反物质维度如何成长](/player/antimatter-dimensions-core-loop)
 - [MOD 玩法改动：数值、解锁与自动化](/player/gameplay/mod-changes)
-- [超大数值：从尾数与指数到跨端一致性](/developer/architecture/numeric-model)
