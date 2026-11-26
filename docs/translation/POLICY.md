@@ -57,7 +57,7 @@ review_status: "NOT REVIEWED"      # NOT REVIEWED / STRUCTURE CHECKED / REVIEWED
 
 ## 5. 状态与覆盖率
 
-状态等级与 `content/wiki-rules.md`「内容验收等级」一致（冲突时以规则页为准）：
+以下状态等级由本页统一定义；公开编辑方针只规定译文应忠实、可查证并保留许可信息，不再复制内部验收流程：
 
 - `NOT STARTED`：仅进入清单，未翻译。
 - `IN PROGRESS`：已建立页面但正文不完整，**不得合并发布**。
