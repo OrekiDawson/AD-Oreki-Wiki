@@ -60,10 +60,10 @@ const NEW_PAGES = [
   '/player/original/ow-dimensions',
   '/developer/architecture/parity',
   '/developer/build/apk-signing',
-  '/developer/evidence/',
+  '/developer/references/source-index',
   '/developer/ai-summaries/',
 ];
-const CATEGORY_LABELS = ['玩家专区', '开发者专区', '玩法机制', '架构与运行时', '运行证据索引'];
+const CATEGORY_LABELS = ['玩家专区', '开发者专区', '玩法机制', '架构与运行时'];
 
 function weakMustSee(items) {
   return ['玩家专区', '开发者专区'].some((label) => {

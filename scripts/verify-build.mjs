@@ -67,7 +67,6 @@ for (const slug of [
   "developer",
   "player/getting-started",
   "developer/ai-summaries",
-  "developer/evidence",
 ]) {
   if (!pageExists(slug)) fail("缺少双专区页面: /" + slug)
 }
@@ -85,7 +84,6 @@ const CATEGORY_TITLES = {
   "developer/current": "当前状态",
   "developer/troubleshooting": "故障排查",
   "developer/references": "参考资料",
-  "developer/evidence": "运行证据索引",
   "developer/ai-summaries": "AI Summary 索引",
 }
 for (const [dir, title] of Object.entries(CATEGORY_TITLES)) {
@@ -138,6 +136,7 @@ const LEGACY_URLS = [
   "getting-started/how-to-use",
   "getting-started/project-overview",
   "references/source-index",
+  "developer/evidence",
   "references/terminology",
   "troubleshooting/coroutine-abi",
   "troubleshooting/save-compatibility",
@@ -184,6 +183,7 @@ const LEGACY_URL_TARGETS = {
   "getting-started/how-to-use": "how-to-use",
   "getting-started/project-overview": "developer/project-overview",
   "references/source-index": "developer/references/source-index",
+  "developer/evidence": "developer/references/source-index",
   "references/terminology": "player/terminology",
   "troubleshooting/coroutine-abi": "developer/troubleshooting/coroutine-abi",
   "troubleshooting/save-compatibility": "developer/troubleshooting/save-compatibility",
