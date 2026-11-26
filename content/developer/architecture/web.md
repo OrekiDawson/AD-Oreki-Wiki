@@ -13,6 +13,8 @@ aliases:
 
 本文以 Web 仓库 `AD-Oreki-Edition` 的当前 `main` 提交 `e1c93caa758de6c39cf814582123d4a35319eb25` 为源码核对点；上游游戏基线仍是 `IvarK/AntimatterDimensionsSourceCode` 的 `5409e320cecef96a917cca1dfb68f1f183e499ca`（2026-07-17，AD 11.5 / Reality Update）。两者是两个不同的版本坐标：前者说明 Oreki 端当前接线，后者说明原版游戏代码的冻结来源。
 
+本文的关键源码入口可直接对照 [Web 当前提交中的 `src/main.js`](https://github.com/OrekiDawson/AD-Oreki-Edition/blob/e1c93caa758de6c39cf814582123d4a35319eb25/src/main.js)、[`src/game.js`](https://github.com/OrekiDawson/AD-Oreki-Edition/blob/e1c93caa758de6c39cf814582123d4a35319eb25/src/game.js) 和 [Oreki 自动化模块目录](https://github.com/OrekiDawson/AD-Oreki-Edition/tree/e1c93caa758de6c39cf814582123d4a35319eb25/src/core)。原版循环与自动购买器则以 [上游冻结提交](https://github.com/IvarK/AntimatterDimensionsSourceCode/tree/5409e320cecef96a917cca1dfb68f1f183e499ca) 为对照。
+
 ## 先画出一条可追踪的路径
 
 一次正常启动可以压缩成下面这条链：
