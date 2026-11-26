@@ -31,4 +31,4 @@ tags:
 
 [存档兼容与自动保存](/player/gameplay/saves) · [下载与版本说明](/player/download-and-version/) · [平台与版本](/player/faq/platform-and-version) · [玩家常见问题](/player/faq/)
 
-原版存档与现实机制的背景资料：[Save](https://antimatterdimensions.wiki.gg/wiki/Save)、[Reality](https://antimatterdimensions.wiki.gg/wiki/Reality) 和 [Import/Export](https://antimatterdimensions.wiki.gg/wiki/Import/Export)。
+原版存档与现实机制的背景资料：[Save Bank](https://antimatterdimensions.wiki.gg/wiki/Save_Bank?oldid=3131) 与 [Reality](https://antimatterdimensions.wiki.gg/wiki/Reality?oldid=3235)。上述页面于 2026 年 11 月 27 日通过 MediaWiki API 核对标题、修订号及 HTTP 可达性；若原版页面后来改名或删除，应重新核验后再引用。

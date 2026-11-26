@@ -14,6 +14,7 @@ tags:
 - **自动购买器和阶段入口**：处理自动化没有动作、设置被恢复、挑战或天神入口暂不可用等问题。见[自动化与阶段入口](/player/faq/automation-and-unlocks)。
 - **存档与跨版本操作**：处理现实后的进度变化、跨平台导入、更新和回退。见[存档与兼容性](/player/faq/saves-and-compatibility)。
 - **从头开始游玩**：第一次打开游戏和第一次大坍缩的操作路径分别见[开始游玩](/player/getting-started/)与[第一次大坍缩](/player/getting-started/first-crunch)。
+- **阶段推进与挑战**：按进度查看从新档到挑战、永恒和后续阶段的常见门槛，见[阶段与挑战 FAQ](/player/faq/progression)。
 
 如果你还不确定问题属于哪一类，先记录平台、版本、当前阶段和最后一次成功操作；不要为了“试试看”覆盖唯一存档。
 
