@@ -10,6 +10,7 @@ tags:
 
 - [反物质维度 MOD Wiki](/index)
 - [原版 Wiki 中文翻译](/player/original)
+- [Android 自动化停滞的排查方法](/developer/current/known-issues)
 - [版权与许可](/copyright)
 - [开发者专区](/developer)
 - [架构与运行时：从入口到运行时](/developer/architecture)
@@ -31,4 +32,3 @@ tags:
 - [太阳神](/player/original/ow-ra)
 - [特蕾莎](/player/original/ow-teresa)
 - [膨胀升级](/player/original/ow-dilation-upgrades)
-- [膨胀升级（被毁灭的现实）](/player/original/ow-dilation-upgrades-doomed)

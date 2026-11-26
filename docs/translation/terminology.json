@@ -4,11 +4,15 @@
   "scope": "原版 Wiki 翻译与原版专区导航",
   "source": "docs/translation/glossary.md",
   "terms": {
-    "Effarig": { "zh": "鹿颈长", "status": "canonical" },
-    "V": { "zh": "薇", "status": "canonical" },
-    "Ra": { "zh": "太阳神", "status": "canonical" },
-    "Replicanti": { "zh": "复制器", "status": "canonical" },
-    "Notation": { "zh": "记数法", "status": "canonical" }
+    "Effarig": { "zh": "鹿颈长", "aliases": ["埃法里格"], "status": "canonical" },
+    "The Nameless Ones": { "zh": "无名氏", "aliases": ["无名者"], "status": "canonical" },
+    "V": { "zh": "薇", "aliases": ["V"], "status": "canonical" },
+    "Ra": { "zh": "太阳神", "aliases": ["Ra"], "status": "canonical" },
+    "Replicanti": { "zh": "复制器", "aliases": ["复制体"], "status": "canonical" },
+    "Notation": { "zh": "记数法", "aliases": ["记号法"], "status": "canonical" },
+    "Dilation Upgrades": { "zh": "膨胀升级", "aliases": ["时间膨胀升级"], "status": "canonical" },
+    "Perk": { "zh": "复兴", "status": "canonical" },
+    "Automator": { "zh": "自动机", "aliases": ["自动化器"], "status": "canonical" }
   },
   "notes": [
     "正文首次提及可在中文术语后括注英文原名；标题、导航、图注和表格使用 canonical 中文名。",

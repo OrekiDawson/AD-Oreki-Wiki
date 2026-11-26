@@ -48,7 +48,7 @@ aliases:
 - [原版:突破无限](/player/original/ow-break-infinity)
 - [原版:无限维度](/player/original/ow-infinity-dimensions)
 - [原版:无限挑战](/player/original/ow-infinity-challenges)
-- [原版:复制体](/player/original/ow-replicanti)
+- [原版:复制器](/player/original/ow-replicanti)
 
 ### Δ 永恒
 
@@ -62,7 +62,7 @@ aliases:
 ### Ϟ 现实
 
 - [原版:时间膨胀](/player/original/ow-dilation)
-- [原版:时间膨胀升级](/player/original/ow-dilation-upgrades)
+- [原版:膨胀升级](/player/original/ow-dilation-upgrades)
 - [原版:现实](/player/original/ow-reality)
 - [原版:现实升级](/player/original/ow-reality-upgrades)
 - [原版:符文炼金](/player/original/ow-glyph-alchemy)
@@ -75,10 +75,10 @@ aliases:
 - [原版:天神](/player/original/ow-celestials)
 - [原版:天神导航](/player/original/ow-celestial-navigation)
 - [原版:特蕾莎](/player/original/ow-teresa)
-- [原版:埃法里格](/player/original/ow-effarig)
-- [原版:无名者](/player/original/ow-nameless-ones)
-- [原版:V](/player/original/ow-v)
-- [原版:Ra](/player/original/ow-ra)
+- [原版:鹿颈长](/player/original/ow-effarig)
+- [原版:无名氏](/player/original/ow-nameless-ones)
+- [原版:薇](/player/original/ow-v)
+- [原版:太阳神](/player/original/ow-ra)
 - [原版:莱特拉](/player/original/ow-laitela)
 - [原版:佩勒](/player/original/ow-pelle)
 
