@@ -48,6 +48,6 @@ aliases:
 
 ## 附属资料
 
-固定源码入口见[源码索引](/developer/references/source-index)，实现与产物证据见[证据库](/developer/evidence/)，版本变化请回到对应源码仓库的提交历史。[AI Summary](/developer/ai-summaries/)只作已核实正文的辅助速览，不替代技术文章。
+固定源码入口、实现与产物证据统一见[来源索引](/developer/references/source-index)，版本变化请回到对应源码仓库的提交历史。[AI Summary](/developer/ai-summaries/)只作已核实正文的辅助速览，不替代技术文章。
 
 继续阅读：[构建与交付](/developer/build/) · [故障排查](/developer/troubleshooting/) · [开发者首页](/developer/)
