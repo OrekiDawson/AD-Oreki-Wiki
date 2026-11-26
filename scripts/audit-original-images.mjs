@@ -2,12 +2,15 @@ import fs from "node:fs/promises"
 
 const manifest = JSON.parse(await fs.readFile("docs/translation/source-manifest.json", "utf8"))
 const pages = manifest.pages.filter((page) => page.namespace === 0 || !page.namespace)
+const site = String(manifest.source?.site ?? "").replace(/\/+$/, "")
+if (!site) throw new Error("source-manifest.json 缺少 source.site")
+const apiBase = `${site}/api.php`
 const result = []
 let limitedBatches = 0
 for (let offset = 0; offset < pages.length; offset += 20) {
   const batch = pages.slice(offset, offset + 20)
   const titles = encodeURIComponent(batch.map((page) => page.title.replaceAll(" ", "_")).join("|"))
-  const api = `https://antimatterdimensions.wiki.gg/api.php?action=query&titles=${titles}&prop=images&imlimit=500&format=json`
+  const api = `${apiBase}?action=query&titles=${titles}&prop=images%7Cinfo&imlimit=500&redirects=1&format=json`
   let response = await fetch(api, {
     headers: { "User-Agent": "AD-Oreki-Wiki/1.0 (image audit; contact via repository)" },
   })
@@ -23,6 +26,7 @@ for (let offset = 0; offset < pages.length; offset += 20) {
       result.push({
         source_title: page.title,
         source_url: page.url,
+        revid: page.revid ?? null,
         audit_status: "待 API 审计（频率限制）",
         images: [],
       })
@@ -31,14 +35,27 @@ for (let offset = 0; offset < pages.length; offset += 20) {
   if (!response.ok)
     throw new Error(`${response.status} ${batch.map((page) => page.title).join(", ")}`)
   const data = await response.json()
+  const redirects = new Map([
+    ...(data.query?.normalized ?? []).map((item) => [item.from, item.to]),
+    ...(data.query?.redirects ?? []).map((item) => [item.from, item.to]),
+  ])
   for (const page of batch) {
+    const requestedTitle = page.title.replaceAll("_", " ")
+    const resolvedTitle = redirects.get(requestedTitle) ?? requestedTitle
     const item = Object.values(data.query?.pages ?? {}).find(
-      (candidate) => candidate.title === page.title.replaceAll("_", " "),
+      (candidate) => candidate.title === resolvedTitle,
     )
     const images = (item?.images ?? []).map((image) => image.title)
     result.push({
       source_title: page.title,
       source_url: page.url,
+      revid: item?.lastrevid ?? page.revid ?? null,
+      resolved_title: resolvedTitle !== requestedTitle ? resolvedTitle : null,
+      audit_status: item
+        ? resolvedTitle !== requestedTitle
+          ? "已解析重定向，待逐项核实"
+          : "已取得页面修订号，待逐项核实"
+        : "待 API 审计（标题未匹配）",
       images: images.map((title) => ({
         title,
         local_path: null,

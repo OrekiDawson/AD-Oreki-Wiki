@@ -43,4 +43,4 @@ aliases:
 - [证据库](/developer/evidence/)：区分实现、产物、行为和历史证据。
 - [发布状态](/developer/current/release-status)：查可交付候选，不替代发布机制说明。
 
-历史构建事件放在[历史归档](/developer/history/)，[AI Summary](/developer/ai-summaries/)仅作为已审核正文的附属速览；两者都不替代本页列出的操作指南和原理文章。
+历史构建事件保留在源码仓库或内部证据目录，[AI Summary](/developer/ai-summaries/)仅作为已审核正文的附属速览；两者都不替代本页列出的操作指南和原理文章。

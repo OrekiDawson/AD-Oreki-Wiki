@@ -19,7 +19,7 @@ aliases:
 | 想理解构建与发布 | [构建与交付](/developer/build/) → [AGP 构建管线](/developer/build/agp) → [APK 签名](/developer/build/apk-signing) |
 | 想理解 Kotlin 与官方 DEX 的兼容 | [Kotlin 混合运行时 ABI](/developer/architecture/kotlin-runtime) → [DEX 与 ABI 反混淆](/developer/reverse-engineering/dex-abi) |
 | 遇到崩溃或存档问题 | [故障排查](/developer/troubleshooting/) |
-| 想查历史事件 | [历史归档](/developer/history/) |
+| 想查版本变化 | [开发者专区](/developer/)并打开对应源码仓库的提交历史 |
 
 ## 怎样核对一条结论
 
@@ -31,7 +31,7 @@ aliases:
 ## 本站的组织方式
 
 - 正文按**主题**组织，不按开发轮次；每个条目回答「这是什么、为什么、如何工作、已确认什么、有哪些限制、如何核查」。
-- 时间线、逐日改动与阶段性判定放在[历史归档](/developer/history/)，与专题分开。
+- 时间线与逐日改动属于仓库内部维护资料；公开正文只保留能解释现行机制的长期结论。
 - 文章末尾的「供 AI 检索（简要摘要）」只是索引，不是证据。
 
 ## 贡献流程
@@ -39,7 +39,7 @@ aliases:
 1. 在 Android/Web 仓库完成实际修改与验证；
 2. 回到本仓库，**更新受影响的专题条目**（不新建重复页）；
 3. 被推翻的结论保留「旧结论 → 新证据 → 当前判断」；
-4. 时间性材料写入 `content/developer/history/`；
+4. 时间性材料保存在仓库内部归档目录，不进入公开内容树；
 5. 中文 Commit + PR，通过内容检查与 Quartz 构建后合并。
 
 ## 禁止

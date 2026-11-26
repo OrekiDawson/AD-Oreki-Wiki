@@ -43,7 +43,10 @@ function walk(dir) {
 function frontmatter(file) {
   const text = fs.readFileSync(file, "utf8")
   const match = text.match(/^---\r?\n([\s\S]*?)\r?\n---/)
-  const title = match?.[1].match(/^title:\s*["']?([^"'\r\n]+?)["']?\s*$/m)?.[1]?.trim()
+  const titleMatch = match?.[1].match(
+    /^title:\s*(?:"([^"\r\n]*)"|'([^'\r\n]*)'|([^#\r\n]*?))\s*(?:#.*)?$/m,
+  )
+  const title = (titleMatch?.[1] ?? titleMatch?.[2] ?? titleMatch?.[3])?.trim()
   return { title: title || path.basename(file, ".md"), text }
 }
 
@@ -58,12 +61,22 @@ const pages = walk(contentRoot)
   .sort((a, b) => a.title.localeCompare(b.title, "zh-CN", { numeric: true, sensitivity: "base" }))
 
 const groups = new Map([
-  ["玩家专区", pages.filter((page) => page.route.startsWith("/player/"))],
-  ["开发者专区", pages.filter((page) => page.route.startsWith("/developer/"))],
+    [
+      "玩家专区",
+      pages.filter((page) => page.route === "/player" || page.route.startsWith("/player/")),
+    ],
+    [
+      "开发者专区",
+      pages.filter((page) => page.route === "/developer" || page.route.startsWith("/developer/")),
+    ],
   [
     "站务与公共页面",
     pages.filter(
-      (page) => !page.route.startsWith("/player/") && !page.route.startsWith("/developer/"),
+      (page) =>
+        page.route !== "/player" &&
+        !page.route.startsWith("/player/") &&
+        page.route !== "/developer" &&
+        !page.route.startsWith("/developer/"),
     ),
   ],
 ])

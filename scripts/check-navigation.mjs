@@ -32,6 +32,10 @@ const files = walk(content)
 if (files.some((file) => file.includes(`${path.sep}developer${path.sep}history${path.sep}`))) {
   errors.push("内部历史归档仍位于 content/developer/history，禁止进入公开构建")
 }
+const developerIndex = fs.readFileSync(path.join(content, "developer/index.md"), "utf8")
+for (const alias of ["/history", "/developer/history"])
+  if (!developerIndex.includes(`\"${alias}\"`))
+    errors.push(`历史兼容入口缺少明确 alias：${alias}`)
 const allEntries = fs.readFileSync(path.join(content, "all-entries.md"), "utf8")
 const formal = files.filter(
   (file) =>

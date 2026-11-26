@@ -55,6 +55,7 @@ tags:
 - [玩法机制](/player/gameplay)
 - [玩家常见问题](/player/faq)
 - [玩家术语表](/player/terminology)
+- [玩家专区](/player)
 - [薇](/player/original/ow-v)
 - [薇·引语](/player/original/ow-v-quotes)
 - [维度](/player/original/ow-dimensions)
@@ -100,6 +101,7 @@ tags:
 - [故障排查：从症状回到源码](/developer/troubleshooting)
 - [架构与运行时：从入口到运行时](/developer/architecture)
 - [开发者文档怎么读、怎么写](/developer/editorial-guidelines)
+- [开发者专区](/developer)
 - [来源索引：怎样从证据找到真正的代码](/developer/references/source-index)
 - [逆向与语义映射](/developer/reverse-engineering)
 - [如何阅读当前工程状态](/developer/current)
@@ -127,7 +129,5 @@ tags:
 - [反物质维度 MOD Wiki](/index)
 - [反物质维度MOD Wiki:本站不是什么](/wiki-not)
 - [反物质维度MOD Wiki:知识库规则](/wiki-rules)
-- [开发者专区](/developer)
 - [如何使用本知识库](/how-to-use)
-- [玩家专区](/player)
 

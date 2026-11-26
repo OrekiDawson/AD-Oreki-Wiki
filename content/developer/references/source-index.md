@@ -53,4 +53,4 @@ aliases:
 
 ## 相关条目
 
-[Android 架构](/developer/architecture/android) · [Web 架构](/developer/architecture/web) · [DEX 与 ABI](/developer/reverse-engineering/dex-abi) · [协程 ABI 崩溃排查](/developer/troubleshooting/coroutine-abi) · [存档兼容排查](/developer/troubleshooting/save-compatibility) · [历史归档](/developer/history/)
+[Android 架构](/developer/architecture/android) · [Web 架构](/developer/architecture/web) · [DEX 与 ABI](/developer/reverse-engineering/dex-abi) · [协程 ABI 崩溃排查](/developer/troubleshooting/coroutine-abi) · [存档兼容排查](/developer/troubleshooting/save-compatibility)

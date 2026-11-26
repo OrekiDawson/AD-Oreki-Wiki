@@ -68,8 +68,17 @@ function frontmatterOf(text) {
   const match = text.match(/^---\n([\s\S]*?)\n---\n?/)
   if (!match) return null
   const body = match[1]
-  const title = body.match(/^title:\s*["']?(.*?)["']?\s*$/m)?.[1]?.trim() ?? ""
-  const description = body.match(/^description:\s*["']?(.*?)["']?\s*$/m)?.[1]?.trim() ?? ""
+  const scalar = (name) => {
+    const value = body.match(
+      new RegExp(
+        `^${name}:\\s*(?:"([^"\\r\\n]*)"|'([^'\\r\\n]*)'|([^#\\r\\n]*?))\\s*(?:#.*)?$`,
+        "m",
+      ),
+    )
+    return (value?.[1] ?? value?.[2] ?? value?.[3])?.trim() ?? ""
+  }
+  const title = scalar("title")
+  const description = scalar("description")
   const tagsBlock = body.match(/^tags:\n((?:[ \t]+-[ \t]+.*\n?)*)/m)?.[1] ?? ""
   const tags = (tagsBlock.match(/^[ \t]+-[ \t]+(.*)$/gm) || []).map((line) =>
     line

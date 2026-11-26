@@ -106,6 +106,8 @@ if (historyEntries.length > 0) fail("内部历史归档进入公开构建产物:
 
 // 旧 URL 兼容：旧入口不再作为正文目录，但规范页 alias 必须生成直接重定向。
 const LEGACY_URLS = [
+  "history",
+  "developer/history",
   "gameplay",
   "original",
   "architecture",
@@ -149,6 +151,8 @@ for (const slug of LEGACY_URLS) {
 }
 
 const LEGACY_URL_TARGETS = {
+  history: "developer",
+  "developer/history": "developer",
   gameplay: "player/gameplay",
   original: "player/original",
   "getting-started": "player/getting-started",
