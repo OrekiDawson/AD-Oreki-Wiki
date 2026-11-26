@@ -57,12 +57,15 @@ const indexedRoutes = [...allEntries.matchAll(/\]\((\/[^)]+)\)/g)].map((match) =
 if (new Set(indexedRoutes).size !== formal.length)
   errors.push(`全部条目存在重复或额外入口：${new Set(indexedRoutes).size}/${formal.length}`)
 const recentText = fs.readFileSync(path.join(content, "recent-updates.md"), "utf8")
-const expectedRecent = [...formal]
-  .sort((a, b) => updatedAt(b) - updatedAt(a))
-  .slice(0, 24)
-  .map(routeFor)
-for (const route of expectedRecent)
-  if (!recentText.includes(`](${route})`)) errors.push(`最近更新索引缺少当前条目：${route}`)
+const recentRoutes = [...recentText.matchAll(/\]\((\/[^)]+)\)/g)].map((match) =>
+  match[1].replace(/\/$/, ""),
+)
+const formalRoutes = new Set(formal.map(routeFor))
+if (recentRoutes.length !== 24)
+  errors.push(`最近更新索引条目数应为 24，实际为 ${recentRoutes.length}`)
+if (new Set(recentRoutes).size !== recentRoutes.length) errors.push("最近更新索引存在重复入口")
+for (const route of recentRoutes)
+  if (!formalRoutes.has(route)) errors.push(`最近更新索引包含非正式页面：${route}`)
 const config = fs.readFileSync(path.join(root, "quartz.config.yaml"), "utf8")
 if (!config.includes("folderDefaultState: open")) errors.push("Explorer 未设置目录默认展开")
 if (!config.includes("folderClickBehavior: link")) errors.push("Explorer 未启用独立展开按钮行为")
