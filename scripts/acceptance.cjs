@@ -29,7 +29,7 @@ const SEARCH_TERMS = [
   ['build_mod.py', 'developer/build/build-mod-retirement'],
 ];
 
-const OLD_URLS = ['/architecture/kotlin-runtime', '/architecture/android', '/gameplay/challenges', '/gameplay/progression-infinity-eternity', '/build/agp', '/current/project-status'];
+const OLD_URLS = ['/architecture/kotlin-runtime', '/architecture/android', '/gameplay/challenges', '/gameplay/progression-infinity-eternity', '/build/agp', '/current/project-status', '/developer/history/2026-11-12-r103-release-baseline', '/developer/history/2026-11-15-celestial-leaves-fix', '/history/2026-11-15-r113-180min-fail', '/developer/history/2026-11-15-r113-180min-fail', '/developer/history/2026-11-15-r113-p0-livelock', '/developer/history/2026-11-15-r114-reality-autoeternity', '/developer/history/2026-11-15-signing-blocked', '/developer/history/2026-11-20-r121-android-kvm'];
 const NEW_PAGES = [
   '/',
   '/player/',
@@ -189,9 +189,7 @@ async function run() {
     ...OLD_URLS,
     ...NEW_PAGES,
     '/history',
-    '/history/2026-11-15-r113-180min-fail',
     '/developer/history/',
-    '/developer/history/2026-11-15-r113-180min-fail',
   ]) {
     const resp = await page.goto(BASE + url, { waitUntil: 'load' }).catch(() => null);
     results.urls.push({ url, ok: !!resp && resp.status() === 200 });

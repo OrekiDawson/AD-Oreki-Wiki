@@ -8,6 +8,12 @@ tags:
 
 这里显示最近进入当前内容树的正式条目；文章的具体修订记录仍以页面正文与仓库历史为准。
 
+- [自动化状态所有权：玩家意图、托管配置与执行闸门](/developer/architecture/automation-ownership)
+- [天神判据与跨端编码](/developer/architecture/celestial-implementation)
+- [APK 签名与升级兼容](/developer/build/apk-signing)
+- [Android 自动化停滞的排查方法](/developer/current/known-issues)
+- [双端交付证据：从源码到玩家版本](/developer/current/project-status)
+- [APK 发布资格：从文件到可交付版本](/developer/current/release-status)
 - [鹿颈长](/player/original/ow-effarig)
 - [莱特拉](/player/original/ow-laitela)
 - [无名氏](/player/original/ow-nameless-ones)
@@ -25,10 +31,4 @@ tags:
 - [时间维度](/player/original/ow-time-dimensions)
 - [时间研究](/player/original/ow-time-studies)
 - [Android 构建与 AGP](/developer/build/agp)
-- [Android 自动化停滞的排查方法](/developer/current/known-issues)
 - [架构与运行时：从入口到运行时](/developer/architecture)
-- [参考资料](/developer/references)
-- [来源索引：怎样从证据找到真正的代码](/developer/references/source-index)
-- [玩家常见问题](/player/faq)
-- [平台与版本](/player/faq/platform-and-version)
-- [存档兼容与导入验证](/player/gameplay/save-compatibility)

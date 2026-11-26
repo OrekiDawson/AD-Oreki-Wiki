@@ -43,6 +43,20 @@ const developerIndex = fs.readFileSync(path.join(content, "developer/index.md"),
 for (const alias of ["/history", "/developer/history"])
   if (!developerIndex.includes(`\"${alias}\"`))
     errors.push(`历史兼容入口缺少明确 alias：${alias}`)
+const archivedHistoryAliases = [
+  "/developer/history/2026-11-12-r103-release-baseline",
+  "/developer/history/2026-11-15-celestial-leaves-fix",
+  "/history/2026-11-15-r113-180min-fail",
+  "/developer/history/2026-11-15-r113-180min-fail",
+  "/developer/history/2026-11-15-r113-p0-livelock",
+  "/developer/history/2026-11-15-r114-reality-autoeternity",
+  "/developer/history/2026-11-15-signing-blocked",
+  "/developer/history/2026-11-20-r121-android-kvm",
+]
+const contentText = files.map((file) => fs.readFileSync(file, "utf8")).join("\n")
+for (const alias of archivedHistoryAliases)
+  if (!contentText.includes(`\"${alias}\"`))
+    errors.push(`历史兼容入口缺少具体 alias：${alias}`)
 const allEntries = fs.readFileSync(path.join(content, "all-entries.md"), "utf8")
 const formal = files.filter(
   (file) =>
