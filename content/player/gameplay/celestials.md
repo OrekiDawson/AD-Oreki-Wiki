@@ -1,6 +1,6 @@
 ---
 title: "天神系统"
-description: "现实之后的七位天神依次带来什么玩法、怎样准备，以及 Oreki Edition 与原版有哪些重要区别"
+description: "从特蕾莎到佩勒，理解现实之后七位天神各自改变了什么，以及进入特殊现实前该准备什么"
 tags:
   - 玩法
   - 天神
@@ -11,95 +11,79 @@ aliases:
 
 # 天神系统
 
-经历多次现实之后，你会逐渐接触《反物质维度》的**天神（Celestials）**。它们不是七个数值越来越大的普通升级，而是七段玩法不同的后期挑战：有的考验符文搭配，有的要求在严苛限制下重新推进游戏，还有的会带来全新的资源与成长方式。
+现实之后，《反物质维度》不再只是把同一条数字曲线推得更高。七位天神会轮流改写你熟悉的规则：符文变成配装题，时间变成需要管理的资源，暗物质带来新的生产层，最后的毁灭则把一路攒下的优势拆掉一部分，要求你在废墟上重新建立增长。
 
-天神按游戏进度逐步开放，顺序大致是：**特蕾莎 → 艾法瑞格 → 无名者 → V → Ra → 莱特拉 → 佩勒**。最后的佩勒通向原版游戏的结局。刚进入现实阶段时，通常还看不到后面的全部内容，不必急着寻找它们。[原版天神总览](https://antimatterdimensions.wiki.gg/wiki/Celestials?oldid=3187)
+原版的接触顺序是：**特蕾莎 → 艾法瑞格 → 无名者 → V → Ra → 莱特拉 → 佩勒**。它们会随着现实阶段和前置内容逐步开放，不是七个同时出现的升级按钮。[天神总览](https://antimatterdimensions.wiki.gg/wiki/Celestials?oldid=3187)
 
-## 开始前，先准备什么？
+## 进入特殊现实前，先看三件事
 
-如果现实层的升级、符文与复兴能力还很弱，进入天神相关的特殊现实往往会寸步难行。在尝试新天神之前，先确认三件事：**当前有哪些可用的符文、现有现实能否稳定推进、下一项升级要求什么资源**。
+天神页面亮起，不代表你已经准备好进入它的特殊现实。点击入口前，先确认当前有哪些符文、遗迹或其他永久能力可用；普通现实能否稳定完成；以及这位天神的限制会拿走哪些平时的加成、要求你带入什么资源。
 
-特殊现实可能让你熟悉的生产倍数突然失效，这通常是挑战设计，而不是普通存档坏了。进入前读一遍限制说明，比进入后盲目重复大坍缩有效得多。
+特殊现实里生产突然变慢，通常是规则的一部分，不是存档立刻损坏。天神系统的乐趣就在这里：先读题，再决定换配置、补资源，还是暂时离开。前一位天神留下的奖励往往正是后一位的解题工具。
 
-天神之间也不是互不相干。前面天神的奖励往往能帮助后面的挑战，有些奖励还会反过来强化早已解锁的系统。
+## 特蕾莎：从“拥有现实机器”到理解符文
 
-## 前三位：符文、遗迹和时间谜题
+特蕾莎（Teresa）是第一位天神，围绕现实机器、符文和特殊现实展开。[特蕾莎资料](https://antimatterdimensions.wiki.gg/wiki/Teresa?oldid=3370)
 
-### 特蕾莎（Teresa）
+她教给玩家的第一课不是“再买一个倍率”，而是看懂符文之间的组合关系。进入特殊现实前，先让普通现实的循环稳定下来，再把资源投向能直接改善当前限制的能力。若只盯着一次现实的短期产出，可能会错过符文配置带来的长期收益。
 
-特蕾莎是第一位天神。她围绕**现实机器、符文与特殊现实**展开玩法。你需要积累相应资源，逐步获得奖励，并尝试在受限制的现实中达到目标。
+## 艾法瑞格：限制你的不是手速，而是符文选择
 
-面对她的现实，单靠增加一次普通现实的收益不一定足够。留意符文能否互相配合，以及容器、升级和当前特殊现实之间的关系。完成相关内容后，符文和后续成长会获得帮助。[特蕾莎的原版资料](https://antimatterdimensions.wiki.gg/wiki/Teresa?oldid=3370)
+艾法瑞格（Effarig）的特殊现实进一步强调符文搭配，并引入遗迹碎片等后期资源。[艾法瑞格资料](https://antimatterdimensions.wiki.gg/wiki/Effarig?oldid=3371)
 
-### 艾法瑞格（Effarig）
+当限制让熟悉的成长逐步变弱时，增加点击次数没有意义。更有效的做法是比较当前可用符文：哪些效果仍然生效，哪些只是面板上还留着、实际贡献已经被限制削弱。遇到卡关，先换配置再换目标，通常比盲等资源更快找到突破口。
 
-艾法瑞格更强调**符文选择**。他的特殊现实会限制你的符文，并给正常成长附加逐步变化的削弱效果。
+## 无名者：把时间当作可以搬运的资源
 
-如果进度卡住，可以先回头调整可用符文，而不是只等待反物质或 IP 增长。此阶段还会接触遗迹碎片（Relic Shards）等资源，帮助改善符文相关能力。[艾法瑞格的原版资料](https://antimatterdimensions.wiki.gg/wiki/Effarig?oldid=3371)
+无名者（The Nameless Ones）把重点转向时间储存、释放和特殊规则。[无名者资料](https://antimatterdimensions.wiki.gg/wiki/The_Nameless_Ones?oldid=3372)
 
-### 无名者（The Nameless Ones）
+这一阶段最容易产生“明明挂机很久，为什么还是不动”的错觉。关键不是在线时长本身，而是时间是否以当前规则允许的方式储存、何时释放，以及释放后是否真的用于推动目标。进入后先读提示，再观察资源的积累和消耗；不要把普通现实的等待习惯原封不动搬进来。
 
-第三位天神围绕**时间储存与释放**展开，也包含需要观察规则才能解决的难题。其特殊现实的限制很重，平时有效的购买路线可能在这里走不通。
+## V：一组目标，而不是一扇门
 
-值得留意的不是「挂机了多久」，而是**游戏时间怎样储存、何时释放，以及哪些限制正在阻止正常增长**。遇到反常缓慢的进度，先检查本次特殊现实的提示和时间机制。[无名者的原版资料](https://antimatterdimensions.wiki.gg/wiki/The_Nameless_Ones?oldid=3372)
+V 的玩法围绕特殊成就和目标展开，奖励包括空间之理（Space Theorems），会让时间研究拥有更大的选择空间。[V 资料](https://antimatterdimensions.wiki.gg/wiki/V?oldid=3373)
 
-## 第四、第五位：V 与 Ra
+V 的特殊现实要求在**同一次现实**里同时满足六项条件，涉及现实次数、永恒次数、无限次数及若干后期资源。它不是“总进度条满了就开门”：不同现实中积攒的临时条件不能简单相加，接近完成也不等于已经具备进入资格。
 
-### V：不是只完成一次现实
+Oreki Edition 调整过部分门槛，例如把 V 所需现实次数从原版的 10,000 次缩放到 MOD 规则中的 60 次，并调整了膨胀时间、复制器等要求；具体数值随所用版本而定。进入前逐项看当前页面，缺哪一项就准备哪一项，不要只重复现实。[原版行为与 Oreki Edition 修改](/player/gameplay/original-vs-mod)
 
-V 的玩法围绕一组特殊成就与目标展开。完成不同目标可以获得**空间之理（Space Theorems）**等奖励，让时间研究的选择更加灵活。
+## Ra：把旧系统变成新的研究对象
 
-V 的页签解锁后，**要进入 V 的特殊现实，还需要在同一次现实中满足六项要求**：现实次数、永恒次数、无限次数，以及若干后期资源分别达到门槛。**不是某一个数字达标就能进入，也不能把不同现实的临时进度简单相加**。
+Ra 会重新利用此前天神的能力，并通过记忆（Memories）等系统逐步强化它们。[Ra 资料](https://antimatterdimensions.wiki.gg/wiki/Ra?oldid=3387)
 
-Oreki Edition 为缩短重复等待，调整过其中部分门槛：例如 V 所需现实次数从原版的 **10,000 次**降低到 MOD 规则中的 **60 次**，膨胀时间与复制器数量门槛也有缩放。其他要求仍须逐项检查，最终以所用版本显示的条件为准。[原版 V 资料](https://antimatterdimensions.wiki.gg/wiki/V?oldid=3373) · [MOD 差异](/player/gameplay/original-vs-mod)
+这并不是把前四位天神从头再打一遍。Ra 更像一座研究站：你已经拥有旧系统的经验，现在要判断哪些记忆或强化最能改善下一次现实。回头查看早期奖励并非浪费时间，因为 Ra 的成长正建立在那些已经解锁的能力之上。
 
-如果 V 的进度显示为「接近完成」，却一直没有开放，不要只重复现实。检查尚未满足的那一项，以及它需要的是累计次数、当前这次现实里的资源还是其他特殊条件。
+## 莱特拉：暗物质维度带来的另一条生产曲线
 
-### Ra：重新强化先前的天神
+莱特拉（Lai'tela）引入暗物质维度、奇点（Singularities）与连续统（Continuum）等机制，并配有自己的特殊现实与速度要求。[莱特拉资料](https://antimatterdimensions.wiki.gg/wiki/Lai%27tela?oldid=3375)
 
-Ra 会把你带回此前接触过的天神能力，并通过**记忆（Memories）**等系统逐渐提高它们的效果。它还会逐步解锁新的便利能力及后期成长内容。
+这时的“变强”不再只等于把原有维度乘得更大。暗物质维度有自己的生产和限制，连续统又会改变你对购买操作的理解；先弄清新资源从哪里来、通过什么重置保留，再决定自动化策略。Oreki Edition 对部分解锁条件、熵增长和计时窗口做过缩放，但出现入口不等于挑战已经完成，仍需满足当前版本列出的真实条件。
 
-这段时间适合重新查看此前的奖励和已开放的系统。你并不是把前四位天神重新从零挑战一遍，而是在 Ra 的机制里进一步利用它们。[Ra 的原版资料](https://antimatterdimensions.wiki.gg/wiki/Ra?oldid=3387)
+## 佩勒：把终局当作不可随意撤销的选择
 
-## 最后两位：莱特拉与佩勒
+佩勒（Pelle）是最后一位天神。进入毁灭（Doom）后，许多依赖后期系统的强化会被限制，你要在新的规则下重建前进路线。[佩勒资料](https://antimatterdimensions.wiki.gg/wiki/Pelle?oldid=3376)
 
-### 莱特拉（Lai'tela，检索别名 Lai Tela）：暗物质与新的生产方式
+毁灭不是普通挑战，也不是可以随手试一下再退出的菜单。按下入口前先读游戏内警告，确认已经备份存档，并理解当前版本的退出和恢复边界。进入后，优先观察哪些资源和升级仍然有效，再规划下一步；不要假设旧阶段的自动化会完整接管新规则。
 
-莱特拉会引入**暗物质维度（Dark Matter Dimensions）**、奇点（Singularities）和连续统（Continuum）等机制。她的特殊现实还有独特的完成和速度要求。
+## 天神阶段的通用排障
 
-这一阶段不只是增加现实机器，也要理解暗物质维度怎样成长，以及新的系统如何影响原先的购买方式。莱特拉的部分挑战还会对允许使用的维度提出限制。[原版莱特拉资料](https://antimatterdimensions.wiki.gg/wiki/Lai%27tela?oldid=3375)
+**入口提前出现或按钮不能用。** 以页面列出的实际条件和结算状态为准。界面出现不等于阶段已经解锁，参见[阶段解锁与页面显示](/player/gameplay/stage-gates)。
 
-Oreki Edition 对莱特拉相关的部分解锁条件、熵增长和计时要求做过缩放，但**不代表完成入口出现后就能忽略挑战条件**。遇到无法解锁的情况，应先核对当前现实是否满足特殊要求，再决定是否换一轮现实准备。[MOD 差异](/player/gameplay/original-vs-mod)
+**进入后比预期慢很多。** 重读特殊现实的限制，检查符文、时间储存或暗物质维度是否被限制。先找规则变化，再考虑是不是存档问题。
 
-### 佩勒（Pelle）：通向结局的最终挑战
+**自动化没有替你完成目标。** 这是预期边界：自动化可以减少重复购买，但不会跳过天神的条件、特殊现实目标或终局结算。
 
-佩勒是最后一位天神。进入他的**毁灭（Doom）**状态之后，你会失去许多原本依赖的后期强化，必须在新的限制下重新建立成长。
+## 原版与 Oreki Edition 的边界
 
-**原版的毁灭状态不能像普通挑战那样随意退出。** 在按下相关入口前，先阅读游戏内的警告和条件，不要把它当作一次可以轻松撤销的普通现实。
-
-毁灭阶段需要通过自身的资源、升级与重置逐步打开前进道路，而不是只靠之前的符文或现实升级。Oreki Edition 调整过终局相关数值，目的是缩短不必要的等待；实际结局仍应由游戏的正常终局过程触发。[佩勒的原版资料](https://antimatterdimensions.wiki.gg/wiki/Pelle?oldid=3376)
-
-## 遇到难关时怎么判断？
-
-天神阶段最容易出现一种误会：**「上一位天神能靠多买升级推进，这一位也应该一样。」** 实际上，不同天神经常要求不同的准备方式。
-
-进入新天神前，先读它的特殊现实说明；挑战内部进展缓慢时，查看本次限制是否禁用了某项常用能力；如果入口不开放，优先检查**当前显示的缺失条件**，而不是反复切换页面或修改存档。已经完成的其他天神奖励也可能是突破关键。
-
-在 Oreki Edition 中，自动化可以减少重复购买，但不会替你跳过天神的真实条件。某个功能提前显示却无法使用，也不能仅凭它出现在界面上就认定已解锁；发生异常时可以参考[阶段解锁与页面显示](/player/gameplay/stage-gates)。
-
-## 原版与 MOD 的区别
-
-本页对七位天神的基本玩法采用原版概念。Oreki Edition 的变化集中在**部分门槛、资源倍率、计时窗口及自动化操作**，并不意味着原版所有数值都仍然适用。
-
-具体差异可能随着 MOD 版本更新，尤其在 V、莱特拉和佩勒阶段，核对数值时应先确认当前 Android 或 Web 版本。集中比较见[原版行为与 Oreki Edition 修改](/player/gameplay/original-vs-mod)，玩家不必阅读 Kotlin 类名或开发历史才能理解本页。源代码门槛、两端解锁位号和历史故障链集中在[天神技术参考](/developer/architecture/celestial-implementation)。
+本页用原版概念解释七位天神，再单独标出已知的 MOD 缩放。Android 与 Web 的版本、解锁条件和界面可能不同；核对数值时应以正在使用的版本为准。集中对照见[原版行为与 Oreki Edition 修改](/player/gameplay/original-vs-mod)，源码实现和历史故障属于[天神技术参考](/developer/architecture/celestial-implementation)，不把开发记录当作玩家规则。
 
 ## 参考资料
 
-- [Antimatter Dimensions Wiki：Celestials](https://antimatterdimensions.wiki.gg/wiki/Celestials?oldid=3187)（七位天神及其成长顺序）。
-- [Teresa](https://antimatterdimensions.wiki.gg/wiki/Teresa?oldid=3370)、[Effarig](https://antimatterdimensions.wiki.gg/wiki/Effarig?oldid=3371)、[The Nameless Ones](https://antimatterdimensions.wiki.gg/wiki/The_Nameless_Ones?oldid=3372)（前三位的机制）。
-- [V](https://antimatterdimensions.wiki.gg/wiki/V?oldid=3373)、[Ra](https://antimatterdimensions.wiki.gg/wiki/Ra?oldid=3387)（空间之理、记忆等机制）。
-- [Lai'tela](https://antimatterdimensions.wiki.gg/wiki/Lai%27tela?oldid=3375)、[Pelle](https://antimatterdimensions.wiki.gg/wiki/Pelle?oldid=3376)（后期机制与终局）。
-- [原版官方源码：V 的门槛定义](https://github.com/IvarK/AntimatterDimensionsSourceCode/blob/5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/secret-formula/celestials/v.js)。
+- [Celestials](https://antimatterdimensions.wiki.gg/wiki/Celestials?oldid=3187)
+- [Teresa](https://antimatterdimensions.wiki.gg/wiki/Teresa?oldid=3370)、[Effarig](https://antimatterdimensions.wiki.gg/wiki/Effarig?oldid=3371)、[The Nameless Ones](https://antimatterdimensions.wiki.gg/wiki/The_Nameless_Ones?oldid=3372)
+- [V](https://antimatterdimensions.wiki.gg/wiki/V?oldid=3373)、[Ra](https://antimatterdimensions.wiki.gg/wiki/Ra?oldid=3387)
+- [Lai'tela](https://antimatterdimensions.wiki.gg/wiki/Lai%27tela?oldid=3375)、[Pelle](https://antimatterdimensions.wiki.gg/wiki/Pelle?oldid=3376)
+- [原版源码：V 的门槛定义](https://github.com/IvarK/AntimatterDimensionsSourceCode/blob/5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/secret-formula/celestials/v.js)
 
 ## 相关条目
 
