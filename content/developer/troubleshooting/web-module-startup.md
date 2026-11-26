@@ -72,7 +72,7 @@ window[key] = value;
 
 ## 为什么 `game.js` 不能随处直接 import
 
-全局桥的最后一步导入 `game.js`，再把它的导出合并到 `window`。看起来像是反向依赖，实际是为旧模块提供例如 `gainedInfinityPoints()` 这类运行时入口。一个 MOD 策略模块的源码注释给出了重要取舍：它直接调用全局函数，而不是重新 `import game.js`，以免形成这样的 ESM 环：
+全局桥的最后一步导入 `game.js`，再把它的导出合并到 `window`。看起来像是反向依赖，实际是为旧模块提供例如 `gainedInfinityPoints()` 这类运行时入口。[`src/core/oreki-smart-strategy.js`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/core/oreki-smart-strategy.js) 的源码注释给出了重要取舍：这个 MOD 策略模块直接调用全局函数，而不是重新 `import game.js`，以免形成这样的 ESM 环：
 
 ```text
 game.js
@@ -133,4 +133,5 @@ ESM 循环依赖不一定立刻抛出清晰错误；更危险的情况是模块�
 - [兼容注入 `src/shims.js`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/shims.js)：把第三方模块实例注入 `window`。
 - [全局桥 `src/merge-globals.js`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/merge-globals.js)：导出合并、冲突保护和遗留组件边界。
 - [游戏入口 `src/game.js`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/game.js)：浏览器检查、初始化和运行时入口。
+- [自动购买策略 `src/core/oreki-smart-strategy.js`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/core/oreki-smart-strategy.js)：避免直接导入 `game.js` 的策略模块边界。
 - [Web 端架构](/developer/architecture/web)：沿启动、游戏循环和存档恢复继续阅读。
