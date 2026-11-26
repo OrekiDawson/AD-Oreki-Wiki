@@ -28,3 +28,10 @@ Oreki Edition 是基于原版制作的 MOD，不是原版的官方更新。Andro
 - [挑战与真实结算](/player/gameplay/challenges)：特殊限制和挑战奖励。
 - [智能自动购买器](/player/gameplay/automation)：把重复操作变成可调整的策略。
 - [存档兼容与自动保存](/player/gameplay/saves)：更新或换平台前保护进度。
+
+## 参考资料
+
+- [Antimatter Dimensions Wiki：Antimatter Dimension](https://antimatterdimensions.wiki.gg/wiki/Antimatter_Dimension)
+- [Antimatter Dimensions Wiki：Eternity](https://antimatterdimensions.wiki.gg/wiki/Eternity)
+- [Antimatter Dimensions Wiki：Reality](https://antimatterdimensions.wiki.gg/wiki/Reality)
+- [Antimatter Dimensions 原版源码](https://github.com/IvarK/AntimatterDimensionsSourceCode)

@@ -53,3 +53,9 @@ aliases:
 5. 若交给自动化，调度器的目标是否和你想推进的阶段一致？
 
 这套顺序的价值不在于给出唯一答案，而在于避免把所有停滞都归咎于“数字还不够大”。有时正确动作是购买，有时是挑战，有时则是按下那个看似让一切归零的重置按钮。
+
+## 参考资料
+
+- [Antimatter Dimensions Wiki：Antimatter Dimension](https://antimatterdimensions.wiki.gg/wiki/Antimatter_Dimension)
+- [Antimatter Dimensions Wiki：Challenges](https://antimatterdimensions.wiki.gg/wiki/Challenges)
+- [Antimatter Dimensions Wiki：Reality](https://antimatterdimensions.wiki.gg/wiki/Reality)

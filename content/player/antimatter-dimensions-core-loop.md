@@ -48,3 +48,9 @@ aliases:
 - **是否到了重置时机**：当前资源能否换来下一轮永久优势，或者已经满足更高层重置的条件。
 
 自动购买器可以接管重复购买，但不能改变生产链的合法条件，也不能替你决定所有重置。想了解自动化的操作边界，阅读[智能自动购买器](/player/gameplay/automation)；想按实际操作走完前期流程，阅读[开始游玩](/player/getting-started/)。
+
+## 参考资料
+
+- [Antimatter Dimensions Wiki：Antimatter Dimension](https://antimatterdimensions.wiki.gg/wiki/Antimatter_Dimension)
+- [Antimatter Dimensions Wiki：Eternity](https://antimatterdimensions.wiki.gg/wiki/Eternity)
+- [Antimatter Dimensions Wiki：Reality](https://antimatterdimensions.wiki.gg/wiki/Reality)
