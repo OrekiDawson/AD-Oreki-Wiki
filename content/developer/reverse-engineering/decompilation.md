@@ -15,9 +15,13 @@ aliases:
 
 ## 先固定版本，再谈“原始源码”
 
-同一个短类名在不同 APK 中可能指向不同的类型；同一方法的参数也可能因重载或编译器生成代码而改变。调查开始时先记录 APK 的版本、签名摘要、使用的 DEX 文件和反编译工具版本。对 Oreki Edition 的 Android 3.21 基线，类索引和绑定资料只描述该版本的外部边界，不能被当成上游源码的永久映射。
+同一个短类名在不同 APK 中可能指向不同的类型；同一方法的参数也可能因重载或编译器生成代码而改变。调查开始时先记录 APK 的版本、签名摘要、使用的 DEX 文件和反编译工具版本。对 Oreki Edition 的 Android 3.21 基线，[版本绑定文件](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/fb1299a132f134eb4fab009643ee3fc3d6c57edf/baseline/versions/3.21/bindings.json)和[第一方类索引](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/fb1299a132f134eb4fab009643ee3fc3d6c57edf/docs/deobfuscation/data/first-party-3.21-index.csv)只描述该版本的外部边界，不能被当成上游源码的永久映射。
 
 这一步看似保守，却能避免最昂贵的误判：把新版本的结果套回旧版本，随后在 Kotlin 中“修正”一个根本不存在于当前产物的 API。版本信息应与调查笔记和恢复后的测试样本一起保存，而不是只写在文章标题里。
+
+## 证据边界
+
+本文把结论分成三层：DEX、Smali 和描述符直接支持的结构事实；由控制流与调用点支持的行为解释；以及在指定 APK 中实际运行测试确认的工程契约。上文链接的绑定文件和类索引只核对 Android 3.21 的静态映射，不能证明其他版本相同；本文没有把静态阅读当成运行验证，也不把尚未执行的测试写成已通过。
 
 ## DEX、Smali 与反编译器各自告诉你什么
 
