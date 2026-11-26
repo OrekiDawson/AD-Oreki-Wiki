@@ -1,119 +1,87 @@
 ---
-title: "第一次参与开发"
-description: "从 Web 本地运行、跟踪真实启动入口，到提交一次有来源的最小文档修改"
+title: "第一次参与 Android 开发"
+description: "从根级 AGP 工程完成一次可解释的源码阅读、构建检查与最小改动"
 tags:
   - 开发入门
-  - Web
+  - Android
+  - AGP
   - Git
 ---
 
-第一次参与 Oreki Edition，**先不从 Android APK 签名、DEX 逆向或完整游戏长跑开始**。用 Web 仓库完成一次小练习更合适：把本地服务启动起来，找到游戏从哪里进入，再修正一处经过源码核对的文档说明。这样既能熟悉仓库，也不会修改存档或挑战结算。
+第一次参与这个项目，不必从反编译整套官方 DEX 开始。更稳妥的练习是：拿到 Android 仓库，认出真正的构建入口，沿着一条 Kotlin 调用链读到原版适配层，再做一个有事实依据的小改动。这样你学到的是项目如何工作，而不是只记住几个目录名。
 
-这一教程的目标有三个：**本地看到网页、定位一条真实的代码路径、检查并提交一个小而准确的修改**。命令对应 Web 仓库 2026-11-22 的源码 `90d89de2`；本文编写时只做了仓库和脚本静态核对，**没有在作者环境实际启动服务器，运行结果为 `NOT RUN`**。
+本文以 Android `main` 的 [`9d8fc46`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/tree/9d8fc46ce99279720b5b3068027bb76bceb35756) 为源码基线。命令适合在仓库根目录执行；构建是否能继续取决于本机 Android SDK、JDK 17、Gradle 输入和权限，本文作者没有把读码结果冒充设备运行结果。
 
-## 开始前准备
+## 先认出真正的工程入口
 
-需要 Git、可运行 `node` 的 Node.js 环境、现代浏览器，以及可以访问 GitHub 的网络。若准备直接推送原仓分支，还需要相应仓库权限；没有权限时使用自己的 Fork 发起 PR。这个练习无需 Android SDK、签名密钥、官方 XAPK 或游戏存档。
-
-在终端先检查本地工具：
+克隆仓库后，先不要急着找某个“主类”：
 
 ```bash
-git --version
-node --version
-```
-
-这两条命令只是确认工具存在，不表示已经取得了正确的项目源码。
-
-## 第一步：取得 Web 代码
-
-```bash
-git clone https://github.com/OrekiDawson/AD-Oreki-Edition-Web.git
-cd AD-Oreki-Edition-Web
+git clone https://github.com/OrekiDawson/AD-Oreki-Edition-Android.git
+cd AD-Oreki-Edition-Android
 git status --short
 git rev-parse HEAD
 ```
 
-第一次克隆后，`git status --short` 通常没有输出，说明没有本地修改；`git rev-parse HEAD` 会显示你当前的完整提交 ID。请记住这个 ID，后续若某次文档解释与运行行为不符，就能检查是不是代码版本发生了变化。
+当前根 [`settings.gradle.kts`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/9d8fc46ce99279720b5b3068027bb76bceb35756/settings.gradle.kts) 只包含 `:app`，并引入 `build-logic`。因此生产应用的第一观察点是根 `:app`，不是历史上的嵌套 `agp/` 目录。接着阅读 [`app/build.gradle.kts`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/9d8fc46ce99279720b5b3068027bb76bceb35756/app/build.gradle.kts)：这里能看到 SDK、ABI、变体、签名、生成 Kotlin 和完整游戏资源是怎样接进 APK 的。
 
-教程中的源码示例基于 [Web Commit `90d89de2`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/tree/90d89de2048332f3c329ae6834ebee2675453a02)。不必强行切换到旧 Commit；但如果今天的 `main` 已更新，应先阅读实际文件再沿用下面的结论。
-
-## 第二步：用 HTTP 启动页面
-
-项目根目录有一个 [`serve.mjs`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/90d89de2048332f3c329ae6834ebee2675453a02/serve.mjs)。它使用 Node 内置的 `http`、`fs` 等模块提供静态文件，不依赖额外安装的 HTTP 服务包。浏览器里的 ES 模块应当通过 HTTP 加载，而不是直接双击 `index.html` 以 `file://` 方式打开。
-
-仍在 Web 仓库根目录时，执行：
+环境检查可以先做成只读动作：
 
 ```bash
-node --check serve.mjs
-node serve.mjs 8080
+java -version
+./gradlew --version
+python --version
 ```
 
-第一个命令只检查 JavaScript 语法；第二个命令才真正启动本地服务。**预期**终端会提示服务监听 `http://127.0.0.1:8080/`。用浏览器打开这个地址，观察页面是否正常加载。服务器绑定 `127.0.0.1`，因此默认仅供本机访问，不是部署到公网。
+Windows PowerShell 使用 `./gradlew.bat --version`。项目的 Kotlin/Java 编译目标是 Java 17；`compileSdk`、`targetSdk`、`minSdk` 和 ABI 以当前 `app/build.gradle.kts` 为准，不要照抄旧文章里的数字。
 
-如果遇到端口占用，脚本会给出相关提示。可以停止已有服务，或换一个端口：
+## 读一条比目录更有用的调用链
+
+从 [`OrekiStageAuto.kt`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiStageAuto.kt) 的自动购买 tick 开始，关注三个问题：谁决定现在能不能动作，谁调用原版对象，谁把结果告诉下一次 tick。
+
+调度器 [`OrekiAutomationScheduler.kt`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiAutomationScheduler.kt) 只负责节拍和闸门。调用方先通过 `allow(taskId)` 请求名额，真实动作发生后调用 `noteActed`；没有满足原版条件时使用 `noteNoop`，异常则进入失败冷却。于是“调度器允许尝试”和“游戏真的买到东西”是两个不同事实。
+
+原版对象则由 [`GameApi.kt`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/GameApi.kt) 适配。因为官方游戏类来自 DEX，MOD 的 Kotlin 不能在普通编译期直接引用完整类型；`GameApi` 集中解析并缓存类、字段和方法，把混淆名与版本差异挡在边界内。修改自动化策略时，优先调用这个语义层，不要在新文件里复制 `Class.forName` 或散落混淆字段。
+
+这条链的阅读结果应该能用一句话说清：
+
+```text
+OrekiStageAuto 的 tick → Scheduler 闸门 → GameApi 原版调用 → noteActed/noteNoop/noteFail
+```
+
+如果你只能说“我改了一个 Kotlin 文件”，还没有真正理解改动会影响什么。
+
+## 做一个安全的最小改动
+
+第一次改动建议选择有明确来源的开发者文档或诊断日志说明，而不是直接改资源、重置逻辑、签名配置或存档格式。建立分支并在提交前核对：
 
 ```bash
-node serve.mjs 8081
-```
-
-如果浏览器打开空白页，先检查终端是否报错、浏览器开发者工具的 Console 和 Network 是否出现请求错误，再排查资源路径；不要直接修改游戏进度试图“修复”加载。
-
-完成观察后，回到运行服务器的终端用 `Ctrl+C` 终止程序。
-
-## 第三步：跟着一条真实代码路径读
-
-先打开 [`src/main.js`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/90d89de2048332f3c329ae6834ebee2675453a02/src/main.js)。它先导入速度配置、触控拖动支持、兼容层与 Oreki 工具，再从 `src/game.js` 导入 `browserCheck` 和 `init`。最后执行的是：
-
-```js
-if (browserCheck()) init();
-```
-
-这不是完整的游戏循环，而是**浏览器启动入口**。接着打开 [`src/game.js`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/90d89de2048332f3c329ae6834ebee2675453a02/src/game.js)；这里能看到游戏初始化和 MOD 自动化模块的集成。
-
-例如，`src/game.js` 会引入 `OrekiSmartExecutor`，并使用 `register(...)` 关联若干策略执行入口。这说明**调度的逻辑与实际执行的逻辑不是同一个模块**。如果需要修改自动化，不应仅凭 `src/main.js` 猜测所有行为都在页面启动时完成，而应进一步查阅 `src/core/` 中对应实现。
-
-本步骤的可检验结果是：你应该能准确指出“本地 HTTP 入口是什么、浏览器初始化入口是什么、游戏与自动化集成点在哪里”，并给出这些实际文件，而不是只记住了某个 R 轮次编号。
-
-## 第四步：做一次安全的小改动
-
-第一次练习推荐修改**已存在且确实需要纠正的文档**，例如 Web `README.md` 中的启动或源码定位说明。不要为了交差提交无意义的空白行；如果原文没有错误或缺口，就停止这一步，换一个有事实依据的 Issue。
-
-有实际内容需要修正时，再建立分支：
-
-```bash
-git switch -c docs/first-contribution
-```
-
-使用自己熟悉的编辑器修改相应文件。假如你修改的是 `README.md`，可以先检查：
-
-```bash
+git switch -c docs/first-android-contribution
 git diff --check
-git diff -- README.md
-git status --short
+git diff -- app/src/main/kotlin/kajfosz/antimatterdimensions/oreki
 ```
 
-`git diff --check` 主要检查空白符等 Diff 问题，**并不能确认你写的事实正确**。请再对照刚阅读的 `serve.mjs`、`src/main.js` 等原始文件，确认命令、目录、解释没有写错。
+若修改了 Kotlin，至少解释它为什么属于 `app/src/main/kotlin/`、调用了哪一个适配层、在失败时怎样保持安全。若涉及调度器，尤其要说明 `no-op` 是否推进全局节拍；把一次“返回 true”当成“动作成功”是这类代码最常见的误读。
 
-如果修改确实成立且你拥有对应仓库的写入权限：
+对构建先做与改动相称的验证。没有完整游戏输入时，可以先运行 Gradle 任务列表或静态检查；不要把缺少 `oreki.fullGameStage`、生成绑定或签名密钥导致的失败隐藏掉：
 
 ```bash
-git add README.md
-git commit -m "docs: 核对本地启动说明"
-git push -u origin docs/first-contribution
+./gradlew :app:tasks
+./gradlew :app:assembleDebug
+git diff --check
 ```
 
-然后从 GitHub 为该分支创建 PR。没有原仓写入权限时，应先 Fork，再把分支推送到自己的 Fork；上面的 `origin` 命令不能直接照搬为所有账户的推送方式。
+当前根 `:app` 是完整游戏应用模块。`assembleDebug` 仍需要构建逻辑能找到完整游戏 Manifest、资源、assets、JNI 库和生成绑定；它不是一个与游戏无关的空壳示例。Release 还会检查 `keys/oreki.jks`，没有生产密钥时只能做明确标记的未签名实验，不能发布。
 
-PR 描述至少回答：**纠正了什么、用哪个实际源码版本核对、执行了哪些命令、什么没有执行**。如果只跑了语法检查，就写“语法检查”，别写“游戏功能 PASS”。
+提交信息和 PR 描述要回答三个实际问题：改了什么行为或说明，用哪个源码版本核对，执行了哪些验证。只做静态读码就写静态读码；没有安装、启动、AVD 或完整通关，就不要使用这些词替代证据。
 
-## 继续开发前要知道的两件事
+## 出现故障时先分层
 
-**Android 的构建比 Web 复杂得多。** 生产 Kotlin 业务位于 `app/src/main/kotlin/`，AGP 工程位于 `agp/`。默认 `./gradlew -p agp :app:assembleRelease` 只覆盖 bridge/骨架包模式；完整游戏还需要经过来源验证的游戏类 JAR 和 `orekiFullGame` 参数。千万别把骨架构建的 PASS 当成可交付的完整游戏 APK。详见 [Android 架构](/developer/architecture/android)和 [AGP 构建](/developer/build/agp)。
+- **Gradle 找不到任务或模块**：先看根 `settings.gradle.kts` 与 `build-logic`，不要从旧 `agp/` 路径猜命令。
+- **Kotlin 编译找不到官方游戏类**：检查你是否绕过了 `GameApi`，或误以为 DEX 会自动成为 `kotlinc` 的类型输入。
+- **APK 能构建但自动化不动**：按 `allow` → 原版前置 → `noteActed/noteNoop/noteFail` 顺序查，不要先改间隔上限。
+- **Release 被拒绝**：检查 `keys/oreki.jks` 和 `local.properties` 的显式实验开关；签名门禁是交付保护，不是构建噪声。
 
-**游戏真实性比构建速度重要。** 影响资源、自动购买器、存档、挑战或结算的代码，必须保持合法前置和真实原版结算；一次静态语法检查或网页打开成功无法证明 180 分钟终局、存档兼容或跨端一致性。
+本文作者自检：源码路径和调用关系已对照 Android `9d8fc46` 的 `settings.gradle.kts`、`app/build.gradle.kts`、`OrekiStageAuto.kt`、`OrekiAutomationScheduler.kt`、`GameApi.kt`；命令按当前工程结构撰写。作者环境未执行克隆、Gradle 构建、APK 安装、AVD 启动或真实游戏运行，读者应把这些步骤作为待执行验证，而不是历史 PASS。
 
-## 本文实际核查范围
-
-- 已从 GitHub 读取 Web `README.md`、`package.json`、`serve.mjs`、`src/main.js` 与 `src/game.js` 的源码内容，并确认所述路径存在。
-- **作者环境的 Git 克隆、Node 启动、浏览器加载、代码修改和 PR 演练：`NOT RUN`**。步骤是可供读者执行的教程，不是本次作者已经完成的实测记录。
-- 如今日源码已有更新，优先以实际 `HEAD` 和仓库最新规则为准，不能套用过期结果。
+[Android 架构](/developer/architecture/android) · [Android 工程目录迁移](/developer/architecture/directory-migration) · [AGP 构建管线](/developer/build/agp) · [混合运行时 ABI](/developer/architecture/kotlin-runtime)

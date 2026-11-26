@@ -1,64 +1,72 @@
 ---
-title: "目录标准化迁移"
-description: "从双 Gradle/脚本布局迁移到标准 AGP 工程的目标、阶段划分与迁移纪律"
+title: "Android 工程为什么要回到根目录"
+description: "从旧的脚本源码树迁移到根级 AGP 工程：目录、Source Set 与构建输入如何重新对齐"
 tags:
   - Android
-  - 迁移
+  - AGP
+  - 工程结构
 aliases:
   - "/architecture/directory-migration"
 ---
 
+Android 工程的目录不是收纳箱，而是构建系统的一张地图。地图画错时，开发者看到的文件和 AGP 实际编译的文件可能不是同一批；最危险的情况是代码“明明改了”，APK 却仍然运行旧输入。
 
-Android 仓库历史上同时存在根级 Groovy 构建、`agp/app` Kotlin DSL、脚本生成源码与补丁树等多套布局。目录标准化迁移（Issue #61）的目标是把生产代码收敛到标准 AGP 工程结构，让「代码在哪里、由谁编译、产物如何追溯」不再依赖脚本约定。
+Oreki Edition 曾同时保留脚本生成的 Kotlin 树、嵌套 AGP 工程和补丁资产。目录迁移的真正目标不是把文件摆得更整齐，而是让三个问题有唯一答案：生产代码在哪里，Gradle 从哪里取它，最终 APK 能否追溯到这些输入。
 
-本条目解释迁移目标、已完成阶段与仍然存在的限制，不逐条记录每一轮改动。
+## 现在的地图：根工程负责构建，`app` 负责应用
 
-## 目标结构
+当前 Android 仓库的 [`settings.gradle.kts`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/9d8fc46ce99279720b5b3068027bb76bceb35756/settings.gradle.kts) 只注册根项目和 `:app`，并通过 `includeBuild("build-logic")` 加载本地约定插件。根 [`build.gradle.kts`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/9d8fc46ce99279720b5b3068027bb76bceb35756/build.gradle.kts) 提供 Android Gradle Plugin；真正决定 SDK、变体、Source Set 和签名策略的是 [`app/build.gradle.kts`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/9d8fc46ce99279720b5b3068027bb76bceb35756/app/build.gradle.kts)。
 
-最终形态是标准 AGP 9.5.1 工程：根级 `app/`、`settings.gradle.kts`、`build.gradle.kts`，生产 Kotlin 代码在 `app/src/main/kotlin/`，资源与运行资产由 Android Source Set 或有声明输入输出的 Gradle 生成目录管理；`baseline/`、`scripts/`、`docs/`、`reports/` 等保持职责清晰。
+生产 Kotlin 的规范位置是：
 
-这与 `build_mod.py` 退役（Issue #52）属于同一条「AGP 原生化、去旧构建链」主线，但两者是不同目标：目录迁移解决布局，退役解决构建依赖，见 [build_mod.py 退役](/developer/build/build-mod-retirement)。
+```text
+app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/
+```
 
-## 阶段划分
+这里的“规范”有一个容易忽略的含义：目录本身并不会让 Kotlin 自动进入 APK，AGP 仍要在 `main` Source Set 中注册它；反过来，Source Set 也不应继续把已退役的旧目录偷偷加入编译。当前目录策略文件 [`scripts/agp/directory-layout.json`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/9d8fc46ce99279720b5b3068027bb76bceb35756/scripts/agp/directory-layout.json) 标记为 `root`，布局守卫 [`scripts/check_directory_layout.py`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/9d8fc46ce99279720b5b3068027bb76bceb35756/scripts/check_directory_layout.py) 会检查这一点。
 
-| 阶段 | 内容 | 状态 |
-| --- | --- | --- |
-| S0/S1 | 盘点、依赖与消费者核对 | 完成 |
-| S2-6 | 生产 Kotlin 源码迁入 `app/src/main/kotlin/` | **完成**（PASS） |
-| S3 | 根级正式 AGP 入口切换 | NOT RUN |
-| S4 | 退役旧 Groovy 入口与 build_mod.py | NOT RUN |
+## 迁移解决的不是 `git mv`，而是输入边界
 
-S3/S4 的启动条件是完整原生游戏构建与独立发布门禁都满足，而不是「目录看起来整齐」。未切换根级正式入口前，不得声称迁移全部完成。
+一次可靠的迁移至少要同时处理四条边：
 
-## S2-6 的做法与结果
+1. **源码边界**：将生产 Kotlin 放入 `app/src/main/kotlin/`，不让旧 `scripts/payload/kotlin` 与新目录产生同名类。
+2. **构建边界**：让 `app/build.gradle.kts` 的 Source Set、生成绑定目录和完整游戏资源各自有明确职责。
+3. **工具边界**：命名守卫、绑定生成、R8 保留规则和 CI 路径过滤不能继续假定旧目录。
+4. **证据边界**：迁移前后的构建输入与 APK 指纹必须能够比较；“文件移动成功”不是运行正确的证明。
 
-- 用 `git mv` 迁移 36 个 `.kt` 文件，保留 Git 历史；
-- 同步全部消费者：AGP sourceSets、根 `build.gradle`、`build_mod.py`、命名守卫、Rust 指纹、R8 keepgen、教程链、调度检查、CI 路径过滤与测试；
-- 验证：同一 game jar 重建的 AGP 完整游戏 APK 与迁移前**逐字节相同**（APK SHA-256 `15a21f5d57c4b2e0c513398a17944a512b95fe17d186036dc1e234c395958d17`）；
-- 命名增量守卫支持 rename 配对：36 moved / 历史违规 15 / 当前 15 / 无新增；
-- CI 增加目录门禁 `scripts/check_directory_layout.py`，迁移后阶段为 `nested-new`。
+当前 `main` Source Set 一方面编译手写的 `app/src/main/kotlin/`，另一方面只额外接入构建时生成的 `build/kt/generated`。完整游戏的 Manifest、资源、assets 和 JNI 库则分别来自 `oreki.fullGameStage` 指向的阶段目录、生成资源目录、完整游戏资产目录和 `scripts/payload/lib`。把这些输入混成一个“源码目录”会让排障变得困难：Kotlin 编译通过，只能说明 Kotlin 输入可用，不能说明游戏资源或 JNI 输入齐全。
 
-「逐字节相同」是这次迁移最有价值的一条证据：它说明迁移只改变了文件位置，没有改变构建产物内容。
+## 为什么要从旧树迁走
 
-## 迁移纪律
+旧布局最容易制造两种假象。第一种是重复类：旧目录和新目录各有一份同名 Kotlin，Gradle 可能在编译阶段报重复，也可能因为 Source Set 配置变化而悄悄换用另一份。第二种是错觉：开发者编辑了 `app/src/main/kotlin/`，但某个脚本仍从旧树生成或复制文件，最后看到的 APK 与编辑内容脱节。
 
-- 一次一个可验收闭包，小 PR、Required Checks；
-- 旧/新并存期必须显式声明 Source Sets，避免重复类；
-- 未切换根级正式入口前，不得声称迁移全部完成；
-- 不移动 `build/`、`release/`、`savestates/`、冻结基线与唯一证据。
+因此迁移期间不能只改目录。每次移动都要反查消费者：`sourceSets`、生成脚本、绑定表、R8 keep 规则、CI 路径过滤和教程命令。迁移记录中曾使用 `git mv` 保留文件历史，并以目录守卫确认旧树与新树没有重叠；这些历史证据可从 [Android Issue #61](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/issues/61)、[PR #83](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/pull/83) 和 [PR #84](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/pull/84) 追溯，但它们是迁移证据，不是今天构建成功的替代品。
 
-## 已确认与未确认
+## 修改目录时怎样保持可追溯
 
-- **已确认**：S2-6 完成且 APK 逐字节一致；目录门禁已进入 CI。
-- **未确认**：S3/S4 未开始；根级标准工程与 `build_mod.py` 退役仍未完成。
-- **版本边界**：以上结论对应 Android 3.21.0 与 AGP 9.5.1。
+先从仓库根目录确认实际阶段和活动 Source Set，再移动一小组具有同一依赖边界的文件。移动后至少检查：
 
-## 参考资料
+```bash
+python scripts/check_directory_layout.py
+git diff --find-renames --stat
+git diff --check
+```
 
-- [Issue #61（目录标准化）](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/issues/61)
-- [docs/FACTS.md 目录迁移记录](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/main/docs/facts/build.md#f-r113-01)
-- [Android PR #83（S2-6 迁移）](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/pull/83)、[PR #84（目录门禁进 CI）](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/pull/84)
+守卫通过只说明目录契约满足；`git diff --find-renames` 用来确认这确实是移动而不是删除后重写；`git diff --check` 只检查格式。若要证明行为未变，还需用同一套完整游戏输入构建并比较产物，不能用一个空壳或缺少游戏 JAR 的构建代替。
 
-## 相关条目
+迁移后新增 Kotlin 应直接放在规范目录，并让调用方依赖语义化的适配层，例如 [`GameApi.kt`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/GameApi.kt)，不要把旧目录名或混淆类名继续扩散到业务代码中。这样目录迁移和 ABI 迁移才不会互相打架。
 
-[Android 架构](/developer/architecture/android) · [AGP 构建管线](/developer/build/agp) · [build_mod.py 退役](/developer/build/build-mod-retirement)
+## 常见故障：代码在树里，却不在 APK 里
+
+遇到“源码能找到、运行时没有变化”，按输入链缩小范围：
+
+- **文件在旧目录**：确认文件位于 `app/src/main/kotlin/`，并检查 `app/build.gradle.kts` 是否仍存在指向旧树的 Source Set。
+- **生成绑定缺失**：确认绑定是否写入 `build/kt/generated`，以及输入是否来自当前版本的绑定数据。
+- **资源或 JNI 缺失**：检查 `oreki.fullGameStage` 指向的 Manifest、资源和 assets 是否完整；这类失败不是目录迁移本身能修复的。
+- **反射功能失效**：转到 [混合运行时 ABI](/developer/architecture/kotlin-runtime)，检查 `GameApi` 的版本映射与日志，而不要继续移动文件。
+
+## 相关资料与边界
+
+本文依据 Android `9d8fc46ce99279720b5b3068027bb76bceb35756` 的根工程、Source Set、目录策略和守卫源码撰写。旧 URL `/architecture/directory-migration` 保留为兼容别名，规范入口是本文；目录迁移已经进入根工程阶段，但完整 APK 的输入准备、签名和设备运行仍是独立门禁。
+
+[Android 架构](/developer/architecture/android) · [AGP 构建管线](/developer/build/agp) · [混合运行时 ABI](/developer/architecture/kotlin-runtime) · [build_mod.py 退役](/developer/build/build-mod-retirement)
