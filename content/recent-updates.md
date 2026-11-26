@@ -8,12 +8,12 @@ tags:
 
 这里显示最近进入当前内容树的正式条目；文章的具体修订记录仍以页面正文与仓库历史为准。
 
+- [反物质维度MOD Wiki:知识库规则](/wiki-rules)
 - [开发者专区](/developer)
 - [反物质维度 MOD Wiki](/index)
 - [APK 发布资格：从文件到可交付版本](/developer/current/release-status)
 - [双端交付证据：从源码到玩家版本](/developer/current/project-status)
 - [反物质维度MOD Wiki:本站不是什么](/wiki-not)
-- [反物质维度MOD Wiki:知识库规则](/wiki-rules)
 - [AI Summary 索引](/developer/ai-summaries)
 - [膨胀升级（被毁灭的现实）](/player/original/ow-dilation-upgrades-doomed)
 - [永恒挑战·挑战明细（被毁灭的现实）](/player/original/ow-eternity-challenges-challenges-pelle)

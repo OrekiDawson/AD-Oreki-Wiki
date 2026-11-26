@@ -1,12 +1,12 @@
 ---
 title: "全部条目"
-description: "按主题与中文标题浏览 反物质维度 MOD Wiki 的 152 个正式条目"
+description: "按主题与中文标题浏览 反物质维度 MOD Wiki 的 151 个正式条目"
 tags:
   - 导航
   - 索引
 ---
 
-这里列出当前公开发布的 **152** 个正式条目。草稿、内部归档、兼容入口和重定向不计入索引。
+这里列出当前公开发布的 **151** 个正式条目。草稿、内部归档、兼容入口和重定向不计入索引。
 
 ## 玩家专区
 
@@ -15,7 +15,6 @@ tags:
 - [存档安全：自动保存与兼容导入阅读地图](/player/gameplay/saves)
 - [存档兼容与导入验证](/player/gameplay/save-compatibility)
 - [存档库](/player/original/ow-save-bank)
-- [存档与兼容性](/player/faq/saves-and-compatibility)
 - [打破无限](/player/original/ow-break-infinity)
 - [第一次大坍缩与进入无限](/player/getting-started/first-crunch)
 - [第一次进入与前几分钟](/player/getting-started/first-session)

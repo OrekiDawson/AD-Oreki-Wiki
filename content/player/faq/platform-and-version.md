@@ -27,7 +27,7 @@ aliases:
 
 Stable 面向日常游玩，Pre-release 则提前提供给玩家测试。预发布版可能包含尚未覆盖完整的兼容性验证或已知问题。
 
-尝试预发布版前，把存档导出到游戏之外，并保留一份不会被游戏覆盖的副本。若需要回到 Stable，不要直接覆盖唯一的存档；先确认目标版本支持该存档，再按[存档与兼容性](/player/faq/saves-and-compatibility)中的步骤操作。
+尝试预发布版前，把存档导出到游戏之外，并保留一份不会被游戏覆盖的副本。若需要回到 Stable，不要直接覆盖唯一的存档；先确认目标版本支持该存档，再按[存档兼容与导入验证](/player/gameplay/save-compatibility)中的步骤操作。
 
 ## Oreki Edition 保证三小时通关吗？
 
@@ -39,4 +39,4 @@ Stable 面向日常游玩，Pre-release 则提前提供给玩家测试。预发�
 
 ## 相关条目
 
-[下载与版本说明](/player/download-and-version/) · [存档与兼容性](/player/faq/saves-and-compatibility) · [开始游玩](/player/getting-started/)
+[下载与版本说明](/player/download-and-version/) · [存档兼容与导入验证](/player/gameplay/save-compatibility) · [开始游玩](/player/getting-started/)
