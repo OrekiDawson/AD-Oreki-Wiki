@@ -8,6 +8,7 @@ tags:
 
 这里显示最近进入当前内容树的正式条目；文章的具体修订记录仍以页面正文与仓库历史为准。
 
+- [故障排查：从症状回到源码](/developer/troubleshooting)
 - [Web 模块启动链：全局兼容桥与初始化故障排查](/developer/troubleshooting/web-module-startup)
 - [Web Pages 产物身份：如何证明线上不是另一份代码](/developer/troubleshooting/web-pages-artifact-integrity)
 - [玩法机制](/player/gameplay)
@@ -31,4 +32,3 @@ tags:
 - [存档安全：自动保存与兼容导入阅读地图](/player/gameplay/saves)
 - [Web 离线进度：模拟时间与真实时钟的边界](/developer/architecture/web-offline-simulation)
 - [存档兼容与导入验证](/player/gameplay/save-compatibility)
-- [时间研究与现实：后永恒阶段阅读地图](/player/gameplay/reality-time-studies)
