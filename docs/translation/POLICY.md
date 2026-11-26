@@ -6,7 +6,7 @@
 
 - **原版 Wiki 翻译专区**（`content/player/original/`，路由 `/player/original/`）：忠实翻译 `https://antimatterdimensions.wiki.gg` 的原版游戏正文。
 - **Oreki Edition MOD 专题**（其余分类）：MOD 的玩法变化、自动化、技术实现与验证结果。
-- **开发历史档案**（`content/developer/history/`）：Changelog、Release Notes、轮次记录与报告索引。
+- **内部开发历史档案**（`archive/wiki-history/`）：轮次记录、失败报告、阶段性交接与旧构建证据；不属于正式翻译专区，也不进入 Quartz 公开构建。
 
 三者可以通过「相关条目」互相链接，但不得混写：翻译页不得加入 MOD 的数值、结论或自动化描述；MOD 页也不得把翻译页当作 MOD 事实来源。
 
