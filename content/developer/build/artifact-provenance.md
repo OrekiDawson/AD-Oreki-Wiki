@@ -15,7 +15,7 @@ Oreki Edition 的构建链把这个问题拆成两件事：先为会影响 APK �
 
 ## “同一个提交”为什么还不够
 
-源码提交只描述 Git 能看到的内容。完整游戏构建还依赖一些不进入公开仓库的输入，例如官方解码树、游戏 JAR、Web 策略文件和构建工具。Android 工程的 `agp/app/build.gradle.kts` 会从 `local.properties` 解析完整游戏输入目录，并把生成的 Kotlin、资源、Manifest、assets 和 JNI 库接入 `main` source set；这些目录缺失时，提交本身并不能重现完整 APK。
+源码提交只描述 Git 能看到的内容。完整游戏构建还依赖一些不进入公开仓库的输入，例如官方解码树、游戏 JAR、Web 策略文件和构建工具。在用于复现的固定提交 `b0e0881` 中，Android 工程的 `agp/app/build.gradle.kts` 会从 `local.properties` 解析完整游戏输入目录，并把生成的 Kotlin、资源、Manifest、assets 和 JNI 库接入 `main` source set；当前主线已调整为根目录的 `app/build.gradle.kts`，不能把这两个提交边界混为一谈。
 
 因此，下面两次构建即使使用同一个 Git SHA，也可能不是同一个输入集合：
 
