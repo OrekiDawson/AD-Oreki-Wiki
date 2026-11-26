@@ -87,8 +87,15 @@ const yamlScalar = (name) => {
   )
   return (match?.[1] ?? match?.[2] ?? match?.[3])?.trim()
 }
-if (yamlScalar("folderDefaultState") !== "open") errors.push("Explorer 未设置目录默认展开")
+if (yamlScalar("folderDefaultState") !== "open") errors.push("Explorer 未设置正式分类与条目默认展开")
 if (yamlScalar("folderClickBehavior") !== "link") errors.push("Explorer 未启用独立展开按钮行为")
+const orderedExplorer = fs.readFileSync(
+  path.join(root, "scripts/quartz-plugins/ordered-explorer/dist/index.js"),
+  "utf8",
+)
+if (!orderedExplorer.includes("developer/architecture") || !orderedExplorer.includes("developer/references"))
+  errors.push("开发者导航缺少语义分类排序")
+if (!orderedExplorer.includes("current-page-ancestors")) errors.push("导航缺少当前页面高亮定位标记")
 const assetManifestPath = path.join(root, "docs/translation/original-image-manifest.json")
 if (!fs.existsSync(assetManifestPath)) errors.push("缺少原版译文图片来源清单")
 else {

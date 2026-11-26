@@ -9,6 +9,15 @@
   transition: none !important;
 }
 
+// 目录独立滚动，正文不随长导航被挤出视口。
+@media not all and ($mobile) {
+  .sidebar.left:has(.explorer) .explorer-content {
+    max-height: calc(100vh - 5.5rem);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+}
+
 ::view-transition-group(root),
 ::view-transition-old(root),
 ::view-transition-new(root) {
@@ -143,6 +152,16 @@ body[data-slug="index"] {
 .gallery figure { margin: 0; text-align: center; }
 .gallery img { max-width: 100%; height: auto; border: 1px solid var(--lightgray); }
 @media all and ($mobile) {
+  // 移动端导航只保留必要层级，避免长标题换行挤占目录空间。
+  .sidebar.left:has(.explorer) { padding: 0.35rem 0 !important; }
+  .explorer-content { padding: 3.25rem 0.7rem 1rem !important; }
+  .explorer-content .folder-container div > a,
+  .explorer-content .folder-container div > button span,
+  .explorer-content ul li > a { font-size: 0.9rem; line-height: 1.3rem; }
+  .explorer-content .folder-outer > ul { margin-left: 4px; padding-left: 0.55rem; }
+  // 移动端只提供整个导航面板的开关；正式分类和条目保持完整展开。
+  .explorer-content .folder-icon { display: none; }
+  .explorer-content .folder-outer { visibility: visible; grid-template-rows: 1fr; }
   .infobox { float: none; width: auto; margin: 1rem 0; }
   .wikitable { display: block; overflow-x: auto; }
 }

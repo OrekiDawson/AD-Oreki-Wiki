@@ -154,9 +154,10 @@ plugins:
   - source: "./scripts/quartz-plugins/ordered-explorer"
     enabled: true
     options:
+      # 正式分类与条目默认完整展开；导航长度由语义排序、短标题和层级控制解决。
       folderDefaultState: open
       folderClickBehavior: link
-      useSavedState: true
+      useSavedState: false
     layout:
       position: left
       priority: 50
