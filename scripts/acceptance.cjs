@@ -32,6 +32,7 @@ const SEARCH_TERMS = [
 const OLD_URLS = ['/architecture/kotlin-runtime', '/architecture/android', '/gameplay/challenges', '/gameplay/progression-infinity-eternity', '/build/agp', '/current/project-status', '/developer/history/2026-11-12-r103-release-baseline', '/developer/history/2026-11-15-celestial-leaves-fix', '/history/2026-11-15-r113-180min-fail', '/developer/history/2026-11-15-r113-180min-fail', '/developer/history/2026-11-15-r113-p0-livelock', '/developer/history/2026-11-15-r114-reality-autoeternity', '/developer/history/2026-11-15-signing-blocked', '/developer/history/2026-11-20-r121-android-kvm'];
 const HISTORY_REDIRECTS = {
   '/history': '/developer',
+  '/developer/history': '/developer',
   '/developer/history/': '/developer',
   '/developer/history/2026-11-12-r103-release-baseline': '/developer/current/release-status',
   '/developer/history/2026-11-15-celestial-leaves-fix': '/developer/architecture/celestial-implementation',
@@ -73,7 +74,7 @@ function weakMustSee(items) {
 
 async function run() {
   const browser = await chromium.launch({ headless: true });
-  const results = { base: BASE, mobile: {}, desktop: {}, errors: [], searches: [], urls: [], categories: [] };
+  const results = { base: BASE, mobile: {}, desktop: {}, errors: [], redirectErrors: [], searches: [], urls: [], categories: [] };
   const mobile = await browser.newContext({
     viewport: { width: 412, height: 915 },
     isMobile: true,
@@ -203,7 +204,8 @@ async function run() {
     '/history',
     '/developer/history/',
   ]) {
-    const expectedPath = HISTORY_REDIRECTS[url.replace(/\/$/, '')] || HISTORY_REDIRECTS[url];
+    const normalizedUrl = url.replace(/\/$/, '');
+    const expectedPath = HISTORY_REDIRECTS[normalizedUrl] || HISTORY_REDIRECTS[url];
     const resp = await page.goto(BASE + url, { waitUntil: 'load' }).catch(() => null);
     if (expectedPath) {
       await page.waitForURL((next) => next.pathname.replace(/\/$/, '') === expectedPath, {
@@ -218,7 +220,7 @@ async function run() {
       ...(expectedPath ? { redirectOk: finalPath === expectedPath } : {}),
     });
     if (expectedPath && finalPath !== expectedPath) {
-      results.errors.push(`history redirect mismatch: ${url} -> ${finalPath}; expected ${expectedPath}`);
+      results.redirectErrors.push(`history redirect mismatch: ${url} -> ${finalPath}; expected ${expectedPath}`);
     }
   }
 
@@ -289,6 +291,7 @@ async function run() {
   if (!results.searches.length || results.searches.some((s) => s.hit === false)) bad.push('search');
   if (results.categories.some((c) => !c.hit)) bad.push('category-labels');
   if (results.urls.some((u) => !u.ok)) bad.push('urls:' + results.urls.filter((u) => !u.ok).map((u) => u.url).join(','));
+  if (results.redirectErrors.length) bad.push('history-redirects:' + results.redirectErrors.join('|'));
   if (results.mobile.aiDraftStatus !== 404) bad.push('ai-draft-public:' + results.mobile.aiDraftStatus);
   if (!results.mobile.translationHasLicense) bad.push('translation-license-block');
   if (!results.mobile.translationFolderListingHidden) bad.push('translation-folder-listing-visible');
