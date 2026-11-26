@@ -96,9 +96,9 @@
    "url": "https://antimatterdimensions.wiki.gg/wiki/Ad_Bonus",
    "history_url": "https://antimatterdimensions.wiki.gg/index.php?title=Ad_Bonus&action=history",
    "pageid": 559,
-   "revid": 3096,
-   "last_edited": "2026-09-16T19:08:17Z",
-   "last_editor": "The1AndOnly6030",
+   "revid": 3443,
+   "last_edited": "2026-11-22T15:11:08Z",
+   "last_editor": "Alex9127",
    "size": 3408,
    "categories": [
     "Pages using Pelle wordshift classes",
@@ -110,13 +110,13 @@
    "zh_title": "广告加成",
    "path": "content/player/original/ow-ad-bonus.md",
    "priority": 3,
-   "status": "STRUCTURE CHECKED",
-   "review_status": "STRUCTURE CHECKED",
+   "status": "REVIEWED",
+   "review_status": "REVIEWED",
    "license_status": "CC-BY-SA-4.0-CONFIRMED",
    "third_party": "NONE-DETECTED-TEXT-ONLY",
    "media_omitted": false,
-   "last_source_check": "2026-11-15",
-   "notes": "batch6：正文完整翻译并校对；多页签模板展开为四表；2026-11-15 质量门禁：仅有结构核对（章节/表格/公式/来源字段），未做逐段语义审校，按 wiki-rules 等级降为 STRUCTURE CHECKED"
+   "last_source_check": "2026-11-26",
+   "notes": "R130 第三批：逐段对照修订 3443；校正遗迹碎片倍率与暗能量术语；Lead 已完整阅读最终正文"
   },
   {
    "title": "Advanced Glyph Mechanics",
@@ -257,8 +257,8 @@
    "zh_title": "反物质维度（游戏机制）",
    "path": "content/player/original/ow-antimatter-dimensions.md",
    "priority": 1,
-   "status": "STRUCTURE CHECKED",
-   "review_status": "STRUCTURE CHECKED",
+   "status": "REVIEWED",
+   "review_status": "REVIEWED",
    "license_status": "CC-BY-SA-4.0-CONFIRMED",
    "third_party": "NONE-DETECTED-TEXT-ONLY",
    "media_omitted": true,
@@ -570,13 +570,13 @@
    "zh_title": "自动化",
    "path": "content/player/original/ow-automation.md",
    "priority": 2,
-   "status": "STRUCTURE CHECKED",
-   "review_status": "STRUCTURE CHECKED",
+   "status": "REVIEWED",
+   "review_status": "REVIEWED",
    "license_status": "CC-BY-SA-4.0-CONFIRMED",
    "third_party": "NONE-DETECTED-TEXT-ONLY",
    "media_omitted": true,
-   "last_source_check": "2026-11-15",
-   "notes": "batch20：正文/表格/公式/来源字段完整翻译并结构核对；未做逐段语义审校，记 STRUCTURE CHECKED"
+   "last_source_check": "2026-11-26",
+   "notes": "R130 第三批：逐段对照修订 3396；Lead 已完整阅读最终正文"
   },
   {
    "title": "Big Crunch",
@@ -872,8 +872,8 @@
    "zh_title": "天神导航",
    "path": "content/player/original/ow-celestial-navigation.md",
    "priority": 3,
-   "status": "STRUCTURE CHECKED",
-   "review_status": "STRUCTURE CHECKED",
+   "status": "REVIEWED",
+   "review_status": "REVIEWED",
    "license_status": "CC-BY-SA-4.0-CONFIRMED",
    "third_party": "NONE-DETECTED-TEXT-ONLY",
    "media_omitted": true,
@@ -1376,8 +1376,8 @@
    "license_status": "CC-BY-SA-4.0-CONFIRMED",
    "third_party": "NONE-DETECTED-TEXT-ONLY",
    "media_omitted": true,
-   "last_source_check": "2026-11-15",
-   "notes": "batch20：正文/表格/公式/来源字段完整翻译并结构核对；未做逐段语义审校，记 STRUCTURE CHECKED"
+   "last_source_check": "2026-11-26",
+   "notes": "R130 第三批：逐段对照修订 3108；Lead 修正速通模式措辞并完整阅读最终正文"
   },
   {
    "title": "Eternity Milestone",
@@ -2531,13 +2531,13 @@
    "zh_title": "快捷键",
    "path": "content/player/original/ow-shortcuts.md",
    "priority": 2,
-   "status": "STRUCTURE CHECKED",
-   "review_status": "STRUCTURE CHECKED",
+   "status": "REVIEWED",
+   "review_status": "REVIEWED",
    "license_status": "CC-BY-SA-4.0-CONFIRMED",
    "third_party": "NONE-DETECTED-TEXT-ONLY",
    "media_omitted": true,
-   "last_source_check": "2026-11-15",
-   "notes": "batch20：正文/表格/公式/来源字段完整翻译并结构核对；未做逐段语义审校，记 STRUCTURE CHECKED"
+   "last_source_check": "2026-11-26",
+   "notes": "R130 第三批：逐段对照修订 3108；Lead 修正速通模式措辞并完整阅读最终正文"
   },
   {
    "title": "Tachyon Particles",
