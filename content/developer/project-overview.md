@@ -70,6 +70,6 @@ Android 根 `:app` 的构建输入至少包括：
 - 想改构建：从 [AGP 构建管线](/developer/build/agp) 开始，随后看 [R8](/developer/build/r8)、[APK 签名](/developer/build/apk-signing) 和 [CI/CD](/developer/build/ci-cd)。
 - 想改 Web 或对齐双端：读 [Web 架构](/developer/architecture/web) 与 [双端一致性](/developer/architecture/parity)，再回到具体的 `src/core/` 或 Android `GameApi`。
 - 第一次贡献：按 [第一次参与 Android 开发](/developer/first-contribution) 完成一条可解释、可验证的小闭环。
-- 遇到“源码看着对、游戏表现不对”：先查 [来源索引](/developer/references/source-index) 的版本边界，再进入 [故障排查](/developer/troubleshooting/)；不要用旧报告的 PASS 替代当前候选的运行证据。
+- 遇到“源码看着对、游戏表现不对”：先查 [来源索引](/developer/references/source-index) 的版本边界，再进入 [故障排查](/developer/troubleshooting/)；旧报告只能提供背景，不能替代当前候选的运行证据。
 
 本文依据 Android `9d8fc46ce99279720b5b3068027bb76bceb35756` 的根工程、构建配置、`GameApi` 与调度器源码，以及 Web `e1c93caa758de6c39cf814582123d4a35319eb25` 的入口文件撰写。旧 URL `/getting-started/project-overview` 保留为兼容别名；本文解释的是源码与构建边界，不宣称当前 APK、浏览器终局或跨端运行验收已经完成。

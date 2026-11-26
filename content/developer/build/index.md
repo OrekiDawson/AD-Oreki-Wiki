@@ -18,7 +18,7 @@ aliases:
 
 ### 优化与产物
 
-[R8 分层策略](/developer/build/r8)解释 Release 优化为何有边界；[build_mod.py 退役](/developer/build/build-mod-retirement)说明旧补丁链怎样让位给标准 AGP 工程。这里关注的是输入和设计取舍，而不是某次构建的 PASS/FAIL 清单。
+[R8 分层策略](/developer/build/r8)解释 Release 优化为何有边界；[build_mod.py 退役](/developer/build/build-mod-retirement)说明旧补丁链怎样让位给标准 AGP 工程。这里关注的是输入和设计取舍，而不是某次构建结果的流水账。
 
 [构建可追溯性](/developer/build/artifact-provenance)解释如何用输入指纹、私有资源摘要和 APK provenance 把交付产物绑定回确定的源码；当“同一提交”生成的文件不一致时，从这里开始排查。
 
