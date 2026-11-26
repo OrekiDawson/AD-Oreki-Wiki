@@ -8,6 +8,7 @@ tags:
 
 这里显示最近进入当前内容树的正式条目；文章的具体修订记录仍以页面正文与仓库历史为准。
 
+- [开发者专区](/developer)
 - [反物质维度 MOD Wiki](/index)
 - [APK 发布资格：从文件到可交付版本](/developer/current/release-status)
 - [双端交付证据：从源码到玩家版本](/developer/current/project-status)
@@ -20,7 +21,6 @@ tags:
 - [计数频率·星系强度明细（被毁灭的现实）](/player/original/ow-tickspeed-galaxy-strength-breakdown-doomed)
 - [无限（消歧义）](/player/original/ow-infinity-disambiguation)
 - [平台与版本](/player/faq/platform-and-version)
-- [开发者专区](/developer)
 - [自动化状态所有权：玩家意图、托管配置与执行闸门](/developer/architecture/automation-ownership)
 - [Android 阶段门禁与 GUI 判据](/developer/architecture/gui-stage-gates)
 - [Android 架构](/developer/architecture/android)
