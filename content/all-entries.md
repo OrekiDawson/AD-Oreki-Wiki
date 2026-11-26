@@ -136,7 +136,7 @@ tags:
 - [逆向与语义映射](/developer/reverse-engineering)
 - [派生状态与缓存失效：重置之后为什么还要重新计算](/developer/architecture/derived-state-invalidation)
 - [如何阅读当前工程状态](/developer/current)
-- [如何阅读双端项目状态](/developer/current/project-status)
+- [双端交付证据：从源码到玩家版本](/developer/current/project-status)
 - [双端行为一致性](/developer/architecture/parity)
 - [天神判据与跨端编码](/developer/architecture/celestial-implementation)
 - [效果对象与倍率组合：从一项奖励到完整公式](/developer/architecture/effect-model)
