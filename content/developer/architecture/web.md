@@ -17,11 +17,15 @@ Web 端不是“把几个 JavaScript 文件放进浏览器”。原版游戏循�
 入口链可以压缩成：
 
 ```text
-index.html → src/main.js → merge-globals.js → game.js:init()
-                                      ├─ browserCheck()
-                                      ├─ Cloud.init()
-                                      ├─ GameStorage.load()
-                                      └─ 恢复可访问的页签
+index.html → src/main.js
+  ├─ merge-globals.js
+  └─ game.js
+      ├─ browserCheck()
+      └─ init()
+          ├─ 恢复运行环境
+          ├─ Cloud.init()
+          ├─ GameStorage.load()
+          └─ 恢复可访问的页签
 ```
 
 `index.html` 提供 Vue 挂载点、移动视口和模块脚本；`main.js` 载入兼容层后才调用 `browserCheck()` 与 `init()`。`init()` 恢复运行环境、云存档和上次页签，不负责购买维度或选择自动化路线。修改入口时应保留这条边界，不能把业务初始化塞进内联脚本，也不能绕过浏览器能力检查直接启动。
