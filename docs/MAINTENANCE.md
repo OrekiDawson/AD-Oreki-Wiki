@@ -98,4 +98,4 @@ README.md、content/index.md 和公开专区首页服务于人类读者。内部
 
 合并到 `main` 后由 Pages 工作流构建并发布。正式域名为 `wiki.oreki.net`：仓库的 Pages 设置应使用该 Custom domain，DNS 的 `wiki` CNAME 指向 `orekidawson.github.io`。证书签发完成后，在 GitHub Pages 设置中启用 **Enforce HTTPS**。
 
-Enforce HTTPS 和 Pages 管理设置需要仓库管理权限，由具备相应权限的账户操作；不要为了让 Actions 修改设置而向 `GITHUB_TOKEN` 或工作流添加个人管理员 Token。发布验收运行 `scripts/verify-https.sh`，确认 Pages API 报告 `https_enforced=true)，HTTPS 页面证书可正常校验，并且 HTTP 请求跳转到同一域名的 HTTPS 地址。证书未签发、开关未启用或出现 HTTP 回退时，验收失败，不能以 HTTP 200 代替。
+Enforce HTTPS 和 Pages 管理设置需要仓库管理权限，由具备相应权限的账户操作；不要为了让 Actions 修改设置而向 `GITHUB_TOKEN` 或工作流添加个人管理员 Token。发布验收运行 `scripts/verify-https.sh`，确认 Pages API 报告 `https_enforced=true`，HTTPS 页面证书可正常校验，并且 HTTP 请求跳转到同一域名的 HTTPS 地址。证书未签发、开关未启用或出现 HTTP 回退时，验收失败，不能以 HTTP 200 代替。
