@@ -14,7 +14,7 @@ aliases:
 | --- | --- |
 | Oreki Edition | 本 MOD 的产品名 |
 | 官方基线 | Android 端固定的官方 3.21.0 APK；Web 端固定的 2026-07-17 上游快照 |
-| AGP | Android Gradle Plugin，本工程使用 9.5.1 |
+| AGP | Android Gradle Plugin，本工程固定基线使用 9.5.2 |
 | Gradle | Android 构建工具，负责编译、打包与任务编排 |
 | DEX | Android 的可执行字节码格式；官方游戏只发布混淆 DEX |
 | ABI | 二进制接口：类名、方法/字段描述符、继承关系等运行期约定 |
