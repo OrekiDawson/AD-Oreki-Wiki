@@ -14,7 +14,14 @@ try {
 
 const base = process.env.KB_URL || 'http://127.0.0.1:8080';
 const out = process.env.KB_FONT_OUT || 'evidence/playwright-fonts.json';
-const siteConfig = YAML.parse(fs.readFileSync('quartz.config.yaml', 'utf8'));
+let siteConfig;
+try {
+  siteConfig = YAML.parse(fs.readFileSync('quartz.config.yaml', 'utf8'));
+} catch (error) {
+  console.error('无法读取或解析 quartz.config.yaml；请确认在仓库根目录执行并检查 YAML 语法。');
+  console.error(String(error).slice(0, 300));
+  process.exit(2);
+}
 const configuredHost = String(siteConfig?.configuration?.baseUrl || '').replace(/^https?:\/\//i, '').replace(/\/$/, '');
 if (!configuredHost) {
   console.error('quartz.config.yaml 的 configuration.baseUrl 不能为空；拒绝在未识别站点地址时执行生产环境字体验收。');
