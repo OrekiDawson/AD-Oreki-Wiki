@@ -36,7 +36,7 @@
 - 补充有来源的机制说明或开发者技术文章；
 - 审校原版译文，并保留原文链接、修订信息、署名和许可边界。
 
-请先阅读[贡献与编辑指南](https://wiki.oreki.net/developer/editorial-guidelines)和[版权与许可](https://wiki.oreki.net/copyright)，再通过 [GitHub Issues](https://github.com/OrekiDawson/AD-Oreki-Wiki/issues) 或 Pull Request 提出修改。好的贡献不必很大；一处准确的公式、一个清楚的例子，往往比一页空泛的总结更有用。
+请先阅读[贡献与编辑指南](https://wiki.oreki.net/developer/editorial-guidelines)和[版权与许可](https://wiki.oreki.net/copyright)，再通过 [GitHub Issues](https://github.com/OrekiDawson/AD-Oreki-Wiki/issues) 或 Pull Request 提出修改。 维护者需要了解构建与发布细节时，请看仓库内的[维护说明](docs/MAINTENANCE.md)。好的贡献不必很大；一处准确的公式、一个清楚的例子，往往比一页空泛的总结更有用。
 
 ## 来源与许可
 
