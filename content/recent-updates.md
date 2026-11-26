@@ -8,11 +8,13 @@ tags:
 
 这里显示最近进入当前内容树的正式条目；文章的具体修订记录仍以页面正文与仓库历史为准。
 
+- [版权与许可](/copyright)
+- [原版 Wiki 中文翻译](/player/original)
+- [反物质维度 MOD Wiki](/index)
 - [反物质维度MOD Wiki:知识库规则](/wiki-rules)
 - [Oreki Edition 介绍](/player/mods)
 - [开始游玩 Oreki Edition](/player/getting-started)
 - [玩法机制](/player/gameplay)
-- [反物质维度 Wiki](/index)
 - [存档兼容排查：先辨认格式，再追踪迁移](/developer/troubleshooting/save-compatibility)
 - [从 DEX 到 Kotlin：混淆 Android 游戏的 ABI 适配](/developer/reverse-engineering/dex-abi)
 - [来源索引：怎样从证据找到真正的代码](/developer/references/source-index)
@@ -30,5 +32,3 @@ tags:
 - [时间研究](/player/original/ow-time-studies)
 - [时间维度](/player/original/ow-time-dimensions)
 - [计数频率](/player/original/ow-tickspeed)
-- [计数频率·星系数量明细（被毁灭的现实）](/player/original/ow-tickspeed-galaxy-breakdown-doomed)
-- [术语（佩勒用词）](/player/original/ow-terminology)

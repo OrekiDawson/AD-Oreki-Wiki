@@ -124,7 +124,7 @@ tags:
 ## 站务与公共页面
 
 - [版权与许可](/copyright)
-- [反物质维度 Wiki](/index)
+- [反物质维度 MOD Wiki](/index)
 - [反物质维度MOD Wiki:本站不是什么](/wiki-not)
 - [反物质维度MOD Wiki:知识库规则](/wiki-rules)
 - [开发者专区](/developer)

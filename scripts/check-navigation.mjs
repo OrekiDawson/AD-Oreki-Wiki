@@ -27,10 +27,26 @@ const routeFor = (file) => {
 for (const file of formal)
   if (!allEntries.includes(`](${routeFor(file)})`))
     errors.push(`正式页面未进入全部条目索引：${routeFor(file)}`)
+const declaredCount = Number(
+  allEntries.match(/当前公开发布的 \*\*(\d+)\*\* 个正式条目/)?.[1] ?? NaN,
+)
+if (declaredCount !== formal.length)
+  errors.push(`全部条目数量过期：页面 ${formal.length}，索引声明 ${declaredCount}`)
+const indexedRoutes = [...allEntries.matchAll(/\]\((\/[^)]+)\)/g)].map((match) =>
+  match[1].replace(/\/$/, ""),
+)
+if (new Set(indexedRoutes).size !== formal.length)
+  errors.push(`全部条目存在重复或额外入口：${new Set(indexedRoutes).size}/${formal.length}`)
+const recentText = fs.readFileSync(path.join(content, "recent-updates.md"), "utf8")
+const expectedRecent = [...formal]
+  .sort((a, b) => fs.statSync(b).mtimeMs - fs.statSync(a).mtimeMs)
+  .slice(0, 24)
+  .map(routeFor)
+for (const route of expectedRecent)
+  if (!recentText.includes(`](${route})`)) errors.push(`最近更新索引缺少当前条目：${route}`)
 const config = fs.readFileSync(path.join(root, "quartz.config.yaml"), "utf8")
 if (!config.includes("folderDefaultState: open")) errors.push("Explorer 未设置目录默认展开")
-if (!config.includes("folderClickBehavior: collapse"))
-  errors.push("Explorer 未启用独立展开按钮行为")
+if (!config.includes("folderClickBehavior: link")) errors.push("Explorer 未启用独立展开按钮行为")
 const assetManifestPath = path.join(root, "docs/translation/original-image-manifest.json")
 if (!fs.existsSync(assetManifestPath)) errors.push("缺少原版译文图片来源清单")
 else {
