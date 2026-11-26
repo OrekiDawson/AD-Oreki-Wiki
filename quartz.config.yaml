@@ -14,12 +14,10 @@ configuration:
     - ai-drafts
     - "ai-drafts/**"
   theme:
-    fontOrigin: googleFonts
-    cdnCaching: true
     typography:
-      header: Schibsted Grotesk
-      body: Source Sans Pro
-      code: IBM Plex Mono
+      header: sans-serif
+      body: sans-serif
+      code: ui-monospace
     colors:
       lightMode:
         light: "#faf8f8"
@@ -96,8 +94,6 @@ plugins:
   - source: "@quartz-community/roam"
     enabled: false
     order: 92
-  - source: "@quartz-community/quartz-fonts"
-    enabled: true
   - source: "@quartz-themes/core"
     enabled: false
     options:
@@ -154,9 +150,10 @@ plugins:
   - source: "./scripts/quartz-plugins/ordered-explorer"
     enabled: true
     options:
+      # 正式分类与条目默认完整展开；导航长度由语义排序、短标题和层级控制解决。
       folderDefaultState: open
       folderClickBehavior: link
-      useSavedState: true
+      useSavedState: false
     layout:
       position: left
       priority: 50

@@ -12,11 +12,11 @@ tags:
 
 <img class="home-mark" src="/static/icon.svg" alt="反物质维度 MOD Wiki 标识" />
 
-<p class="home-kicker">一个数字会长大，问题也会变深</p>
+<p class="home-kicker">反物质维度的中文百科</p>
 
 <h1>反物质维度 MOD Wiki</h1>
 
-<p class="home-lede">从第一次大坍缩，到把宇宙写进代码；这里收集值得理解、值得验证，也值得顺手翻下去的反物质维度玩法机制与技术知识。</p>
+<p class="home-lede">这里收录反物质维度的玩法机制、原版 Wiki 中文译文，以及 Android、Web 和 MOD 的技术资料。</p>
 
 </div>
 
@@ -41,7 +41,7 @@ tags:
 <section class="home-section">
 <div class="home-section-heading">
 <p class="home-kicker">精选条目</p>
-<h2>先读这些，再决定往哪条宇宙边缘走</h2>
+<h2>从这里开始阅读</h2>
 </div>
 <div class="home-feature-grid">
 <a class="home-feature" href="/player/original/ow-time-dimensions"><strong>时间维度</strong><span>时间碎片不是单纯的下一种货币：它把膨胀后的等待，重新折算成可以继续增长的动力。</span></a>
@@ -56,7 +56,7 @@ tags:
 <section class="home-section home-facts">
 <div class="home-section-heading">
 <p class="home-kicker">你知道吗？</p>
-<h2>数字大到离谱时，游戏并没有放弃数学</h2>
+<h2>机制趣闻</h2>
 </div>
 <ul class="home-fact-list">
 <li>第一次无限不是“数字终于到头了”，而是把一次重置变成长期成长的入口；真正重要的是重置后保留下来的购买项与新规则。<a href="/player/original/ow-infinity">读无限</a></li>
@@ -69,22 +69,22 @@ tags:
 <section class="home-section">
 <div class="home-section-heading">
 <p class="home-kicker">无限之旅</p>
-<h2>一条会不断改写问题的成长路线</h2>
+<h2>游戏进程</h2>
 </div>
 <div class="home-journey">
-<a href="/player/antimatter-dimensions"><b>反物质</b><span>先让数字学会奔跑。</span></a>
-<a href="/player/original/ow-infinity"><b>无限</b><span>第一次重置，换来更高一层的速度。</span></a>
-<a href="/player/original/ow-eternity"><b>永恒</b><span>时间研究开始把选择变成路线。</span></a>
-<a href="/player/original/ow-reality"><b>现实</b><span>机器、符文与现实升级登场。</span></a>
-<a href="/player/original/ow-celestials"><b>天神</b><span>每位天神都把一种旧机制重新发明。</span></a>
-<a href="/player/gameplay/challenges"><b>终局</b><span>挑战不只考数值，也考你是否理解系统。</span></a>
+<a href="/player/antimatter-dimensions"><b>反物质</b><span>从维度生产反物质，建立最初的生产链。</span></a>
+<a href="/player/original/ow-infinity"><b>无限</b><span>第一次大坍缩开启新的成长资源和升级。</span></a>
+<a href="/player/original/ow-eternity"><b>永恒</b><span>时间研究把升级选择组织成不同路线。</span></a>
+<a href="/player/original/ow-reality"><b>现实</b><span>现实机器、符文和现实升级加入成长循环。</span></a>
+<a href="/player/original/ow-celestials"><b>天神</b><span>不同天神以独立规则和挑战扩展后期玩法。</span></a>
+<a href="/player/gameplay/challenges"><b>终局</b><span>挑战、成就和天神内容共同构成后期目标。</span></a>
 </div>
 </section>
 
 <section class="home-section">
 <div class="home-section-heading">
 <p class="home-kicker">技术探索</p>
-<h2>把游戏当作一台可以拆开的机器</h2>
+<h2>技术专题</h2>
 </div>
 <div class="home-tech-grid">
 <a href="/developer/build/agp"><b>从 Kotlin 到 APK</b><span>编译、资源、变体、R8、签名：一条构建链如何把源码变成应用。</span></a>
@@ -98,7 +98,7 @@ tags:
 <section class="home-section home-reference">
 <div class="home-section-heading">
 <p class="home-kicker">原版百科</p>
-<h2>先分清来源，再享受差异</h2>
+<h2>原版译文怎么读</h2>
 </div>
 <p>原版译文保留原文修订、术语、公式和 CC BY-SA 4.0 署名；Oreki Edition 的改动另行说明。可以从<a href="/player/original/">原版中文译文总览</a>进入，也可以按主题浏览：</p>
 <p class="home-inline-links"><a href="/player/original/ow-dimensions">维度</a><a href="/player/original/ow-challenges">挑战</a><a href="/player/original/ow-achievements">成就</a><a href="/player/original/ow-time-studies">时间研究</a><a href="/player/original/ow-celestials">天神</a><a href="/player/terminology">术语表</a></p>
@@ -107,7 +107,7 @@ tags:
 <section class="home-section home-contribute">
 <div class="home-section-heading">
 <p class="home-kicker">参与与贡献</p>
-<h2>百科不是展品，它会继续生长</h2>
+<h2>一起维护这部百科</h2>
 </div>
 <p>想直接游玩，可以从<a href="/player/download-and-version">下载与版本说明</a>开始；想改代码，去看<a href="/developer/project-overview">项目概览</a>和<a href="/developer/first-contribution">第一次参与开发</a>。欢迎补充来源、修正事实、改善中文或提出新的专题。</p>
 <p class="home-inline-links"><a href="https://github.com/OrekiDawson/AD-Oreki-Wiki">GitHub 源码仓库</a><a href="/developer/editorial-guidelines">编写指南</a><a href="/wiki-rules">知识库规则</a><a href="/copyright">版权与许可</a></p>

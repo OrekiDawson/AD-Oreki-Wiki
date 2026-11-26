@@ -6,3 +6,4 @@ public
 quartz/
 .DS_Store
 *.log
+/Wikipedia/

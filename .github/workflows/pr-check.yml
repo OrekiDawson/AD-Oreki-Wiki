@@ -81,8 +81,12 @@ jobs:
         run: node --test scripts/tests/https-监控.test.mjs
       - name: Translation zone checks (manifest / license / attribution / status)
         run: node scripts/check-translation.mjs
+      - name: System font policy
+        run: node scripts/check-fonts.mjs
       - name: Navigation coverage and public archive boundary
         run: node scripts/check-navigation.mjs
+      - name: No page transition animation or progress bar
+        run: node scripts/check-motion.mjs
       - run: bash scripts/bootstrap-quartz.sh .quartz-build
       - run: npm ci
         working-directory: .quartz-build
@@ -91,6 +95,12 @@ jobs:
       - run: node scripts/check-content.mjs
         working-directory: .quartz-build
       - run: npx quartz build
+        working-directory: .quartz-build
+      - name: Built navigation DOM and empty-menu gate
+        run: node scripts/check-navigation.mjs --built public
+        working-directory: .quartz-build
+      - name: Built font policy
+        run: node scripts/check-fonts.mjs --built public
         working-directory: .quartz-build
       - run: node scripts/verify-build.mjs
         working-directory: .quartz-build

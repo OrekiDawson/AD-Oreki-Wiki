@@ -1,5 +1,57 @@
 @use "./variables.scss" as *;
 
+// 全站使用操作系统原生字体；数学公式的 KaTeX 字体由数学插件单独管理。
+:root {
+  --headerFont: sans-serif;
+  --bodyFont: sans-serif;
+  --codeFont: ui-monospace, monospace;
+}
+
+// 普通内容统一走系统无衬线字体。代码和 KaTeX 在更具体的选择器中保留自己的字体，
+// 避免 Android 对中文、拉丁字母和数字分别套用 Quartz 的网页字体。
+:where(body, button, input, textarea, select, .page, .sidebar, .search, article, article p,
+  article li, article td, article th, article blockquote, article a, article strong, article em,
+  .explorer, .explorer-content, .table-of-contents) {
+  font-family: var(--bodyFont);
+}
+
+:where(h1, h2, h3, h4, h5, h6, .page-title, .article-title, .folder-container div > a,
+  .folder-container div > button, .nav-folder-title) {
+  font-family: var(--headerFont);
+}
+
+:where(pre, code, kbd, samp) {
+  font-family: var(--codeFont);
+}
+
+:where(.katex, .katex-display, .math-inline, .math-block) {
+  font-family: KaTeX_Main, KaTeX_Math, var(--bodyFont);
+}
+
+// 百科页面切换应立即显示目标内容；保留 Quartz enableSPA 的客户端导航，不显示进度条或过渡动画。
+.navigation-progress,
+.page-transition,
+#quartz-body.page-transition {
+  display: none !important;
+  animation: none !important;
+  transition: none !important;
+}
+
+// 目录独立滚动，正文不随长导航被挤出视口。
+@media not all and ($mobile) {
+  .sidebar.left:has(.explorer) .explorer-content {
+    max-height: calc(100vh - 5.5rem);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+}
+
+::view-transition-group(root),
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none !important;
+}
+
 body[data-slug="index"] {
   .page-header { margin-bottom: 0; }
   .popover-hint > h1 { display: none; }
@@ -56,7 +108,7 @@ body[data-slug="index"] {
     border-color: var(--secondary);
     box-shadow: 0 1rem 2rem color-mix(in srgb, var(--secondary) 16%, transparent);
   }
-  .home-card-index { color: var(--tertiary); font-family: var(--codeFont); font-size: 0.8rem; }
+  .home-card-index { color: var(--tertiary); font-family: var(--bodyFont); font-size: 0.8rem; }
   .home-card-title { margin-top: 1.8rem; color: var(--dark); font-size: 1.55rem; font-weight: 750; }
   .home-card-copy { margin-top: 0.6rem; color: var(--darkgray); line-height: 1.65; }
   .home-card-link { margin-top: auto; padding-top: 1rem; color: var(--secondary); font-weight: 700; }
@@ -128,6 +180,16 @@ body[data-slug="index"] {
 .gallery figure { margin: 0; text-align: center; }
 .gallery img { max-width: 100%; height: auto; border: 1px solid var(--lightgray); }
 @media all and ($mobile) {
+  // 移动端导航只保留必要层级，避免长标题换行挤占目录空间。
+  .sidebar.left:has(.explorer) { padding: 0.35rem 0 !important; }
+  .explorer-content { padding: 3.25rem 0.7rem 1rem !important; }
+  .explorer-content .folder-container div > a,
+  .explorer-content .folder-container div > button span,
+  .explorer-content ul li > a { font-size: 0.9rem; line-height: 1.3rem; }
+  .explorer-content .folder-outer > ul { margin-left: 4px; padding-left: 0.55rem; }
+  // 移动端只提供整个导航面板的开关；正式分类和条目保持完整展开。
+  .explorer-content .folder-icon { display: none; }
+  .explorer-content .folder-outer { visibility: visible; grid-template-rows: 1fr; }
   .infobox { float: none; width: auto; margin: 1rem 0; }
   .wikitable { display: block; overflow-x: auto; }
 }
