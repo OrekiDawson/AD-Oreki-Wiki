@@ -296,6 +296,7 @@ async function run() {
   if (!results.mobile.translationHasLicense) bad.push('translation-license-block');
   if (!results.mobile.translationFolderListingHidden) bad.push('translation-folder-listing-visible');
   if (!results.mobile.translationPropertiesHidden) bad.push('translation-properties-visible');
+  if (results.mobile.graphWidget) bad.push('graph-visible');
   if (!results.mobile.kotlinPage) bad.push('kotlin-nav');
   if (!results.mobile.sidebar) bad.push('sidebar-missing');
   else {
