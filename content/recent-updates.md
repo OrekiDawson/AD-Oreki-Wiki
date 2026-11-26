@@ -8,6 +8,7 @@ tags:
 
 这里显示最近进入当前内容树的正式条目；文章的具体修订记录仍以页面正文与仓库历史为准。
 
+- [如何阅读当前工程状态](/developer/current)
 - [原版 Wiki 中文翻译](/player/original)
 - [天神导航](/player/original/ow-celestial-navigation)
 - [佩勒](/player/original/ow-pelle)
@@ -31,4 +32,3 @@ tags:
 - [重置成长（威望）](/player/original/ow-prestige)
 - [现实](/player/original/ow-reality)
 - [快捷键](/player/original/ow-shortcuts)
-- [时间维度](/player/original/ow-time-dimensions)
