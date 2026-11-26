@@ -1,5 +1,5 @@
 ---
-title: "维度"
+title: "原版:维度"
 description: "原版 Wiki《Dimensions》条目的简体中文翻译：维度层级、累积数量与生产增长"
 tags:
   - 原版Wiki翻译

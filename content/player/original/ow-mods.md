@@ -1,5 +1,5 @@
 ---
-title: "Mod 一览"
+title: "原版:Mod 一览"
 description: "原版 Wiki《Mods》条目的简体中文翻译：现实更新期与更早期的社区 MOD 清单（作者、状态、内容与可用进度）"
 tags:
   - 原版Wiki翻译

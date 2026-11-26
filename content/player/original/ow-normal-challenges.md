@@ -1,5 +1,5 @@
 ---
-title: "普通挑战"
+title: "原版:普通挑战"
 description: "原版 Wiki《Normal Challenges》条目的简体中文翻译：12 个普通挑战的限制、奖励、快捷重置与相关成就"
 tags:
   - 原版Wiki翻译

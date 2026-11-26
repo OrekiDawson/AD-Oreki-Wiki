@@ -1,5 +1,5 @@
 ---
-title: "挑战"
+title: "原版:挑战"
 description: "原版 Wiki《Challenges》条目的完整简体中文翻译：普通挑战、无限挑战与永恒挑战的分类与奖励"
 tags:
   - 原版Wiki翻译

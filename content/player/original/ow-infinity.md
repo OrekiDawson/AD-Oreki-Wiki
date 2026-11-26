@@ -1,5 +1,5 @@
 ---
-title: "无限"
+title: "原版:无限"
 description: "原版 Wiki《Infinity》条目的简体中文翻译：大坍缩怎么触发、无限点数怎么算、无限次数有什么用"
 tags:
   - 原版Wiki翻译

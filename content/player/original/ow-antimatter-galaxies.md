@@ -1,5 +1,5 @@
 ---
-title: "反物质星系"
+title: "原版:反物质星系"
 description: "原版 Wiki《Antimatter Galaxies》条目的完整简体中文翻译：第二威望机制、计数频率加成与远距/遥距星系成长"
 tags:
   - 原版Wiki翻译

@@ -1,5 +1,5 @@
 ---
-title: "秘密成就"
+title: "原版:秘密成就"
 description: "原版 Wiki《Achievements/Secret Achievements》子页面的简体中文翻译：32 项秘密成就的名称、条件与解锁方式"
 tags:
   - 原版Wiki翻译

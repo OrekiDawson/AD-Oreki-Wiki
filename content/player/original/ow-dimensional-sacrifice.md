@@ -1,5 +1,5 @@
 ---
-title: "维度献祭"
+title: "原版:维度献祭"
 description: "原版 Wiki《Dimensional Sacrifice》条目的完整简体中文翻译：献祭公式、系数来源、执行条件与按钮提示"
 tags:
   - 原版Wiki翻译
