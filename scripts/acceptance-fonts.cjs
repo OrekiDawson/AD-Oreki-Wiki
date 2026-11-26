@@ -2,6 +2,7 @@
 // 用 Android Chrome 视口读取真实 computed style，验证普通文本没有回退到网页字体。
 const fs = require('node:fs');
 const path = require('node:path');
+const YAML = require('yaml');
 let chromium;
 try {
   ({ chromium } = require(process.env.KB_PLAYWRIGHT || 'playwright'));
@@ -13,8 +14,14 @@ try {
 
 const base = process.env.KB_URL || 'http://127.0.0.1:8080';
 const out = process.env.KB_FONT_OUT || 'evidence/playwright-fonts.json';
-const pages = ['/player/antimatter-dimensions', '/developer/architecture', '/player/original/ow-infinity'];
-const productionHost = /^https:\/\/wiki\.oreki\.net\/?$/i;
+const siteConfig = YAML.parse(fs.readFileSync('quartz.config.yaml', 'utf8'));
+const configuredHost = String(siteConfig?.configuration?.baseUrl || '').replace(/^https?:\/\//i, '').replace(/\/$/, '');
+if (!configuredHost) {
+  console.error('quartz.config.yaml 的 configuration.baseUrl 不能为空；拒绝在未识别站点地址时执行生产环境字体验收。');
+  process.exit(2);
+}
+const productionHost = new RegExp(`^https://${configuredHost.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}/?$`, 'i');
+const pages = ['/player/antimatter-dimensions', '/developer/architecture', '/player/original/ow-infinity', '/player/original/ow-v'];
 
 const sampleKinds = {
   body: 'ordinary',
@@ -28,15 +35,17 @@ const sampleKinds = {
 };
 
 const requiredByPage = {
-  '/player/antimatter-dimensions': new Set(['body', 'heading', 'ordinary', 'explorer', 'search', 'table']),
+  '/player/antimatter-dimensions': new Set(['body', 'heading', 'ordinary', 'explorer', 'search']),
   '/developer/architecture': new Set(['body', 'heading', 'ordinary', 'explorer', 'search', 'code']),
   '/player/original/ow-infinity': new Set(['body', 'heading', 'ordinary', 'explorer', 'search', 'math']),
+  '/player/original/ow-v': new Set(['body', 'heading', 'ordinary', 'explorer', 'search', 'table']),
 };
 
 function familyAllowed(kind, family) {
   const value = String(family || '').toLowerCase();
   if (kind === 'code') return /ui-monospace|monospace|menlo|consolas|cascadia|sfmono/.test(value);
-  if (kind === 'math') return /katex_|math|serif/.test(value);
+  if (kind === 'math') return /\bkatex[-_ ]?(?:ams|cal(?:igraphic)?|fraktur|main|math|sans[- ]?serif|script|size[1-4]|typewriter)\b/i.test(value)
+    && !/^\s*sans-serif\b/i.test(value.trim());
   return /system-ui|sans-serif|-apple-system|blinkmacsystemfont|segoe ui|microsoft yahei|noto sans/.test(value)
     && !/source sans|schibsted|roboto|ibm plex|inter|open sans|lato|poppins|nunito/.test(value);
 }
