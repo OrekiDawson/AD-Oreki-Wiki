@@ -24,7 +24,7 @@ aliases:
 
 ## 档案
 
-特蕾莎，现实之神，别号「谄媚者」。买齐全部[现实升级](/player/original/ow-reality-upgrades)、拿到[成就 147](https://antimatterdimensions.wiki.gg/wiki/Achievements)之后，玩家才会见到她。她管两样东西：一是 RM 容器（把现实机器抽走灌注，换取 RM 乘数），二是复兴点数商店——两者都围绕现实机器与符文展开。她的[现实](#现实)要把容器灌到 $1\text{e}14$ RM 才开，进去之后 IP 与 EP 获取变成 $x^{0.55}$、来自符文的时间之理产出被禁用，完成条件是现实内 EP 超过 $\text{e}4,000$，奖励则是强化符文献祭。这个现实可以反复打，打得越好奖励越高。网页版与 Android 分别随 2022 年 12 月 17 日、2024 年 4 月 1 日的现实更新加入，Steam 与 iOS 首发即有。
+特蕾莎，现实之神，别号「谄媚者」。买齐全部[现实升级](/player/original/ow-reality-upgrades)并取得[成就 147](https://antimatterdimensions.wiki.gg/wiki/Achievements)后，玩家才会见到她。她管两样东西：一是 RM 容器（把现实机器抽走灌注，换取 RM 乘数），二是复兴点数商店——两者都围绕现实机器与符文展开。她的[现实](#现实)要把容器灌到 $1\text{e}14$ RM 才开，进去之后 IP 与 EP 获取变成 $x^{0.55}$、来自符文的时间之理产出被禁用，完成条件是现实内 EP 超过 $\text{e}4,000$，奖励则是强化符文献祭。这个现实可以反复打，打得越好奖励越高。网页版与 Android 分别随 2022 年 12 月 17 日、2024 年 4 月 1 日的现实更新加入，Steam 与 iOS 首发即有。
 
 ## 机制
 
@@ -40,26 +40,26 @@ $$
 
 当容器中灌注的 RM 达到若干区间时，可以取得六个里程碑，提供额外的便利性或帮助推进游戏的新机制。
 
-| ID | 需求 | 奖励 | 提供的 RM 加成 | 详情 |
-| --- | --- | --- | --- | --- |
-| glyphLevel | $1\text{e}6$ | 开始现实时已解锁全部[永恒升级](https://antimatterdimensions.wiki.gg/wiki/Eternity_Upgrades) | $\times 3.97$ |  |
-| undo | $1\text{e}10$ | 解锁装备[符文](https://antimatterdimensions.wiki.gg/wiki/Glyphs)的「撤销」选项 | $\times 9.95$ |  |
-| run | $1\text{e}14$ | 解锁[特蕾莎的现实](#现实) | $\times 25.00$ |  |
-| epGen | $1\text{e}18$ | 解锁被动[永恒点数](/player/original/ow-eternity)产出 | $\times 62.80$ | 本现实内，每秒获得「本现实峰值 EP」在每分钟维度下的 $1\%$ |
-| shop | $1\text{e}21$ | 解锁[复兴点数商店](#复兴点数商店) | $\times 125.00$ |  |
-| effarig | $1\text{e}24$ | 解锁[鹿颈长](/player/original/ow-effarig)，远古遗物之神 | $\times 250.00$ |  |
+| ID         | 需求          | 奖励                                                                                        | 提供的 RM 加成  | 详情                                                      |
+| ---------- | ------------- | ------------------------------------------------------------------------------------------- | --------------- | --------------------------------------------------------- |
+| glyphLevel | $1\text{e}6$  | 开始现实时已解锁全部[永恒升级](https://antimatterdimensions.wiki.gg/wiki/Eternity_Upgrades) | $\times 3.97$   |                                                           |
+| undo       | $1\text{e}10$ | 解锁装备[符文](https://antimatterdimensions.wiki.gg/wiki/Glyphs)的「撤销」选项              | $\times 9.95$   |                                                           |
+| run        | $1\text{e}14$ | 解锁[特蕾莎的现实](#现实)                                                                   | $\times 25.00$  |                                                           |
+| epGen      | $1\text{e}18$ | 解锁被动[永恒点数](/player/original/ow-eternity)产出                                        | $\times 62.80$  | 本现实内，每秒获得「本现实峰值 EP」在每分钟维度下的 $1\%$ |
+| shop       | $1\text{e}21$ | 解锁[复兴点数商店](#复兴点数商店)                                                           | $\times 125.00$ |                                                           |
+| effarig    | $1\text{e}24$ | 解锁[鹿颈长](/player/original/ow-effarig)，远古遗物之神                                     | $\times 250.00$ |                                                           |
 
 ### 复兴点数商店
 
 当容器灌注的 RM 超过 $\text{e}21$ 后，即可用[复兴点数](https://antimatterdimensions.wiki.gg/wiki/Perks)购买升级，其中许多升级可以多次购买。
 
-| ID | PP 成本（成长） | 描述 | 等级上限 | 上限时效果 |
-| --- | --- | --- | --- | --- |
-| glyphLevel | $1\left ( \times 2 \right )$ | 把不稳定前的符文等级提高 $5\%$（乘算） | $11$ | $\times 1.71$ |
-| rmMult | $1\left ( \times 2 \right )$ | 现实机器获取翻倍 | $11$ | $\times 2.05\text{e}3~(2.05~\text{K})$ |
-| bulkDilation | $100\left ( \times 2 \right )$ | 膨胀自动购买器一次购买两倍的膨胀升级 | $4$ | $\times 16.00$ |
-| autoSpeed | $1,000\left ( \times 2 \right )$ | 无限维度、时间维度、膨胀与复制器自动购买器速度 $\times 2$ | $2$ | $\times 4.00$ |
-| musicGlyph | $1$ | 获得一个随机类型的音乐符文，其等级为你最高符文的 $80\%$[^music-glyph-generation] | $\infin$ | 不适用 |
+| ID           | PP 成本（成长）                  | 描述                                                                             | 等级上限 | 上限时效果                             |
+| ------------ | -------------------------------- | -------------------------------------------------------------------------------- | -------- | -------------------------------------- |
+| glyphLevel   | $1\left ( \times 2 \right )$     | 把不稳定前的符文等级提高 $5\%$（乘算）                                           | $11$     | $\times 1.71$                          |
+| rmMult       | $1\left ( \times 2 \right )$     | 现实机器获取翻倍                                                                 | $11$     | $\times 2.05\text{e}3~(2.05~\text{K})$ |
+| bulkDilation | $100\left ( \times 2 \right )$   | 膨胀自动购买器一次购买两倍的膨胀升级                                             | $4$      | $\times 16.00$                         |
+| autoSpeed    | $1,000\left ( \times 2 \right )$ | 无限维度、时间维度、膨胀与复制器自动购买器速度 $\times 2$                        | $2$      | $\times 4.00$                          |
+| musicGlyph   | $1$                              | 获得一个随机类型的音乐符文，其等级为你最高符文的 $80\%$[^music-glyph-generation] | $\infin$ | 不适用                                 |
 
 [^music-glyph-generation]: 音乐符文遵循符文生成规则，点击时会发出声音，且其外观不可更改。
 
