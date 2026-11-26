@@ -43,9 +43,11 @@ aliases:
 
 ## 参考资料
 
-- [Antimatter Dimensions Wiki：Infinity](https://antimatterdimensions.wiki.gg/wiki/Infinity)
-- [Antimatter Dimensions Wiki：Eternity](https://antimatterdimensions.wiki.gg/wiki/Eternity)
-- [Antimatter Dimensions Wiki：Reality](https://antimatterdimensions.wiki.gg/wiki/Reality)
+- [Antimatter Dimensions Wiki：Infinity](https://antimatterdimensions.wiki.gg/wiki/Infinity?oldid=3113)
+- [Antimatter Dimensions Wiki：Eternity](https://antimatterdimensions.wiki.gg/wiki/Eternity?oldid=3118)
+- [Antimatter Dimensions Wiki：Reality](https://antimatterdimensions.wiki.gg/wiki/Reality?oldid=3235)
+
+上述页面按 2026 年 11 月 27 日的固定修订核对，用于确认阶段名称与入口关系；具体版本仍应结合游戏内提示和对应源码检查。
 
 ## 适用版本与核验范围
 
