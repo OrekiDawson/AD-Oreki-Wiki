@@ -18,4 +18,6 @@ aliases:
 
 Oreki Edition 的界面、自动化或数值改动，以[原版行为与 Oreki Edition 修改](/player/gameplay/original-vs-mod)及具体版本为准。原版概念和 MOD 改动应分开阅读，不要拿一条旧路线同时解释两个版本。
 
+原版阶段资料可对照[Antimatter Dimensions Wiki](https://antimatterdimensions.wiki.gg/wiki/Main_Page)；具体研究前置和现实条件以当前游戏版本为准。
+
 继续阅读：[无限与永恒](/player/gameplay/progression-infinity-eternity) · [挑战与真实结算](/player/gameplay/challenges) · [存档兼容与自动保存](/player/gameplay/saves)

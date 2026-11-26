@@ -1,12 +1,12 @@
 ---
 title: "全部条目"
-description: "按主题与中文标题浏览 反物质维度 MOD Wiki 的 120 个正式条目"
+description: "按主题与中文标题浏览 反物质维度 MOD Wiki 的 123 个正式条目"
 tags:
   - 导航
   - 索引
 ---
 
-这里列出当前公开发布的 **120** 个正式条目。草稿、内部归档、兼容入口和重定向不计入索引。
+这里列出当前公开发布的 **123** 个正式条目。草稿、内部归档、兼容入口和重定向不计入索引。
 
 ## 玩家专区
 
@@ -15,6 +15,7 @@ tags:
 - [存档兼容与自动保存](/player/gameplay/saves)
 - [存档库](/player/original/ow-save-bank)
 - [打破无限](/player/original/ow-break-infinity)
+- [第一次现实：重置前后的准备](/player/gameplay/reality)
 - [反物质维度](/player/antimatter-dimensions)
 - [反物质维度（游戏机制）](/player/original/ow-antimatter-dimensions)
 - [反物质星系](/player/original/ow-antimatter-galaxies)
@@ -42,6 +43,8 @@ tags:
 - [时间膨胀](/player/original/ow-dilation)
 - [时间维度](/player/original/ow-time-dimensions)
 - [时间研究](/player/original/ow-time-studies)
+- [时间研究：分叉、挑战与时间膨胀](/player/gameplay/time-studies)
+- [时间研究与现实：后永恒阶段阅读地图](/player/gameplay/reality-time-studies)
 - [术语（佩勒用词）](/player/original/ow-terminology)
 - [太阳神](/player/original/ow-ra)
 - [太阳神·引语](/player/original/ow-ra-quotes)
@@ -74,7 +77,6 @@ tags:
 - [下载与版本说明](/player/download-and-version)
 - [现实](/player/original/ow-reality)
 - [现实升级](/player/original/ow-reality-upgrades)
-- [现实与时间研究](/player/gameplay/reality-time-studies)
 - [虚幻升级](/player/original/ow-imaginary-upgrades)
 - [永恒](/player/original/ow-eternity)
 - [永恒阶段：EP、时间研究与现实前置](/player/gameplay/eternity)
@@ -102,6 +104,7 @@ tags:
 - [从源码到可发布 APK：CI/CD 的分层设计](/developer/build/ci-cd)
 - [存档兼容排查：先辨认格式，再追踪迁移](/developer/troubleshooting/save-compatibility)
 - [第一次参与 Android 开发](/developer/first-contribution)
+- [调度器状态机：购买决策、合法重置与进度死锁](/developer/architecture/scheduler-state-machine)
 - [发布资格：从一个 APK 到可交付版本](/developer/current/release-status)
 - [构建与交付：从源码到可交付产物](/developer/build)
 - [故障排查：从症状回到源码](/developer/troubleshooting)
