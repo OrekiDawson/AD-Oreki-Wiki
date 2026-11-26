@@ -4,6 +4,8 @@ description: "官方混淆 DEX 的类、方法、字段映射与可安全使用�
 tags:
   - 逆向
   - 导航
+aliases:
+  - "/reverse-engineering"
 ---
 
 

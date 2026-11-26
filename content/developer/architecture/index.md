@@ -4,6 +4,8 @@ description: "Android 与 Web 两端工程结构、Kotlin 混合运行时 ABI、
 tags:
   - 架构
   - 导航
+aliases:
+  - "/architecture"
 ---
 
 

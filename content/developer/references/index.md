@@ -4,6 +4,8 @@ description: "权威事实来源索引、术语表与本站引用的核对方式
 tags:
   - 参考
   - 导航
+aliases:
+  - "/references"
 ---
 
 

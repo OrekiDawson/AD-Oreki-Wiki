@@ -4,6 +4,8 @@ description: "查 Android/Web 的最新公开进展、GitHub Release 与仍待�
 tags:
   - 状态
   - 导航
+aliases:
+  - "/current"
 ---
 
 想知道 Oreki Edition 目前进展如何，建议按以下顺序阅读。**先看更新日期，再看证据链接**；此前失败的测试不能直接用于判断最新发布版本。

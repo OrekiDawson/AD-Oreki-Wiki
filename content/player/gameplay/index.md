@@ -4,6 +4,8 @@ description: "无限、永恒、现实、时间研究、天神、挑战、自动
 tags:
   - 玩法
   - 导航
+aliases:
+  - "/gameplay"
 ---
 
 

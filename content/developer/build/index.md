@@ -4,6 +4,8 @@ description: "AGP/Gradle 构建体系、APK 签名与升级兼容、CI/CD 门禁
 tags:
   - 构建
   - 导航
+aliases:
+  - "/build"
 ---
 
 
