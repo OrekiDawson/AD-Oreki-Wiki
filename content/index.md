@@ -41,7 +41,7 @@ tags:
 <section class="home-section">
 <div class="home-section-heading">
 <p class="home-kicker">精选条目</p>
-<h2>精选条目</h2>
+<h2>从这里开始阅读</h2>
 </div>
 <div class="home-feature-grid">
 <a class="home-feature" href="/player/original/ow-time-dimensions"><strong>时间维度</strong><span>时间碎片不是单纯的下一种货币：它把膨胀后的等待，重新折算成可以继续增长的动力。</span></a>
@@ -98,7 +98,7 @@ tags:
 <section class="home-section home-reference">
 <div class="home-section-heading">
 <p class="home-kicker">原版百科</p>
-<h2>原版百科</h2>
+<h2>原版译文怎么读</h2>
 </div>
 <p>原版译文保留原文修订、术语、公式和 CC BY-SA 4.0 署名；Oreki Edition 的改动另行说明。可以从<a href="/player/original/">原版中文译文总览</a>进入，也可以按主题浏览：</p>
 <p class="home-inline-links"><a href="/player/original/ow-dimensions">维度</a><a href="/player/original/ow-challenges">挑战</a><a href="/player/original/ow-achievements">成就</a><a href="/player/original/ow-time-studies">时间研究</a><a href="/player/original/ow-celestials">天神</a><a href="/player/terminology">术语表</a></p>
@@ -107,7 +107,7 @@ tags:
 <section class="home-section home-contribute">
 <div class="home-section-heading">
 <p class="home-kicker">参与与贡献</p>
-<h2>参与与贡献</h2>
+<h2>一起维护这部百科</h2>
 </div>
 <p>想直接游玩，可以从<a href="/player/download-and-version">下载与版本说明</a>开始；想改代码，去看<a href="/developer/project-overview">项目概览</a>和<a href="/developer/first-contribution">第一次参与开发</a>。欢迎补充来源、修正事实、改善中文或提出新的专题。</p>
 <p class="home-inline-links"><a href="https://github.com/OrekiDawson/AD-Oreki-Wiki">GitHub 源码仓库</a><a href="/developer/editorial-guidelines">编写指南</a><a href="/wiki-rules">知识库规则</a><a href="/copyright">版权与许可</a></p>

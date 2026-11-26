@@ -16,4 +16,4 @@ if (errors.length) {
   console.error(errors.join("\n"))
   process.exit(1)
 }
-console.log("OK 页面切换保持 SPA，但无动画和 navigation-progress")
+console.log("OK 已核对 SPA 配置与页面切换动画/进度条的静态覆盖规则；线上行为仍需浏览器验收")
