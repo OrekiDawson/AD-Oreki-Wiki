@@ -8,9 +8,9 @@ tags:
 
 这里显示最近进入当前内容树的正式条目；文章的具体修订记录仍以页面正文与仓库历史为准。
 
+- [平台与版本](/player/faq/platform-and-version)
 - [玩家常见问题](/player/faq)
 - [自动化与阶段入口](/player/faq/automation-and-unlocks)
-- [平台与版本](/player/faq/platform-and-version)
 - [存档与兼容性](/player/faq/saves-and-compatibility)
 - [构建与交付：从源码到可交付产物](/developer/build)
 - [构建可追溯性：让 APK 对得上源码与输入](/developer/build/artifact-provenance)
