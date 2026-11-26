@@ -22,7 +22,7 @@ aliases:
 
 她引入薇成就（V-Achievements），完成这些成就可获得空间之理。空间之理可用于购买原本被锁定的[时间研究](/player/original/ow-time-studies)。
 
-原页另有子页面「引语（Quotes）」，本轮批次未译，见文末相关条目。
+原页另有子页面「引语（Quotes）」，该子页面尚未译为中文，见文末相关条目。
 
 ## 档案
 

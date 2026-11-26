@@ -22,7 +22,7 @@ aliases:
 
 他们的称号「远古遗物之神（Celestial of Ancient Relics）」与其主题——[符文](https://antimatterdimensions.wiki.gg/wiki/Glyphs)——相关。
 
-原页另有子页面[「引语（Quotes）」](/player/original/ow-effarig-quotes)，本轮批次已译并完成审校。
+原页另有子页面[「引语（Quotes）」](/player/original/ow-effarig-quotes)，该子页面已有中文译文并完成审校。
 
 ## 档案
 
