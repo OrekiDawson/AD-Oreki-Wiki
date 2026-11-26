@@ -70,6 +70,13 @@ if (recentRoutes.length !== 24)
 if (new Set(recentRoutes).size !== recentRoutes.length) errors.push("最近更新索引存在重复入口")
 for (const route of recentRoutes)
   if (!formalRoutes.has(route)) errors.push(`最近更新索引包含非正式页面：${route}`)
+const expectedRecentRoutes = formal
+  .map((file) => ({ route: routeFor(file), updatedAt: updatedAt(file) }))
+  .sort((a, b) => b.updatedAt - a.updatedAt || a.route.localeCompare(b.route))
+  .slice(0, 24)
+  .map((page) => page.route)
+if (recentRoutes.some((route, index) => route !== expectedRecentRoutes[index]))
+  errors.push("最近更新索引与页面更新时间不一致，请运行 node scripts/generate-navigation.mjs")
 const config = fs.readFileSync(path.join(root, "quartz.config.yaml"), "utf8")
 const yamlScalar = (name) => {
   const match = config.match(

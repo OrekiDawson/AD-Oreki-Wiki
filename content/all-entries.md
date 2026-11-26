@@ -1,6 +1,6 @@
 ---
 title: "全部条目"
-description: "按主题与中文标题浏览反物质维度 Wiki 的 114 个正式条目"
+description: "按主题与中文标题浏览 反物质维度 MOD Wiki 的 114 个正式条目"
 tags:
   - 导航
   - 索引
