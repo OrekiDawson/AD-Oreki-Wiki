@@ -5,6 +5,11 @@ import { execFileSync } from "node:child_process"
 const root = process.cwd()
 const contentRoot = path.join(root, "content")
 const generated = new Set(["all-entries.md", "recent-updates.md"])
+const configText = fs.readFileSync(path.join(root, "quartz.config.yaml"), "utf8")
+const pageTitleMatch = configText.match(
+  /^\s*pageTitle:\s*(?:"([^"\r\n]*)"|'([^'\r\n]*)'|([^#\r\n]*?))\s*(?:#.*)?$/m,
+)
+const pageTitle = (pageTitleMatch?.[1] ?? pageTitleMatch?.[2] ?? pageTitleMatch?.[3])?.trim() ?? "反物质维度 MOD Wiki"
 const gitTimes = new Map()
 try {
   let timestamp = 0
@@ -84,7 +89,7 @@ const groups = new Map([
 const lines = [
   "---",
   'title: "全部条目"',
-  `description: "按主题与中文标题浏览反物质维度 Wiki 的 ${pages.length} 个正式条目"`,
+  `description: "按主题与中文标题浏览 ${pageTitle} 的 ${pages.length} 个正式条目"`,
   "tags:",
   "  - 导航",
   "  - 索引",
@@ -100,7 +105,9 @@ for (const [name, entries] of groups) {
 }
 fs.writeFileSync(path.join(contentRoot, "all-entries.md"), `${lines.join("\n")}\n`)
 
-const recent = [...pages].sort((a, b) => updatedAt(b.file) - updatedAt(a.file)).slice(0, 24)
+const recent = [...pages]
+  .sort((a, b) => updatedAt(b.file) - updatedAt(a.file) || a.route.localeCompare(b.route))
+  .slice(0, 24)
 const recentLines = [
   "---",
   'title: "最近更新"',

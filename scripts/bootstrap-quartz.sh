@@ -20,7 +20,6 @@ rm -rf "$TARGET/content"
 cp -r content "$TARGET/content"
 cp quartz.config.yaml "$TARGET/quartz.config.yaml"
 if [ -d static ]; then
-  rm -rf "$TARGET/quartz/static"
   mkdir -p "$TARGET/quartz/static"
   cp -r static/. "$TARGET/quartz/static/"
 fi

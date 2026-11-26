@@ -19,7 +19,6 @@ const RULE_PAGE_TITLE = "反物质维度MOD Wiki:知识库规则"
 const RULE_PAGE = "content/wiki-rules.md"
 const POLICY_PAGE = "content/wiki-not.md"
 const POLICY_PAGE_TITLE = "反物质维度MOD Wiki:本站不是什么"
-const HISTORY_DIR = "content/developer/history/"
 const DRAFT_DIR = "content/ai-drafts/"
 const PLAYER_DIR = "content/player/"
 const DEVELOPER_DIR = "content/developer/"
@@ -122,7 +121,6 @@ const titleOwners = new Map()
 for (const f of files) {
   const text = fs.readFileSync(f, "utf8")
   const isDraft = f.startsWith(DRAFT_DIR)
-  const isHistory = f.startsWith(HISTORY_DIR)
   const isPlayer = f.startsWith(PLAYER_DIR)
   const isRule = f === RULE_PAGE
   const isPolicy = f === POLICY_PAGE
@@ -146,8 +144,8 @@ for (const f of files) {
     } else if (!isDraft) {
       if (fm.title.startsWith("反物质维度MOD Wiki:"))
         fail("普通条目标题不应带规则页命名空间前缀: " + f)
-      if (!isHistory && ROUND_LEAD_TITLE.test(fm.title)) {
-        fail("专题条目标题不应以 R 轮次或日期开头（历史材料请放 content/developer/history/）: " + f)
+      if (ROUND_LEAD_TITLE.test(fm.title)) {
+        fail("专题条目标题不应以 R 轮次或日期开头（时间性材料请移出 content/，放入仓库内部归档目录）: " + f)
       }
       if (!CJK.test(fm.title)) fail("条目标题应使用简体中文: " + f)
     }
@@ -162,14 +160,10 @@ for (const f of files) {
   // 分类页标题必须是中文
   if (isCategoryIndex && !CJK.test(fm.title)) fail("分类页 title 必须是简体中文类目名: " + f)
 
-  // 历史归档边界
-  if (isHistory && !isIndex) {
-    if (!fm.tags.includes("历史")) fail("历史归档条目必须带「历史」标签: " + f)
-    if (!/^\d{4}-\d{2}-\d{2}-/.test(path.basename(f)))
-      fail("历史归档文件名必须以日期 YYYY-MM-DD- 开头: " + f)
-  } else if (!isDraft && !isHistory) {
+  // 内部历史材料不得进入 content/；公开条目不使用历史归档标签。
+  if (!isDraft) {
     if (fm.tags.includes("历史"))
-      fail("非历史目录条目不应带「历史」标签（历史材料请放 content/developer/history/）: " + f)
+      fail("正式条目不应带「历史」标签；时间性材料请移出 content/，放入仓库内部归档目录: " + f)
   }
 
   // 内部链接
@@ -196,11 +190,10 @@ for (const f of files) {
     fail("玩家专区不得出现 AI Summary: " + f)
   }
 
-  // 反日志化：专题条目（非历史、非草稿、非首页/规则/版权/分类页）
+  // 反日志化：专题条目（非草稿、非首页/规则/版权/分类页）
   const isGeneratedIndex = f === "content/all-entries.md" || f === "content/recent-updates.md"
   const isTopic =
     !isDraft &&
-    !isHistory &&
     !isIndex &&
     !isRule &&
     !isGeneratedIndex &&
@@ -216,7 +209,7 @@ for (const f of files) {
       fail("专题条目缺少主题导语（正文开头需有一至三句说明「这是什么」）: " + f)
     }
     if (CHANGELOG_HEADING.test(text)) {
-      fail("专题条目出现 R 轮次/日期/Release Notes 式章节，应迁入 content/developer/history/: " + f)
+      fail("专题条目出现 R 轮次/日期/Release Notes 式章节；时间性材料请移出 content/，放入仓库内部归档目录: " + f)
     }
     if (!/https?:\/\//.test(text)) fail("专题条目缺少可点击的原始来源链接: " + f)
   }
