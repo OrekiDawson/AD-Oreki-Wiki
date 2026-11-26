@@ -1,26 +1,60 @@
 ---
-title: "Oreki Edition 介绍"
-description: "Oreki Edition 的产品目标、平台范围、自动化理念与同原版的关系"
+title: "Oreki Edition 是什么？"
+description: "了解 Oreki Edition 与原版的关系、平台差异和自动化设计"
 tags:
   - OrekiEdition
   - 介绍
   - 玩家
+aliases:
+  - "/mods"
 ---
 
-**Oreki Edition** 是基于《反物质维度》制作的 Android/Web 修改版，不是原版游戏的官方更新。它保留原版的重置层级、挑战、时间研究、现实与天神内容，同时调整部分节奏、自动化、界面反馈和中文说明，目标是让完整手动游玩与合理自动化能够自然衔接。
+如果你熟悉《反物质维度》，会发现 Oreki Edition 仍然从同一条生产链出发：维度生产维度，维度生产反物质，重置把一次短跑变成下一次长跑。它不是原版官方更新，而是围绕原版玩法制作的 Android/Web MOD。
 
-## 产品目标
+它最有意思的地方不在于把数字改得更大，而在于试着回答一个很实际的问题：当玩家已经理解“买维度—重置—再买维度”之后，哪些重复操作可以交给机器，哪些决定仍应由玩家亲自做？
 
-Oreki Edition 不以“最快冲向终局”为唯一目标。真实新档的合法通关时间和五阶段体验都需要成立：早期快速建立玩法理解，中段逐步展开无限与永恒，后期进入现实、天神与 Pelle 终局。自动化可以减轻重复操作，但不能伪造资源、跳过真实结算或把整个阶段压缩成瞬间完成。
+## 它保留了什么
 
-## 与原版的共同点和区别
+Oreki Edition 的核心成长脉络仍然是反物质维度、维度提升、星系、大坍缩、无限、永恒、时间研究、现实与天神。原版知识仍然有用；不确定某个机制属于原版还是 MOD 时，可以对照[原版与 Oreki Edition 的区别](/player/gameplay/original-vs-mod)。
 
-原版的核心成长链继续保留：维度、星系、大坍缩、永恒、时间研究、现实、符文与天神仍按游戏机制推进。MOD 的调整主要集中在自动购买器策略、部分体验节奏、Android/Web 行为一致性与中文辅助说明。具体差异集中阅读 [原版与 Oreki Edition 的区别](/player/gameplay/original-vs-mod)，不要从单条社区攻略推断 MOD 当前行为。
+它也保留了这类游戏的基本节奏：早期购买和解锁，中期用重置压缩等待，后期让多个成长系统彼此叠加。换句话说，MOD 不会把“为什么要重置”改成单纯的“按一下就赢”。
 
-## 平台与版本
+## 它改变了什么
 
-Android 使用独立 APK 与签名发布链；Web 从冻结的上游代码构建并在独立站点部署。两端存档首先保证与各自原版双向兼容，跨 Android/Web 直接互读仍必须经过真实格式验证。下载、版本和发布入口见 [下载与版本说明](/player/download-and-version/)。
+Oreki Edition 的改动主要集中在三处：
+
+- **自动化**：自动购买器和阶段调度器减少重复点击，按真实游戏状态决定下一步，而不是凭页面切换制造进度。
+- **阅读体验**：界面、教程和中文说明更强调“现在为什么能做这件事”，让新玩家不必先翻源码才能知道按钮用途。
+- **双端维护**：Android 和 Web 分别有自己的发布与存档边界，同时尽量让核心玩法与术语保持一致。
+
+自动化并不是作弊按钮。调度器可以代买、等待和在合法条件满足后执行结算，却不能越过资源门槛，也不能把尚未完成的挑战伪装成已完成。你仍然可以关闭自动化，手动观察每一次重置带来的变化。
+
+## Android 和 Web 怎么选
+
+| 你更在意什么               | 更适合先看                                                |
+| -------------------------- | --------------------------------------------------------- |
+| 随手游玩、离线后继续       | Android，但安装前先备份存档                               |
+| 不想安装 APK、希望立即开始 | Web，在同一浏览器里保持站点数据                           |
+| 测试最新改动               | Android Releases 中明确标注的 Pre-release                 |
+| 核对网页端源码和机制       | [Web 端开发说明](/developer/architecture/web)及其源码仓库 |
+
+两端不是同一个存档容器，也不应因为界面相似就假定可以直接互导。更新、换设备或跨平台前，先读[存档兼容与自动保存](/player/gameplay/saves)。
+
+## 适合怎样的玩家
+
+如果你喜欢看数字越过不可思议的数量级，又想知道“这一轮为什么值得重置”，可以把它当作一部会自己运转的数学玩具。若你更喜欢完全手动的节奏，也可以关闭自动购买器，把每次重置当作自己的实验。
+
+不建议把测试版当成唯一正式存档。稳定版适合持续游玩，Pre-release 适合愿意备份、报告问题并接受版本变化的玩家；当前可用入口见[下载与版本说明](/player/download-and-version/)。
 
 ## 继续阅读
 
-[智能自动购买器](/player/gameplay/automation) · [挑战与真实结算](/player/gameplay/challenges) · [存档兼容与自动保存](/player/gameplay/saves) · [阶段门禁](/player/gameplay/stage-gates) · [玩家专区](/player/)
+- [开始游玩 Oreki Edition](/player/getting-started)：从新档走到第一次大坍缩。
+- [智能自动购买器](/player/gameplay/automation)：理解自动化会替你做什么、不会替你做什么。
+- [阶段门禁](/player/gameplay/stage-gates)：为什么某些按钮必须等到合法条件满足。
+- [玩家专区](/player/)：按机制、攻略、FAQ 和原版译文继续浏览。
+
+## 资料
+
+- [Oreki Edition Web 源码仓库](https://github.com/OrekiDawson/AD-Oreki-Edition-Web)
+- [Oreki Edition Android Releases](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/releases)
+- [原版与 Oreki Edition 的区别](/player/gameplay/original-vs-mod)

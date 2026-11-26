@@ -26,7 +26,7 @@ Android 的构建不是“把 Kotlin 编译一下”。对 Oreki Edition 来说�
 
 ## 一个 APK 是怎样被组装出来的
 
-`app/build.gradle.kts` 先从 `scripts/release-gate-policy.json`读取版本身份，再解析几个输入：
+`app/build.gradle.kts` 先从 `scripts/release-gate-policy.json` 读取版本身份，再解析几个输入：
 
 - `oreki.fullGameStage`：完整游戏阶段目录；未设置时回退到 `build/agp-fullgame`；
 - `build/kt/generated`：唯一允许加入主 source set 的生成 Kotlin 绑定；
@@ -55,7 +55,7 @@ AGP 的价值在于把这些输入映射到标准任务图，而不是替开发�
 
 当前配置中的 `debug` 只追加 `.debug` application ID，适合开发安装；`release` 关闭代码压缩和资源压缩：`isMinifyEnabled = false`、`isShrinkResources = false`。这不是忘记配置 R8，而是将稳定发布路径与独立优化实验分开。
 
-`r8` 通过 `initWith(getByName("release"))`继承 Release，再打开 `isMinifyEnabled = true`。因此它共享大部分应用配置，却不应被当作正式 Release 的替代品。R8 的输入边界、keep 规则和签名处置见[R8 专题](/developer/build/r8)。
+`r8` 通过 `initWith(getByName("release"))` 继承 Release，再打开 `isMinifyEnabled = true`。因此它共享大部分应用配置，却不应被当作正式 Release 的替代品。R8 的输入边界、keep 规则和签名处置见 [R8 专题](/developer/build/r8)。
 
 ## 签名门禁为什么在构建脚本里
 

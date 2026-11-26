@@ -1,24 +1,70 @@
 ---
-title: "玩法机制"
-description: "无限、永恒、现实、时间研究、天神、挑战、自动购买器、存档与阶段门禁的机制解释"
+title: "玩法机制：一张会不断展开的成长地图"
+description: "从维度生产到现实与天神，按玩家问题理解反物质维度的重置、资源和挑战"
 tags:
   - 玩法
-  - 导航
+  - 机制
+  - 玩家
 aliases:
   - "/gameplay"
 ---
 
+《反物质维度》表面上是在把数字变大，真正的玩法却是不断决定“现在应该把什么重置掉”。维度提升让短期生产换来更好的下一轮，星系把循环再压缩一次，大坍缩则把玩家送进新的成长层。后面的无限、永恒、现实和天神，只是把这个问题一层层变得更有趣。
 
-这一部分讲《反物质维度》原版机制，以及 Oreki Edition 在哪些数值和自动化行为上做了调整。读完后应当能判断某个行为是原版设计、MOD 修改，还是验证中尚未确认的推断。
+这页不是按系统名词排成的字典，而是一张阅读地图：先理解资源和重置为何互相咬合，再按自己所在阶段进入专题。原版机制与 MOD 差异分开说明；看到“原版”或“Oreki Edition”字样时，不要把两套规则混成一套。
 
-建议先读 [原版行为与 Oreki Edition 修改](/player/gameplay/original-vs-mod)，它集中列出两端的差异；之后按需要进入具体条目：
+## 先抓住四个问题
 
-- [无限与永恒](/player/gameplay/progression-infinity-eternity)：大坍缩、无限点数、永恒点数与时间研究的入口。
-- [现实与时间研究](/player/gameplay/reality-time-studies)：时间研究树、永恒挑战、时间膨胀与第一次现实。
-- [天神系统](/player/gameplay/celestials)：V、Ra、Lai'tela、Pelle 等后期系统与进入条件。
-- [挑战与真实结算](/player/gameplay/challenges)：三类挑战怎样解锁、完成，以及常见的卡关原因。
-- [智能自动购买器](/player/gameplay/automation)：阶段感知、目标驱动与手动优先的自动化设计。
-- [存档兼容与自动保存](/player/gameplay/saves)：导出备份、Stable/Pre-release 选择、导入与重启后的检查。
-- [阶段门禁](/player/gameplay/stage-gates)：页面与功能的解锁检查、非法直达与恢复。
+遇到任何新按钮，都可以先问：
 
-原版机制以官方 3.21.0 基线与 Web 冻结上游的读码结果为准，社区 Wiki（[Antimatter Dimensions Wiki](https://antimatterdimensions.wiki.gg/wiki/Antimatter_Dimensions)）用于概念与分类参照。MOD 改过的阈值、倍率与自动化行为会在对应条目里单独标注；两端的集中对照见 [原版行为与 Oreki Edition 修改](/player/gameplay/original-vs-mod)。
+1. **它消耗什么？** 反物质、无限点数、永恒点数或其他资源，决定这次操作属于哪一层成长。
+2. **它会重置什么？** 被清空的是眼前一轮，还是连同上一层进度一起清空？
+3. **它留下什么？** 次数、升级、研究或解锁，才是下一轮真正变强的来源。
+4. **它为什么现在能按？** 阶段门禁通常是为了保证机制按顺序出现，而不是故意把按钮藏起来。
+
+如果只看“获得了多少”，重置会像损失；如果同时看“下一轮少等多久”，成长曲线就会显出形状。
+
+## 按成长阶段阅读
+
+### 从新档到第一次大坍缩
+
+先读[开始游玩 Oreki Edition](/player/getting-started)：它解释维度生产、计数频率、维度提升、星系和第一次大坍缩之间的因果关系。新玩家不需要一开始理解现实或天神；先让第一条生产链跑起来，后面的系统才有落脚点。
+
+### 无限与永恒
+
+[无限与永恒](/player/gameplay/progression-infinity-eternity)解释大坍缩后的无限点数、打破无限、永恒点数和时间研究。这里的关键变化是：一次重置不再只服务于下一轮生产，而会购买一整条更长的成长路径。
+
+### 时间研究、膨胀与现实
+
+[现实与时间研究](/player/gameplay/reality-time-studies)适合已经进入永恒阶段的玩家。时间研究不是“升级列表”，而是对资源流向的选择；时间膨胀和现实则把某些短期收益换成更高层的长期能力。遇到研究树分叉时，先看当前目标和解锁条件，不要把别人的终局路线当成新档的唯一答案。
+
+### 天神与终局
+
+[天神系统](/player/gameplay/celestials)介绍 V、Ra、Lai'tela、Pelle 等后期系统。它们会改变资源、挑战和重置的关系，进入后应优先阅读对应的条件与保留项；“已经看见页面”不代表已经满足真正的结算门槛。
+
+## 三类常见的“为什么不动”
+
+- [阶段门禁](/player/gameplay/stage-gates)：按钮、页面或功能尚未解锁时，先检查阶段条件，不要用直达页面代替真实进度。
+- [智能自动购买器](/player/gameplay/automation)：自动化只会在合法条件满足时购买、等待或结算；它不能凭空越过资源门槛。
+- [挑战与真实结算](/player/gameplay/challenges)：挑战可能改变价格、产量和重置规则，普通阶段的经验不能直接套用。
+
+自动化最适合接管重复劳动，不适合替玩家猜测目标。关掉自动化后手动操作仍然成立，往往是判断问题的最快办法。
+
+## 规则差异与存档安全
+
+[原版行为与 Oreki Edition 修改](/player/gameplay/original-vs-mod)集中说明两端的核心差异。Android 和 Web 的界面相似，不代表版本、调度器和重置保留项永远相同；以当前平台的按钮说明和发布版本为准。
+
+准备更新、换设备或跨平台尝试前，先读[存档兼容与自动保存](/player/gameplay/saves)。存档备份不是出了问题才做的补救，而是尝试新版本时保留选择权的方式。
+
+## 继续浏览
+
+- [玩家专区](/player/)：按新手、机制、攻略、FAQ 和原版译文进入。
+- [下载与版本说明](/player/download-and-version)：选择 Web 或 Android，并辨认稳定版与预发布版。
+- [玩家常见问题](/player/faq)：从具体症状开始排查。
+- [Oreki Edition 是什么？](/player/mods)：了解 MOD 的目标和边界。
+
+## 资料
+
+- [原版社区 Wiki：Antimatter Dimensions](https://antimatterdimensions.wiki.gg/wiki/Antimatter_Dimensions)
+- [原版社区 Wiki：Prestige](https://antimatterdimensions.wiki.gg/wiki/Prestige)
+- [原版社区 Wiki：Infinity](https://antimatterdimensions.wiki.gg/wiki/Infinity)
