@@ -3,7 +3,7 @@
   "generated_at": "2026-11-26T14:02:57.243Z",
   "source": "https://antimatterdimensions.wiki.gg",
   "note": "图片逐项核对许可证后才可下载到 static/；待核实素材不得进入正式页面。API 频率限制时保持待审状态，不将空结果当作无图片。",
-  "audit_status": "COMPLETE",
+  "audit_status": "METADATA_AUDITED_LICENSE_PENDING",
   "pages": [
     {
       "source_title": "Achievements",
