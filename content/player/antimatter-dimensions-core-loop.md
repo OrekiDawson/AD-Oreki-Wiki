@@ -51,6 +51,6 @@ aliases:
 
 ## 参考资料
 
-- [Antimatter Dimensions Wiki：Antimatter Dimension](https://antimatterdimensions.wiki.gg/wiki/Antimatter_Dimension)
-- [Antimatter Dimensions Wiki：Eternity](https://antimatterdimensions.wiki.gg/wiki/Eternity)
-- [Antimatter Dimensions Wiki：Reality](https://antimatterdimensions.wiki.gg/wiki/Reality)
+- [Antimatter Dimensions Wiki：Antimatter Dimensions](https://antimatterdimensions.wiki.gg/index.php?title=Antimatter_Dimensions&oldid=3325)
+- [Antimatter Dimensions Wiki：Eternity](https://antimatterdimensions.wiki.gg/wiki/Eternity?oldid=3118)
+- [Antimatter Dimensions Wiki：Reality](https://antimatterdimensions.wiki.gg/wiki/Reality?oldid=3342)
