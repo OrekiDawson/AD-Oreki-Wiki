@@ -62,6 +62,10 @@ async function inspect(page) {
     const ordinary = [...document.querySelectorAll('article p, article li, article td, article blockquote')]
       .filter((el) => !el.closest('pre, code, .katex, .math-inline, .math-block'))
       .map((el) => getComputedStyle(el).fontFamily);
+    const numericCode = [...document.querySelectorAll('article p code, article li code, article td code')]
+      .map((el) => (el.textContent || '').trim())
+      .filter((text) => text.length <= 80 && /^[\s\d.eE+\-−×x^*/()→←=]+$/.test(text)
+        && /(?:(?<![A-Za-z0-9])(?:\d{1,3}(?:\.\d+)?)\s*[eE][+-]?\d+(?![A-Za-z0-9])|(?<!\d)e\d{2,}|(?<![A-Za-z0-9])\d{1,3}(?:\.\d+)?\s*[×x]\s*10\^\d)/.test(text));
     const sample = (name, selector) => {
       const el = document.querySelector(selector);
       if (!el) return { name, selector, missing: true, text: '', fontFamily: '' };
@@ -80,6 +84,7 @@ async function inspect(page) {
         ['math', '.katex'],
       ].map(([name, selector]) => sample(name, selector)),
       ordinaryFamilies: [...new Set(ordinary)],
+      numericCode,
       thirdPartyFonts: performance.getEntriesByType('resource').map((entry) => entry.name)
         .filter((name) => /fonts\.(googleapis|gstatic)|typekit/i.test(name)),
     };
@@ -116,9 +121,12 @@ async function main() {
   await browser.close();
   fs.mkdirSync(path.dirname(out), { recursive: true });
   fs.writeFileSync(out, JSON.stringify(result, null, 2));
-  const families = [...new Set(Object.values(result.pages).flatMap((item) => item.ordinaryFamilies))];
+  const families = [...new Set(Object.values(result.pages).flatMap((item) => item.ordinaryFamilies)
+    .filter((family) => !/KaTeX|math/i.test(family)))];
   const thirdParty = Object.values(result.pages).flatMap((item) => item.thirdPartyFonts);
+  const numericCode = Object.values(result.pages).flatMap((item) => item.numericCode || []);
   if (families.length !== 1) result.errors.push(`ordinary-font-families:${families.join('|')}`);
+  if (numericCode.length) result.errors.push(`scientific-notation-in-code:${numericCode.join('|')}`);
   if (thirdParty.length) result.errors.push(`third-party-fonts:${thirdParty.join('|')}`);
   console.log(JSON.stringify({ families, thirdParty, errors: result.errors }, null, 2));
   process.exit(result.errors.length ? 1 : 0);
