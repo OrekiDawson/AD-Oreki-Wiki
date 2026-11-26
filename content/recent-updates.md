@@ -8,6 +8,7 @@ tags:
 
 这里显示最近进入当前内容树的正式条目；文章的具体修订记录仍以页面正文与仓库历史为准。
 
+- [无限（消歧义）](/player/original/ow-infinity-disambiguation)
 - [平台与版本](/player/faq/platform-and-version)
 - [开发者专区](/developer)
 - [自动化状态所有权：玩家意图、托管配置与执行闸门](/developer/architecture/automation-ownership)
@@ -31,4 +32,3 @@ tags:
 - [第一次现实：重置前后的准备](/player/gameplay/reality)
 - [时间研究与现实：后永恒阶段阅读地图](/player/gameplay/reality-time-studies)
 - [阶段进度：从新档到天神](/player/gameplay/stage-progression)
-- [开始游玩 Oreki Edition：入门阅读地图](/player/getting-started)

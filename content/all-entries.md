@@ -1,12 +1,12 @@
 ---
 title: "全部条目"
-description: "按主题与中文标题浏览 反物质维度 MOD Wiki 的 150 个正式条目"
+description: "按主题与中文标题浏览 反物质维度 MOD Wiki 的 151 个正式条目"
 tags:
   - 导航
   - 索引
 ---
 
-这里列出当前公开发布的 **150** 个正式条目。草稿、内部归档、兼容入口和重定向不计入索引。
+这里列出当前公开发布的 **151** 个正式条目。草稿、内部归档、兼容入口和重定向不计入索引。
 
 ## 玩家专区
 
@@ -77,6 +77,7 @@ tags:
 - [无名氏](/player/original/ow-nameless-ones)
 - [无名氏·引语](/player/original/ow-nameless-ones-quotes)
 - [无限](/player/original/ow-infinity)
+- [无限（消歧义）](/player/original/ow-infinity-disambiguation)
 - [无限阶段：IP、打破无限与无限挑战](/player/gameplay/infinity)
 - [无限升级](/player/original/ow-infinity-upgrades)
 - [无限升级（升级表）](/player/original/ow-infinity-upgrades-upgrades)

@@ -28,10 +28,10 @@
   "total_pages": 68,
   "translated": 0,
   "structure_checked": 37,
-  "reviewed": 23,
+  "reviewed": 24,
   "verified": 0,
   "blocked": 0,
-  "not_started": 8
+  "not_started": 7
  },
  "pages": [
   {
@@ -114,7 +114,7 @@
    "review_status": "REVIEWED",
    "license_status": "CC-BY-SA-4.0-CONFIRMED",
    "third_party": "NONE-DETECTED-TEXT-ONLY",
-   "media_omitted": false,
+   "media_omitted": true,
    "last_source_check": "2026-11-26",
    "notes": "R130 第三批：逐段对照修订 3443；校正遗迹碎片倍率与暗能量术语；Lead 已完整阅读最终正文"
   },
@@ -1753,16 +1753,16 @@
    "size": 683,
    "categories": [],
    "type": "article",
-   "zh_title": "",
-   "path": "",
+   "zh_title": "无限（消歧义）",
+   "path": "content/player/original/ow-infinity-disambiguation.md",
    "priority": 99,
-   "status": "NOT STARTED",
-   "review_status": "NOT REVIEWED",
-   "license_status": "CC-BY-SA-4.0-PENDING-PAGE-CHECK",
-   "third_party": "UNKNOWN",
-   "media_omitted": false,
-   "last_source_check": "2026-11-15",
-   "notes": ""
+   "status": "REVIEWED",
+   "review_status": "REVIEWED",
+   "license_status": "CC-BY-SA-4.0-CONFIRMED",
+   "third_party": "NONE-DETECTED-TEXT-ONLY",
+   "media_omitted": true,
+   "last_source_check": "2026-11-27",
+   "notes": "R130：Lead 完整复审消歧义译文；内部链接优先指向本站译文，未翻译的无限力量保留英文原文入口。"
   },
   {
    "title": "Infinity Challenges",
