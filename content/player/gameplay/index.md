@@ -31,5 +31,7 @@ aliases:
 - [MOD 玩法改动](/player/gameplay/mod-changes)：已核对的数值、解锁和自动化改动。
 - [平台差异](/player/gameplay/platform-differences)：Android 与 Web 的行为边界。
 - [阶段门禁](/player/gameplay/stage-gates)：页面与功能的解锁检查、非法直达与恢复。
+- [阶段进度](/player/gameplay/stage-progression)：从新档到无限、永恒、现实和天神的重置路线。
+- [阶段门禁排障](/player/gameplay/stage-gate-troubleshooting)：处理页面提前出现、按钮灰掉和重置后变化。
 
 原版机制以官方 3.21.0 基线与 Web 冻结上游的读码结果为准，社区 Wiki（[Antimatter Dimensions Wiki](https://antimatterdimensions.wiki.gg/wiki/Antimatter_Dimensions)）用于概念与分类参照。MOD 改过的阈值、倍率与自动化行为会在对应条目里单独标注；两端的集中对照见 [原版行为与 Oreki Edition 修改](/player/gameplay/original-vs-mod)。
