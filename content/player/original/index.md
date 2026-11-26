@@ -68,7 +68,6 @@ aliases:
 - [原版:符文炼金](/player/original/ow-glyph-alchemy)
 - [原版:特性](/player/original/ow-perks)
 - [原版:黑洞](/player/original/ow-black-hole)
-- [原版:自动器](/player/original/ow-automation)
 
 ### ⚕ 天神
 
