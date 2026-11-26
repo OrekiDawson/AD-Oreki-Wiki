@@ -22,7 +22,7 @@ aliases:
 
 他们的称号「远古遗物之神（Celestial of Ancient Relics）」与其主题——[符文](https://antimatterdimensions.wiki.gg/wiki/Glyphs)——相关。
 
-原页另有子页面「引语（Quotes）」，本轮批次未译，见文末相关条目。
+原页另有子页面[「引语（Quotes）」](/player/original/ow-effarig-quotes)，本轮批次已译并完成审校。
 
 ## 档案
 
@@ -112,4 +112,4 @@ $$nerfFactor = 3 * \left( 1-\frac{c}{c+\sqrt{\log_{10}\left(resource\right)}} \r
 
 ## 相关条目
 
-[天神](/player/original/ow-celestials) · [特蕾莎](/player/original/ow-teresa) · [无名氏](/player/original/ow-nameless-ones) · [现实](/player/original/ow-reality) · [现实升级](/player/original/ow-reality-upgrades) · [时间膨胀](/player/original/ow-dilation) · [时间研究](/player/original/ow-time-studies)
+[天神](/player/original/ow-celestials) · [特蕾莎](/player/original/ow-teresa) · [无名氏](/player/original/ow-nameless-ones) · [现实](/player/original/ow-reality) · [现实升级](/player/original/ow-reality-upgrades) · [时间膨胀](/player/original/ow-dilation) · [时间研究](/player/original/ow-time-studies) · [鹿颈长·引语](/player/original/ow-effarig-quotes)
