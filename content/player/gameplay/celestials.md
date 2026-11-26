@@ -55,7 +55,7 @@ Ra 会重新利用此前天神的能力，并通过记忆（Memories）等系统
 
 ## 莱特拉：暗物质维度带来的另一条生产曲线
 
-莱特拉（Lai'tela）引入暗物质维度、奇点（Singularities）与连续统（Continuum）等机制，并配有自己的特殊现实与速度要求。[莱特拉资料](https://antimatterdimensions.wiki.gg/wiki/Lai%27tela?oldid=3375)
+莱特拉（Lai Tela；原文常写作 Lai'tela）引入暗物质维度、奇点（Singularities）与连续统（Continuum）等机制，并配有自己的特殊现实与速度要求。[莱特拉资料](https://antimatterdimensions.wiki.gg/wiki/Lai%27tela?oldid=3375)
 
 这时的“变强”不再只等于把原有维度乘得更大。暗物质维度有自己的生产和限制，连续统又会改变你对购买操作的理解；先弄清新资源从哪里来、通过什么重置保留，再决定自动化策略。Oreki Edition 对部分解锁条件、熵增长和计时窗口做过缩放，但出现入口不等于挑战已经完成，仍需满足当前版本列出的真实条件。
 
