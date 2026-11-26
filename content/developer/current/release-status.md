@@ -1,6 +1,6 @@
 ---
-title: "发布资格：从一个 APK 到可交付版本"
-description: "解释 Android 版本身份、签名、安装升级、玩法门禁与渠道交付如何共同决定一个候选能否成为正式版本"
+title: "APK 发布资格：从文件到可交付版本"
+description: "解释 Android APK 的版本身份、签名、玩法验证与渠道交付如何共同决定发布资格"
 tags:
   - 发布
   - Android
@@ -9,69 +9,75 @@ aliases:
   - "/current/release-status"
 ---
 
-**最后核实：2026 年 11 月 26 日 17:22（UTC+8）。** 本页的当前版本身份取自 [release-gate-policy.json（b0e0881b；已用 GitHub API 核对，HTTP 200，核对日 2026-11-26）](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/b0e0881b5eadabf40e2eb35ef8547e5aa56d40ae/scripts/release-gate-policy.json)；“公开稳定 Release”指向 [Android 3.21.0（a12b5cd6）](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/releases/tag/android-update-3.21.0-a12b5cd6)。
+“APK 能安装”不等于“版本可以发布”。一个可交付的 Android 版本，至少要同时拥有明确的身份、可验证的产物、兼容的签名、经过目标环境检验的行为，以及与下载渠道一致的文件。缺少其中任何一层，都只能称为候选版本。
 
-“APK 能安装”不是“版本可以发布”。Android 交付链把一个候选包看成一组必须同时成立的关系：版本身份指向正确的基线，签名允许正确的安装/升级，产物内容与源码和工具一致，关键玩法与存档没有回归，最后同一个已核验的 APK 才能被复制到各个交付渠道。本页讲这套判定如何工作，不把某一轮发布过程改写成时间线。
+## 版本身份先于版本号
 
-## 版本身份先于版本号大小
+Android 用 `versionCode` 判断升级顺序，用 `versionName` 向用户展示版本，用包名确定应用身份；这些字段解决的是不同问题，不能互相替代。项目的发布策略应把基线版本、开发/稳定状态、包名和必需检查集中记录在可追踪的配置中，例如[发布门禁策略](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/main/scripts/release-gate-policy.json)。
 
-当前 Android 仓库把发布身份集中写在 [scripts/release-gate-policy.json](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/b0e0881b5eadabf40e2eb35ef8547e5aa56d40ae/scripts/release-gate-policy.json)。其中明确了：
+版本号变大只说明 Android 认为它是更新版本，不代表新增代码已经经过真实玩法验证。开发包、预发布包和稳定版应使用清楚的状态标识，避免把较新的测试包误当成可回滚的正式版本。
 
-- 官方基线版本是 3.21.0；
-- 当前开发身份的 versionCode 是 30210002，modVersion 是 1.0.2，状态为 development；
-- 历史已发布上限是 30210001；
-- 包名是 net.oreki.antimatterdimensions；
-- 真实新档的目标上限是 10800 秒；
-- 必需检查包括安装升级、启动、签名版本、阶段门禁、自动购买器、存档导入和 GUI；Android 与 Web 都必须有完成证据。
+## 签名决定升级链
 
-这些字段解决的是不同问题。versionCode 让 Android 判断升级顺序，versionName 给人看，modVersionState 则防止一个尚未完成真实验收的开发候选被误标为稳定版。版本号变大本身没有资格授予发布权限。
+Android 更新安装要求新包与旧包具有兼容的包名和签名身份。排查“新包不能覆盖旧包”时，应保留旧应用，先比较包名、证书指纹、签名方案和目标 Android 版本；直接卸载旧应用会把升级问题伪装成全新安装成功。
 
-## 签名是升级链的一部分
+发布构建的密钥应由受保护的构建环境提供，不能把密码、私钥或本地密钥目录写入仓库。验证时应对实际 APK 执行 `apksigner verify --print-certs`，再将证书指纹与预期发布身份比较；配置文件中的预期值不能替代对产物的检查。Android 官方的[应用签名文档](https://developer.android.com/studio/publish/app-signing)解释了签名与更新之间的关系。
 
-Release 构建默认要求 keys/oreki.jks 存在，并由 OREKI_KS_PASS 提供密码；app/build.gradle.kts 的正式配置启用 V3 签名，关闭 V1、V2 和 V4。若只是隔离实验，可以显式打开 oreki.allowUnsignedReleaseExperiment=true，但构建脚本会把它标成未签名实验，并且它不能进入发布渠道。
+## 产物身份与内容
 
-排查“旧版能装、新版不能升级”时，先比较包名和证书指纹，再看签名方案和 Android 版本兼容性；不要先删除旧应用，因为那会把升级问题伪装成全新安装成功。证书指纹也应来自实际 APK 的 apksigner verify --print-certs 输出，而不是来自配置文件的预期值。
+构建结果至少需要绑定以下信息：
 
-## 候选如何通过交付门
+- 源码提交和构建工具版本；
+- 输入资源、官方基线或冻结依赖的身份；
+- APK 文件名、大小和 SHA-256；
+- 包名、版本字段和签名证书；
+- 将要上传的渠道和回滚对象。
 
-一个候选至少要经过四个相互独立的边界：
+哈希的作用是确认“测试的文件”和“交付的文件”是同一字节流。哈希一致不能证明游戏行为正确，但没有哈希绑定时，安装、截图和渠道验收都可能落在另一份 APK 上。标准 Android 构建输入和产物关系见[AGP 构建管线](/developer/build/agp)，签名与升级细节见[APK 签名与密钥轮换](/developer/build/apk-signing)。
 
-1. **产物边界。** 记录输入指纹、工具链、APK SHA-256 和大小，确保构建与验证使用的是同一个文件。Release 预算脚本的作用是拦截无输入变化的重复构建，避免“最后一次构建”在不同候选之间失去指代。
-2. **平台边界。** 在目标 Android 环境安装、升级、启动并确认前台 Activity 和进程稳定。仅有 Gradle 或 CI 通过不等于 APK 在设备上可运行。
-3. **游戏边界。** 验证阶段门禁、自动购买器、存档导入、GUI 和关键玩法；如果真实新档没有走到约定终点，就不能用启动成功代替终局证据。
-4. **渠道边界。** 各渠道应复用同一个已核验 APK 和对应 SHA-256，而不是每个渠道重新构建一份“看起来相同”的文件。任一渠道无法核对，都只能报告部分交付。
+## 四道独立门槛
 
-这四层故意不合并成一个绿色按钮：签名正确不能证明存档正确，游戏跑通不能证明发布包来自当前源码，GitHub Release 存在也不能证明所有渠道都拿到了同一字节流。
+### 构建门槛
 
-## 读懂当前公开版本与开发候选
+Gradle 能够完成任务，只能说明构建图和输入满足了该任务的要求。它不自动证明 APK 能安装，也不证明完整游戏资源已经进入产物。构建脚本应明确区分空壳、实验包和完整游戏包，避免用容易成功的简化输入制造错误的发布信号。
 
-Android 仓库当前公开的稳定 Release 是 [Android 3.21.0（a12b5cd6）](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/releases/tag/android-update-3.21.0-a12b5cd6)。其 APK AD-Oreki-Edition-3.21.0.apk 的 SHA-256 为：
+### 平台门槛
 
-a12b5cd620280465805ec844ea9a8554277e51d87d769dde4120fa5db842da87
+在目标 Android 环境安装、启动、升级和回退，记录设备版本、包名、前台 Activity、进程状态及实际 APK 哈希。新安装和覆盖升级是两条不同路径，不能只测其中一条。
 
-这个事实只说明该 Release 资产可下载且身份可追溯，不自动替当前开发候选背书。开发候选必须按当前策略重新满足签名、安装升级、玩法、存档、GUI、双端和渠道门禁；历史 Release 的哈希不能移植到新 APK 上。
+### 游戏门槛
 
-## 排障顺序
+从全新数据和适用的旧存档分别验证启动、资源生产、重置、自动购买器、关键阶段、存档保存/导入和 GUI。能到达某一阶段，不等于重置后仍能继续；一次冷启动成功，也不等于长时间运行和终局路径正确。调度器状态机与进度死锁见[自动化停滞排查](/developer/current/known-issues)。
 
-遇到“候选不能发布”时，按最不容易误判的顺序缩小范围：
+### 渠道门槛
 
-1. 读取 release-gate-policy.json，确认包名、版本状态和必需检查没有被旧配置覆盖。
-2. 对候选 APK 做 SHA-256 和 apksigner 校验，确认检查对象就是准备交付的文件。
-3. 在保留旧应用的设备上做安装升级；失败时记录证书、签名方案和 Android 版本。
-4. 把安装问题与游戏问题分开：先确认进程和 Activity，再定位阶段、自动购买器、存档或 GUI。
-5. 最后核对每个渠道的文件大小和 SHA-256；出现分歧就回到同一个候选重新交付，而不是在渠道端“修一下”。
+GitHub Release、下载页和镜像应复用同一个已经核验的 APK，并提供能够互相指认的版本身份与 SHA-256。每个渠道重新构建一份“相同版本”会破坏可追溯性；渠道文件无法核对时，应把交付范围限制为已核验的渠道。
 
-历史发布报告、CI 运行和渠道回执保留在对应源码仓库或内部证据目录；它们不应替代本页对发布资格和技术边界的解释。
+## 常见误判
+
+| 观察到的现象 | 可以得出的结论 | 不能得出的结论 |
+| --- | --- | --- |
+| Gradle 任务成功 | 该构建任务完成 | APK 已适合玩家使用 |
+| APK 能安装 | 设备接受了包的基本身份 | 存档、阶段和自动化正确 |
+| 设备回读哈希一致 | 测试对象确实是目标 APK | 游戏路径已经完整通过 |
+| 正式 Release 有下载资产 | 该渠道有可取得的文件 | 所有渠道都提供同一文件 |
+| 版本号高于旧版 | Android 将其视作更新 | 新版本已完成发布验收 |
+
+把这些结论分开，排障时才能知道下一步该回到构建、签名、设备、游戏状态还是渠道，而不是反复重建同一份无法解释的 APK。
+
+## 推荐排查顺序
+
+1. 读取发布策略，确认包名、版本状态和必需检查没有被旧配置覆盖。
+2. 固定源码与构建输入，生成 APK 后记录 SHA-256、版本字段和签名证书。
+3. 在保留旧应用的设备上分别执行新安装和覆盖升级，记录失败的签名或系统条件。
+4. 将安装问题与游戏问题分开，先确认进程和 Activity，再检查阶段、自动购买器和存档。
+5. 对每个下载渠道核对文件大小和 SHA-256；发生差异时回到同一个候选产物，不在渠道端重新构建。
 
 ## 参考资料
 
-- [Android 发布门禁策略](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/b0e0881b5eadabf40e2eb35ef8547e5aa56d40ae/scripts/release-gate-policy.json)
-- [Android 应用构建与签名配置](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/main/app/build.gradle.kts)
-- [当前公开稳定 Release](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/releases/tag/android-update-3.21.0-a12b5cd6)
-- [Release 构建预算脚本](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/main/scripts/release_budget.py)
-- [APK 签名与升级兼容](/developer/build/apk-signing)
-- [CI/CD 与受保护门禁](/developer/build/ci-cd)
-
-## 相关条目
-
-[AGP 构建管线](/developer/build/agp) · [从脚本补丁到 AGP](/developer/build/build-mod-retirement) · [存档兼容排查](/developer/troubleshooting/save-compatibility)
+- [Android 应用签名](https://developer.android.com/studio/publish/app-signing)
+- [Android 发布概览](https://developer.android.com/studio/publish)
+- [项目发布门禁策略](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/main/scripts/release-gate-policy.json)
+- [AGP 构建管线](/developer/build/agp)
+- [APK 签名与密钥轮换](/developer/build/apk-signing)
+- [双端交付证据](/developer/current/project-status)

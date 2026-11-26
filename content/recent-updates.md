@@ -8,6 +8,7 @@ tags:
 
 这里显示最近进入当前内容树的正式条目；文章的具体修订记录仍以页面正文与仓库历史为准。
 
+- [双端交付证据：从源码到玩家版本](/developer/current/project-status)
 - [反物质维度MOD Wiki:本站不是什么](/wiki-not)
 - [反物质维度MOD Wiki:知识库规则](/wiki-rules)
 - [AI Summary 索引](/developer/ai-summaries)
@@ -31,4 +32,3 @@ tags:
 - [第一次参与 Android 开发](/developer/first-contribution)
 - [Android 构建与 AGP](/developer/build/agp)
 - [如何使用本知识库](/how-to-use)
-- [玩家专区](/player)
