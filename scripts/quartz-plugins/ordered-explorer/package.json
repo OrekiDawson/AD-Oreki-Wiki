@@ -14,8 +14,8 @@
     "defaultOrder": 50,
     "defaultEnabled": true,
     "defaultOptions": {
-      "folderDefaultState": "collapsed",
-      "folderClickBehavior": "link",
+      "folderDefaultState": "open",
+      "folderClickBehavior": "collapse",
       "useSavedState": true
     },
     "components": {
