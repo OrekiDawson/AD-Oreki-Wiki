@@ -1,9 +1,10 @@
 {
   "schema": 1,
-  "generated_at": "2026-11-26T14:57:30.252Z",
+  "generated_at": "2026-11-26T20:52:21.987Z",
   "source": "https://antimatterdimensions.wiki.gg",
   "unique_images": 539,
-  "metadata_complete": true,
+  "metadata_complete": false,
+  "unresolved": 34,
   "open_license_candidates": 0,
   "images": [
     {
