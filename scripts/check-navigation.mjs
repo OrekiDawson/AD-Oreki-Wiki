@@ -9,6 +9,9 @@ const builtOnly = process.argv[2] === "--built"
 const quartzConfigPath = path.join(root, "quartz.config.yaml")
 if (fs.existsSync(quartzConfigPath)) {
   const quartzConfig = fs.readFileSync(quartzConfigPath, "utf8")
+  const ignoreBlock = quartzConfig.match(/ignorePatterns:\s*([\s\S]{0,500}?)(?=\n\s{2}\w|\n\S|$)/)?.[1] ?? ""
+  if (!/(^|\n)\s*-\s*ai-drafts\s*$/m.test(ignoreBlock) || !/(^|\n)\s*-\s*[\"']ai-drafts\/\*\*[\"']\s*$/m.test(ignoreBlock))
+    errors.push("Quartz 必须显式排除 ai-drafts 及其子路径，防止内部草稿进入公开构建")
   for (const plugin of ["@quartz-community/graph", "@quartz-community/note-properties"]) {
     const escaped = plugin.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
     const block = quartzConfig.match(new RegExp("source:\\s*[\\\"\']" + escaped + "[\\\"\'][\\s\\S]{0,120}?enabled:\\s*(true|false)", "i"))
@@ -201,6 +204,10 @@ if (builtOnly) {
   const publicDir = path.resolve(root, process.argv[3] || "public")
   if (!fs.existsSync(publicDir)) errors.push(`构建产物目录不存在：${publicDir}`)
   else {
+    const publicPaths = walkAll(publicDir).map((file) => path.relative(publicDir, file).replaceAll("\\", "/"))
+    for (const publicPath of publicPaths)
+      if (/(^|\/)(?:ai-drafts|history)(?:\/|$)/i.test(publicPath))
+        errors.push(`构建产物泄露内部草稿或历史归档：${publicPath}`)
     const htmlFiles = walkAll(publicDir).filter((file) => file.endsWith(".html"))
     if (!htmlFiles.length) errors.push("构建产物缺少 HTML 页面")
     const parse5 = await import("parse5")
