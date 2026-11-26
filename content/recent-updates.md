@@ -8,11 +8,11 @@ tags:
 
 这里显示最近进入当前内容树的正式条目；文章的具体修订记录仍以页面正文与仓库历史为准。
 
+- [自动化与阶段入口](/player/faq/automation-and-unlocks)
 - [膨胀升级（被毁灭的现实）](/player/original/ow-dilation-upgrades-doomed)
 - [永恒挑战·挑战明细（被毁灭的现实）](/player/original/ow-eternity-challenges-challenges-pelle)
 - [计数频率·星系数量明细（被毁灭的现实）](/player/original/ow-tickspeed-galaxy-breakdown-doomed)
 - [从 Smali 调用点恢复可用 API](/developer/reverse-engineering/smali-recovery)
-- [自动化与阶段入口](/player/faq/automation-and-unlocks)
 - [平台与版本](/player/faq/platform-and-version)
 - [反物质维度MOD Wiki:知识库规则](/wiki-rules)
 - [架构与运行时：从入口到运行时](/developer/architecture)
