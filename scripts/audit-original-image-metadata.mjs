@@ -44,8 +44,13 @@ for (let offset = 0; offset < pages.length; offset += 20) {
   }
   if (!response.ok) throw new Error(`${response.status} ${url}`)
   const data = await response.json()
+  if (data.error)
+    throw new Error(`MediaWiki API ${data.error.code ?? "error"}: ${data.error.info ?? "unknown error"} (${url})`)
+  const aliases = Object.fromEntries((data.query?.normalized ?? []).map((entry) => [entry.from, entry.to]))
+  const redirects = Object.fromEntries((data.query?.redirects ?? []).map((entry) => [entry.from, entry.to]))
   for (const image of batch) {
-    const page = Object.values(data.query?.pages ?? {}).find((item) => item.title === image.title)
+    const canonicalTitle = redirects[aliases[image.title] ?? image.title] ?? aliases[image.title] ?? image.title
+    const page = Object.values(data.query?.pages ?? {}).find((item) => item.title === canonicalTitle)
     const info = page?.imageinfo?.[0]
     const metadata = info?.extmetadata ?? {}
     const license = value(metadata, "LicenseShortName") ?? value(metadata, "License")
@@ -72,8 +77,10 @@ for (let offset = 0; offset < pages.length; offset += 20) {
 }
 
 const open = records.filter((record) => record.status === "许可字段已取得，待人工确认署名")
+const completeStatuses = new Set(["已取得文件信息，许可待核实", "许可字段已取得，待人工确认署名"])
+const unresolved = records.filter((record) => !completeStatuses.has(record.status)).length
 await fs.writeFile(
   outputPath,
-  `${JSON.stringify({ schema: 1, generated_at: new Date().toISOString(), source: site, unique_images: records.length, metadata_complete: limitedBatches === 0, open_license_candidates: open.length, images: records }, null, 2)}\n`,
+  `${JSON.stringify({ schema: 1, generated_at: new Date().toISOString(), source: site, unique_images: records.length, metadata_complete: limitedBatches === 0 && unresolved === 0, unresolved, open_license_candidates: open.length, images: records }, null, 2)}\n`,
 )
-console.log(JSON.stringify({ unique_images: records.length, open_license_candidates: open.length, limitedBatches }))
+console.log(JSON.stringify({ unique_images: records.length, open_license_candidates: open.length, limitedBatches, unresolved }))
