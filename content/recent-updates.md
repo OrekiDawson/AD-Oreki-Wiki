@@ -8,6 +8,9 @@ tags:
 
 这里显示最近进入当前内容树的正式条目；文章的具体修订记录仍以页面正文与仓库历史为准。
 
+- [反物质维度 MOD Wiki](/index)
+- [原版 Wiki 中文翻译](/player/original)
+- [版权与许可](/copyright)
 - [开发者专区](/developer)
 - [架构与运行时：从入口到运行时](/developer/architecture)
 - [构建与交付：从源码到可交付产物](/developer/build)
@@ -18,9 +21,9 @@ tags:
 - [来源索引：怎样从证据找到真正的代码](/developer/references/source-index)
 - [如何使用本知识库](/how-to-use)
 - [反物质维度MOD Wiki:知识库规则](/wiki-rules)
-- [版权与许可](/copyright)
-- [原版 Wiki 中文翻译](/player/original)
-- [反物质维度 MOD Wiki](/index)
+- [鹿颈长](/player/original/ow-effarig)
+- [鹿颈长·引语](/player/original/ow-effarig-quotes)
+- [莱特拉·引语](/player/original/ow-laitela-quotes)
 - [无名氏·引语](/player/original/ow-nameless-ones-quotes)
 - [佩勒升级](/player/original/ow-pelle-upgrades)
 - [薇·引语](/player/original/ow-v-quotes)
@@ -29,6 +32,3 @@ tags:
 - [特蕾莎](/player/original/ow-teresa)
 - [膨胀升级](/player/original/ow-dilation-upgrades)
 - [膨胀升级（被毁灭的现实）](/player/original/ow-dilation-upgrades-doomed)
-- [永恒升级](/player/original/ow-eternity-upgrades)
-- [现实](/player/original/ow-reality)
-- [时间维度](/player/original/ow-time-dimensions)
