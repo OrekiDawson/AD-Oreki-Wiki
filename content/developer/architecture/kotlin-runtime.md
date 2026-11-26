@@ -70,7 +70,7 @@ Android 默认在应用主线程分发组件回调，UI 工具包也不是线程
 
 ## 来源与历史入口
 
-- Android 工程当前源码基线：[Commit `fb1299a`](https://github.com/OrekiDawson/AD-Oreki-Edition/tree/fb1299a132f134eb4fab009643ee3fc3d6c57edf)。重点阅读 `GameApi.kt`、`LegacyReflection.kt`、`OrekiAutomationScheduler.kt`、`OrekiSpeed.kt` 及 `R126SyntheticAccess.kt`。
+- Android 工程当前源码基线：[Android Commit `fb1299a`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/tree/fb1299a132f134eb4fab009643ee3fc3d6c57edf)。重点阅读 `GameApi.kt`、`LegacyReflection.kt`、`OrekiAutomationScheduler.kt`、`OrekiSpeed.kt` 及 `R126SyntheticAccess.kt`。
 - Kotlin 官方：[Calling Kotlin from Java](https://kotlinlang.org/docs/java-to-kotlin-interop.html)、[Reflection](https://kotlinlang.org/docs/reflection.html)。
 - Android Developers：[Processes and threads overview](https://developer.android.com/guide/components/processes-and-threads.html)。
 - 历史故障与原始证据仍保留在[协程 ABI 崩溃排查](/developer/troubleshooting/coroutine-abi)和[DEX 与 ABI 反混淆](/developer/reverse-engineering/dex-abi)；它们是证据入口，不替代本文的原理说明。
