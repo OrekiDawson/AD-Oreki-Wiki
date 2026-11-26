@@ -8,6 +8,8 @@ tags:
 
 这里显示最近进入当前内容树的正式条目；文章的具体修订记录仍以页面正文与仓库历史为准。
 
+- [复制器](/player/original/ow-replicanti)
+- [重置成长（威望）](/player/original/ow-prestige)
 - [反物质维度（游戏机制）](/player/original/ow-antimatter-dimensions)
 - [反物质星系](/player/original/ow-antimatter-galaxies)
 - [维度提升](/player/original/ow-dimension-boosts)
@@ -30,5 +32,3 @@ tags:
 - [第一次大坍缩与进入无限](/player/getting-started/first-crunch)
 - [自动化状态所有权：玩家意图、托管配置与执行闸门](/developer/architecture/automation-ownership)
 - [构建与交付：从源码到可交付产物](/developer/build)
-- [构建可追溯性：让 APK 对得上源码与输入](/developer/build/artifact-provenance)
-- [玩家常见问题](/player/faq)
