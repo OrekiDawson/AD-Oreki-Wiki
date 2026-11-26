@@ -8,6 +8,7 @@ tags:
 
 这里显示最近进入当前内容树的正式条目；文章的具体修订记录仍以页面正文与仓库历史为准。
 
+- [AI Summary 索引](/developer/ai-summaries)
 - [膨胀升级（被毁灭的现实）](/player/original/ow-dilation-upgrades-doomed)
 - [永恒挑战·挑战明细（被毁灭的现实）](/player/original/ow-eternity-challenges-challenges-pelle)
 - [计数频率·星系数量明细（被毁灭的现实）](/player/original/ow-tickspeed-galaxy-breakdown-doomed)
@@ -31,4 +32,3 @@ tags:
 - [玩家专区](/player)
 - [反物质维度：游戏总览与阅读路线](/player/antimatter-dimensions)
 - [玩法机制](/player/gameplay)
-- [智能自动购买器](/player/gameplay/automation)
