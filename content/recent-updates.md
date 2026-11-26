@@ -8,9 +8,13 @@ tags:
 
 这里显示最近进入当前内容树的正式条目；文章的具体修订记录仍以页面正文与仓库历史为准。
 
+- [Web 离线进度：模拟时间与真实时钟的边界](/developer/architecture/web-offline-simulation)
+- [自动保存与备份：保护每天的进度](/player/gameplay/autosave)
+- [存档兼容与导入验证](/player/gameplay/save-compatibility)
+- [存档安全：自动保存与兼容导入阅读地图](/player/gameplay/saves)
+- [时间研究与现实：后永恒阶段阅读地图](/player/gameplay/reality-time-studies)
 - [调度器状态机：购买决策、合法重置与进度死锁](/developer/architecture/scheduler-state-machine)
 - [第一次现实：重置前后的准备](/player/gameplay/reality)
-- [时间研究与现实：后永恒阶段阅读地图](/player/gameplay/reality-time-studies)
 - [时间研究：分叉、挑战与时间膨胀](/player/gameplay/time-studies)
 - [原版与 Oreki Edition：差异阅读地图](/player/gameplay/original-vs-mod)
 - [无限与永恒：两层重置的阅读地图](/player/gameplay/progression-infinity-eternity)
@@ -28,7 +32,3 @@ tags:
 - [来源索引：怎样从证据找到真正的代码](/developer/references/source-index)
 - [原版 Wiki 中文翻译](/player/original)
 - [Android 自动化停滞的排查方法](/developer/current/known-issues)
-- [开发者专区](/developer)
-- [构建与交付：从源码到可交付产物](/developer/build)
-- [如何阅读双端项目状态](/developer/current/project-status)
-- [发布资格：从一个 APK 到可交付版本](/developer/current/release-status)

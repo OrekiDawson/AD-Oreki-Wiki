@@ -44,3 +44,5 @@ aliases:
 ## 相关条目
 
 [存档兼容与导入验证](/player/gameplay/save-compatibility) · [下载与版本](/player/download-and-version/) · [玩家常见问题](/player/faq/) · [阶段解锁与页面显示](/player/gameplay/stage-gates)
+
+原版导出入口可参阅[Antimatter Dimensions Wiki 的存档页面](https://antimatterdimensions.wiki.gg/wiki/Save)；平台实现和 MOD 行为可能不同。

@@ -18,3 +18,5 @@ aliases:
 无论是哪一种情况，都先保留一份不在应用数据目录里的原始副本，再做下一步操作。备份不是形式上的按钮，而是能在出错后找回的独立文件或文本。
 
 继续阅读：[玩家常见问题](/player/faq/) · [下载与版本](/player/download-and-version/) · [原版行为与 Oreki Edition 修改](/player/gameplay/original-vs-mod)
+
+原版存档与导出行为可对照[Antimatter Dimensions Wiki](https://antimatterdimensions.wiki.gg/wiki/Save)，具体保留项以当前版本为准。
