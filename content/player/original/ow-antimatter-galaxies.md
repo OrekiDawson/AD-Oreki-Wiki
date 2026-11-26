@@ -18,6 +18,8 @@ aliases:
 
 **反物质星系**是游戏中的第二个威望（Prestige）机制——如果把可从游戏早期使用的[维度献祭](/player/original/ow-dimensional-sacrifice)也算作威望机制，则它是第三个。在获得 $80$ 个第 8 反物质维度之前，玩家无法与之交互。
 
+原文此页包含桌面端和移动端反物质星系界面图 `Antimatter-galaxies-interface--darktheme-desktop.png`、`Antimatter-galaxies-interface--darktheme-mobile.png`；本译文未转载这些图片，仅保留文字说明。
+
 购买一个反物质星系会重置[反物质维度](/player/original/ow-antimatter-dimensions)、[计数频率](/player/original/ow-tickspeed)、[维度献祭](/player/original/ow-dimensional-sacrifice)与[维度提升](/player/original/ow-dimension-boosts)，但会让所有计数频率升级的效果少量提高。
 
 ## 机制
@@ -45,10 +47,10 @@ aliases:
 
 ## 相关升级
 
-反物质星系的初始价格与成长增量，可以被游戏更后期的某些升级降低：
+反物质星系的初始需求与成长增量，可以被游戏更后期的某些升级降低：
 
-- 第一列的第 4 个[无限升级](/player/original/ow-infinity-upgrades)会把[维度提升](/player/original/ow-dimension-boosts)与反物质星系的初始价格各降低 $9$ 个维度：维度提升的首次需求从 $20$ 个第 4 维度降为 $11$ 个，反物质星系则从 $80$ 个第 8 维度降为 $71$ 个；
-- [无限挑战 5](/player/original/ow-challenges)会把[维度提升](/player/original/ow-dimension-boosts)与反物质星系的初始价格降低 $1$；
+- 第一列的第 4 个[无限升级](/player/original/ow-infinity-upgrades)会把[维度提升](/player/original/ow-dimension-boosts)与反物质星系的初始需求各降低 $9$ 个维度：维度提升的首次需求从 $20$ 个第 4 维度降为 $11$ 个，反物质星系则从 $80$ 个第 8 维度降为 $71$ 个；
+- [无限挑战 5](/player/original/ow-infinity-challenges)会把[维度提升](/player/original/ow-dimension-boosts)与反物质星系的初始需求降低 $1$；
 - [时间研究 42](/player/original/ow-time-studies)把反物质星系的成长从 $60$ 降到 $52$。
 
 远距星系成长可以被游戏更后期的某些升级缓和：
