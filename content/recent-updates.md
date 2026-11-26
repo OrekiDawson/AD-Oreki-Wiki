@@ -8,9 +8,9 @@ tags:
 
 这里显示最近进入当前内容树的正式条目；文章的具体修订记录仍以页面正文与仓库历史为准。
 
-- [故障排查：从症状回到源码](/developer/troubleshooting)
-- [Web 模块启动链：全局兼容桥与初始化故障排查](/developer/troubleshooting/web-module-startup)
-- [Web Pages 产物身份：如何证明线上不是另一份代码](/developer/troubleshooting/web-pages-artifact-integrity)
+- [反物质维度：游戏总览与阅读路线](/player/antimatter-dimensions)
+- [生产链与重置：反物质维度如何成长](/player/antimatter-dimensions-core-loop)
+- [增长为什么会停：从指数到重置的选择](/player/antimatter-dimensions-decisions)
 - [玩法机制](/player/gameplay)
 - [阶段门禁排障：页面提前出现、按钮灰掉与重置后变化](/player/gameplay/stage-gate-troubleshooting)
 - [阶段解锁：进度地图与排障入口](/player/gameplay/stage-gates)
