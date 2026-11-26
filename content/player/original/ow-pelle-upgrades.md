@@ -1,6 +1,6 @@
 ---
 title: "佩勒升级"
-description: "原版 Wiki《Pelle/Upgrades》子页面的完整简体中文翻译：22 项不可重复佩勒升级与成本"
+description: "原版 Wiki《Pelle/Upgrades》子页面的完整简体中文翻译：23 项不可重复佩勒升级与成本"
 tags:
   - 原版Wiki翻译
   - 天神
@@ -10,8 +10,8 @@ original_revid: 2707
 original_fetched_at: "2026-11-15T23:05:00+08:00"
 original_license: "CC BY-SA 4.0"
 original_license_url: "https://creativecommons.org/licenses/by-sa/4.0/"
-translation_status: "STRUCTURE CHECKED"
-review_status: "STRUCTURE CHECKED"
+translation_status: "REVIEWED"
+review_status: "REVIEWED"
 aliases:
   - "/original/ow-pelle-upgrades"
 ---

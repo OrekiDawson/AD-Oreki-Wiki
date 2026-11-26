@@ -2205,13 +2205,13 @@
    "zh_title": "佩勒升级",
    "path": "content/player/original/ow-pelle-upgrades.md",
    "priority": 3,
-   "status": "STRUCTURE CHECKED",
-   "review_status": "STRUCTURE CHECKED",
+   "status": "REVIEWED",
+   "review_status": "REVIEWED",
    "license_status": "CC-BY-SA-4.0-CONFIRMED",
    "third_party": "NONE-DETECTED-TEXT-ONLY",
    "media_omitted": true,
-   "last_source_check": "2026-11-15",
-   "notes": "batch12：正文与升级表完整翻译并校对；嵌入子页已在页面注明；2026-11-15 质量门禁：仅有结构核对（章节/表格/公式/来源字段），未做逐段语义审校，按 wiki-rules 等级降为 STRUCTURE CHECKED"
+   "last_source_check": "2026-11-26",
+   "notes": "R130 相邻批次：逐段复核固定修订 2707；核对 23 项升级、成本、ID 顺序、术语与 CC BY-SA 署名边界；Lead 已完整阅读最终正文"
   },
   {
    "title": "Perks",
@@ -2679,13 +2679,13 @@
    "zh_title": "无名氏·引语",
    "path": "content/player/original/ow-nameless-ones-quotes.md",
    "priority": 4,
-   "status": "STRUCTURE CHECKED",
-   "review_status": "STRUCTURE CHECKED",
+   "status": "REVIEWED",
+   "review_status": "REVIEWED",
    "license_status": "CC-BY-SA-4.0-CONFIRMED",
    "third_party": "NONE-DETECTED-TEXT-ONLY",
    "media_omitted": true,
-   "last_source_check": "2026-11-17",
-   "notes": "batch15：引语全文与触发条件完整翻译（引语块逐块对应原站）；结构与许可字段核对通过，逐段语义审校待复核"
+   "last_source_check": "2026-11-26",
+   "notes": "R130 相邻批次：逐段复核固定修订 2790；核对全部引语、触发条件、断句风格与 CC BY-SA 署名边界；Lead 已完整阅读最终正文"
   },
   {
    "title": "Tickspeed",
@@ -2910,13 +2910,13 @@
    "zh_title": "薇·引语",
    "path": "content/player/original/ow-v-quotes.md",
    "priority": 4,
-   "status": "STRUCTURE CHECKED",
-   "review_status": "STRUCTURE CHECKED",
+   "status": "REVIEWED",
+   "review_status": "REVIEWED",
    "license_status": "CC-BY-SA-4.0-CONFIRMED",
    "third_party": "NONE-DETECTED-TEXT-ONLY",
    "media_omitted": true,
-   "last_source_check": "2026-11-17",
-   "notes": "batch15：引语全文与触发条件完整翻译（引语块逐块对应原站）；结构与许可字段核对通过，逐段语义审校待复核"
+   "last_source_check": "2026-11-26",
+   "notes": "R130 相邻批次：逐段复核固定修订 2784；核对全部引语、触发条件、语气变化与 CC BY-SA 署名边界；Lead 已完整阅读最终正文"
   }
  ],
  "zone": "content/player/original/"
