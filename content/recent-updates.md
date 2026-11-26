@@ -8,6 +8,7 @@ tags:
 
 这里显示最近进入当前内容树的正式条目；文章的具体修订记录仍以页面正文与仓库历史为准。
 
+- [版权与许可](/copyright)
 - [反物质维度 MOD Wiki](/index)
 - [特殊现实：准备、限制与排障](/player/gameplay/celestial-realities)
 - [天神系统：七位天神改变了什么](/player/gameplay/celestials)
@@ -17,7 +18,6 @@ tags:
 - [来源索引：怎样从证据找到真正的代码](/developer/references/source-index)
 - [原版 Wiki 中文翻译](/player/original)
 - [Android 自动化停滞的排查方法](/developer/current/known-issues)
-- [版权与许可](/copyright)
 - [开发者专区](/developer)
 - [构建与交付：从源码到可交付产物](/developer/build)
 - [如何阅读双端项目状态](/developer/current/project-status)
