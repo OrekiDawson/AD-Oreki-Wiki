@@ -203,9 +203,14 @@ async function run() {
     '/history',
     '/developer/history/',
   ]) {
-    const resp = await page.goto(BASE + url, { waitUntil: 'load' }).catch(() => null);
-    const finalPath = new URL(page.url()).pathname.replace(/\/$/, '') || '/';
     const expectedPath = HISTORY_REDIRECTS[url.replace(/\/$/, '')] || HISTORY_REDIRECTS[url];
+    const resp = await page.goto(BASE + url, { waitUntil: 'load' }).catch(() => null);
+    if (expectedPath) {
+      await page.waitForURL((next) => next.pathname.replace(/\/$/, '') === expectedPath, {
+        timeout: 3000,
+      }).catch(() => {});
+    }
+    const finalPath = new URL(page.url()).pathname.replace(/\/$/, '') || '/';
     results.urls.push({
       url,
       ok: !!resp && resp.status() === 200,
