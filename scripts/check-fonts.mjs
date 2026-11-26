@@ -22,6 +22,12 @@ if (/Source Sans|Schibsted|IBM Plex|Google Sans|Roboto|Noto Sans|font-family:\s*
   errors.push("配置中重新引入了固定网页字体；普通文本必须使用系统字体")
 if (!/article[\s\S]+?font-family:\s*var\(--bodyFont\)/.test(customStyles))
   errors.push("正文没有显式绑定统一的系统无衬线字体")
+if (!/:where\(body, body \*\)[\s\S]*?font-family:\s*var\(--bodyFont\)\s*!important/.test(customStyles))
+  errors.push("普通文本没有在叶子节点强制继承系统无衬线字体")
+if (!/:where\(pre, pre \*, code, code \*, kbd, kbd \*, samp, samp \*\)[\s\S]*?font-family:\s*var\(--codeFont\)\s*!important/.test(customStyles))
+  errors.push("程序代码没有明确绑定系统等宽字体")
+if (/fonts\.(googleapis|gstatic)\.com|use\.typekit\.net|@import\s+url\(/i.test(customStyles))
+  errors.push("自定义样式仍加载远程字体")
 
 const sourceFiles = []
 const walkMarkdown = (dir) => fs.readdirSync(dir, { withFileTypes: true }).forEach((entry) => {

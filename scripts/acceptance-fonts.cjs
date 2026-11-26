@@ -59,8 +59,13 @@ function familyAllowed(kind, family) {
 
 async function inspect(page) {
   return page.evaluate(() => {
-    const ordinary = [...document.querySelectorAll('article p, article li, article td, article blockquote')]
-      .filter((el) => !el.closest('pre, code, .katex, .math-inline, .math-block'))
+    const ordinary = [...document.querySelectorAll('body *')]
+      .filter((el) => {
+        const rect = el.getBoundingClientRect();
+        return rect.width > 0 && rect.height > 0 && (el.textContent || '').trim()
+          && !el.closest('pre, code, kbd, samp, .katex, .math-inline, .math-block')
+          && !['SCRIPT', 'STYLE', 'SVG', 'PATH'].includes(el.tagName);
+      })
       .map((el) => getComputedStyle(el).fontFamily);
     const numericCode = [...document.querySelectorAll('article p code, article li code, article td code')]
       .map((el) => (el.textContent || '').trim())
@@ -121,6 +126,7 @@ async function main() {
   await browser.close();
   fs.mkdirSync(path.dirname(out), { recursive: true });
   fs.writeFileSync(out, JSON.stringify(result, null, 2));
+  // 数学容器仍可能被可见的普通祖先包裹；KaTeX 单独按 math sample 验收。
   const families = [...new Set(Object.values(result.pages).flatMap((item) => item.ordinaryFamilies)
     .filter((family) => !/KaTeX|math/i.test(family)))];
   const thirdParty = Object.values(result.pages).flatMap((item) => item.thirdPartyFonts);
