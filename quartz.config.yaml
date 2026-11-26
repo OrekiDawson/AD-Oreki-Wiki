@@ -185,10 +185,11 @@ plugins:
       priority: 10
       condition: not-index
   - source: "@quartz-community/content-meta"
-    enabled: false
+    enabled: true
     layout:
       position: beforeBody
       priority: 20
+      condition: not-index
   - source: "@quartz-community/tag-list"
     enabled: false
     layout:
@@ -253,7 +254,7 @@ plugins:
     options: {}
     order: 50
   - source: "@quartz-community/note-properties"
-    enabled: false
+    enabled: true
     options:
       includeAll: false
       includedProperties:
@@ -267,6 +268,7 @@ plugins:
       position: beforeBody
       priority: 15
       display: all
+      condition: not-index
 layout:
   groups:
     toolbar:

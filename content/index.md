@@ -1,6 +1,9 @@
 ---
 title: "反物质维度 MOD Wiki"
 description: "一部值得翻阅的反物质维度中文百科：玩法、原版译文与 Android/Web 技术"
+tags:
+  - 首页
+  - 导航
 ---
 
 <div class="home-shell">
@@ -97,7 +100,7 @@ description: "一部值得翻阅的反物质维度中文百科：玩法、原版
 <p class="home-kicker">原版百科</p>
 <h2>先分清来源，再享受差异</h2>
 </div>
-<p>原版译文保留原文修订、术语、公式和 CC BY-SA 4.0 署名；Oreki Edition 的改动另行说明。可以从[原版中文译文总览](/player/original/)进入，也可以按主题浏览：</p>
+<p>原版译文保留原文修订、术语、公式和 CC BY-SA 4.0 署名；Oreki Edition 的改动另行说明。可以从<a href="/player/original/">原版中文译文总览</a>进入，也可以按主题浏览：</p>
 <p class="home-inline-links"><a href="/player/original/ow-dimensions">维度</a><a href="/player/original/ow-challenges">挑战</a><a href="/player/original/ow-achievements">成就</a><a href="/player/original/ow-time-studies">时间研究</a><a href="/player/original/ow-celestials">天神</a><a href="/player/terminology">术语表</a></p>
 </section>
 
@@ -106,7 +109,7 @@ description: "一部值得翻阅的反物质维度中文百科：玩法、原版
 <p class="home-kicker">参与与贡献</p>
 <h2>百科不是展品，它会继续生长</h2>
 </div>
-<p>想直接游玩，可以从[下载与版本说明](/player/download-and-version/)开始；想改代码，去看[项目概览](/developer/project-overview/)和[第一次参与开发](/developer/first-contribution/)。欢迎补充来源、修正事实、改善中文或提出新的专题。</p>
+<p>想直接游玩，可以从<a href="/player/download-and-version/">下载与版本说明</a>开始；想改代码，去看<a href="/developer/project-overview/">项目概览</a>和<a href="/developer/first-contribution/">第一次参与开发</a>。欢迎补充来源、修正事实、改善中文或提出新的专题。</p>
 <p class="home-inline-links"><a href="https://github.com/OrekiDawson/AD-Oreki-Wiki">GitHub 源码仓库</a><a href="/developer/editorial-guidelines">编写指南</a><a href="/wiki-rules">知识库规则</a><a href="/copyright">版权与许可</a></p>
 </section>
 

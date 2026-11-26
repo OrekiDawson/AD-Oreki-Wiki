@@ -104,3 +104,30 @@ body[data-slug="index"] {
     .home-journey a { min-height: 6.2rem; }
   }
 }
+
+// MediaWiki 式百科组件：统一语义外观，页面正文只需使用对应 class。
+.infobox {
+  float: right;
+  width: min(20rem, 38%);
+  margin: 0 0 1rem 1.5rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--lightgray);
+  border-top: 3px solid var(--secondary);
+  background: color-mix(in srgb, var(--lightgray) 22%, var(--light));
+  font-size: 0.92rem;
+}
+.infobox caption, .infobox-title { margin-bottom: 0.55rem; color: var(--dark); font-weight: 700; text-align: center; }
+.infobox th { color: var(--darkgray); font-weight: 600; text-align: left; }
+.wikitable { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+.wikitable th, .wikitable td { border: 1px solid var(--lightgray); padding: 0.45rem 0.65rem; vertical-align: top; }
+.wikitable th { background: color-mix(in srgb, var(--secondary) 10%, var(--light)); color: var(--dark); }
+.hatnote, .disambig, .main-article, .see-also { margin: 0 0 1rem; padding: 0.65rem 0.9rem; border-left: 3px solid var(--tertiary); color: var(--darkgray); background: color-mix(in srgb, var(--tertiary) 8%, var(--light)); }
+.navbox { margin: 1.5rem 0 0; padding: 0.75rem 1rem; border: 1px solid var(--lightgray); background: color-mix(in srgb, var(--lightgray) 20%, var(--light)); }
+.navbox-title { color: var(--dark); font-weight: 700; }
+.gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr)); gap: 0.75rem; margin: 1rem 0; }
+.gallery figure { margin: 0; text-align: center; }
+.gallery img { max-width: 100%; height: auto; border: 1px solid var(--lightgray); }
+@media all and ($mobile) {
+  .infobox { float: none; width: auto; margin: 1rem 0; }
+  .wikitable { display: block; overflow-x: auto; }
+}
