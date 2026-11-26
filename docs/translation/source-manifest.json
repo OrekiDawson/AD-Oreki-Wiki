@@ -1059,8 +1059,8 @@
    "url": "https://antimatterdimensions.wiki.gg/wiki/Dilation%2FUpgrades",
    "history_url": "https://antimatterdimensions.wiki.gg/index.php?title=Dilation%2FUpgrades&action=history",
    "pageid": 1020,
-   "revid": 3158,
-   "last_edited": "2026-10-01T09:11:34Z",
+   "revid": 3427,
+   "last_edited": "2026-11-22T07:43:21Z",
    "last_editor": "KrutarMarsons",
    "size": 2790,
    "categories": [
@@ -1070,21 +1070,21 @@
    "zh_title": "膨胀升级",
    "path": "content/player/original/ow-dilation-upgrades.md",
    "priority": 3,
-   "status": "STRUCTURE CHECKED",
-   "review_status": "STRUCTURE CHECKED",
+   "status": "REVIEWED",
+   "review_status": "REVIEWED",
    "license_status": "CC-BY-SA-4.0-CONFIRMED",
    "third_party": "NONE-DETECTED-TEXT-ONLY",
    "media_omitted": false,
-   "last_source_check": "2026-11-15",
-   "notes": "batch11：正文与升级表完整翻译并校对；2026-11-15 质量门禁：仅有结构核对（章节/表格/公式/来源字段），未做逐段语义审校，按 wiki-rules 等级降为 STRUCTURE CHECKED"
+   "last_source_check": "2026-11-26",
+   "notes": "R130 相邻批次：逐段复核至修订 3427；源文仅新增表格样式，正文公式、数值与术语保持不变"
   },
   {
    "title": "Dilation/Upgrades (Doomed)",
    "url": "https://antimatterdimensions.wiki.gg/wiki/Dilation%2FUpgrades_(Doomed)",
    "history_url": "https://antimatterdimensions.wiki.gg/index.php?title=Dilation%2FUpgrades_(Doomed)&action=history",
    "pageid": 1021,
-   "revid": 3159,
-   "last_edited": "2026-10-01T09:12:18Z",
+   "revid": 3428,
+   "last_edited": "2026-11-22T07:43:50Z",
    "last_editor": "KrutarMarsons",
    "size": 4738,
    "categories": [
@@ -1094,13 +1094,13 @@
    "zh_title": "膨胀升级（被毁灭的现实）",
    "path": "content/player/original/ow-dilation-upgrades-doomed.md",
    "priority": 3,
-   "status": "STRUCTURE CHECKED",
-   "review_status": "STRUCTURE CHECKED",
+   "status": "REVIEWED",
+   "review_status": "REVIEWED",
    "license_status": "CC-BY-SA-4.0-CONFIRMED",
    "third_party": "NONE-DETECTED-TEXT-ONLY",
    "media_omitted": true,
-   "last_source_check": "2026-11-15",
-   "notes": "batch18：正文/表格/公式/来源字段完整翻译并结构核对；未做逐段语义审校，记 STRUCTURE CHECKED"
+   "last_source_check": "2026-11-26",
+   "notes": "R130 相邻批次：逐段复核至修订 3428；源文仅新增表格样式，正文公式、数值、词形变换与许可边界保持不变"
   },
   {
    "title": "Dimension Boost",
@@ -1477,8 +1477,8 @@
    "url": "https://antimatterdimensions.wiki.gg/wiki/Eternity_Upgrades",
    "history_url": "https://antimatterdimensions.wiki.gg/index.php?title=Eternity_Upgrades&action=history",
    "pageid": 574,
-   "revid": 3346,
-   "last_edited": "2026-10-18T12:25:23Z",
+   "revid": 3461,
+   "last_edited": "2026-11-25T20:18:21Z",
    "last_editor": "KrutarMarsons",
    "size": 3910,
    "categories": [
@@ -1491,13 +1491,13 @@
    "zh_title": "永恒升级",
    "path": "content/player/original/ow-eternity-upgrades.md",
    "priority": 3,
-   "status": "STRUCTURE CHECKED",
-   "review_status": "STRUCTURE CHECKED",
+   "status": "REVIEWED",
+   "review_status": "REVIEWED",
    "license_status": "CC-BY-SA-4.0-CONFIRMED",
    "third_party": "NONE-DETECTED-TEXT-ONLY",
    "media_omitted": true,
-   "last_source_check": "2026-11-15",
-   "notes": "batch16：正文/表格/公式/来源字段完整翻译并结构核对；未做逐段语义审校，记 STRUCTURE CHECKED"
+   "last_source_check": "2026-11-26",
+   "notes": "R130 相邻批次：逐段复核至修订 3461；同步 idMultEternities 成本更新，保留原文公式、数值与许可边界"
   },
   {
    "title": "Glyph",
