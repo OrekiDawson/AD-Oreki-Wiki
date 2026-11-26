@@ -1,12 +1,12 @@
 ---
 title: "全部条目"
-description: "按主题与中文标题浏览 反物质维度 MOD Wiki 的 137 个正式条目"
+description: "按主题与中文标题浏览 反物质维度 MOD Wiki 的 138 个正式条目"
 tags:
   - 导航
   - 索引
 ---
 
-这里列出当前公开发布的 **137** 个正式条目。草稿、内部归档、兼容入口和重定向不计入索引。
+这里列出当前公开发布的 **138** 个正式条目。草稿、内部归档、兼容入口和重定向不计入索引。
 
 ## 玩家专区
 
@@ -137,6 +137,7 @@ tags:
 - [Android 阶段门禁与 GUI 判据](/developer/architecture/gui-stage-gates)
 - [Android 自动化停滞的排查方法](/developer/current/known-issues)
 - [Android GUI 同步桥：让游戏状态真正到达界面](/developer/architecture/android-gui-sync)
+- [自动化状态所有权：玩家意图、托管配置与执行闸门](/developer/architecture/automation-ownership)
 - [APK 签名与升级兼容](/developer/build/apk-signing)
 - [DEX 泛型签名回填：让 Gson 看见存档里的真实类型](/developer/build/signature-backfill)
 - [Kotlin 混合运行时：在混淆宿主上建立一条可靠的 ABI 边界](/developer/architecture/kotlin-runtime)
