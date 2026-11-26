@@ -22,7 +22,7 @@ aliases:
 
 ### 我想理解 Web 与双端差异
 
-[Web 架构](/developer/architecture/web)沿启动、主循环和 MOD 调度器追踪浏览器端；[双端行为一致性](/developer/architecture/parity)把阶段、资源、挑战和自动化拆成可观察的行为契约。实现阶段门禁或天神时，继续看[GUI 阶段门禁](/developer/architecture/gui-stage-gates)和[天神解锁与跨端实现](/developer/architecture/celestial-implementation)。
+[Web 架构](/developer/architecture/web)沿启动、主循环和 MOD 调度器追踪浏览器端；[双端行为一致性](/developer/architecture/parity)把阶段、资源、挑战和自动化拆成可观察的行为契约；遇到 `e308` 以上的资源、阈值或读档差异时，继续看[超大数值：从尾数与指数到跨端一致性](/developer/architecture/numeric-model)。实现阶段门禁或天神时，继续看[GUI 阶段门禁](/developer/architecture/gui-stage-gates)和[天神解锁与跨端实现](/developer/architecture/celestial-implementation)。
 
 ## 一条从源码到行为的路线
 
