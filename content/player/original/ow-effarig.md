@@ -1,5 +1,5 @@
 ---
-title: "鹿颈长"
+title: "原版:鹿颈长"
 description: "原版 Wiki《Effarig》条目的完整简体中文翻译：远古遗物之神鹿颈长的遗迹碎片、商店升级、三层现实与削弱公式"
 tags:
   - 原版Wiki翻译

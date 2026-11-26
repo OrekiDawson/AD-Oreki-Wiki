@@ -1,5 +1,5 @@
 ---
-title: "时间膨胀"
+title: "原版:时间膨胀"
 description: "原版 Wiki《Dilation》条目的完整简体中文翻译：膨胀永恒、超光速粒子、膨胀时间、超光速星系与相关成就"
 tags:
   - 原版Wiki翻译

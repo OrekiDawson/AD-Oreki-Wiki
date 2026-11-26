@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // 知识库内容检查（轻量、可机器判断）：
 //   1) frontmatter 合法（--- 闭合、title/description/tags）
-//   2) 标题与页面类型一致（规则页命名空间、普通条目不加前缀、分类页中文标题）
+//   2) 标题与页面类型一致（规则页、原版译文命名空间、普通条目、分类页）
 //   3) 内部 [[链接]] 可达
 //   4) 敏感信息与私有路径扫描
 //   5) 未审核 AI 草稿隔离（不得被正式条目引用、必须带待审标记）
@@ -108,6 +108,7 @@ for (const f of files) {
   const isDraft = f.startsWith(DRAFT_DIR);
   const isHistory = f.startsWith(HISTORY_DIR);
   const isPlayer = f.startsWith(PLAYER_DIR);
+  const isOriginalTranslation = f.startsWith("content/player/original/") && !isIndex;
   const isRule = f === RULE_PAGE;
   const isPolicy = f === POLICY_PAGE;
   const isIndex = path.basename(f) === "index.md";
@@ -128,7 +129,10 @@ for (const f of files) {
       const expectedTitle = isRule ? RULE_PAGE_TITLE : POLICY_PAGE_TITLE;
       if (fm.title !== expectedTitle) fail("正式规则或方针页标题必须为 " + expectedTitle + ": " + f);
     } else if (!isDraft) {
-      if (fm.title.startsWith("反物质维度MOD Wiki:")) fail("普通条目标题不应带规则页命名空间前缀: " + f);
+      if (isOriginalTranslation) {
+        if (!fm.title.startsWith("原版:")) fail("原版翻译标题必须使用“原版:”命名空间: " + f);
+        if (fm.title.startsWith("原版:原版:")) fail("原版翻译标题不得重复添加命名空间: " + f);
+      } else if (fm.title.startsWith("反物质维度MOD Wiki:")) fail("普通条目标题不应带规则页命名空间前缀: " + f);
       if (!isHistory && ROUND_LEAD_TITLE.test(fm.title)) {
         fail("专题条目标题不应以 R 轮次或日期开头（历史材料请放 content/developer/history/）: " + f);
       }

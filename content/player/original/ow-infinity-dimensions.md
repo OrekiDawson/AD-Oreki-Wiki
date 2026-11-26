@@ -1,5 +1,5 @@
 ---
-title: "无限维度"
+title: "原版:无限维度"
 description: "原版 Wiki《Infinity Dimensions》条目的完整简体中文翻译：解锁、产出、无限之力与价格成长表"
 tags:
   - 原版Wiki翻译

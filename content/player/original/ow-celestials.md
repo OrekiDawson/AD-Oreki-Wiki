@@ -1,5 +1,5 @@
 ---
-title: "天神"
+title: "原版:天神"
 description: "原版 Wiki《Celestials》条目的完整简体中文翻译：七位天神、无名氏设定、玩家身份与最终目标"
 tags:
   - 原版Wiki翻译

@@ -1,5 +1,5 @@
 ---
-title: "自动化"
+title: "原版:自动化"
 description: "原版 Wiki《Automation》条目的简体中文翻译：间隔与批量规则、无限前后各自动购买器、升级价格表与永恒里程碑解锁"
 tags:
   - 原版Wiki翻译

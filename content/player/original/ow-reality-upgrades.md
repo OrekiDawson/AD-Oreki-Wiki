@@ -1,5 +1,5 @@
 ---
-title: "现实升级"
+title: "原版:现实升级"
 description: "原版 Wiki《Reality Upgrades》条目的完整简体中文翻译：可重复与不可重复升级、解锁条件、效果与内部 ID"
 tags:
   - 原版Wiki翻译

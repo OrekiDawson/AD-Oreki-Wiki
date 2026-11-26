@@ -1,5 +1,5 @@
 ---
-title: "莱特拉·引语"
+title: "原版:莱特拉·引语"
 description: "原版 Wiki《Laitela/Quotes》条目的完整简体中文翻译：莱特拉在各触发条件下的全部台词"
 tags:
   - 原版Wiki翻译

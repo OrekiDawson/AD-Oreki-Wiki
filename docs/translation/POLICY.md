@@ -5,6 +5,8 @@
 ## 1. 专区边界
 
 - **原版 Wiki 翻译专区**（`content/player/original/`，路由 `/player/original/`）：忠实翻译 `https://antimatterdimensions.wiki.gg` 的原版游戏正文。
+
+原版翻译条目的 frontmatter `title` 使用独立命名空间 `原版:条目名`，例如 `原版:无限`、`原版:时间研究`；专区首页保留“原版 Wiki 中文翻译”。命名空间只用于区分显示标题，不改变 URL、文件路径、aliases、`original_title`、修订字段、许可和署名信息。
 - **Oreki Edition MOD 专题**（其余分类）：MOD 的玩法变化、自动化、技术实现与验证结果。
 - **开发历史档案**（`content/developer/history/`）：Changelog、Release Notes、轮次记录与报告索引。
 

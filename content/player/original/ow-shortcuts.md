@@ -1,5 +1,5 @@
 ---
-title: "快捷键"
+title: "原版:快捷键"
 description: "原版 Wiki《Shortcuts》条目的简体中文翻译：桌面版热键、Shift/Alt 组合、标签页切换、隐藏热键与移动版底部按钮"
 tags:
   - 原版Wiki翻译

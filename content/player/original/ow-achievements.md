@@ -1,5 +1,5 @@
 ---
-title: "成就"
+title: "原版:成就"
 description: "原版 Wiki《Achievements》条目的简体中文翻译：144 项成就的名称、条件、奖励与效果，以及成就乘数机制"
 tags:
   - 原版Wiki翻译
