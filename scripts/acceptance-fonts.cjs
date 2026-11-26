@@ -52,8 +52,13 @@ function familyAllowed(kind, family) {
 
 async function inspect(page) {
   return page.evaluate(() => {
-    const ordinary = [...document.querySelectorAll('article p, article li, article td, article blockquote')]
-      .filter((el) => !el.closest('pre, code, .katex, .math-inline, .math-block'))
+    const ordinary = [...document.querySelectorAll('body *')]
+      .filter((el) => {
+        const rect = el.getBoundingClientRect();
+        return rect.width > 0 && rect.height > 0 && (el.textContent || '').trim()
+          && !el.closest('pre, code, kbd, samp, .katex, .math-inline, .math-block')
+          && !['SCRIPT', 'STYLE', 'SVG', 'PATH'].includes(el.tagName);
+      })
       .map((el) => getComputedStyle(el).fontFamily);
     const sample = (name, selector) => {
       const el = document.querySelector(selector);
@@ -109,7 +114,11 @@ async function main() {
   await browser.close();
   fs.mkdirSync(path.dirname(out), { recursive: true });
   fs.writeFileSync(out, JSON.stringify(result, null, 2));
-  const families = [...new Set(Object.values(result.pages).flatMap((item) => item.ordinaryFamilies))];
+  // KaTeX 节点可能被 Quartz 包在可见的数学容器中；它们不属于普通文本，
+  // 从普通字体一致性集合中排除，但仍由上面的 math sample 单独验收。
+  const families = [...new Set(Object.values(result.pages)
+    .flatMap((item) => item.ordinaryFamilies)
+    .filter((family) => !/KaTeX|math/i.test(family)))];
   const thirdParty = Object.values(result.pages).flatMap((item) => item.thirdPartyFonts);
   if (families.length !== 1) result.errors.push(`ordinary-font-families:${families.join('|')}`);
   if (thirdParty.length) result.errors.push(`third-party-fonts:${thirdParty.join('|')}`);

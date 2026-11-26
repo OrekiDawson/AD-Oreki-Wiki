@@ -19,6 +19,13 @@ if (!/--codeFont:\s*ui-monospace/.test(fs.readFileSync(path.join(root, "quartz/s
   errors.push("代码未绑定系统原生等宽字体")
 if (/Source Sans|Schibsted|IBM Plex|Google Sans|Roboto|Noto Sans|font-family:\s*["'][^"']+["']/i.test(config))
   errors.push("配置中重新引入了固定网页字体；普通文本必须使用系统字体")
+const styles = fs.readFileSync(path.join(root, "quartz/styles/custom.scss"), "utf8")
+if (!/:where\(body, body \*\)[\s\S]*?font-family:\s*var\(--bodyFont\)\s*!important/.test(styles))
+  errors.push("普通文本没有在叶子节点强制继承系统无衬线字体")
+if (!/:where\(pre, pre \*, code, code \*, kbd, kbd \*, samp, samp \*\)[\s\S]*?font-family:\s*var\(--codeFont\)\s*!important/.test(styles))
+  errors.push("程序代码没有明确绑定系统等宽字体")
+if (/fonts\.(googleapis|gstatic)\.com|use\.typekit\.net|@import\s+url\(/i.test(styles))
+  errors.push("自定义样式仍加载远程字体")
 
 if (process.argv[2] === "--built") {
   const publicDir = path.resolve(root, process.argv[3] || "public")
