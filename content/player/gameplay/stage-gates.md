@@ -72,5 +72,5 @@ Oreki Edition 的 Android 历史测试中曾遇到过类似的页面过早显示
 
 - [Antimatter Dimensions Wiki：Infinity](https://antimatterdimensions.wiki.gg/wiki/Infinity?oldid=3113)、[Break Infinity](https://antimatterdimensions.wiki.gg/wiki/Break_Infinity?oldid=3349)、[Eternity](https://antimatterdimensions.wiki.gg/wiki/Eternity?oldid=3118)（前期阶段和重置条件）。
 - [Antimatter Dimensions Wiki：Reality](https://antimatterdimensions.wiki.gg/wiki/Reality?oldid=3235)、[Celestials](https://antimatterdimensions.wiki.gg/wiki/Celestials?oldid=3187)（现实后的解锁体系）。
-- [Oreki Edition：原版与 MOD 的区别](/player/gameplay/original-vs-mod)、[Android 阶段判据与历史验证](/developer/architecture/gui-stage-gates)、[开发者已知问题](/developer/current/known-issues)（版本差异和已记录的历史问题）。
+- [Oreki Edition：原版与 MOD 的区别](/player/gameplay/original-vs-mod)、[Android 阶段判据与历史验证](/developer/architecture/gui-stage-gates)、[Android 自动化停滞的排查方法](/developer/current/known-issues)（版本差异和已记录的历史问题）。
 - [玩家常见问题](/player/faq/) · [智能自动购买器](/player/gameplay/automation) · [存档兼容与自动保存](/player/gameplay/saves)。

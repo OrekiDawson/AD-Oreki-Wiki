@@ -12,9 +12,11 @@ aliases:
 
 项目状态不是一盏只会变绿或变红的指示灯。源码检查、构建产物、设备安装、真实新档和正式发布分别回答不同问题。本页把当前可核查的双端事实转换成决策规则：什么时候可以继续推进，什么时候必须停在候选阶段，什么时候不能把一项成功外推到另一项。
 
+**最后核实：2026 年 11 月 26 日 17:22（UTC+8）。**
+
 ## 先看结论边界
 
-当前最稳固的结论是：Web 已有一份可追溯的真实新档终局记录；Android 的开发候选可以安装并推进到首次现实，但终局仍未完成，不能作为正式发布版本。Web 的真实运行证据来自固定部署基线 [`f7044da0`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/tree/f7044da0f80a50ccbe5cd827fea717b4d5a1eae6)，Android 的阶段故障与修复边界见 [KVM 历史记录](/developer/history/2026-11-20-r121-android-kvm)。
+当前最稳固的结论是：Web 已有一份可追溯的真实新档终局记录；Android 的开发候选可以安装并推进到首次现实，但终局仍未完成，不能作为正式发布版本。Web 的 [运行说明](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/f7044da0f80a50ccbe5cd827fea717b4d5a1eae6/reports/R104/web/r121-01/README.md)记录首次 `isGameEnd=true` 于 10451.1 秒，[结构化摘要](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/f7044da0f80a50cc5be5cd827fea717b4d5a1eae6/reports/R104/web/r121-01/summary.json)给出同一运行的事件和哈希边界；Android 的阶段故障与修复边界见 [KVM 历史记录](/developer/history/2026-11-20-r121-android-kvm)。旧 Android 候选的故障报告记录 APK SHA-256 `43e3f4fc42017541a37b81f7440e58fe8a67380ed9ff601d440038947091f1ac`；这不是修复后候选的发布证明。
 
 这意味着以下判断可以成立：
 

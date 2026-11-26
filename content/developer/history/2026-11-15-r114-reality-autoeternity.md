@@ -42,4 +42,4 @@ aliases:
 
 ## 相关条目
 
-[当前项目状态](/developer/current/project-status) · [现实与时间研究](/player/gameplay/reality-time-studies) · [待核实事项与已知问题](/developer/current/known-issues)
+[当前项目状态](/developer/current/project-status) · [现实与时间研究](/player/gameplay/reality-time-studies) · [Android 自动化停滞的排查方法](/developer/current/known-issues)

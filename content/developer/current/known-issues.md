@@ -12,7 +12,9 @@ aliases:
 
 本页处理一种很容易被误判的故障：游戏没有崩溃，页面仍在更新，挑战也可能已经完成，但自动购买器在一次重置后不再继续推进。排查重点不是“某个按钮有没有点到”，而是确认调度器是否把**当前资源**误当成了**历史进度**。
 
-本文针对 Android MOD 的自动化托管层，事实依据是固定的 Android 源码和 KVM 新档记录。它不是当前 APK 的发布公告；正式版本与候选版本的边界见[发布状态](/developer/current/release-status)。
+**最后核实：2026 年 11 月 26 日 17:22（UTC+8）。**
+
+本文针对 Android MOD 的自动化托管层，事实依据是固定的 [Android 源码提交 a1617a9](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/tree/a1617a9e0d652a16ba050be25bb3f5b1a5ef1c43) 与 [KVM 新档故障记录](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/a1617a9e0d652a16ba050be25bb3f5b1a5ef1c43/reports/R121-01/R121-01-P1-post-ec-infinite-reset.md)；以上来源已用 GitHub API 核对可读取。它不是当前 APK 的发布公告；正式版本与候选版本的边界见[发布状态](/developer/current/release-status)。
 
 ## 先区分三种停滞
 
@@ -69,6 +71,10 @@ aliases:
 - 继续运行到 `isGameEnd=true`，并在终局后观察存档与自动化是否保持稳定。
 
 截至当前记录，旧候选曾安装并推进到首次现实，但包含后续修复的新 APK 尚未完成这条完整运行链。因此“源码已修复”“定向恢复有效”和“终局验收通过”必须分开写，不能互相替代。
+
+## 当前仍未覆盖的交付边界
+
+以下事项仍由[当前项目状态](/developer/current/project-status)和[发布资格](/developer/current/release-status)统一记录：修复后 Android 候选的全新存档终局运行、正式 Release 资格，以及 Android/Web 的逐场景等价验收。它们不是本页排障方法已经通过的证据；新候选产生后，应重新绑定 APK 哈希、运行环境和报告。
 
 ## 相关条目
 
