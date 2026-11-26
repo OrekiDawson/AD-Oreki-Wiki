@@ -35,9 +35,9 @@ Android 和 Web 不可能共享同一套对象：Web 在浏览器里维护 JavaS
 
 ### Android：全局节拍包住原版入口
 
-Android 的自动化入口是 [`OrekiStageAuto.onAutoBuyerTick()`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiStageAuto.kt)。它先调用 [`OrekiAutomationScheduler.beginFrame()`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiAutomationScheduler.kt)，再对候选任务走 `allow → 执行 → noteActed/noteNoop` 的节拍协议。
+Android 的自动化入口是 [`OrekiStageAuto.onAutoBuyerTick()`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiStageAuto.kt)。它先调用 [`OrekiAutomationScheduler.beginFrame()`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiAutomationScheduler.kt)，再对候选任务走 `allow → 执行 → noteActed/noteNoop` 的节拍协议。
 
-调度器明确维护全局间隔、预约窗口、失败冷却和 `frameActed`。因此“同一帧最多一个真动作”不是测试约定，而是实现约束；no-op 不应冒充成功，也不应更新真实动作时间。`OrekiStageAuto` 里的购买、坍缩和升级最后通过 [`GameApi`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/GameApi.kt) 进入官方运行时。适配层负责寻找和调用入口，不应直接写解锁位或发放免费资源。
+调度器明确维护全局间隔、预约窗口、失败冷却和 `frameActed`。因此“同一帧最多一个真动作”不是测试约定，而是实现约束；no-op 不应冒充成功，也不应更新真实动作时间。`OrekiStageAuto` 里的购买、坍缩和升级最后通过 [`GameApi`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/GameApi.kt) 进入官方运行时。适配层负责寻找和调用入口，不应直接写解锁位或发放免费资源。以上 Android 源码链接固定到已核对的提交 `9d8fc46`（2026-11-26）。
 
 这解释了一个常见误会：把 Web 的 `intervalSec` 原样搬到 Android，并不能保证两端同拍。Web 的节拍由浏览器循环和 `passDiff` 共同影响；Android 还受 Activity、线程调度和设备休眠影响。能对齐的是“经过一个合法节拍后发生什么”，不是两个设备的墙上时钟恰好同时按下按钮。
 
