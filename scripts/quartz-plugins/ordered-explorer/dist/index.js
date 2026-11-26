@@ -126,11 +126,15 @@ document.addEventListener("nav", () => {
     for (const outer of explorer.querySelectorAll(".folder-outer")) {
       const path = outer.previousElementSibling?.dataset.folderpath || "";
       const parts = path.split("/").filter(Boolean);
-      // 正式分类与条目始终可见；当前路径仍由 Explorer 自带 active 类高亮并滚动定位。
-      const open = parts.length > 0;
-      outer.classList.toggle("open", open);
-      const parent = outer.previousElementSibling;
-      if (parent) parent.querySelector(".folder-icon")?.setAttribute("aria-expanded", open ? "true" : "false");
+      // 首次状态由 folderDefaultState 决定；SPA 导航只展开当前路径祖先，
+      // 不覆盖读者已经保存的折叠选择。
+      const isAncestor = parts.length > 0 && (current.join("/") === parts.join("/")
+        || current.join("/").startsWith(parts.join("/") + "/"));
+      if (isAncestor) {
+        outer.classList.add("open");
+        const parent = outer.previousElementSibling;
+        if (parent) parent.querySelector(".folder-icon")?.setAttribute("aria-expanded", "true");
+      }
     }
   }, 0);
 }, { passive: true });

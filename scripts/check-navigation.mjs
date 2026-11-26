@@ -124,6 +124,7 @@ const yamlScalar = (name) => {
 }
 if (yamlScalar("folderDefaultState") !== "open") errors.push("Explorer 未设置正式分类与条目默认展开")
 if (yamlScalar("folderClickBehavior") !== "link") errors.push("Explorer 未启用独立展开按钮行为")
+if (yamlScalar("useSavedState") !== "true") errors.push("Explorer 未保留读者主动调整的展开状态")
 const orderedExplorer = fs.readFileSync(
   path.join(root, "scripts/quartz-plugins/ordered-explorer/dist/index.js"),
   "utf8",
