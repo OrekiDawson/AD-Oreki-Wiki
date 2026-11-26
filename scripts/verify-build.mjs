@@ -98,9 +98,13 @@ for (const [dir, title] of Object.entries(CATEGORY_TITLES)) {
 
 // 内部历史归档不得进入 Pages 构建产物。
 const historyEntries = htmlFiles.filter((f) =>
-  f.includes(`${path.sep}developer${path.sep}history${path.sep}`),
+  f.includes(`${path.sep}developer${path.sep}history${path.sep}`) ||
+  f.includes(`${path.sep}history${path.sep}`),
 )
-if (historyEntries.length > 0) fail("内部历史归档进入公开构建产物: " + historyEntries.length)
+const history正文 = historyEntries.filter((file) =>
+  !/http-equiv=["']refresh["'][^>]*content=["']0\s*;\s*url=/i.test(fs.readFileSync(file, "utf8")),
+)
+if (history正文.length > 0) fail("内部历史归档进入公开构建产物: " + history正文.length)
 
 // 旧 URL 兼容：旧入口不再作为正文目录，但规范页 alias 必须生成直接重定向。
 const LEGACY_URLS = [
