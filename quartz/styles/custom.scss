@@ -15,7 +15,7 @@
 }
 
 :where(h1, h2, h3, h4, h5, h6, .page-title, .article-title, .folder-container div > a,
-  .folder-container div > button, .nav-folder-title):not(.katex):not(.katex *) {
+  .folder-container div > button, .nav-folder-title):not(pre):not(pre *):not(code):not(code *):not(kbd):not(kbd *):not(samp):not(samp *):not(.katex):not(.katex *) {
   font-family: var(--headerFont) !important;
 }
 
