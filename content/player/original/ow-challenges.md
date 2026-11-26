@@ -16,31 +16,31 @@ aliases:
   - "/original/ow-challenges"
 ---
 
-**挑战**是重置层运行的修改版本，玩家可以自行进入。完成挑战通常会给予玩家某种奖励。
+**挑战**是对某个重置层规则的修改版，玩家可以主动进入。完成挑战通常会给予玩家某种奖励。
 
-## 挑战的类型
+## 挑战类型
 
-## 普通挑战
+### 普通挑战
 
-主条目：[普通挑战](/player/original/ow-challenges)
+主条目：[普通挑战](/player/original/ow-normal-challenges)
 
-玩家见到的第一组挑战，要求玩家在条件被修改的新[无限](/player/original/ow-infinity)中获得 1.80e308 反物质。第 1 至第 9 个挑战在玩家至少执行过一次[无限](/player/original/ow-infinity)后解锁；第 10、11、12 个挑战只在 $16$ 次[无限](/player/original/ow-infinity)之后解锁。
+玩家见到的第一组挑战，要求玩家在条件被修改的新[无限](/player/original/ow-infinity)中获得 $1.80\text{e}308$ 反物质。第 1 至第 9 个挑战在玩家至少执行过一次[无限](/player/original/ow-infinity)后解锁；第 10、11、12 个挑战只在 $16$ 次[无限](/player/original/ow-infinity)之后解锁。
 
 完成普通挑战可以让玩家解锁并强化基础[自动购买器](https://antimatterdimensions.wiki.gg/wiki/Automation#Pre-Infinity%20automation)——这些自动购买器是玩家在[无限](/player/original/ow-infinity)层开始时获得的。
 
-## 无限挑战
+### 无限挑战
 
-主条目：[无限挑战](/player/original/ow-challenges)
+主条目：[无限挑战](/player/original/ow-infinity-challenges)
 
 这组挑战要求玩家在条件被修改的新[无限](/player/original/ow-infinity)中获得一定数量的反物质。
 
 完成无限挑战会给予玩家多种奖励，强化此前不同的游戏机制。
 
-## 永恒挑战
+### 永恒挑战
 
 主条目：[永恒挑战](/player/original/ow-eternity-challenges)
 
-这组挑战要求玩家在条件被修改的新[永恒](/player/original/ow-eternity)中获得一定数量的[无限点数](/player/original/ow-infinity)。要进入挑战，玩家必须拥有足够的[时间之理](https://antimatterdimensions.wiki.gg/wiki/Time_Theorems)，并满足该挑战通常设定的次要条件。
+这组挑战要求玩家在条件被修改的新[永恒](/player/original/ow-eternity)中获得一定数量的[无限点数](/player/original/ow-infinity)。要进入挑战，玩家必须拥有足够的[时间之理](/player/original/ow-time-studies)，并满足该挑战通常设定的次要条件。
 
 完成永恒挑战会给予玩家多种奖励，强化此前不同的游戏机制。玩家可以反复完成永恒挑战，最多 5 次，使该永恒挑战的奖励更强。
 

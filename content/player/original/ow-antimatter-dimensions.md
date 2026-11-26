@@ -20,6 +20,8 @@ aliases:
 
 > 本页译自社区 Wiki 的固定修订 `3325`。原文标记为需要清理（Cleanup）；译文保留原文的机制说明和价格表；图片未转载，信息框及导航模板也未转载。
 
+原文此页包含界面图 `Antimatter-dimensions-interface--darktheme-mobile.png` 和 `Antimatter-dimensions-interface--darktheme-modern.png`；本译文未转载这些图片，仅保留对应的文字说明。
+
 ## 机制
 
 每个反物质维度都有对应的倍率，以及表示当前拥有数量的数值。第 1 反物质维度的基础生产速度是每个已拥有维度每秒生产 $1$ 点反物质；之后每一级反物质维度，都会以每个已拥有维度每秒 $0.1$ 的基础速度生产上一级维度。
@@ -32,9 +34,9 @@ aliases:
 
 **反物质**是反物质维度生产的主要资源，也是衡量玩家进度的核心指标。它还有几项用途：
 
-- 反物质足够时，可以购买[反物质维度](/player/original/ow-antimatter-dimensions)和[计数频率](https://antimatterdimensions.wiki.gg/wiki/Tickspeed)升级；
-- 反物质达到 $1.80\text{e}308$ 时，可以执行[大坍缩](https://antimatterdimensions.wiki.gg/wiki/Big_Crunch)，从而看到更多升级并继续推进；
-- [打破无限](https://antimatterdimensions.wiki.gg/wiki/Breaking_Infinity)后，更多反物质还可以带来更多[无限点数](/player/original/ow-infinity)。
+- 反物质足够时，可以购买[反物质维度](/player/original/ow-antimatter-dimensions)和[计数频率](/player/original/ow-tickspeed)升级；
+- 反物质达到 $1.80\text{e}308$ 时，可以执行[大坍缩](/player/original/ow-infinity)，从而看到更多升级并继续推进；
+- [打破无限](/player/original/ow-break-infinity)后，更多反物质还可以带来更多[无限点数](/player/original/ow-infinity)。
 
 ## 价格成长
 
