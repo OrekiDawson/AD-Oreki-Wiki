@@ -8,6 +8,7 @@ tags:
 
 这里显示最近进入当前内容树的正式条目；文章的具体修订记录仍以页面正文与仓库历史为准。
 
+- [计数频率·星系强度明细（被毁灭的现实）](/player/original/ow-tickspeed-galaxy-strength-breakdown-doomed)
 - [无限（消歧义）](/player/original/ow-infinity-disambiguation)
 - [平台与版本](/player/faq/platform-and-version)
 - [开发者专区](/developer)
@@ -31,4 +32,3 @@ tags:
 - [挑战：三种限制玩法的阅读地图](/player/gameplay/challenges)
 - [第一次现实：重置前后的准备](/player/gameplay/reality)
 - [时间研究与现实：后永恒阶段阅读地图](/player/gameplay/reality-time-studies)
-- [阶段进度：从新档到天神](/player/gameplay/stage-progression)

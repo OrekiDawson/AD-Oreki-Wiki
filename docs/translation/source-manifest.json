@@ -28,10 +28,10 @@
   "total_pages": 68,
   "translated": 0,
   "structure_checked": 37,
-  "reviewed": 24,
+  "reviewed": 25,
   "verified": 0,
   "blocked": 0,
-  "not_started": 7
+  "not_started": 6
  },
  "pages": [
   {
@@ -2755,16 +2755,16 @@
     "Pages using Pelle wordshift classes"
    ],
    "type": "article",
-   "zh_title": "",
-   "path": "",
+   "zh_title": "计数频率·星系强度明细（被毁灭的现实）",
+   "path": "content/player/original/ow-tickspeed-galaxy-strength-breakdown-doomed.md",
    "priority": 99,
-   "status": "NOT STARTED",
-   "review_status": "NOT REVIEWED",
-   "license_status": "CC-BY-SA-4.0-PENDING-PAGE-CHECK",
-   "third_party": "UNKNOWN",
-   "media_omitted": false,
-   "last_source_check": "2026-11-15",
-   "notes": ""
+   "status": "REVIEWED",
+   "review_status": "REVIEWED",
+   "license_status": "CC-BY-SA-4.0-CONFIRMED",
+   "third_party": "NONE-DETECTED-TEXT-ONLY",
+   "media_omitted": true,
+   "last_source_check": "2026-11-27",
+   "notes": "R130：Lead 完整复核星系强度来源表；与星系数量明细保持独立，图片未转载。"
   },
   {
    "title": "Time Dilation",

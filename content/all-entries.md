@@ -1,12 +1,12 @@
 ---
 title: "全部条目"
-description: "按主题与中文标题浏览 反物质维度 MOD Wiki 的 151 个正式条目"
+description: "按主题与中文标题浏览 反物质维度 MOD Wiki 的 152 个正式条目"
 tags:
   - 导航
   - 索引
 ---
 
-这里列出当前公开发布的 **151** 个正式条目。草稿、内部归档、兼容入口和重定向不计入索引。
+这里列出当前公开发布的 **152** 个正式条目。草稿、内部归档、兼容入口和重定向不计入索引。
 
 ## 玩家专区
 
@@ -29,6 +29,7 @@ tags:
 - [广告加成](/player/original/ow-ad-bonus)
 - [黑洞](/player/original/ow-black-hole)
 - [计数频率](/player/original/ow-tickspeed)
+- [计数频率·星系强度明细（被毁灭的现实）](/player/original/ow-tickspeed-galaxy-strength-breakdown-doomed)
 - [计数频率·星系数量明细（被毁灭的现实）](/player/original/ow-tickspeed-galaxy-breakdown-doomed)
 - [记数法](/player/original/ow-notations)
 - [阶段解锁：进度地图与排障入口](/player/gameplay/stage-gates)
