@@ -8,8 +8,8 @@ tags:
 
 这里显示最近进入当前内容树的正式条目；文章的具体修订记录仍以页面正文与仓库历史为准。
 
-- [反物质维度 MOD Wiki](/index)
 - [原版 Wiki 中文翻译](/player/original)
+- [反物质维度 MOD Wiki](/index)
 - [Android 自动化停滞的排查方法](/developer/current/known-issues)
 - [版权与许可](/copyright)
 - [开发者专区](/developer)
