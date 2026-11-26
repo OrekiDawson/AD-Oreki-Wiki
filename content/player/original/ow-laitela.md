@@ -6,12 +6,12 @@ tags:
   - 天神
 original_title: "Laitela"
 original_url: "https://antimatterdimensions.wiki.gg/wiki/Laitela"
-original_revid: 3375
-original_fetched_at: "2026-11-15T21:24:00+08:00"
+original_revid: 3432
+original_fetched_at: "2026-11-26T19:02:22+08:00"
 original_license: "CC BY-SA 4.0"
 original_license_url: "https://creativecommons.org/licenses/by-sa/4.0/"
-translation_status: "STRUCTURE CHECKED"
-review_status: "STRUCTURE CHECKED"
+translation_status: "REVIEWED"
+review_status: "REVIEWED"
 aliases:
   - "/original/ow-laitela"
 ---
@@ -43,19 +43,20 @@ $$Max\left(100^{Completions}~*~\left(\frac{360}{Seconds}\right)^2,~1\right)$$
 在 $30$ 秒内使莱特拉的现实失稳[^laitela-30s]会让该现实显著变难：禁用一个可用的最高维度，作为交换给予更强的奖励。玩家需要在 $5$ 分钟内再次完成莱特拉的现实，才能让奖励得到提升[^laitela-5min]。
 
 [^laitela-30s]: 至少需要 $1.50\text{e}258,198,889,747~(1.50\text{e}2.582\text{e}11;~1.50\text{e}258.199~\text{B})$ 反物质，才能在 $30$ 秒内完成莱特拉的现实（会禁用可用最高维度）。
+
 [^laitela-5min]: 在禁用可用最高维度后，至少需要 $5.92\text{e}81,649,658,092~(5.92\text{e}8.165\text{e}10;~5.92\text{e}81.650~\text{B})$ 反物质，才能在 $5$ 分钟内完成莱特拉的现实以提升奖励。
 
-| 最高可用维度 | 最低暗物质维度乘数 | realityDEMultiplier 效果（6 次完成时） |
-| --- | --- | --- |
-| 8 | $\times1.00$ | $\times1.00$ |
-| 7 | $\times144.00$ | $\times1.30$ |
-| 6 | $\times1.44\text{e}4~(14.40~\text{K})$ | $\times1.69$ |
-| 5 | $\times1.44\text{e}6~(1.44~\text{M})$ | $\times2.20$ |
-| 4 | $\times1.44\text{e}8~(144.00~\text{M})$ | $\times2.86$ |
-| 3 | $\times1.44\text{e}10~(14.40~\text{B})$ | $\times3.71$ |
-| 2 | $\times1.44\text{e}12~(1.44~\text{T})$ | $\times4.83$ |
-| 1 | $\times1.44\text{e}14~(144.00~\text{T})$ | $\times6.27$ |
-| 无 | $\times1.44\text{e}16~(14.40~\text{Qa})$ | $\times8.16$ |
+| 最高可用维度 | 最低暗物质维度乘数                       | realityDEMultiplier 效果（6 次完成时） |
+| ------------ | ---------------------------------------- | -------------------------------------- |
+| 8            | $\times1.00$                             | $\times1.00$                           |
+| 7            | $\times144.00$                           | $\times1.30$                           |
+| 6            | $\times1.44\text{e}4~(14.40~\text{K})$   | $\times1.69$                           |
+| 5            | $\times1.44\text{e}6~(1.44~\text{M})$    | $\times2.20$                           |
+| 4            | $\times1.44\text{e}8~(144.00~\text{M})$  | $\times2.86$                           |
+| 3            | $\times1.44\text{e}10~(14.40~\text{B})$  | $\times3.71$                           |
+| 2            | $\times1.44\text{e}12~(1.44~\text{T})$   | $\times4.83$                           |
+| 1            | $\times1.44\text{e}14~(144.00~\text{T})$ | $\times6.27$                           |
+| 无           | $\times1.44\text{e}16~(14.40~\text{Qa})$ | $\times8.16$                           |
 
 通过在 $30$ 秒内完成现实 8 次来禁用全部 8 个维度，还会给玩家一个 $\times8$ 的暗能量获取乘数。全部维度都被禁用的莱特拉现实无法进一步失稳[^laitela-impossible]，只用于解锁[最后一个虚幻升级「无所不在的抹除（Omnipresent Obliteration）」](https://antimatterdimensions.wiki.gg/wiki/Imaginary_Upgrades)。
 
@@ -69,12 +70,12 @@ $$Max\left(100^{Completions}~*~\left(\frac{360}{Seconds}\right)^2,~1\right)$$
 
 两种暗资源的产出都按固定间隔发生。暗物质维度的间隔最低可升级到 $10$ 毫秒，此后无法继续升级。每次购买最初把间隔降低 $8\%$，即 $\times0.92$。
 
-| 暗物质维度 # | 起始成本（DM） | 间隔成长 | 乘数成长 | 暗能量成长 | 起始间隔 | 起始乘数 | 起始暗能量获取 |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| 第 1 | $10$ | $\times5$ | $\times10$ | $\times1.65$ | $1$ 秒 | $\times3$ | $+0.0010$ |
-| 第 2 | $1.44\text{e}8~(144.00~\text{M})$ | $\times5$ | $\times10$ | $\times1.6$ | $4$ 秒 | $\times3\text{e-}4$ | $+0.0150$ |
-| 第 3 | $2.49\text{e}17~(248.83~\text{Qa})$ | $\times5$ | $\times10$ | $\times1.55$ | $16$ 秒 | $\times6.61\text{e-}6$ | $+0.2250$ |
-| 第 4 | $1.07\text{e}42$ | $\times5$ | $\times10$ | $\times1.5$ | $64$ 秒 | $\times3.54\text{e-}7$ | $+3.3750$ |
+| 暗物质维度 # | 起始成本（DM）                      | 间隔成长  | 乘数成长   | 暗能量成长   | 起始间隔 | 起始乘数               | 起始暗能量获取 |
+| ------------ | ----------------------------------- | --------- | ---------- | ------------ | -------- | ---------------------- | -------------- |
+| 第 1         | $10$                                | $\times5$ | $\times10$ | $\times1.65$ | $1$ 秒   | $\times3$              | $+0.0010$      |
+| 第 2         | $1.44\text{e}8~(144.00~\text{M})$   | $\times5$ | $\times10$ | $\times1.6$  | $4$ 秒   | $\times3\text{e-}4$    | $+0.0150$      |
+| 第 3         | $2.49\text{e}17~(248.83~\text{Qa})$ | $\times5$ | $\times10$ | $\times1.55$ | $16$ 秒  | $\times6.61\text{e-}6$ | $+0.2250$      |
+| 第 4         | $1.07\text{e}42$                    | $\times5$ | $\times10$ | $\times1.5$  | $64$ 秒  | $\times3.54\text{e-}7$ | $+3.3750$      |
 
 公式（$p$ = 购买次数）：
 
@@ -102,8 +103,8 @@ $$Max\left(100^{Completions}~*~\left(\frac{360}{Seconds}\right)^2,~1\right)$$
 
 达到 10 个奇点后，可解锁把凝聚奇点所需的暗能量要求按 $10$ 倍调整的能力（最低 $200$）。这会让在满上限时重置得到的奇点数量增加或减少**超过** $10$ 倍（默认为 $11$ 倍，可通过里程碑提升），使更高的上限更划算，代价是等待更久。暗能量要求最多可提高到 $50$ 倍，最高凝聚需求为 $2\text{e}52$ 暗能量。
 
-| 每步提升 | $\times11$ | $\times12$ | $\times13$ | $\times14$ | $\times15$ |
-| --- | --- | --- | --- | --- | --- |
+| 每步提升             | $\times11$       | $\times12$       | $\times13$       | $\times14$       | $\times15$       |
+| -------------------- | ---------------- | ---------------- | ---------------- | ---------------- | ---------------- |
 | 每次凝聚的基础奇点数 | $1.17\text{e}52$ | $9.10\text{e}53$ | $4.98\text{e}55$ | $2.02\text{e}57$ | $6.38\text{e}58$ |
 
 还有其他手段可以提高奇点获取，例如可重复购买的[虚幻升级「Entropic Condensing」](https://antimatterdimensions.wiki.gg/wiki/Imaginary_Upgrades)与对应的奇点里程碑。
@@ -126,56 +127,56 @@ $$Max\left(100^{Completions}~*~\left(\frac{360}{Seconds}\right)^2,~1\right)$$
 
 #### 可无限次完成的奇点里程碑
 
-| 加成类型 | 名称 | 描述 | 基础需求 | 成长 | 提高后的成长 | 阈值（完成次数） | 效果（$c$ = 完成次数） |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| 双向箭头 | continuumMult | 连续统百分比乘数 | $1$ | $\times 125$ | $\times 1,953,125~(1.95\text{e}6;~1.95~\text{M})$ | $20$ | $+0.03c$ |
-| 莱特拉符号 | darkMatterMult | 暗物质产量乘数 | $2$ | $\times 20$ | $\times 8\text{e}3~(8~\text{K})$ | $30$ | $\times 1.5^c$ |
-| 莱特拉符号 | darkEnergyMult | 暗能量产量乘数 | $3$ | $\times 120$ | $\times 1,728,000~(1.73\text{e}6;~1.73~\text{M})$ | $10$ | $\times 2^c$ |
-| 莱特拉符号 | darkDimensionCostReduction | 暗物质维度升级更便宜 | $4$ | $\times 40$ | $\times 6.4\text{e}4~(64~\text{K})$ | $25$ | $\times 0.4^c$ |
-| 莱特拉符号 | darkDimensionIntervalReduction | 暗物质维度间隔降低 | $10$ | $\times 100$ | $\times 1\text{e}6~(1~\text{M})$ | $20$ | $\times 0.6^c$ |
-| 莱特拉符号 | singularityMult | 奇点获取乘数 | $50$ | $\times 3\text{e}3~(3~\text{K})$ | $\times 2.7\text{e}10~(27~\text{B})$ | $5$ | $\times 2^c$ |
-| 莱特拉符号 | improvedAscensionDM | 升格对暗物质产量的影响更大 | $2\text{e}5~(200~\text{K})$ | $\times 4\text{e}3~(4~\text{K})$ | $\times 6.4\text{e}10~(64~\text{B})$ | $15$ | $+100c$ |
+| 加成类型   | 名称                           | 描述                       | 基础需求                    | 成长                             | 提高后的成长                                      | 阈值（完成次数） | 效果（$c$ = 完成次数） |
+| ---------- | ------------------------------ | -------------------------- | --------------------------- | -------------------------------- | ------------------------------------------------- | ---------------- | ---------------------- |
+| 双向箭头   | continuumMult                  | 连续统百分比乘数           | $1$                         | $\times 125$                     | $\times 1,953,125~(1.95\text{e}6;~1.95~\text{M})$ | $20$             | $+0.03c$               |
+| 莱特拉符号 | darkMatterMult                 | 暗物质产量乘数             | $2$                         | $\times 20$                      | $\times 8\text{e}3~(8~\text{K})$                  | $30$             | $\times 1.5^c$         |
+| 莱特拉符号 | darkEnergyMult                 | 暗能量产量乘数             | $3$                         | $\times 120$                     | $\times 1,728,000~(1.73\text{e}6;~1.73~\text{M})$ | $10$             | $\times 2^c$           |
+| 莱特拉符号 | darkDimensionCostReduction     | 暗物质维度升级更便宜       | $4$                         | $\times 40$                      | $\times 6.4\text{e}4~(64~\text{K})$               | $25$             | $\times 0.4^c$         |
+| 莱特拉符号 | darkDimensionIntervalReduction | 暗物质维度间隔降低         | $10$                        | $\times 100$                     | $\times 1\text{e}6~(1~\text{M})$                  | $20$             | $\times 0.6^c$         |
+| 莱特拉符号 | singularityMult                | 奇点获取乘数               | $50$                        | $\times 3\text{e}3~(3~\text{K})$ | $\times 2.7\text{e}10~(27~\text{B})$              | $5$              | $\times 2^c$           |
+| 莱特拉符号 | improvedAscensionDM            | 升格对暗物质产量的影响更大 | $2\text{e}5~(200~\text{K})$ | $\times 4\text{e}3~(4~\text{K})$ | $\times 6.4\text{e}10~(64~\text{B})$              | $15$             | $+100c$                |
 
 #### 可完成有限次数的奇点里程碑
 
-| 加成类型 | 名称 | 描述 | 基础需求 | 成长 | 末次需求 | 最大完成次数 | 效果（$c$ = 完成次数） |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| 莱特拉符号 | autoCondense | 达到高于上限的阈值时自动凝聚奇点 | $8$ | $\times 80$ | $1.68\text{e}14~(168~\text{T})$ | $8$ | $\times 1.3,~1.22,~1.15,~1.1,~1.06,~1.03,~1.01$ 或 $1$，取决于完成次数（例如 4 次完成即 $\times 1.1$） |
-| 莱特拉符号 | darkDimensionAutobuyers | 暗物质维度自动购买器 | $30$ | $\times 170$ | $1.47\text{e}8~(147~\text{M})$ | $4$ | 自动购买至第 $c$ 个暗物质维度；初始速度为 $30$ 秒 |
-| 莱特拉符号 | darkAutobuyerSpeed | 所有暗物质维度自动购买器的速度 | $45$ | $\times 650$ | $2.21\text{e}21~(2.21~\text{Sx})$ | $8$ | $20,~15,~10,~5,~3,~2,~1$ 或 $0$ 秒，取决于完成次数 |
-| 莱特拉符号 | improvedSingularityCap | 每次提高上限时获得更多奇点 | $150$ | $\times 1\text{e}4~(10~\text{K})$ | $1.5\text{e}14~(150~\text{T})$ | $4$ | $\times \left(11+c\right)$ |
-| 莱特拉符号 | realityDEMultiplier | 依据莱特拉内被禁用维度数量提供暗能量乘数 | $1.5\text{e}3~(1.5~\text{K})$ | $\times 1\text{e}4~(10~\text{K})$ | $1.5\text{e}23~(150~\text{Sx})$ | $6$ | $\times \left(1+0.05c\right)^{disabled~Dimension~count}$ |
-| 莱特拉符号 | ascensionIntervalScaling | 暗物质维度升格提高的间隔更少 | $1.2\text{e}5~(120~\text{K})$ | $\times 2.4\text{e}3~(2.4~\text{K})$ | $5.50\text{e}28~(55~\text{Oc})$ | $8$ | $\times \left(1200-50c\right)$ |
-| 莱特拉符号 | intervalCostScalingReduction | 暗物质维度间隔的成本成长更好 | $1.3\text{e}5~(130~\text{K})$ | $\times 5\text{e}4~(50~\text{K})$ | $8.13\text{e}23~(813~\text{Sx})$ | $5$ | $\text{＾}(1-0.03c)$ |
-| 莱特拉符号 | ascensionAutobuyers | 暗物质维度升格自动购买器 | $1\text{e}8~(100~\text{M})$ | $\times 140$ | $2.74\text{e}14~(274~\text{T})$ | $4$ | 自动升格至第 $c$ 个暗物质维度 |
+| 加成类型   | 名称                         | 描述                                     | 基础需求                      | 成长                                 | 末次需求                          | 最大完成次数 | 效果（$c$ = 完成次数）                                                                                 |
+| ---------- | ---------------------------- | ---------------------------------------- | ----------------------------- | ------------------------------------ | --------------------------------- | ------------ | ------------------------------------------------------------------------------------------------------ |
+| 莱特拉符号 | autoCondense                 | 达到高于上限的阈值时自动凝聚奇点         | $8$                           | $\times 80$                          | $1.68\text{e}14~(168~\text{T})$   | $8$          | $\times 1.3,~1.22,~1.15,~1.1,~1.06,~1.03,~1.01$ 或 $1$，取决于完成次数（例如 4 次完成即 $\times 1.1$） |
+| 莱特拉符号 | darkDimensionAutobuyers      | 暗物质维度自动购买器                     | $30$                          | $\times 170$                         | $1.47\text{e}8~(147~\text{M})$    | $4$          | 自动购买至第 $c$ 个暗物质维度；初始速度为 $30$ 秒                                                      |
+| 莱特拉符号 | darkAutobuyerSpeed           | 所有暗物质维度自动购买器的速度           | $45$                          | $\times 650$                         | $2.21\text{e}21~(2.21~\text{Sx})$ | $8$          | $20,~15,~10,~5,~3,~2,~1$ 或 $0$ 秒，取决于完成次数                                                     |
+| 莱特拉符号 | improvedSingularityCap       | 每次提高上限时获得更多奇点               | $150$                         | $\times 1\text{e}4~(10~\text{K})$    | $1.5\text{e}14~(150~\text{T})$    | $4$          | $\times \left(11+c\right)$                                                                             |
+| 莱特拉符号 | realityDEMultiplier          | 依据莱特拉内被禁用维度数量提供暗能量乘数 | $1.5\text{e}3~(1.5~\text{K})$ | $\times 1\text{e}4~(10~\text{K})$    | $1.5\text{e}23~(150~\text{Sx})$   | $6$          | $\times \left(1+0.05c\right)^{disabled~Dimension~count}$                                               |
+| 莱特拉符号 | ascensionIntervalScaling     | 暗物质维度升格提高的间隔更少             | $1.2\text{e}5~(120~\text{K})$ | $\times 2.4\text{e}3~(2.4~\text{K})$ | $5.50\text{e}28~(55~\text{Oc})$   | $8$          | $\times \left(1200-50c\right)$                                                                         |
+| 莱特拉符号 | intervalCostScalingReduction | 暗物质维度间隔的成本成长更好             | $1.3\text{e}5~(130~\text{K})$ | $\times 5\text{e}4~(50~\text{K})$    | $8.13\text{e}23~(813~\text{Sx})$  | $5$          | $\text{＾}(1-0.03c)$                                                                                   |
+| 莱特拉符号 | ascensionAutobuyers          | 暗物质维度升格自动购买器                 | $1\text{e}8~(100~\text{M})$   | $\times 140$                         | $2.74\text{e}14~(274~\text{T})$   | $4$          | 自动升格至第 $c$ 个暗物质维度                                                                          |
 
 #### 只能完成一次的奇点里程碑
 
-| 加成类型 | 名称 | 描述 | 所需奇点 | 效果 | 详情 |
-| --- | --- | --- | --- | --- | --- |
-| 压缩箭头 | darkFromTesseracts | 超立方体提升暗物质与暗能量产量 | $80$ | $\times 1.1^{effective~Tesseracts}$ |  |
-| 压缩箭头 | multFromInfinitied | 无限次数提升暗物质与暗能量产量 | $3\text{e}4~(30~\text{K})$ | $\times \max\left(\frac{\log_{10}\left(Infinities\right)}{1000},1\right)$ |  |
-| 双向箭头 | dilatedTimeFromSingularities | 奇点改善可重复购买的膨胀时间乘数升级 | $8\text{e}4~(80~\text{K})$ | $\times \left(1+\min\left(\frac{\log_{10}\left(Singularities\right)}{100},0.35\right)\right)$ |  |
-| 压缩箭头 | darkFromGlyphLevel | 依据最高符文等级提升暗物质与暗能量产量 | $3\text{e}6~(3~\text{M})$ | $\times \max\left(\frac{highest~GL-15,000}{2,000},1\right)^{0.5}$ |  |
-| 双向箭头 | gamespeedFromSingularities | 奇点提升游戏速度 | $8\text{e}7~(80~\text{M})$ | $\times \log_{10}\left(Singularities\right)^{3}$ |  |
-| 压缩箭头 | darkFromTheorems | 时间之理提升暗物质与暗能量获取 | $3\text{e}9~(3~\text{B})$ | $\times \max\left(\frac{\log_{10}\left(TT\right)-1000}{50},1\right)^{0.5}$ |  |
-| 莱特拉符号 | dim4Generation | 湮灭乘数在湮灭可用时产出第 4 个暗物质维度 | $5\text{e}11~(500~\text{B})$ | 等于湮灭乘数（例如乘数 $\times 100$ 会每秒产出 $100$ 个第 4 暗物质维度） |  |
-| 莱特拉符号 | darkFromDM4 | 第 4 暗物质维度的数量提升暗物质与暗能量获取 | $5\text{e}12~(5~\text{T})$ | $\times DMD4~amount^{0.03}$ |  |
-| 莱特拉符号 | annihilationAutobuyer | 解锁湮灭的自动购买器 | $4\text{e}18~(4~\text{Qt})$ |  |  |
-| 双向箭头 | theoremPowerFromSingularities | 奇点给时间之理获取一个幂次效果 | $3\text{e}21~(3~\text{Sx})$ | $\text{＾}\left(1+\frac{\log_{10}\left(Singularities+1\right)}{70}\right)$ |  |
-| 压缩箭头 | darkFromGamespeed | 游戏速度提升暗物质与暗能量产量 | $8\text{e}22~(80~\text{Sx})$ | $\times \max\left(\frac{\log_{10}\left(\frac{Game~speed}{1\text{e}120}\right)}{40},1\right)$ |  |
-| 双向箭头 | glyphLevelFromSingularities | 奇点提升不稳定前的符文等级 | $3\text{e}24~(3~\text{Sp})$ | $\times \left(1+\max\left(\frac{\log_{10}\left(Singularities\right)-20}{30},0\right)\right)$ |  |
-| 压缩箭头 | darkFromDilatedTime | 膨胀时间提升暗物质产量 | $8\text{e}33$ | $\times 1.6^{\frac{\log_{10}\left(DT+1\right)}{1000}}$ | 该里程碑也会影响暗能量产量 |
-| 双向箭头 | infinitiedPow | 无限次数按奇点获得幂次效果 | $3\text{e}38$ | $\text{＾}\left(1+\frac{\log_{10}\left(Singularities+1\right)}{300}\right)$ |  |
-| 双向箭头 | tesseractMultFromSingularities | 奇点提高有效超立方体数量 | $2.5\text{e}45$ | $\times \left(1+\frac{\log_{10}\left(Singularities\right)}{80}\right)$ | 见[超立方体](/player/original/ow-nameless-ones) |
+| 加成类型   | 名称                           | 描述                                        | 所需奇点                     | 效果                                                                                          | 详情                                            |
+| ---------- | ------------------------------ | ------------------------------------------- | ---------------------------- | --------------------------------------------------------------------------------------------- | ----------------------------------------------- |
+| 压缩箭头   | darkFromTesseracts             | 超立方体提升暗物质与暗能量产量              | $80$                         | $\times 1.1^{effective~Tesseracts}$                                                           |                                                 |
+| 压缩箭头   | multFromInfinitied             | 无限次数提升暗物质与暗能量产量              | $3\text{e}4~(30~\text{K})$   | $\times \max\left(\frac{\log_{10}\left(Infinities\right)}{1000},1\right)$                     |                                                 |
+| 双向箭头   | dilatedTimeFromSingularities   | 奇点改善可重复购买的膨胀时间乘数升级        | $8\text{e}4~(80~\text{K})$   | $\times \left(1+\min\left(\frac{\log_{10}\left(Singularities\right)}{100},0.35\right)\right)$ |                                                 |
+| 压缩箭头   | darkFromGlyphLevel             | 依据最高符文等级提升暗物质与暗能量产量      | $3\text{e}6~(3~\text{M})$    | $\times \max\left(\frac{highest~GL-15,000}{2,000},1\right)^{0.5}$                             |                                                 |
+| 双向箭头   | gamespeedFromSingularities     | 奇点提升游戏速度                            | $8\text{e}7~(80~\text{M})$   | $\times \log_{10}\left(Singularities\right)^{3}$                                              |                                                 |
+| 压缩箭头   | darkFromTheorems               | 时间之理提升暗物质与暗能量获取              | $3\text{e}9~(3~\text{B})$    | $\times \max\left(\frac{\log_{10}\left(TT\right)-1000}{50},1\right)^{0.5}$                    |                                                 |
+| 莱特拉符号 | dim4Generation                 | 湮灭乘数在湮灭可用时产出第 4 个暗物质维度   | $5\text{e}11~(500~\text{B})$ | 等于湮灭乘数（例如乘数 $\times 100$ 会每秒产出 $100$ 个第 4 暗物质维度）                      |                                                 |
+| 莱特拉符号 | darkFromDM4                    | 第 4 暗物质维度的数量提升暗物质与暗能量获取 | $5\text{e}12~(5~\text{T})$   | $\times DMD4~amount^{0.03}$                                                                   |                                                 |
+| 莱特拉符号 | annihilationAutobuyer          | 解锁湮灭的自动购买器                        | $4\text{e}18~(4~\text{Qt})$  |                                                                                               |                                                 |
+| 双向箭头   | theoremPowerFromSingularities  | 奇点给时间之理获取一个幂次效果              | $3\text{e}21~(3~\text{Sx})$  | $\text{＾}\left(1+\frac{\log_{10}\left(Singularities+1\right)}{70}\right)$                    |                                                 |
+| 压缩箭头   | darkFromGamespeed              | 游戏速度提升暗物质与暗能量产量              | $8\text{e}22~(80~\text{Sx})$ | $\times \max\left(\frac{\log_{10}\left(\frac{Game~speed}{1\text{e}120}\right)}{40},1\right)$  |                                                 |
+| 双向箭头   | glyphLevelFromSingularities    | 奇点提升不稳定前的符文等级                  | $3\text{e}24~(3~\text{Sp})$  | $\times \left(1+\max\left(\frac{\log_{10}\left(Singularities\right)-20}{30},0\right)\right)$  |                                                 |
+| 压缩箭头   | darkFromDilatedTime            | 膨胀时间提升暗物质产量                      | $8\text{e}33$                | $\times 1.6^{\frac{\log_{10}\left(DT+1\right)}{1000}}$                                        | 该里程碑也会影响暗能量产量                      |
+| 双向箭头   | infinitiedPow                  | 无限次数按奇点获得幂次效果                  | $3\text{e}38$                | $\text{＾}\left(1+\frac{\log_{10}\left(Singularities+1\right)}{300}\right)$                   |                                                 |
+| 双向箭头   | tesseractMultFromSingularities | 奇点提高有效超立方体数量                    | $2.5\text{e}45$              | $\times \left(1+\frac{\log_{10}\left(Singularities\right)}{80}\right)$                        | 见[超立方体](/player/original/ow-nameless-ones) |
 
 ## 相关成就
 
-| ID | 名称 | 描述 |
-| --- | --- | --- |
-| 174 | Don't you already have two of these? | 获得一个奇点。 |
-| 176 | Mom counted to 3 | 湮灭你的暗物质维度。 |
-| 177 | This mile took a celestial | 至少完成一次全部奇点里程碑。 |
+| ID  | 名称                                 | 描述                         |
+| --- | ------------------------------------ | ---------------------------- |
+| 174 | Don't you already have two of these? | 获得一个奇点。               |
+| 176 | Mom counted to 3                     | 湮灭你的暗物质维度。         |
+| 177 | This mile took a celestial           | 至少完成一次全部奇点里程碑。 |
 
 原文本表另含每个成就的「原始 / 手绘」两套图标（Achievement 模板），图片未转载。
 
@@ -195,7 +196,7 @@ $$Max\left(100^{Completions}~*~\left(\frac{360}{Seconds}\right)^2,~1\right)$$
 
 ## 来源与许可
 
-- 原文：[Laitela](https://antimatterdimensions.wiki.gg/index.php?title=Laitela&oldid=3375)（页面 ID 919；修订 ID 3375；最后编辑者 KrutarMarsons；抓取于 2026-11-15）
+- 原文：[Laitela](https://antimatterdimensions.wiki.gg/index.php?title=Laitela&oldid=3432)（页面 ID 919；修订 ID 3432；最后编辑者 KrutarMarsons；抓取于 2026-11-26）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Laitela&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为**简体中文翻译（改编）**，已修改：翻译正文与全部表格，统一术语，把信息框内容改写为要点表，把 FontAwesome 图标改为文字描述、模板脚注改为页内脚注，移除导航模板与模板结构，图片未转载；本页按相同许可共享。
 - 原文图片未转载：原页含天神静态图（Cel6-runreality-static--desktop.gif）、动画（Cel6-runreality-active--desktop.gif）、导航图（Cel6-navigation-complete--desktop.png）、界面图（Cel6-interface--darktheme-desktop.png）与奇点里程碑弹窗图（Cel6-singularitymilestones-modal--darktheme-desktop.png）。原图注含义：「身处莱特拉的现实之中」「莱特拉的完整界面」「桌面版中的奇点里程碑弹窗」。请到原页查看图片。

@@ -6,12 +6,12 @@ tags:
   - 天神
 original_title: "V"
 original_url: "https://antimatterdimensions.wiki.gg/wiki/V"
-original_revid: 3373
-original_fetched_at: "2026-11-15T21:20:00+08:00"
+original_revid: 3431
+original_fetched_at: "2026-11-26T19:02:22+08:00"
 original_license: "CC BY-SA 4.0"
 original_license_url: "https://creativecommons.org/licenses/by-sa/4.0/"
-translation_status: "STRUCTURE CHECKED"
-review_status: "STRUCTURE CHECKED"
+translation_status: "REVIEWED"
+review_status: "REVIEWED"
 aliases:
   - "/original/ow-v"
 ---
@@ -20,7 +20,7 @@ aliases:
 >
 > 毕竟这里是我的领域。不是每个人都像我这么伟大。
 
-她引入 薇成就（V-Achievements），完成这些成就可获得空间之理。空间之理可用于购买原本被锁定的[时间研究](/player/original/ow-time-studies)。
+她引入薇成就（V-Achievements），完成这些成就可获得空间之理。空间之理可用于购买原本被锁定的[时间研究](/player/original/ow-time-studies)。
 
 原页另有子页面「引语（Quotes）」，本轮批次未译，见文末相关条目。
 
@@ -34,14 +34,14 @@ aliases:
 
 解锁薇之后，玩家会看到一组 6 项要求，必须**同时**满足才能进入薇的现实。这 6 项资源中有 5 项会在现实重置时清零，因此玩家必须在同一次现实中满足全部要求。下表列出 6 项要求与用于查看进度的公式。
 
-| 资源 | 要求 | 进度（`1 = 100%`） | 备注 | ID |
-| --- | --- | --- | --- | --- |
-| [现实次数](/player/original/ow-reality) | $10,000$ | $\frac{Realities}{10,000}$ |  | 1 |
-| [永恒次数](/player/original/ow-eternity) | $1\text{e}70$ | $\left(\frac{\log_{10}\left({Eternities}\right)}{70}\right)^{10}$ |  | 2 |
-| [无限次数](/player/original/ow-infinity) | $1\text{e}160$ | $\left(\frac{\log_{10}\left({Infinities}\right)}{160}\right)^{10}$ | 该资源使用**总**无限次数，即常规无限次数与储存的无限次数之和 | 3 |
-| [膨胀时间](/player/original/ow-dilation) | $1\text{e}320$ | $\left(\frac{\log_{10}\left({DT}\right)}{320}\right)^{10}$ | 该资源使用玩家在当前现实内达到的膨胀时间最高值 | 4 |
-| [复制器](/player/original/ow-replicanti) | $1\text{e}320,000$ | $\left(\frac{\log_{10}\left({Replicanti}\right)}{320,000}\right)^{10}$ | 该资源使用玩家在当前现实内达到的复制器最高值 | 5 |
-| [现实机器](/player/original/ow-reality) | $1\text{e}60$ | $\left(\frac{\log_{10}\left({RM}\right)}{60}\right)^{10}$ |  | 6 |
+| 资源                                     | 要求               | 进度（`1 = 100%`）                                                     | 备注                                                         | ID  |
+| ---------------------------------------- | ------------------ | ---------------------------------------------------------------------- | ------------------------------------------------------------ | --- |
+| [现实次数](/player/original/ow-reality)  | $10,000$           | $\frac{Realities}{10,000}$                                             |                                                              | 1   |
+| [永恒次数](/player/original/ow-eternity) | $1\text{e}70$      | $\left(\frac{\log_{10}\left({Eternities}\right)}{70}\right)^{10}$      |                                                              | 2   |
+| [无限次数](/player/original/ow-infinity) | $1\text{e}160$     | $\left(\frac{\log_{10}\left({Infinities}\right)}{160}\right)^{10}$     | 该资源使用**总**无限次数，即常规无限次数与储存的无限次数之和 | 3   |
+| [膨胀时间](/player/original/ow-dilation) | $1\text{e}320$     | $\left(\frac{\log_{10}\left({DT}\right)}{320}\right)^{10}$             | 该资源使用玩家在当前现实内达到的膨胀时间最高值               | 4   |
+| [复制器](/player/original/ow-replicanti) | $1\text{e}320,000$ | $\left(\frac{\log_{10}\left({Replicanti}\right)}{320,000}\right)^{10}$ | 该资源使用玩家在当前现实内达到的复制器最高值                 | 5   |
+| [现实机器](/player/original/ow-reality)  | $1\text{e}60$      | $\left(\frac{\log_{10}\left({RM}\right)}{60}\right)^{10}$              |                                                              | 6   |
 
 原文此节另有一张界面示意图（Cel4-interface-requirements--darktheme-desktop.png），图注为「解锁薇的现实所需的要求」；图片未转载。
 
@@ -61,44 +61,44 @@ aliases:
 
 下表中「描述」列的 {req} 是原站保留的**目标数值占位符**：游戏实际显示为该档位对应的目标值（即同一行的「基础目标」）。译文保留占位写法以便与原文对照，未猜译成固定数字。
 
-| ID | 名称 | 描述 | 档位 | 基础目标 | 目标削减（PP 成本 / 步长） | 注释 |
-| --- | --- | --- | --- | --- | --- | --- |
-| 0 | Glyph Knight | 在装备至多 {req} 个[符文](https://antimatterdimensions.wiki.gg/wiki/Glyphs)的情况下解锁[现实](/player/original/ow-reality)。 | 第 1 档 | $5$ | 无法削减 | 代码内部对目标使用取负值[^v-code] |
-|  |  |  | 第 2 档 | $4$ |  |  |
-|  |  |  | 第 3 档 | $3$ |  |  |
-|  |  |  | 第 4 档 | $2$ |  |  |
-|  |  |  | 第 5 档 | $1$ |  |  |
-|  |  |  | 第 6 档 | $0$ |  |  |
-| 1 | AntiStellar | 拥有 {req} 个来自所有类型的星系总数。 | 第 1 档 | $4,000$ | $1,000~(1\text{e}3;~1~\text{K})$ / $-3$ |  |
-|  |  |  | 第 2 档 | $4,300$ |  |  |
-|  |  |  | 第 3 档 | $4,600$ |  |  |
-|  |  |  | 第 4 档 | $4,900$ |  |  |
-|  |  |  | 第 5 档 | $5,200$ |  |  |
-|  |  |  | 第 6 档 | $5,500$ |  |  |
-| 2 | Se7en deadly matters | 在[永恒挑战 7](/player/original/ow-eternity-challenges)中获得 {req} 无限点数。 | 第 1 档 | $\text{e}600,000$ | $1,000~(1\text{e}3;~1~\text{K})$ / $/\text{e}1,200$ |  |
-|  |  |  | 第 2 档 | $\text{e}720,000$ |  |  |
-|  |  |  | 第 3 档 | $\text{e}840,000$ |  |  |
-|  |  |  | 第 4 档 | $\text{e}960,000$ |  |  |
-|  |  |  | 第 5 档 | $\text{e}1,080,000$ |  |  |
-|  |  |  | 第 6 档 | $\text{e}1,200,000$ |  |  |
-| 3 | Young Boy | 在不解锁[时间膨胀](https://antimatterdimensions.wiki.gg/wiki/Time_Dilation)的情况下，于永恒挑战 12 中获得 {req} 反物质。 | 第 1 档 | $\text{e}400,000,000$ | $1,000~(1\text{e}3;~1~\text{K})$ / $/\text{e}500,000$ |  |
-|  |  |  | 第 2 档 | $\text{e}450,000,000$ |  |  |
-|  |  |  | 第 3 档 | $\text{e}500,000,000$ |  |  |
-|  |  |  | 第 4 档 | $\text{e}600,000,000$ |  |  |
-|  |  |  | 第 5 档 | $\text{e}700,000,000$ |  |  |
-|  |  |  | 第 6 档 | $\text{e}800,000,000$ |  |  |
-| 4 | Eternal Sunshine | 获得 {req} [永恒点数](/player/original/ow-eternity)。 | 第 1 档 | $\text{e}7,000$ | $1,000~(1\text{e}3;~1~\text{K})$ / $/1\text{e}6~(1~\text{M})$ |  |
-|  |  |  | 第 2 档 | $\text{e}7,600$ |  |  |
-|  |  |  | 第 3 档 | $\text{e}8,200$ |  |  |
-|  |  |  | 第 4 档 | $\text{e}8,800$ |  |  |
-|  |  |  | 第 5 档 | $\text{e}9,400$ |  |  |
-|  |  |  | 第 6 档 | $\text{e}10,000$ |  |  |
-| 5 | Matterception | 在膨胀状态下、且处于永恒挑战 5 内，获得 {req} 次[维度提升](/player/original/ow-dimension-boosts)。 | 第 1 档 | $51$ | $100,000~(1\text{e}5;~100~\text{K})$ / $-1$ |  |
-|  |  |  | 第 2 档 | $52$ |  |  |
-|  |  |  | 第 3 档 | $53$ |  |  |
-|  |  |  | 第 4 档 | $54$ |  |  |
-|  |  |  | 第 5 档 | $55$ |  |  |
-|  |  |  | 第 6 档 | $56$ |  |  |
+| ID  | 名称                 | 描述                                                                                                                         | 档位    | 基础目标              | 目标削减（PP 成本 / 步长）                                    | 注释                              |
+| --- | -------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ------- | --------------------- | ------------------------------------------------------------- | --------------------------------- |
+| 0   | Glyph Knight         | 在装备至多 {req} 个[符文](https://antimatterdimensions.wiki.gg/wiki/Glyphs)的情况下解锁[现实](/player/original/ow-reality)。 | 第 1 档 | $5$                   | 无法削减                                                      | 代码内部对目标使用取负值[^v-code] |
+|     |                      |                                                                                                                              | 第 2 档 | $4$                   |                                                               |                                   |
+|     |                      |                                                                                                                              | 第 3 档 | $3$                   |                                                               |                                   |
+|     |                      |                                                                                                                              | 第 4 档 | $2$                   |                                                               |                                   |
+|     |                      |                                                                                                                              | 第 5 档 | $1$                   |                                                               |                                   |
+|     |                      |                                                                                                                              | 第 6 档 | $0$                   |                                                               |                                   |
+| 1   | AntiStellar          | 拥有 {req} 个来自所有类型的星系总数。                                                                                        | 第 1 档 | $4,000$               | $1,000~(1\text{e}3;~1~\text{K})$ / $-3$                       |                                   |
+|     |                      |                                                                                                                              | 第 2 档 | $4,300$               |                                                               |                                   |
+|     |                      |                                                                                                                              | 第 3 档 | $4,600$               |                                                               |                                   |
+|     |                      |                                                                                                                              | 第 4 档 | $4,900$               |                                                               |                                   |
+|     |                      |                                                                                                                              | 第 5 档 | $5,200$               |                                                               |                                   |
+|     |                      |                                                                                                                              | 第 6 档 | $5,500$               |                                                               |                                   |
+| 2   | Se7en deadly matters | 在[永恒挑战 7](/player/original/ow-eternity-challenges)中获得 {req} 无限点数。                                               | 第 1 档 | $\text{e}600,000$     | $1,000~(1\text{e}3;~1~\text{K})$ / $/\text{e}1,200$           |                                   |
+|     |                      |                                                                                                                              | 第 2 档 | $\text{e}720,000$     |                                                               |                                   |
+|     |                      |                                                                                                                              | 第 3 档 | $\text{e}840,000$     |                                                               |                                   |
+|     |                      |                                                                                                                              | 第 4 档 | $\text{e}960,000$     |                                                               |                                   |
+|     |                      |                                                                                                                              | 第 5 档 | $\text{e}1,080,000$   |                                                               |                                   |
+|     |                      |                                                                                                                              | 第 6 档 | $\text{e}1,200,000$   |                                                               |                                   |
+| 3   | Young Boy            | 在不解锁[时间膨胀](https://antimatterdimensions.wiki.gg/wiki/Time_Dilation)的情况下，于永恒挑战 12 中获得 {req} 反物质。     | 第 1 档 | $\text{e}400,000,000$ | $1,000~(1\text{e}3;~1~\text{K})$ / $/\text{e}500,000$         |                                   |
+|     |                      |                                                                                                                              | 第 2 档 | $\text{e}450,000,000$ |                                                               |                                   |
+|     |                      |                                                                                                                              | 第 3 档 | $\text{e}500,000,000$ |                                                               |                                   |
+|     |                      |                                                                                                                              | 第 4 档 | $\text{e}600,000,000$ |                                                               |                                   |
+|     |                      |                                                                                                                              | 第 5 档 | $\text{e}700,000,000$ |                                                               |                                   |
+|     |                      |                                                                                                                              | 第 6 档 | $\text{e}800,000,000$ |                                                               |                                   |
+| 4   | Eternal Sunshine     | 获得 {req} [永恒点数](/player/original/ow-eternity)。                                                                        | 第 1 档 | $\text{e}7,000$       | $1,000~(1\text{e}3;~1~\text{K})$ / $/1\text{e}6~(1~\text{M})$ |                                   |
+|     |                      |                                                                                                                              | 第 2 档 | $\text{e}7,600$       |                                                               |                                   |
+|     |                      |                                                                                                                              | 第 3 档 | $\text{e}8,200$       |                                                               |                                   |
+|     |                      |                                                                                                                              | 第 4 档 | $\text{e}8,800$       |                                                               |                                   |
+|     |                      |                                                                                                                              | 第 5 档 | $\text{e}9,400$       |                                                               |                                   |
+|     |                      |                                                                                                                              | 第 6 档 | $\text{e}10,000$      |                                                               |                                   |
+| 5   | Matterception        | 在膨胀状态下、且处于永恒挑战 5 内，获得 {req} 次[维度提升](/player/original/ow-dimension-boosts)。                           | 第 1 档 | $51$                  | $100,000~(1\text{e}5;~100~\text{K})$ / $-1$                   |                                   |
+|     |                      |                                                                                                                              | 第 2 档 | $52$                  |                                                               |                                   |
+|     |                      |                                                                                                                              | 第 3 档 | $53$                  |                                                               |                                   |
+|     |                      |                                                                                                                              | 第 4 档 | $54$                  |                                                               |                                   |
+|     |                      |                                                                                                                              | 第 5 档 | $55$                  |                                                               |                                   |
+|     |                      |                                                                                                                              | 第 6 档 | $56$                  |                                                               |                                   |
 
 [^v-code]: 原文参考资料：V 的天神数据文件 <https://github.com/IvarK/AntimatterDimensionsSourceCode/blob/master/src/core/secret-formula/celestials/v.js#L71>（外部链接，未转载内容）。
 
@@ -110,28 +110,28 @@ aliases:
 
 下表列出所有可锁定时间研究在有无空间之理折扣时的成本。
 
-| 时间研究行 | 时间研究 | 单项成本（ST，初始） | 单项成本（ST，36 个 薇成就后） | 总成本（ST，初始） | 总成本（ST，36 个 薇成就后） |
-| --- | --- | --- | --- | --- | --- |
-| 12X | 121, 122, 123 | $2$ | $0$ | $4$ | $0$ |
-| 13X | 131, 132, 133 | $8$ | $6$ | $16$ | $12$ |
-| 14X | 141, 142, 143 | $2$ | $0$ | $4$ | $0$ |
-| 22X | 221, 222, 223, 224, 225, 226, 227, 228 | $4$ | $2$ | $16$ | $8$ |
-| 23X | 231, 232, 233, 234 | $5$ | $3$ | $10$ | $6$ |
-| **所有锁定研究所需总 ST** |  |  |  | $54$ | $26$ |
+| 时间研究行                | 时间研究                               | 单项成本（ST，初始） | 单项成本（ST，36 个 薇成就后） | 总成本（ST，初始） | 总成本（ST，36 个 薇成就后） |
+| ------------------------- | -------------------------------------- | -------------------- | ------------------------------ | ------------------ | ---------------------------- |
+| 12X                       | 121, 122, 123                          | $2$                  | $0$                            | $4$                | $0$                          |
+| 13X                       | 131, 132, 133                          | $8$                  | $6$                            | $16$               | $12$                         |
+| 14X                       | 141, 142, 143                          | $2$                  | $0$                            | $4$                | $0$                          |
+| 22X                       | 221, 222, 223, 224, 225, 226, 227, 228 | $4$                  | $2$                            | $16$               | $8$                          |
+| 23X                       | 231, 232, 233, 234                     | $5$                  | $3$                            | $10$               | $6$                          |
+| **所有锁定研究所需总 ST** |                                        |                      |                                | $54$               | $26$                         |
 
 ### 里程碑
 
 完成一定数量的 薇成就会触发里程碑。共有 6 个里程碑，效果从增益、解锁便利功能到降低全部锁定时间研究的空间之理成本不等。下表还包含「解锁薇的现实」这一「里程碑」，因为它同样属于 `VUnlocks` 数据库。
 
-| ID（名称） | 描述 | 奖励 | 详情 | ID（编号） |
-| --- | --- | --- | --- | --- |
-| vAchievementUnlock | 同时满足以上全部要求 | 解锁薇（成就之神） | 该里程碑只在玩家尚未解锁薇的现实时出现 | 0 |
-| shardReduction | 拥有 $2$ 个 薇成就 | 可以花费复兴点数降低每个 薇成就各档的目标要求 | **Glyph Knight** 与 **Requiem for a Glyph** 的目标要求无法降低 | 1 |
-| adPow | 拥有 $5$ 个 薇成就 | 基于空间之理总数的[反物质维度](/player/original/ow-antimatter-dimensions)幂次 | $1 + \frac{\sqrt{\text{ST}}}{100}$；该效果能给到的最高幂次为 $1.06$。若玩家解锁了困难薇成就，该效果可更高，最高 $1.081$（原文折叠块） | 2 |
-| fastAutoEC | 拥有 $10$ 个 薇成就 | [成就乘数](https://antimatterdimensions.wiki.gg/wiki/Achievements#Achievement_Multiplier)降低自动永恒挑战（Auto-EC）的完成时间 | 等于成就乘数，例如乘数 $\times 1,200$ 会让自动 EC 完成永恒挑战的速度快 $\times 1,200$[^fast-auto-ec]（原文折叠块：解锁 V 记忆后效果会显示为「瞬时（太阳神升级）」） | 3 |
-| autoAutoClean | 拥有 $16$ 个 薇成就 | 解锁在现实重置时自动清除符文的能力 |  | 4 |
-| achievementBH | 拥有 $30$ 个 薇成就 | 成就乘数影响[黑洞](/player/original/ow-black-hole)强度 | 等于成就乘数。由于会同时影响两个黑洞，实际游戏速度乘数会被平方，例如成就乘数 $\times 1,200$ 会带来 $\times 1,440,000~(1.44\text{e}6;~1.44~\text{M})$ 的游戏速度 | 5 |
-| raUnlock | 拥有 $36$ 个 薇成就 | 把所有时间研究的空间之理成本降低 $2$；解锁[太阳神](/player/original/ow-ra)（被遗忘之神） |  | 6 |
+| ID（名称）         | 描述                 | 奖励                                                                                                                           | 详情                                                                                                                                                                | ID（编号） |
+| ------------------ | -------------------- | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| vAchievementUnlock | 同时满足以上全部要求 | 解锁薇（成就之神）                                                                                                             | 该里程碑只在玩家尚未解锁薇的现实时出现                                                                                                                              | 0          |
+| shardReduction     | 拥有 $2$ 个 薇成就   | 可以花费复兴点数降低每个 薇成就各档的目标要求                                                                                  | **Glyph Knight** 与 **Requiem for a Glyph** 的目标要求无法降低                                                                                                      | 1          |
+| adPow              | 拥有 $5$ 个 薇成就   | 基于空间之理总数的[反物质维度](/player/original/ow-antimatter-dimensions)幂次                                                  | $1 + \frac{\sqrt{\text{ST}}}{100}$；该效果能给到的最高幂次为 $1.06$。若玩家解锁了困难薇成就，该效果可更高，最高 $1.081$（原文折叠块）                               | 2          |
+| fastAutoEC         | 拥有 $10$ 个 薇成就  | [成就乘数](https://antimatterdimensions.wiki.gg/wiki/Achievements#Achievement_Multiplier)降低自动永恒挑战（Auto-EC）的完成时间 | 等于成就乘数，例如乘数 $\times 1,200$ 会让自动 EC 完成永恒挑战的速度快 $\times 1,200$[^fast-auto-ec]（原文折叠块：解锁 V 记忆后效果会显示为「瞬时（太阳神升级）」） | 3          |
+| autoAutoClean      | 拥有 $16$ 个 薇成就  | 解锁在现实重置时自动清除符文的能力                                                                                             |                                                                                                                                                                     | 4          |
+| achievementBH      | 拥有 $30$ 个 薇成就  | 成就乘数影响[黑洞](/player/original/ow-black-hole)强度                                                                         | 等于成就乘数。由于会同时影响两个黑洞，实际游戏速度乘数会被平方，例如成就乘数 $\times 1,200$ 会带来 $\times 1,440,000~(1.44\text{e}6;~1.44~\text{M})$ 的游戏速度     | 5          |
+| raUnlock           | 拥有 $36$ 个 薇成就  | 把所有时间研究的空间之理成本降低 $2$；解锁[太阳神](/player/original/ow-ra)（被遗忘之神）                                       |                                                                                                                                                                     | 6          |
 
 [^fast-auto-ec]: 代码使用公式 $\tfrac{20~\text{Minutes}}{Achievement~Multiplier}$，因此自动完成速度不受 PEC 复兴加成影响。原文参考资料：<https://github.com/IvarK/AntimatterDimensionsSourceCode/blob/master/src/core/secret-formula/celestials/v.js#L222-L224>（外部链接，未转载内容）。
 
@@ -145,23 +145,23 @@ aliases:
 
 原文此节另有一张界面示意图（Cel4-hardachievements-interface--darktheme-desktop.png），图注为「解锁困难薇成就后的薇界面」；图片未转载。
 
-| ID | 名称 | 描述 | 档位 | 基础目标 | 基础成本（PP） | 成本成长 | 步长 | 注释 |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 6 | Requiem for a Glyph | 在整个现实期间，以至多 {req} 个已装备符文解锁现实。 | 第 1 档 | $-1$ | 无法削减 | 无法削减 | 无法削减 | 诅咒符文按 $-3$ 个符文计算；代码内部对目标使用取负值[^v-code-2] |
-|  |  |  | 第 2 档 | $-4$ |  |  |  |  |
-|  |  |  | 第 3 档 | $-7$ |  |  |  |  |
-|  |  |  | 第 4 档 | $-10$ |  |  |  |  |
-|  |  |  | 第 5 档 | $-13$ |  |  |  |  |
-| 7 | Post-destination | 在黑洞速度不超过 {req}（或更慢）、且不释放、不进入 EC12 的情况下获得 $400,000$ 时间之理。 | 第 1 档 | $/\text{e}100$ | $2,150~(2.15\text{e}3;~2.15~\text{K})$ | $*1.15^{2}~(*1.3225)$ | $*10$ | 该要求检查的是**未花费**的 TT，而不是 TT 总量 |
-|  |  |  | 第 2 档 | $/\text{e}150$ |  |  |  |  |
-|  |  |  | 第 3 档 | $/\text{e}200$ |  |  |  |  |
-|  |  |  | 第 4 档 | $/\text{e}250$ |  |  |  |  |
-|  |  |  | 第 5 档 | $/\text{e}300$ |  |  |  |  |
-| 8 | Shutter Glyph | 达到等级 {req} 的符文。 | 第 1 档 | $6,500$ | $1,000~(1\text{e}3;~1~\text{K})$ | $*1.15$ | $-5$ |  |
-|  |  |  | 第 2 档 | $7,000$ |  |  |  |  |
-|  |  |  | 第 3 档 | $8,000$ |  |  |  |  |
-|  |  |  | 第 4 档 | $9,000$ |  |  |  |  |
-|  |  |  | 第 5 档 | $10,000$ |  |  |  |  |
+| ID  | 名称                | 描述                                                                                      | 档位    | 基础目标       | 基础成本（PP）                         | 成本成长              | 步长     | 注释                                                            |
+| --- | ------------------- | ----------------------------------------------------------------------------------------- | ------- | -------------- | -------------------------------------- | --------------------- | -------- | --------------------------------------------------------------- |
+| 6   | Requiem for a Glyph | 在整个现实期间，以至多 {req} 个已装备符文解锁现实。                                       | 第 1 档 | $-1$           | 无法削减                               | 无法削减              | 无法削减 | 诅咒符文按 $-3$ 个符文计算；代码内部对目标使用取负值[^v-code-2] |
+|     |                     |                                                                                           | 第 2 档 | $-4$           |                                        |                       |          |                                                                 |
+|     |                     |                                                                                           | 第 3 档 | $-7$           |                                        |                       |          |                                                                 |
+|     |                     |                                                                                           | 第 4 档 | $-10$          |                                        |                       |          |                                                                 |
+|     |                     |                                                                                           | 第 5 档 | $-13$          |                                        |                       |          |                                                                 |
+| 7   | Post-destination    | 在黑洞速度不超过 {req}（或更慢）、且不释放、不进入 EC12 的情况下获得 $400,000$ 时间之理。 | 第 1 档 | $/\text{e}100$ | $2,150~(2.15\text{e}3;~2.15~\text{K})$ | $*1.15^{2}~(*1.3225)$ | $*10$    | 该要求检查的是**未花费**的 TT，而不是 TT 总量                   |
+|     |                     |                                                                                           | 第 2 档 | $/\text{e}150$ |                                        |                       |          |                                                                 |
+|     |                     |                                                                                           | 第 3 档 | $/\text{e}200$ |                                        |                       |          |                                                                 |
+|     |                     |                                                                                           | 第 4 档 | $/\text{e}250$ |                                        |                       |          |                                                                 |
+|     |                     |                                                                                           | 第 5 档 | $/\text{e}300$ |                                        |                       |          |                                                                 |
+| 8   | Shutter Glyph       | 达到等级 {req} 的符文。                                                                   | 第 1 档 | $6,500$        | $1,000~(1\text{e}3;~1~\text{K})$       | $*1.15$               | $-5$     |                                                                 |
+|     |                     |                                                                                           | 第 2 档 | $7,000$        |                                        |                       |          |                                                                 |
+|     |                     |                                                                                           | 第 3 档 | $8,000$        |                                        |                       |          |                                                                 |
+|     |                     |                                                                                           | 第 4 档 | $9,000$        |                                        |                       |          |                                                                 |
+|     |                     |                                                                                           | 第 5 档 | $10,000$       |                                        |                       |          |                                                                 |
 
 [^v-code-2]: 原文参考资料：V 的天神数据文件 <https://github.com/IvarK/AntimatterDimensionsSourceCode/blob/master/src/core/secret-formula/celestials/v.js#L151>（外部链接，未转载内容）。
 
@@ -187,6 +187,7 @@ aliases:
   - 讽刺的是，薇是第 4 位天神，而她的名字在罗马数字里是 5。
 
 [^v-name]: 原文参考资料：AD 开发日志第 4 篇 <https://cyip92.github.io/site/#/ADdevlog/4>（外部链接，未转载内容）。
+
 [^movie-reference]: 原文参考资料：AD 开发日志第 8 篇 <https://cyip92.github.io/site/#/ADdevlog/8>（外部链接，未转载内容）。
 
 ### 脚注
@@ -199,7 +200,7 @@ aliases:
 
 ## 来源与许可
 
-- 原文：[V](https://antimatterdimensions.wiki.gg/index.php?title=V&oldid=3373)（页面 ID 554；修订 ID 3373；最后编辑者 KrutarMarsons；抓取于 2026-11-15）
+- 原文：[V](https://antimatterdimensions.wiki.gg/index.php?title=V&oldid=3431)（页面 ID 554；修订 ID 3431；最后编辑者 KrutarMarsons；抓取于 2026-11-26）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=V&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为**简体中文翻译（改编）**，已修改：翻译正文与全部表格，统一术语，把信息框内容改写为要点表，把模板内折叠块改写为引用块、模板脚注改为页内脚注，移除导航模板与模板结构，图片未转载；本页按相同许可共享。
 - 原文图片未转载：原页含天神静态图（Cel4-runreality-static--desktop.png）、动画（Cel4-runreality-active--desktop.gif）、导航图（Cel4-navigation-complete--desktop.png）、界面图（Cel4-normalachievements-interface--darktheme-desktop.png、Cel4-interface-requirements--darktheme-desktop.png、Cel4-hardachievements-interface--darktheme-desktop.png）。原图注含义：「去掉文字后的薇现实按钮」「身处薇的现实之中，同样去掉了文字」「天神导航中的薇」「薇的完整界面」「解锁薇的现实所需的要求」「解锁困难薇成就后的薇界面」。请到原页查看图片。
