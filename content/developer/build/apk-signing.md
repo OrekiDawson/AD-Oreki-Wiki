@@ -1,6 +1,6 @@
 ---
 title: "APK 签名与升级兼容"
-description: "解释包名、签名证书、versionCode 与覆盖安装的约束，以及为什么签名环境是发布门禁的一部分"
+description: "从 Android 签名块、证书身份和版本号理解覆盖安装、密钥轮换与发布验签"
 tags:
   - 构建
   - 签名
@@ -9,56 +9,45 @@ aliases:
   - "/build/apk-signing"
 ---
 
+APK 的签名不是发布前贴上的装饰章，而是 Android 判断“这是不是同一个应用”的身份系统。文件内容、包名、证书和版本号共同决定它能否安装、能否覆盖旧版本，以及更新后是否仍有机会读取旧存档。
 
-Android 应用的「升级」不是替换文件，而是系统按**包名 + 签名证书 + versionCode** 判断能否覆盖安装。对 MOD 来说，这三项一旦变化，轻则无法覆盖安装，重则让玩家的存档与更新链断开。本条目解释这些约束，以及为什么签名环境本身是发布门禁的一部分。
+## 覆盖安装究竟在比较什么
 
-## 三项硬约束
+对 Oreki Edition，当前发布策略把应用身份集中在 `scripts/release-gate-policy.json`：包名为 `net.oreki.antimatterdimensions`，原版基线为 3.21.0，证书指纹和 `versionCode` 由策略文件与发布工件共同约束。包名改变会得到另一个应用；签名身份不兼容时，Android 不会把它当成原应用的升级；`versionCode` 不能重复或倒退，否则更新排序和门禁都会出问题。
 
-| 项 | Oreki Edition 的值 | 说明 |
-| --- | --- | --- |
-| 包名 | `com.oreki.antimatterdimensions` | 不得改变；改变等于变成另一个应用，无法覆盖升级 |
-| 签名证书 SHA-256 | `95960bce0d8806124d72755d827fcd9216919cac29147635767a967360ed3197` | 必须与原版一致，否则系统拒绝覆盖安装 |
-| `versionCode` | MOD 已发布最大值 `30210001`（截至 2026-11-17，按发布策略及公开 Release 核对） | 下一次正式发布须**严格大于**已发布最大值；策略候选 `30210002` 不代表已发布 |
+`versionName` 是给人看的版本标签，`versionCode` 是系统比较新旧的整数。当前策略中的 `30210002` 是开发中的候选身份，不能写成“已发布版本”；真正的发布上限应以已核验的公开 Release 和策略状态为准。
 
-注意区分两个 `versionCode`：
+这三者不要混成一个字段：包名回答“是哪一个应用”，证书回答“谁有权更新它”，`versionCode` 回答“这次更新是否比旧包新”。
 
-- **原版基线**的 `versionCode` 是 3.21.0 自带的 `30210000`；
-- **MOD 独立发布**的 `versionCode` 是项目自己的发布序号，要求严格递增，且必须与原版基线分开记录。
+## 签名发生在 APK 的哪一层
 
-两者混用会导致「看起来升级了、实际系统认为没有更新」或无法回退到已验证稳定版。
+APK 本质上是一个 ZIP，但 Android 签名不只是给 ZIP 里的文件附加一份 JAR 清单。现代 APK 在 ZIP 中央目录附近带有 APK Signing Block；平台按支持的签名方案验证它。`apksigner` 可以签名并验证 APK，且官方特别提醒：签名之后再修改 APK 会使签名失效，`zipalign` 必须发生在签名前（[apksigner 工具文档](https://developer.android.com/tools/apksigner)）。
 
-**版本证据（2026-11-17 核对）**：[最新核对的公开 Release（2026-11-16）](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/releases/tag/android-update-3.21.0-a12b5cd6) 与 [当前发布门禁策略](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/main/scripts/release-gate-policy.json) 共同作为核对依据。策略中的 `lastPublishedVersionCode=30210001` 是已发布上限记录，`versionCode=30210002` 是准备发布的候选身份。后续正式发布需重新核实，不能把此时间点的最大值永久当作当前值。
+工程里的 `scripts/sign_apk_hybrid.py` 因此坚持“输入未签名 → 官方工具签名 → 立即独立验签 → 成对发布 APK 与 `.idsig`”的顺序。它拒绝已经带 JAR 签名或 Signing Block 的输入，要求密钥库和密码环境变量存在，并检查预先生成的签名谱系。生产脚本不是把密码写进 Gradle，而是让受保护环境提供它。
 
-固定提交证据：[`b0d44c93`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/commit/b0d44c93eaf06a9d3df88a5b2cfec239c7329bcb)（2026-11-16 将发布身份递增到 `30210002`）、[`e3f881e7`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/commit/e3f881e703e51b0e41cd30e9060a64ad17159e5a)（2026-11-15 发布准备 `30210001`）。
+当前混合签名路径要求 V3.0、V3.2 和 V4 协同：V3.0 提供传统 Android 平台可识别的身份，V3.2 绑定 classical 与 PQC 角色，V4 则生成与 APK 配对的 `.idsig`。这是一项项目特定的发布策略；不要把它泛化成所有 Android 应用的最低要求。没有相同的 APK 字节和对应的 `.idsig`，V4 侧车文件就没有意义。
 
-## 为什么签名环境是门禁
+## 密钥轮换为什么不能只换一串密码
 
-正式 APK 必须在受保护的 CI/CD 环境中构建、签名、验签，不允许手动上传或本地签名冒充。Android 仓库的候选构建工作流在 `candidate-unified.yml` 中使用 `environment: android-signing`，需要仓库所有者批准后才会执行签名步骤。
+密码只是打开密钥库的凭据，不是应用身份本身。真正的轮换要考虑证书谱系、旧设备支持的签名方案、更新链和回滚路径。Android 官方的应用签名文档区分上传密钥与应用签名密钥，并建议把签名信息从公开构建脚本中移出、妥善保管（[Sign your app](https://developer.android.com/studio/publish/app-signing)）。
 
-**历史阻塞（2026-11-15）**：[Run 43679508810](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/actions/runs/43679508810) 的候选构建 Job 当时等待签名环境审批，因此**该 Run** 为 BLOCKED；这是当时的发布门禁状态，不能外推到后续版本。随后 [2026-11-16 的候选构建与正式发布](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/releases/tag/android-update-3.21.0-a12b5cd6)已有成功记录。详见 [签名阻塞历史记录](/developer/history/2026-11-15-signing-blocked)和 [当前发布状态](/developer/current/release-status)。
+对本项目，轮换必须先在隔离候选上验证：旧 APK 能否被新 APK 覆盖安装、支持的 API 范围能否验证新签名、签名谱系是否被工具接受、发布渠道是否仍分发同一 SHA-256。任何一项没有证据，都只能称为候选轮换，不能把它写入稳定发布结论。
 
-## 升级兼容还依赖什么
+## 签名和存档是两条兼容轴
 
-签名与包名只解决「能不能覆盖安装」，不解决「装上去能不能读旧档」。存档兼容是另一个维度（见 [存档兼容与自动保存](/player/gameplay/saves)）：字段类型漂移、泛型签名丢失、晚期存档互读都会影响升级后的可用性。因此发布门禁同时要求：
+签名正确只回答“系统允许安装”。它不回答游戏能否解析旧的 `player.json`。存档字段、序列化名称、混淆 ABI 和版本迁移共同决定数据能否继续使用；因此升级验收至少应分成两步：先在旧包建立存档并覆盖安装，再启动新包读取、修改和重新保存它。
 
-- 覆盖安装成功；
-- 旧档可读、可继续写；
-- 新增字段不会让旧版本静默重置；
-- 四渠道分发的是**同一个 APK 的同一 SHA-256**。
+同理，四渠道的 SHA-256 一致只能证明文件一致，不能证明真实游戏已经通过启动、阶段门禁、自动购买器和 GUI 验收。发布链把签名/版本验证与设备验收分开，正是为了不让一个漂亮的证书摘要替代另一类证据。
 
-## 已确认与未确认
+## 从构建到验签的最小路径
 
-- **已确认（按各自证据时间）**：包名、证书与官方 3.21.0 基线 `versionCode=30210000`；截至 2026-11-17 的发布策略记录已发布上限 `30210001`；2026-11-15 签名环境等待批准的历史 Run 状态；2026-11-12 曾完成四渠道同一 APK 发布（见 [历史归档](/developer/history/)）。
-- **未独立核实**：2026-11-16 已发布 APK 的完整八项 AVD 场景、180 分钟发布级长跑、覆盖升级细节与本地 SSH/SFTP 实物回执；专项验证状态须依据对应 Run/报告判断，不能因早期 AGP-only 门禁 BLOCKED 就否定后来已完成的正式发布。
-- **禁止**：不得手动上传 APK、不得关闭签名环境审批、不得绕过 Ruleset 或 Required Checks。
+1. 从根项目构建目标变体；`app/build.gradle.kts` 的 `release` 只有在 `keys/oreki.jks` 存在时才接入生产签名，显式未签名实验不得发布。
+2. 对 APK 运行 `apksigner verify --print-certs`，同时用 `apkanalyzer` 或 `aapt2 dump badging` 检查包名和版本身份。
+3. 用项目的 `sign_apk_hybrid.py` 完成受策略约束的签名与独立验证；不要对已经签名的 APK 再次处理。
+4. 计算 APK 与 `.idsig` 的 SHA-256，确认它们来自同一候选，并在测试设备上执行覆盖安装和存档读写。
 
-## 如何核查
-
-1. 用 `apksigner verify --print-certs` 检查证书 SHA-256 是否为 `95960bce…3197`。
-2. 用 `aapt2 dump badging` 或 `apkanalyzer` 核对包名与 `versionCode`。
-3. 在测试机上先用旧版本建立存档，再覆盖安装新版本，确认存档可读。
-4. 对照四个渠道的 APK SHA-256 是否一致。
+排障时先分层：包名/版本错误是 manifest 或策略问题，证书不匹配是密钥或谱系问题，`apksigner` 之后摘要改变通常意味着文件被再次修改，存档失败则应转到序列化和迁移逻辑，而不是盲目换证书。
 
 ## 相关条目
 
-[发布状态](/developer/current/release-status) · [CI/CD 与受保护门禁](/developer/build/ci-cd) · [存档兼容与自动保存](/player/gameplay/saves) · [2026-11-15 · 签名环境阻塞与 AGP-only fail-closed](/developer/history/2026-11-15-signing-blocked)
+[CI/CD 与受保护门禁](/developer/build/ci-cd) · [AGP 构建管线](/developer/build/agp) · [R8 分层策略](/developer/build/r8) · [存档兼容与自动保存](/player/gameplay/saves) · [发布状态](/developer/current/release-status)

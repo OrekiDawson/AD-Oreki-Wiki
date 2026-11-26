@@ -1,61 +1,73 @@
 ---
-title: "CI/CD 与受保护门禁"
-description: "公开源码检查、受保护候选构建、独立验签与四渠道发布的流水线分工和失败处理原则"
+title: "从源码到可发布 APK：CI/CD 的分层设计"
+description: "用 Gradle、GitHub Actions 和受保护环境把公开检查、候选构建、验签与发布串成可追溯的交付链"
 tags:
   - CI
   - 发布
+  - 构建
 aliases:
   - "/build/ci-cd"
 ---
 
+一条可靠的 Android 发布流水线，不是把“构建 APK”塞进一个更大的脚本，而是把不同信任等级的工作拆开：公开代码可以被任意拉取和检查，私钥只能在受保护环境中使用，发布只能消费已经核验过的那一个产物。这样做的好处很朴素——出了问题时，我们知道是在“造包”、在“验包”，还是在“送包”，而不是对着一条红色流水线猜测。
 
-正式构建、签名、验签与发布必须走受保护的 GitHub Actions 流水线，而不是在本机手动打包上传。理解流水线分工，才能判断「现在到底卡在哪一步」。本条目解释工作流职责、门禁冻结点与常见误区。
+本文以 Oreki Edition 当前 Android 仓库为例，解释这条链为什么这样分层，以及如何定位失败。它描述的是工程设计，不是某次 Run 的成绩单。
 
-**最后核实：2026-11-17（UTC+8）**；历史 Run 状态与当前发布状态分开记录，当前结论以 [发布状态](/developer/current/release-status) 为准。
+## 从 Gradle 任务到发布产物
 
-## 工作流分工
+Gradle 先把工程变成任务图，再执行任务。官方定义的三个阶段是初始化、配置和执行：`settings.gradle.kts` 决定参与构建的项目，构建脚本注册插件、变体和任务，最后才运行诸如 `:app:assembleDebug` 或 `:app:assembleRelease` 的任务图（[Gradle Build Lifecycle](https://docs.gradle.org/current/userguide/build_lifecycle.html)）。
 
-| 工作流 | 作用 | 是否受保护 |
-| --- | --- | --- |
-| `ci.yml` | 公开源码规范与回归检查（Required Check） | 否（公开源码） |
-| `candidate-unified.yml` | 完整游戏候选构建，输入为 `main` 上的精确 SHA | 是，`android-signing` 环境 |
-| `verify-unified.yml` | 独立验证候选 APK 的 SHA 与签名 | 是 |
-| `release-validate-unified.yml` | 发布流程验证（不发布） | 是 |
-| `release-unified.yml` | 四渠道正式发布 | 是，`stable-release` 环境 |
-| `release-gate-unified.yml` | 发布门禁评审 | 是，`android-release-review` 环境 |
+当前工程的入口很小但含义明确：`settings.gradle.kts` 只包含根项目和 `:app`，并以 `includeBuild("build-logic")` 引入本地约定插件。`app/build.gradle.kts` 再把生成的 Kotlin、游戏输入、资源、Manifest 与 JNI 库接到 `main` source set；因此“找到 Gradle 文件”不等于“输入已经齐全”。完整游戏输入和机器上的 `local.properties` 仍是构建是否可执行的前置条件。
 
-候选构建只接受公开 `main` 上、且已有成功源码 CI 的精确 SHA；它不会构建任意分支或未经验证的提交。
+可以把产物链想成四个相邻的房间：
 
-## 硬规则
+1. **源码房间**：Kotlin、构建逻辑、测试和策略文件接受公开检查。
+2. **候选房间**：在固定源码 SHA 上准备完整游戏输入，生成 APK 与元数据。
+3. **验证房间**：另一个作业重新计算 APK/证书摘要，检查版本、签名和运行验收收据。
+4. **发布房间**：只接收验证房间认可的文件，把同一份 APK 发布到渠道。
 
-- 正式构建/签名/验签/发布必须走 CI/CD；禁止直推绕过、跳过检查、关闭 Ruleset、手动上传 APK。
-- 发布用 APK 必须四渠道同一 SHA-256。
-- 受保护 Runner 不执行不可信公开 PR 代码；Secrets 不进 Git。
-- 失败修流水线，不修门禁；不得删除测试、吞异常或改预期来制造 PASS。
-- 有强制人工批准的环境（如 `android-signing`），必须获得批准，不能由自动化替代。
+这不是形式上的多几个 YAML 文件，而是把“能编译”与“值得交付”分成不同的证明。
 
-## 历史阻塞与当前状态
+## 四层流水线各自证明什么
 
-1. **签名环境未批准（历史，已解除）**：2026-11-15 的 Run [43679508810](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/actions/runs/43679508810) 当时等待 `android-signing` 批准。2026-11-16 的[候选构建 #43735315296](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/actions/runs/43735315296)、[独立验证 #43735739171](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/actions/runs/43735739171) 与[正式发布 #43761268754](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/actions/runs/43761268754) 均为 SUCCESS，[Release `android-update-3.21.0-a12b5cd6`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/releases/tag/android-update-3.21.0-a12b5cd6) 已公开。**不能把 2026-11-15 的等待写成现行 BLOCKED**。
-2. **AGP-only 静态复核失败（历史，2026-11-15）**：当时 `python3 scripts/enforce_agp_only.py candidate` 退出码 1；该结果不能外推为 2026-11-16 发布链失败。全面原生化仍按 Android Issue [#25](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/issues/25)、[#61](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/issues/61) 的分闭包验收。
-3. **真实通关**：R113-01 的 180 分钟 FAIL 是历史跑次；最新发布 APK 的八项 AVD、完整新档与 180 分钟证据仍须按 [发布状态](/developer/current/release-status) 的核验边界检查，不能以历史 FAIL 或历史 PASS 互相替代。
+### 公开源码 CI：证明代码可被检查
 
-## 记录字段
+`.github/workflows/ci.yml` 的 `source-policy` 运行 Python 契约测试、Gradle 配置 smoke test、工作流 lint、构建脚本语法检查、目录与 ABI 守卫等。它可以证明仓库里的公开规则和构建配置没有违反契约，却不能凭空获得冻结的完整游戏输入，也不能替代设备上的启动、存档或阶段测试。
 
-一次可追溯的发布应记录：源码 SHA、Candidate Run ID、Verify Run ID、APK SHA-256、证书 SHA-256、包名、`versionCode`/`versionName`、AVD 验收结果、存档与结算结论。缺任何一项都不能称为「已发布稳定版」。
+因此 Required Check 通过时，准确的解释是“公开源码门禁通过”。它不是“APK 已签名”，更不是“玩家已经完成真实验收”。
 
-## 容易误判的地方
+### 候选构建：把输入和源码钉在一起
 
-- **源码 CI PASS ≠ 候选构建 PASS**：前者只检查公开源码。
-- **候选构建 PASS ≠ 可发布**：还要独立验签、AVD 验收与发布门禁。
-- **本地构建 PASS ≠ 受保护构建 PASS**：本地产物没有签名环境与独立验签记录。
-- **工作流 waiting ≠ 失败**：需要人工批准的 Job 会长时间等待，不能写成 FAIL 或 PASS。
+`candidate-unified.yml` 面向一个精确的 `main` SHA。它先检查 `game-final.jar`、官方解码树和 mdpi split 等冻结输入是否存在，再执行根项目的 Gradle 任务和 ABI/DEX 契约。缺少这些输入时，完整游戏 APK 应被记为未运行，而不是用一个容易构建的空壳包制造成功假象。
 
-## 已确认与未确认
+候选产物应同时携带能回答以下问题的元数据：它从哪个源码 SHA 来、使用哪个 Web 引用、版本身份是什么、APK 的 SHA-256 是什么。没有这些绑定，后续“验证了 APK”可能只是验证了另一份同名文件。
 
-- **已确认（2026-11-17 核对）**：工作流分工与保护环境；2026-11-16 候选构建、独立验证与正式发布均 SUCCESS，公开 Release 存在；2026-11-12 曾完成一次四渠道发布（见 [历史归档](/developer/history/)）。
-- **仍未确认**：最新发布 APK 的八项 AVD 完整场景、180 分钟发布级运行记录与本地 SSH/SFTP 实物回执；CI 发布作业 SUCCESS 不能代替这些验收。
+### 独立验证：重新看同一个文件
+
+`verify-unified.yml` 不重新相信构建步骤的口头输出，而是下载候选工件，校验 `SHA256SUMS.txt`，检查包名、版本和签名，并读取独立验收收据。它的价值类似验钞机：不能生产钞票，但能防止发布环节把另一张纸当成刚才那张。
+
+### 发布门禁：把证据绑定到动作
+
+`release-gate-unified.yml` 先确认候选 Run 和验证 Run 是不同且成功的作业，再确认验收文件属于可信的公开提交历史，最后才允许 `release-unified.yml` 使用受保护的 `stable-release` 环境。发布作业使用同一 APK 的 SHA-256，并把 GitHub Release、云端渠道和本地拉取状态分开记录。
+
+GitHub Actions 的 environment protection rule 会在作业获得环境批准前阻止它访问该环境的 secrets（[GitHub Environments](https://docs.github.com/en/actions/how-tos/deploy/configure-and-manage-deployments/manage-environments)）。所以私钥和上传凭据不应放在普通 PR 作业里；公开 PR 可以检查脚本，却不应获得生产签名能力。
+
+## 如何定位失败
+
+先问失败发生在哪个房间，再选择证据：
+
+- **源码检查失败**：先看失败测试、脚本行号和差异范围。修改规则或测试使其“变绿”不是修复，必须说明被守护的契约为何仍成立。
+- **候选构建失败**：区分 Gradle 配置错误、输入缺失、ABI/DEX 守卫失败和真正的编译错误。尤其不要把“专有输入不存在”解释成 Kotlin 编译成功。
+- **验证失败**：先比较候选文件的 SHA-256、版本元数据和证书摘要；若文件摘要不同，继续看签名没有意义。
+- **发布门禁等待**：`waiting` 通常表示环境审批或外部保护规则尚未满足，不等于失败；但未获批准前也不能称为已发布。
+- **渠道不一致**：把每个渠道的摘要与候选摘要逐一比较。任何一个渠道不是同一文件，都应阻断该次发布，而不是用“多数渠道成功”掩盖分叉。
+
+## 修改流水线时的工程边界
+
+新任务应先画出输入、输出和信任边界，再修改工作流。任务之间用明确的工件和 SHA 连接；密钥只通过受保护环境注入；日志记录足以复现的版本和摘要，但不泄露密码、私钥或完整 secrets。任何“跳过步骤”的优化都必须证明它没有把独立验证降级成自证。
+
+本项目的完整游戏构建、签名和设备验收是否实际运行，必须以对应 Run 与收据为准；本文不把本地 `gradlew help` 或公开 CI 结果扩展成发布结论。
 
 ## 相关条目
 
-[发布状态](/developer/current/release-status) · [APK 签名与升级兼容](/developer/build/apk-signing) · [AGP 构建管线](/developer/build/agp) · [2026-11-15 · 签名环境阻塞与 AGP-only fail-closed](/developer/history/2026-11-15-signing-blocked)
+[AGP 构建管线](/developer/build/agp) · [APK 签名与升级兼容](/developer/build/apk-signing) · [R8 分层策略](/developer/build/r8) · [Android 架构](/developer/architecture/android) · [发布状态](/developer/current/release-status)
