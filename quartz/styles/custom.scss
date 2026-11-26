@@ -1,5 +1,12 @@
 @use "./variables.scss" as *;
 
+// 全站使用操作系统原生字体；数学公式的 KaTeX 字体由数学插件单独管理。
+:root {
+  --headerFont: system-ui, sans-serif;
+  --bodyFont: system-ui, sans-serif;
+  --codeFont: ui-monospace, monospace;
+}
+
 // 百科页面切换应立即显示目标内容；保留 Quartz enableSPA 的客户端导航，不显示进度条或过渡动画。
 .navigation-progress,
 .page-transition,

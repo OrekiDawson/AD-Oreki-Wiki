@@ -27,6 +27,8 @@ jobs:
           node-version: 24
       - name: Translation zone checks (manifest / license / attribution / status)
         run: node scripts/check-translation.mjs
+      - name: System font policy
+        run: node scripts/check-fonts.mjs
       - name: Navigation coverage and public archive boundary
         run: node scripts/check-navigation.mjs
       - name: No page transition animation or progress bar
@@ -51,6 +53,9 @@ jobs:
       - name: Built navigation DOM and empty-menu gate
         working-directory: .quartz-build
         run: node scripts/check-navigation.mjs --built public
+      - name: Built font policy
+        working-directory: .quartz-build
+        run: node scripts/check-fonts.mjs --built public
       - uses: actions/upload-pages-artifact@v5
         with:
           path: .quartz-build/public

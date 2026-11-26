@@ -5,6 +5,7 @@ import { execFileSync } from "node:child_process"
 const root = process.cwd()
 const content = path.join(root, "content")
 const errors = []
+const builtOnly = process.argv[2] === "--built"
 const gitTimes = new Map()
 try {
   let timestamp = 0
@@ -27,6 +28,11 @@ const walk = (dir) =>
   fs.readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
     const full = path.join(dir, entry.name)
     return entry.isDirectory() ? walk(full) : entry.name.endsWith(".md") ? [full] : []
+  })
+const walkAll = (dir) =>
+  fs.readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
+    const full = path.join(dir, entry.name)
+    return entry.isDirectory() ? walkAll(full) : [full]
   })
 const files = walk(content)
 if (files.some((file) => file.includes(`${path.sep}developer${path.sep}history${path.sep}`))) {
@@ -144,11 +150,13 @@ if (errors.length) {
   process.exit(1)
 }
 
-if (process.argv[2] === "--built") {
+if (builtOnly) {
+  // .quartz-build 是构建副本；这里专门检查构建后的导航 DOM，不重复仓库级静态门禁。
+  errors.length = 0
   const publicDir = path.resolve(root, process.argv[3] || "public")
   if (!fs.existsSync(publicDir)) errors.push(`构建产物目录不存在：${publicDir}`)
   else {
-    const htmlFiles = walk(publicDir).filter((file) => file.endsWith(".html"))
+    const htmlFiles = walkAll(publicDir).filter((file) => file.endsWith(".html"))
     if (!htmlFiles.length) errors.push("构建产物缺少 HTML 页面")
     const parse5 = await import("parse5")
     const hasClass = (node, name) =>
@@ -201,7 +209,7 @@ if (process.argv[2] === "--built") {
     console.error(errors.join("\n"))
     process.exit(1)
   }
-  console.log(`OK 构建导航 DOM 检查通过：${walk(publicDir).filter((file) => file.endsWith(".html")).length} 个 HTML 页面`)
+  console.log(`OK 构建导航 DOM 检查通过：${walkAll(publicDir).filter((file) => file.endsWith(".html")).length} 个 HTML 页面`)
 }
 console.log(
   JSON.stringify({
