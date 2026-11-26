@@ -1,12 +1,12 @@
 ---
 title: "全部条目"
-description: "按主题与中文标题浏览 反物质维度 MOD Wiki 的 146 个正式条目"
+description: "按主题与中文标题浏览 反物质维度 MOD Wiki 的 150 个正式条目"
 tags:
   - 导航
   - 索引
 ---
 
-这里列出当前公开发布的 **146** 个正式条目。草稿、内部归档、兼容入口和重定向不计入索引。
+这里列出当前公开发布的 **150** 个正式条目。草稿、内部归档、兼容入口和重定向不计入索引。
 
 ## 玩家专区
 
@@ -15,6 +15,7 @@ tags:
 - [存档安全：自动保存与兼容导入阅读地图](/player/gameplay/saves)
 - [存档兼容与导入验证](/player/gameplay/save-compatibility)
 - [存档库](/player/original/ow-save-bank)
+- [存档与兼容性](/player/faq/saves-and-compatibility)
 - [打破无限](/player/original/ow-break-infinity)
 - [第一次大坍缩与进入无限](/player/getting-started/first-crunch)
 - [第一次进入与前几分钟](/player/getting-started/first-session)
@@ -44,6 +45,7 @@ tags:
 - [佩勒升级](/player/original/ow-pelle-upgrades)
 - [膨胀升级](/player/original/ow-dilation-upgrades)
 - [膨胀升级（被毁灭的现实）](/player/original/ow-dilation-upgrades-doomed)
+- [平台与版本](/player/faq/platform-and-version)
 - [普通挑战](/player/original/ow-normal-challenges)
 - [生产链与重置：反物质维度如何成长](/player/antimatter-dimensions-core-loop)
 - [时间膨胀](/player/original/ow-dilation)
@@ -99,11 +101,10 @@ tags:
 - [重置成长（威望）](/player/original/ow-prestige)
 - [自动保存与备份：保护每天的进度](/player/gameplay/autosave)
 - [自动化](/player/original/ow-automation)
+- [自动化与阶段入口](/player/faq/automation-and-unlocks)
 - [Android 与 Web：版本和行为差异](/player/gameplay/platform-differences)
 - [Android：Release、安装与升级](/player/download-and-version/android)
 - [FAQ：入门、阶段与挑战](/player/faq/progression)
-- [FAQ：下载、平台与版本](/player/faq/platform)
-- [FAQ：自动化与存档](/player/faq/automation-and-saves)
 - [MOD 玩法改动：数值、解锁与自动化](/player/gameplay/mod-changes)
 - [Mod 一览](/player/original/ow-mods)
 - [Oreki Edition 介绍](/player/mods)
@@ -114,6 +115,7 @@ tags:
 - [参考资料](/developer/references)
 - [超大数值：从尾数与指数到跨端一致性](/developer/architecture/numeric-model)
 - [从 DEX 到 Kotlin：混淆 Android 游戏的 ABI 适配](/developer/reverse-engineering/dex-abi)
+- [从 Smali 调用点恢复可用 API](/developer/reverse-engineering/smali-recovery)
 - [从脚本补丁到 AGP：为什么 build_mod.py 必须退役](/developer/build/build-mod-retirement)
 - [从源码到可发布 APK：CI/CD 的分层设计](/developer/build/ci-cd)
 - [存档兼容排查：先辨认格式，再追踪迁移](/developer/troubleshooting/save-compatibility)
@@ -121,6 +123,7 @@ tags:
 - [第一次参与 Android 开发](/developer/first-contribution)
 - [调度器状态机：购买决策、合法重置与进度死锁](/developer/architecture/scheduler-state-machine)
 - [发布资格：从一个 APK 到可交付版本](/developer/current/release-status)
+- [构建可追溯性：让 APK 对得上源码与输入](/developer/build/artifact-provenance)
 - [构建与交付：从源码到可交付产物](/developer/build)
 - [故障排查：从症状回到源码](/developer/troubleshooting)
 - [架构与运行时：从入口到运行时](/developer/architecture)
@@ -137,6 +140,7 @@ tags:
 - [效果对象与倍率组合：从一项奖励到完整公式](/developer/architecture/effect-model)
 - [协程 ABI 崩溃排查：从 Continuation 到真实调用](/developer/troubleshooting/coroutine-abi)
 - [运行证据索引](/developer/evidence)
+- [自动化状态所有权：玩家意图、托管配置与执行闸门](/developer/architecture/automation-ownership)
 - [AI Summary 索引](/developer/ai-summaries)
 - [Android 工程为什么要回到根目录](/developer/architecture/directory-migration)
 - [Android 构建与 AGP](/developer/build/agp)
