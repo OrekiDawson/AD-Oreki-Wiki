@@ -1,6 +1,6 @@
 ---
 title: "佩勒升级"
-description: "原版 Wiki《Pelle/Upgrades》子页面的简体中文翻译：22 项不可重复佩勒升级与成本"
+description: "原版 Wiki《Pelle/Upgrades》子页面的简体中文翻译：23 项不可重复佩勒升级与成本"
 tags:
   - 原版Wiki翻译
   - 天神
