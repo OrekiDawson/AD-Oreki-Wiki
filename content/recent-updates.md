@@ -8,8 +8,9 @@ tags:
 
 这里显示最近进入当前内容树的正式条目；文章的具体修订记录仍以页面正文与仓库历史为准。
 
-- [Android GUI 同步桥：让游戏状态真正到达界面](/developer/architecture/android-gui-sync)
+- [玩法机制](/player/gameplay)
 - [挑战完成判定与卡关排障](/player/gameplay/challenge-troubleshooting)
+- [Android GUI 同步桥：让游戏状态真正到达界面](/developer/architecture/android-gui-sync)
 - [挑战：三种限制玩法的阅读地图](/player/gameplay/challenges)
 - [自动保存与备份：保护每天的进度](/player/gameplay/autosave)
 - [存档安全：自动保存与兼容导入阅读地图](/player/gameplay/saves)
@@ -31,4 +32,3 @@ tags:
 - [天神系统：七位天神改变了什么](/player/gameplay/celestials)
 - [架构与运行时：从入口到运行时](/developer/architecture)
 - [超大数值：从尾数与指数到跨端一致性](/developer/architecture/numeric-model)
-- [参考资料](/developer/references)
