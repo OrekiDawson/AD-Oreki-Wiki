@@ -8,6 +8,13 @@ tags:
 
 这里显示最近进入当前内容树的正式条目；文章的具体修订记录仍以页面正文与仓库历史为准。
 
+- [第一次大坍缩与进入无限](/player/getting-started/first-crunch)
+- [自动化](/player/original/ow-automation)
+- [重置成长（威望）](/player/original/ow-prestige)
+- [现实](/player/original/ow-reality)
+- [快捷键](/player/original/ow-shortcuts)
+- [时间维度](/player/original/ow-time-dimensions)
+- [时间研究](/player/original/ow-time-studies)
 - [Android 构建与 AGP](/developer/build/agp)
 - [Android 自动化停滞的排查方法](/developer/current/known-issues)
 - [原版 Wiki 中文翻译](/player/original)
@@ -25,10 +32,3 @@ tags:
 - [双端交付证据：从源码到玩家版本](/developer/current/project-status)
 - [反物质维度MOD Wiki:本站不是什么](/wiki-not)
 - [AI Summary 索引](/developer/ai-summaries)
-- [膨胀升级（被毁灭的现实）](/player/original/ow-dilation-upgrades-doomed)
-- [永恒挑战·挑战明细（被毁灭的现实）](/player/original/ow-eternity-challenges-challenges-pelle)
-- [计数频率·星系数量明细（被毁灭的现实）](/player/original/ow-tickspeed-galaxy-breakdown-doomed)
-- [计数频率·星系强度明细（被毁灭的现实）](/player/original/ow-tickspeed-galaxy-strength-breakdown-doomed)
-- [无限（消歧义）](/player/original/ow-infinity-disambiguation)
-- [自动化状态所有权：玩家意图、托管配置与执行闸门](/developer/architecture/automation-ownership)
-- [Android 阶段门禁与 GUI 判据](/developer/architecture/gui-stage-gates)
