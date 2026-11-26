@@ -1,6 +1,6 @@
 ---
 title: "Android 架构"
-description: "从官方 DEX 与 Kotlin 适配层，到自动购买器调度、阶段判定及 AGP 完整游戏打包"
+description: "从 Kotlin 业务入口、原版对象适配到自动化调度、阶段判定和完整游戏构建边界"
 tags:
   - Android
   - 架构
@@ -8,143 +8,84 @@ aliases:
   - "/architecture/android"
 ---
 
-Android 端最需要先理解的事实是：**Oreki Edition 不是从空白 Android 工程重新实现《反物质维度》**。它以官方 Android 3.21.0 的游戏数据和运行时为基线，在受限的接口边界上增加 Kotlin 业务、自动化与界面能力，再通过独立的 AGP 流程构建 MOD。
+Android 端不是从空白工程重写《反物质维度》。当前 Android 仓库的 Kotlin 业务位于 `app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/`，通过 `GameApi` 读取或调用原版运行时，再由自动化和界面模块决定何时尝试合法操作。仓库根目录的 `:app` 是实际 Android 应用模块，构建参数以当前 `app/build.gradle.kts` 和构建逻辑为准。
 
-这直接决定了代码应该写在哪里、怎么找到原版对象，以及为什么“Gradle 构建成功”可能只证明骨架包通过，不能拿来测试完整游戏。
+本文依据 Android `main` 的固定 Commit [`9d8fc46ce99279720b5b3068027bb76bceb35756`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/tree/9d8fc46ce99279720b5b3068027bb76bceb35756)。它帮助你定位代码和理解构建边界；本文没有运行 Gradle、安装 APK 或在设备上验证完整游戏行为。
 
-下面以 Android 仓库 **`3b2d8284`（2026-11-22 核查）** 为源码依据。这里解释模块与调用关系，而非承诺当前每个 APK 都已通过实际设备验收。
+可以把这一套代码想成“两层合奏”：原版运行时负责真正改变游戏世界，Kotlin 层负责判断这一拍该不该尝试、尝试后发生了什么。调度器不是凭空制造资源的魔法棒；它更像交通指挥，能让动作错开、记录空转和失败，却不能把一辆没有油的车判成已经到站。这个比喻只帮助理解职责，具体边界仍以固定版本源码为准。
 
-## 先认清四个边界
+## 功能入口：先找到真正负责这件事的代码
 
-| 部分 | 真实代码或输入 | 主要职责 |
+仓库的 [`settings.gradle.kts`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/9d8fc46ce99279720b5b3068027bb76bceb35756/settings.gradle.kts) 把项目命名为 `oreki-antimatterdimensions`，并只声明 `:app` 模块。根 [`build.gradle.kts`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/9d8fc46ce99279720b5b3068027bb76bceb35756/build.gradle.kts) 为应用模块提供 Android Gradle Plugin 9.5.2；实际应用配置在 [`app/build.gradle.kts`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/9d8fc46ce99279720b5b3068027bb76bceb35756/app/build.gradle.kts)。生产业务源码则在标准的 `app/src/main/kotlin/` 下，另有构建时生成的绑定目录作为输入。
+
+修改功能时，可以按下面的任务入口寻找文件：
+
+| 你要改的内容 | 先看哪里 | 为什么 |
 | --- | --- | --- |
-| **官方游戏基线** | `baseline/versions/3.21/manifest.json` 与本地经过验证的官方 APK/DEX | 提供原版游戏与真实资源、挑战、存档和结算语义 |
-| **MOD Kotlin 业务层** | `app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/` | 调度、策略、阶段判定、界面同步与合法操作 |
-| **原版对象适配边界** | `GameApi.kt` 与已核实的 ABI 映射 | 读取原版玩家和自动购买器状态、调用真实可用的入口 |
-| **构建与打包** | `agp/`、`scripts/agp/`、基线资源和经过验证的游戏 JAR | 编译 Kotlin、准备输入、验证资源身份、打包与签名 |
+| 自动购买器或阶段自动化 | [`OrekiStageAuto.kt`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiStageAuto.kt) | `onAutoBuyerTick()` 组织一拍内的同步、策略和动作入口 |
+| 动作节拍、任务闸门和结果记账 | [`OrekiAutomationScheduler.kt`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiAutomationScheduler.kt) | `allow()`、`noteActed()`、`noteNoop()` 和 `noteFail()` 共同决定任务何时再试 |
+| 侧栏或页面阶段可见性 | [`OrekiGuiStage.kt`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiGuiStage.kt) | 它把真实结算产物归并为统一阶段，不应由某个页面单独猜测 |
+| 原版玩家、货币和自动购买器对象 | [`GameApi.kt`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/GameApi.kt) | 反射、缓存和原版对象访问集中在适配层，避免业务模块各自猜 ABI |
+| 构建输入、ABI 或签名门禁 | [`app/build.gradle.kts`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/9d8fc46ce99279720b5b3068027bb76bceb35756/app/build.gradle.kts) 及 `build-logic/` | 当前完整游戏构建由根 `:app` 和构建逻辑共同准备输入 |
 
-Android 新增或修改的业务逻辑应继续使用 Kotlin。官方 DEX 的混淆类名、方法签名和历史转换工序不是“可以随便替换的普通业务源码”；不应靠新增 Java/Smali 业务来绕过兼容约束。
+Android 新增或修改的业务逻辑应写在 Kotlin 业务层。原版 DEX 的类名、方法签名和存档语义属于适配边界，不应为了绕过兼容问题，在业务模块里复制一套未经核对的反射或直接改写资源、结算字段。
 
-**一条关键原则：策略可以决定何时尝试操作，但游戏资源和进度仍由原版真实入口改变。** 不应该为满足性能或通关指标，直接写资源、挑战完成次数、存档标志或结局字段。
+## 状态与调用链：一拍自动化到底做了什么
 
-## 从一帧自动化看模块怎样协作
+一次自动购买器 tick 从 [`OrekiStageAuto.onAutoBuyerTick()`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiStageAuto.kt#L304-L341) 开始。函数首先调用 `OrekiAutomationScheduler.beginFrame()`，清除上一帧的“已执行动作”占位，然后进行速度和界面同步检查；即使这一拍没有买到东西，也不能因此跳过 GUI 状态同步。
 
-要理解一次自动购买尝试，先打开 [`OrekiStageAuto.kt`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/3b2d8284f2aca7132168998ee32497b3c4c17b8e/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiStageAuto.kt)。它的 `onAutoBuyerTick()` 是自动化集成入口之一，而不是独立的游戏货币引擎。
-
-该函数中的真实调用可简化为：
+后面的业务分支会按阶段处理受管自动购买器、维度、挑战、永恒、膨胀、现实升级等任务。具体顺序和早退条件以当前函数为准，不要把下面的简化图当成所有分支的完整顺序：
 
 ```text
-原版自动购买器相关 tick
-          │
-          ▼
 OrekiStageAuto.onAutoBuyerTick()
-          │
-          ├─ OrekiAutomationScheduler.beginFrame()
-          │    初始化本帧调度状态
-          │
-          ├─ globalGuiTickDue() / GameApi.forceGuiTickSync(...)
-          │    检查受管配置节拍，维护界面显示同步
-          │
-          ├─ applyManagedAutobuyerStates(...)
-          │    在有效节拍按策略对账明确受管字段
-          │
-          └─ 对符合阶段条件的动作调用 runScheduled(...)
-                    │
-                    ├─ OrekiAutomationScheduler.allow(taskId)
-                    ├─ 实际 action() 调用原版允许的操作
-                    └─ noteActed / noteNoop / noteFail
+        │
+        ├─ OrekiAutomationScheduler.beginFrame()
+        ├─ GameApi.retryPendingGuiSync() / forceGuiTickSync(...)
+        ├─ applyManagedAutobuyerStates(...)
+        └─ runScheduled(taskId) { action() }
+                 │
+                 ├─ allow(taskId)
+                 ├─ action()：调用真实的游戏操作
+                 └─ noteActed / noteNoop / noteFail
 ```
 
-这个图是对**主要控制关系**的提炼，不表示代码总是严格按上图执行完所有分支。真实函数还有挑战 C9、首次无限、IU15、佩勒、调度暂停和失败恢复等早退/特殊处理；要定位具体异常，仍应按当时分支回到源码。
+[`runScheduled`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiStageAuto.kt#L695-L708) 的返回值有明确含义：动作返回 `true` 才记为 `noteActed`，返回 `false` 记为 `noteNoop`，抛出异常才进入 `noteFail`。所以“尝试购买”不等于“购买成功”。如果只看调用次数或日志中的尝试次数，不能据此判断资源已经变化。
 
-### `OrekiAutomationScheduler`：控制是否轮到这个动作
+`OrekiAutomationScheduler` 负责节拍和结果，而不是生成游戏资源。[`beginFrame()`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiAutomationScheduler.kt#L512-L518) 为一帧清空动作名额；[`allow()`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiAutomationScheduler.kt#L649-L688) 会检查调度器是否启用、原版自动购买器总开关、任务 ID、同帧名额、失败冷却、无操作重试和全局间隔等条件。成功动作由 [`noteActed()`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiAutomationScheduler.kt#L810-L858) 推进全局节拍并封住本帧名额；`noteNoop()` 不推进全局节拍，`noteFail()` 则进入独立失败冷却。这个区别是排查“一个任务空转后其他任务也不动”的第一条线索。
 
-[`OrekiAutomationScheduler.kt`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/3b2d8284f2aca7132168998ee32497b3c4c17b8e/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiAutomationScheduler.kt) 提供 `beginFrame()`、`allow(taskId)`、`noteActed()`、`noteNoop()`、`noteFail()` 等方法。它维护的是调度节拍、任务预约和动作结果，而不是凭空生产 IP、EP 或其他货币。
+`GameApi` 是原版对象的适配边界。它在 [`GameApi.kt`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/GameApi.kt) 中缓存类、字段和方法解析，并提供玩家状态、货币、重置及自动购买器相关的读取和调用。遇到 `canEternity()`、`crunchState()` 或自动购买器状态异常时，先核对适配层解析到的原版类和当前基线，再检查调用方的前置条件；不要在每个业务模块里复制一套混淆字段访问。
 
-在 `runScheduled(...)` 中，先由 `allow` 判定能否尝试；动作返回 `true` 才记为确实发生了变化，返回 `false` 则记为无操作，异常单独记录失败。这个结果区分很重要：**“尝试购买”不等于“已经购买成功”**。若单纯把每次尝试当成成功动作，调度器会错误地占用节拍，导致其他任务无意义等待。
+## 阶段判定：页面显示依赖什么状态
 
-源码位置：[执行包装 `runScheduled`（约 698 行）](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/3b2d8284f2aca7132168998ee32497b3c4c17b8e/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiStageAuto.kt#L698-L711)。
+[`OrekiGuiStage`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiGuiStage.kt#L36-L59) 暴露四个阶段码：尚未首次无限、无限、永恒和现实。它的 [`compute()`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiGuiStage.kt#L132-L216) 读取真实状态：是否有无限、永恒点数或大永恒记录、是否购买过永恒升级，以及现实或大现实记录。
 
-### `GameApi`：负责与官方游戏对象打交道
+判定顺序是现实优先于永恒，永恒优先于无限。现实结算后低层计数可能被清零，因此 `realityReached` 本身也会使 `eternityReached` 成立；`eternities` 单一字段只用于诊断，不独自决定永恒阶段。读取异常按未达成处理，避免把未知状态当成解锁。若出现“刚完成大坍缩就看到后续页面”，应先查 `OrekiGuiStage.compute()` 使用的真实结算产物，再查页面刷新和导航调用方，而不是只隐藏一个按钮。
 
-[`GameApi.kt`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/3b2d8284f2aca7132168998ee32497b3c4c17b8e/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/GameApi.kt) 是适配层。它包含对原版玩家对象、货币、无限、永恒、挑战和自动购买器的读取与调用，也封装了不少反射和兼容性处理。
+## 构建与验证边界：当前入口是根 `:app`
 
-因此，发现 `GameApi.canEternity()`、`GameApi.crunchState()` 或其他功能异常时，不能直接假定“数值比较写错了”。需要同时核对：读取对象是不是正确的原版对象、调用描述符是否仍匹配官方 DEX、当前存档是否真满足该操作条件。
+当前 `:app` 是完整游戏应用模块。`app/build.gradle.kts` 的 `fullGameStage` 通过 `local.properties` 中的 `oreki.fullGameStage` 指定，未指定时使用仓库内的 `build/agp-fullgame`；同一配置还把该阶段目录的 Manifest 和资源、`build/agp-generated-res`、`build/agp-fullgame-assets` 以及 `scripts/payload/lib` 加入 Android source set。也就是说，构建是否能继续不仅取决于 Kotlin 是否编译，还取决于构建逻辑准备的完整游戏输入是否存在且匹配。
 
-不要在多个 MOD 模块里复制对混淆字段的直接反射。能复用适配层时应集中维护 ABI 映射，再按相应基线和实际运行验证。
+配置文件还明确了几个交付边界：`compileSdk` 和 `targetSdk` 是 37，`minSdk` 是 32，生产 ABI 过滤为 `arm64-v8a` 与 `x86_64`。Release 产物会经过 `verifyReleaseSigning`；有 `keys/oreki.jks` 才能按生产签名配置继续，未签名实验必须在 `local.properties` 中显式设置 `oreki.allowUnsignedReleaseExperiment=true`，而脚本会明确警告该包不得发布。R8 构建有独立的签名处置检查。
 
-### 受管自动购买器：配置归属不等于动作归属
+仓库根目录提供 `gradlew`/`gradlew.bat`。从仓库根尝试定向构建时，命令形态是：
 
-[`OrekiManagedAutobuyerAuthority.kt`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/3b2d8284f2aca7132168998ee32497b3c4c17b8e/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiManagedAutobuyerAuthority.kt) 提供受管字段与特定挑战策略的纯判据，`OrekiStageAuto` 再通过实际入口应用这些配置。当前代码对部分受管项的**启用状态、购买方式、间隔或阈值**执行策略对账，要求在新调度 tick 时处理，不是每一帧反复强写。
-
-**自动永恒另有边界。** [`OrekiAutoEternityAdoption.kt`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/3b2d8284f2aca7132168998ee32497b3c4c17b8e/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiAutoEternityAdoption.kt) 区分原版现实结算导致的开关复位与玩家主动关闭；其 `userClosed` 逻辑应尊重明确的手动关闭。不能把普通受管字段“下一 tick 恢复”概括成所有自动购买器一律重开。
-
-代码里较早的注释可能记录过相反的历史规则。判断当前行为必须读实际执行条件，尤其是 `applyManagedAutobuyerStates` 与自动永恒托管代码，而不是只看某次 R 编号。
-
-## 阶段门禁如何避免“第一次大坍缩就看见永恒”？
-
-[`OrekiGuiStage.kt`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/3b2d8284f2aca7132168998ee32497b3c4c17b8e/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiGuiStage.kt) 负责把玩家已达成的进度转成统一阶段结论。它用 `PHASE_BEFORE_FIRST_INFINITY`、`PHASE_INFINITY`、`PHASE_ETERNITY`、`PHASE_REALITY` 四个整型阶段码，而不是仅凭一个画面入口推断进度。
-
-它的 `compute()` 会检查：
-
-- 无限是否真正达到；
-- 永恒点数是否为正、历史大永恒计数是否为正、是否已有永恒升级；
-- 现实计数或历史大现实计数是否为正。
-
-现实已经达成时，也被视为越过永恒阶段，因为更高层重置可能清空低层计数。相反，`eternities` 的单一字段仅用于诊断，不独自决定永恒页是否解锁。关键读取失败时按未到达处理，避免把未知状态当作已解锁。
-
-这里特意不再调用某些已经被替换的原版阶段判据，以避免“原版判据 → MOD 阶段刷新 → 原版判据”的递归环。**代码中实现了这些防护，不等于最新构建已完成所有 GUI 与存档场景复验。** 如要修门禁，既需核对纯判据，也要用实际存档检查侧栏、底栏、按钮及非法直达后的恢复。
-
-参考：[阶段计算源码（约 132–216 行）](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/3b2d8284f2aca7132168998ee32497b3c4c17b8e/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiGuiStage.kt#L132-L216) · [GUI 技术资料](/developer/architecture/)。
-
-## AGP 为什么有两种构建模式？
-
-Android 仓库的 Gradle Wrapper 从仓库根调用，而实际 Android Gradle Plugin 工程在 `agp/`。[`agp/settings.gradle.kts`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/3b2d8284f2aca7132168998ee32497b3c4c17b8e/agp/settings.gradle.kts) 注册 `:app`，[`agp/build.gradle.kts`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/3b2d8284f2aca7132168998ee32497b3c4c17b8e/agp/build.gradle.kts) 声明 AGP **9.5.1**。
-
-在 [`agp/app/build.gradle.kts`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/3b2d8284f2aca7132168998ee32497b3c4c17b8e/agp/app/build.gradle.kts) 中，`orekiFullGame` 默认为 `false`。这两个模式不能混淆：
-
-| 模式 | 触发方式 | 实际含义 |
-| --- | --- | --- |
-| bridge / 骨架包（默认） | 不传 `orekiFullGame` | 使用骨架 Application ID `kajfosz.antimatterdimensions.agpbridge`，检查工程/适配层能否构建；**不是完整可玩的官方游戏** |
-| fullGame 完整游戏 | `-PorekiFullGame=true` 并提供 `-PorekiGameJar=...` | 使用 MOD Application ID `com.oreki.antimatterdimensions`，还需匹配的官方 base/split 输入、资源指纹、Manifest 和构建门禁 |
-
-仅做默认模式的**本地候选构建**：
-
-```bash
-./gradlew -p agp :app:assembleRelease --offline --no-daemon --console=plain
+```text
+./gradlew :app:assembleDebug --no-daemon --console=plain
 ```
 
-如果有已经验证的游戏 JAR 及完整基线输入，完整模式的命令形态是：
+这是基于当前 Gradle 项目结构给出的操作入口，不是本次实测结果；缺少完整游戏阶段输入、Android SDK、构建缓存或其他受保护输入时，构建可能在配置或资源阶段失败。本文没有运行 Gradle、D8/R8、APK 安装、AVD、真机、存档读写或完整游戏长跑，均为 `NOT RUN`。即使构建成功，也只能说明对应构建任务和输入门禁通过，不能推出 GUI、自动化、存档兼容或真实结算已经通过。
 
-```bash
-GAME_JAR=/absolute/path/to/verified-game.jar
-./gradlew -p agp :app:assembleRelease \
-  -PorekiFullGame=true -PorekiGameJar="$GAME_JAR" \
-  --offline --no-daemon --console=plain
-```
+## 排障线索：按症状回到入口
 
-**上面是命令形态，不是本次实测。** `/absolute/path/to/verified-game.jar` 是必须由开发者自行提供的真实、可追溯输入示意值，不能直接照抄运行；缺少该输入时会拒绝进入完整模式。官方 base 和 mdpi split 的对应输入仍需按构建脚本及交付规则准备，绝不能从旧缓存或任意同名 APK 猜测其来源。
+- **自动化完全没有动作**：先看 `OrekiAutomationScheduler.allow()` 的拒绝条件，尤其是调度器开关、原版自动购买器总开关、任务 ID、全局间隔和失败/无操作冷却；再确认 `onAutoBuyerTick()` 是否真的被调用。
+- **某任务反复尝试但资源不变**：检查动作返回值是否为 `false`。这应记为 `noteNoop()`，不能当作购买成功；同时查看是否因错误地推进节拍而饿死了其他任务。
+- **自动化动作发生但页面没更新**：检查 `GameApi.retryPendingGuiSync()`、`forceGuiTickSync()` 及其待同步状态；不要用切换页签或手动刷新掩盖同步问题。
+- **阶段页面过早出现或消失**：沿 `OrekiGuiStage.compute()` 逐项核对无限、永恒升级、永恒点数、大永恒、现实和大现实字段，并确认是否把较高层现实结算后的低层清零误当成“从未完成”。
+- **构建在资源或 Manifest 阶段失败**：先核对 `oreki.fullGameStage` 指向的目录及其生成输入，再检查 `build/agp-generated-res`、`build/agp-fullgame-assets` 和 `scripts/payload/lib`；不要套用历史构建参数。
+- **Release 被签名门禁拒绝**：确认 `keys/oreki.jks` 和环境变量是否按仓库要求可用。未签名实验只能显式授权，不能把实验 APK 当成发布包。
 
-构建源码还会校验官方包名与 MOD Application ID、Manifest、资源数量、stable IDs 和来源指纹；对不上就应失败。它们是**输入可信度与打包完整性的门禁**，不能证明游戏挑战结算、存档兼容、全部页面或 180 分钟终局都已通过。
+## 本文依据与未完成验证
 
-完整构建执行顺序、签名和验证请以[AGP 构建管线](/developer/build/agp)、[签名与升级兼容](/developer/build/apk-signing)和[交付规则](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/3b2d8284f2aca7132168998ee32497b3c4c17b8e/docs/DELIVERY_RULES.md)为准。
+本次依据 Android `9d8fc46ce99279720b5b3068027bb76bceb35756` 直接核对了 `settings.gradle.kts`、`build.gradle.kts`、`app/build.gradle.kts`、`OrekiStageAuto.kt`、`OrekiAutomationScheduler.kt`、`OrekiGuiStage.kt` 和 `GameApi.kt`。文章只陈述这些文件能够支持的入口、字段和调用关系；Android 运行时行为、完整游戏输入的来源完整性和设备结果仍需单独验证，当前均为 `NOT VERIFIED` 或 `NOT RUN`。
 
-## 真正修改时从哪里定位？
-
-想改自动购买器节奏，先看 `OrekiAutomationScheduler.kt` 中的 `allow` 和节拍计算，再看 `OrekiStageAuto.kt` 的执行顺序与结果记账；不要只调低某个 interval 就认为性能或公平性得到改善。
-
-想改 GUI 阶段可见性，先看 `OrekiGuiStage.kt` 的真实结算判据，再查实际页面刷新和导航使用这些判据的位置。遇到“刚大坍缩就显示永恒”，不能用隐藏按钮掩盖错误的阶段真值。
-
-想改构建，先看 `agp/app/build.gradle.kts` 的两种模式，再查 `scripts/agp/` 和候选工作流。不要为了方便直接修改官方冻结 DEX、签名或构建输入来源。
-
-想修存档，先查当前适配层和原版的真实读写入口，准备**脱敏的代表性存档**做定向验证；不能把“能导入”直接理解为“能保存、重启并在两端互通”。
-
-## 这篇文章验证到了哪一步？
-
-已直接阅读 Android Commit `3b2d8284` 的 Kotlin 文件、AGP 设置和应用 Gradle 配置，核对上述文件、函数、属性、Application ID 和主要调用关系。**本次未执行 Gradle、D8、DEX 转换、APK 安装、AVD、真机、存档读写或完整游戏长跑，均为 `NOT RUN`。**
-
-如果当前 `main` 已继续变化，请先读取其新的 `AGENTS.md`、`agp/app/build.gradle.kts` 与对应 Kotlin 实现，再决定是否沿用这些说明。旧版经过验证不意味着最新候选也已通过同一门禁。
-
-## 进一步阅读
-
-[第一次参与开发](/developer/first-contribution) · [Web 架构](/developer/architecture/web) · [混合运行时 ABI](/developer/architecture/kotlin-runtime) · [AGP 构建](/developer/build/agp) · [双端一致性](/developer/architecture/parity) · [故障排查](/developer/troubleshooting/)
+进一步阅读：[第一次参与开发](/developer/first-contribution) · [Web 架构](/developer/architecture/web) · [混合运行时 ABI](/developer/architecture/kotlin-runtime) · [AGP 构建](/developer/build/agp) · [双端一致性](/developer/architecture/parity) · [故障排查](/developer/troubleshooting/)
