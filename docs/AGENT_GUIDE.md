@@ -94,3 +94,8 @@
 | `content/ai-drafts/` | 未审草稿，禁止公开索引或作为权威引用 |
 
 站内全文检索以 Quartz `/static/contentIndex.json` 为准；旧 `/static/knowledge-index.json` 不在现有构建契约中，不能当作接口。技术结论有冲突时返回源仓核对，保留历史但不将历史状态复述成当前事实。
+
+
+## README 与公开首页
+
+编辑 README.md 或 content/index.md 时，先把它们当作第一次到访的读者会看到的项目门面：说明这是什么、从哪里开始读、怎样贡献以及内容许可。不要把 Agent 工作流、Kody/CI/Pages/HTTPS 门禁、PR 历史、重构台账或管理员命令搬进公开页面；这些内容留在相应维护文档。开发者首页也应优先提供技术阅读路线，避免内部协调信息污染正文。完成后检查实际 HTML，而不只检查 Markdown 源文件。
