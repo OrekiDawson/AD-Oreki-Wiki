@@ -8,6 +8,7 @@ tags:
 
 这里显示最近进入当前内容树的正式条目；文章的具体修订记录仍以页面正文与仓库历史为准。
 
+- [原版 Wiki 中文翻译](/player/original)
 - [运行证据索引](/developer/evidence)
 - [来源索引：怎样从证据找到真正的代码](/developer/references/source-index)
 - [构建与交付：从源码到可交付产物](/developer/build)
@@ -31,4 +32,3 @@ tags:
 - [构建可追溯性：让 APK 对得上源码与输入](/developer/build/artifact-provenance)
 - [架构与运行时：从入口到运行时](/developer/architecture)
 - [天神判据与跨端编码](/developer/architecture/celestial-implementation)
-- [生产链与重置：反物质维度如何成长](/player/antimatter-dimensions-core-loop)
