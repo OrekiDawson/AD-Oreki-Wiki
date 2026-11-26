@@ -1,0 +1,466 @@
+{
+  "base": "https://wiki.oreki.net",
+  "viewport": {
+    "width": 412,
+    "height": 915
+  },
+  "pages": {
+    "/player/antimatter-dimensions": {
+      "samples": [
+        {
+          "name": "body",
+          "selector": "body",
+          "missing": false,
+          "text": "反物质维度 MOD WikiSearch搜索暗色模式亮色模式阅读模式探索开发者专区第一次改动项目概览系统架构超大数值存档进度比较器：用阶段与近似值判断谁更靠前调度器状态机：购买决策、合法重置与进度死锁",
+          "fontFamily": "sans-serif"
+        },
+        {
+          "name": "heading",
+          "selector": "article h1, h1",
+          "missing": false,
+          "text": "反物质维度：游戏总览与阅读路线",
+          "fontFamily": "sans-serif"
+        },
+        {
+          "name": "ordinary",
+          "selector": "article p, article li, article td, article blockquote",
+          "missing": false,
+          "text": "第一次打开《反物质维度》时，目标看起来很简单：让一个数字不断变大。玩下去才会发现，真正的主角不是反物质，而是重置——每次把短期积累归零，换来更快的生产、更高的上限，或一套新的规则。",
+          "fontFamily": "sans-serif"
+        },
+        {
+          "name": "explorer",
+          "selector": ".explorer",
+          "missing": false,
+          "text": "探索开发者专区第一次改动项目概览系统架构超大数值存档进度比较器：用阶段与近似值判断谁更靠前调度器状态机：购买决策、合法重置与进度死锁教程内容管线：用一份数据驱动双端章节派生状态与缓存失效：重置之后为什",
+          "fontFamily": "sans-serif"
+        },
+        {
+          "name": "search",
+          "selector": ".search input",
+          "missing": false,
+          "text": "",
+          "fontFamily": "sans-serif"
+        },
+        {
+          "name": "table",
+          "selector": "article table",
+          "missing": true,
+          "text": "",
+          "fontFamily": ""
+        },
+        {
+          "name": "code",
+          "selector": "article pre code",
+          "missing": true,
+          "text": "",
+          "fontFamily": ""
+        },
+        {
+          "name": "math",
+          "selector": ".katex",
+          "missing": true,
+          "text": "",
+          "fontFamily": ""
+        }
+      ],
+      "ordinaryFamilies": [
+        "sans-serif"
+      ],
+      "scientific": [],
+      "thirdPartyFonts": []
+    },
+    "/developer/architecture": {
+      "samples": [
+        {
+          "name": "body",
+          "selector": "body",
+          "missing": false,
+          "text": "反物质维度 MOD WikiSearch搜索暗色模式亮色模式探索开发者专区第一次改动项目概览系统架构超大数值存档进度比较器：用阶段与近似值判断谁更靠前调度器状态机：购买决策、合法重置与进度死锁教程内容",
+          "fontFamily": "sans-serif"
+        },
+        {
+          "name": "heading",
+          "selector": "article h1, h1",
+          "missing": false,
+          "text": "架构与运行时：从入口到运行时",
+          "fontFamily": "sans-serif"
+        },
+        {
+          "name": "ordinary",
+          "selector": "article p, article li, article td, article blockquote",
+          "missing": false,
+          "text": "开发者第一次打开源码时，最容易迷失在两个入口之间：Android 把官方游戏带进自己的构建与运行时，Web 则从冻结的上游继续演化。本页是一张任务地图，不是提交记录；先找到边界，再沿着真实调用路径深入",
+          "fontFamily": "sans-serif"
+        },
+        {
+          "name": "explorer",
+          "selector": ".explorer",
+          "missing": false,
+          "text": "探索开发者专区第一次改动项目概览系统架构超大数值存档进度比较器：用阶段与近似值判断谁更靠前调度器状态机：购买决策、合法重置与进度死锁教程内容管线：用一份数据驱动双端章节派生状态与缓存失效：重置之后为什",
+          "fontFamily": "sans-serif"
+        },
+        {
+          "name": "search",
+          "selector": ".search input",
+          "missing": false,
+          "text": "",
+          "fontFamily": "sans-serif"
+        },
+        {
+          "name": "table",
+          "selector": "article table",
+          "missing": true,
+          "text": "",
+          "fontFamily": ""
+        },
+        {
+          "name": "code",
+          "selector": "article pre code",
+          "missing": false,
+          "text": "入口与目录 → Android/Web 模块 → 调用与数据路径 → 跨端行为契约 → 构建与验证",
+          "fontFamily": "ui-monospace, monospace"
+        },
+        {
+          "name": "math",
+          "selector": ".katex",
+          "missing": true,
+          "text": "",
+          "fontFamily": ""
+        }
+      ],
+      "ordinaryFamilies": [
+        "sans-serif"
+      ],
+      "scientific": [
+        {
+          "text": "Web 架构沿启动、主循环和 MOD 调度器追踪浏览器端；双端行为一致性把阶段、资源、挑战和自动化拆成可观察的行为契约；遇到 e308 以上的资源、阈值或读档差异时，继续看超大数值：从尾数与指数到跨端一致性。实现阶段门禁或天神时，继续看GU",
+          "fontFamily": "sans-serif"
+        }
+      ],
+      "thirdPartyFonts": []
+    },
+    "/player/original/ow-infinity": {
+      "samples": [
+        {
+          "name": "body",
+          "selector": "body",
+          "missing": false,
+          "text": "反物质维度 MOD WikiSearch搜索暗色模式亮色模式阅读模式探索开发者专区第一次改动项目概览系统架构超大数值存档进度比较器：用阶段与近似值判断谁更靠前调度器状态机：购买决策、合法重置与进度死锁",
+          "fontFamily": "sans-serif"
+        },
+        {
+          "name": "heading",
+          "selector": "article h1, h1",
+          "missing": false,
+          "text": "无限",
+          "fontFamily": "sans-serif"
+        },
+        {
+          "name": "ordinary",
+          "selector": "article p, article li, article td, article blockquote",
+          "missing": false,
+          "text": "在《反物质维度》里，「无限」有两个意思：一个是数值 21024，另一个是玩家第一次重置——大坍缩所在的这个威望层。本页讲的是后者；两者的区别在原站另有消歧义页。",
+          "fontFamily": "sans-serif"
+        },
+        {
+          "name": "explorer",
+          "selector": ".explorer",
+          "missing": false,
+          "text": "探索开发者专区第一次改动项目概览系统架构超大数值存档进度比较器：用阶段与近似值判断谁更靠前调度器状态机：购买决策、合法重置与进度死锁教程内容管线：用一份数据驱动双端章节派生状态与缓存失效：重置之后为什",
+          "fontFamily": "sans-serif"
+        },
+        {
+          "name": "search",
+          "selector": ".search input",
+          "missing": false,
+          "text": "",
+          "fontFamily": "sans-serif"
+        },
+        {
+          "name": "table",
+          "selector": "article table",
+          "missing": true,
+          "text": "",
+          "fontFamily": ""
+        },
+        {
+          "name": "code",
+          "selector": "article pre code",
+          "missing": true,
+          "text": "",
+          "fontFamily": ""
+        },
+        {
+          "name": "math",
+          "selector": ".katex",
+          "missing": false,
+          "text": "21024",
+          "fontFamily": "KaTeX_Main, \"Times New Roman\", serif"
+        }
+      ],
+      "ordinaryFamilies": [
+        "sans-serif",
+        "KaTeX_Main, KaTeX_Math, sans-serif"
+      ],
+      "scientific": [
+        {
+          "text": "反物质堆到 1.80e308 之后，屏幕上大部分东西都会消失，只剩一句「世界因反物质过剩而崩塌」和一枚巨大的「大坍缩」按钮。按下它，游戏会把你送回起点，但这一次不是从零开始。",
+          "fontFamily": "sans-serif"
+        },
+        {
+          "text": "打破无限之后，游戏才允许你堆到 1.80e308 以上，也才允许一次拿到超过 1 点无限点数。此时重置所得按下面的公式计算：",
+          "fontFamily": "sans-serif"
+        },
+        {
+          "text": "把数字代进去，能看出几个不太直观的结果。恰好 1.80e308 反物质时，打破无限后拿到的基础无限点数约是 1.78167，而不是整数 1。反物质每多乘 1e308，无限点数就乘以 10；拿到成就 103 后，反物质每乘 1e307.8 就",
+          "fontFamily": "sans-serif"
+        },
+        {
+          "text": "无限的数值是 21024，约 1.79769e308。这正好是 64 位 IEEE 754 浮点数能表示的上限，也是 JavaScript 里普通数字的最大值——游戏最初就是跑在浏览器里的。",
+          "fontFamily": "sans-serif"
+        }
+      ],
+      "thirdPartyFonts": []
+    },
+    "/player/original/ow-v": {
+      "samples": [
+        {
+          "name": "body",
+          "selector": "body",
+          "missing": false,
+          "text": "反物质维度 MOD WikiSearch搜索暗色模式亮色模式阅读模式探索开发者专区第一次改动项目概览系统架构超大数值存档进度比较器：用阶段与近似值判断谁更靠前调度器状态机：购买决策、合法重置与进度死锁",
+          "fontFamily": "sans-serif"
+        },
+        {
+          "name": "heading",
+          "selector": "article h1, h1",
+          "missing": false,
+          "text": "薇",
+          "fontFamily": "sans-serif"
+        },
+        {
+          "name": "ordinary",
+          "selector": "article p, article li, article td, article blockquote",
+          "missing": false,
+          "text": "欢迎来到我的现实。你能抵达这里，我很意外。\n毕竟这里是我的领域。不是每个人都像我这么伟大。",
+          "fontFamily": "sans-serif"
+        },
+        {
+          "name": "explorer",
+          "selector": ".explorer",
+          "missing": false,
+          "text": "探索开发者专区第一次改动项目概览系统架构超大数值存档进度比较器：用阶段与近似值判断谁更靠前调度器状态机：购买决策、合法重置与进度死锁教程内容管线：用一份数据驱动双端章节派生状态与缓存失效：重置之后为什",
+          "fontFamily": "sans-serif"
+        },
+        {
+          "name": "search",
+          "selector": ".search input",
+          "missing": false,
+          "text": "",
+          "fontFamily": "sans-serif"
+        },
+        {
+          "name": "table",
+          "selector": "article table",
+          "missing": false,
+          "text": "资源要求进度（1 = 100%）备注ID现实次数10,00010,000Realities​1永恒次数1e70(70log10​(Eternities)​)102无限次数1e160(160log10​",
+          "fontFamily": "sans-serif"
+        },
+        {
+          "name": "code",
+          "selector": "article pre code",
+          "missing": true,
+          "text": "",
+          "fontFamily": ""
+        },
+        {
+          "name": "math",
+          "selector": ".katex",
+          "missing": false,
+          "text": "10,000",
+          "fontFamily": "KaTeX_Main, \"Times New Roman\", serif"
+        }
+      ],
+      "ordinaryFamilies": [
+        "sans-serif"
+      ],
+      "scientific": [
+        {
+          "text": "1e70",
+          "fontFamily": "sans-serif"
+        },
+        {
+          "text": "1e160",
+          "fontFamily": "sans-serif"
+        },
+        {
+          "text": "1e320",
+          "fontFamily": "sans-serif"
+        },
+        {
+          "text": "1e320,000",
+          "fontFamily": "sans-serif"
+        },
+        {
+          "text": "1e60",
+          "fontFamily": "sans-serif"
+        },
+        {
+          "text": "1,000 (1e3; 1 K) / −3",
+          "fontFamily": "sans-serif"
+        },
+        {
+          "text": "e600,000",
+          "fontFamily": "sans-serif"
+        },
+        {
+          "text": "1,000 (1e3; 1 K) / /e1,200",
+          "fontFamily": "sans-serif"
+        },
+        {
+          "text": "e720,000",
+          "fontFamily": "sans-serif"
+        },
+        {
+          "text": "e840,000",
+          "fontFamily": "sans-serif"
+        },
+        {
+          "text": "e960,000",
+          "fontFamily": "sans-serif"
+        },
+        {
+          "text": "e400,000,000",
+          "fontFamily": "sans-serif"
+        },
+        {
+          "text": "1,000 (1e3; 1 K) / /e500,000",
+          "fontFamily": "sans-serif"
+        },
+        {
+          "text": "e450,000,000",
+          "fontFamily": "sans-serif"
+        },
+        {
+          "text": "e500,000,000",
+          "fontFamily": "sans-serif"
+        },
+        {
+          "text": "e600,000,000",
+          "fontFamily": "sans-serif"
+        },
+        {
+          "text": "e700,000,000",
+          "fontFamily": "sans-serif"
+        },
+        {
+          "text": "e800,000,000",
+          "fontFamily": "sans-serif"
+        },
+        {
+          "text": "1,000 (1e3; 1 K) / /1e6 (1 M)",
+          "fontFamily": "sans-serif"
+        },
+        {
+          "text": "e10,000",
+          "fontFamily": "sans-serif"
+        },
+        {
+          "text": "100,000 (1e5; 100 K) / −1",
+          "fontFamily": "sans-serif"
+        },
+        {
+          "text": "等于成就乘数。由于会同时影响两个黑洞，实际游戏速度乘数会被平方，例如成就乘数 ×1,200 会带来 ×1,440,000 (1.44e6; 1.44 M) 的游戏速度",
+          "fontFamily": "sans-serif"
+        },
+        {
+          "text": "/e100",
+          "fontFamily": "sans-serif"
+        },
+        {
+          "text": "2,150 (2.15e3; 2.15 K)",
+          "fontFamily": "sans-serif"
+        },
+        {
+          "text": "/e150",
+          "fontFamily": "sans-serif"
+        },
+        {
+          "text": "/e200",
+          "fontFamily": "sans-serif"
+        },
+        {
+          "text": "/e250",
+          "fontFamily": "sans-serif"
+        },
+        {
+          "text": "/e300",
+          "fontFamily": "sans-serif"
+        },
+        {
+          "text": "1,000 (1e3; 1 K)",
+          "fontFamily": "sans-serif"
+        }
+      ],
+      "thirdPartyFonts": []
+    }
+  },
+  "errors": [
+    "font-family:/player/antimatter-dimensions:body:sans-serif",
+    "font-family:/player/antimatter-dimensions:heading:sans-serif",
+    "font-family:/player/antimatter-dimensions:ordinary:sans-serif",
+    "font-family:/player/antimatter-dimensions:explorer:sans-serif",
+    "font-family:/player/antimatter-dimensions:search:sans-serif",
+    "font-family:/developer/architecture:body:sans-serif",
+    "font-family:/developer/architecture:heading:sans-serif",
+    "font-family:/developer/architecture:ordinary:sans-serif",
+    "font-family:/developer/architecture:explorer:sans-serif",
+    "font-family:/developer/architecture:search:sans-serif",
+    "scientific-font:/developer/architecture:Web 架构沿启动、主循环和 MOD 调度器追踪浏览器端；双端行为一致性把阶段、资源、挑战和自动化拆成可观察的行为契约；遇到 e308 以上的资源、阈值或读档差异时，继续看超大数值：从尾数与指数到跨端一致性。实现阶段门禁或天神时，继续看GU:sans-serif",
+    "font-family:/player/original/ow-infinity:body:sans-serif",
+    "font-family:/player/original/ow-infinity:heading:sans-serif",
+    "font-family:/player/original/ow-infinity:ordinary:sans-serif",
+    "font-family:/player/original/ow-infinity:explorer:sans-serif",
+    "font-family:/player/original/ow-infinity:search:sans-serif",
+    "scientific-font:/player/original/ow-infinity:反物质堆到 1.80e308 之后，屏幕上大部分东西都会消失，只剩一句「世界因反物质过剩而崩塌」和一枚巨大的「大坍缩」按钮。按下它，游戏会把你送回起点，但这一次不是从零开始。:sans-serif",
+    "scientific-font:/player/original/ow-infinity:打破无限之后，游戏才允许你堆到 1.80e308 以上，也才允许一次拿到超过 1 点无限点数。此时重置所得按下面的公式计算：:sans-serif",
+    "scientific-font:/player/original/ow-infinity:把数字代进去，能看出几个不太直观的结果。恰好 1.80e308 反物质时，打破无限后拿到的基础无限点数约是 1.78167，而不是整数 1。反物质每多乘 1e308，无限点数就乘以 10；拿到成就 103 后，反物质每乘 1e307.8 就:sans-serif",
+    "scientific-font:/player/original/ow-infinity:无限的数值是 21024，约 1.79769e308。这正好是 64 位 IEEE 754 浮点数能表示的上限，也是 JavaScript 里普通数字的最大值——游戏最初就是跑在浏览器里的。:sans-serif",
+    "font-family:/player/original/ow-v:body:sans-serif",
+    "font-family:/player/original/ow-v:heading:sans-serif",
+    "font-family:/player/original/ow-v:ordinary:sans-serif",
+    "font-family:/player/original/ow-v:explorer:sans-serif",
+    "font-family:/player/original/ow-v:search:sans-serif",
+    "font-family:/player/original/ow-v:table:sans-serif",
+    "scientific-font:/player/original/ow-v:1e70:sans-serif",
+    "scientific-font:/player/original/ow-v:1e160:sans-serif",
+    "scientific-font:/player/original/ow-v:1e320:sans-serif",
+    "scientific-font:/player/original/ow-v:1e320,000:sans-serif",
+    "scientific-font:/player/original/ow-v:1e60:sans-serif",
+    "scientific-font:/player/original/ow-v:1,000 (1e3; 1 K) / −3:sans-serif",
+    "scientific-font:/player/original/ow-v:e600,000:sans-serif",
+    "scientific-font:/player/original/ow-v:1,000 (1e3; 1 K) / /e1,200:sans-serif",
+    "scientific-font:/player/original/ow-v:e720,000:sans-serif",
+    "scientific-font:/player/original/ow-v:e840,000:sans-serif",
+    "scientific-font:/player/original/ow-v:e960,000:sans-serif",
+    "scientific-font:/player/original/ow-v:e400,000,000:sans-serif",
+    "scientific-font:/player/original/ow-v:1,000 (1e3; 1 K) / /e500,000:sans-serif",
+    "scientific-font:/player/original/ow-v:e450,000,000:sans-serif",
+    "scientific-font:/player/original/ow-v:e500,000,000:sans-serif",
+    "scientific-font:/player/original/ow-v:e600,000,000:sans-serif",
+    "scientific-font:/player/original/ow-v:e700,000,000:sans-serif",
+    "scientific-font:/player/original/ow-v:e800,000,000:sans-serif",
+    "scientific-font:/player/original/ow-v:1,000 (1e3; 1 K) / /1e6 (1 M):sans-serif",
+    "scientific-font:/player/original/ow-v:e10,000:sans-serif",
+    "scientific-font:/player/original/ow-v:100,000 (1e5; 100 K) / −1:sans-serif",
+    "scientific-font:/player/original/ow-v:等于成就乘数。由于会同时影响两个黑洞，实际游戏速度乘数会被平方，例如成就乘数 ×1,200 会带来 ×1,440,000 (1.44e6; 1.44 M) 的游戏速度:sans-serif",
+    "scientific-font:/player/original/ow-v:/e100:sans-serif",
+    "scientific-font:/player/original/ow-v:2,150 (2.15e3; 2.15 K):sans-serif",
+    "scientific-font:/player/original/ow-v:/e150:sans-serif",
+    "scientific-font:/player/original/ow-v:/e200:sans-serif",
+    "scientific-font:/player/original/ow-v:/e250:sans-serif",
+    "scientific-font:/player/original/ow-v:/e300:sans-serif",
+    "scientific-font:/player/original/ow-v:1,000 (1e3; 1 K):sans-serif"
+  ]
+}
