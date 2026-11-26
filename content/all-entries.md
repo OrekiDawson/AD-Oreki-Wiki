@@ -1,12 +1,12 @@
 ---
 title: "全部条目"
-description: "按主题与中文标题浏览 反物质维度 MOD Wiki 的 144 个正式条目"
+description: "按主题与中文标题浏览 反物质维度 MOD Wiki 的 146 个正式条目"
 tags:
   - 导航
   - 索引
 ---
 
-这里列出当前公开发布的 **144** 个正式条目。草稿、内部归档、兼容入口和重定向不计入索引。
+这里列出当前公开发布的 **146** 个正式条目。草稿、内部归档、兼容入口和重定向不计入索引。
 
 ## 玩家专区
 
@@ -129,10 +129,12 @@ tags:
 - [开发者专区](/developer)
 - [来源索引：怎样从证据找到真正的代码](/developer/references/source-index)
 - [逆向与语义映射](/developer/reverse-engineering)
+- [派生状态与缓存失效：重置之后为什么还要重新计算](/developer/architecture/derived-state-invalidation)
 - [如何阅读当前工程状态](/developer/current)
 - [如何阅读双端项目状态](/developer/current/project-status)
 - [双端行为一致性](/developer/architecture/parity)
 - [天神判据与跨端编码](/developer/architecture/celestial-implementation)
+- [效果对象与倍率组合：从一项奖励到完整公式](/developer/architecture/effect-model)
 - [协程 ABI 崩溃排查：从 Continuation 到真实调用](/developer/troubleshooting/coroutine-abi)
 - [运行证据索引](/developer/evidence)
 - [AI Summary 索引](/developer/ai-summaries)
