@@ -15,7 +15,7 @@ aliases:
 - [阶段进度：从新档到天神](/player/gameplay/stage-progression)：按重置层级理解无限、打破无限、永恒、现实与天神，以及怎样判断自己真的进入了下一阶段。
 - [阶段门禁排障：页面提前出现、按钮灰掉与重置后变化](/player/gameplay/stage-gate-troubleshooting)：处理入口提前显示、按钮不可用、重置后页面变化和异常反馈。
 
-如果你还不熟悉新档的基本节奏，可先看[新手入门](/player/getting-started/)。阶段解锁和自动化相互影响时，再结合[自动购买器](/player/gameplay/automation)与[存档处理](/player/gameplay/saves)判断问题是在进度、资源还是存档状态。
+如果你还不熟悉新档的基本节奏，可先看[新手入门](/player/getting-started/)。阶段解锁和自动化相互影响时，再结合[自动购买器](/player/gameplay/automation)与[存档兼容与导入验证](/player/gameplay/save-compatibility)判断问题是在进度、资源还是存档状态。
 
 阶段页面的存在感很强，却不是最可靠的进度计。判断时优先观察已经完成的重置、实际获得的长期资源和当前按钮给出的条件；不要因为一个新标签页出现，就跳过它前面的机制。
 

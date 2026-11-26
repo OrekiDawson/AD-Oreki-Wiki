@@ -77,4 +77,4 @@ aliases:
 - [Dilated Time](https://antimatterdimensions.wiki.gg/wiki/Dilated_Time)
 - [Reality](https://antimatterdimensions.wiki.gg/wiki/Reality)
 
-[无限阶段：IP、打破无限与无限挑战](/player/gameplay/infinity) · [现实与时间研究](/player/gameplay/reality-time-studies) · [挑战与真实结算](/player/gameplay/challenges) · [存档兼容与自动保存](/player/gameplay/saves)
+[无限阶段：IP、打破无限与无限挑战](/player/gameplay/infinity) · [现实与时间研究](/player/gameplay/reality-time-studies) · [挑战与真实结算](/player/gameplay/challenges) · [存档安全入口](/player/gameplay/saves)

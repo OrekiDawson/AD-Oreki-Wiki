@@ -23,4 +23,4 @@ Android 使用独立 APK 与签名发布链；Web 从冻结的上游代码构建
 
 ## 继续阅读
 
-[智能自动购买器](/player/gameplay/automation) · [挑战与真实结算](/player/gameplay/challenges) · [存档兼容与自动保存](/player/gameplay/saves) · [阶段门禁](/player/gameplay/stage-gates) · [玩家专区](/player/)
+[智能自动购买器](/player/gameplay/automation) · [挑战与真实结算](/player/gameplay/challenges) · [存档安全入口](/player/gameplay/saves) · [阶段门禁](/player/gameplay/stage-gates) · [玩家专区](/player/)

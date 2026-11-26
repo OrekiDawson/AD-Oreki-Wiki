@@ -54,7 +54,7 @@ Oreki Edition 的统一调度器默认每 10 秒检查一次受管策略，可�
 
 通常不是。现实是更高层的重置，会清除许多永恒阶段的临时进度和当前时间研究配置；现实机器、符文和复兴等奖励会成为下一轮成长的基础。
 
-真正需要警惕的是永久进度无故消失、存档反复回退，或重启后出现无法解释的资源变化。先保留备份，再按[存档兼容与自动保存](/player/gameplay/saves)排查；不要用唯一存档反复导入导出。
+真正需要警惕的是永久进度无故消失、存档反复回退，或重启后出现无法解释的资源变化。先保留备份，再按[存档兼容与导入验证](/player/gameplay/save-compatibility)排查；不要用唯一存档反复导入导出。
 
 ## Android 存档能直接导入 Web，或从新版退回旧版吗？
 
@@ -78,4 +78,4 @@ Android 问题可发到 [Android Issues](https://github.com/OrekiDawson/AD-Oreki
 
 ## 进一步阅读
 
-[开始游玩](/player/getting-started/) · [无限与永恒](/player/gameplay/progression-infinity-eternity) · [挑战与真实结算](/player/gameplay/challenges) · [天神系统](/player/gameplay/celestials) · [存档兼容与自动保存](/player/gameplay/saves)
+[开始游玩](/player/getting-started/) · [无限与永恒](/player/gameplay/progression-infinity-eternity) · [挑战与真实结算](/player/gameplay/challenges) · [天神系统](/player/gameplay/celestials) · [存档安全入口](/player/gameplay/saves)

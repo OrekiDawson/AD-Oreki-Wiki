@@ -20,10 +20,10 @@ Web 版入口是 [oreki.net](https://oreki.net/)。源码仓库中的变更不�
 
 ## Web 存档的安全习惯
 
-在更换浏览器、清理站点数据或测试新部署前，先使用游戏内导出功能，把副本保存到浏览器之外。导入后检查阶段、资源、研究和自动购买器，再正常离开并重新打开确认状态仍在；具体迁移步骤见[存档兼容与自动保存](/player/gameplay/saves)。
+在更换浏览器、清理站点数据或测试新部署前，先使用游戏内导出功能，把副本保存到浏览器之外。导入后检查阶段、资源、研究和自动购买器，再正常离开并重新打开确认状态仍在；具体迁移步骤见[存档兼容与导入验证](/player/gameplay/save-compatibility)。
 
 ## Web 与 Android 不应直接互相推断
 
 两端都叫 Oreki Edition，却可能使用不同的游戏基线、自动化实现和发布版本。Android 的安装包版本、签名与 Activity 生命周期不适用于 Web；Web 的浏览器缓存、站点数据和离线行为也不等于 Android 本地存储。遇到同名功能表现不同，先阅读[原版与 Oreki Edition 的区别](/player/gameplay/original-vs-mod)，再分别记录平台与版本。
 
-相关入口：[下载与版本总览](/player/download-and-version/) · [存档兼容与自动保存](/player/gameplay/saves) · [玩家常见问题](/player/faq/)
+相关入口：[下载与版本总览](/player/download-and-version/) · [存档兼容与导入验证](/player/gameplay/save-compatibility) · [玩家常见问题](/player/faq/)

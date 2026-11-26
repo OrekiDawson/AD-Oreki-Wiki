@@ -16,6 +16,6 @@ aliases:
 - [第一次进入与前几分钟](/player/getting-started/first-session)：平台入口、主界面、维度、计数频率、维度提升和星系。
 - [第一次大坍缩与进入无限](/player/getting-started/first-crunch)：大坍缩门槛、重置保留、自动结算和第一次 IP。
 
-更新 APK、切换 Web 版本或导入存档前，先读[存档兼容与自动保存](/player/gameplay/saves)。后续阶段可继续阅读[无限与永恒](/player/gameplay/progression-infinity-eternity)和[智能自动购买器](/player/gameplay/automation)。
+更新 APK、切换 Web 版本或导入存档前，先读[存档兼容与导入验证](/player/gameplay/save-compatibility)。后续阶段可继续阅读[无限与永恒](/player/gameplay/progression-infinity-eternity)和[智能自动购买器](/player/gameplay/automation)。
 
 无论在哪个平台开始，教程中的数值都应以当前按钮、版本和实际界面为准；Android 与 Web 的重置保留细节不能只凭平台名称互相推断。

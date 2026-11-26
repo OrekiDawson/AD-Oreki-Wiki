@@ -89,4 +89,4 @@ Oreki Edition 希望缩短无意义的等待，而不是用假资源或假结算
 - [Oreki Edition Android 源码](https://github.com/OrekiDawson/AD-Oreki-Edition-Android)：MOD 调度器与受管配置的具体实现；各版本行为以真实构建为准。
 - [原版与 MOD 的区别](/player/gameplay/original-vs-mod)：统一调度器属于 MOD 新增能力。
 - [阶段门禁](/player/gameplay/stage-gates)：为什么部分系统必须等到真正解锁才能使用。
-- [存档兼容与自动保存](/player/gameplay/saves)：更新、导入存档之前需要注意什么。
+- [存档安全入口](/player/gameplay/saves)：更新、导入存档之前先选择正确的安全步骤。

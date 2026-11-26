@@ -12,7 +12,7 @@ tags:
 
 - [成就](/player/original/ow-achievements)
 - [充能无限升级](/player/original/ow-charged-infinity-upgrades)
-- [存档安全：自动保存与兼容导入阅读地图](/player/gameplay/saves)
+- [存档安全入口：先备份，再区分保存与迁移](/player/gameplay/saves)
 - [存档兼容与导入验证](/player/gameplay/save-compatibility)
 - [存档库](/player/original/ow-save-bank)
 - [打破无限](/player/original/ow-break-infinity)

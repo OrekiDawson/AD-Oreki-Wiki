@@ -41,6 +41,6 @@ aliases:
 
 ## 相关条目
 
-[第一次进入与前几分钟](/player/getting-started/first-session) · [存档兼容与自动保存](/player/gameplay/saves) · [玩家常见问题](/player/faq/)
+[第一次进入与前几分钟](/player/getting-started/first-session) · [自动保存与备份](/player/gameplay/autosave) · [玩家常见问题](/player/faq/)
 
 原版无限入口可对照[Antimatter Dimensions Wiki 的无限页面](https://antimatterdimensions.wiki.gg/wiki/Infinity)；精确门槛和 MOD 调整以当前版本为准。

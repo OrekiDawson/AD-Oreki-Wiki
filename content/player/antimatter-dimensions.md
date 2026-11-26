@@ -54,7 +54,7 @@ aliases:
 
 Oreki Edition 是基于《反物质维度》的 MOD，不是原版的官方版本。它在 Android 与 Web 两端维护自己的界面、自动化和体验改动；同名机制的具体数值、默认策略和发布状态，不能只凭原版记忆推断。需要比较两者时，先看[原版行为与 Oreki Edition 修改](/player/gameplay/original-vs-mod)，再按页面标注的平台和版本阅读。
 
-存档也应分开看待。原版、MOD、Android 和 Web 之间可能存在兼容目标，但不意味着任意版本都能安全互导；在更新或换平台前，请先阅读[存档兼容与自动保存](/player/gameplay/saves)。
+存档也应分开看待。原版、MOD、Android 和 Web 之间可能存在兼容目标，但不意味着任意版本都能安全互导；在更新或换平台前，请先阅读[存档兼容与导入验证](/player/gameplay/save-compatibility)。
 
 ## 这款游戏的“科学幻想”在哪里
 
@@ -69,7 +69,8 @@ Oreki Edition 是基于《反物质维度》的 MOD，不是原版的官方版�
 - [现实与时间研究](/player/gameplay/reality-time-studies)：时间研究、膨胀和第一次现实。
 - [挑战与真实结算](/player/gameplay/challenges)：特殊限制与挑战奖励。
 - [智能自动购买器](/player/gameplay/automation)：让重复操作变成可调整的策略。
-- [存档兼容与自动保存](/player/gameplay/saves)：更新和跨平台前保护进度。
+- [存档安全入口](/player/gameplay/saves)：先区分日常备份和跨版本迁移。
+- [存档兼容与导入验证](/player/gameplay/save-compatibility)：更新和跨平台前验证进度。
 
 ## 参考资料
 

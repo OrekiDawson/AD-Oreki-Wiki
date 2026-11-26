@@ -16,7 +16,7 @@ tags:
 | 想确认下载的是哪个版本             | [下载与版本说明](/player/download-and-version/)                                                                                                                  |
 | 想知道一个资源或重置究竟改变了什么 | [玩法机制](/player/gameplay/) · [游戏总览](/player/antimatter-dimensions)                                                                                        |
 | 已经进入无限、永恒或现实阶段       | [无限与永恒](/player/gameplay/progression-infinity-eternity) · [现实与时间研究](/player/gameplay/reality-time-studies) · [天神系统](/player/gameplay/celestials) |
-| 按钮不可用、存档异常或更新后不放心 | [玩家常见问题](/player/faq/) · [存档兼容与自动保存](/player/gameplay/saves)                                                                                      |
+| 按钮不可用、存档异常或更新后不放心 | [玩家常见问题](/player/faq/) · [存档安全入口](/player/gameplay/saves)                                                                                      |
 | 看不懂一个词                       | [术语表](/player/terminology)                                                                                                                                    |
 | 想核对原版规则                     | [原版 Wiki 中文翻译](/player/original/)                                                                                                                          |
 
@@ -24,7 +24,7 @@ tags:
 
 新档最初的目标很朴素：让低阶维度产出反物质，再用反物质购买更高阶的维度。随着维度提升、维度献祭和反物质星系出现，游戏会不断让你把“这一轮积累”换成“下一轮更快的起点”。[游戏总览](/player/antimatter-dimensions)适合先建立这张地图，再回到具体机制页查公式和条件。
 
-第一次大坍缩后，可以沿着[无限与永恒](/player/gameplay/progression-infinity-eternity)阅读；进入时间研究与现实阶段后，再看[现实与时间研究](/player/gameplay/reality-time-studies)。[挑战与真实结算](/player/gameplay/challenges)解释那些会改变规则的特殊关卡，[智能自动购买器](/player/gameplay/automation)和[存档兼容与自动保存](/player/gameplay/saves)则负责把日常操作和存档风险讲清楚。你不必按顺序读完，知道自己正处在哪个阶段，就能从对应条目继续。
+第一次大坍缩后，可以沿着[无限与永恒](/player/gameplay/progression-infinity-eternity)阅读；进入时间研究与现实阶段后，再看[现实与时间研究](/player/gameplay/reality-time-studies)。[挑战与真实结算](/player/gameplay/challenges)解释那些会改变规则的特殊关卡，[智能自动购买器](/player/gameplay/automation)和[存档安全入口](/player/gameplay/saves)则负责把日常操作和存档风险讲清楚。你不必按顺序读完，知道自己正处在哪个阶段，就能从对应条目继续。
 
 如果你玩的是 Oreki Edition，先读[MOD 介绍](/player/mods/)和[原版与 Oreki Edition 的区别](/player/gameplay/original-vs-mod)。这两页帮助你判断：眼前的数值是原版设计、MOD 调整，还是某个版本的界面差异。
 
