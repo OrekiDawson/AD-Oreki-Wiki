@@ -8,7 +8,7 @@ aliases:
   - "/references/terminology"
 ---
 
-有些词第一次出现时像是按钮名称，玩到后面才会发现它们其实描述的是整套成长逻辑。本表先给出玩家需要的含义；更完整的操作和公式，请沿链接阅读对应条目。
+有些词第一次出现时像是按钮名称，玩到后面才会发现它们其实描述的是整套成长逻辑。本表先给出玩家需要的含义；更完整的操作和公式，请沿链接阅读对应条目。术语的原始定义可对照 [Antimatter Dimensions Wiki 的 Terminology 条目](https://antimatterdimensions.wiki.gg/wiki/Terminology)，本站译文会在玩家专区页面中注明 Oreki Edition 的差异。
 
 ## 成长与重置
 
