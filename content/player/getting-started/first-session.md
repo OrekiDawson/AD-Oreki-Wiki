@@ -49,3 +49,7 @@ Android 和 Web 的布局不同，但先看按钮上的价格、数量和加成�
 - 浏览器或 Android 重新开始：先停止操作，检查是否误用了隐私窗口、清除数据或清空存档槽；不要继续覆盖唯一备份。
 
 准备好第一次大坍缩后，继续读[第一次大坍缩与进入无限](/player/getting-started/first-crunch)。
+
+## 参考资料与核验范围
+
+新档入口和生产链说明可对照 [Web 的 `src/game.js`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/90d89de2048332f3c329ae6834ebee2675453a02/src/game.js) 与 [Android 的 `OrekiStageAuto.kt`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiStageAuto.kt)。本文用于解释初次游玩的阅读顺序，未宣称完成 Android/Web 全平台安装、通关和存档迁移回归。
