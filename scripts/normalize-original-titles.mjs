@@ -1,7 +1,9 @@
 import fs from "node:fs"
 import path from "node:path"
+import { ORIGINAL_TRANSLATION_DIR } from "./wiki-paths.mjs"
 
-const root = path.resolve("content/player/original")
+const root = path.resolve(ORIGINAL_TRANSLATION_DIR)
+const manifestFile = path.resolve("docs/translation/source-manifest.json")
 const files = fs.readdirSync(root).filter((name) => name.endsWith(".md") && name !== "index.md")
 const changed = []
 
@@ -20,4 +22,13 @@ for (const name of files) {
   }
 }
 
-console.log(JSON.stringify({ scanned: files.length, changed }, null, 2))
+const manifest = JSON.parse(fs.readFileSync(manifestFile, "utf8"))
+const manifestChanged = []
+for (const entry of manifest.pages ?? []) {
+  if (!entry.path?.startsWith(ORIGINAL_TRANSLATION_DIR) || !entry.zh_title || entry.zh_title.startsWith("原版:")) continue
+  manifestChanged.push({ path: entry.path, from: entry.zh_title, to: "原版:" + entry.zh_title })
+  entry.zh_title = "原版:" + entry.zh_title
+}
+if (manifestChanged.length) fs.writeFileSync(manifestFile, JSON.stringify(manifest, null, 1) + "\n")
+
+console.log(JSON.stringify({ scanned: files.length, changed, manifestChanged }, null, 2))

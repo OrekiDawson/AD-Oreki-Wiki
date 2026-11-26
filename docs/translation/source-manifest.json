@@ -53,7 +53,7 @@
     "Stubs"
    ],
    "type": "article",
-   "zh_title": "成就",
+   "zh_title": "原版:成就",
    "path": "content/player/original/ow-achievements.md",
    "priority": 2,
    "status": "STRUCTURE CHECKED",
@@ -80,7 +80,7 @@
     "Pages with spoilers"
    ],
    "type": "article",
-   "zh_title": "秘密成就",
+   "zh_title": "原版:秘密成就",
    "path": "content/player/original/ow-achievements-secret-achievements.md",
    "priority": 2,
    "status": "STRUCTURE CHECKED",
@@ -107,7 +107,7 @@
     "Pages with navboxes"
    ],
    "type": "article",
-   "zh_title": "广告加成",
+   "zh_title": "原版:广告加成",
    "path": "content/player/original/ow-ad-bonus.md",
    "priority": 3,
    "status": "REVIEWED",
@@ -254,7 +254,7 @@
     "Stubs"
    ],
    "type": "article",
-   "zh_title": "反物质维度（游戏机制）",
+   "zh_title": "原版:反物质维度（游戏机制）",
    "path": "content/player/original/ow-antimatter-dimensions.md",
    "priority": 1,
    "status": "STRUCTURE CHECKED",
@@ -498,7 +498,7 @@
     "Pages with navboxes"
    ],
    "type": "article",
-   "zh_title": "反物质星系",
+   "zh_title": "原版:反物质星系",
    "path": "content/player/original/ow-antimatter-galaxies.md",
    "priority": 1,
    "status": "REVIEWED",
@@ -567,7 +567,7 @@
     "Stubs"
    ],
    "type": "article",
-   "zh_title": "自动化",
+   "zh_title": "原版:自动化",
    "path": "content/player/original/ow-automation.md",
    "priority": 2,
    "status": "REVIEWED",
@@ -616,7 +616,7 @@
     "Stubs"
    ],
    "type": "article",
-   "zh_title": "黑洞",
+   "zh_title": "原版:黑洞",
    "path": "content/player/original/ow-black-hole.md",
    "priority": 3,
    "status": "REVIEWED",
@@ -644,7 +644,7 @@
     "Stubs"
    ],
    "type": "article",
-   "zh_title": "打破无限",
+   "zh_title": "原版:打破无限",
    "path": "content/player/original/ow-break-infinity.md",
    "priority": 2,
    "status": "REVIEWED",
@@ -869,7 +869,7 @@
     "Stubs"
    ],
    "type": "article",
-   "zh_title": "天神导航",
+   "zh_title": "原版:天神导航",
    "path": "content/player/original/ow-celestial-navigation.md",
    "priority": 3,
    "status": "STRUCTURE CHECKED",
@@ -893,7 +893,7 @@
     "Pages with navboxes"
    ],
    "type": "article",
-   "zh_title": "天神导航·图库",
+   "zh_title": "原版:天神导航·图库",
    "path": "content/player/original/ow-celestial-navigation-gallery.md",
    "priority": 3,
    "status": "STRUCTURE CHECKED",
@@ -920,7 +920,7 @@
     "Stubs"
    ],
    "type": "article",
-   "zh_title": "天神",
+   "zh_title": "原版:天神",
    "path": "content/player/original/ow-celestials.md",
    "priority": 3,
    "status": "STRUCTURE CHECKED",
@@ -946,7 +946,7 @@
     "Stubs"
    ],
    "type": "article",
-   "zh_title": "挑战",
+   "zh_title": "原版:挑战",
    "path": "content/player/original/ow-challenges.md",
    "priority": 1,
    "status": "STRUCTURE CHECKED",
@@ -1043,7 +1043,7 @@
     "Stubs"
    ],
    "type": "article",
-   "zh_title": "时间膨胀",
+   "zh_title": "原版:时间膨胀",
    "path": "content/player/original/ow-dilation.md",
    "priority": 2,
    "status": "REVIEWED",
@@ -1067,7 +1067,7 @@
     "Pages with spoilers"
    ],
    "type": "article",
-   "zh_title": "膨胀升级",
+   "zh_title": "原版:膨胀升级",
    "path": "content/player/original/ow-dilation-upgrades.md",
    "priority": 3,
    "status": "REVIEWED",
@@ -1091,7 +1091,7 @@
     "Pages using Pelle wordshift classes"
    ],
    "type": "article",
-   "zh_title": "膨胀升级（被毁灭的现实）",
+   "zh_title": "原版:膨胀升级（被毁灭的现实）",
    "path": "content/player/original/ow-dilation-upgrades-doomed.md",
    "priority": 3,
    "status": "REVIEWED",
@@ -1140,7 +1140,7 @@
     "Stubs"
    ],
    "type": "article",
-   "zh_title": "维度提升",
+   "zh_title": "原版:维度提升",
    "path": "content/player/original/ow-dimension-boosts.md",
    "priority": 1,
    "status": "REVIEWED",
@@ -1167,7 +1167,7 @@
     "Pages with navboxes"
    ],
    "type": "article",
-   "zh_title": "维度献祭",
+   "zh_title": "原版:维度献祭",
    "path": "content/player/original/ow-dimensional-sacrifice.md",
    "priority": 3,
    "status": "REVIEWED",
@@ -1194,7 +1194,7 @@
     "Stubs"
    ],
    "type": "article",
-   "zh_title": "维度",
+   "zh_title": "原版:维度",
    "path": "content/player/original/ow-dimensions.md",
    "priority": 1,
    "status": "REVIEWED",
@@ -1220,7 +1220,7 @@
     "Pages with navboxes"
    ],
    "type": "article",
-   "zh_title": "鹿颈长",
+   "zh_title": "原版:鹿颈长",
    "path": "content/player/original/ow-effarig.md",
    "priority": 4,
    "status": "STRUCTURE CHECKED",
@@ -1245,7 +1245,7 @@
     "Pages with navboxes"
    ],
    "type": "article",
-   "zh_title": "鹿颈长·引语",
+   "zh_title": "原版:鹿颈长·引语",
    "path": "content/player/original/ow-effarig-quotes.md",
    "priority": 4,
    "status": "STRUCTURE CHECKED",
@@ -1291,7 +1291,7 @@
     "Pages with navboxes"
    ],
    "type": "article",
-   "zh_title": "永恒",
+   "zh_title": "原版:永恒",
    "path": "content/player/original/ow-eternity.md",
    "priority": 2,
    "status": "REVIEWED",
@@ -1320,7 +1320,7 @@
     "Pages with spoilers"
    ],
    "type": "article",
-   "zh_title": "永恒挑战",
+   "zh_title": "原版:永恒挑战",
    "path": "content/player/original/ow-eternity-challenges.md",
    "priority": 2,
    "status": "REVIEWED",
@@ -1344,7 +1344,7 @@
     "Pages with reference errors"
    ],
    "type": "article",
-   "zh_title": "永恒挑战·挑战明细",
+   "zh_title": "原版:永恒挑战·挑战明细",
    "path": "content/player/original/ow-eternity-challenges-challenges.md",
    "priority": 3,
    "status": "STRUCTURE CHECKED",
@@ -1368,7 +1368,7 @@
     "Pages with reference errors"
    ],
    "type": "article",
-   "zh_title": "永恒挑战·挑战明细（被毁灭的现实）",
+   "zh_title": "原版:永恒挑战·挑战明细（被毁灭的现实）",
    "path": "content/player/original/ow-eternity-challenges-challenges-pelle.md",
    "priority": 2,
    "status": "STRUCTURE CHECKED",
@@ -1417,7 +1417,7 @@
     "Pages with navboxes"
    ],
    "type": "article",
-   "zh_title": "永恒里程碑",
+   "zh_title": "原版:永恒里程碑",
    "path": "content/player/original/ow-eternity-milestones.md",
    "priority": 3,
    "status": "STRUCTURE CHECKED",
@@ -1488,7 +1488,7 @@
     "Pages with navboxes"
    ],
    "type": "article",
-   "zh_title": "永恒升级",
+   "zh_title": "原版:永恒升级",
    "path": "content/player/original/ow-eternity-upgrades.md",
    "priority": 3,
    "status": "REVIEWED",
@@ -1538,7 +1538,7 @@
     "Stubs"
    ],
    "type": "article",
-   "zh_title": "符文炼金",
+   "zh_title": "原版:符文炼金",
    "path": "content/player/original/ow-glyph-alchemy.md",
    "priority": 3,
    "status": "REVIEWED",
@@ -1661,7 +1661,7 @@
     "Pages with navboxes"
    ],
    "type": "article",
-   "zh_title": "虚幻升级",
+   "zh_title": "原版:虚幻升级",
    "path": "content/player/original/ow-imaginary-upgrades.md",
    "priority": 3,
    "status": "REVIEWED",
@@ -1731,7 +1731,7 @@
     "Pages with navboxes"
    ],
    "type": "article",
-   "zh_title": "无限",
+   "zh_title": "原版:无限",
    "path": "content/player/original/ow-infinity.md",
    "priority": 1,
    "status": "REVIEWED",
@@ -1783,7 +1783,7 @@
     "Pages with spoilers"
    ],
    "type": "article",
-   "zh_title": "无限挑战",
+   "zh_title": "原版:无限挑战",
    "path": "content/player/original/ow-infinity-challenges.md",
    "priority": 3,
    "status": "REVIEWED",
@@ -1812,7 +1812,7 @@
     "Stubs"
    ],
    "type": "article",
-   "zh_title": "无限维度",
+   "zh_title": "原版:无限维度",
    "path": "content/player/original/ow-infinity-dimensions.md",
    "priority": 2,
    "status": "REVIEWED",
@@ -1882,7 +1882,7 @@
     "Pages with navboxes"
    ],
    "type": "article",
-   "zh_title": "无限升级",
+   "zh_title": "原版:无限升级",
    "path": "content/player/original/ow-infinity-upgrades.md",
    "priority": 3,
    "status": "REVIEWED",
@@ -1904,7 +1904,7 @@
    "size": 2936,
    "categories": [],
    "type": "article",
-   "zh_title": "无限升级（升级表）",
+   "zh_title": "原版:无限升级（升级表）",
    "path": "content/player/original/ow-infinity-upgrades-upgrades.md",
    "priority": 3,
    "status": "STRUCTURE CHECKED",
@@ -1926,7 +1926,7 @@
    "size": 4027,
    "categories": [],
    "type": "article",
-   "zh_title": "充能无限升级",
+   "zh_title": "原版:充能无限升级",
    "path": "content/player/original/ow-charged-infinity-upgrades.md",
    "priority": 3,
    "status": "REVIEWED",
@@ -1974,7 +1974,7 @@
     "Pages with navboxes"
    ],
    "type": "article",
-   "zh_title": "莱特拉",
+   "zh_title": "原版:莱特拉",
    "path": "content/player/original/ow-laitela.md",
    "priority": 4,
    "status": "REVIEWED",
@@ -1999,7 +1999,7 @@
     "Pages with navboxes"
    ],
    "type": "article",
-   "zh_title": "莱特拉·引语",
+   "zh_title": "原版:莱特拉·引语",
    "path": "content/player/original/ow-laitela-quotes.md",
    "priority": 4,
    "status": "STRUCTURE CHECKED",
@@ -2048,7 +2048,7 @@
     "Stubs"
    ],
    "type": "article",
-   "zh_title": "Mod 一览",
+   "zh_title": "原版:Mod 一览",
    "path": "content/player/original/ow-mods.md",
    "priority": 3,
    "status": "STRUCTURE CHECKED",
@@ -2075,7 +2075,7 @@
     "Pages with navboxes"
    ],
    "type": "article",
-   "zh_title": "普通挑战",
+   "zh_title": "原版:普通挑战",
    "path": "content/player/original/ow-normal-challenges.md",
    "priority": 3,
    "status": "REVIEWED",
@@ -2101,7 +2101,7 @@
     "Stubs"
    ],
    "type": "article",
-   "zh_title": "记数法",
+   "zh_title": "原版:记数法",
    "path": "content/player/original/ow-notations.md",
    "priority": 3,
    "status": "STRUCTURE CHECKED",
@@ -2152,7 +2152,7 @@
     "Stubs"
    ],
    "type": "article",
-   "zh_title": "佩勒",
+   "zh_title": "原版:佩勒",
    "path": "content/player/original/ow-pelle.md",
    "priority": 4,
    "status": "REVIEWED",
@@ -2202,7 +2202,7 @@
     "Pages with navboxes"
    ],
    "type": "article",
-   "zh_title": "佩勒升级",
+   "zh_title": "原版:佩勒升级",
    "path": "content/player/original/ow-pelle-upgrades.md",
    "priority": 3,
    "status": "STRUCTURE CHECKED",
@@ -2229,7 +2229,7 @@
     "Pages with spoilers"
    ],
    "type": "article",
-   "zh_title": "复兴",
+   "zh_title": "原版:复兴",
    "path": "content/player/original/ow-perks.md",
    "priority": 2,
    "status": "REVIEWED",
@@ -2255,7 +2255,7 @@
     "Stubs"
    ],
    "type": "article",
-   "zh_title": "重置成长（威望）",
+   "zh_title": "原版:重置成长（威望）",
    "path": "content/player/original/ow-prestige.md",
    "priority": 1,
    "status": "STRUCTURE CHECKED",
@@ -2283,7 +2283,7 @@
     "Stubs"
    ],
    "type": "article",
-   "zh_title": "太阳神",
+   "zh_title": "原版:太阳神",
    "path": "content/player/original/ow-ra.md",
    "priority": 4,
    "status": "STRUCTURE CHECKED",
@@ -2308,7 +2308,7 @@
     "Pages with navboxes"
    ],
    "type": "article",
-   "zh_title": "太阳神·引语",
+   "zh_title": "原版:太阳神·引语",
    "path": "content/player/original/ow-ra-quotes.md",
    "priority": 4,
    "status": "STRUCTURE CHECKED",
@@ -2335,7 +2335,7 @@
     "Pages with navboxes"
    ],
    "type": "article",
-   "zh_title": "现实",
+   "zh_title": "原版:现实",
    "path": "content/player/original/ow-reality.md",
    "priority": 3,
    "status": "REVIEWED",
@@ -2361,7 +2361,7 @@
     "Pages with navboxes"
    ],
    "type": "article",
-   "zh_title": "现实升级",
+   "zh_title": "原版:现实升级",
    "path": "content/player/original/ow-reality-upgrades.md",
    "priority": 3,
    "status": "REVIEWED",
@@ -2388,7 +2388,7 @@
     "Pages with navboxes"
    ],
    "type": "article",
-   "zh_title": "复制器",
+   "zh_title": "原版:复制器",
    "path": "content/player/original/ow-replicanti.md",
    "priority": 2,
    "status": "STRUCTURE CHECKED",
@@ -2457,7 +2457,7 @@
     "Pages with navboxes"
    ],
    "type": "article",
-   "zh_title": "存档库",
+   "zh_title": "原版:存档库",
    "path": "content/player/original/ow-save-bank.md",
    "priority": 3,
    "status": "STRUCTURE CHECKED",
@@ -2528,7 +2528,7 @@
     "Stubs"
    ],
    "type": "article",
-   "zh_title": "快捷键",
+   "zh_title": "原版:快捷键",
    "path": "content/player/original/ow-shortcuts.md",
    "priority": 2,
    "status": "REVIEWED",
@@ -2576,7 +2576,7 @@
     "Pages with navboxes"
    ],
    "type": "article",
-   "zh_title": "特蕾莎",
+   "zh_title": "原版:特蕾莎",
    "path": "content/player/original/ow-teresa.md",
    "priority": 4,
    "status": "STRUCTURE CHECKED",
@@ -2602,7 +2602,7 @@
     "Stubs"
    ],
    "type": "article",
-   "zh_title": "术语（佩勒用词）",
+   "zh_title": "原版:术语（佩勒用词）",
    "path": "content/player/original/ow-terminology.md",
    "priority": 3,
    "status": "STRUCTURE CHECKED",
@@ -2651,7 +2651,7 @@
     "Pages with navboxes"
    ],
    "type": "article",
-   "zh_title": "无名氏",
+   "zh_title": "原版:无名氏",
    "path": "content/player/original/ow-nameless-ones.md",
    "priority": 4,
    "status": "STRUCTURE CHECKED",
@@ -2676,7 +2676,7 @@
     "Pages with navboxes"
    ],
    "type": "article",
-   "zh_title": "无名氏·引语",
+   "zh_title": "原版:无名氏·引语",
    "path": "content/player/original/ow-nameless-ones-quotes.md",
    "priority": 4,
    "status": "STRUCTURE CHECKED",
@@ -2707,7 +2707,7 @@
     "Stubs"
    ],
    "type": "article",
-   "zh_title": "计数频率",
+   "zh_title": "原版:计数频率",
    "path": "content/player/original/ow-tickspeed.md",
    "priority": 2,
    "status": "REVIEWED",
@@ -2731,7 +2731,7 @@
     "Pages using Pelle wordshift classes"
    ],
    "type": "article",
-   "zh_title": "计数频率·星系数量明细（被毁灭的现实）",
+   "zh_title": "原版:计数频率·星系数量明细（被毁灭的现实）",
    "path": "content/player/original/ow-tickspeed-galaxy-breakdown-doomed.md",
    "priority": 3,
    "status": "STRUCTURE CHECKED",
@@ -2804,7 +2804,7 @@
     "Pages with navboxes"
    ],
    "type": "article",
-   "zh_title": "时间维度",
+   "zh_title": "原版:时间维度",
    "path": "content/player/original/ow-time-dimensions.md",
    "priority": 2,
    "status": "REVIEWED",
@@ -2832,7 +2832,7 @@
     "Pages with navboxes"
    ],
    "type": "article",
-   "zh_title": "时间研究",
+   "zh_title": "原版:时间研究",
    "path": "content/player/original/ow-time-studies.md",
    "priority": 2,
    "status": "REVIEWED",
@@ -2882,7 +2882,7 @@
     "Pages with spoilers"
    ],
    "type": "article",
-   "zh_title": "薇",
+   "zh_title": "原版:薇",
    "path": "content/player/original/ow-v.md",
    "priority": 4,
    "status": "REVIEWED",
@@ -2907,7 +2907,7 @@
     "Pages with navboxes"
    ],
    "type": "article",
-   "zh_title": "薇·引语",
+   "zh_title": "原版:薇·引语",
    "path": "content/player/original/ow-v-quotes.md",
    "priority": 4,
    "status": "STRUCTURE CHECKED",

@@ -108,7 +108,9 @@ for (const p of articles) {
   }
   if (["REVIEWED", "VERIFIED AGAINST GAME"].includes(p.status)) {
     const key = p.path || p.zh_title || p.title;
-    if (!reviewCorpus.includes(key) && !reviewCorpus.includes(p.zh_title || "\u0000")) {
+    const zhTitle = p.zh_title || "";
+    const bareZhTitle = zhTitle.replace(/^原版:/, "");
+    if (!reviewCorpus.includes(key) && !reviewCorpus.includes(zhTitle || "\u0000") && !reviewCorpus.includes(bareZhTitle || "\u0000")) {
       fail("清单标记 " + p.status + " 但缺少页面级审校记录: " + p.title);
     }
   }
