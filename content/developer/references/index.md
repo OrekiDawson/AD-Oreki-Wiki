@@ -53,4 +53,4 @@ aliases:
 
 ## 继续阅读
 
-[开发者专区](/developer/) · [构建与交付](/developer/build/) · [存档兼容排查](/developer/troubleshooting/save-compatibility) · [历史归档](/developer/history/)
+[开发者专区](/developer/) · [构建与交付](/developer/build/) · [存档兼容排查](/developer/troubleshooting/save-compatibility)

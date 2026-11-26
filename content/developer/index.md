@@ -1,6 +1,9 @@
 ---
 title: "开发者专区"
 description: "第一次参与 Oreki Edition、定位 Android/Web 代码、构建验证和排查问题的实际入口"
+aliases:
+  - "/history"
+  - "/developer/history"
 tags:
   - 开发者
   - 导航
@@ -61,7 +64,7 @@ Oreki Edition 有 Android 与 Web 两套实现，目标是保持玩家可见的�
 
 ## 附属资料与历史证据
 
-[项目与仓库概览](/developer/project-overview)解释工程目标和平台基线；[当前状态](/developer/current/project-status)与[已知问题](/developer/current/known-issues)记录候选阶段的事实；[历史归档](/developer/history/)用于追查旧故障，**不代替今天的源码**。
+[项目与仓库概览](/developer/project-overview)解释工程目标和平台基线；[当前状态](/developer/current/project-status)与[已知问题](/developer/current/known-issues)记录候选阶段的事实；旧故障的原始报告保留在源码仓库和内部归档中，**不代替今天的源码**。
 
 [运行证据索引](/developer/evidence/)用于回到构建、测试或设备记录；[已审核 AI 摘要](/developer/ai-summaries/)只作为正文之后的辅助资料。它们不是入门路线，也不能替代源码、操作指南或故障排查正文。
 

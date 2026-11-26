@@ -1,5 +1,5 @@
 // 本地最小扩展：复用官方 @quartz-community/explorer，仅注入固定的一级目录语义顺序。
-// 目的：稳定语义顺序（游戏总览 → … → 历史归档 → 站务），不移动文件、不改 URL、不做 DOM hack。
+// 目的：稳定语义顺序（玩家专区 → 开发者专区 → 站务），不移动文件、不改 URL、不做 DOM hack。
 // 说明：官方 Explorer 通过 options.sortFn / mapFn 支持自定义排序与显示名（见其 dist/index.d.ts），
 // 但 quartz.config.yaml 无法表达函数；因此以本地组件插件方式注入。未修改官方包。
 //
@@ -22,6 +22,8 @@ function compare(a, b) {
   ];
   // 末尾独立站务区（页脚也有固定链接）。
   const STATION = {
+    "all-entries": 90,
+    "recent-updates": 91,
     "wiki-rules": 200,
     "wiki-not": 201,
     copyright: 202,
