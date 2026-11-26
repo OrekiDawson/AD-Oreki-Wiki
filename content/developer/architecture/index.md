@@ -22,7 +22,7 @@ aliases:
 
 ### 我想理解 Web 与双端差异
 
-[Web 架构](/developer/architecture/web)沿启动、主循环和 MOD 调度器追踪浏览器端；[双端行为一致性](/developer/architecture/parity)把阶段、资源、挑战和自动化拆成可观察的行为契约。实现阶段门禁或天神时，继续看[GUI 阶段门禁](/developer/architecture/gui-stage-gates)和[天神解锁与跨端实现](/developer/architecture/celestial-implementation)。
+[Web 架构](/developer/architecture/web)沿启动、主循环和 MOD 调度器追踪浏览器端；[双端行为一致性](/developer/architecture/parity)把阶段、资源、挑战和自动化拆成可观察的行为契约；遇到 `e308` 以上的资源、阈值或读档差异时，继续看[超大数值：从尾数与指数到跨端一致性](/developer/architecture/numeric-model)。实现阶段门禁或天神时，继续看[GUI 阶段门禁](/developer/architecture/gui-stage-gates)和[天神解锁与跨端实现](/developer/architecture/celestial-implementation)。
 
 ## 一条从源码到行为的路线
 
@@ -39,12 +39,15 @@ aliases:
 ## 按模块查找
 
 - **Android 与混合运行时**：[Android 架构](/developer/architecture/android)、[Kotlin 混合运行时 ABI](/developer/architecture/kotlin-runtime)。
-- **Web 与浏览器行为**：[Web 架构](/developer/architecture/web)、[双端行为一致性](/developer/architecture/parity)。
+- **Web 与浏览器行为**：[Web 架构](/developer/architecture/web)、[双端行为一致性](/developer/architecture/parity)、[派生状态与缓存失效](/developer/architecture/derived-state-invalidation)、[效果对象与倍率组合](/developer/architecture/effect-model)。
+- **Web 状态与内容**：[Web 离线进度](/developer/architecture/web-offline-simulation)、[Web UI 反应式更新](/developer/architecture/web-ui-reactivity)、[教程内容管线](/developer/architecture/tutorial-content-pipeline)。
 - **机制落地**：[GUI 阶段门禁](/developer/architecture/gui-stage-gates)、[天神解锁与跨端实现](/developer/architecture/celestial-implementation)。
+- **同步与调度**：[Android GUI 同步桥](/developer/architecture/android-gui-sync)、[调度器状态机](/developer/architecture/scheduler-state-machine)。
+- **数值与兼容**：[超大数值](/developer/architecture/numeric-model)、[存档进度比较器](/developer/architecture/save-progress-comparator)、[Kotlin 混合运行时 ABI](/developer/architecture/kotlin-runtime)。
 - **逆向与源码恢复**：[逆向与语义映射](/developer/reverse-engineering/)、[DEX 与 ABI 语义恢复](/developer/reverse-engineering/dex-abi)。
 
 ## 附属资料
 
-固定源码入口见[源码索引](/developer/references/source-index)，实现与产物证据见[证据库](/developer/evidence/)，历史变更见[历史归档](/developer/history/)。[AI Summary](/developer/ai-summaries/)只作已核实正文的辅助速览，不替代技术文章。
+固定源码入口见[源码索引](/developer/references/source-index)，实现与产物证据见[证据库](/developer/evidence/)，版本变化请回到对应源码仓库的提交历史。[AI Summary](/developer/ai-summaries/)只作已核实正文的辅助速览，不替代技术文章。
 
 继续阅读：[构建与交付](/developer/build/) · [故障排查](/developer/troubleshooting/) · [开发者首页](/developer/)

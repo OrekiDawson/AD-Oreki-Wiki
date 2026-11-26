@@ -10,8 +10,8 @@ original_revid: 3371
 original_fetched_at: "2026-11-15T21:26:00+08:00"
 original_license: "CC BY-SA 4.0"
 original_license_url: "https://creativecommons.org/licenses/by-sa/4.0/"
-translation_status: "STRUCTURE CHECKED"
-review_status: "STRUCTURE CHECKED"
+translation_status: "REVIEWED"
+review_status: "REVIEWED"
 aliases:
   - "/original/ow-effarig"
 ---
@@ -22,11 +22,11 @@ aliases:
 
 他们的称号「远古遗物之神（Celestial of Ancient Relics）」与其主题——[符文](https://antimatterdimensions.wiki.gg/wiki/Glyphs)——相关。
 
-原页另有子页面「引语（Quotes）」，本轮批次未译，见文末相关条目。
+原页另有子页面[「引语（Quotes）」](/player/original/ow-effarig-quotes)，本轮批次已译并完成审校。
 
 ## 档案
 
-鹿颈长，远古遗物之神，别号「疲惫者」。把特蕾莎的 RM 容器灌满（$1\text{e}24$ RM），他们就出现了；同时带来的还有新资源[遗迹碎片](#遗迹碎片)，每次现实重置都会结算。他们的主题是符文：商店卖的都是符文相关的便利功能，从调整等级因子权重到筛选、预设，最后一项「run」用来开启自己的现实。那个现实分无限、永恒、现实三层，进去后维度、游戏速度与计数频率全被膨胀削弱，层数越高削得越轻；完成三层分别解锁复制器相关增益、无名氏，以及鹿颈长符文。加入版本同特蕾莎。
+鹿颈长，远古遗物之神，别号「疲惫者」。把特蕾莎的 RM 容器灌满（$1\text{e}24$ RM），他们就出现了；同时带来的还有新资源[遗迹碎片](#遗迹碎片)，每次现实重置都会结算。他们的主题是符文：商店卖的都是符文相关的便利功能，从调整等级因子权重到筛选、预设，最后一项「run」用来开启自己的现实。那个现实分无限、永恒、现实三层，进去后维度、游戏速度与计数频率全被膨胀削弱，层数越高削得越轻；完成三层分别解锁复制器相关增益、无名氏，以及鹿颈长符文。加入版本与特蕾莎相同。
 
 ## 遗迹碎片
 
@@ -112,4 +112,4 @@ $$nerfFactor = 3 * \left( 1-\frac{c}{c+\sqrt{\log_{10}\left(resource\right)}} \r
 
 ## 相关条目
 
-[天神](/player/original/ow-celestials) · [特蕾莎](/player/original/ow-teresa) · [无名氏](/player/original/ow-nameless-ones) · [现实](/player/original/ow-reality) · [现实升级](/player/original/ow-reality-upgrades) · [时间膨胀](/player/original/ow-dilation) · [时间研究](/player/original/ow-time-studies)
+[天神](/player/original/ow-celestials) · [特蕾莎](/player/original/ow-teresa) · [无名氏](/player/original/ow-nameless-ones) · [现实](/player/original/ow-reality) · [现实升级](/player/original/ow-reality-upgrades) · [时间膨胀](/player/original/ow-dilation) · [时间研究](/player/original/ow-time-studies) · [鹿颈长·引语](/player/original/ow-effarig-quotes)

@@ -1,44 +1,49 @@
 ---
 title: "版权与许可"
-description: "反物质维度MOD 知识库原创文字的 CC BY-SA 4.0 授权、署名及第三方版权说明"
+description: "反物质维度 Wiki 的原创内容、原版译文、第三方素材与软件组件许可说明"
 tags:
   - 版权
   - 许可
-  - 知识库
+  - 站务
 ---
 
+# 版权与许可
 
-**本站有权授权的原创百科文字，在未另行标注时采用[知识共享 署名-相同方式共享 4.0 国际（CC BY-SA 4.0）](https://creativecommons.org/licenses/by-sa/4.0/)许可。** 这意味着符合许可条件时，可以自由转载、翻译、修改，**包括商业使用**。这项许可不代表本站拥有原版《反物质维度》或第三方素材的版权。
+本页是全站版权、许可、第三方素材来源与署名的统一入口。不同材料的权利来源不同；看到它们出现在同一页面上，不代表它们共享同一种许可证。
 
-## 如何转载与署名
+## 许可一览
 
-转载或改写获授权的本站文章时，应保留作者及来源信息，并提供：
+| 内容                              | 权利人或来源                                                                                | 许可                                                                                           | 使用范围与要求                                                                                 |
+| --------------------------------- | ------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| 本站原创中文百科、导航与说明      | 本站贡献者                                                                                  | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)                                | 保留作者、原文链接、许可链接，并声明翻译、改写或整合等修改；改编作品按相同方式共享。           |
+| 原版 Wiki 中文译文                | [Antimatter Dimensions Wiki](https://antimatterdimensions.wiki.gg/wiki/Main_Page)及其贡献者 | 以原文页面许可为准，当前主要为 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | 每页保留原文标题、来源 URL、修订号、署名、许可和“已翻译/修改”说明；不得把译文混写成 MOD 事实。 |
+| 原版游戏、截图、图标、Logo 与插图 | Antimatter Dimensions 权利人及图片的实际作者                                                | 逐项核实；未确认前标记“待核实”                                                                 | 仅在素材来源和许可允许时下载或展示；不得移除水印、版权标识或擅自宣称本站拥有版权。             |
+| Quartz、主题、插件与构建脚本      | 各上游项目及贡献者                                                                          | 以各项目许可证为准，代码许可见仓库文件                                                         | 不适用本站正文的 CC BY-SA 4.0；保留上游版权与许可证文件。                                      |
+| 第三方图标库与其他视觉资源        | 各自权利人                                                                                  | 逐项登记                                                                                       | 使用范围、版本、来源和署名见仓库中的机器可读素材清单；本站界面使用系统原生字体，不加载普通第三方网页字体。 |
 
-1. **作者或贡献者**：反物质维度MOD 知识库贡献者；如果原文另有署名，请保留。
-2. **原文网址**：应指向所转载的具体文章，而不只写网站首页。
-3. **许可链接**：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。
-4. **修改声明**：说明是否经过翻译、删改、整合或其他修改，不暗示原作者认可修改后的观点。
+## 原版译文的署名
 
-改编作品须按相同或协议认可的兼容许可共享，不能给获授权内容额外施加相冲突的法律或技术限制。文章历史可在[知识库 GitHub 仓库](https://github.com/OrekiDawson/AD-Oreki-Wiki/tree/main/content)查看。
+原版译文来自[英文原版 Wiki](https://antimatterdimensions.wiki.gg/)。译文页面保留原始修订号和页面历史入口，并说明本站进行了翻译或其他编辑。转载译文时，请同时保留原作者、原文 URL、CC BY-SA 4.0 链接和修改说明；具体页面的署名信息优先于本页的概括。
 
-## 授权范围与例外
+原版 Wiki 的页面与图片并不必然拥有相同的权利来源。文章文本可以适用 CC BY-SA 4.0，而某张截图、Logo 或外部插图可能另有作者和限制。因此，图片恢复任务按图片逐项登记，不以文章许可自动推导图片许可。
 
-本许可适用于作者或贡献者有权授权的**原创百科正文、知识说明和编写规则**；不包括以下材料，除非其权利人另行明确授权：
+## 第三方素材清单
 
-- 游戏本体、游戏资源、商标、第三方图像、截图、文章、引用材料及其他外部作品。
-- 第三方代码、软件包、Quartz 网站生成器和网站脚本。本仓库已有的[MIT 软件许可](https://github.com/OrekiDawson/AD-Oreki-Wiki/blob/main/LICENSE.txt)及其上游版权声明保持不变。
-- 未经授权的第三方贡献、未审核 AI 草稿、用户私人存档或其他非公开数据。
+机器可读清单位于仓库的 [`docs/translation/original-image-manifest.json`](https://github.com/OrekiDawson/AD-Oreki-Wiki/blob/main/docs/translation/original-image-manifest.json)。它记录原版译文对应页面发现的图片、来源页面、本站资源路径、许可证、署名和恢复状态；`待核实` 或 `INCOMPLETE` 的素材不得进入正式页面。图片恢复与逐页核查方法见[原版译文图片恢复清单](https://github.com/OrekiDawson/AD-Oreki-Wiki/blob/main/docs/translation/%E5%8E%9F%E7%89%88%E8%AF%91%E6%96%87%E5%9B%BE%E7%89%87%E6%81%A2%E5%A4%8D%E6%B8%85%E5%8D%95.md)。
 
-**把某项第三方内容放在 Wiki 中，并不能把它自动变成 CC BY-SA 4.0。** 引用第三方信息应当保留原有署名及相关许可说明。
+本站目前使用的原创站点标识位于仓库 `static/icon.svg` 与 `static/icon.png`，由本项目制作；它不代表原版游戏 Logo，也不改变原版游戏或第三方素材的权利归属。
 
-## 查看正式协议
+## 如何转载本站原创内容
 
-- [CC BY-SA 4.0 官方许可介绍](https://creativecommons.org/licenses/by-sa/4.0/)
-- [具有法律效力的许可全文](https://creativecommons.org/licenses/by-sa/4.0/legalcode)
-- [本站原创内容许可说明（仓库）](https://github.com/OrekiDawson/AD-Oreki-Wiki/blob/main/LICENSE-CONTENT.md)
+转载或改写本站有权授权的原创页面时，请保留：
 
-本页只解释基本用法，不取代正式许可文本。
+1. 作者或贡献者；
+2. 具体页面 URL；
+3. [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)许可链接；
+4. 翻译、删改、整合或其他修改声明。
 
-## 相关条目
+不要把原版游戏素材、第三方图片、软件代码或外部资料标成本站原创，也不要暗示原作者认可你的改编。仓库中的[内容许可文件](https://github.com/OrekiDawson/AD-Oreki-Wiki/blob/main/LICENSE-CONTENT.md)和[软件许可文件](https://github.com/OrekiDawson/AD-Oreki-Wiki/blob/main/LICENSE.txt)分别适用各自范围。
 
-[反物质维度MOD Wiki:知识库规则](/wiki-rules) · [知识库编写规范](/developer/editorial-guidelines) · [来源索引](/developer/references/source-index)
+## 发现问题
+
+如果发现来源缺失、许可证不明、署名遗漏或图片与原文不符，请在[Wiki 仓库](https://github.com/OrekiDawson/AD-Oreki-Wiki)提交可核查的来源信息。在核实完成前，维护者应保留原始证据并暂停发布相关素材。
