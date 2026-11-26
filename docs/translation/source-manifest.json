@@ -1,6 +1,3 @@
-Warning: truncated output (original token count: 25537)
-Total output lines: 2924
-
 {
  "schema": 1,
  "generated_at": "2026-11-23T00:40:02.000Z",
@@ -1456,7 +1453,76 @@ Total output lines: 2924
   {
    "title": "Eternity Points",
    "url": "https://antimatterdimensions.wiki.gg/wiki/Eternity_Points",
-   "history_url": "https://antimatterdimensions.wiki.gg/index.php?title=Eternity_Points&action…537 tokens truncated…
+   "history_url": "https://antimatterdimensions.wiki.gg/index.php?title=Eternity_Points&action=history",
+   "pageid": 886,
+   "revid": 2357,
+   "last_edited": "2026-08-12T13:02:01Z",
+   "last_editor": "Alex9127",
+   "size": 38,
+   "categories": [],
+   "type": "redirect",
+   "zh_title": "",
+   "path": "",
+   "priority": 99,
+   "status": "NOT STARTED",
+   "review_status": "NOT REVIEWED",
+   "license_status": "CC-BY-SA-4.0-PENDING-PAGE-CHECK",
+   "third_party": "UNKNOWN",
+   "media_omitted": false,
+   "last_source_check": "2026-11-15",
+   "notes": ""
+  },
+  {
+   "title": "Eternity Upgrades",
+   "url": "https://antimatterdimensions.wiki.gg/wiki/Eternity_Upgrades",
+   "history_url": "https://antimatterdimensions.wiki.gg/index.php?title=Eternity_Upgrades&action=history",
+   "pageid": 574,
+   "revid": 3346,
+   "last_edited": "2026-10-18T12:25:23Z",
+   "last_editor": "KrutarMarsons",
+   "size": 3910,
+   "categories": [
+    "Pages in need of improvement",
+    "Pages with DRUID infoboxes",
+    "Pages with broken file links",
+    "Pages with navboxes"
+   ],
+   "type": "article",
+   "zh_title": "永恒升级",
+   "path": "content/player/original/ow-eternity-upgrades.md",
+   "priority": 3,
+   "status": "STRUCTURE CHECKED",
+   "review_status": "STRUCTURE CHECKED",
+   "license_status": "CC-BY-SA-4.0-CONFIRMED",
+   "third_party": "NONE-DETECTED-TEXT-ONLY",
+   "media_omitted": true,
+   "last_source_check": "2026-11-15",
+   "notes": "batch16：正文/表格/公式/来源字段完整翻译并结构核对；未做逐段语义审校，记 STRUCTURE CHECKED"
+  },
+  {
+   "title": "Glyph",
+   "url": "https://antimatterdimensions.wiki.gg/wiki/Glyph",
+   "history_url": "https://antimatterdimensions.wiki.gg/index.php?title=Glyph&action=history",
+   "pageid": 1006,
+   "revid": 2760,
+   "last_edited": "2026-09-02T11:55:28Z",
+   "last_editor": "KrutarMarsons",
+   "size": 20,
+   "categories": [],
+   "type": "redirect",
+   "zh_title": "",
+   "path": "",
+   "priority": 99,
+   "status": "NOT STARTED",
+   "review_status": "NOT REVIEWED",
+   "license_status": "CC-BY-SA-4.0-PENDING-PAGE-CHECK",
+   "third_party": "UNKNOWN",
+   "media_omitted": false,
+   "last_source_check": "2026-11-15",
+   "notes": ""
+  },
+  {
+   "title": "Glyph Alchemy",
    "url": "https://antimatterdimensions.wiki.gg/wiki/Glyph_Alchemy",
    "history_url": "https://antimatterdimensions.wiki.gg/index.php?title=Glyph_Alchemy&action=history",
    "pageid": 1003,
@@ -1911,13 +1977,13 @@ Total output lines: 2924
    "zh_title": "莱特拉",
    "path": "content/player/original/ow-laitela.md",
    "priority": 4,
-   "status": "REVIEWED",
-   "review_status": "REVIEWED",
+   "status": "STRUCTURE CHECKED",
+   "review_status": "STRUCTURE CHECKED",
    "license_status": "CC-BY-SA-4.0-CONFIRMED",
    "third_party": "NONE-DETECTED-TEXT-ONLY",
    "media_omitted": true,
-   "last_source_check": "2026-11-26",
-   "notes": "R130 第四批：逐段对照修订 3432；核对熵公式、暗物质维度、湮灭、奇点里程碑与媒体说明；Lead 已完整阅读最终正文"
+   "last_source_check": "2026-11-15",
+   "notes": "batch14：正文/熵与现实表/暗物质维度表/升格/湮灭/奇点/三类奇点里程碑（30 条）/相关成就完整翻译，待校对；图片未转载；2026-11-15 质量门禁：仅有结构核对（章节/表格/公式/来源字段），未做逐段语义审校，按 wiki-rules 等级降为 STRUCTURE CHECKED"
   },
   {
    "title": "Laitela/Quotes",
@@ -2089,13 +2155,13 @@ Total output lines: 2924
    "zh_title": "佩勒",
    "path": "content/player/original/ow-pelle.md",
    "priority": 4,
-   "status": "REVIEWED",
-   "review_status": "REVIEWED",
+   "status": "STRUCTURE CHECKED",
+   "review_status": "STRUCTURE CHECKED",
    "license_status": "CC-BY-SA-4.0-CONFIRMED",
    "third_party": "NONE-DETECTED-TEXT-ONLY",
    "media_omitted": true,
-   "last_source_check": "2026-11-26",
-   "notes": "R130 第四批：逐段对照修订 3433；核对词形变换、冲击/裂痕公式、终局占位内容与媒体说明；Lead 已完整阅读最终正文"
+   "last_source_check": "2026-11-15",
+   "notes": "batch14：正文/被毁灭现实/末日/5 项打击/5 个裂隙/15 项裂隙里程碑/结局与琐事完整翻译，待校对；原文结局节为占位内容已如实说明；图片未转载；2026-11-15 质量门禁：仅有结构核对（章节/表格/公式/来源字段），未做逐段语义审校，按 wiki-rules 等级降为 STRUCTURE CHECKED"
   },
   {
    "title": "Pelle/Quotes",
@@ -2819,13 +2885,13 @@ Total output lines: 2924
    "zh_title": "薇",
    "path": "content/player/original/ow-v.md",
    "priority": 4,
-   "status": "REVIEWED",
-   "review_status": "REVIEWED",
+   "status": "STRUCTURE CHECKED",
+   "review_status": "STRUCTURE CHECKED",
    "license_status": "CC-BY-SA-4.0-CONFIRMED",
    "third_party": "NONE-DETECTED-TEXT-ONLY",
    "media_omitted": true,
-   "last_source_check": "2026-11-26",
-   "notes": "R130 第四批：逐段对照修订 3431；核对六项要求、36 项薇成就、空间之理、里程碑、困难薇成就与媒体说明；Lead 已完整阅读最终正文"
+   "last_source_check": "2026-11-15",
+   "notes": "batch14：正文/六项解锁要求/36 个 V 成就表/空间之理表/7 个里程碑/困难 V 成就表/琐事完整翻译，待校对；图片未转载；2026-11-15 质量门禁：仅有结构核对（章节/表格/公式/来源字段），未做逐段语义审校，按 wiki-rules 等级降为 STRUCTURE CHECKED"
   },
   {
    "title": "V/Quotes",
@@ -2855,4 +2921,3 @@ Total output lines: 2924
  ],
  "zone": "content/player/original/"
 }
-
