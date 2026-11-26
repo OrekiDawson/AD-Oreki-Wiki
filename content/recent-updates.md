@@ -8,9 +8,9 @@ tags:
 
 这里显示最近进入当前内容树的正式条目；文章的具体修订记录仍以页面正文与仓库历史为准。
 
+- [第一次大坍缩与进入无限](/player/getting-started/first-crunch)
 - [教程内容管线：用一份数据驱动双端章节](/developer/architecture/tutorial-content-pipeline)
 - [开始游玩 Oreki Edition：入门阅读地图](/player/getting-started)
-- [第一次大坍缩与进入无限](/player/getting-started/first-crunch)
 - [第一次进入与前几分钟](/player/getting-started/first-session)
 - [Web UI 反应式更新：从游戏事件到 Vue 视图](/developer/architecture/web-ui-reactivity)
 - [下载与版本：先选平台，再核对来源](/player/download-and-version)

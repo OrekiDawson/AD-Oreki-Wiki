@@ -40,7 +40,10 @@ aliases:
 
 - **Android 与混合运行时**：[Android 架构](/developer/architecture/android)、[Kotlin 混合运行时 ABI](/developer/architecture/kotlin-runtime)。
 - **Web 与浏览器行为**：[Web 架构](/developer/architecture/web)、[双端行为一致性](/developer/architecture/parity)。
+- **Web 状态与内容**：[Web 离线进度](/developer/architecture/web-offline-simulation)、[Web UI 反应式更新](/developer/architecture/web-ui-reactivity)、[教程内容管线](/developer/architecture/tutorial-content-pipeline)。
 - **机制落地**：[GUI 阶段门禁](/developer/architecture/gui-stage-gates)、[天神解锁与跨端实现](/developer/architecture/celestial-implementation)。
+- **同步与调度**：[Android GUI 同步桥](/developer/architecture/android-gui-sync)、[调度器状态机](/developer/architecture/scheduler-state-machine)。
+- **数值与兼容**：[超大数值](/developer/architecture/numeric-model)、[Kotlin 混合运行时 ABI](/developer/architecture/kotlin-runtime)。
 - **逆向与源码恢复**：[逆向与语义映射](/developer/reverse-engineering/)、[DEX 与 ABI 语义恢复](/developer/reverse-engineering/dex-abi)。
 
 ## 附属资料
