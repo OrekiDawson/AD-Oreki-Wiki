@@ -61,7 +61,7 @@ a12b5cd620280465805ec844ea9a8554277e51d87d769dde4120fa5db842da87
 4. 把安装问题与游戏问题分开：先确认进程和 Activity，再定位阶段、自动购买器、存档或 GUI。
 5. 最后核对每个渠道的文件大小和 SHA-256；出现分歧就回到同一个候选重新交付，而不是在渠道端“修一下”。
 
-历史发布报告、CI 运行和渠道回执适合作为证据索引，放在[发布历史档案](/developer/history/)中；它们不应替代本页对发布资格和技术边界的解释。
+历史发布报告、CI 运行和渠道回执保留在对应源码仓库或内部证据目录；它们不应替代本页对发布资格和技术边界的解释。
 
 ## 参考资料
 
@@ -74,4 +74,4 @@ a12b5cd620280465805ec844ea9a8554277e51d87d769dde4120fa5db842da87
 
 ## 相关条目
 
-[AGP 构建管线](/developer/build/agp) · [从脚本补丁到 AGP](/developer/build/build-mod-retirement) · [存档兼容排查](/developer/troubleshooting/save-compatibility) · [发布历史档案](/developer/history)
+[AGP 构建管线](/developer/build/agp) · [从脚本补丁到 AGP](/developer/build/build-mod-retirement) · [存档兼容排查](/developer/troubleshooting/save-compatibility)

@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=./quartz/plugins/quartz-plugins.schema.json
 configuration:
-  pageTitle: "反物质维度MOD 知识库"
+  pageTitle: "反物质维度 MOD Wiki"
   pageTitleSuffix: ""
   enableSPA: true
   enablePopovers: true
@@ -14,12 +14,10 @@ configuration:
     - ai-drafts
     - "ai-drafts/**"
   theme:
-    fontOrigin: googleFonts
-    cdnCaching: true
     typography:
-      header: Schibsted Grotesk
-      body: Source Sans Pro
-      code: IBM Plex Mono
+      header: sans-serif
+      body: sans-serif
+      code: ui-monospace
     colors:
       lightMode:
         light: "#faf8f8"
@@ -96,8 +94,6 @@ plugins:
   - source: "@quartz-community/roam"
     enabled: false
     order: 92
-  - source: "@quartz-community/quartz-fonts"
-    enabled: true
   - source: "@quartz-themes/core"
     enabled: false
     options:
@@ -150,18 +146,19 @@ plugins:
       position: left
       priority: 50
   # 本地最小扩展：复用官方 Explorer，仅注入固定的一级目录语义顺序与站务短名。
-  # 不移动文件、不改 URL、不做运行时 JS/DOM 排序；官方包未修改。
+  # 目录标题进入分类索引，折叠图标负责展开；用户状态保存在浏览器本地。
   - source: "./scripts/quartz-plugins/ordered-explorer"
     enabled: true
     options:
-      folderDefaultState: collapsed
+      # 正式分类与条目默认完整展开；导航长度由语义排序、短标题和层级控制解决。
+      folderDefaultState: open
       folderClickBehavior: link
-      useSavedState: true
+      useSavedState: false
     layout:
       position: left
       priority: 50
   - source: "@quartz-community/graph"
-    enabled: true
+    enabled: false
     layout:
       position: right
       priority: 10
@@ -183,11 +180,13 @@ plugins:
     layout:
       position: beforeBody
       priority: 10
+      condition: not-index
   - source: "@quartz-community/content-meta"
     enabled: true
     layout:
       position: beforeBody
       priority: 20
+      condition: not-index
   - source: "@quartz-community/tag-list"
     enabled: false
     layout:
@@ -252,7 +251,7 @@ plugins:
     options: {}
     order: 50
   - source: "@quartz-community/note-properties"
-    enabled: true
+    enabled: false
     options:
       includeAll: false
       includedProperties:
@@ -266,6 +265,7 @@ plugins:
       position: beforeBody
       priority: 15
       display: all
+      condition: not-index
 layout:
   groups:
     toolbar:

@@ -2,6 +2,8 @@
 
 本文件说明怎样**找到正确资料并完成一项可审校的文档修改**，不是第二份规则正文。公开规则以 [知识库规则](../content/wiki-rules.md) 为准；跨仓授权、预算、优先级、任务编号依 [Workspace AGENTS.md](https://github.com/OrekiDawson/AD-Oreki-Edition-Workspace/blob/3652a9589251281c231f9b133ccd412ab83b7580/AGENTS.md)，本仓执行边界依根 `AGENTS.md`。
 
+首页是面向人类读者的百科门户，不是项目管理面板，也不只是导航中转站。精选条目、趣闻和成长路线必须来自已复审正文并提供内链。Lead 可依据知识主题和读者任务拆分、合并、新建或归档页面；调整文章边界时同步链接、兼容入口、分类与逐页台账，不以旧文件数量限制重构。
+
 ## 写得准确，也写得值得读
 
 编辑的质量目标按优先顺序理解为：准确性是底线，可读性是基本要求，趣味性是重要质量目标。先核对事实，再用自然、有节奏的中文讲清楚问题；不要把 PR、CI、状态表或 AI Summary 当成正文。文章可以用有来源的机制揭秘、数学趣闻、历史背景、设计取舍、源码片段、流程图或适度幽默帮助读者理解，但不能为了好看补写未经证实的机制，也不要滥用网络梗、Emoji、感叹号和夸张语气。
@@ -99,3 +101,13 @@
 ## README 与公开首页
 
 编辑 README.md 或 content/index.md 时，先把它们当作第一次到访的读者会看到的项目门面：说明这是什么、从哪里开始读、怎样贡献以及内容许可。不要把 Agent 工作流、Kody/CI/Pages/HTTPS 门禁、PR 历史、重构台账或管理员命令搬进公开页面；这些内容留在相应维护文档。开发者首页也应优先提供技术阅读路线，避免内部协调信息污染正文。完成后检查实际 HTML，而不只检查 Markdown 源文件。
+## 全站字体验收
+
+普通正文、标题、导航、搜索、表格、引用、链接及行内科学记数法统一继承系统无衬线字体；程序代码使用系统等宽字体，KaTeX 使用其功能性数学字体。不得引入 Google Fonts、Quartz 网页字体或其他固定网页字体。除 `check-fonts.mjs` 的源代码与构建产物门禁外，Lead 必须用 Playwright Android Chrome 视口读取实际 computed style，至少覆盖玩家、开发者、原版译文、表格、数学表达式和代码块，并查看修改前后截图；CI 通过不等于视觉验收通过。
+
+`scripts/acceptance-fonts.cjs` 会强制检查正文、标题、导航、搜索框、表格、代码块和数学表达式样本实际存在，验证每个样本的系统字体类别并断言 HTTP 200。默认目标是本地预览（`KB_URL=http://127.0.0.1:8080`）；完成部署后，只有明确设置 `KB_URL=https://wiki.oreki.net KB_ALLOW_PRODUCTION=1` 才能验收线上版本，避免把旧线上站点当作当前候选构建。
+
+```text
+KB_URL=http://127.0.0.1:8080 KB_FONT_OUT=evidence/playwright-fonts.json node scripts/acceptance-fonts.cjs
+KB_URL=https://wiki.oreki.net KB_ALLOW_PRODUCTION=1 KB_FONT_OUT=evidence/playwright-fonts-live.json node scripts/acceptance-fonts.cjs
+```

@@ -16,7 +16,7 @@ aliases:
 
 ## 先看结论边界
 
-当前最稳固的结论是：Web 已有一份可追溯的真实新档终局记录；Android 的开发候选可以安装并推进到首次现实，但终局仍未完成，不能作为正式发布版本。Web 的 [运行说明](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/f7044da0f80a50ccbe5cd827fea717b4d5a1eae6/reports/R104/web/r121-01/README.md)记录首次 `isGameEnd=true` 于 10451.1 秒，[结构化摘要](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/f7044da0f80a50cc5be5cd827fea717b4d5a1eae6/reports/R104/web/r121-01/summary.json)给出同一运行的事件和哈希边界；Android 的阶段故障与修复边界见 [KVM 历史记录](/developer/history/2026-11-20-r121-android-kvm)。旧 Android 候选的故障报告记录 APK SHA-256 `43e3f4fc42017541a37b81f7440e58fe8a67380ed9ff601d440038947091f1ac`；这不是修复后候选的发布证明。
+当前最稳固的结论是：Web 已有一份可追溯的真实新档终局记录；Android 的开发候选可以安装并推进到首次现实，但终局仍未完成，不能作为正式发布版本。Web 的 [运行说明](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/f7044da0f80a50ccbe5cd827fea717b4d5a1eae6/reports/R104/web/r121-01/README.md)记录首次 `isGameEnd=true` 于 10451.1 秒，[结构化摘要](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/f7044da0f80a50cc5be5cd827fea717b4d5a1eae6/reports/R104/web/r121-01/summary.json)给出同一运行的事件和哈希边界；Android 的阶段故障与修复边界见 [故障排查](/developer/troubleshooting/)。旧 Android 候选的故障报告记录 APK SHA-256 `43e3f4fc42017541a37b81f7440e58fe8a67380ed9ff601d440038947091f1ac`；这不是修复后候选的发布证明。
 
 这意味着以下判断可以成立：
 
