@@ -68,6 +68,24 @@ const routeFor = (file) => {
   const rel = path.relative(content, file).replaceAll("\\", "/").replace(/\.md$/, "")
   return rel.endsWith("/index") ? `/${rel.slice(0, -6)}` : `/${rel}`
 }
+const archivedHistoryRedirects = new Map([
+  ["/history", "/developer"],
+  ["/developer/history", "/developer"],
+  ["/developer/history/2026-11-12-r103-release-baseline", "/developer/current/release-status"],
+  ["/developer/history/2026-11-15-celestial-leaves-fix", "/developer/architecture/celestial-implementation"],
+  ["/history/2026-11-15-r113-180min-fail", "/developer/current/known-issues"],
+  ["/developer/history/2026-11-15-r113-180min-fail", "/developer/current/known-issues"],
+  ["/developer/history/2026-11-15-r113-p0-livelock", "/developer/current/known-issues"],
+  ["/developer/history/2026-11-15-r114-reality-autoeternity", "/developer/architecture/automation-ownership"],
+  ["/developer/history/2026-11-15-signing-blocked", "/developer/build/apk-signing"],
+  ["/developer/history/2026-11-20-r121-android-kvm", "/developer/current/project-status"],
+])
+for (const [alias, target] of archivedHistoryRedirects) {
+  const targetFile = formal.find((file) => routeFor(file) === target)
+  if (!targetFile) errors.push(`历史兼容入口目标不存在：${alias} → ${target}`)
+  else if (!fs.readFileSync(targetFile, "utf8").includes(`\"${alias}\"`))
+    errors.push(`历史兼容入口未挂在指定目标：${alias} → ${target}`)
+}
 for (const file of formal)
   if (!allEntries.includes(`](${routeFor(file)})`))
     errors.push(`正式页面未进入全部条目索引：${routeFor(file)}`)

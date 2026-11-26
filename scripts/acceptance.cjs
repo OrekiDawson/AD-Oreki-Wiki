@@ -30,6 +30,18 @@ const SEARCH_TERMS = [
 ];
 
 const OLD_URLS = ['/architecture/kotlin-runtime', '/architecture/android', '/gameplay/challenges', '/gameplay/progression-infinity-eternity', '/build/agp', '/current/project-status', '/developer/history/2026-11-12-r103-release-baseline', '/developer/history/2026-11-15-celestial-leaves-fix', '/history/2026-11-15-r113-180min-fail', '/developer/history/2026-11-15-r113-180min-fail', '/developer/history/2026-11-15-r113-p0-livelock', '/developer/history/2026-11-15-r114-reality-autoeternity', '/developer/history/2026-11-15-signing-blocked', '/developer/history/2026-11-20-r121-android-kvm'];
+const HISTORY_REDIRECTS = {
+  '/history': '/developer',
+  '/developer/history/': '/developer',
+  '/developer/history/2026-11-12-r103-release-baseline': '/developer/current/release-status',
+  '/developer/history/2026-11-15-celestial-leaves-fix': '/developer/architecture/celestial-implementation',
+  '/history/2026-11-15-r113-180min-fail': '/developer/current/known-issues',
+  '/developer/history/2026-11-15-r113-180min-fail': '/developer/current/known-issues',
+  '/developer/history/2026-11-15-r113-p0-livelock': '/developer/current/known-issues',
+  '/developer/history/2026-11-15-r114-reality-autoeternity': '/developer/architecture/automation-ownership',
+  '/developer/history/2026-11-15-signing-blocked': '/developer/build/apk-signing',
+  '/developer/history/2026-11-20-r121-android-kvm': '/developer/current/project-status',
+};
 const NEW_PAGES = [
   '/',
   '/player/',
@@ -192,7 +204,17 @@ async function run() {
     '/developer/history/',
   ]) {
     const resp = await page.goto(BASE + url, { waitUntil: 'load' }).catch(() => null);
-    results.urls.push({ url, ok: !!resp && resp.status() === 200 });
+    const finalPath = new URL(page.url()).pathname.replace(/\/$/, '') || '/';
+    const expectedPath = HISTORY_REDIRECTS[url.replace(/\/$/, '')] || HISTORY_REDIRECTS[url];
+    results.urls.push({
+      url,
+      ok: !!resp && resp.status() === 200,
+      finalPath,
+      ...(expectedPath ? { redirectOk: finalPath === expectedPath } : {}),
+    });
+    if (expectedPath && finalPath !== expectedPath) {
+      results.errors.push(`history redirect mismatch: ${url} -> ${finalPath}; expected ${expectedPath}`);
+    }
   }
 
   // 未审核 AI 草稿不得公开
