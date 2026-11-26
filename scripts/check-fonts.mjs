@@ -17,6 +17,8 @@ for (const { file, text } of configs) {
   if (/Source Sans|Schibsted|IBM Plex|Google Sans|Roboto|Noto Sans|font-family:\s*["'][^"']+["']/i.test(text))
     errors.push(`配置中重新引入了固定网页字体：${path.basename(file)}`)
 }
+if (!/typography:\s*[\s\S]*?header:\s*["']system-ui,\s*sans-serif["'][\s\S]*?body:\s*["']system-ui,\s*sans-serif["']/m.test(config))
+  errors.push("Quartz theme.typography 未固定为 system-ui, sans-serif")
 if (process.argv[2] !== "--built" && deps["@quartz-community/quartz-fonts"])
   errors.push("package.json 仍依赖 @quartz-community/quartz-fonts")
 if (!/--headerFont:\s*system-ui\s*,\s*sans-serif\s*;/.test(fs.readFileSync(path.join(root, "quartz/styles/custom.scss"), "utf8")))
