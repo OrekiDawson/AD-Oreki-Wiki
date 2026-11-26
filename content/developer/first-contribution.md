@@ -82,6 +82,6 @@ git diff --check
 - **APK 能构建但自动化不动**：按 `allow` → 原版前置 → `noteActed/noteNoop/noteFail` 顺序查，不要先改间隔上限。
 - **Release 被拒绝**：检查 `keys/oreki.jks` 和 `local.properties` 的显式实验开关；签名门禁是交付保护，不是构建噪声。
 
-本文作者自检：源码路径和调用关系已对照 Android `9d8fc46` 的 `settings.gradle.kts`、`app/build.gradle.kts`、`OrekiStageAuto.kt`、`OrekiAutomationScheduler.kt`、`GameApi.kt`；命令按当前工程结构撰写。作者环境未执行克隆、Gradle 构建、APK 安装、AVD 启动或真实游戏运行，读者应把这些步骤作为待执行验证，而不是历史 PASS。
+本文的源码路径和调用关系已对照 Android `9d8fc46` 的 `settings.gradle.kts`、`app/build.gradle.kts`、`OrekiStageAuto.kt`、`OrekiAutomationScheduler.kt`、`GameApi.kt`；命令按当前工程结构撰写。真正执行时仍需在读者自己的环境中完成克隆、Gradle 构建、APK 安装和运行验证，本文不把源码核对冒充设备结果。
 
 [Android 架构](/developer/architecture/android) · [Android 工程目录迁移](/developer/architecture/directory-migration) · [AGP 构建管线](/developer/build/agp) · [混合运行时 ABI](/developer/architecture/kotlin-runtime)

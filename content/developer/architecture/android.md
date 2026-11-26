@@ -73,7 +73,7 @@ OrekiStageAuto.onAutoBuyerTick()
 ./gradlew :app:assembleDebug --no-daemon --console=plain
 ```
 
-这是基于当前 Gradle 项目结构给出的操作入口，不是本次实测结果；缺少完整游戏阶段输入、Android SDK、构建缓存或其他受保护输入时，构建可能在配置或资源阶段失败。本文没有运行 Gradle、D8/R8、APK 安装、AVD、真机、存档读写或完整游戏长跑，均为 `NOT RUN`。即使构建成功，也只能说明对应构建任务和输入门禁通过，不能推出 GUI、自动化、存档兼容或真实结算已经通过。
+这是基于当前 Gradle 项目结构给出的操作入口，不是设备测试报告；缺少完整游戏阶段输入、Android SDK、构建缓存或其他受保护输入时，构建可能在配置或资源阶段失败。构建、安装、存档读写和完整游戏运行仍需在具备这些输入的环境中分别验证；即使构建成功，也只能说明对应构建任务和输入门禁通过，不能推出 GUI、自动化、存档兼容或真实结算已经通过。
 
 ## 排障线索：按症状回到入口
 
@@ -86,6 +86,6 @@ OrekiStageAuto.onAutoBuyerTick()
 
 ## 本文依据与未完成验证
 
-本次依据 Android `9d8fc46ce99279720b5b3068027bb76bceb35756` 直接核对了 `settings.gradle.kts`、`build.gradle.kts`、`app/build.gradle.kts`、`OrekiStageAuto.kt`、`OrekiAutomationScheduler.kt`、`OrekiGuiStage.kt` 和 `GameApi.kt`。文章只陈述这些文件能够支持的入口、字段和调用关系；Android 运行时行为、完整游戏输入的来源完整性和设备结果仍需单独验证，当前均为 `NOT VERIFIED` 或 `NOT RUN`。
+本文依据 Android `9d8fc46ce99279720b5b3068027bb76bceb35756` 直接核对了 `settings.gradle.kts`、`build.gradle.kts`、`app/build.gradle.kts`、`OrekiStageAuto.kt`、`OrekiAutomationScheduler.kt`、`OrekiGuiStage.kt` 和 `GameApi.kt`。因此正文只陈述这些文件能够支持的入口、字段和调用关系；Android 运行时行为、完整游戏输入的来源完整性和设备结果仍须另行验证。
 
 进一步阅读：[第一次参与开发](/developer/first-contribution) · [Web 架构](/developer/architecture/web) · [混合运行时 ABI](/developer/architecture/kotlin-runtime) · [AGP 构建](/developer/build/agp) · [双端一致性](/developer/architecture/parity) · [故障排查](/developer/troubleshooting/)
