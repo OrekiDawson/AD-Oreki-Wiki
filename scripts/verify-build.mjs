@@ -77,7 +77,7 @@ const CATEGORY_TITLES = {
   "player/gameplay": "玩法机制",
   "player/original": "原版 Wiki 中文翻译",
   "player/mods": "Oreki Edition 介绍",
-  "player/download-and-version": "下载与版本说明",
+  "player/download-and-version": "下载与版本",
   "player/faq": "玩家常见问题",
   "developer/architecture": "架构与运行时",
   "developer/reverse-engineering": "逆向与语义映射",
