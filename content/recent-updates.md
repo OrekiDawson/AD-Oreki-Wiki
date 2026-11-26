@@ -8,8 +8,11 @@ tags:
 
 这里显示最近进入当前内容树的正式条目；文章的具体修订记录仍以页面正文与仓库历史为准。
 
-- [存档进度比较器：用阶段与近似值判断谁更靠前](/developer/architecture/save-progress-comparator)
+- [阶段门禁排障：页面提前出现、按钮灰掉与重置后变化](/player/gameplay/stage-gate-troubleshooting)
+- [阶段解锁：进度地图与排障入口](/player/gameplay/stage-gates)
+- [阶段进度：从新档到天神](/player/gameplay/stage-progression)
 - [架构与运行时：从入口到运行时](/developer/architecture)
+- [存档进度比较器：用阶段与近似值判断谁更靠前](/developer/architecture/save-progress-comparator)
 - [第一次大坍缩与进入无限](/player/getting-started/first-crunch)
 - [教程内容管线：用一份数据驱动双端章节](/developer/architecture/tutorial-content-pipeline)
 - [开始游玩 Oreki Edition：入门阅读地图](/player/getting-started)
@@ -29,6 +32,3 @@ tags:
 - [时间研究与现实：后永恒阶段阅读地图](/player/gameplay/reality-time-studies)
 - [调度器状态机：购买决策、合法重置与进度死锁](/developer/architecture/scheduler-state-machine)
 - [第一次现实：重置前后的准备](/player/gameplay/reality)
-- [时间研究：分叉、挑战与时间膨胀](/player/gameplay/time-studies)
-- [原版与 Oreki Edition：差异阅读地图](/player/gameplay/original-vs-mod)
-- [无限与永恒：两层重置的阅读地图](/player/gameplay/progression-infinity-eternity)

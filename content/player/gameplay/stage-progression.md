@@ -53,3 +53,5 @@ aliases:
 4. 这个结论是否来自当前版本，而不是旧版或另一个 MOD 的攻略？
 
 如果答案彼此矛盾，先备份存档，再阅读[阶段门禁排障](/player/gameplay/stage-gate-troubleshooting)。阶段顺序可以帮助你定位问题，但不能替代当前游戏对条件的实际判断。
+
+原版进程资料可对照[Antimatter Dimensions Wiki](https://antimatterdimensions.wiki.gg/wiki/Antimatter_Dimensions)；不同版本和 MOD 的解锁条件可能不同。
