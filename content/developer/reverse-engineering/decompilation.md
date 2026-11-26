@@ -8,7 +8,7 @@ tags:
   - Smali
   - Kotlin
 aliases:
-  - "/developer/decompilation"
+  - "/reverse-engineering/decompilation"
 ---
 
 反编译的终点不是生成一份“看起来像 Kotlin”的文件，而是回答一个更窄、更有用的问题：旧 APK 在某个版本中究竟实现了什么行为，新代码可以依赖哪一条边界。反编译器能把字节码排成近似 Java 的形状，却不会替我们恢复被擦掉的变量名、泛型、协程语义或设计意图。因此，源码恢复必须把工具输出降格为线索，把 DEX 结构、调用路径和运行结果合成可复核的证据。
@@ -93,5 +93,5 @@ DEX 保存类、字段、方法、类型描述符和 Dalvik 字节码。Smali �
 
 - [Android 开源项目：DEX 文件格式](https://source.android.com/docs/core/runtime/dex-format)：DEX 结构与索引表的官方说明。
 - [Android 开源项目：Dalvik 字节码](https://source.android.com/docs/core/runtime/dalvik-bytecode)：寄存器、指令和调用约定。
-- [Android 开源项目：ART 与 Dalvik](https://source.android.com/docs/core/runtime)：Android 运行时及字节码执行背景。
+- [Android 开源项目：ART 与 Dalvik](https://source.android.com/docs/core/runtime)：Android 运行时及字节码执行背景；2026-11-27 核对 HTTP 200，页面标注最后更新为 2026-10-09 UTC。
 - [Android 逆向资料目录](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/tree/fb1299a132f134eb4fab009643ee3fc3d6c57edf/docs/deobfuscation)：本项目固定版本的索引、绑定与调查资料；它们不是可直接编译的上游源码。

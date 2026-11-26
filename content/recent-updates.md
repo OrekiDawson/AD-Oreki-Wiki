@@ -8,8 +8,8 @@ tags:
 
 这里显示最近进入当前内容树的正式条目；文章的具体修订记录仍以页面正文与仓库历史为准。
 
-- [逆向与语义映射](/developer/reverse-engineering)
 - [反编译与源码恢复](/developer/reverse-engineering/decompilation)
+- [逆向与语义映射](/developer/reverse-engineering)
 - [自动化与阶段入口](/player/faq/automation-and-unlocks)
 - [膨胀升级（被毁灭的现实）](/player/original/ow-dilation-upgrades-doomed)
 - [永恒挑战·挑战明细（被毁灭的现实）](/player/original/ow-eternity-challenges-challenges-pelle)
