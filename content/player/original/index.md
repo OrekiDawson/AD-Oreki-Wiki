@@ -66,7 +66,7 @@ aliases:
 - [原版:现实](/player/original/ow-reality)
 - [原版:现实升级](/player/original/ow-reality-upgrades)
 - [原版:符文炼金](/player/original/ow-glyph-alchemy)
-- [原版:特性](/player/original/ow-perks)
+- [原版:复兴](/player/original/ow-perks)
 - [原版:黑洞](/player/original/ow-black-hole)
 
 ### ⚕ 天神

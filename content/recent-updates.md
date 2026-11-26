@@ -8,8 +8,8 @@ tags:
 
 这里显示最近进入当前内容树的正式条目；文章的具体修订记录仍以页面正文与仓库历史为准。
 
-- [构建与交付：从源码到可交付产物](/developer/build)
 - [开发者专区](/developer)
+- [构建与交付：从源码到可交付产物](/developer/build)
 - [玩家专区](/player)
 - [第一次大坍缩与进入无限](/player/getting-started/first-crunch)
 - [自动化](/player/original/ow-automation)
