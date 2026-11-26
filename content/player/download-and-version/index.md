@@ -1,30 +1,43 @@
 ---
 title: "下载与版本说明"
-description: "Android APK、Web 站点、源码仓库、版本辨识与存档备份的玩家入口"
+description: "选择 Android 或 Web 版本，核对来源、更新方式并保护游戏存档"
 tags:
+  - 玩家
   - 下载
   - 版本
-  - 玩家
 ---
 
-下载前先确认平台和版本。正式 Android 版本从 GitHub Releases 发布；Web 版通过独立站点提供，源码与部署记录保留在 GitHub。预发布、Draft、失败候选或旧构建不能因为“能安装”就被当作当前稳定版本。
+下载前先决定你要玩的平台，再确认页面上的版本状态。一个能安装的 APK 不一定是当前稳定版本；一个能打开的网页也不一定来自最新部署。先看来源和版本，再开始新档，通常比事后抢救存档省事。
 
 ## Android
 
-- [Android 正式 Releases](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/releases)：查看标签、发布时间、APK 资产与 Release 说明。
-- 当前可见最新非预发布 Release 为 `android-update-3.21.0-a12b5cd6`，发布于 2026-11-15；发布页应同时核对实际资产、哈希与说明，而不是只看标签。
-- 安装新版前备份游戏存档。不同签名、包名或测试候选可能无法覆盖安装，也不能混用旧 APK 的验收结论。
+Android 版本请从 [AD Oreki Edition Android Releases](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/releases) 进入。优先选择标记为正式发布的 Release，并在发布页核对 APK 资产、版本标签和说明；不要把 Draft、预发布或失败候选当成稳定包。
+
+安装或更新前：
+
+1. 在游戏内导出存档，并把导出的文本放到安全位置；不要只依赖应用自动保存。
+2. 确认新旧版本的包名与签名允许覆盖安装。若系统提示无法安装，不要立刻卸载旧版，因为卸载可能同时删除本地存档。
+3. 安装后先导入副本，确认维度、升级、挑战和现实进度都能正常显示，再继续推进主存档。
+
+如果安装包来自其他人的转发，请回到官方 Release 页面核对标签和资产。不要在公开问题中上传带有私人信息的存档，也不要把签名文件、密钥或本地路径发给他人。
 
 ## Web
 
-- [打开 Oreki Edition Web](https://oreki.net/)
-- [Web 源码仓库](https://github.com/OrekiDawson/AD-Oreki-Edition-Web)
-- Web 版本以正式部署 Commit 和线上页面为准。刷新页面不会自动把未部署分支变成正式版本。
+Web 版入口是 [oreki.net](https://oreki.net/)。如果页面看起来仍像旧版本，可以先强制刷新并检查浏览器是否缓存了旧资源；仍然异常时，记录页面显示的版本信息和复现步骤，再到[玩家常见问题](/player/faq/)查找处理方法。
 
-## 怎样报告版本
+Web 版的源码公开在 [AD-Oreki-Edition-Web](https://github.com/OrekiDawson/AD-Oreki-Edition-Web)。源码仓库中的变更不会自动改变正式入口；玩家判断版本时以实际打开的站点为准。
 
-提交问题时至少说明：平台（Android/Web）、版本名或部署 Commit、使用的存档来源、复现步骤、预期结果和实际结果。Android 可附 Release 标签与 APK 哈希；Web 可附页面版本信息或部署记录。不要在公开问题中上传包含账户信息、密钥或私人数据的存档。
+## 怎么确认自己正在玩哪个版本
 
-## 版本边界
+提交问题时至少写清楚：
 
-“源码已合并”“CI 通过”“APK 已构建”“真实新档通关”和“正式发布”是不同状态。当前发布与验收状态可在开发者专区核对：[项目状态](/developer/current/project-status) · [发布状态](/developer/current/release-status)。遇到下载或启动问题，请继续阅读 [常见问题](/player/faq/)。
+- 平台：Android 还是 Web；
+- Android 的 Release 标签，或 Web 页面能看到的版本/部署信息；
+- 存档是新建、导入还是从旧版升级而来；
+- 能稳定重现的操作顺序、预期结果与实际结果。
+
+Android 问题可以附 Release 页面上的 APK 信息或哈希。不要用“我昨天下载的”代替版本号，也不要把另一个平台的表现当作当前平台的证据。
+
+## 更新前的存档习惯
+
+每次大版本更新前保留一份导出存档，并先用副本测试新版本。遇到导入失败、进度倒退或数值明显异常时，停止继续覆盖旧文件，先阅读[存档兼容与自动保存](/player/gameplay/saves)和[玩家常见问题](/player/faq/)。需要确认原版与 MOD 差异时，再看[原版与 Oreki Edition 的区别](/player/gameplay/original-vs-mod)。
