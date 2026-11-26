@@ -69,4 +69,3 @@ Oreki Edition 有 Android 与 Web 两套实现，目标是保持玩家可见的�
 
 *本文中的 Android 源码定位基于 `9d8fc46ce99279720b5b3068027bb76bceb35756`，Web 入口仍基于 `90d89de2`。本页只进行了源码和链接路径阅读，未执行 APK 构建、设备操作或完整游戏验收。*
 
-全站页面范围、旧 URL 兼容入口和玩家/开发者分台账见[固定快照](https://github.com/OrekiDawson/AD-Oreki-Wiki/blob/58e9dce3ae2e020f33f58aa981e6c1399eeb8942/docs/全站重构页面台账.md)（台账记录盘点基线 `ce2a5fb`，2026-11-23 核对；快照 `58e9dce` 为台账首次合并版本）；最新修订以 [main 分支台账](https://github.com/OrekiDawson/AD-Oreki-Wiki/blob/main/docs/全站重构页面台账.md) 为准，公开页面仍以当前站点与各专区入口为准。
