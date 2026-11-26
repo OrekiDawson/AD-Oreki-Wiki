@@ -8,6 +8,7 @@ tags:
 
 这里显示最近进入当前内容树的正式条目；文章的具体修订记录仍以页面正文与仓库历史为准。
 
+- [反物质维度MOD Wiki:知识库规则](/wiki-rules)
 - [架构与运行时：从入口到运行时](/developer/architecture)
 - [天神判据与跨端编码](/developer/architecture/celestial-implementation)
 - [超大数值：从尾数与指数到跨端一致性](/developer/architecture/numeric-model)
@@ -31,4 +32,3 @@ tags:
 - [阶段解锁：进度地图与排障入口](/player/gameplay/stage-gates)
 - [第一次进入与前几分钟](/player/getting-started/first-session)
 - [FAQ：下载、平台与版本](/player/faq/platform)
-- [Web 模块启动链：全局兼容桥与初始化故障排查](/developer/troubleshooting/web-module-startup)
