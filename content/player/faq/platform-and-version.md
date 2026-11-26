@@ -25,11 +25,7 @@ Stable 面向日常游玩，Pre-release 则提前提供给玩家测试。预发�
 
 不保证。180 分钟是项目希望通过真实新档回归达到的体验目标，不是对每个版本、玩家和操作方式的通关承诺。版本差异、手动选择、自动化设置和实际故障都会影响结果；某次历史测试通过，也不能自动证明当前 APK 或网页通过同一测试。项目中的目标、历史结果和当前证据见[项目状态](/developer/current/project-status)。
 
-## 怎样报告一个真正有用的问题？
-
-先保护存档，再写清四类信息：平台与版本、发生阶段、操作过程、预期与实际结果。必要时附去除敏感信息的截图。
-
-Android 问题可发到 [Android Issues](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/issues)，Web 问题可发到 [Web Issues](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/issues)。不要公开账号令牌、私人文件路径或包含个人数据的存档。
+遇到异常时，先记录平台与版本，再补充发生阶段、操作过程、预期与实际结果；完整的提问和反馈格式见[玩家常见问题](/player/faq/)。不要公开账号令牌、私人文件路径或包含个人数据的存档。
 
 ## 相关条目
 
