@@ -1,107 +1,128 @@
 ---
-title: "从 DEX 到 Kotlin：混淆 Android 游戏的 ABI 适配"
-description: "从 DEX 寄存器与方法描述符出发，说明如何恢复混淆代码的语义，并把不稳定的宿主接口隔离在可维护的 Kotlin 适配层之后"
+title: "DEX 与 Smali：从寄存器恢复可用的 Kotlin ABI"
+description: "理解 Android DEX、寄存器、方法描述符与反编译边界，并把混淆宿主隔离在可诊断的 Kotlin 适配层之后"
 tags:
   - 逆向
   - DEX
+  - Smali
   - ABI
   - Kotlin
 aliases:
   - "/reverse-engineering/dex-abi"
 ---
 
-把一个 Android 游戏改造成 MOD，最容易误解的地方是“反编译”。看见 JADX 生成了一堆 Java 文件，并不意味着已经找回了原来的程序。DEX 保存的是虚拟机要执行的类、方法、字段和指令；混淆器只要保持这些东西的链接关系成立，就可以把有意义的名字压缩成 `a`、`g()` 或 `rj0`。真正困难的工作，是从这些关系中恢复出足以安全调用的语义，并接受一件不太浪漫但很重要的事实：**混淆名不是 API，描述符和调用契约才是。**
+把 APK 交给 JADX，得到一堆看起来像 Java 的文件，最容易让人产生一种错觉：源码已经回来了。实际上，DEX 只承诺运行时需要的结构和指令，反编译器是在这些事实之上补出变量名、控制流和类型解释。混淆后的 `a()` 可能是购买入口，也可能只是缓存读取；真正稳定的线索是描述符、寄存器流、调用者和状态写入。
 
-本文以 Android 3.21 基线为边界，讨论 AD-Oreki-Edition 如何把官方游戏 DEX 当作宿主、把可变业务放在 Kotlin 中，并在两者之间留下窄而清楚的 ABI 边界。历史反编译产物和映射表只用于取证；它们不是可以直接编译的“原始源码”。
+本文以 Android 3.21 的固定基线为边界，讨论如何从 DEX/Smali 恢复足够可靠的语义，再把它收进 Oreki Edition 的 Kotlin 适配层。目标不是把整款游戏“反编译回源码”，而是让一个需要读取玩家状态、调用原版动作的 MOD 知道：哪些事实已经证明，哪些仍是推断，哪些必须在版本升级时重新核对。
 
-## 先把 DEX 当成什么
+## DEX 里究竟保存了什么
 
-### DEX 不是 Java 的另一种排版
+DEX（Dalvik Executable）保存类、字段、方法、原型、访问标志和指令等运行时结构。它面向寄存器虚拟机，不是把 Java 源码压缩后原样装进 APK；注释、原始局部变量名和开发者意图通常已经不在里面。
 
-DEX（Dalvik Executable）面向 Android 的寄存器虚拟机。一个方法由方法原型、访问标志和指令序列组成；指令操作的是寄存器，而不是 JVM 字节码常见的操作数栈。`invoke-virtual` 会根据对象和方法原型调用实例方法，`invoke-static` 调用静态方法，返回值通常再由 `move-result` 家族指令接住。
-
-这解释了为什么一段 Smali 不能只靠“把每行翻成 Java”来理解。必须同时看：
-
-- `v0`、`v1` 是局部寄存器，`p0`、`p1` 是参数视图；方法参数占用的寄存器数量取决于类型，`long` 和 `double` 还要占两个连续寄存器。
-- `I`、`Z`、`J`、`D` 分别表示 `int`、`boolean`、`long`、`double`；对象类型写成 `L包名/类名;`，数组则以 `[` 开头。
-- `Lx;->g(Ljava/lang/String;)Z` 不只是“调用 x 的 g”：它规定了所有者、方法名、参数布局和返回类型。名字相同而描述符不同，是两个不同的方法契约。
-- `iget`、`iput`、`sget`、`sput` 暴露字段访问的对象/静态性质；把一次 `sget-object` 误读成实例字段，常常会把后面的整条推理带偏。
-
-因此，读码的第一个产物不应是“`a` 可能叫玩家”，而应是一个可复核的事实：某个类声明了什么字段、实现了什么接口、哪些调用点要求它返回什么类型，以及这些关系是否在宿主 DEX 中唯一成立。
-
-### 寄存器让控制流比变量名更诚实
-
-反编译器会努力恢复 `player`、`isUnlocked` 这样的变量名，但那是推断结果。遇到异常处理、内联、桥接方法或 Kotlin 编译产物时，变量边界可能已经消失。此时应沿着寄存器的定义—使用链阅读：一个值在哪里产生，经过哪些条件分支，在哪个 `invoke` 前被当作什么类型使用。
-
-这也是源码恢复最容易“看起来合理、实际错误”的地方。若一个值先被当作 `BigDouble` 比较，稍后又被当作普通 `double` 参与运算，不能仅凭反编译器给出的 Java 表达式下结论；必须回到方法描述符、字段声明和调用者的实际类型转换。游戏的超大数值对象尤其如此，浮点数近似与游戏内数值语义不能混为一谈。
-
-## 从短名字恢复语义
-
-### 先锁定类，再锁定成员
-
-一个稳妥的恢复顺序是“类 → 继承/接口 → 方法或字段 → 调用场景”。例如，要判断某个 `g()` 是否是自动购买器的解锁判定，至少要问四个问题：它属于哪个类？返回类型是什么？调用者把返回值当成什么？同一类中是否存在同名重载？少一个问题，映射就可能只是猜测。
-
-项目的 3.21 绑定资料把这种证据写成结构化数据，而不是只留一张“旧名→新名”的对照表。`baseline/versions/3.21/bindings.json` 的规则要求宿主描述符、结构指纹和稳定调用关系共同成立；`docs/deobfuscation/data/first-party-3.21-index.csv` 则记录 DEX 中的类描述符、父类、方法/字段数量、是否第一方以及映射状态。方法数量或字段数量不是语义本身，却能帮助排除“名字碰巧一样”的错误候选。
-
-这套方法的关键思想是负责任地承认“不知道”。如果两个候选类都能解释当前调用点，应该保留未绑定状态，继续寻找新的稳定锚点，而不是用命名习惯投票。混淆器会复用短名；版本更新后，旧版的 `az1` 仍可能存在，却已经代表另一种结构。错误绑定比找不到类更危险，因为它可能让代码在错误数据上悄悄运行。
-
-### 描述符是跨语言的最小契约
-
-Kotlin、Java、Smali 和反射 API 对同一个方法有不同的表述方式，但最终都要落到 JVM/DEX 描述符。例如，一个返回布尔值、接收字符串的静态入口，其契约可以写成：
+一个 Smali 方法的最小阅读单位是“所有者 + 方法名 + 原型”：
 
 ```text
-allow(Ljava/lang/String;)Z
+Lpkg/Player;->g(Ljava/lang/String;)Z
 ```
 
-这串文字比 Kotlin 的函数名更适合做兼容性检查：它明确了参数是 `java.lang.String`，返回值是原始 `boolean`，而不是可空的 `Boolean`。同理，`J` 与 `java.lang.Long`、`D` 与游戏自己的大数对象，都不能因为“看起来都能存数字”而互换。
+它表示 `pkg.Player` 上名为 `g` 的方法，接收一个 `java.lang.String`，返回原始 `boolean`。只看到 `g` 或只看到返回 `Z` 都不够：同名重载、静态/实例差异和所有者类都会改变调用契约。
 
-在项目里，`OrekiAutomationScheduler` 通过 `object` 与 `@JvmStatic` 暴露静态桥，保留了旧调用方所需的 `init(Context)`、`allow(String)`、`noteActed(String)` 等签名。这样做的价值不是让 Kotlin 看起来像 Smali，而是把既有调用点视为外部协议：业务实现可以迁移，协议边界不能在没有迁移计划时随意改名或改类型。
+常见描述符可以这样读：
 
-## 为什么采用混合运行时
+| 描述符          | 含义              | 逆向时不能忽略的地方                    |
+| --------------- | ----------------- | --------------------------------------- |
+| `I` / `Z`       | `int` / `boolean` | `Z` 是原始布尔值，不等于可空 `Boolean`  |
+| `J` / `D`       | `long` / `double` | 在寄存器文件中各占两个连续槽位          |
+| `Lx/y;`         | 对象 `x.y`        | 斜杠是 DEX 内部名称，不是 Java 包的点号 |
+| `[I` / `[Lx/y;` | 数组              | 数组层级和元素类型都属于 ABI            |
+| `V`             | `void` 返回值     | 不能用 `move-result` 接收               |
 
-### 直接把游戏 DEX 编译进 Kotlin 并不现实
+官方的 [DEX 文件格式](https://source.android.com/docs/core/runtime/dex-format)和 [Dalvik 字节码](https://source.android.com/docs/core/runtime/dalvik-bytecode)是工具输出之外的参照。遇到反编译器与 Smali 不一致时，先回到原型和指令，不要让一段漂亮的 Java 代码替 DEX 作证。
 
-Kotlin 编译器需要可用的源码或编译期类型信息；宿主游戏类只存在于 APK 的 DEX 中，不能简单地把 DEX 当作 Kotlin 类路径来编译。项目曾考虑生成同名类型桩，也考虑过把游戏整体反编译成 Java 再编译，但这两条路都把问题扩大了：泛型擦除、内部类命名、继承树和数千个互相引用的类型，会制造一套需要长期同步的伪源码。
+## 寄存器与调用约定：先追值，再给名字
 
-于是边界被刻意切成两层：Kotlin 负责 MOD 的状态机、调度策略和 UI；`GameApi` 负责以反射解析宿主类、字段和方法。解析出来的 `Method`、`Field` 句柄按需缓存，后续调用不再每次按字符串查找。业务层看到的是语义化方法，例如读取自动永恒状态或比较游戏大数，而不是到处散落的 `Class.forName("bq0")`。
+DEX 方法使用寄存器而不是操作数栈。`.registers N` 给出整个方法的寄存器数量；参数通常以 `p0`、`p1` 的参数视图表示，临时值以 `v0`、`v1` 表示。实例方法的 `p0` 是 `this`，静态方法没有这个隐含对象；参数宽度由描述符决定，`J` 和 `D` 会占用两个连续槽位。
 
-这是一种工程取舍：反射牺牲了部分编译期类型安全，换来不必重写整个游戏；适配层则把风险集中在少数可以审阅、可以替换、可以记录证据的位置。边界越窄，版本升级时越容易知道该查哪里。
+下面是一段示意代码，展示一次实例调用和返回值接收；它不是 Oreki 仓库的逐字摘录：
 
-### 失败必须可见，但不能拖垮主循环
+```smali
+.method public canBuy(Ljava/lang/String;)Z
+    .registers 3
+    .param p1, "id"    # Ljava/lang/String;
 
-`GameApi.kt` 的解析辅助函数把类、方法和字段查找集中起来，并把解析失败转成可观察的 `OREKI_API_MISS` 日志。调用方收到空值后，应把它当作“当前能力不可用”处理，而不是继续用默认值伪装成功。句柄只有在必要的解析成功后才缓存；否则第一次启动时的偶发失败可能被永久锁死，之后即使宿主已经可访问也不会恢复。
+    invoke-virtual {p0, p1}, Lpkg/Player;->has(Ljava/lang/String;)Z
+    move-result v0
+    return v0
+.end method
+```
 
-这个策略同时避免两种坏结果：让一个版本不兼容直接崩溃，或让自动化悄悄停摆却没有线索。日志不是正文里的验收奖章，而是开发者排查时要关联到具体类、描述符和调用路径的证据。
+读这段代码时应得到一组结构事实：调用者是实例 `p0`，参数 `p1` 是字符串，`invoke-virtual` 的目标原型返回 `Z`，随后 `move-result` 把结果放入 `v0`。如果反编译器把它写成 `return this.has(id);`，那是合理的表达；如果它把 `id` 推成整数或把 `has` 推成静态方法，就应以 Smali 和原型为准。
 
-## 开发者如何定位一次 ABI 故障
+需要特别留意四类指令：
 
-先区分“找不到”与“找错了”。`ClassNotFoundException`、`NoSuchMethodException` 和 `NoSuchFieldException` 指向解析边界；`IllegalArgumentException`、`ClassCastException` 或返回值语义异常，则可能意味着描述符、所有者类或版本绑定错误。不要先改调用方的条件判断，先把日志中的语义名称还原成宿主 DEX 的完整描述符。
+- `invoke-static`、`invoke-virtual`、`invoke-direct`、`invoke-interface` 分别表达不同的调用边界；构造函数通常通过 `invoke-direct` 调用 `<init>`。
+- `move-result`、`move-result-object`、`move-result-wide` 必须与返回类型对应；漏读这一步，常会把后续寄存器误认成新变量。
+- `iget`/`iput` 访问实例字段，`sget`/`sput` 访问静态字段；对象寄存器与字段描述符共同决定这一读写是否合法。
+- `check-cast` 既是类型约束，也是控制流线索；它失败时说明前面对对象来源或版本绑定的推断出了问题。
 
-可以按以下路径缩小问题：
+因此，逆向笔记的第一列应是“寄存器在本指令前后的类型和来源”，而不是“我猜它叫玩家”。沿定义—使用链追踪值，遇到异常处理、Kotlin 桥接、内联或编译器生成访问器时尤其重要。
 
-1. 确认 APK 的游戏版本和 DEX 是否来自预期基线；不要用另一版本的短名表去解释当前包。
-2. 在 DEX/JADX/Smali 中确认类描述符、父类、方法原型和字段类型；优先看调用关系与结构指纹，不要按名字搜索后直接采信第一项。
-3. 对照 `bindings.json` 与索引 CSV，确认绑定状态、证据和是否存在版本迁移；未唯一确认的符号保持未绑定。
-4. 检查 `GameApi` 是否通过统一绑定入口解析。绕过绑定表直接 `Class.forName`，会跳过版本别名与失败日志，让“找不到”变成难以追踪的分支。
-5. 若解析成功但功能仍不工作，沿着 `Method.invoke` 前后的参数和返回值追踪：是宿主拒绝了调用，还是调用者把 `null`、装箱布尔值或大数对象误当成了另一种语义？
+## 从结构事实恢复语义
 
-修改时也要反向检查所有调用点。新增 Kotlin 代码应依赖 `GameApi` 的语义化接口，不能把混淆名传播到调度器、UI 或存档逻辑；若确实要改 ABI，先保留旧签名或同步迁移全部调用者，再用构建期检查防止映射表和适配层漂移。
+源码恢复不是给短名字投票，而是把三层证据拼起来：
 
-## 可迁移的经验
+1. **结构事实**：固定 DEX 中确实存在这个类、字段、方法和描述符。
+2. **行为证据**：调用者如何使用结果，被调用者读取或写回哪些状态，条件分支和常量怎样限制它。
+3. **工程契约**：新增 Kotlin 是否通过稳定入口使用这个语义，并能在版本变化时集中替换映射。
 
-混淆并不等于不可维护，前提是不要把“能运行”误认为“已理解”。对任何没有源码的宿主，最有价值的接口往往不是它的名字，而是由描述符、调用关系、数据形状和失败行为共同组成的契约。把这些证据存成可审阅的绑定资料，把不稳定部分关进适配层，把业务逻辑留在正常的 Kotlin/Java 代码里，后续换版本时就能把一次大规模猜谜，缩小成一组可验证的兼容性问题。
+举例说，一个返回 `Z` 的 `g()` 可能表示“已解锁”、“缓存存在”或“本次操作允许”。只有追到它的调用场景、相关字段写入和生命周期，才能把结构事实升级成行为解释。若两个候选类都能解释当前调用点，正确做法是保留未绑定状态，继续寻找父类、接口、字段形状、调用者或资源引用等锚点；错误绑定比找不到类更危险，因为它会让错误数据看似正常地流过主循环。
 
-## 资料与历史证据
+项目把这类证据集中在 Android 3.21 资料中：[绑定规则 `bindings.json`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/fb1299a132f134eb4fab009643ee3fc3d6c57edf/baseline/versions/3.21/bindings.json)约束描述符、结构指纹和调用关系，[第一方类索引](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/fb1299a132f134eb4fab009643ee3fc3d6c57edf/docs/deobfuscation/data/first-party-3.21-index.csv)提供类描述符、父类以及方法/字段数量等排除线索。数量不是语义，但能帮助识别“名字碰巧相同”的候选。
 
-- [Android 开发者：DEX 文件格式](https://source.android.com/docs/core/runtime/dex-format)：类、方法、字段及 DEX 数据结构的官方说明。
-- [Android 开发者：Dalvik 字节码](https://source.android.com/docs/core/runtime/dalvik-bytecode)：寄存器、指令与调用约定的官方参考。
-- [Android 仓库 `GameApi.kt`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/fb1299a132f134eb4fab009643ee3fc3d6c57edf/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/GameApi.kt)：当前缓存式反射适配层。
-- [Android 仓库 `OrekiAutomationScheduler.kt`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/fb1299a132f134eb4fab009643ee3fc3d6c57edf/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiAutomationScheduler.kt)：以 Kotlin 实现并保持旧静态调用契约的调度器。
-- [3.21 基线绑定规则](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/fb1299a132f134eb4fab009643ee3fc3d6c57edf/baseline/versions/3.21/bindings.json) 与 [第一方类索引](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/fb1299a132f134eb4fab009643ee3fc3d6c57edf/docs/deobfuscation/data/first-party-3.21-index.csv)：历史映射和结构证据入口。
-- [Android 仓库逆向资料目录](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/tree/fb1299a132f134eb4fab009643ee3fc3d6c57edf/docs/deobfuscation)：反编译、索引和版本迁移的历史证据；不等同于可直接编译的游戏源码。
+## 为什么不把整套 DEX 直接变成 Kotlin
 
-本页保留旧入口 `/reverse-engineering/dex-abi` 以兼容历史链接；正式导航应链接本页的新标题和所在专区路径。
+Kotlin 编译器需要编译期可见的源码或类型信息；宿主游戏的混淆类只作为 APK 输入 DEX 存在，不能自然地当作一个可维护的 Kotlin module。生成类型桩或把整个游戏反编译后重编译，也会引入泛型擦除、内部类命名、继承树和数千个互相引用的同步问题。
 
-## 相关条目
+当前工程选择窄边界：Kotlin 负责 MOD 的状态、策略、调度和 UI，`GameApi.kt` 集中解析宿主的类、字段和方法，业务代码通过语义化入口使用它。句柄在解析成功后缓存，解析失败以可观察的 `OREKI_API_MISS` 和安全的不可用结果暴露给上层；上层应把“无法确认”当成暂不执行，而不是用默认值伪装已成功。
 
-[Kotlin 混合运行时 ABI](/developer/architecture/kotlin-runtime) · [Android 架构](/developer/architecture/android) · [构建与签名](/developer/build/agp) · [来源索引](/developer/references/source-index)
+这是一种取舍，不是魔法：反射把一部分错误从编译期推迟到运行期，但把不稳定名称集中到少数适配点，版本升级时就能逐项复核。新增业务不应散落 `Class.forName("a/b")` 或混淆字段字符串，更不应绕过适配层直接写存档状态。
+
+## Kotlin、Smali 与静态桥如何接上
+
+旧调用点可能以静态 JVM 入口调用新增代码。Kotlin 的 `object` 保存调度器状态，`@JvmStatic` 为 `init(Context)`、`allow(String)`、`noteActed(String)` 等入口生成静态桥；这解决的是“调用者如何找到 Kotlin 函数”，并没有免除参数、返回类型和异常语义的 ABI 约束。
+
+例如 `allow(Ljava/lang/String;)Z` 与 Kotlin 的 `allow(id: String): Boolean` 可以对应；若改成可空 `Boolean`、移动参数或把静态桥变成实例调用，旧的 `invoke-static` 调用者就可能在进入业务逻辑前失败。检查桥接时要同时看生成的 JVM 形状、调用点指令和实际宿主版本，不能只看 Kotlin 源码签名。
+
+## 一次 ABI 故障的排查顺序
+
+### 先区分“找不到”“找错了”和“调用后语义不对”
+
+- `ClassNotFoundException`：类描述符、类加载器或版本边界不匹配。
+- `NoSuchMethodException` / `NoSuchFieldException`：所有者、名称、参数原型或静态/实例性质不匹配。
+- `IllegalArgumentException` / `ClassCastException`：解析到了对象，但参数、返回值或装箱类型不符合调用约定。
+- 没有异常但进度停滞：可能是返回值被错误解释、`null` 被吞掉、映射命中了错误类，或调度器把 no-op 当成真实动作。
+
+### 再沿固定版本缩小范围
+
+1. 固定 APK、DEX 和绑定资料的版本；不要用另一版本的短名表解释当前包。
+2. 在 DEX/Smali 中核对类描述符、父类、方法原型、字段类型和调用指令。
+3. 对照 `bindings.json` 与索引 CSV，确认映射是否唯一、是否有迁移说明；不唯一就保持未绑定。
+4. 确认业务调用经过 `GameApi` 等统一入口，而不是自行反射混淆名。
+5. 沿 `Method.invoke` 前后的参数、返回值和状态写回追踪，区分宿主拒绝调用与调用方误读结果。
+
+在 Oreki 的自动化路径中，还要把 ABI 边界与调度状态分开看：`OrekiAutomationScheduler.allow()` 通过不代表动作真的发生，`noteActed`、`noteNoop` 和 `noteFail` 的状态转移必须由真实结果驱动。这样才能避免把“解析成功但动作未执行”误诊为游戏数值问题。
+
+## 可迁移的工程经验
+
+面对没有源码的旧协议、插件 ABI、生成代码或跨语言 FFI，同样可以采用这条路线：先固定版本，再用结构事实锁定边界；用调用者、被调用者和数据形状恢复语义；把不稳定名称隔离在适配层；为找不到、找错和暂不可用分别设计失败行为。真正可维护的逆向成果不是一张漂亮的重命名表，而是一组能被下一次版本升级重新验证的契约。
+
+## 资料与相关条目
+
+- [Android DEX 文件格式](https://source.android.com/docs/core/runtime/dex-format)：类、方法、字段及 DEX 数据结构。
+- [Dalvik 字节码参考](https://source.android.com/docs/core/runtime/dalvik-bytecode)：寄存器、指令和调用约定。
+- [Android `GameApi.kt`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/fb1299a132f134eb4fab009643ee3fc3d6c57edf/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/GameApi.kt)：集中式运行时适配入口。
+- [Android `OrekiAutomationScheduler.kt`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/fb1299a132f134eb4fab009643ee3fc3d6c57edf/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiAutomationScheduler.kt)：Kotlin 调度器与旧调用契约的结合点。
+- [3.21 绑定规则](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/fb1299a132f134eb4fab009643ee3fc3d6c57edf/baseline/versions/3.21/bindings.json)与[第一方类索引](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/fb1299a132f134eb4fab009643ee3fc3d6c57edf/docs/deobfuscation/data/first-party-3.21-index.csv)：版本绑定与结构证据。
+- [Android 逆向资料目录](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/tree/fb1299a132f134eb4fab009643ee3fc3d6c57edf/docs/deobfuscation)：反编译、索引和版本迁移资料，不等同于可直接编译的游戏源码。
+
+继续阅读：[逆向与语义映射](/developer/reverse-engineering/) · [Kotlin 混合运行时 ABI](/developer/architecture/kotlin-runtime) · [Android 架构](/developer/architecture/android) · [协程 ABI 崩溃排查](/developer/troubleshooting/coroutine-abi)
