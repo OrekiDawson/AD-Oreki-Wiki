@@ -28,3 +28,5 @@ aliases:
 如果你想了解自动化怎样配合这两层重置，读[智能自动购买器](/player/gameplay/automation)；如果遇到页面提前出现、重置后状态不一致或存档风险，读[阶段解锁与页面显示](/player/gameplay/stage-gates)和[存档兼容与自动保存](/player/gameplay/saves)。
 
 继续阅读：[现实与时间研究](/player/gameplay/reality-time-studies) · [挑战与真实结算](/player/gameplay/challenges) · [原版行为与 Oreki Edition 修改](/player/gameplay/original-vs-mod)
+
+原版阶段说明可参阅[Antimatter Dimensions Wiki](https://antimatterdimensions.wiki.gg/wiki/Main_Page)；不同版本的门槛和保留规则以当前游戏为准。
