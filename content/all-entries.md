@@ -1,12 +1,12 @@
 ---
 title: "全部条目"
-description: "按主题与中文标题浏览 反物质维度 MOD Wiki 的 151 个正式条目"
+description: "按主题与中文标题浏览 反物质维度 MOD Wiki 的 150 个正式条目"
 tags:
   - 导航
   - 索引
 ---
 
-这里列出当前公开发布的 **151** 个正式条目。草稿、内部归档、兼容入口和重定向不计入索引。
+这里列出当前公开发布的 **150** 个正式条目。草稿、内部归档、兼容入口和重定向不计入索引。
 
 ## 玩家专区
 
@@ -101,7 +101,6 @@ tags:
 - [重置成长（威望）](/player/original/ow-prestige)
 - [自动保存与备份：保护每天的进度](/player/gameplay/autosave)
 - [自动化](/player/original/ow-automation)
-- [自动化与阶段入口](/player/faq/automation-and-unlocks)
 - [Android 与 Web：版本和行为差异](/player/gameplay/platform-differences)
 - [Android：Release、安装与升级](/player/download-and-version/android)
 - [FAQ：入门、阶段与挑战](/player/faq/progression)
