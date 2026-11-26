@@ -1,9 +1,28 @@
 import fs from "node:fs"
 import path from "node:path"
+import { execFileSync } from "node:child_process"
 
 const root = process.cwd()
 const content = path.join(root, "content")
 const errors = []
+const gitTimes = new Map()
+try {
+  let timestamp = 0
+  const history = execFileSync("git", ["log", "--format=%ct", "--name-only", "--", "content"], {
+    encoding: "utf8",
+  })
+  for (const line of history.split(/\r?\n/)) {
+    if (/^\d+$/.test(line)) timestamp = Number(line)
+    else if (line && timestamp && !gitTimes.has(line.replaceAll("\\", "/")))
+      gitTimes.set(line.replaceAll("\\", "/"), timestamp)
+  }
+} catch {}
+const updatedAt = (file) => {
+  return (
+    gitTimes.get(path.relative(root, file).replaceAll("\\", "/")) ??
+    Math.floor(fs.statSync(file).mtimeMs / 1000)
+  )
+}
 const walk = (dir) =>
   fs.readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
     const full = path.join(dir, entry.name)
@@ -39,7 +58,7 @@ if (new Set(indexedRoutes).size !== formal.length)
   errors.push(`全部条目存在重复或额外入口：${new Set(indexedRoutes).size}/${formal.length}`)
 const recentText = fs.readFileSync(path.join(content, "recent-updates.md"), "utf8")
 const expectedRecent = [...formal]
-  .sort((a, b) => fs.statSync(b).mtimeMs - fs.statSync(a).mtimeMs)
+  .sort((a, b) => updatedAt(b) - updatedAt(a))
   .slice(0, 24)
   .map(routeFor)
 for (const route of expectedRecent)

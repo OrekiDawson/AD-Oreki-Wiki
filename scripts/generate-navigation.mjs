@@ -1,9 +1,28 @@
 import fs from "node:fs"
 import path from "node:path"
+import { execFileSync } from "node:child_process"
 
 const root = process.cwd()
 const contentRoot = path.join(root, "content")
 const generated = new Set(["all-entries.md", "recent-updates.md"])
+const gitTimes = new Map()
+try {
+  let timestamp = 0
+  const history = execFileSync("git", ["log", "--format=%ct", "--name-only", "--", "content"], {
+    encoding: "utf8",
+  })
+  for (const line of history.split(/\r?\n/)) {
+    if (/^\d+$/.test(line)) timestamp = Number(line)
+    else if (line && timestamp && !gitTimes.has(line.replaceAll("\\", "/")))
+      gitTimes.set(line.replaceAll("\\", "/"), timestamp)
+  }
+} catch {}
+const updatedAt = (file) => {
+  return (
+    gitTimes.get(path.relative(root, file).replaceAll("\\", "/")) ??
+    Math.floor(fs.statSync(file).mtimeMs / 1000)
+  )
+}
 
 function walk(dir) {
   return fs.readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
@@ -68,9 +87,7 @@ for (const [name, entries] of groups) {
 }
 fs.writeFileSync(path.join(contentRoot, "all-entries.md"), `${lines.join("\n")}\n`)
 
-const recent = [...pages]
-  .sort((a, b) => fs.statSync(b.file).mtimeMs - fs.statSync(a.file).mtimeMs)
-  .slice(0, 24)
+const recent = [...pages].sort((a, b) => updatedAt(b.file) - updatedAt(a.file)).slice(0, 24)
 const recentLines = [
   "---",
   'title: "最近更新"',
