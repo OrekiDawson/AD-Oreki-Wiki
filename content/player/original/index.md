@@ -10,11 +10,11 @@ aliases:
 
 # 原版 Wiki 中文翻译
 
-这里是《反物质维度》原版 Wiki 的简体中文入口。栏目顺序沿用原版 Wiki 的游戏导航：先认识生产链，再穿过无限、永恒与现实，最后抵达天神和那些会让数字格式也开始冒汗的资料。本站只翻译原版知识；Oreki Edition 的改动请转到[原版与 Oreki Edition 的区别](/player/gameplay/original-vs-mod)。
+这里是《反物质维度》原版 Wiki 的简体中文入口。栏目按原版 Wiki 的游戏阶段和知识分类组织，涵盖基础机制、无限、永恒、现实、天神、挑战与其他资料。本站只翻译原版知识；Oreki Edition 的改动请转到[原版与 Oreki Edition 的区别](/player/gameplay/original-vs-mod)。
 
 ## 关于原版游戏
 
-《反物质维度》是一款把“再点一次”逐渐变成数学实验的增量游戏。你从反物质维度开始，借助维度提升、维度牺牲和反物质星系建立生产链；第一次无限不是终点，而是把重置变成长期成长的入口。
+《反物质维度》是一款增量游戏。玩家从反物质维度开始，借助维度提升、维度牺牲和反物质星系建立生产链；第一次无限会把重置转化为长期成长资源，并开放后续机制。
 
 原版可通过[官方 Web 版本](https://ivark.github.io/)、[Steam](https://store.steampowered.com/app/1399720/Antimatter_Dimensions/)、[Android](https://play.google.com/store/apps/details?id=com.kajfik.antimatterdimensions)和[iOS](https://apps.apple.com/app/antimatter-dimensions/id1659834045)游玩。平台版本与存档行为可能不同，具体以原版官方入口为准。
 
@@ -91,9 +91,9 @@ aliases:
 - [原版:存档库](/player/original/ow-save-bank)
 - [原版:模组](/player/original/ow-mods)
 
-## 尚未收录的原版条目
+## 尚未翻译的原版条目
 
-原版 Wiki 还包含[完整页面目录](https://antimatterdimensions.wiki.gg/wiki/Antimatter_Dimensions_Wiki/pages)。该目录是英文原文的真实入口，不代表本站已经完成翻译。对于尚未列入上方导航的页面，翻译任务会先登记来源、原始修订和术语，再进入逐段审校；不在本站创建没有正文的占位页。
+原版 Wiki 还包含[完整页面目录](https://antimatterdimensions.wiki.gg/wiki/Antimatter_Dimensions_Wiki/pages)。该目录是英文原文的真实入口，不代表本站已经完成翻译。尚未列入上方导航的页面会登记来源、原始修订和术语，再进入逐段审校；本站不创建没有正文的占位页。
 
 ## 社区与原始资料
 

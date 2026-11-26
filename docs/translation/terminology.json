@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "language": "zh-CN",
+  "scope": "原版 Wiki 翻译与原版专区导航",
+  "source": "docs/translation/glossary.md",
+  "terms": {
+    "Effarig": { "zh": "鹿颈长", "status": "canonical" },
+    "V": { "zh": "薇", "status": "canonical" },
+    "Ra": { "zh": "太阳神", "status": "canonical" },
+    "Replicanti": { "zh": "复制器", "status": "canonical" },
+    "Notation": { "zh": "记数法", "status": "canonical" }
+  },
+  "notes": [
+    "正文首次提及可在中文术语后括注英文原名；标题、导航、图注和表格使用 canonical 中文名。",
+    "原版命名空间前缀“原版:”只用于正式译文页面标题，不改变正文自然内链显示。",
+    "MOD 独有文章不得把原版术语表当作 MOD 机制事实来源。"
+  ]
+}
