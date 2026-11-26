@@ -67,8 +67,9 @@ async function inspect(page) {
           && !['SCRIPT', 'STYLE', 'SVG', 'PATH'].includes(el.tagName);
       })
       .map((el) => getComputedStyle(el).fontFamily);
-    const scientific = [...document.querySelectorAll('body *')]
-      .filter((el) => el.children.length === 0)
+    // 不只检查叶节点：科学记数法常与链接、强调或其他行内标记共处于同一段落，
+    // 仅扫描无子元素节点会漏掉这类真实的普通文本渲染路径。
+    const scientific = [...document.querySelectorAll('article p, article li, article td, article blockquote, article dd, article dt, nav, .explorer, .search')]
       .filter((el) => {
         const rect = el.getBoundingClientRect();
         return rect.width > 0 && rect.height > 0 && (el.textContent || '').trim()
