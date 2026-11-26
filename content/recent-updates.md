@@ -8,6 +8,10 @@ tags:
 
 这里显示最近进入当前内容树的正式条目；文章的具体修订记录仍以页面正文与仓库历史为准。
 
+- [开发者专区](/developer)
+- [自动化状态所有权：玩家意图、托管配置与执行闸门](/developer/architecture/automation-ownership)
+- [Android 阶段门禁与 GUI 判据](/developer/architecture/gui-stage-gates)
+- [Android 架构](/developer/architecture/android)
 - [反物质维度 MOD Wiki](/index)
 - [原版 Wiki 中文翻译](/player/original)
 - [运行证据索引](/developer/evidence)
@@ -15,7 +19,6 @@ tags:
 - [构建与交付：从源码到可交付产物](/developer/build)
 - [如何阅读当前工程状态](/developer/current)
 - [Oreki Edition 项目地图](/developer/project-overview)
-- [Android 架构](/developer/architecture/android)
 - [第一次参与 Android 开发](/developer/first-contribution)
 - [Android 构建与 AGP](/developer/build/agp)
 - [如何使用本知识库](/how-to-use)
@@ -29,6 +32,3 @@ tags:
 - [阶段进度：从新档到天神](/player/gameplay/stage-progression)
 - [开始游玩 Oreki Edition：入门阅读地图](/player/getting-started)
 - [第一次大坍缩与进入无限](/player/getting-started/first-crunch)
-- [APK 签名与升级兼容](/developer/build/apk-signing)
-- [构建可追溯性：让 APK 对得上源码与输入](/developer/build/artifact-provenance)
-- [架构与运行时：从入口到运行时](/developer/architecture)
