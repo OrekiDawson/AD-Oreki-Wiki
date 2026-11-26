@@ -8,6 +8,7 @@ tags:
 
 这里显示最近进入当前内容树的正式条目；文章的具体修订记录仍以页面正文与仓库历史为准。
 
+- [存档进度比较器：用阶段与近似值判断谁更靠前](/developer/architecture/save-progress-comparator)
 - [架构与运行时：从入口到运行时](/developer/architecture)
 - [第一次大坍缩与进入无限](/player/getting-started/first-crunch)
 - [教程内容管线：用一份数据驱动双端章节](/developer/architecture/tutorial-content-pipeline)
@@ -31,4 +32,3 @@ tags:
 - [时间研究：分叉、挑战与时间膨胀](/player/gameplay/time-studies)
 - [原版与 Oreki Edition：差异阅读地图](/player/gameplay/original-vs-mod)
 - [无限与永恒：两层重置的阅读地图](/player/gameplay/progression-infinity-eternity)
-- [永恒阶段：EP、时间研究与现实前置](/player/gameplay/eternity)
