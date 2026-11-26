@@ -67,7 +67,7 @@ const CATEGORY_TITLES = {
   "player/getting-started": "开始游玩 Oreki Edition",
   "player/gameplay": "玩法机制",
   "player/original": "原版 Wiki 中文翻译",
-  "player/mods": "Oreki Edition 介绍",
+  "player/mods": "Oreki Edition 是什么？",
   "player/download-and-version": "下载与版本说明",
   "player/faq": "玩家常见问题",
   "developer/architecture": "架构与运行时",
