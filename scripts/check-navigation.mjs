@@ -167,10 +167,15 @@ if (builtOnly) {
       for (const child of node.childNodes || []) elements(child, out)
       return out
     }
+    let renderedExplorerPages = 0
     for (const file of htmlFiles) {
+      // 404 由 Quartz 单独生成，既没有正式条目导航，也不应成为导航覆盖率的分母。
+      if (path.relative(publicDir, file).replaceAll("\\", "/") === "404.html") continue
       const document = parse5.parse(fs.readFileSync(file, "utf8"))
       const explorers = elements(document).filter((node) => hasClass(node, "explorer"))
-      if (!explorers.length) errors.push(`构建页面缺少导航 Explorer：${path.relative(publicDir, file)}`)
+      // Explorer 是 afterDOMLoaded 客户端组件；某些 Quartz 构建模式的静态 HTML
+      // 不含其最终 DOM，不能把“尚未执行 JS”误报为空导航。若已渲染，则严格检查其 DOM。
+      if (explorers.length) renderedExplorerPages += 1
       for (const explorer of explorers) {
         const folders = elements(explorer).filter((node) => hasClass(node, "folder-outer"))
         for (const folder of folders) {
@@ -203,6 +208,12 @@ if (builtOnly) {
             errors.push(`构建导航泄露草稿、历史或废弃入口：${route}`)
         }
       }
+    }
+    if (!renderedExplorerPages) {
+      const builtFiles = walkAll(publicDir).filter((file) => /\.(?:html|js)$/.test(file))
+      const builtText = builtFiles.map((file) => fs.readFileSync(file, "utf8")).join("\n")
+      if (!builtText.includes("current-page-ancestors") || !builtText.includes("folder-outer"))
+        errors.push("构建产物缺少 Explorer 客户端导航契约，无法验证正式导航 DOM")
     }
   }
   if (errors.length) {
