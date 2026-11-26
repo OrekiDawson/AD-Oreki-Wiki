@@ -70,7 +70,7 @@ applyEffect(applyFn) {
 
 ## 加法和乘法不是实现细节
 
-效果对象只提供贡献，不替调用者决定所有贡献如何合并。合并规则属于具体机制的数学语义。固定源码中的 [`src/core/sacrifice.js`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/b28b231efa5b694ce1da8a1e508cfcf3ecc099344/src/core/sacrifice.js) 是一个很好的例子：牺牲指数先把成就 32、57 的效果用 `Effects.sum()` 聚合，再与成就 88 和时间研究 228 的另一组加成聚合，最后把这些组作为乘数相乘。
+效果对象只提供贡献，不替调用者决定所有贡献如何合并。合并规则属于具体机制的数学语义。固定源码中的 [`src/core/sacrifice.js`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/core/sacrifice.js) 是一个很好的例子：牺牲指数先把成就 32、57 的效果用 `Effects.sum()` 聚合，再与成就 88 和时间研究 228 的另一组加成聚合，最后把这些组作为乘数相乘。
 
 抽象地写就是：
 
