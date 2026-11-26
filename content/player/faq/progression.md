@@ -46,3 +46,7 @@ aliases:
 - [Antimatter Dimensions Wiki：Infinity](https://antimatterdimensions.wiki.gg/wiki/Infinity)
 - [Antimatter Dimensions Wiki：Eternity](https://antimatterdimensions.wiki.gg/wiki/Eternity)
 - [Antimatter Dimensions Wiki：Reality](https://antimatterdimensions.wiki.gg/wiki/Reality)
+
+## 适用版本与核验范围
+
+本文按 Oreki Edition Android/Web 的现行专区结构说明阶段入口；原版条件与 MOD 调整可能随版本不同，精确条件应以游戏内提示和对应源码基线为准。本文未宣称完成所有阶段的完整通关或跨平台回归，遇到页面显示与实际条件不一致时，应记录版本、平台、存档阶段和复现步骤。

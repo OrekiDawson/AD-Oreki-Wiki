@@ -43,3 +43,7 @@ Oreki Edition 的统一调度器默认每 10 秒检查一次受管策略，可�
 - [Antimatter Dimensions Wiki：Autobuyers](https://antimatterdimensions.wiki.gg/wiki/Autobuyers)
 - [Antimatter Dimensions Wiki：Saving](https://antimatterdimensions.wiki.gg/wiki/Saving)
 - [Oreki Edition Web 源码](https://github.com/OrekiDawson/AD-Oreki-Edition-Web)
+
+## 适用版本与核验范围
+
+本文面向 Oreki Edition Android/Web 的自动化和存档排查；调度周期、字段兼容性和重置行为应以具体版本的游戏与源码为准。本文提供判断路径，不代表每个版本、设备和跨平台导入组合都已实际运行验证；执行导入或回归前应先导出备份并记录版本。
