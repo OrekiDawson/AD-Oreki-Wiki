@@ -6,12 +6,12 @@ tags:
   - 永恒
 original_title: "Eternity Upgrades"
 original_url: "https://antimatterdimensions.wiki.gg/wiki/Eternity_Upgrades"
-original_revid: 3346
-original_fetched_at: "2026-11-15T23:40:00+08:00"
+original_revid: 3461
+original_fetched_at: "2026-11-26T19:20:00+08:00"
 original_license: "CC BY-SA 4.0"
 original_license_url: "https://creativecommons.org/licenses/by-sa/4.0/"
-translation_status: "STRUCTURE CHECKED"
-review_status: "STRUCTURE CHECKED"
+translation_status: "REVIEWED"
+review_status: "REVIEWED"
 aliases:
   - "/original/ow-eternity-upgrades"
 ---
@@ -27,7 +27,7 @@ aliases:
 | ID | 成本（EP） | 效果 | 公式 |
 | --- | --- | --- | --- |
 | idMultEP | $5$ | 依据未花费的永恒点数提高无限维度乘数 | $ep+1$ |
-| idMultEternities | $10$ | 依据永恒次数提高无限维度乘数，在 $1\text{e}5$ 次永恒处软上限 | 见下方说明 |
+| idMultEternities | $5$ | 依据永恒次数提高无限维度乘数，在 $1\text{e}5$ 次永恒处软上限 | 见下方说明 |
 | idMultICRecords | $5\text{e}4~(50~\text{K})$ | 依据无限挑战用时总和提高无限维度乘数 | $\min\left(2^{\frac{30}{0.61}},~2^{\frac{30}{\max\left(0.1,~\text{TotalInfinityChallengeTimes}\right)}}\right)$ |
 | tdMultAchs | $1\text{e}16~(10~\text{Qa})$ | 成就加成作用于时间维度 | $\text{AchievementBonus}$ |
 | tdMultTheorems | $1\text{e}40$ | 时间维度乘以未花费的时间之理 | $\max\left(\text{TimeTheorems}, 1\right)$ |
@@ -52,7 +52,7 @@ epMult 与无限层的 ipMult 一样可以无限重复购买，每买一次成�
 
 ## 来源与许可
 
-- 原文：[Eternity Upgrades](https://antimatterdimensions.wiki.gg/index.php?title=Eternity_Upgrades&oldid=3346)（修订 ID 3346；抓取于 2026-11-15）
+- 原文：[Eternity Upgrades](https://antimatterdimensions.wiki.gg/index.php?title=Eternity_Upgrades&oldid=3461)（修订 ID 3461；抓取于 2026-11-26）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Eternity_Upgrades&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为简体中文翻译（改编），已修改：翻译正文与表格、统一术语、公式保留原式、界面图与信息框未转载；本页按相同许可共享。
 - 原文图片未转载：原页含桌面版与移动版界面截图（Eternity-eternityupgrades-interface--darktheme-desktop.png / -mobile.png），此处仅保留文字说明。
