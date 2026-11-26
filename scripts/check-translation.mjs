@@ -86,7 +86,8 @@ for (const file of pages) {
     if (entry.zh_title !== "") {
       const title = text.match(/^title:\s*["']?(.*?)["']?\s*$/m)?.[1] ?? "";
       const comparableTitle = title.replace(/^原版:/, "");
-      if (comparableTitle !== entry.zh_title) fail(file + " 中文标题与清单 zh_title 不一致: " + title + " vs " + entry.zh_title);
+      const comparableManifestTitle = entry.zh_title.replace(/^原版:/, "");
+      if (comparableTitle !== comparableManifestTitle) fail(file + " 中文标题与清单 zh_title 不一致: " + title + " vs " + entry.zh_title);
     }
   }
 }
