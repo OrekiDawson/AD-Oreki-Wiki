@@ -1,12 +1,12 @@
 ---
 title: "全部条目"
-description: "按主题与中文标题浏览 反物质维度 MOD Wiki 的 151 个正式条目"
+description: "按主题与中文标题浏览 反物质维度 MOD Wiki 的 150 个正式条目"
 tags:
   - 导航
   - 索引
 ---
 
-这里列出当前公开发布的 **151** 个正式条目。草稿、内部归档、兼容入口和重定向不计入索引。
+这里列出当前公开发布的 **150** 个正式条目。草稿、内部归档、兼容入口和重定向不计入索引。
 
 ## 玩家专区
 
@@ -104,7 +104,6 @@ tags:
 - [Android 与 Web：版本和行为差异](/player/gameplay/platform-differences)
 - [Android：Release、安装与升级](/player/download-and-version/android)
 - [FAQ：入门、阶段与挑战](/player/faq/progression)
-- [FAQ：下载、平台与版本](/player/faq/platform)
 - [FAQ：自动化与存档](/player/faq/automation-and-saves)
 - [MOD 玩法改动：数值、解锁与自动化](/player/gameplay/mod-changes)
 - [Mod 一览](/player/original/ow-mods)
