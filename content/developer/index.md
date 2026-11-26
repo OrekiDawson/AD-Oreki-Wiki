@@ -45,7 +45,7 @@ Oreki Edition 有 Android 与 Web 两套实现，目标是保持玩家可见的�
 
 **Web**：[OrekiDawson/AD-Oreki-Edition-Web](https://github.com/OrekiDawson/AD-Oreki-Edition-Web)。入口在 `src/`，核心机制与 MOD 扩展在 `src/core/`，浏览器组件在 `src/components/`。Web 基于冻结的上游快照，不可把 Android 中的混淆类名当作 Web 模块名。
 
-**跨仓任务与规则**：[Workspace](https://github.com/OrekiDawson/AD-Oreki-Edition-Workspace) 负责协调授权、任务和统一约束，不替代两端的源码与自动化验证。每次动手前先读目标仓库的 `AGENTS.md` 和适用交付规则；不要凭 Wiki 文章代替现行授权。
+**两套代码各有自己的边界。** Android 与 Web 共享玩家可见的成长规则，但使用不同的语言、模块和构建工具；阅读源码时应以对应平台的入口、类型和调用链为准。
 
 ## 怎么判断一项工作已经完成？
 
@@ -57,7 +57,7 @@ Oreki Edition 有 Android 与 Web 两套实现，目标是保持玩家可见的�
 - **功能验证通过**：在匹配的设备、浏览器和游戏进度下观察到预期行为。
 - **允许发布**：还需满足对应发布规则、签名、存档与实际运行等门禁。
 
-其中一个通过，不能自动推出后面的也通过。未执行的事项明确写 `NOT RUN`，不要为了让报告好看而填 `PASS`。
+这些层级回答的是不同问题：源码定位帮助你找到改动位置，命令输出说明工具是否按预期工作，功能验证则说明玩家实际看到的结果。不要把其中一个层级的证据误当成另一个层级的结论。
 
 ## 附属资料与历史证据
 
