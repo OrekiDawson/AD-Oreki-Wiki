@@ -12,7 +12,7 @@ tags:
 
 ## 把解锁看成状态转移
 
-以虚构升级 IU15 为例，Web 的 `imaginary-upgrades.js` 将它描述为一个真实的升级对象：成本是 `1e9` 虚幻机器，购买条件同时要求当前现实没有买过第一无限维度，并且反物质指数达到项目常量 `OREKI_IU15_AM_EXP`。`hasFailed()` 记录“本现实已经买过 ID1”的不可逆失败条件，`checkRequirement()` 才决定当前是否可买。
+以虚构升级 IU15 为例，Web 的 `imaginary-upgrades.js` 将它描述为一个真实的升级对象：成本是 1e9 虚幻机器，购买条件同时要求当前现实没有买过第一无限维度，并且反物质指数达到项目常量 `OREKI_IU15_AM_EXP`。`hasFailed()` 记录“本现实已经买过 ID1”的不可逆失败条件，`checkRequirement()` 才决定当前是否可买。
 
 这意味着 IU15 不是一个布尔开关，而是一条带历史的转移：
 
