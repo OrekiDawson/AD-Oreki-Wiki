@@ -8,6 +8,8 @@ aliases:
   - "/gameplay/saves"
   - "/gameplay/autosave"
   - "/gameplay/save-compatibility"
+  - "/player/gameplay/autosave"
+  - "/player/gameplay/save-compatibility"
   - "/faq/saves-and-compatibility"
 ---
 
