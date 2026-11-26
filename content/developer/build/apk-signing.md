@@ -25,7 +25,7 @@ APK 本质上是一个 ZIP，但 Android 签名不只是给 ZIP 里的文件附�
 
 工程里的 `scripts/sign_apk_hybrid.py` 因此坚持“输入未签名 → 官方工具签名 → 立即独立验签 → 成对发布 APK 与 `.idsig`”的顺序。它拒绝已经带 JAR 签名或 Signing Block 的输入，要求密钥库和密码环境变量存在，并检查预先生成的签名谱系。生产脚本不是把密码写进 Gradle，而是让受保护环境提供它。
 
-需要特别区分“工具支持的实验路径”和“当前 Release 配置”。当前 Android `app/build.gradle.kts` 的 Release 配置启用 V3、关闭 V1/V2/V4；因此现行候选的签名结论应以 `apksigner` 实际输出和该配置为准。项目中的混合签名脚本可以作为后量子或 V4 实验的证据入口，但 V3.2、PQC 或 `.idsig` 只有在对应候选明确启用、生成并完成版本兼容验收时才成立，不能从脚本存在推断为当前发布要求。没有相同的 APK 字节和对应的 `.idsig`，V4 侧车文件也没有意义。
+需要特别区分“工具支持的实验路径”和“当前 Release 配置”。当前 Android `agp/app/build.gradle.kts` 的 Release 配置启用 V3、关闭 V1/V2/V4；因此现行候选的签名结论应以 `apksigner` 实际输出和该配置为准。项目中的混合签名脚本可以作为后量子或 V4 实验的证据入口，但 V3.2、PQC 或 `.idsig` 只有在对应候选明确启用、生成并完成版本兼容验收时才成立，不能从脚本存在推断为当前发布要求。没有相同的 APK 字节和对应的 `.idsig`，V4 侧车文件也没有意义。
 
 ## 密钥轮换为什么不能只换一串密码
 
@@ -41,7 +41,7 @@ APK 本质上是一个 ZIP，但 Android 签名不只是给 ZIP 里的文件附�
 
 ## 从构建到验签的最小路径
 
-1. 从根项目构建目标变体；`app/build.gradle.kts` 的 `release` 只有在 `keys/oreki.jks` 存在时才接入生产签名，显式未签名实验不得发布。
+1. 从 Android `agp` 工程构建目标变体；`agp/app/build.gradle.kts` 的 `release` 只有在 `keys/oreki.jks` 存在时才接入生产签名，显式未签名实验不得发布。
 2. 对 APK 运行 `apksigner verify --print-certs`，同时用 `apkanalyzer` 或 `aapt2 dump badging` 检查包名和版本身份。
 3. 用项目的 `sign_apk_hybrid.py` 完成受策略约束的签名与独立验证；不要对已经签名的 APK 再次处理。
 4. 计算 APK 与 `.idsig` 的 SHA-256，确认它们来自同一候选，并在测试设备上执行覆盖安装和存档读写。
