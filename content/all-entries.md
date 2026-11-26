@@ -1,12 +1,12 @@
 ---
 title: "全部条目"
-description: "按主题与中文标题浏览 反物质维度 MOD Wiki 的 126 个正式条目"
+description: "按主题与中文标题浏览 反物质维度 MOD Wiki 的 128 个正式条目"
 tags:
   - 导航
   - 索引
 ---
 
-这里列出当前公开发布的 **126** 个正式条目。草稿、内部归档、兼容入口和重定向不计入索引。
+这里列出当前公开发布的 **128** 个正式条目。草稿、内部归档、兼容入口和重定向不计入索引。
 
 ## 玩家专区
 
@@ -56,7 +56,8 @@ tags:
 - [天神导航·图库](/player/original/ow-celestial-navigation-gallery)
 - [天神系统：七位天神改变了什么](/player/gameplay/celestials)
 - [挑战](/player/original/ow-challenges)
-- [挑战与真实结算](/player/gameplay/challenges)
+- [挑战：三种限制玩法的阅读地图](/player/gameplay/challenges)
+- [挑战完成判定与卡关排障](/player/gameplay/challenge-troubleshooting)
 - [玩法机制](/player/gameplay)
 - [玩家常见问题](/player/faq)
 - [玩家术语表](/player/terminology)
@@ -127,6 +128,7 @@ tags:
 - [Android 架构](/developer/architecture/android)
 - [Android 阶段门禁与 GUI 判据](/developer/architecture/gui-stage-gates)
 - [Android 自动化停滞的排查方法](/developer/current/known-issues)
+- [Android GUI 同步桥：让游戏状态真正到达界面](/developer/architecture/android-gui-sync)
 - [APK 签名与升级兼容](/developer/build/apk-signing)
 - [DEX 泛型签名回填：让 Gson 看见存档里的真实类型](/developer/build/signature-backfill)
 - [Kotlin 混合运行时：在混淆宿主上建立一条可靠的 ABI 边界](/developer/architecture/kotlin-runtime)

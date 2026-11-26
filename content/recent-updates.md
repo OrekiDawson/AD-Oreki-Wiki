@@ -8,10 +8,13 @@ tags:
 
 这里显示最近进入当前内容树的正式条目；文章的具体修订记录仍以页面正文与仓库历史为准。
 
-- [Web 离线进度：模拟时间与真实时钟的边界](/developer/architecture/web-offline-simulation)
+- [Android GUI 同步桥：让游戏状态真正到达界面](/developer/architecture/android-gui-sync)
+- [挑战完成判定与卡关排障](/player/gameplay/challenge-troubleshooting)
+- [挑战：三种限制玩法的阅读地图](/player/gameplay/challenges)
 - [自动保存与备份：保护每天的进度](/player/gameplay/autosave)
-- [存档兼容与导入验证](/player/gameplay/save-compatibility)
 - [存档安全：自动保存与兼容导入阅读地图](/player/gameplay/saves)
+- [Web 离线进度：模拟时间与真实时钟的边界](/developer/architecture/web-offline-simulation)
+- [存档兼容与导入验证](/player/gameplay/save-compatibility)
 - [时间研究与现实：后永恒阶段阅读地图](/player/gameplay/reality-time-studies)
 - [调度器状态机：购买决策、合法重置与进度死锁](/developer/architecture/scheduler-state-machine)
 - [第一次现实：重置前后的准备](/player/gameplay/reality)
@@ -29,6 +32,3 @@ tags:
 - [架构与运行时：从入口到运行时](/developer/architecture)
 - [超大数值：从尾数与指数到跨端一致性](/developer/architecture/numeric-model)
 - [参考资料](/developer/references)
-- [来源索引：怎样从证据找到真正的代码](/developer/references/source-index)
-- [原版 Wiki 中文翻译](/player/original)
-- [Android 自动化停滞的排查方法](/developer/current/known-issues)
