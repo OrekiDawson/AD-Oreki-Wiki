@@ -10,12 +10,12 @@ const changed = []
 for (const name of files) {
   const file = path.join(root, name)
   const source = fs.readFileSync(file, "utf8")
-  const match = source.match(/^title:\s*(?:"([^"]*)"|'([^']*)'|(.+))\s*$/m)
+  const match = source.match(/^title:[ \t]*(?:"([^"]*)"|'([^']*)'|([^#\n][^#\n]*?))[ \t]*(?:#[^\n]*)?$/m)
   if (!match) throw new Error("缺少 frontmatter title: " + file)
   const current = (match[1] ?? match[2] ?? match[3]).trim()
   const bare = current.replace(/^原版:/, "")
   const next = 'title: "原版:' + bare + '"'
-  const updated = source.replace(/^title:\s*(?:"[^"]*"|'[^']*'|.+)\s*$/m, next)
+  const updated = source.replace(/^title:[ \t]*(?:"[^"]*"|'[^']*'|[^#\n][^#\n]*?)[ \t]*(?:#[^\n]*)?$/m, next)
   if (updated !== source) {
     fs.writeFileSync(file, updated)
     changed.push({ file: path.relative(process.cwd(), file), from: current, to: "原版:" + bare })
