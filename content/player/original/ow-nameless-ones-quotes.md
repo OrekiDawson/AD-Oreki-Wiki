@@ -1,6 +1,6 @@
 ---
 title: "无名氏·引语"
-description: "原版 Wiki《The Nameless Ones/Quotes》条目的完整简体中文翻译：无名氏在各触发条件下的全部台词"
+description: "原版 Wiki《The Nameless Ones/Quotes》条目的简体中文翻译：无名氏在各触发条件下的全部台词"
 tags:
   - 原版Wiki翻译
   - 天神

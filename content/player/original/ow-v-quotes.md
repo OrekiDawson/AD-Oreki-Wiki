@@ -1,6 +1,6 @@
 ---
 title: "薇·引语"
-description: "原版 Wiki《V/Quotes》条目的完整简体中文翻译：薇在各触发条件下的全部台词"
+description: "原版 Wiki《V/Quotes》条目的简体中文翻译：薇在各触发条件下的全部台词"
 tags:
   - 原版Wiki翻译
   - 天神
