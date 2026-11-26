@@ -104,7 +104,10 @@ async function inspect(page) {
 }
 
 async function main() {
-  const browser = await chromium.launch({ headless: true });
+  const browser = await chromium.launch({
+    headless: process.env.KB_HEADED !== '1',
+    ...(process.env.KB_BROWSER_PATH ? { executablePath: process.env.KB_BROWSER_PATH } : {}),
+  });
   const context = await browser.newContext({
     viewport: { width: 412, height: 915 }, isMobile: true, hasTouch: true, deviceScaleFactor: 2,
     userAgent: 'Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 Chrome/141.0 Mobile Safari/537.36',
