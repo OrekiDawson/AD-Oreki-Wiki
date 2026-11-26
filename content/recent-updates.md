@@ -8,6 +8,7 @@ tags:
 
 这里显示最近进入当前内容树的正式条目；文章的具体修订记录仍以页面正文与仓库历史为准。
 
+- [反物质维度 MOD Wiki](/index)
 - [APK 发布资格：从文件到可交付版本](/developer/current/release-status)
 - [双端交付证据：从源码到玩家版本](/developer/current/project-status)
 - [反物质维度MOD Wiki:本站不是什么](/wiki-not)
@@ -23,7 +24,6 @@ tags:
 - [自动化状态所有权：玩家意图、托管配置与执行闸门](/developer/architecture/automation-ownership)
 - [Android 阶段门禁与 GUI 判据](/developer/architecture/gui-stage-gates)
 - [Android 架构](/developer/architecture/android)
-- [反物质维度 MOD Wiki](/index)
 - [原版 Wiki 中文翻译](/player/original)
 - [运行证据索引](/developer/evidence)
 - [来源索引：怎样从证据找到真正的代码](/developer/references/source-index)
