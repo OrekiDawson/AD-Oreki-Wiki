@@ -238,12 +238,14 @@ async function run() {
   const trHtml = await page.content();
   results.mobile.translationHasLicense = trHtml.includes('CC BY-SA 4.0') && trHtml.includes('来源与许可');
   await page.goto(BASE + '/player/original/', { waitUntil: 'load' });
-  results.mobile.translationFolderListingHidden = await page.locator('.page-listing').evaluate(
-    (el) => getComputedStyle(el).display === 'none'
-  );
-  results.mobile.translationPropertiesHidden = await page.locator('.note-properties').evaluate(
-    (el) => getComputedStyle(el).display === 'none'
-  );
+  const folderListing = page.locator('.page-listing');
+  results.mobile.translationFolderListingHidden =
+    (await folderListing.count()) === 0 ||
+    (await folderListing.first().evaluate((el) => getComputedStyle(el).display === 'none'));
+  const noteProperties = page.locator('.note-properties');
+  results.mobile.translationPropertiesHidden =
+    (await noteProperties.count()) === 0 ||
+    (await noteProperties.first().evaluate((el) => getComputedStyle(el).display === 'none'));
   await page.goto(BASE + '/developer/build/agp', { waitUntil: 'load' });
   await page.waitForTimeout(800);
   results.mobile.codePre = await page.locator('pre').count();
