@@ -29,6 +29,8 @@ jobs:
         run: node scripts/check-translation.mjs
       - name: Navigation coverage and public archive boundary
         run: node scripts/check-navigation.mjs
+      - name: No page transition animation or progress bar
+        run: node scripts/check-motion.mjs
       - name: Prepare Quartz 5 source (pinned)
         run: bash scripts/bootstrap-quartz.sh .quartz-build
       - name: Install dependencies
