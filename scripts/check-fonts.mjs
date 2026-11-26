@@ -12,7 +12,7 @@ const packageJson = JSON.parse(fs.readFileSync(path.join(root, "package.json"), 
 const deps = { ...(packageJson.dependencies || {}), ...(packageJson.devDependencies || {}) }
 
 for (const { file, text } of configs) {
-  if (/quartz-fonts|fontOrigin:\s*(?:googleFonts|local|selfHosted)/.test(text))
+  if (/quartz-fonts|fontOrigin:\s*["']?(?:googleFonts|local|selfHosted)["']?/.test(text))
     errors.push(`Quartz 自定义网页字体插件或字体来源仍在配置中：${path.basename(file)}`)
   if (/Source Sans|Schibsted|IBM Plex|Google Sans|Roboto|Noto Sans|font-family:\s*["'][^"']+["']/i.test(text))
     errors.push(`配置中重新引入了固定网页字体：${path.basename(file)}`)
@@ -47,9 +47,14 @@ for (const file of fs.existsSync(ownedStyleRoot) ? walkSource(ownedStyleRoot) : 
   const text = fs.readFileSync(file, "utf8")
   if (/fonts\.(googleapis|gstatic)\.com|use\.typekit\.net|@import\s+url\(/i.test(text))
     errors.push(`Quartz 源码仍加载远程字体：${path.relative(root, file)}`)
-  if (/font-family\s*:\s*["'][^"']+["']/i.test(text)
-    && !/font-family\s*:\s*["'](?:KaTeX_[^"']+)["']/i.test(text))
-    errors.push(`Quartz 源码存在固定网页字体声明：${path.relative(root, file)}`)
+  const fontValues = [...text.matchAll(/font-family\s*:\s*([^;{}]+)/gi)].map(([, value]) => value.trim())
+  for (const value of fontValues) {
+    if (/^var\(--(?:body|header|code)Font\)/i.test(value)) continue
+    const quotedFamilies = [...value.matchAll(/["']([^"']+)["']/g)].map(([, family]) => family)
+    if (quotedFamilies.some((family) => !/^KaTeX_/i.test(family))
+      || /Source Sans|Schibsted|IBM Plex|Google Sans|Roboto|Noto Sans|Inter|Open Sans|Lato|Poppins|Nunito/i.test(value))
+      errors.push(`Quartz 源码存在固定网页字体声明：${path.relative(root, file)}`)
+  }
 }
 
 const sourceFiles = []
