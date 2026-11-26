@@ -1,12 +1,12 @@
 ---
 title: "全部条目"
-description: "按主题与中文标题浏览 反物质维度 MOD Wiki 的 137 个正式条目"
+description: "按主题与中文标题浏览 反物质维度 MOD Wiki 的 139 个正式条目"
 tags:
   - 导航
   - 索引
 ---
 
-这里列出当前公开发布的 **137** 个正式条目。草稿、内部归档、兼容入口和重定向不计入索引。
+这里列出当前公开发布的 **139** 个正式条目。草稿、内部归档、兼容入口和重定向不计入索引。
 
 ## 玩家专区
 
@@ -19,7 +19,7 @@ tags:
 - [第一次大坍缩与进入无限](/player/getting-started/first-crunch)
 - [第一次进入与前几分钟](/player/getting-started/first-session)
 - [第一次现实：重置前后的准备](/player/gameplay/reality)
-- [反物质维度](/player/antimatter-dimensions)
+- [反物质维度：游戏总览与阅读路线](/player/antimatter-dimensions)
 - [反物质维度（游戏机制）](/player/original/ow-antimatter-dimensions)
 - [反物质星系](/player/original/ow-antimatter-galaxies)
 - [符文炼金](/player/original/ow-glyph-alchemy)
@@ -45,6 +45,7 @@ tags:
 - [膨胀升级](/player/original/ow-dilation-upgrades)
 - [膨胀升级（被毁灭的现实）](/player/original/ow-dilation-upgrades-doomed)
 - [普通挑战](/player/original/ow-normal-challenges)
+- [生产链与重置：反物质维度如何成长](/player/antimatter-dimensions-core-loop)
 - [时间膨胀](/player/original/ow-dilation)
 - [时间维度](/player/original/ow-time-dimensions)
 - [时间研究](/player/original/ow-time-studies)
@@ -93,6 +94,7 @@ tags:
 - [永恒挑战·挑战明细（被毁灭的现实）](/player/original/ow-eternity-challenges-challenges-pelle)
 - [原版 Wiki 中文翻译](/player/original)
 - [原版与 Oreki Edition：差异阅读地图](/player/gameplay/original-vs-mod)
+- [增长为什么会停：从指数到重置的选择](/player/antimatter-dimensions-decisions)
 - [智能自动购买器](/player/gameplay/automation)
 - [重置成长（威望）](/player/original/ow-prestige)
 - [自动保存与备份：保护每天的进度](/player/gameplay/autosave)

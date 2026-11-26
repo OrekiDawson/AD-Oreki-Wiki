@@ -8,6 +8,10 @@ tags:
 
 这里显示最近进入当前内容树的正式条目；文章的具体修订记录仍以页面正文与仓库历史为准。
 
+- [反物质维度：游戏总览与阅读路线](/player/antimatter-dimensions)
+- [生产链与重置：反物质维度如何成长](/player/antimatter-dimensions-core-loop)
+- [增长为什么会停：从指数到重置的选择](/player/antimatter-dimensions-decisions)
+- [玩法机制](/player/gameplay)
 - [阶段门禁排障：页面提前出现、按钮灰掉与重置后变化](/player/gameplay/stage-gate-troubleshooting)
 - [阶段解锁：进度地图与排障入口](/player/gameplay/stage-gates)
 - [阶段进度：从新档到天神](/player/gameplay/stage-progression)
@@ -21,7 +25,6 @@ tags:
 - [下载与版本：先选平台，再核对来源](/player/download-and-version)
 - [Android：Release、安装与升级](/player/download-and-version/android)
 - [Web：入口、缓存与版本识别](/player/download-and-version/web)
-- [玩法机制](/player/gameplay)
 - [挑战完成判定与卡关排障](/player/gameplay/challenge-troubleshooting)
 - [Android GUI 同步桥：让游戏状态真正到达界面](/developer/architecture/android-gui-sync)
 - [挑战：三种限制玩法的阅读地图](/player/gameplay/challenges)
@@ -29,6 +32,3 @@ tags:
 - [存档安全：自动保存与兼容导入阅读地图](/player/gameplay/saves)
 - [Web 离线进度：模拟时间与真实时钟的边界](/developer/architecture/web-offline-simulation)
 - [存档兼容与导入验证](/player/gameplay/save-compatibility)
-- [时间研究与现实：后永恒阶段阅读地图](/player/gameplay/reality-time-studies)
-- [调度器状态机：购买决策、合法重置与进度死锁](/developer/architecture/scheduler-state-machine)
-- [第一次现实：重置前后的准备](/player/gameplay/reality)
