@@ -100,7 +100,7 @@ aliases:
 - [原版 Wiki 首页](https://antimatterdimensions.wiki.gg/wiki/Main_Page)：动态入口，仅用于查看原版最新页面与英文导航；MediaWiki API 于 2026-11-26 核对可达，不作为某篇译文的固定底本。
 - [原版游戏源码](https://github.com/IvarK/AntimatterDimensionsSourceCode/tree/5409e320cecef96a917cca1dfb68f1f183e499ca)：用于核对游戏机制、公式和版本实现；引用固定到 commit `5409e320cecef96a917cca1dfb68f1f183e499ca`。
 - [原版 Wiki 页面目录](https://antimatterdimensions.wiki.gg/wiki/Antimatter_Dimensions_Wiki/pages)：MediaWiki API 于 2026-11-26 核对，页面修订号 `1312`；用于核对英文条目是否已被本站收录。
-- [翻译政策与来源清单](https://github.com/OrekiDawson/AD-Oreki-Wiki/tree/main/docs/translation)：查看原始修订、署名和审校状态。
+- [翻译政策与来源清单](https://github.com/OrekiDawson/AD-Oreki-Wiki/tree/292b92e53d2b5c6f001028a58c3a63d9b3940283/docs/translation)：查看原始修订、署名和审校状态；链接固定到 2026-11-26 核对的仓库修订。
 
 ## 译文边界与许可
 

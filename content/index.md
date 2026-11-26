@@ -109,7 +109,7 @@ tags:
 <p class="home-kicker">参与与贡献</p>
 <h2>参与与贡献</h2>
 </div>
-<p>想直接游玩，可以从<a href="/player/download-and-version/">下载与版本说明</a>开始；想改代码，去看<a href="/developer/project-overview/">项目概览</a>和<a href="/developer/first-contribution/">第一次参与开发</a>。欢迎补充来源、修正事实、改善中文或提出新的专题。</p>
+<p>想直接游玩，可以从<a href="/player/download-and-version">下载与版本说明</a>开始；想改代码，去看<a href="/developer/project-overview">项目概览</a>和<a href="/developer/first-contribution">第一次参与开发</a>。欢迎补充来源、修正事实、改善中文或提出新的专题。</p>
 <p class="home-inline-links"><a href="https://github.com/OrekiDawson/AD-Oreki-Wiki">GitHub 源码仓库</a><a href="/developer/editorial-guidelines">编写指南</a><a href="/wiki-rules">知识库规则</a><a href="/copyright">版权与许可</a></p>
 </section>
 
