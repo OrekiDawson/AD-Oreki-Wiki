@@ -6,6 +6,16 @@ const root = process.cwd()
 const content = path.join(root, "content")
 const errors = []
 const builtOnly = process.argv[2] === "--built"
+const quartzConfigPath = path.join(root, "quartz.config.yaml")
+if (fs.existsSync(quartzConfigPath)) {
+  const quartzConfig = fs.readFileSync(quartzConfigPath, "utf8")
+  for (const plugin of ["@quartz-community/graph", "@quartz-community/note-properties"]) {
+    const escaped = plugin.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
+    const block = quartzConfig.match(new RegExp("source:\\s*[\\\"\']" + escaped + "[\\\"\'][\\s\\S]{0,120}?enabled:\\s*(true|false)", "i"))
+    if (!block || block[1].toLowerCase() !== "false")
+      errors.push(`公共界面组件必须显式关闭：${plugin}`)
+  }
+}
 const gitTimes = new Map()
 try {
   let timestamp = 0
