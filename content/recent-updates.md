@@ -8,6 +8,10 @@ tags:
 
 这里显示最近进入当前内容树的正式条目；文章的具体修订记录仍以页面正文与仓库历史为准。
 
+- [原版 Wiki 中文翻译](/player/original)
+- [天神导航](/player/original/ow-celestial-navigation)
+- [佩勒](/player/original/ow-pelle)
+- [开始游玩 Oreki Edition：入门阅读地图](/player/getting-started)
 - [自动化状态所有权：玩家意图、托管配置与执行闸门](/developer/architecture/automation-ownership)
 - [天神判据与跨端编码](/developer/architecture/celestial-implementation)
 - [APK 签名与升级兼容](/developer/build/apk-signing)
@@ -19,7 +23,6 @@ tags:
 - [无名氏](/player/original/ow-nameless-ones)
 - [太阳神](/player/original/ow-ra)
 - [薇](/player/original/ow-v)
-- [原版 Wiki 中文翻译](/player/original)
 - [开发者专区](/developer)
 - [构建与交付：从源码到可交付产物](/developer/build)
 - [玩家专区](/player)
@@ -29,6 +32,3 @@ tags:
 - [现实](/player/original/ow-reality)
 - [快捷键](/player/original/ow-shortcuts)
 - [时间维度](/player/original/ow-time-dimensions)
-- [时间研究](/player/original/ow-time-studies)
-- [Android 构建与 AGP](/developer/build/agp)
-- [架构与运行时：从入口到运行时](/developer/architecture)
