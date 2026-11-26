@@ -16,7 +16,7 @@ tags:
 
 <h1>反物质维度 MOD Wiki</h1>
 
-<p class="home-lede">这里收录反物质维度的游戏机制、原版 Wiki 中文译文，以及 Android、Web 和 MOD 的技术资料。</p>
+<p class="home-lede">这里收录反物质维度的玩法机制、原版 Wiki 中文译文，以及 Android、Web 和 MOD 的技术资料。</p>
 
 </div>
 
