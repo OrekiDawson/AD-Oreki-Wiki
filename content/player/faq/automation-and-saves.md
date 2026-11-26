@@ -10,6 +10,8 @@ aliases:
   - "/faq/automation-and-saves"
 ---
 
+本页处理自动化和存档的常见边界：先判断是策略没有合法动作，还是保存数据、平台版本或重置过程出了问题，再选择对应的详细条目。
+
 ## 自动购买器不工作怎么办？
 
 确认对应自动购买器已经解锁且总开关打开；确认当前资源足够，且没有挑战或特殊现实禁用这项操作；再观察一个完整的调度节拍。仍无变化时，记录平台、版本、阶段和受影响的项目。
@@ -35,3 +37,9 @@ Oreki Edition 的统一调度器默认每 10 秒检查一次受管策略，可�
 ## 什么时候该报告自动化或存档问题？
 
 先停止反复点击、清档或覆盖导入，保留备份。报告时写清平台与版本、当前阶段、最近一次合法购买或重置、自动化设置、预期动作和实际结果；不要公开账号令牌、私人路径或包含个人数据的存档。
+
+## 参考资料
+
+- [Antimatter Dimensions Wiki：Autobuyers](https://antimatterdimensions.wiki.gg/wiki/Autobuyers)
+- [Antimatter Dimensions Wiki：Saving](https://antimatterdimensions.wiki.gg/wiki/Saving)
+- [Oreki Edition Web 源码](https://github.com/OrekiDawson/AD-Oreki-Edition-Web)

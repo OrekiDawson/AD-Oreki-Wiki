@@ -9,6 +9,8 @@ aliases:
   - "/faq/platform"
 ---
 
+本页回答下载渠道、平台差异和版本识别问题；它不替代具体发行页，也不把某个平台的表现推断为另一平台的行为。
+
 ## Android 和 Web 该选哪个？
 
 想在手机上使用独立应用，可以从 [Android Releases](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/releases) 下载 APK；想直接在浏览器游玩，可以打开 [oreki.net](https://oreki.net/)。

@@ -9,6 +9,8 @@ aliases:
   - "/faq/progression"
 ---
 
+本页把玩家最常遇到的阶段入口问题集中起来，从第一次大坍缩一直到现实和天神；具体机制与数值仍以对应专题为准。
+
 ## 刚开始应该先做什么？
 
 先买反物质维度和计数频率升级，让第一维度持续生产反物质；当购买开始变慢，就考虑维度提升、星系和其他重置。重置后当前数字变小不是失败，而是把这一轮积累换成下一轮更快的起点。[开始游玩](/player/getting-started/)会按第一次游玩的节奏展开这条循环。
@@ -38,3 +40,9 @@ aliases:
 页面可见、按钮可点击、真实条件已满足是三件事。先读入口旁的条件，检查研究、资源、累计次数和当前是否处在另一种挑战或特殊现实中。不要编辑存档来跳过门槛；若状态与条件明显矛盾，保留备份并记录复现步骤。
 
 可按[阶段解锁](/player/gameplay/stage-gates)、[挑战](/player/gameplay/challenges)和[天神系统](/player/gameplay/celestials)分别排查。
+
+## 参考资料
+
+- [Antimatter Dimensions Wiki：Infinity](https://antimatterdimensions.wiki.gg/wiki/Infinity)
+- [Antimatter Dimensions Wiki：Eternity](https://antimatterdimensions.wiki.gg/wiki/Eternity)
+- [Antimatter Dimensions Wiki：Reality](https://antimatterdimensions.wiki.gg/wiki/Reality)
