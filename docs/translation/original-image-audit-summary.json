@@ -111,5 +111,13 @@
     "downloaded": 0,
     "integrated": 0
   },
-  "duplicate_titles": []
+  "duplicate_titles": [],
+  "mediawiki_api": {
+    "unique_images": 539,
+    "file_metadata_found": 505,
+    "file_metadata_missing": 34,
+    "explicit_open_license_candidates": 0,
+    "local_assets": 0,
+    "note": "文件信息、许可证确认和本地落地分别统计；原版 Wiki 文件没有明确许可证时不得下载。"
+  }
 }

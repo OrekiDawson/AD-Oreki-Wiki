@@ -47,5 +47,21 @@ const summary = {
   duplicate_titles: duplicates,
 }
 
+// MediaWiki API 元数据与授权落地是两个阶段：取得 URL/SHA-1 不等于获得再发布许可。
+// 将 API 阶段单独写入汇总，避免把“已核查文件信息”误报成“已恢复图片”。
+const metadataPath = path.join(directory, "original-image-metadata.json")
+if (await fs.stat(metadataPath).catch(() => null)) {
+  const metadata = JSON.parse(await fs.readFile(metadataPath, "utf8"))
+  const images = Array.isArray(metadata.images) ? metadata.images : []
+  summary.mediawiki_api = {
+    unique_images: images.length,
+    file_metadata_found: images.filter((image) => Boolean(image.file_url)).length,
+    file_metadata_missing: images.filter((image) => !image.file_url).length,
+    explicit_open_license_candidates: Number(metadata.open_license_candidates ?? 0),
+    local_assets: images.filter((image) => Boolean(image.local_path)).length,
+    note: "文件信息、许可证确认和本地落地分别统计；原版 Wiki 文件没有明确许可证时不得下载。",
+  }
+}
+
 await fs.writeFile(outputPath, `${JSON.stringify(summary, null, 2)}\n`)
 console.log(JSON.stringify(summary.totals))
