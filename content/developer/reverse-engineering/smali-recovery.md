@@ -89,7 +89,7 @@ object OrekiAutomationScheduler {
 
 `@JvmStatic` 让 Java/Smali 调用方能够看见静态入口；它解决的是“怎样调用 Kotlin 单例”，不解决“这个入口应该执行什么”。真正的兼容契约仍是生成后的所有者、方法名、参数描述符和返回类型。
 
-Android 当前调度器源码 [`OrekiAutomationScheduler.kt`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiAutomationScheduler.kt) 采用 `object` 并暴露静态桥；它维护全局节拍、`beginFrame`、`allow`、`noteActed` 和 `noteNoop`。因此逆向恢复不能只看“有一个 allow 函数”，还要确认调用方是否在真实动作后通知调度器，避免把 no-op 记成成功。
+Android 当前调度器源码 [`OrekiAutomationScheduler.kt`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiAutomationScheduler.kt) 采用 `object` 并暴露静态桥；它维护全局节拍、`beginFrame`、`allow`、`noteActed`、`noteNoop` 和 `noteFail`。因此逆向恢复不能只看“有一个 allow 函数”，还要确认调用方是否在真实动作后按结果通知调度器，避免把 no-op 或失败记成成功。
 
 协程方法则要额外注意 `Continuation` 参数、返回的挂起标记和生成的内部类。看到一个看似多余的对象参数时，先回到方法描述符与调用者，不要为了让 Kotlin 签名“变得好看”而删除它。
 
@@ -124,7 +124,7 @@ Android 当前调度器源码 [`OrekiAutomationScheduler.kt`](https://github.com
 - **`ClassNotFoundException`：** 先核对完整类描述符、DEX 版本和构建时映射，不要只换一个短类名。
 - **`NoSuchMethodException`：** 比较方法名、参数顺序和描述符；重载方法不能靠名称区分。
 - **`IllegalArgumentException` 或 `ClassCastException`：** 检查调用者传入的对象类型、装箱/原始类型和宿主实际返回值。
-- **没有崩溃但状态不推进：** 检查 `allow`、`noteActed`、`noteNoop` 是否成对调用，再核对宿主入口是否真的写回状态。
+- **没有崩溃但状态不推进：** 检查每次动作是否先经过 `allow`，再按真实结果回报 `noteActed`、`noteNoop` 或 `noteFail` 之一，并核对宿主入口是否真的写回状态。
 - **只在更新基线后出错：** 重新生成绑定证据；旧版短名存在，不代表它在新 DEX 中仍代表同一结构。
 
 排障时保留最小事实集：APK/DEX 基线、完整描述符、调用点前后的关键寄存器、宿主返回值和适配层结果。不要把整份反编译目录当作解释；越大的资料堆，越容易让一个未经核实的变量名看起来像事实。
