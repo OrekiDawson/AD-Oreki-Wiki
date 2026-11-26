@@ -8,6 +8,7 @@ tags:
 
 这里显示最近进入当前内容树的正式条目；文章的具体修订记录仍以页面正文与仓库历史为准。
 
+- [反物质维度MOD Wiki:本站不是什么](/wiki-not)
 - [反物质维度MOD Wiki:知识库规则](/wiki-rules)
 - [AI Summary 索引](/developer/ai-summaries)
 - [膨胀升级（被毁灭的现实）](/player/original/ow-dilation-upgrades-doomed)
@@ -31,4 +32,3 @@ tags:
 - [Android 构建与 AGP](/developer/build/agp)
 - [如何使用本知识库](/how-to-use)
 - [玩家专区](/player)
-- [反物质维度：游戏总览与阅读路线](/player/antimatter-dimensions)
