@@ -27,6 +27,23 @@ if (!/:where\(pre, pre \*, code, code \*, kbd, kbd \*, samp, samp \*\)[\s\S]*?fo
 if (/fonts\.(googleapis|gstatic)\.com|use\.typekit\.net|@import\s+url\(/i.test(styles))
   errors.push("自定义样式仍加载远程字体")
 
+// 组件和主题源码也属于公开构建输入；仅检查 custom.scss 会漏掉未来新增的
+// 组件级样式或第三方接入。KaTeX 的功能性字体声明不在 quartz/ 源码中，
+// 因此这里可以把普通固定字体和远程字体一并视为违规。
+const walkSource = (dir) => fs.readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
+  const file = path.join(dir, entry.name)
+  return entry.isDirectory() ? walkSource(file) : [file]
+})
+for (const file of walkSource(path.join(root, "quartz"))) {
+  if (!/\.(css|scss|sass|ts|tsx|js|jsx)$/.test(file)) continue
+  const text = fs.readFileSync(file, "utf8")
+  if (/fonts\.(googleapis|gstatic)\.com|use\.typekit\.net|@import\s+url\(/i.test(text))
+    errors.push(`Quartz 源码仍加载远程字体：${path.relative(root, file)}`)
+  if (/font-family\s*:\s*["'][^"']+["']/i.test(text)
+    && !/font-family\s*:\s*["'](?:KaTeX_[^"']+)["']/i.test(text))
+    errors.push(`Quartz 源码存在固定网页字体声明：${path.relative(root, file)}`)
+}
+
 const sourceFiles = []
 const walkMarkdown = (dir) => fs.readdirSync(dir, { withFileTypes: true }).forEach((entry) => {
   const file = path.join(dir, entry.name)
