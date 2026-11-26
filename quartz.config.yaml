@@ -15,8 +15,8 @@ configuration:
     - "ai-drafts/**"
   theme:
     typography:
-      header: sans-serif
-      body: sans-serif
+      header: "system-ui, sans-serif"
+      body: "system-ui, sans-serif"
       code: ui-monospace
     colors:
       lightMode:
