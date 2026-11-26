@@ -204,10 +204,17 @@ if (builtOnly) {
   const publicDir = path.resolve(root, process.argv[3] || "public")
   if (!fs.existsSync(publicDir)) errors.push(`构建产物目录不存在：${publicDir}`)
   else {
-    const publicPaths = walkAll(publicDir).map((file) => path.relative(publicDir, file).replaceAll("\\", "/"))
-    for (const publicPath of publicPaths)
-      if (/(^|\/)(?:ai-drafts|history)(?:\/|$)/i.test(publicPath))
+    const publicFiles = walkAll(publicDir)
+    for (const file of publicFiles) {
+      const publicPath = path.relative(publicDir, file).replaceAll("\\", "/")
+      if (!/(^|\/)(?:ai-drafts|history)(?:\/|$)/i.test(publicPath)) continue
+      // 历史 URL 允许保留兼容入口，但只能是零秒跳转页；历史正文和 AI 草稿不得构建。
+      const text = file.endsWith(".html") ? fs.readFileSync(file, "utf8") : ""
+      const isHistoryAlias = /(^|\/)history(?:\/|$)/i.test(publicPath)
+        && /http-equiv=["']refresh["'][^>]*content=["']0\s*;\s*url=/i.test(text)
+      if (!isHistoryAlias)
         errors.push(`构建产物泄露内部草稿或历史归档：${publicPath}`)
+    }
     const htmlFiles = walkAll(publicDir).filter((file) => file.endsWith(".html"))
     if (!htmlFiles.length) errors.push("构建产物缺少 HTML 页面")
     const parse5 = await import("parse5")
