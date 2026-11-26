@@ -25,7 +25,6 @@ if [ -d static ]; then
   cp -r static/. "$TARGET/quartz/static/"
 fi
 if [ -d quartz/styles ]; then
-  rm -rf "$TARGET/quartz/styles"
   mkdir -p "$TARGET/quartz/styles"
   cp -r quartz/styles/. "$TARGET/quartz/styles/"
 fi
