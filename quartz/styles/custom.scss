@@ -108,7 +108,7 @@ body[data-slug="index"] {
     border-color: var(--secondary);
     box-shadow: 0 1rem 2rem color-mix(in srgb, var(--secondary) 16%, transparent);
   }
-  .home-card-index { color: var(--tertiary); font-family: var(--codeFont); font-size: 0.8rem; }
+  .home-card-index { color: var(--tertiary); font-family: var(--bodyFont); font-size: 0.8rem; }
   .home-card-title { margin-top: 1.8rem; color: var(--dark); font-size: 1.55rem; font-weight: 750; }
   .home-card-copy { margin-top: 0.6rem; color: var(--darkgray); line-height: 1.65; }
   .home-card-link { margin-top: auto; padding-top: 1rem; color: var(--secondary); font-weight: 700; }
