@@ -39,7 +39,7 @@ grep -Fq "CC BY-SA 4.0" "$home" || {
   echo "::error::HTTPS homepage missing CC BY-SA 4.0 license notice"
   exit 1
 }
-grep -Fq "反物质维度MOD 知识库" "$home" || {
+grep -Fq "反物质维度 Wiki" "$home" || {
   echo "::error::HTTPS homepage is missing the expected site title"
   exit 1
 }
@@ -57,3 +57,4 @@ location="$(awk 'BEGIN{IGNORECASE=1} tolower($1)=="location:"{gsub(/\r/,""); pri
 }
 
 echo "PASS: Pages https_enforced=true, HTTPS TLS and content valid, HTTP redirects to HTTPS"
+

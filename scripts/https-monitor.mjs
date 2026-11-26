@@ -27,7 +27,7 @@ export const HTTPS_SMOKE_PATHS = [
 ];
 // 站点标题单一来源：与 quartz.config.yaml 的 configuration.pageTitle 保持一致，
 // 供监控判定与回归测试共用，避免测试用虚构字符串掩盖生产判据漂移。
-export const SITE_TITLE = "反物质维度MOD 知识库";
+export const SITE_TITLE = "反物质维度 Wiki";
 
 function sh(cmd, args) {
   return execFileSync(cmd, args, { encoding: "utf8", timeout: 30000, stdio: ["ignore", "pipe", "ignore"] }).trim();
@@ -239,3 +239,4 @@ async function main() {
 }
 
 if (import.meta.url === "file://" + process.argv[1]) main();
+
