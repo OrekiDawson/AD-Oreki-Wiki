@@ -8,6 +8,8 @@ tags:
 
 这里显示最近进入当前内容树的正式条目；文章的具体修订记录仍以页面正文与仓库历史为准。
 
+- [APK 签名与升级兼容](/developer/build/apk-signing)
+- [构建可追溯性：让 APK 对得上源码与输入](/developer/build/artifact-provenance)
 - [架构与运行时：从入口到运行时](/developer/architecture)
 - [天神判据与跨端编码](/developer/architecture/celestial-implementation)
 - [生产链与重置：反物质维度如何成长](/player/antimatter-dimensions-core-loop)
@@ -15,7 +17,6 @@ tags:
 - [阶段进度：从新档到天神](/player/gameplay/stage-progression)
 - [第一次大坍缩与进入无限](/player/getting-started/first-crunch)
 - [超大数值：从尾数与指数到跨端一致性](/developer/architecture/numeric-model)
-- [构建可追溯性：让 APK 对得上源码与输入](/developer/build/artifact-provenance)
 - [玩家常见问题](/player/faq)
 - [存档与兼容性](/player/faq/saves-and-compatibility)
 - [平台与版本](/player/faq/platform-and-version)
@@ -31,4 +32,3 @@ tags:
 - [阶段解锁：进度地图与排障入口](/player/gameplay/stage-gates)
 - [第一次进入与前几分钟](/player/getting-started/first-session)
 - [FAQ：下载、平台与版本](/player/faq/platform)
-- [Web 模块启动链：全局兼容桥与初始化故障排查](/developer/troubleshooting/web-module-startup)
