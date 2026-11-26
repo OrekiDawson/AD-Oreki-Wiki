@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "checked_at": "2026-11-26",
+  "scope": "原版 Wiki 图片恢复批次：可从图片清单中独立核验的 Commons wiki.gg 输入提示素材",
+  "source_manifest": "docs/translation/original-image-manifest.json",
+  "metadata": "docs/translation/original-image-metadata.json",
+  "summary": {
+    "manifest_pages": 117,
+    "manifest_unique_images": 539,
+    "open_license_candidates_before_batch": 0,
+    "checked": 3,
+    "downloaded": 0,
+    "integrated": 0,
+    "pending_authorization": 3
+  },
+  "decision_rule": "只有来源页明确给出可适用的许可证、作者或署名信息，且允许本站按记录条件再分发时才下载；文章 CC BY-SA 声明不自动推导图片许可。",
+  "records": [
+    {
+      "title": "File:Gesture Swipe Left.png",
+      "source_url": "https://commons.wiki.gg/wiki/File:Gesture_Swipe_Left.png",
+      "file_url": "https://commons.wiki.gg/images/Gesture_Swipe_Left.png?3d535e",
+      "sha1_from_api": "3d535ed511cbd97e82095368ef72ed2ac0a28ecf",
+      "license": null,
+      "artist": null,
+      "credit": null,
+      "permission": null,
+      "result": "BLOCKED_AUTHORIZATION",
+      "downloaded": false,
+      "integrated": false,
+      "reason": "文件 API 仅返回对象名、时间和分类；文件页正文未提供 CC、公共领域或其他再分发许可声明。"
+    },
+    {
+      "title": "File:Gesture Swipe Right.png",
+      "source_url": "https://commons.wiki.gg/wiki/File:Gesture_Swipe_Right.png",
+      "file_url": "https://commons.wiki.gg/images/Gesture_Swipe_Right.png?b560e2",
+      "sha1_from_api": "b560e23b46ece676e8073922ce8cd1135d21c29f",
+      "license": null,
+      "artist": null,
+      "credit": null,
+      "permission": null,
+      "result": "BLOCKED_AUTHORIZATION",
+      "downloaded": false,
+      "integrated": false,
+      "reason": "文件 API 仅返回对象名、时间和分类；文件页正文未提供 CC、公共领域或其他再分发许可声明。"
+    },
+    {
+      "title": "File:Keyboard White Mouse Left.png",
+      "source_url": "https://commons.wiki.gg/wiki/File:Keyboard_White_Mouse_Left.png",
+      "file_url": "https://commons.wiki.gg/images/Keyboard_White_Mouse_Left.png?c1a406",
+      "sha1_from_api": "c1a4067820fe5d11d2aa8a166ed2503fcae88c01",
+      "license": null,
+      "artist": null,
+      "credit": null,
+      "permission": null,
+      "result": "BLOCKED_AUTHORIZATION",
+      "downloaded": false,
+      "integrated": false,
+      "reason": "文件 API 仅返回对象名、时间和分类；文件页正文未提供 CC、公共领域或其他再分发许可声明。"
+    }
+  ]
+}
