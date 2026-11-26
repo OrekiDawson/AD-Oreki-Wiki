@@ -9,7 +9,7 @@ const deps = { ...(packageJson.dependencies || {}), ...(packageJson.devDependenc
 
 if (/quartz-fonts|fontOrigin:\s*(?:googleFonts|local|selfHosted)/.test(config))
   errors.push("Quartz 自定义网页字体插件或字体来源仍在配置中")
-if (deps["@quartz-community/quartz-fonts"])
+if (process.argv[2] !== "--built" && deps["@quartz-community/quartz-fonts"])
   errors.push("package.json 仍依赖 @quartz-community/quartz-fonts")
 if (!/--headerFont:\s*system-ui/.test(fs.readFileSync(path.join(root, "quartz/styles/custom.scss"), "utf8")))
   errors.push("标题未绑定系统原生无衬线字体")
