@@ -19,6 +19,13 @@ fi
 rm -rf "$TARGET/content"
 cp -r content "$TARGET/content"
 cp quartz.config.yaml "$TARGET/quartz.config.yaml"
+if [ -d static ]; then
+  mkdir -p "$TARGET/quartz/static"
+  cp -r static/. "$TARGET/quartz/static/"
+fi
+if [ -d quartz/styles ]; then
+  cp -r quartz/styles "$TARGET/quartz/styles"
+fi
 mkdir -p "$TARGET/scripts"
 cp -r scripts/. "$TARGET/scripts/"
 cp README.md "$TARGET/README.md"
