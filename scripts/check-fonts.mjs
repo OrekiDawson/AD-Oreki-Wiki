@@ -3,7 +3,8 @@ import path from "node:path"
 
 const root = process.cwd()
 const errors = []
-const configFiles = ["quartz.config.yaml", "quartz.config.default.yaml"]
+const isRepositoryCheckout = fs.existsSync(path.join(root, ".git"))
+const configFiles = ["quartz.config.yaml", ...(isRepositoryCheckout ? ["quartz.config.default.yaml"] : [])]
   .map((file) => path.join(root, file))
   .filter((file) => fs.existsSync(file))
 const configs = configFiles.map((file) => ({ file, text: fs.readFileSync(file, "utf8") }))
@@ -33,14 +34,13 @@ if (!/:where\(pre, pre \*, code, code \*, kbd, kbd \*, samp, samp \*\)[\s\S]*?fo
 if (/fonts\.(googleapis|gstatic)\.com|use\.typekit\.net|@import\s+url\(/i.test(styles))
   errors.push("自定义样式仍加载远程字体")
 
-// 组件和主题源码也属于公开构建输入；仅检查 custom.scss 会漏掉未来新增的
-// 组件级样式或第三方接入。KaTeX 的功能性字体声明不在 quartz/ 源码中，
-// 因此这里可以把普通固定字体和远程字体一并视为违规。
+// 仓库自有 Quartz 源码也属于公开构建输入；CI 的 .quartz-build 还包含上游
+// 未启用的字体加载分支，不能把那部分源码误当成本站的配置或构建输出。
 const walkSource = (dir) => fs.readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
   const file = path.join(dir, entry.name)
   return entry.isDirectory() ? walkSource(file) : [file]
 })
-for (const file of walkSource(path.join(root, "quartz"))) {
+for (const file of isRepositoryCheckout ? walkSource(path.join(root, "quartz")) : []) {
   if (!/\.(css|scss|sass|ts|tsx|js|jsx)$/.test(file)) continue
   const text = fs.readFileSync(file, "utf8")
   if (/fonts\.(googleapis|gstatic)\.com|use\.typekit\.net|@import\s+url\(/i.test(text))
