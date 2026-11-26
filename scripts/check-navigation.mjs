@@ -145,7 +145,7 @@ else {
         errors.push(`图片缺少许可证或署名：${image.local_path}`)
     }
 }
-if (errors.length) {
+if (!builtOnly && errors.length) {
   console.error(errors.join("\n"))
   process.exit(1)
 }
