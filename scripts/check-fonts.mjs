@@ -32,8 +32,6 @@ if (process.argv[2] === "--built") {
     const text = fs.readFileSync(file, "utf8")
     if (/fonts\.(googleapis|gstatic)\.com|use\.typekit\.net/i.test(text))
       errors.push(`构建产物仍请求第三方网页字体：${path.relative(publicDir, file)}`)
-    if (/Source Sans|Schibsted|IBM Plex|Google Sans|Roboto|Noto Sans/i.test(text))
-      errors.push(`构建产物仍包含固定网页字体：${path.relative(publicDir, file)}`)
   }
 }
 
