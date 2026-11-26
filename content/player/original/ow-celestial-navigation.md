@@ -22,7 +22,7 @@ aliases:
 
 本条目列出地图中的每个节点及其进度与标签细节，并附有许多地图完整图片——可在本页的[画廊子页面](https://antimatterdimensions.wiki.gg/wiki/Celestial_Navigation/Gallery)查看。
 
-> 原页的「节点」章节通过子页面/画廊模板提供内容；该子页（Celestial Navigation/Gallery）与节点表尚未翻译（已列入后续批次）。本页保留主条目正文、交互与背景说明。
+> 原页的「节点」章节通过子页面/画廊模板提供内容；该子页（Celestial Navigation/Gallery）与节点表尚未译为中文。本页保留主条目正文、交互与背景说明，节点详情请参阅英文原文。
 
 ## 操作
 
@@ -52,7 +52,7 @@ aliases:
 - 原文：[Celestial Navigation](https://antimatterdimensions.wiki.gg/index.php?title=Celestial_Navigation&oldid=3361)（修订 ID `3361`；最后编辑者 KrutarMarsons；抓取于 2026-11-15）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Celestial_Navigation&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为**简体中文翻译（改编）**，已修改：翻译正文与表格、统一术语、移除页签/导航模板、图片未转载；本页按相同许可共享。
-- 原页的节点清单与画廊为子页面内容，未随主条目展开；已注明并列入后续批次。
+- 原页的节点清单与画廊为子页面内容，未随主条目展开；相关细节请参阅英文原文。
 
 ## 相关条目
 

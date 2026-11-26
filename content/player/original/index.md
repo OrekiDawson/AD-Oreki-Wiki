@@ -92,7 +92,7 @@ aliases:
 
 ## 尚未翻译的原版条目
 
-原版 Wiki 还包含[完整页面目录](https://antimatterdimensions.wiki.gg/wiki/Antimatter_Dimensions_Wiki/pages)。该目录是英文原文的真实入口，不代表本站已经完成翻译。尚未列入上方导航的页面会登记来源、原始修订和术语，再进入逐段审校；本站不创建没有正文的占位页。
+原版 Wiki 还包含[完整页面目录](https://antimatterdimensions.wiki.gg/wiki/Antimatter_Dimensions_Wiki/pages)。该目录是英文原文的真实入口，不代表本站已经完成翻译。尚未列入上方导航的页面请先通过英文原文阅读；本站不创建没有正文的占位页。
 
 ## 社区与原始资料
 
