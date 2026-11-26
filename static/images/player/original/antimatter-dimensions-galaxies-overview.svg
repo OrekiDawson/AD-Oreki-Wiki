@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="360" viewBox="0 0 960 360" role="img" aria-labelledby="title desc">
+  <title id="title">反物质维度与反物质星系的成长关系</title>
+  <desc id="desc">反物质维度生产反物质；购买反物质星系会重置较低层进度，并提高计数频率升级的效果。</desc>
+  <!-- 本站原创示意图，CC BY-SA 4.0；不是原版游戏截图。 -->
+  <rect width="960" height="360" rx="24" fill="#111827" />
+  <path d="M120 180h720" stroke="#94a3b8" stroke-width="4" stroke-dasharray="12 12" />
+  <g font-family="system-ui, sans-serif" text-anchor="middle">
+    <rect x="70" y="92" width="250" height="176" rx="18" fill="#172554" stroke="#60a5fa" stroke-width="3" />
+    <text x="195" y="138" fill="#bfdbfe" font-size="26" font-weight="700">反物质维度</text>
+    <text x="195" y="178" fill="#e0f2fe" font-size="20">生产反物质</text>
+    <text x="195" y="214" fill="#cbd5e1" font-size="17">购买同一维度 → 倍率成长</text>
+    <text x="195" y="244" fill="#cbd5e1" font-size="17">维度提升 → 解锁更高维度</text>
+    <rect x="640" y="92" width="250" height="176" rx="18" fill="#3b0764" stroke="#c084fc" stroke-width="3" />
+    <text x="765" y="138" fill="#f3e8ff" font-size="26" font-weight="700">反物质星系</text>
+    <text x="765" y="178" fill="#fae8ff" font-size="20">购买后重置低层进度</text>
+    <text x="765" y="214" fill="#e9d5ff" font-size="17">计数频率升级效果提高</text>
+    <text x="765" y="244" fill="#e9d5ff" font-size="17">成本随星系数量成长</text>
+    <text x="480" y="152" fill="#f8fafc" font-size="34">成长</text>
+    <text x="480" y="208" fill="#cbd5e1" font-size="18">重置换取更快生产</text>
+  </g>
+  <path d="M322 180h276" stroke="#f8fafc" stroke-width="5" marker-end="url(#arrow)" />
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0 0 12 6 0 12z" fill="#f8fafc" />
+    </marker>
+  </defs>
+</svg>

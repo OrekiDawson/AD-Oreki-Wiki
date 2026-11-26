@@ -18,6 +18,8 @@ aliases:
 
 **维度提升**（Dimension Boosts，有时简称 **Dimboosts**）是游戏中的第一个威望（Prestige）机制，为[反物质维度](/player/original/ow-antimatter-dimensions)提供加成并解锁新的维度。它们会被[无限](/player/original/ow-infinity)与[反物质星系](/player/original/ow-antimatter-galaxies)重置。
 
+原文此页包含桌面端和移动端维度提升界面图 `Antimatter-dimboost-interface--darktheme-desktop.png`、`Antimatter-dimboost-interface--darktheme-mobile.png`；本译文未转载这些图片，仅保留文字说明。
+
 ## 机制
 
 执行一次维度提升会重置反物质与[反物质维度](/player/original/ow-antimatter-dimensions)，换来若干收益：
@@ -44,7 +46,7 @@ aliases:
 维度提升的初始需求以及成长增量，可以被游戏更后期的某些升级降低：
 
 - 第一列的第 4 个[无限升级](/player/original/ow-infinity-upgrades)会把维度提升与[反物质星系](/player/original/ow-antimatter-galaxies)的初始需求各降低 $9$ 个维度：维度提升的首次需求从 $20$ 个第 4 维度降为 $11$ 个，反物质星系则从 $80$ 个第 8 维度降为 $71$ 个；
-- [无限挑战 5](/player/original/ow-challenges)会把维度提升与[反物质星系](/player/original/ow-antimatter-galaxies)的初始需求降低 $1$ 个维度；
+- [无限挑战 5](/player/original/ow-infinity-challenges)会把维度提升与[反物质星系](/player/original/ow-antimatter-galaxies)的初始需求降低 $1$ 个维度；
 - [时间研究](/player/original/ow-time-studies) 211 与 222 分别把维度提升的增量降低 $5$ 与 $2$；
 - 充能[无限升级](/player/original/ow-infinity-upgrades)（第一列第 4 行）会进一步降低维度提升的需求。
 

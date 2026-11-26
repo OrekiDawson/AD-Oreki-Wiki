@@ -16,13 +16,15 @@ aliases:
   - "/original/ow-dimensional-sacrifice"
 ---
 
-**维度献祭（Dimensional Sacrifice）**是第一次获得 5 次[维度提升](/player/original/ow-dimension-boosts)后解锁的机制。
+**维度献祭（Dimensional Sacrifice）**是在首次获得第 5 次[维度提升](/player/original/ow-dimension-boosts)后解锁的机制。
 
 它会让第 1 至第 7 [反物质维度](/player/original/ow-antimatter-dimensions)的累计数量归零，以换取第 8 反物质维度专属的倍率。已购买数量不会重置，所以这些维度的倍率和价格保持不变，反物质产量通常很快就能恢复。
 
 普通挑战 12 中只重置第 1 至第 6 维度；获得成就 118「IT'S OVER 9000」后，献祭不再清空这些数量。普通挑战 8 又会改变规则，使所有维度连同倍率和价格一起重置。
 
 > 本页译自社区 Wiki 同名条目；原作标记该页仍需清理（Cleanup），译文保留原文信息。
+
+原文此页包含桌面端和移动端献祭界面图 `Antimatter-sacrifice-interface--darktheme-desktop.png`、`Antimatter-sacrifice-interface--darktheme-mobile.png`，以及成就图标 `Main-achievements-icon-r81--mobile.png`；本译文未转载这些图片，仅保留文字说明。
 
 ## 机制
 
@@ -34,11 +36,11 @@ $$\max\left(\frac{\log_{10}(AD_1)}{10}, 1\right)^m$$
 
 其中 $AD_1$ 在这里指累计献祭的第 1 维度总量，$m$ 是献祭系数，基础值为 $2$。
 
-在[无限挑战 2](/player/original/ow-challenges)之后，献祭公式变为 $(AD_1)^m$，其中 $m$ 是献祭系数，基础值为 $\frac{10}{1200}=\frac{1}{120}$。
+在[无限挑战 2](/player/original/ow-infinity-challenges)之后，献祭公式变为 $(AD_1)^m$，其中 $m$ 是献祭系数，基础值为 $\frac{10}{1200}=\frac{1}{120}$。
 
-[成就](https://antimatterdimensions.wiki.gg/wiki/Achievements) 32 与 57 各使献祭系数 $+10\%$。拥有其中一项时系数变为 $2.2$（无限挑战 2 之后为 $\frac{11}{1200}$）；两项都有时系数为 $2.4$（无限挑战 2 之后为 $\frac{12}{1200}=0.01$）。这些效果彼此加算。
+[成就](/player/original/ow-achievements) 32 与 57 各使献祭系数 $+10\%$。拥有其中一项时系数变为 $2.2$（无限挑战 2 之后为 $\frac{11}{1200}$）；两项都有时系数为 $2.4$（无限挑战 2 之后为 $\frac{12}{1200}=0.01$）。这些效果彼此加算。
 
-[成就](https://antimatterdimensions.wiki.gg/wiki/Achievements) 88 与时间研究 228 分别使献祭系数 $+10\%$ 与 $+20\%$。它们与前述效果乘算，但它们彼此之间仍然是加算。
+[成就](/player/original/ow-achievements) 88 与时间研究 228 分别使献祭系数 $+10\%$ 与 $+20\%$。它们与前述效果乘算，但它们彼此之间仍然是加算。
 
 普通挑战 8 使用独立公式：
 
@@ -66,7 +68,7 @@ $$\frac{m^{0.05}}{n^{0.04}} \times j$$
 | 玩家购买的维度提升少于 5 次 | 需要 5 个维度提升 |
 | 玩家的第 8 反物质维度恰好为 0 | 没有第 8 反物质维度 |
 | 维度献祭获得的倍率小于或等于 ×1 | 加成为 ×1 |
-| 玩家在任意[普通挑战](/player/original/ow-challenges)或[无限挑战](/player/original/ow-challenges)中 | 已达到挑战目标 |
+| 玩家在任意[普通挑战](/player/original/ow-normal-challenges)或[无限挑战](/player/original/ow-infinity-challenges)中 | 已达到挑战目标 |
 | 以上条件都不满足 | 需要大坍缩 |
 
 ## 琐事
