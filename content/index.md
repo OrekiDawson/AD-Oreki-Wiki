@@ -1,6 +1,6 @@
 ---
 title: "反物质维度 MOD Wiki"
-description: "一部值得翻阅的反物质维度中文百科：玩法、原版译文与 Android/Web 技术"
+description: "反物质维度 MOD Wiki 的玩法、原版译文与 Android/Web 技术资料"
 tags:
   - 首页
   - 导航
@@ -25,15 +25,15 @@ tags:
 <a class="home-card home-card-player" href="/player/">
   <span class="home-card-index">01</span>
   <span class="home-card-title">玩家专区</span>
-  <span class="home-card-copy">从“我该点什么”读到“为什么会这样”。机制、路线、解锁、故障与原版译文都在这里。</span>
-  <span class="home-card-link">开始探索 →</span>
+  <span class="home-card-copy">查阅机制、成长路线、解锁条件、存档与常见问题，也可按原版阶段阅读中文译文。</span>
+  <span class="home-card-link">进入玩家专区 →</span>
 </a>
 
 <a class="home-card home-card-developer" href="/developer/">
   <span class="home-card-index">02</span>
   <span class="home-card-title">开发者专区</span>
-  <span class="home-card-copy">沿着真实的调用链和构建链阅读 Android、Web 与 MOD：架构、源码、验证和排障。</span>
-  <span class="home-card-link">阅读技术 →</span>
+  <span class="home-card-copy">从项目结构、调用链和构建交付阅读 Android、Web 与 MOD 的实现，并查找源码索引和排障专题。</span>
+  <span class="home-card-link">进入开发者专区 →</span>
 </a>
 
 </div>
@@ -61,7 +61,7 @@ tags:
 <ul class="home-fact-list">
 <li>第一次无限不是“数字终于到头了”，而是把一次重置变成长期成长的入口；真正重要的是重置后保留下来的购买项与新规则。<a href="/player/original/ow-infinity">读无限</a></li>
 <li>当普通记数法不够用，游戏会换一种记数法表达数量级；这不是装饰，而是让比较、公式和玩家决策仍然有意义。<a href="/player/original/ow-notations">读记数法</a></li>
-<li>太阳神的升级成本在 15 级后引入额外的 1.5 倍缩放：增长曲线像在提醒玩家，终局内容的“最后几级”从来不是顺路捡来的。<a href="/player/original/ow-ra">读太阳神</a></li>
+<li>太阳神的升级成本在 15 级后引入额外的 1.5 倍缩放，后期升级需要单独规划资源。<a href="/player/original/ow-ra">读太阳神</a></li>
 <li>重置并不等于失败。现实、永恒和无限把“失去眼前进度”换成“获得新的生产层”，这正是反物质维度最核心的循环。<a href="/player/original/ow-reality">读现实</a></li>
 </ul>
 </section>
