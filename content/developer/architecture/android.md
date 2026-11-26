@@ -10,7 +10,7 @@ aliases:
 
 Android 端不是从空白工程重写《反物质维度》。当前 Android 仓库的 Kotlin 业务位于 `app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/`，通过 `GameApi` 读取或调用原版运行时，再由自动化和界面模块决定何时尝试合法操作。仓库根目录的 `:app` 是实际 Android 应用模块，构建参数以当前 `app/build.gradle.kts` 和构建逻辑为准。
 
-本文依据 Android `main` 的固定 Commit [`9d8fc46ce99279720b5b3068027bb76bceb35756`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/tree/9d8fc46ce99279720b5b3068027bb76bceb35756)。它帮助你定位代码和理解构建边界；本文没有运行 Gradle、安装 APK 或在设备上验证完整游戏行为。
+本文以 Android `main` 的固定 Commit [`9d8fc46ce99279720b5b3068027bb76bceb35756`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/tree/9d8fc46ce99279720b5b3068027bb76bceb35756)作为源码定位基线。源码可以说明入口、调用关系和构建输入；至于 APK 在设备上的实际行为，则必须以对应产物和运行环境的测试为准，不能从一段 Kotlin 调用链直接推断出来。
 
 可以把这一套代码想成“两层合奏”：原版运行时负责真正改变游戏世界，Kotlin 层负责判断这一拍该不该尝试、尝试后发生了什么。调度器不是凭空制造资源的魔法棒；它更像交通指挥，能让动作错开、记录空转和失败，却不能把一辆没有油的车判成已经到站。这个比喻只帮助理解职责，具体边界仍以固定版本源码为准。
 
@@ -84,8 +84,8 @@ OrekiStageAuto.onAutoBuyerTick()
 - **构建在资源或 Manifest 阶段失败**：先核对 `oreki.fullGameStage` 指向的目录及其生成输入，再检查 `build/agp-generated-res`、`build/agp-fullgame-assets` 和 `scripts/payload/lib`；不要套用历史构建参数。
 - **Release 被签名门禁拒绝**：确认 `keys/oreki.jks` 和环境变量是否按仓库要求可用。未签名实验只能显式授权，不能把实验 APK 当成发布包。
 
-## 本文依据与未完成验证
+## 源码边界与进一步阅读
 
-本文依据 Android `9d8fc46ce99279720b5b3068027bb76bceb35756` 直接核对了 `settings.gradle.kts`、`build.gradle.kts`、`app/build.gradle.kts`、`OrekiStageAuto.kt`、`OrekiAutomationScheduler.kt`、`OrekiGuiStage.kt` 和 `GameApi.kt`。因此正文只陈述这些文件能够支持的入口、字段和调用关系；Android 运行时行为、完整游戏输入的来源完整性和设备结果仍须另行验证。
+本文直接核对了 `settings.gradle.kts`、`build.gradle.kts`、`app/build.gradle.kts`、`OrekiStageAuto.kt`、`OrekiAutomationScheduler.kt`、`OrekiGuiStage.kt` 和 `GameApi.kt`。这些文件足以解释入口、字段和调用关系；如果要判断完整游戏输入、设备运行时或存档读写，还应把源码结论与相同版本的构建产物、设备日志和测试结果对照。这样区分“代码打算做什么”和“程序实际做了什么”，也是排查跨版本问题时最省时间的一步。
 
 进一步阅读：[第一次参与开发](/developer/first-contribution) · [Web 架构](/developer/architecture/web) · [混合运行时 ABI](/developer/architecture/kotlin-runtime) · [AGP 构建](/developer/build/agp) · [双端一致性](/developer/architecture/parity) · [故障排查](/developer/troubleshooting/)
