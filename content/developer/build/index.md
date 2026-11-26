@@ -41,8 +41,7 @@ aliases:
 ## 相关入口
 
 - [架构与运行时](/developer/architecture/)：确认构建输入从哪里来。
-- [源码索引](/developer/references/source-index)：查固定源码入口和版本边界。
-- [来源索引](/developer/references/source-index)：区分实现、产物、行为和历史证据。
+- [来源索引](/developer/references/source-index)：查固定源码入口，并区分实现、产物、行为和历史证据。
 - [发布状态](/developer/current/release-status)：查可交付候选，不替代发布机制说明。
 
 历史构建事件保留在源码仓库或内部证据目录，[AI Summary](/developer/ai-summaries/)仅作为已审核正文的附属速览；两者都不替代本页列出的操作指南和原理文章。
