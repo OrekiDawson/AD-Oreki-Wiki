@@ -39,7 +39,7 @@ grep -Fq "CC BY-SA 4.0" "$home" || {
   echo "::error::HTTPS homepage missing CC BY-SA 4.0 license notice"
   exit 1
 }
-grep -Fq "反物质维度 Wiki" "$home" || {
+grep -Fq "反物质维度 MOD Wiki" "$home" || {
   echo "::error::HTTPS homepage is missing the expected site title"
   exit 1
 }
