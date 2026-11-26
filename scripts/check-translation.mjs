@@ -85,7 +85,8 @@ for (const file of pages) {
     if (entry.path !== full) fail(file + " 清单 path 不一致: " + entry.path);
     if (entry.zh_title !== "") {
       const title = text.match(/^title:\s*["']?(.*?)["']?\s*$/m)?.[1] ?? "";
-      if (title !== entry.zh_title) fail(file + " 中文标题与清单 zh_title 不一致: " + title + " vs " + entry.zh_title);
+      const comparableTitle = title.replace(/^原版:/, "");
+      if (comparableTitle !== entry.zh_title) fail(file + " 中文标题与清单 zh_title 不一致: " + title + " vs " + entry.zh_title);
     }
   }
 }
