@@ -1,0 +1,115 @@
+{
+  "schema": 1,
+  "source": "docs/translation/original-image-license-audit-*.json",
+  "policy": "未明确确认许可证和署名条件的素材不得下载或集成；原版 Wiki 来源不等于 Commons 授权。",
+  "batch_files": [
+    {
+      "file": "original-image-license-audit-2026-11-26-batch-2.json",
+      "checked_at": "2026-11-26",
+      "batch": 2,
+      "records": 5
+    },
+    {
+      "file": "original-image-license-audit-2026-11-26-batch-3.json",
+      "checked_at": "2026-11-26",
+      "batch": 3,
+      "records": 5
+    },
+    {
+      "file": "original-image-license-audit-2026-11-26-batch-4.json",
+      "checked_at": "2026-11-26",
+      "batch": 4,
+      "records": 5
+    },
+    {
+      "file": "original-image-license-audit-2026-11-26-batch-5.json",
+      "checked_at": "2026-11-26",
+      "batch": 5,
+      "records": 5
+    },
+    {
+      "file": "original-image-license-audit-2026-11-26-batch-6.json",
+      "checked_at": "2026-11-27",
+      "batch": 6,
+      "records": 5
+    },
+    {
+      "file": "original-image-license-audit-2026-11-26.json",
+      "checked_at": "2026-11-26",
+      "batch": null,
+      "records": 3
+    },
+    {
+      "file": "original-image-license-audit-2026-11-27-batch-10.json",
+      "checked_at": "2026-11-27",
+      "batch": 10,
+      "records": 5
+    },
+    {
+      "file": "original-image-license-audit-2026-11-27-batch-11.json",
+      "checked_at": "2026-11-27",
+      "batch": 11,
+      "records": 5
+    },
+    {
+      "file": "original-image-license-audit-2026-11-27-batch-12.json",
+      "checked_at": "2026-11-27",
+      "batch": 12,
+      "records": 5
+    },
+    {
+      "file": "original-image-license-audit-2026-11-27-batch-13.json",
+      "checked_at": "2026-11-27",
+      "batch": 13,
+      "records": 5
+    },
+    {
+      "file": "original-image-license-audit-2026-11-27-batch-14.json",
+      "checked_at": "2026-11-27",
+      "batch": 14,
+      "records": 5
+    },
+    {
+      "file": "original-image-license-audit-2026-11-27-batch-15.json",
+      "checked_at": "2026-11-26",
+      "batch": 15,
+      "records": 5
+    },
+    {
+      "file": "original-image-license-audit-2026-11-27-batch-16.json",
+      "checked_at": "2026-11-27",
+      "batch": 16,
+      "records": 5
+    },
+    {
+      "file": "original-image-license-audit-2026-11-27-batch-7.json",
+      "checked_at": "2026-11-27",
+      "batch": 7,
+      "records": 5
+    },
+    {
+      "file": "original-image-license-audit-2026-11-27-batch-8.json",
+      "checked_at": "2026-11-27",
+      "batch": 8,
+      "records": 5
+    },
+    {
+      "file": "original-image-license-audit-2026-11-27-batch-9.json",
+      "checked_at": "2026-11-27",
+      "batch": 9,
+      "records": 5
+    }
+  ],
+  "totals": {
+    "batches": 16,
+    "records": 78,
+    "unique_titles": 78,
+    "duplicate_titles": 0,
+    "commons_file_pages_exist": 13,
+    "pending_authorization": 66,
+    "missing_from_commons": 12,
+    "downloaded": 0,
+    "integrated": 0
+  },
+  "duplicate_titles": []
+}
