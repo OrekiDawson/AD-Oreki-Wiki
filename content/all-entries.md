@@ -1,12 +1,12 @@
 ---
 title: "全部条目"
-description: "按主题与中文标题浏览 反物质维度 MOD Wiki 的 150 个正式条目"
+description: "按主题与中文标题浏览 反物质维度 MOD Wiki 的 151 个正式条目"
 tags:
   - 导航
   - 索引
 ---
 
-这里列出当前公开发布的 **150** 个正式条目。草稿、内部归档、兼容入口和重定向不计入索引。
+这里列出当前公开发布的 **151** 个正式条目。草稿、内部归档、兼容入口和重定向不计入索引。
 
 ## 玩家专区
 
@@ -123,6 +123,7 @@ tags:
 - [第一次参与 Android 开发](/developer/first-contribution)
 - [调度器状态机：购买决策、合法重置与进度死锁](/developer/architecture/scheduler-state-machine)
 - [发布资格：从一个 APK 到可交付版本](/developer/current/release-status)
+- [反编译与源码恢复](/developer/reverse-engineering/decompilation)
 - [构建可追溯性：让 APK 对得上源码与输入](/developer/build/artifact-provenance)
 - [构建与交付：从源码到可交付产物](/developer/build)
 - [故障排查：从症状回到源码](/developer/troubleshooting)
