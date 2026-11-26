@@ -99,7 +99,7 @@ if (historyEntries.length < 3) {
   fail("历史归档条目不足（应把时间性材料移入 content/developer/history/）: " + historyEntries.length);
 }
 
-// 旧 URL 兼容：既有页面路径不得因专题化改造而消失
+// 旧 URL 兼容：旧入口不再作为正文目录，但规范页 alias 必须生成直接重定向。
 const LEGACY_URLS = [
   "gameplay",
   "original",
@@ -136,7 +136,13 @@ const LEGACY_URLS = [
   "troubleshooting/coroutine-abi",
   "troubleshooting/save-compatibility",
 ];
-for (const slug of LEGACY_URLS) if (!pageExists(slug)) fail("旧页面 URL 丢失: /" + slug);
+for (const slug of LEGACY_URLS) {
+  const aliasFile = path.join(PUB, slug + ".html");
+  if (!fs.existsSync(aliasFile)) fail("旧 URL alias 重定向丢失: /" + slug);
+  else if (!fs.readFileSync(aliasFile, "utf8").includes('http-equiv="refresh"')) {
+    fail("旧 URL 未生成直接重定向: /" + slug);
+  }
+}
 
 const LEGACY_URL_TARGETS = {
   "architecture/android": "developer/architecture/android",
