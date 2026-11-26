@@ -1,0 +1,57 @@
+import fs from "node:fs"
+import path from "node:path"
+
+const root = process.cwd()
+const content = path.join(root, "content")
+const errors = []
+const walk = (dir) =>
+  fs.readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
+    const full = path.join(dir, entry.name)
+    return entry.isDirectory() ? walk(full) : entry.name.endsWith(".md") ? [full] : []
+  })
+const files = walk(content)
+if (files.some((file) => file.includes(`${path.sep}developer${path.sep}history${path.sep}`))) {
+  errors.push("内部历史归档仍位于 content/developer/history，禁止进入公开构建")
+}
+const allEntries = fs.readFileSync(path.join(content, "all-entries.md"), "utf8")
+const formal = files.filter(
+  (file) =>
+    !file.includes(`${path.sep}ai-drafts${path.sep}`) &&
+    !file.endsWith(`${path.sep}all-entries.md`) &&
+    !file.endsWith(`${path.sep}recent-updates.md`),
+)
+const routeFor = (file) => {
+  const rel = path.relative(content, file).replaceAll("\\", "/").replace(/\.md$/, "")
+  return rel.endsWith("/index") ? `/${rel.slice(0, -6)}` : `/${rel}`
+}
+for (const file of formal)
+  if (!allEntries.includes(`](${routeFor(file)})`))
+    errors.push(`正式页面未进入全部条目索引：${routeFor(file)}`)
+const config = fs.readFileSync(path.join(root, "quartz.config.yaml"), "utf8")
+if (!config.includes("folderDefaultState: open")) errors.push("Explorer 未设置目录默认展开")
+if (!config.includes("folderClickBehavior: collapse"))
+  errors.push("Explorer 未启用独立展开按钮行为")
+const assetManifestPath = path.join(root, "docs/translation/original-image-manifest.json")
+if (!fs.existsSync(assetManifestPath)) errors.push("缺少原版译文图片来源清单")
+else {
+  const assets = JSON.parse(fs.readFileSync(assetManifestPath, "utf8"))
+  for (const page of assets.pages ?? [])
+    for (const image of page.images ?? []) {
+      if (image.local_path && !fs.existsSync(path.join(root, image.local_path)))
+        errors.push(`图片资源不存在：${image.local_path}`)
+      if (image.local_path && (!image.license || !image.attribution))
+        errors.push(`图片缺少许可证或署名：${image.local_path}`)
+    }
+}
+if (errors.length) {
+  console.error(errors.join("\n"))
+  process.exit(1)
+}
+console.log(
+  JSON.stringify({
+    formalPages: formal.length,
+    indexedPages: formal.length,
+    orphanedPages: 0,
+    historyPagesInContent: 0,
+  }),
+)
