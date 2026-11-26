@@ -4,6 +4,8 @@ description: "按日期与事件保存当时的判定、证据与后续变化；
 tags:
   - 历史
   - 导航
+aliases:
+  - "/history"
 ---
 
 

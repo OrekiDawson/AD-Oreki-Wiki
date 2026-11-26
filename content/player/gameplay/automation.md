@@ -10,7 +10,7 @@ aliases:
 
 玩到后面，你可能要反复购买维度、升级、执行大坍缩，甚至在重置后重新配置一批东西。**自动购买器**负责减少这些重复操作，让你把注意力留给下一次解锁、升级路线和挑战选择。
 
-Oreki Edition 在原版自动购买器之外，又加入了一层**统一调度器**。理解这两层的区别，就能解释为什么有些购买执行得很快，有些策略要过几秒才更新，以及为什么刚手动改过的设置又会恢复。
+自动购买器像一组替你跑腿的后台班车：它们能按自己的时刻表买东西，却不知道整座城市今天最值得去哪里。Oreki Edition 在原版自动购买器之外，又加入了一层**统一调度器**，负责按阶段和目标重新安排一部分受管操作。理解这两层的区别，就能解释为什么有些购买执行得很快，有些策略要过几秒才更新，以及为什么刚手动改过的设置又会恢复。
 
 ## 先认识原版自动购买器
 
@@ -59,7 +59,7 @@ Oreki Edition 的统一调度节拍可以设为 **1～60 秒，默认 10 秒**�
 
 想让普通受管项目的行为持续改变，应当**调整调度器本身的目标、管理设置或总开关**（以当前版本的实际界面为准），而不是反复修改它管理的字段。**如果手动关闭自动永恒后它又在没有合理复位的情况下自行打开，请记录版本、操作与存档状态并反馈**，不要一概当作正常策略纠偏。
 
-这里有一个边界：**不是每个原版自动购买器的每个选项都被 MOD 托管；自动永恒的手动关闭保护也不是普通受管字段的下一 tick 恢复。** Android 具体依据见 [R120 受管字段清单](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/3b2d8284f2aca7132168998ee32497b3c4c17b8e/reports/R120-01/scheduler-managed-authority.md) 与 [自动永恒托管实现](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/3b2d8284f2aca7132168998ee32497b3c4c17b8e/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiAutoEternityAdoption.kt)。
+这里有一个边界：**不是每个原版自动购买器的每个选项都被 MOD 托管；自动永恒的手动关闭保护也不是普通受管字段的下一 tick 恢复。** Android 具体依据见 [R120 受管字段清单](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/9d8fc46ce99279720b5b3068027bb76bceb35756/reports/R120-01/scheduler-managed-authority.md) 与 [自动永恒托管实现](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiAutoEternityAdoption.kt)。
 
 ## 自动化没有动作时，先看什么？
 

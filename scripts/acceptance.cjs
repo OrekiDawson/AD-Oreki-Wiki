@@ -188,7 +188,7 @@ async function run() {
   for (const url of [
     ...OLD_URLS,
     ...NEW_PAGES,
-    '/history/',
+    '/history',
     '/history/2026-11-15-r113-180min-fail',
     '/developer/history/',
     '/developer/history/2026-11-15-r113-180min-fail',

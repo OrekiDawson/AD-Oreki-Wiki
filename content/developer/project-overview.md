@@ -1,42 +1,75 @@
 ---
-title: "项目概览"
-description: "Oreki Edition Android/Web 的目标、平台基线、仓库分工，以及当前发布与通关证据边界"
+title: "Oreki Edition 项目地图"
+description: "用源码、构建输入和运行边界理解 Android/Web 双端项目，而不是把仓库当成一串 PR 记录"
 tags:
-  - 概览
+  - 开发入门
+  - Android
+  - Web
+  - 架构
 aliases:
   - "/getting-started/project-overview"
 ---
 
-**Oreki Edition** 是《反物质维度》的 Android 与 Web 双端修改版本。它希望让重复操作更省心，同时保留阶段推进、挑战和手动决策的游戏乐趣。
+Oreki Edition 不是把同一套界面复制到两个平台。它把《反物质维度》的成长规则、自动化策略和工程门禁分别落在 Android 与 Web，再尽力让玩家看到相同的因果：资源怎样增长、重置保留什么、自动化何时允许动作、存档怎样恢复。
 
-## 我们正在追求什么
+读项目时最有用的心智模型不是“哪个仓库最近改了什么”，而是下面这条链：
 
-首要目标是 **双端行为一致、操作顺畅、自动化可控**：同样的游戏条件下，Android 和 Web 应产生等价的解锁、资源扣费、挑战结算、自动购买与存档结果。界面布局不必像素级相同，但操作反馈应及时、功能应可发现。
+```text
+原版游戏规则
+      ↓
+平台运行时（Android DEX / Web JavaScript）
+      ↓
+Oreki 适配层与自动化策略
+      ↓
+构建输入、资源与签名
+      ↓
+设备或浏览器中的可观察行为
+```
 
-**真实墙钟 ≤180 分钟合法通关**已经成为长期回归门槛，而不是唯一的速度竞赛。任何平台都不得靠直接赠送资源、伪造挑战完成或提前标记结局来满足指标。
+每一层回答的问题不同。源码能说明调用关系，构建链能说明哪些源码进入产物，设备或浏览器才能说明行为是否真的发生。把其中一层的结论冒充另一层，是这个项目最容易出现的误判。
 
-## 阅读项目与源码
+## 三个仓库，各自拥有一段真相
 
-| 仓库 | 负责什么 |
-| --- | --- |
-| [Android](https://github.com/OrekiDawson/AD-Oreki-Edition-Android) | Kotlin 游戏业务、AGP 生产构建、AVD 验收、正式 APK 发布 |
-| [Web](https://github.com/OrekiDawson/AD-Oreki-Edition-Web) | 浏览器游戏、Playwright 及移动 Chrome 验收、oreki.net |
-| [知识库](https://github.com/OrekiDawson/AD-Oreki-Wiki) | 原版中文资料、MOD 机制说明、证据与发布状态 |
+| 位置                                                                                | 主要职责                                         | 适合从哪里开始                                                           |
+| ----------------------------------------------------------------------------------- | ------------------------------------------------ | ------------------------------------------------------------------------ |
+| [AD-Oreki-Edition-Android](https://github.com/OrekiDawson/AD-Oreki-Edition-Android) | Kotlin 接管层、Android 应用、AGP 构建和 APK 交付 | 根 `settings.gradle.kts`、`app/build.gradle.kts`、`app/src/main/kotlin/` |
+| [AD-Oreki-Edition-Web](https://github.com/OrekiDawson/AD-Oreki-Edition-Web)         | 浏览器运行时、Web 自动化和浏览器验收             | `src/main.js`、`src/game.js`、`src/core/`                                |
+| [AD-Oreki-Wiki](https://github.com/OrekiDawson/AD-Oreki-Wiki)                       | 面向玩家和开发者的解释、来源与兼容入口           | `/player/`、`/developer/` 与来源索引                                     |
 
-项目也有统一管理工作区，用于协调任务、事实、报告与跨平台改动，不替代三个仓库各自的 CI/CD。
+Workspace 和历史报告可以帮助追溯证据，但不是 Android 或 Web 的运行时。开发者应回到拥有代码的仓库确认当前实现，Wiki 只把已经能解释、能定位的事实整理成可读文章。
 
-## 版本与基线
+## Android：把未知的 DEX 收束在适配边界
 
-Android 基于官方 **3.21.0** 冻结基线；Web 依据 **2026-07-17** 的上游源码快照 `5409e320cecef96a917cca1dfb68f1f183e499ca`。两端的内部实现、版本号可以不同，但玩家可见的业务规则须按专项验证对齐。未经授权不自动升级冻结基线。
+Android 当前仓库的根工程由 [`settings.gradle.kts`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/9d8fc46ce99279720b5b3068027bb76bceb35756/settings.gradle.kts) 和 `:app` 组成。生产 Kotlin 位于 `app/src/main/kotlin/`；构建时生成的绑定位于 `build/kt/generated`，完整游戏的 Manifest、资源、assets 和 JNI 输入由 [`app/build.gradle.kts`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/9d8fc46ce99279720b5b3068027bb76bceb35756/app/build.gradle.kts) 和 `build-logic` 接入。
 
-## 当前应看哪些证据
+Android 的特别之处在于，官方游戏类并不是 MOD 的普通编译期依赖。 [`GameApi.kt`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/GameApi.kt) 因此承担一个窄而关键的边界：根据版本绑定解析类、字段和方法，缓存句柄，把失败转成可观察的 `OREKI_API_MISS`，再向调度器和 UI 提供语义化访问。自动化调度器不应该自己猜混淆名；它只应通过 `GameApi` 读取玩家状态或请求原版动作。
 
-- **Android 已有新的公开 GitHub Release**： [3.21.0（a12b5cd6）](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/releases/tag/android-update-3.21.0-a12b5cd6)。四渠道交付状态的精确边界见 [发布状态](/developer/current/release-status)。
-- **Web 已记录真实新档终局 PASS**：默认 **3000×**、空浏览器存储，`isGameEnd` 于墙钟 **10,451.1 秒**首次为真；固定证据见 [完成记录](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/f7044da0f80a50ccbe5cd827fea717b4d5a1eae6/reports/R104/web/r121-01/README.md)。
-- **Android R121 仍在真实验收**：KVM 新档已到首现实，但终局未产生；重置后阶段判据 P1 的运行复验为 **NOT RUN**，将在包含两项修复的新构建中实跑；EC 切换固定等待 P1 的定向复验为 **PASS**（[固定报告](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/a1617a9e0d652a16ba050be25bb3f5b1a5ef1c43/reports/R121-01/R121-01-P1-break-recovery.md)），完整终局仍为 **NOT RUN**。旧 R113 FAIL 不能代替当前结论。详见 [当前项目状态](/developer/current/project-status)。
+这也解释了为什么“把所有反编译类全部翻译成 Kotlin”不是默认的第一步：那会把整个官方运行时变成第二个需要同步的源码项目。更可维护的拆分是，MOD 自己拥有状态机、节拍和界面；原版对象的形状变化集中由适配层吸收。
 
-## 接下来读什么
+## Web：浏览器入口更直接，但因果仍要追踪
 
-玩家可从 [游戏总览](/player/antimatter-dimensions) 和 [原版与 MOD 的区别](/player/gameplay/original-vs-mod) 开始；开发者可读 [双端一致性](/developer/architecture/parity)、[自动化](/player/gameplay/automation)、[AGP 构建](/developer/build/agp) 和 [存档兼容](/player/gameplay/saves)。
+Web 从 [`src/main.js`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/e1c93caa758de6c39cf814582123d4a35319eb25/src/main.js) 进入，浏览器检查通过后初始化 [`src/game.js`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/e1c93caa758de6c39cf814582123d4a35319eb25/src/game.js)。游戏循环、自动化注册表和页面同步在后续模块展开。这里没有 Android 那样的 DEX 反射边界，却有另一种边界问题：DOM、游戏状态和自动化策略若互相直接改写，页面看似更新，存档或下一次 tick 可能仍然落后。
 
-[最新进展](/developer/current/project-status) · [原版 Wiki 中文翻译](/player/original/) · [原始资料索引](/developer/references/source-index)
+因此比较双端时，不要比较函数名或文件数量，而要比较行为链：一次购买是否检查同样的前置，是否真实扣除资源，是否触发正确的重置副作用，保存字段是否更新，下一次 tick 是否还能继续。界面不同并不自动表示不一致；因果不同才是问题。
+
+## 构建层：源码存在不等于产物包含它
+
+Android 根 `:app` 的构建输入至少包括：
+
+- `app/src/main/kotlin/` 中的生产业务；
+- `build/kt/generated` 中的绑定输入；
+- `oreki.fullGameStage` 指向的 Manifest 与资源；
+- `build/agp-generated-res`、`build/agp-fullgame-assets` 和 `scripts/payload/lib`；
+- 变体、签名和 R8 配置。
+
+这些输入由 `build-logic` 插件和 `local.properties` 共同组织。因而 `:app:compileDebugKotlin` 通过，并不能推出完整游戏 APK 可安装；APK 能安装，也不能推出反射映射、阶段门禁和自动购买器都正确。开发者需要把“编译、打包、签名、安装、运行”当作五个不同问题。
+
+## 如何选择阅读路径
+
+- 想改 Android 业务：先读 [Android 架构](/developer/architecture/android)，再看 [混合运行时 ABI](/developer/architecture/kotlin-runtime) 和 [目录迁移](/developer/architecture/directory-migration)。
+- 想改构建：从 [AGP 构建管线](/developer/build/agp) 开始，随后看 [R8](/developer/build/r8)、[APK 签名](/developer/build/apk-signing) 和 [CI/CD](/developer/build/ci-cd)。
+- 想改 Web 或对齐双端：读 [Web 架构](/developer/architecture/web) 与 [双端一致性](/developer/architecture/parity)，再回到具体的 `src/core/` 或 Android `GameApi`。
+- 第一次贡献：按 [第一次参与 Android 开发](/developer/first-contribution) 完成一条可解释、可验证的小闭环。
+- 遇到“源码看着对、游戏表现不对”：先查 [来源索引](/developer/references/source-index) 的版本边界，再进入 [故障排查](/developer/troubleshooting/)；不要用旧报告的 PASS 替代当前候选的运行证据。
+
+本文依据 Android `9d8fc46ce99279720b5b3068027bb76bceb35756` 的根工程、构建配置、`GameApi` 与调度器源码，以及 Web `e1c93caa758de6c39cf814582123d4a35319eb25` 的入口文件撰写。旧 URL `/getting-started/project-overview` 保留为兼容别名；本文解释的是源码与构建边界，不宣称当前 APK、浏览器终局或跨端运行验收已经完成。

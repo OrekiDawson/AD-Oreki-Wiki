@@ -4,6 +4,8 @@ description: "协程 ABI 崩溃、逻辑线程卡死、存档读取失败与字�
 tags:
   - 排查
   - 导航
+aliases:
+  - "/troubleshooting"
 ---
 
 

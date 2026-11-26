@@ -1,6 +1,6 @@
 ---
 title: "Android 阶段门禁与 GUI 判据"
-description: "Android 3.21 的阶段判定方法、兼容存档误判、非法页面直达恢复与历史验证边界"
+description: "理解 Android 阶段真值、页面导航守卫与兼容存档误判"
 tags:
   - Android
   - 门禁
@@ -8,62 +8,80 @@ tags:
   - 故障排查
 ---
 
-本页保存原玩家条目中不适合普通教程的**开发者技术依据**。其诊断与运行状态是历史结论（整理自 2026-11-22 前的资料），不直接代表最新 APK 已通过复验。玩家操作说明请读[阶段解锁与页面显示](/player/gameplay/stage-gates)。
+游戏里的“阶段”不是一个永远递增的页签编号。它是存档结算历史的解释：玩家是否真正完成过无限、永恒或现实，决定哪些界面和自动化可以出现。Android 3.21 的难点在于，原版某些判定只读取单个字段，而兼容存档可能让这个字段非零，却没有对应的结算产物。于是导航像拿着一张过期门票，提前把后续页面亮出来。
 
-## 判定汇聚点
+## 阶段真值的来源
 
-Android 3.21 的关键门禁汇聚在少数方法上：
+MOD 将 GUI 阶段判断集中到 `OrekiGuiStage`，而不是让每个页面各自猜条件。它读取真实结算相关的字段，计算四种阶段：首次无限前、无限、永恒和现实。永恒判据组合永恒点数、`bigEternities`、已购永恒升级位图以及现实结算；现实判据组合 `realities` 与 `bigRealities`。现实是更高层阶段，因此即使高层重置清掉低层计数，也不能把玩家降回永恒前。
 
-- `bm4.g()` / `bm4.h()`：阶段判定；
-- `ll2.g()`：门禁聚合；
-- `MainActivity.W8()`：页面切换前置检查。
+重要的反例是 `Player.eternities`。它可以作为诊断信息记录，但不能单独决定永恒 GUI。一个兼容存档可能出现 `eternities > 0`，同时永恒点数、`bigEternities` 和升级位图仍为空；若直接沿用原版单字段判定，永恒页签就会在非法时机出现。
 
-MOD 的做法是在这些汇聚点接入统一的阶段判定，而不是在大量界面回调里各写一份条件。
+可以把判定抽象成优先级：
 
-## GUI 阶段真值：为什么不能只看一个字段
+```text
+现实结算产物存在 → 现实阶段
+否则永恒结算产物存在 → 永恒阶段
+否则无限结算产物存在 → 无限阶段
+否则 → 首次无限前
+```
 
-3.21 原版 `f82.j()` 只用 `Player.eternities > 0` 之类的单一字段判断「是否进入永恒」。但兼容数据里该字段可能被初始化为非零（历史设备实测曾读到 `eternities=11`，同时永恒点数为 0、`bigEternities=0`、永恒升级位图为空），于是原版自己会把永恒专属 GUI 提前打开——这正是「无限阶段显示永恒内容」的根因。
+这不是为了让代码更“漂亮”，而是为了让页面、自动化和诊断使用同一个答案。阶段真值若分散在多个回调里，修复一处通常只会制造另一处漂移。
 
-MOD 因此引入 `OrekiGuiStage.kt` 作为**全游戏 GUI 阶段判定的唯一真值来源**，用真实结算产物组合判断：
+## 页面导航为什么必须有守卫
 
-- 永恒已结算 = 永恒点数为正 **或** `bigEternities` 为正 **或** 已购永恒升级位图非空 **或** 现实已结算；
-- 现实已结算 = `realities` 为正 **或** `bigRealities` 为正。
+界面路由与游戏解锁是两个不同问题。玩家可以通过旧导航、自动化、恢复现场或调试入口请求一个尚未开放的页签；导航层必须在切换前重新询问阶段真值，不能因为请求来自“合法按钮”就跳过检查。
 
-这样既不依赖单一字段，也不会因为高层重置清空低层计数而误判。[读码 + 存档取证]
+安全的导航路径应是：
 
-## 非法直达的拦截与恢复
+```text
+请求页签
+  ↓
+读取 OrekiGuiStage
+  ↓ 未满足
+回到原版合法页面，不写存档
+  ↓ 满足
+进入页面并刷新相关控件
+```
 
-对「玩家或自动化直接跳到未解锁页签」的路径，要求是：
+拦截时不要顺便清零永恒字段、改资源或扫描整个 View 树。门禁的职责是拒绝非法导航，存档修复和 UI 重建是另外两件事。职责混在一起，会把一个页面问题升级成存档损坏。
 
-- 在页面切换前置检查中拦截；
-- 回退到原版合法页面（原版回退入口）；
-- **不写存档、不清零永恒字段、不改资源、不扫描 View**；
-- 恢复后玩家能继续正常游戏。
+## 阶段真值如何流入自动化
 
-R101 曾针对「非法永恒页签直达」实现并验收过这条路径：候选 APK 实测「pm clear 新档」自动运行到首次大坍缩后，存档仍是 `eternities=0`、`bigEternities=0`、`EP=0`，跨版本复验也保持 0/0/0，官方 GUI 没有永恒页签。[历史证据，[FACTS §R101 记录](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/3b2d8284f2aca7132168998ee32497b3c4c17b8e/docs/facts/history/r100-r105.md#f-r101)、[R101 P0 修复报告](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/tree/3b2d8284f2aca7132168998ee32497b3c4c17b8e/reports/R101-p0-fix)]
+Android 的调用关系可以沿源码追踪为：
 
-## 当前验收范围（重要）
+```text
+player / GameApi 字段读取
+        ↓
+OrekiGuiStage.refresh()
+        ↓
+OrekiStageAuto 的阶段与目标选择
+        ↓
+原版购买、挑战、重置入口
+```
 
-| 项目 | 状态 |
-| --- | --- |
-| R101「非法永恒页签直达/恢复」 | **历史轮次 PASS**（非当前构建复验） |
-| R121 KVM 新档的阶段推进 | **观察到**首次无限、Break、永恒、EC1～EC11 与首现实；完整终局仍 **NOT RUN** |
-| 重置后阶段判据 | EC 和首现实后曾出现自动化停摆；源码已修复，**新构建运行复验 NOT RUN** |
-| 非法页签直达的当前版本独立复验 | **NOT RUN**；R101 只能作为历史证据 |
+`OrekiStageAuto` 在需要判断高层目标时应与 `OrekiGuiStage` 使用同一套真实结算语义。若自动化直接读一个旧字段，而 GUI 使用组合判据，就会出现“页面显示在无限，策略却认为已经永恒”的双重真相。反过来，GUI 使用缓存而自动化直读存档，也可能在结算后的一个 tick 内短暂分叉，因此刷新点和缓存失效必须明确。
 
-因此本条目**不能**写「阶段门禁已验证」。正确表述是：**R121 新档已真实越过多个阶段，但当前版本仍有终局和非法直达复验未完成**。阶段能前进说明门禁没有完全阻断；它不证明该开放的都已开放，也不证明不该开放的都被拒绝。R121 暴露的“重置后历史进度被误判为新档”问题见 [智能自动购买器](/player/gameplay/automation) 与 [2026-11-20 · R121 Android KVM 新档阶段推进与 P1 停滞](/developer/history/2026-11-20-r121-android-kvm)。
+## 如何定位“提前开放”与“无法推进”
 
-## 如何验收
+先保存三个对象：当前页签、阶段快照和存档字段。然后按下面的分叉判断：
 
-1. 用 frame-observer 抓 `/ui` 控件树与 `/snapshot.jpg`，配合 logcat 与 `player.json` 联合取证；持续动画画面上 `uiautomator dump` 会失败，不能作为唯一手段。
-2. 在全新存档上按真实流程推进（首次大坍缩、Break 前后、永恒页签直达尝试），记录每一步的可操作性与存档字段。
-3. 对「非法直达」场景，确认被拦截后恢复到合法页面，且存档未被写入非法状态。
-4. 用稳定构建做对照，避免把构建差异当成门禁缺陷。
+- 阶段快照错误：检查 `OrekiGuiStage.compute()` 使用的字段、数值解析和位图读取。
+- 阶段快照正确、页面错误：检查导航守卫是否调用刷新后的快照，以及 UI 是否保留旧缓存。
+- 页面正确、自动化错误：检查 `OrekiStageAuto` 是否绕过统一判据，或把未知读取结果当成已解锁。
+- 重置后短暂错误：检查结算写入、缓存失效和下一次游戏 tick 的顺序。
 
-## 后续核验
+持续动画时不要把一次失败的 `uiautomator dump` 当作游戏失败；控件树可能正处于变化中。用存档字段、日志、稳定截图和下一次刷新后的控件状态交叉取证，才能分开“抓取工具不稳定”和“阶段门禁真的错误”。
 
-- 最新实现应核对 [Android Kotlin 业务代码](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/tree/3b2d8284f2aca7132168998ee32497b3c4c17b8e/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki) 与本仓对应发行版本，特别是 `OrekiGuiStage.kt` 及页面切换判据。
-- 旧 [R101 P0 取证](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/tree/3b2d8284f2aca7132168998ee32497b3c4c17b8e/reports/R101-p0-fix) 说明曾修过非法直达，不代表当前构建完整回归已通过。
-- 双端比较与当前状态见[双端行为一致性](/developer/architecture/parity)及[待核实事项与已知问题](/developer/current/known-issues)。
+## 兼容存档与可迁移经验
 
-原始技术内容迁自 [2026-11-22 前玩家条目](https://github.com/OrekiDawson/AD-Oreki-Wiki/blob/8726646c9701bc2ebad4d90faa5f9bbe5317f215/content/player/gameplay/stage-gates.md)，为避免删除既有证据，保留其中的历史轮次与 `NOT RUN` 边界。
+阶段判定的通用经验是：用不可伪造或难以误解的结果作为真值，而不是用 UI、计时器或单一缓存字段。迁移到 Web、教程系统或其他增量游戏时，同样应把“解锁请求”“阶段判定”“页面投影”分成三层，并为每层提供可观察的输入与输出。
+
+如果增加新的高层重置，应先定义它保留和清理哪些字段，再把该层纳入阶段优先级；如果增加新的自动化目标，应复用阶段读取器，而不是复制一份看似相同的条件。这样做的代价是多写一个明确的状态对象，换来的却是兼容存档、导航和自动化不会各自发展出一套历史。
+
+## 来源与边界
+
+主要实现见 [`OrekiGuiStage.kt`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiGuiStage.kt)、[`OrekiStageAuto.kt`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiStageAuto.kt) 与 [`GameApi.kt`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/GameApi.kt)（已用 GitHub API 核对，HTTP 200，核对日 2026-11-26）。玩家向说明见[阶段解锁与页面显示](/player/gameplay/stage-gates)。历史门禁证据仍可从[旧版事实记录](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/tree/3b2d8284f2aca7132168998ee32497b3c4c17b8e/reports/R101-p0-fix)追溯，但历史结果不等于当前候选 APK 的复验结果。
+
+## 相关条目
+
+[Android 架构](/developer/architecture/android) · [双端行为一致性](/developer/architecture/parity) · [天神判据与跨端编码](/developer/architecture/celestial-implementation) · [玩家阶段解锁](/player/gameplay/stage-gates)

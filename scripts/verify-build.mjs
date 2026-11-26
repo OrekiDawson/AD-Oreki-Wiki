@@ -99,7 +99,7 @@ if (historyEntries.length < 3) {
   fail("历史归档条目不足（应把时间性材料移入 content/developer/history/）: " + historyEntries.length);
 }
 
-// 旧 URL 兼容：既有页面路径不得因专题化改造而消失
+// 旧 URL 兼容：旧入口不再作为正文目录，但规范页 alias 必须生成直接重定向。
 const LEGACY_URLS = [
   "gameplay",
   "original",
@@ -136,9 +136,25 @@ const LEGACY_URLS = [
   "troubleshooting/coroutine-abi",
   "troubleshooting/save-compatibility",
 ];
-for (const slug of LEGACY_URLS) if (!pageExists(slug)) fail("旧页面 URL 丢失: /" + slug);
+for (const slug of LEGACY_URLS) {
+  const aliasFile = path.join(PUB, slug + ".html");
+  if (!fs.existsSync(aliasFile)) fail("旧 URL alias 重定向丢失: /" + slug);
+  else if (!fs.readFileSync(aliasFile, "utf8").includes('http-equiv="refresh"')) {
+    fail("旧 URL 未生成直接重定向: /" + slug);
+  }
+}
 
 const LEGACY_URL_TARGETS = {
+  gameplay: "player/gameplay",
+  original: "player/original",
+  "getting-started": "player/getting-started",
+  architecture: "developer/architecture",
+  "reverse-engineering": "developer/reverse-engineering",
+  build: "developer/build",
+  current: "developer/current",
+  troubleshooting: "developer/troubleshooting",
+  references: "developer/references",
+  history: "developer/history",
   "architecture/android": "developer/architecture/android",
   "architecture/kotlin-runtime": "developer/architecture/kotlin-runtime",
   "architecture/web": "developer/architecture/web",
@@ -210,28 +226,7 @@ for (const rel of ["player/original/ow-infinity.html", "player/original/ow-dimen
   if (!html.includes("antimatterdimensions.wiki.gg")) fail("翻译页缺少原文链接: " + rel);
 }
 
-// 旧目录页继续可访问，并明确指向新专区。
-for (const [legacy, zone] of Object.entries({
-  gameplay: "player/gameplay",
-  original: "player/original",
-  "getting-started": "player/getting-started",
-  architecture: "developer/architecture",
-  "reverse-engineering": "developer/reverse-engineering",
-  build: "developer/build",
-  current: "developer/current",
-  troubleshooting: "developer/troubleshooting",
-  references: "developer/references",
-  history: "developer/history",
-})) {
-  const file = path.join(PUB, legacy, "index.html");
-  if (!fs.existsSync(file)) {
-    fail("旧目录入口丢失: /" + legacy + "/");
-    continue;
-  }
-  if (!fs.readFileSync(file, "utf8").includes(`/${zone}/`)) {
-    fail("旧目录入口未链接新专区: /" + legacy + "/");
-  }
-}
+// 旧目录页不再公开为正文目录；上面的 alias 检查负责确认它们直接跳转到规范专区。
 
 // AI Summary 仅允许在开发者专区公开，并须默认折叠、带审核标识。
 const aiSummary = path.join(PUB, "developer", "ai-summaries", "index.html");
