@@ -77,7 +77,7 @@ review_status: "NOT REVIEWED"      # NOT REVIEWED / STRUCTURE CHECKED / REVIEWED
 ## 6. 页面路径与命名
 
 - 文件：`content/player/original/ow-<english-slug>.md`（`ow-` 前缀避免与 MOD 页面同名冲突；旧 `/original/` URL 由兼容入口保持可访问）。
-- 标题：术语表中文名；与 MOD 页面同名冲突时加限定语（例如「反物质维度（游戏机制）」）。
+- 标题：除专区首页外，frontmatter 的 `title` 统一使用 `原版:条目名`；原版专区首页保留“原版 Wiki 中文翻译”。与 MOD 页面同名时仍使用自然中文条目名，不重复添加前缀。
 - 不得移动或覆盖既有 MOD 页面与 URL。
 
 ## 7. 增量同步

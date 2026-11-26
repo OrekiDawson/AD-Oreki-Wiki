@@ -58,6 +58,8 @@ tags:
 
 原版翻译**不使用上述自由改写样板**。必须遵守 [翻译政策](translation/POLICY.md) 的完整性、原文修订、CC BY-SA 4.0 署名和状态字段：`TRANSLATED`、`STRUCTURE CHECKED`、`REVIEWED`、`VERIFIED AGAINST GAME`。结构核对不等于逐段语义审校，不得将 MOD 调整混入原文或为了“说人话”改写原版数值和公式。
 
+原版译文正文页的 `title` 使用 `原版:条目名` 命名空间；`content/player/original/index.md` 是导航首页，保留“原版 Wiki 中文翻译”这一显示标题。命名空间调整不得改变文件路径、公开 URL、`aliases`、原始标题、修订号或版权字段。
+
 ### 玩家正文发布前需要回答
 
 - 原版、Android MOD、Web MOD 的版本和机制有无混淆？关键资源、时间、公式、解锁/挑战条件能否追溯到可信来源？
