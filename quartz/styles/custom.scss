@@ -2,9 +2,30 @@
 
 // 全站使用操作系统原生字体；数学公式的 KaTeX 字体由数学插件单独管理。
 :root {
-  --headerFont: system-ui, sans-serif;
-  --bodyFont: system-ui, sans-serif;
+  --headerFont: sans-serif;
+  --bodyFont: sans-serif;
   --codeFont: ui-monospace, monospace;
+}
+
+// 普通内容统一走系统无衬线字体。代码和 KaTeX 在更具体的选择器中保留自己的字体，
+// 避免 Android 对中文、拉丁字母和数字分别套用 Quartz 的网页字体。
+:where(body, button, input, textarea, select, .page, .sidebar, .search, article, article p,
+  article li, article td, article th, article blockquote, article a, article strong, article em,
+  .explorer, .explorer-content, .table-of-contents) {
+  font-family: var(--bodyFont);
+}
+
+:where(h1, h2, h3, h4, h5, h6, .page-title, .article-title, .folder-container div > a,
+  .folder-container div > button, .nav-folder-title) {
+  font-family: var(--headerFont);
+}
+
+:where(pre, code, kbd, samp) {
+  font-family: var(--codeFont);
+}
+
+:where(.katex, .katex-display, .math-inline, .math-block) {
+  font-family: KaTeX_Main, KaTeX_Math, var(--bodyFont);
 }
 
 // 百科页面切换应立即显示目标内容；保留 Quartz enableSPA 的客户端导航，不显示进度条或过渡动画。
