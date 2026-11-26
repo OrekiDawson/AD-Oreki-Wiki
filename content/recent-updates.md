@@ -8,6 +8,7 @@ tags:
 
 这里显示最近进入当前内容树的正式条目；文章的具体修订记录仍以页面正文与仓库历史为准。
 
+- [Web Pages 产物身份：如何证明线上不是另一份代码](/developer/troubleshooting/web-pages-artifact-integrity)
 - [成就](/player/original/ow-achievements)
 - [秘密成就](/player/original/ow-achievements-secret-achievements)
 - [反物质维度（游戏机制）](/player/original/ow-antimatter-dimensions)
@@ -31,4 +32,3 @@ tags:
 - [符文炼金](/player/original/ow-glyph-alchemy)
 - [虚幻升级](/player/original/ow-imaginary-upgrades)
 - [无限](/player/original/ow-infinity)
-- [无限挑战](/player/original/ow-infinity-challenges)
