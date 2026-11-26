@@ -130,7 +130,7 @@ AD 自动购买器比别的多一项：间隔升满后还能升批量。例如 $
 
 ## 来源与许可
 
-- 原文：[Automation](https://antimatterdimensions.wiki.gg/index.php?title=Automation&oldid=3396)（修订 ID `3396`；最后编辑者 Alex9127；抓取于 2026-11-26）
+- 原文：[Automation](https://antimatterdimensions.wiki.gg/index.php?title=Automation&oldid=3396)（修订 ID `3396`；最后编辑者 Alex9127；首次抓取于 2026-11-16；本批于 2026-11-26 复核，修订 ID 未变）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Automation&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为简体中文翻译（改编），已修改：翻译正文与价格表、统一术语、数值保留原式、图片未转载；本页按相同许可共享。
 - 原文无图片媒体；带有「小作品（Stub）」维护标记，译文如实反映。
