@@ -74,13 +74,18 @@ if (process.argv[2] === "--built") {
     return entry.isDirectory() ? walk(file) : [file]
   })
   if (!fs.existsSync(publicDir)) errors.push(`构建产物目录不存在：${publicDir}`)
-  else for (const file of walk(publicDir)) {
-    if (!/\.(html|css)$/i.test(file)) continue
-    const text = fs.readFileSync(file, "utf8")
-    if (/fonts\.(googleapis|gstatic)\.com|use\.typekit\.net/i.test(text))
-      errors.push(`构建产物仍请求第三方网页字体：${path.relative(publicDir, file)}`)
-    if (/font-family\s*:[^;]*(?:Source Sans|Schibsted|IBM Plex|Google Sans|Roboto|Inter|Open Sans|Lato|Poppins|Nunito)/i.test(text))
-      errors.push(`构建产物仍包含普通网页字体声明：${path.relative(publicDir, file)}`)
+  else {
+    let sawSystemUi = false
+    for (const file of walk(publicDir)) {
+      if (!/\.(html|css)$/i.test(file)) continue
+      const text = fs.readFileSync(file, "utf8")
+      if (/system-ui/i.test(text)) sawSystemUi = true
+      if (/fonts\.(googleapis|gstatic)\.com|use\.typekit\.net/i.test(text))
+        errors.push(`构建产物仍请求第三方网页字体：${path.relative(publicDir, file)}`)
+      if (/font-family\s*:[^;]*(?:Source Sans|Schibsted|IBM Plex|Google Sans|Roboto|Inter|Open Sans|Lato|Poppins|Nunito)/i.test(text))
+        errors.push(`构建产物仍包含普通网页字体声明：${path.relative(publicDir, file)}`)
+    }
+    if (!sawSystemUi) errors.push("构建产物未包含 system-ui 平台字体声明")
   }
 }
 
