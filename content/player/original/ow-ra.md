@@ -62,9 +62,9 @@ $$Cost_{Upgrade}~\geq~0.5*{requiredMemories_{LevelCap}}$$
 
 把「{天神名}」升到「当前等级 + 1」的成本公式（$n$ = 当前等级）：
 
-$$\left\lfloor\left({n+\frac{n^2}{10}}\right)^{5.52}*\left({n^{Max(0,n-15)}}\right)*10^6\right\rfloor$$
+$$\left\lfloor\left({n+\frac{n^2}{10}}\right)^{5.52}*\left({1.5^{Max(0,n-15)}}\right)*10^6\right\rfloor$$
 
-其中：$adjustedLevel = n+\frac{n^2}{10}$；$post15Scaling = n^{Max(0,n-15)}$。起始成本为 $1.69\text{e}6~(1.69~\text{M})$，末次（升到 25 级）成本为 $1.37\text{e}18~(1.37~\text{Qt})$，最大等级 $25$。
+其中：$adjustedLevel = n+\frac{n^2}{10}$；$post15Scaling = 1.5^{Max(0,n-15)}$。该式与官方源码 `Ra.requiredMemoriesForLevel` 一致；原文公式的底数与表格不一致，译文按源码和表格更正并保留此说明。起始成本为 $1.69\text{e}6~(1.69~\text{M})$，末次（升到 25 级）成本为 $1.37\text{e}18~(1.37~\text{Qt})$，最大等级 $25$。
 
 下表列出各等级时 3 种升级的成本。原文此表为可折叠表格（mw-collapsible），译文保留全部 25 行。
 
