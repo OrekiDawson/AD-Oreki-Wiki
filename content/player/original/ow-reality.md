@@ -81,7 +81,7 @@ aliases:
 
 ## 来源与许可
 
-- 原文：[Reality](https://antimatterdimensions.wiki.gg/index.php?title=Reality&oldid=3235)（修订 ID 3235；最后编辑者 KrutarMarsons；首次抓取于 2026-11-15；本批于 2026-11-26 复核，修订 ID 未变）
+- 原文：[Reality](https://antimatterdimensions.wiki.gg/index.php?title=Reality&oldid=3235)（修订 ID 3235；最后编辑者 KrutarMarsons；固定链接）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Reality&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为简体中文翻译（改编），已修改：翻译正文与表格、统一术语、移除导航模板与信息框及缩略图、图片未转载；另补充依据官方源码核对的现实解锁前置与虚幻机器边界；本页按相同许可共享。
 - 译者注：原文把符文、现实升级、复兴、黑洞与自动机作为子模板整页嵌入；这里只保留主线正文与入口说明，子系统的完整内容留给各自条目。
