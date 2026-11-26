@@ -71,8 +71,17 @@ if (new Set(recentRoutes).size !== recentRoutes.length) errors.push("最近更�
 for (const route of recentRoutes)
   if (!formalRoutes.has(route)) errors.push(`最近更新索引包含非正式页面：${route}`)
 const config = fs.readFileSync(path.join(root, "quartz.config.yaml"), "utf8")
-if (!config.includes("folderDefaultState: open")) errors.push("Explorer 未设置目录默认展开")
-if (!config.includes("folderClickBehavior: link")) errors.push("Explorer 未启用独立展开按钮行为")
+const yamlScalar = (name) => {
+  const match = config.match(
+    new RegExp(
+      `^\\s*${name}:\\s*(?:"([^"\\r\\n]*)"|'([^'\\r\\n]*)'|([^#\\r\\n]*?))\\s*(?:#.*)?$`,
+      "m",
+    ),
+  )
+  return (match?.[1] ?? match?.[2] ?? match?.[3])?.trim()
+}
+if (yamlScalar("folderDefaultState") !== "open") errors.push("Explorer 未设置目录默认展开")
+if (yamlScalar("folderClickBehavior") !== "link") errors.push("Explorer 未启用独立展开按钮行为")
 const assetManifestPath = path.join(root, "docs/translation/original-image-manifest.json")
 if (!fs.existsSync(assetManifestPath)) errors.push("缺少原版译文图片来源清单")
 else {
