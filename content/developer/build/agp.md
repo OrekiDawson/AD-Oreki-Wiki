@@ -45,7 +45,7 @@ Android 构建页最容易让人迷路的地方，不是 Gradle 命令本身，�
 ./gradlew :app:assembleDebug --no-daemon --console=plain
 ~~~
 
-这是操作入口，不是本轮实测结果。缺少 Android SDK、完整游戏阶段输入或构建缓存时，可能在配置、资源或任务执行阶段失败。Release 还要经过 `verifyReleaseSigning`；只有存在 `keys/oreki.jks` 并满足仓库签名配置，才能使用生产签名路径。未签名实验必须显式设置 `oreki.allowUnsignedReleaseExperiment=true`，实验包不得当作发布包。
+这是操作入口和命令示例，不是设备构建证据。缺少 Android SDK、完整游戏阶段输入或构建缓存时，可能在配置、资源或任务执行阶段失败。Release 还要经过 `verifyReleaseSigning`；只有存在 `keys/oreki.jks` 并满足仓库签名配置，才能使用生产签名路径。未签名实验必须显式设置 `oreki.allowUnsignedReleaseExperiment=true`，实验包不得当作发布包。
 
 当前应用配置为 `compileSdk = 37`、`targetSdk = 37`、`minSdk = 32`，正式 ABI 为 `arm64-v8a` 与 `x86_64`。这些是构建约束，不等于对应设备、完整游戏行为或存档兼容已经通过。
 
