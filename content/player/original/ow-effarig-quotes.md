@@ -10,8 +10,8 @@ original_revid: 2775
 original_fetched_at: "2026-11-17T19:34:00+08:00"
 original_license: "CC BY-SA 4.0"
 original_license_url: "https://creativecommons.org/licenses/by-sa/4.0/"
-translation_status: "STRUCTURE CHECKED"
-review_status: "STRUCTURE CHECKED"
+translation_status: "REVIEWED"
+review_status: "REVIEWED"
 aliases:
   - "/original/ow-effarig-quotes"
 ---
