@@ -36,7 +36,7 @@ const NEW_PAGES = [
   '/developer/',
   '/player/getting-started/',
   '/player/gameplay/celestials',
-  '/player/gameplay/progression-infinity-eternity',
+  '/player/gameplay/stage-progression',
   '/player/gameplay/reality-time-studies',
   '/player/gameplay/original-vs-mod',
   '/player/mods/',

@@ -202,7 +202,7 @@ for (const slug of [
   "developer/index",
   "developer/architecture/parity",
   "developer/build/apk-signing",
-  "player/gameplay/progression-infinity-eternity",
+  "player/gameplay/stage-progression",
   "player/gameplay/reality-time-studies",
   "player/gameplay/celestials",
   "player/gameplay/original-vs-mod",
