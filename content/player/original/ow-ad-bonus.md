@@ -6,12 +6,12 @@ tags:
   - 移动端
 original_title: "Ad Bonus"
 original_url: "https://antimatterdimensions.wiki.gg/wiki/Ad_Bonus"
-original_revid: 3096
-original_fetched_at: "2026-11-15T22:20:00+08:00"
+original_revid: 3443
+original_fetched_at: "2026-11-26T18:29:00+08:00"
 original_license: "CC BY-SA 4.0"
 original_license_url: "https://creativecommons.org/licenses/by-sa/4.0/"
-translation_status: "STRUCTURE CHECKED"
-review_status: "STRUCTURE CHECKED"
+translation_status: "REVIEWED"
+review_status: "REVIEWED"
 aliases:
   - "/original/ow-ad-bonus"
 ---
@@ -24,42 +24,42 @@ aliases:
 
 ### 常规阶段
 
-| 加成 | 加成公式 | 条件 |
-| --- | --- | --- |
-| 所有反物质维度相乘 | $\times 2.0$ | 无 |
-| 无限点数获取相乘 | $\times\max\left(2.0, ip^{0.01}\right)$ | 至少无限/大坍缩 10 次 |
-| 永恒点数获取相乘 | $\times\min\left(\max\left(1.5, ep^{0.01}\right), \text{e}10\right)$ | 至少永恒 10 次 |
-| 膨胀时间获取相乘 | $\times 2.0$ | 购买膨胀研究 |
+| 加成               | 加成公式                                                             | 条件                  |
+| ------------------ | -------------------------------------------------------------------- | --------------------- |
+| 所有反物质维度相乘 | $\times 2.0$                                                         | 无                    |
+| 无限点数获取相乘   | $\times\max\left(2.0, ip^{0.01}\right)$                              | 至少无限/大坍缩 10 次 |
+| 永恒点数获取相乘   | $\times\min\left(\max\left(1.5, ep^{0.01}\right), \text{e}10\right)$ | 至少永恒 10 次        |
+| 膨胀时间获取相乘   | $\times 2.0$                                                         | 购买膨胀研究          |
 
 ### 现实阶段
 
-| 加成 | 加成公式 | 条件 |
-| --- | --- | --- |
-| 所有反物质维度相乘 | $\times 2.0$ | 无 |
-| 无限点数获取相乘 | $\times\max\left(2.0, ip^{0.01}\right)$ | 至少无限/大坍缩 10 次 |
-| 永恒点数获取相乘 | $\times\min\left(\max\left(1.5, ep^{0.01}\right), \text{e}10\right)$ | 至少永恒 10 次 |
-| 膨胀时间获取相乘 | $\times 2.0$ | 购买膨胀研究 |
-| 游戏速度相乘 | $\times 2.0$ | 完成第一次现实后购买现实研究 |
+| 加成               | 加成公式                                                             | 条件                         |
+| ------------------ | -------------------------------------------------------------------- | ---------------------------- |
+| 所有反物质维度相乘 | $\times 2.0$                                                         | 无                           |
+| 无限点数获取相乘   | $\times\max\left(2.0, ip^{0.01}\right)$                              | 至少无限/大坍缩 10 次        |
+| 永恒点数获取相乘   | $\times\min\left(\max\left(1.5, ep^{0.01}\right), \text{e}10\right)$ | 至少永恒 10 次               |
+| 膨胀时间获取相乘   | $\times 2.0$                                                         | 购买膨胀研究                 |
+| 游戏速度相乘       | $\times 2.0$                                                         | 完成第一次现实后购买现实研究 |
 
 ### 天神 1–6
 
-| 加成 | 加成公式 | 条件 |
-| --- | --- | --- |
-| 现实机器获取相乘 | $\times 2.0$ | 解锁[特蕾莎](/player/original/ow-teresa) |
-| 遗迹碎片获取相乘 | $\times 1.5$ | 解锁[鹿颈长](/player/original/ow-effarig) |
-| 提高符文稀有度 | $+5\%$ | 解锁[无名氏](/player/original/ow-nameless-ones) |
-| 记忆获取相乘 | $\times 1.5$ | 解锁[太阳神](/player/original/ow-ra) |
-| 暗物质获取相乘 | $\times 2.0$ | 解锁[莱特拉](/player/original/ow-laitela) |
+| 加成             | 加成公式     | 条件                                            |
+| ---------------- | ------------ | ----------------------------------------------- |
+| 现实机器获取相乘 | $\times 2.0$ | 解锁[特蕾莎](/player/original/ow-teresa)        |
+| 遗迹碎片获取相乘 | $\times 2.0$ | 解锁[鹿颈长](/player/original/ow-effarig)       |
+| 提高符文稀有度   | $+5\%$       | 解锁[无名氏](/player/original/ow-nameless-ones) |
+| 记忆获取相乘     | $\times 1.5$ | 解锁[太阳神](/player/original/ow-ra)            |
+| 暗能量获取相乘   | $\times 2.0$ | 解锁[莱特拉](/player/original/ow-laitela)       |
 
 ### 天神 7（佩勒）
 
-| 加成 | 加成公式 | 条件 |
-| --- | --- | --- |
-| 广告加成已被佩勒[毁灭/湮灭/无效化] |  | 让现实[被毁灭](/player/original/ow-pelle) |
+| 加成                               | 加成公式 | 条件                                      |
+| ---------------------------------- | -------- | ----------------------------------------- |
+| 广告加成已被佩勒[毁灭/湮灭/无效化] |          | 让现实[被毁灭](/player/original/ow-pelle) |
 
 ## 来源与许可
 
-- 原文：[Ad Bonus](https://antimatterdimensions.wiki.gg/index.php?title=Ad_Bonus&oldid=3096)（修订 ID `3096`；最后编辑者 The1AndOnly6030；抓取于 2026-11-15）
+- 原文：[Ad Bonus](https://antimatterdimensions.wiki.gg/index.php?title=Ad_Bonus&oldid=3443)（修订 ID `3443`；最后编辑者 Alex9127；抓取于 2026-11-26）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Ad_Bonus&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为**简体中文翻译（改编）**，已修改：翻译正文与四组表格、统一术语、移除多页签模板与导航、图片未转载；本页按相同许可共享。
 - 说明：原文以多页签模板（Regular / Reality / Celestials / Pelle）组织，译文按阶段展开为四张普通表格，内容与条件未改动。
