@@ -1,5 +1,5 @@
 ---
-title: "反物质维度 Wiki"
+title: "反物质维度 MOD Wiki"
 description: "一部值得翻阅的反物质维度中文百科：玩法、原版译文与 Android/Web 技术"
 ---
 
@@ -7,11 +7,11 @@ description: "一部值得翻阅的反物质维度中文百科：玩法、原版
 
 <div class="home-hero">
 
-<img class="home-mark" src="/static/icon.svg" alt="反物质维度 Wiki 标识" />
+<img class="home-mark" src="/static/icon.svg" alt="反物质维度 MOD Wiki 标识" />
 
 <p class="home-kicker">一个数字会长大，问题也会变深</p>
 
-<h1>反物质维度 Wiki</h1>
+<h1>反物质维度 MOD Wiki</h1>
 
 <p class="home-lede">从第一次大坍缩，到把宇宙写进代码；这里收集值得理解、值得验证，也值得顺手翻下去的反物质维度玩法机制与技术知识。</p>
 

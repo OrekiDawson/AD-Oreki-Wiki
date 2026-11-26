@@ -6,7 +6,7 @@
 //   4) 敏感信息与私有路径扫描
 //   5) 未审核 AI 草稿隔离（不得被正式条目引用、必须带待审标记）
 //   6) 反日志化：普通条目不得用 R 轮次/日期章节充当正文，必须有主题导语
-//   7) 历史归档分类清楚（只在 content/developer/history/、必须带「历史」标签、文件名以日期开头）
+//   7) 内部历史归档不得进入 content/；公开版本历史另行按百科内容审核
 //   8) 非历史条目不得带「历史」标签、标题不得以 R 编号或日期开头
 //   9) 标题唯一（防止同一事实复制成多页）
 //  10) 关键检索术语仍存在（不破坏既有搜索）
@@ -38,7 +38,6 @@ const CATEGORY_DIRS = [
   "content/developer/current/",
   "content/developer/troubleshooting/",
   "content/developer/references/",
-  "content/developer/history/",
   "content/developer/evidence/",
   "content/developer/ai-summaries/",
 ];
@@ -77,7 +76,7 @@ function frontmatterOf(text) {
   return { title, description, tags, raw: body };
 }
 
-const files = walk(ROOT).filter((f) => f.endsWith(".md")).sort();
+const files = walk(ROOT).filter((f) => f.endsWith(".md")).map((f) => f.replaceAll("\\", "/")).sort();
 let failed = 0;
 const fail = (msg) => {
   failed += 1;
@@ -176,7 +175,8 @@ for (const f of files) {
   }
 
   // 反日志化：专题条目（非历史、非草稿、非首页/规则/版权/分类页）
-  const isTopic = !isDraft && !isHistory && !isIndex && !isRule && f !== "content/copyright.md";
+  const isGeneratedIndex = f === "content/all-entries.md" || f === "content/recent-updates.md";
+  const isTopic = !isDraft && !isHistory && !isIndex && !isRule && !isGeneratedIndex && f !== "content/copyright.md";
   if (isTopic) {
     const bodyAfterFront = text.replace(/^---\n[\s\S]*?\n---\n?/, "");
     const beforeFirstHeading = bodyAfterFront.split(/\n#{2,4}[ \t]/)[0] || "";

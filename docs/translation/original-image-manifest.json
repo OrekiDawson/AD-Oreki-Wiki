@@ -1,0 +1,2512 @@
+{
+  "schema": 1,
+  "generated_at": "2026-11-26T13:16:44.513Z",
+  "source": "https://antimatterdimensions.wiki.gg",
+  "note": "图片逐项核对许可证后才可下载到 static/；待核实素材不得进入正式页面。API 频率限制时保持待审状态，不将空结果当作无图片。",
+  "audit_status": "INCOMPLETE",
+  "pages": [
+    {
+      "source_title": "Achievements",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Achievements",
+      "audit_status": "待 API 审计（频率限制）",
+      "images": []
+    },
+    {
+      "source_title": "Achievements/Secret Achievements",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Achievements%2FSecret_Achievements",
+      "audit_status": "待 API 审计（频率限制）",
+      "images": []
+    },
+    {
+      "source_title": "Ad Bonus",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Ad_Bonus",
+      "audit_status": "待 API 审计（频率限制）",
+      "images": []
+    },
+    {
+      "source_title": "Advanced Glyph Mechanics",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Advanced_Glyph_Mechanics",
+      "audit_status": "待 API 审计（频率限制）",
+      "images": []
+    },
+    {
+      "source_title": "Alchemy",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Alchemy",
+      "audit_status": "待 API 审计（频率限制）",
+      "images": []
+    },
+    {
+      "source_title": "Android Version History",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Android_Version_History",
+      "audit_status": "待 API 审计（频率限制）",
+      "images": []
+    },
+    {
+      "source_title": "Antimatter",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Antimatter",
+      "audit_status": "待 API 审计（频率限制）",
+      "images": []
+    },
+    {
+      "source_title": "Antimatter Dimension",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Antimatter_Dimension",
+      "audit_status": "待 API 审计（频率限制）",
+      "images": []
+    },
+    {
+      "source_title": "Antimatter Dimensions",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Antimatter_Dimensions",
+      "audit_status": "待 API 审计（频率限制）",
+      "images": []
+    },
+    {
+      "source_title": "Antimatter Dimensions Wiki",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Antimatter_Dimensions_Wiki",
+      "audit_status": "待 API 审计（频率限制）",
+      "images": []
+    },
+    {
+      "source_title": "Antimatter Dimensions Wiki/about",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Antimatter_Dimensions_Wiki%2Fabout",
+      "audit_status": "待 API 审计（频率限制）",
+      "images": []
+    },
+    {
+      "source_title": "Antimatter Dimensions Wiki/contribute",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Antimatter_Dimensions_Wiki%2Fcontribute",
+      "audit_status": "待 API 审计（频率限制）",
+      "images": []
+    },
+    {
+      "source_title": "Antimatter Dimensions Wiki/external",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Antimatter_Dimensions_Wiki%2Fexternal",
+      "audit_status": "待 API 审计（频率限制）",
+      "images": []
+    },
+    {
+      "source_title": "Antimatter Dimensions Wiki/guides",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Antimatter_Dimensions_Wiki%2Fguides",
+      "audit_status": "待 API 审计（频率限制）",
+      "images": []
+    },
+    {
+      "source_title": "Antimatter Dimensions Wiki/mechs",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Antimatter_Dimensions_Wiki%2Fmechs",
+      "audit_status": "待 API 审计（频率限制）",
+      "images": []
+    },
+    {
+      "source_title": "Antimatter Dimensions Wiki/meta",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Antimatter_Dimensions_Wiki%2Fmeta",
+      "audit_status": "待 API 审计（频率限制）",
+      "images": []
+    },
+    {
+      "source_title": "Antimatter Dimensions Wiki/pages",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Antimatter_Dimensions_Wiki%2Fpages",
+      "audit_status": "待 API 审计（频率限制）",
+      "images": []
+    },
+    {
+      "source_title": "Antimatter Dimensions Wiki/welcome",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Antimatter_Dimensions_Wiki%2Fwelcome",
+      "audit_status": "待 API 审计（频率限制）",
+      "images": []
+    },
+    {
+      "source_title": "Antimatter Galaxies",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Antimatter_Galaxies",
+      "audit_status": "待 API 审计（频率限制）",
+      "images": []
+    },
+    {
+      "source_title": "Antimatter Galaxy",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Antimatter_Galaxy",
+      "audit_status": "待 API 审计（频率限制）",
+      "images": []
+    },
+    {
+      "source_title": "Autobuyers",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Autobuyers",
+      "images": []
+    },
+    {
+      "source_title": "Automation",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Automation",
+      "images": [
+        {
+          "title": "File:Meta-page-stub1.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        }
+      ]
+    },
+    {
+      "source_title": "Big Crunch",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Big_Crunch",
+      "images": []
+    },
+    {
+      "source_title": "Black Hole",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Black_Hole",
+      "images": [
+        {
+          "title": "File:Meta-page-stub1.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Reality-blackhole-interface--darktheme-mobile.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Reality-blackhole-interface-active--darktheme-desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        }
+      ]
+    },
+    {
+      "source_title": "Break Infinity",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Break_Infinity",
+      "images": [
+        {
+          "title": "File:Break-breakinfinityupgrades-interface--darktheme-desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Break-breakinfinityupgrades-interface--darktheme-mobile.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Meta-page-stub1.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        }
+      ]
+    },
+    {
+      "source_title": "Breaking Infinity",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Breaking_Infinity",
+      "images": []
+    },
+    {
+      "source_title": "Cel1",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Cel1",
+      "images": []
+    },
+    {
+      "source_title": "Cel2",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Cel2",
+      "images": []
+    },
+    {
+      "source_title": "Cel3",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Cel3",
+      "images": []
+    },
+    {
+      "source_title": "Cel4",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Cel4",
+      "images": []
+    },
+    {
+      "source_title": "Cel5",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Cel5",
+      "images": []
+    },
+    {
+      "source_title": "Cel6",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Cel6",
+      "images": []
+    },
+    {
+      "source_title": "Cel7",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Cel7",
+      "images": []
+    },
+    {
+      "source_title": "Celestial",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Celestial",
+      "images": []
+    },
+    {
+      "source_title": "Celestial Navigation",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Celestial_Navigation",
+      "images": [
+        {
+          "title": "File:Cels-celestialnavigation-interface--darktheme-desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Cels-celestialnavigation-interface--darktheme-mobile.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Meta-page-stub1.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        }
+      ]
+    },
+    {
+      "source_title": "Celestial Navigation/Gallery",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Celestial_Navigation%2FGallery",
+      "images": [
+        {
+          "title": "File:Cels-navigation-01teresastart.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Cels-navigation-02teresaunlock.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Cels-navigation-03teresacomplete.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Cels-navigation-04teresaperk.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Cels-navigation-05effarigstart.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Cels-navigation-06effarigunlock.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Cels-navigation-07effariginfinity.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Cels-navigation-08effarigeternity.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Cels-navigation-09effarigreality.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Cels-navigation-10namelesschainlevel.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Cels-navigation-11namelesschainrarity.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Cels-navigation-12namelessr151.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Cels-navigation-13namelesscomplete.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Cels-navigation-14vallreq.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Cels-navigation-15vunlock.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Cels-navigation-16vcomplete.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Cels-navigation-16vcomplete2.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Cels-navigation-17raeffarig.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Cels-navigation-18ranameless.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Cels-navigation-19rav.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Cels-navigation-20raimaginary.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Cels-navigation-21racomplete.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Cels-navigation-22laitelastart.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Cels-navigation-23laitelastart.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Cels-navigation-24laiteladmd2.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Cels-navigation-25laiteladmd2.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Cels-navigation-26laiteladmd3.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Cels-navigation-27laiteladmd4.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Cels-navigation-28laitelaannihilation.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Cels-navigation-29laitelacomplete.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Cels-navigation-30pelleunlock.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Cels-navigation-31pelledoom.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Cels-navigation-32pellerift1.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Cels-navigation-33pellerift2.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Cels-navigation-34pellerift3.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Cels-navigation-35pellerift4.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Cels-navigation-36pellerift5.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Cels-navigation-37pelleriftcomplete.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Cels-navigation-38pellegalgenunlock.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Cels-navigation-39pellegalgenphase1.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Cels-navigation-40pellegalgenphase2.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Cels-navigation-41pellegalgenphase3.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Cels-navigation-42pellegalgenphase4.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Cels-navigation-43pellegalgenphase5.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Cels-navigation-44pellegalgencomplete.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Cels-navigation-45pellegalgencomplete.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Cels-navigation-46final.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Cels-navigation-47finalextra.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        }
+      ]
+    },
+    {
+      "source_title": "Celestials",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Celestials",
+      "images": [
+        {
+          "title": "File:Meta-page-stub1.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        }
+      ]
+    },
+    {
+      "source_title": "Challenges",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Challenges",
+      "images": [
+        {
+          "title": "File:Meta-page-stub1.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        }
+      ]
+    },
+    {
+      "source_title": "Crunching",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Crunching",
+      "images": []
+    },
+    {
+      "source_title": "Desktop Version History",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Desktop_Version_History",
+      "images": []
+    },
+    {
+      "source_title": "Dilated Time",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Dilated_Time",
+      "images": []
+    },
+    {
+      "source_title": "Dilation",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Dilation",
+      "images": [
+        {
+          "title": "File:Dilation-interface--darktheme-desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Dilation-interface--darktheme-mobile.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Main-achievements-icon-r136--desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Main-achievements-icon-r136--mobile.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Main-achievements-icon-r137--desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Main-achievements-icon-r137--mobile.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Main-achievements-icon-r138--desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Main-achievements-icon-r138--mobile.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Main-achievements-icon-r161--desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Main-achievements-icon-r161--mobile.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Main-achievements-icon-r187--desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Main-achievements-icon-r187--mobile.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Meta-page-stub1.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        }
+      ]
+    },
+    {
+      "source_title": "Dilation/Upgrades",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Dilation%2FUpgrades",
+      "images": []
+    },
+    {
+      "source_title": "Dilation/Upgrades (Doomed)",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Dilation%2FUpgrades_(Doomed)",
+      "images": []
+    },
+    {
+      "source_title": "Dimension Boost",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Dimension_Boost",
+      "images": []
+    },
+    {
+      "source_title": "Dimension Boosts",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Dimension_Boosts",
+      "images": [
+        {
+          "title": "File:Antimatter-dimboost-interface--darktheme-desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Antimatter-dimboost-interface--darktheme-mobile.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Meta-page-stub1.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        }
+      ]
+    },
+    {
+      "source_title": "Dimensional Sacrifice",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Dimensional_Sacrifice",
+      "images": [
+        {
+          "title": "File:Antimatter-sacrifice-interface--darktheme-desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Antimatter-sacrifice-interface--darktheme-mobile.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Main-achievements-icon-r81--mobile.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        }
+      ]
+    },
+    {
+      "source_title": "Dimensions",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Dimensions",
+      "images": [
+        {
+          "title": "File:Antimatter-dimensions-interface--darktheme-modern.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Meta-page-stub1.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        }
+      ]
+    },
+    {
+      "source_title": "Effarig",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Effarig",
+      "images": [
+        {
+          "title": "File:Cel2-interface--darktheme-desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Cel2-navigation-complete--desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Cel2-runreality-active--desktop.gif",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Cel2-runreality-static--desktop.gif",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        }
+      ]
+    },
+    {
+      "source_title": "Effarig/Quotes",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Effarig%2FQuotes",
+      "images": []
+    },
+    {
+      "source_title": "Eternities",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Eternities",
+      "images": []
+    },
+    {
+      "source_title": "Eternity",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Eternity",
+      "images": []
+    },
+    {
+      "source_title": "Eternity Challenges",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Eternity_Challenges",
+      "images": [
+        {
+          "title": "File:Eternity-eternitychallenge-interface--darktheme-desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Eternity-eternitychallenge-interface--darktheme-mobile.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Eternity-eternitychallenge-interface--lighttheme-desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Eternity-eternitychallenge-modal-fail--darktheme-desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Eternity-eternitychallenge-study-buttonstates--desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Main-achievements-icon-r114--desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Main-achievements-icon-r114--mobile.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Main-achievements-icon-r115--desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Main-achievements-icon-r115--mobile.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Main-achievements-icon-r123--desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Main-achievements-icon-r123--mobile.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Main-achievements-icon-r163--desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Main-achievements-icon-r163--mobile.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Main-achievements-icon-s26--desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Main-achievements-icon-s26--mobile.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Main-achievements-icon-s42--desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Main-achievements-icon-s42--mobile.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        }
+      ]
+    },
+    {
+      "source_title": "Eternity Challenges/Challenges",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Eternity_Challenges%2FChallenges",
+      "images": []
+    },
+    {
+      "source_title": "Eternity Challenges/Challenges (Pelle)",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Eternity_Challenges%2FChallenges_(Pelle)",
+      "images": []
+    },
+    {
+      "source_title": "Eternity Milestone",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Eternity_Milestone",
+      "images": []
+    },
+    {
+      "source_title": "Eternity Milestones",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Eternity_Milestones",
+      "images": [
+        {
+          "title": "File:Eternity-eternitymilestones-interface--darktheme-desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Eternity-eternitymilestones-interface--darktheme-mobile.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Main-achievements-icon-r101--desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Main-achievements-icon-r101--mobile.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Main-achievements-icon-r102--desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Main-achievements-icon-r102--mobile.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Main-achievements-icon-r133--desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Main-achievements-icon-r133--mobile.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        }
+      ]
+    },
+    {
+      "source_title": "Eternity Point",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Eternity_Point",
+      "images": []
+    },
+    {
+      "source_title": "Eternity Points",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Eternity_Points",
+      "images": []
+    },
+    {
+      "source_title": "Eternity Upgrades",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Eternity_Upgrades",
+      "images": [
+        {
+          "title": "File:Eternity-eternityupgrades-interface--darktheme-desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Eternity-eternityupgrades-interface--darktheme-mobile.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        }
+      ]
+    },
+    {
+      "source_title": "Glyph",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Glyph",
+      "images": []
+    },
+    {
+      "source_title": "Glyph Alchemy",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Glyph_Alchemy",
+      "images": [
+        {
+          "title": "File:Cel5-alchemy-interface--darktheme-desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Cel5-alchemy-interface--darktheme-mobile.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Cel5-alchemy-interface-maxed--darktheme-desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Meta-page-stub1.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        }
+      ]
+    },
+    {
+      "source_title": "Glyph Sacrifice",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Glyph_Sacrifice",
+      "images": []
+    },
+    {
+      "source_title": "Glyphs",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Glyphs",
+      "images": [
+        {
+          "title": "File:Meta-page-stub1.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Reality-glyphs-inventory--darktheme-desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Reality-glyphs-inventory--darktheme-mobile.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        }
+      ]
+    },
+    {
+      "source_title": "IOS Version History",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/IOS_Version_History",
+      "images": []
+    },
+    {
+      "source_title": "IP",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/IP",
+      "images": []
+    },
+    {
+      "source_title": "Imaginary Upgrades",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Imaginary_Upgrades",
+      "images": [
+        {
+          "title": "File:Reality-imaginaryupgrades-buttonstates--darktheme-desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Reality-imaginaryupgrades-interface--darktheme-desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Reality-imaginaryupgrades-interface--darktheme-mobile.webp",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Reality-prestige-button-imaginarymachines--darktheme-desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        }
+      ]
+    },
+    {
+      "source_title": "Infinite",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Infinite",
+      "images": []
+    },
+    {
+      "source_title": "Infinities",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Infinities",
+      "images": []
+    },
+    {
+      "source_title": "Infinity",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Infinity",
+      "images": [
+        {
+          "title": "File:Disambig.svg",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Infinity-crunchbutton-slowreset--darktheme-desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        }
+      ]
+    },
+    {
+      "source_title": "Infinity (disambiguation)",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Infinity_(disambiguation)",
+      "images": []
+    },
+    {
+      "source_title": "Infinity Challenges",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Infinity_Challenges",
+      "images": [
+        {
+          "title": "File:Break-infinitychallenges-interface--darktheme-mobile.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Break-infinitychallenges-interface--darktheme-modern-desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Break-infinitychallenges-interface--lighttheme-classic-desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Main-achievements-icon-r112--desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Main-achievements-icon-r112--mobile.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Main-achievements-icon-r183--desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Main-achievements-icon-r183--mobile.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Main-achievements-icon-r67--desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Main-achievements-icon-r67--mobile.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Main-achievements-icon-r81--desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Main-achievements-icon-r81--mobile.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Main-achievements-icon-r82--desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Main-achievements-icon-r82--mobile.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Main-achievements-icon-r97--desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Main-achievements-icon-r97--mobile.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        }
+      ]
+    },
+    {
+      "source_title": "Infinity Dimensions",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Infinity_Dimensions",
+      "images": [
+        {
+          "title": "File:Break-infinitydimensions-interface--darktheme-mobile.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Break-infinitydimensions-interface--darktheme-modern.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Main-achievements-icon-r81--mobile.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Meta-page-stub1.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        }
+      ]
+    },
+    {
+      "source_title": "Infinity Point",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Infinity_Point",
+      "images": []
+    },
+    {
+      "source_title": "Infinity Points",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Infinity_Points",
+      "images": []
+    },
+    {
+      "source_title": "Infinity Upgrades",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Infinity_Upgrades",
+      "images": [
+        {
+          "title": "File:Cel5-chargedinfinityupgrades-interface--darktheme-desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Infinity-interface-bought--darktheme-mobile.jpg",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Infinity-upgrades-interface--darktheme-desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Infinity-upgrades-interface--lighttheme-desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        }
+      ]
+    },
+    {
+      "source_title": "Infinity Upgrades/Upgrades",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Infinity_Upgrades%2FUpgrades",
+      "images": []
+    },
+    {
+      "source_title": "Infinity Upgrades/Upgrades (Charged)",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Infinity_Upgrades%2FUpgrades_(Charged)",
+      "images": [
+        {
+          "title": "File:Cel5-chargedinfinityupgrades-interface--darktheme-desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        }
+      ]
+    },
+    {
+      "source_title": "Lai'tela",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Lai'tela",
+      "images": []
+    },
+    {
+      "source_title": "Laitela",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Laitela",
+      "images": [
+        {
+          "title": "File:Cel6-interface--darktheme-desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Cel6-navigation-complete--desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Cel6-runreality-active--desktop.gif",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Cel6-runreality-static--desktop.gif",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Cel6-singularitymilestones-modal--darktheme-desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Main-achievements-icon-r174--desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Main-achievements-icon-r174--mobile.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Main-achievements-icon-r176--desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Main-achievements-icon-r176--mobile.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Main-achievements-icon-r177--desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Main-achievements-icon-r177--mobile.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        }
+      ]
+    },
+    {
+      "source_title": "Laitela/Quotes",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Laitela%2FQuotes",
+      "images": []
+    },
+    {
+      "source_title": "Main Page",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Main_Page",
+      "images": []
+    },
+    {
+      "source_title": "Mods",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Mods",
+      "images": [
+        {
+          "title": "File:Main-achievements-icon-r81--mobile.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Meta-page-stub1.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Mod-loadingscreen-faster.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Mod-loadingscreen-puzzled.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Mod-loadingscreen-rewarded.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Mod-loadingscreen-smooth.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Mod-loadingscreen-space.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        }
+      ]
+    },
+    {
+      "source_title": "Normal Challenges",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Normal_Challenges",
+      "images": [
+        {
+          "title": "File:Infinity-challenges-interface--darktheme-mobile.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Infinity-challenges-interface--darktheme-modern-desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Infinity-challenges-interface--lighttheme-classic-desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Main-achievements-icon-r32--desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Main-achievements-icon-r32--mobile.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Main-achievements-icon-r47--desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Main-achievements-icon-r47--mobile.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Main-achievements-icon-r48--desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Main-achievements-icon-r48--mobile.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Main-achievements-icon-r56--desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Main-achievements-icon-r56--mobile.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Main-achievements-icon-r57--desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Main-achievements-icon-r57--mobile.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Main-achievements-icon-r58--desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Main-achievements-icon-r58--mobile.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Main-achievements-icon-r64--desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Main-achievements-icon-r64--mobile.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Main-achievements-icon-r65--desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Main-achievements-icon-r65--mobile.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Main-achievements-icon-r68--desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Main-achievements-icon-r68--mobile.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Main-achievements-icon-r71--desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Main-achievements-icon-r71--mobile.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Main-achievements-icon-r74--desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Main-achievements-icon-r74--mobile.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        }
+      ]
+    },
+    {
+      "source_title": "Notations",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Notations",
+      "images": [
+        {
+          "title": "File:Main-achievements-icon-r81--mobile.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Meta-page-stub1.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        }
+      ]
+    },
+    {
+      "source_title": "Overview",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Overview",
+      "images": []
+    },
+    {
+      "source_title": "Pelle",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Pelle",
+      "images": [
+        {
+          "title": "File:Cel7-navigation-complete--desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Cel7-runreality-static--desktop.gif",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Meta-page-stub1.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Warning-red.svg",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        }
+      ]
+    },
+    {
+      "source_title": "Pelle/Quotes",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Pelle%2FQuotes",
+      "images": []
+    },
+    {
+      "source_title": "Pelle/Upgrades",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Pelle%2FUpgrades",
+      "images": []
+    },
+    {
+      "source_title": "Perks",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Perks",
+      "images": [
+        {
+          "title": "File:Reality-perks-interface--darktheme-desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Reality-perks-interface--darktheme-mobile.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Reality-perks-interface--lighttheme-desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Reality-perks-layout blind--darktheme-desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Reality-perks-layout blob--darktheme-desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Reality-perks-layout default--darktheme-desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Reality-perks-layout design--lighttheme-desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Reality-perks-layout distance--darktheme-desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Reality-perks-layout horizontal--darktheme-desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Reality-perks-layout mobile--darktheme-desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Reality-perks-layout random--darktheme-desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Reality-perks-layout square--darktheme-desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        }
+      ]
+    },
+    {
+      "source_title": "Prestige",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Prestige",
+      "images": [
+        {
+          "title": "File:Main-achievements-icon-r81--mobile.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Meta-page-stub1.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        }
+      ]
+    },
+    {
+      "source_title": "Ra",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Ra",
+      "images": [
+        {
+          "title": "File:Cel5-compression-scrapped--lightmode-desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Cel5-interface--darktheme-desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Cel5-navigation-complete--desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Cel5-runreality-active--desktop.gif",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Cel5-runreality-static--desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Meta-page-stub1.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        }
+      ]
+    },
+    {
+      "source_title": "Ra/Quotes",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Ra%2FQuotes",
+      "images": []
+    },
+    {
+      "source_title": "Reality",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Reality",
+      "images": [
+        {
+          "title": "File:Reality-achievements-autotimer--darktheme-desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Reality-glyphs-firstreality--darktheme-desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Reality-glyphs-levelfactor-open--darktheme-desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Reality-perks-interface--darktheme-desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Reality-prestige-button--darktheme-desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Reality-realityupgrades-interface--darktheme-desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        }
+      ]
+    },
+    {
+      "source_title": "Reality Upgrades",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Reality_Upgrades",
+      "images": [
+        {
+          "title": "File:Reality-realityupgrades-buttonstates--darktheme-desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Reality-realityupgrades-interface--darktheme-desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Reality-realityupgrades-interface--darktheme-mobile.webp",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        }
+      ]
+    },
+    {
+      "source_title": "Replicanti",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Replicanti",
+      "images": [
+        {
+          "title": "File:Main-achievements-icon-r81--mobile.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Replicanti-interface--darktheme-desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Replicanti-interface--darktheme-mobile.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        }
+      ]
+    },
+    {
+      "source_title": "Replicanti Galaxies",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Replicanti_Galaxies",
+      "images": []
+    },
+    {
+      "source_title": "Replicanti Galaxy",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Replicanti_Galaxy",
+      "images": []
+    },
+    {
+      "source_title": "Save Bank",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Save_Bank",
+      "images": [
+        {
+          "title": "File:Misc-savebank--darktheme-desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Misc-savebankold--darktheme-desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        }
+      ]
+    },
+    {
+      "source_title": "Secret achievement",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Secret_achievement",
+      "images": []
+    },
+    {
+      "source_title": "Secret achievements",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Secret_achievements",
+      "images": []
+    },
+    {
+      "source_title": "Shortcuts",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Shortcuts",
+      "images": [
+        {
+          "title": "File:Gesture Swipe Left.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Gesture Swipe Right.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Keyboard White Mouse Left.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Main-hotkeys-bottombutton--darktheme-mobile.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Main-hotkeys-modal--darktheme-modern-desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Meta-page-stub1.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        }
+      ]
+    },
+    {
+      "source_title": "Tachyon Particles",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Tachyon_Particles",
+      "images": []
+    },
+    {
+      "source_title": "Teresa",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Teresa",
+      "images": [
+        {
+          "title": "File:Cel1-interface--darktheme-desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Cel1-navigation-complete--desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Cel1-runreality-active--desktop.gif",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Cel1-runreality-static--desktop.gif",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        }
+      ]
+    },
+    {
+      "source_title": "Terminology",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Terminology",
+      "images": [
+        {
+          "title": "File:Meta-page-stub1.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        }
+      ]
+    },
+    {
+      "source_title": "Tesseracts",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Tesseracts",
+      "images": []
+    },
+    {
+      "source_title": "The Nameless Ones",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/The_Nameless_Ones",
+      "images": [
+        {
+          "title": "File:Cel3-interface--darktheme-desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Cel3-navigation-complete--desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Cel3-runreality-active--desktop.gif",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Cel3-runreality-static--desktop.gif",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Cel3-tesseract-button--darktheme-modern-desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Cel3-tesseract-button-buyable--darktheme-modern-desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Main-achievements-icon-r81--mobile.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        }
+      ]
+    },
+    {
+      "source_title": "The Nameless Ones/Quotes",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/The_Nameless_Ones%2FQuotes",
+      "images": []
+    },
+    {
+      "source_title": "Tickspeed",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Tickspeed",
+      "images": [
+        {
+          "title": "File:Antimatter-tickspeed-interface--darktheme-desktop.jpg",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Antimatter-tickspeed-interface--darktheme-mobile.jpg",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Main-achievements-icon-r81--mobile.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Meta-page-stub1.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        }
+      ]
+    },
+    {
+      "source_title": "Tickspeed/Galaxy count breakdown (Doomed)",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Tickspeed%2FGalaxy_count_breakdown_(Doomed)",
+      "images": []
+    },
+    {
+      "source_title": "Tickspeed/Galaxy strength breakdown (Doomed)",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Tickspeed%2FGalaxy_strength_breakdown_(Doomed)",
+      "images": []
+    },
+    {
+      "source_title": "Time Dilation",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Time_Dilation",
+      "images": []
+    },
+    {
+      "source_title": "Time Dimensions",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Time_Dimensions",
+      "images": [
+        {
+          "title": "File:Eternity-timedimensions-interface--darktheme-desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Eternity-timedimensions-interface--darktheme-mobile.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        }
+      ]
+    },
+    {
+      "source_title": "Time Studies",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Time_Studies",
+      "images": [
+        {
+          "title": "File:Eternity-timestudies-interface--darktheme-desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Eternity-timestudies-interface--darktheme-mobile.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Main-achievements-icon-r81--mobile.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        }
+      ]
+    },
+    {
+      "source_title": "Time Theorems",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/Time_Theorems",
+      "images": []
+    },
+    {
+      "source_title": "V",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/V",
+      "images": [
+        {
+          "title": "File:Cel4-hardachievements-interface--darktheme-desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Cel4-interface-requirements--darktheme-desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Cel4-navigation-complete--desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Cel4-normalachievements-interface--darktheme-desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Cel4-runreality-active--desktop.gif",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        },
+        {
+          "title": "File:Cel4-runreality-static--desktop.png",
+          "local_path": null,
+          "status": "待核实",
+          "license": null,
+          "attribution": null
+        }
+      ]
+    },
+    {
+      "source_title": "V/Quotes",
+      "source_url": "https://antimatterdimensions.wiki.gg/wiki/V%2FQuotes",
+      "images": []
+    }
+  ]
+}

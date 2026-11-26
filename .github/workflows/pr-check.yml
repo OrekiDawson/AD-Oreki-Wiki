@@ -79,6 +79,8 @@ jobs:
         run: node --test scripts/tests/https-监控.test.mjs
       - name: Translation zone checks (manifest / license / attribution / status)
         run: node scripts/check-translation.mjs
+      - name: Navigation coverage and public archive boundary
+        run: node scripts/check-navigation.mjs
       - run: bash scripts/bootstrap-quartz.sh .quartz-build
       - run: npm ci
         working-directory: .quartz-build
