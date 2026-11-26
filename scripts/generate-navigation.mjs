@@ -28,6 +28,7 @@ const updatedAt = (file) => {
     Math.floor(fs.statSync(file).mtimeMs / 1000)
   )
 }
+const compareRoutes = (a, b) => (a === b ? 0 : a < b ? -1 : 1)
 
 function walk(dir) {
   return fs.readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
@@ -106,7 +107,7 @@ for (const [name, entries] of groups) {
 fs.writeFileSync(path.join(contentRoot, "all-entries.md"), `${lines.join("\n")}\n`)
 
 const recent = [...pages]
-  .sort((a, b) => updatedAt(b.file) - updatedAt(a.file) || a.route.localeCompare(b.route))
+  .sort((a, b) => updatedAt(b.file) - updatedAt(a.file) || compareRoutes(a.route, b.route))
   .slice(0, 24)
 const recentLines = [
   "---",
