@@ -8,6 +8,7 @@ tags:
 
 这里显示最近进入当前内容树的正式条目；文章的具体修订记录仍以页面正文与仓库历史为准。
 
+- [原版 Wiki 中文翻译](/player/original)
 - [开发者专区](/developer)
 - [构建与交付：从源码到可交付产物](/developer/build)
 - [玩家专区](/player)
@@ -20,7 +21,6 @@ tags:
 - [时间研究](/player/original/ow-time-studies)
 - [Android 构建与 AGP](/developer/build/agp)
 - [Android 自动化停滞的排查方法](/developer/current/known-issues)
-- [原版 Wiki 中文翻译](/player/original)
 - [架构与运行时：从入口到运行时](/developer/architecture)
 - [参考资料](/developer/references)
 - [来源索引：怎样从证据找到真正的代码](/developer/references/source-index)
