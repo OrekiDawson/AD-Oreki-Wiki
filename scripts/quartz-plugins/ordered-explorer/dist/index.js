@@ -45,7 +45,8 @@ function compare(a, b) {
   };
   const rank = (node) => {
     if (!node || !node.slugSegment) return 100;
-    if (DEVELOPER_ORDER[node.slug] !== undefined) return DEVELOPER_ORDER[node.slug];
+    const key = (node.slug || "").replace(/\/index$/, "");
+    if (DEVELOPER_ORDER[key] !== undefined) return DEVELOPER_ORDER[key];
     if (STATION[node.slugSegment] !== undefined) return STATION[node.slugSegment];
     const idx = ROOT_ORDER.indexOf(node.slugSegment);
     return idx === -1 ? 100 : idx;
@@ -98,14 +99,24 @@ function mapNode(node) {
     "developer/current/release-status": "发布资格",
     "developer/references/source-index": "来源索引",
   };
-  if (node && node.slug && SIDEBAR_LABEL[node.slug]) {
-    node.displayName = SIDEBAR_LABEL[node.slug];
+  // 只有存在真实下级页面的节点才是分类；仅有 index.md 的目录降级为普通链接。
+  if (node && node.isFolder && (!node.children || node.children.length === 0) && node.data) {
+    node.isFolder = false;
+  }
+  const labelKey = node?.slug?.replace(/\/index$/, "");
+  if (node && labelKey && SIDEBAR_LABEL[labelKey]) {
+    node.displayName = SIDEBAR_LABEL[labelKey];
   }
   return node;
 }
 
 export function OrderedExplorer(opts = {}) {
-  const explorer = Explorer({ ...opts, sortFn: compare, mapFn: mapNode });
+  const explorer = Explorer({
+    ...opts,
+    sortFn: compare,
+    mapFn: mapNode,
+    filterFn: (node) => !(node.isFolder && (!node.children || node.children.length === 0) && !node.data),
+  });
   const expandCurrent = `
 document.addEventListener("nav", () => {
   window.setTimeout(() => {

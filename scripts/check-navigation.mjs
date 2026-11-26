@@ -65,6 +65,33 @@ const recentRoutes = [...recentText.matchAll(/\]\((\/[^)]+)\)/g)].map((match) =>
   match[1].replace(/\/$/, ""),
 )
 const formalRoutes = new Set(formal.map(routeFor))
+
+// 目录模型门禁：只有存在真实下级正式页面的目录才允许成为可展开分类。
+const directoryChildren = new Map()
+let leafDirectoryCount = 0
+for (const file of formal) {
+  const rel = path.relative(content, file).replaceAll("\\", "/")
+  const parts = rel.split("/")
+  parts.pop()
+  for (let i = 1; i <= parts.length; i++) {
+    const dir = parts.slice(0, i).join("/")
+    const child = rel.split("/").slice(i).join("/")
+    if (child && child !== "index.md") {
+      if (!directoryChildren.has(dir)) directoryChildren.set(dir, new Set())
+      directoryChildren.get(dir).add(child)
+    }
+  }
+}
+for (const file of formal) {
+  const rel = path.relative(content, file).replaceAll("\\", "/")
+  if (rel.endsWith("/index.md")) {
+    const dir = rel.slice(0, -"/index.md".length)
+    if (!directoryChildren.has(dir)) {
+      // 这是一个真实页面入口，插件必须把它渲染成普通链接而非空子菜单。
+      leafDirectoryCount += 1
+    }
+  }
+}
 if (recentRoutes.length !== 24)
   errors.push(`最近更新索引条目数应为 24，实际为 ${recentRoutes.length}`)
 if (new Set(recentRoutes).size !== recentRoutes.length) errors.push("最近更新索引存在重复入口")
@@ -96,6 +123,10 @@ const orderedExplorer = fs.readFileSync(
 if (!orderedExplorer.includes("developer/architecture") || !orderedExplorer.includes("developer/references"))
   errors.push("开发者导航缺少语义分类排序")
 if (!orderedExplorer.includes("current-page-ancestors")) errors.push("导航缺少当前页面高亮定位标记")
+if (!orderedExplorer.includes("node.children.length === 0") || !orderedExplorer.includes("filterFn"))
+  errors.push("导航未阻止空子菜单和空白虚拟分类")
+if (leafDirectoryCount > 0 && !orderedExplorer.includes("node.isFolder = false"))
+  errors.push(`发现 ${leafDirectoryCount} 个无下级条目的目录，但插件未将其降级为普通链接`)
 const assetManifestPath = path.join(root, "docs/translation/original-image-manifest.json")
 if (!fs.existsSync(assetManifestPath)) errors.push("缺少原版译文图片来源清单")
 else {
@@ -111,6 +142,66 @@ else {
 if (errors.length) {
   console.error(errors.join("\n"))
   process.exit(1)
+}
+
+if (process.argv[2] === "--built") {
+  const publicDir = path.resolve(root, process.argv[3] || "public")
+  if (!fs.existsSync(publicDir)) errors.push(`构建产物目录不存在：${publicDir}`)
+  else {
+    const htmlFiles = walk(publicDir).filter((file) => file.endsWith(".html"))
+    if (!htmlFiles.length) errors.push("构建产物缺少 HTML 页面")
+    const parse5 = await import("parse5")
+    const hasClass = (node, name) =>
+      node?.attrs?.some((attr) => attr.name === "class" && attr.value.split(/\s+/).includes(name))
+    const elements = (node, out = []) => {
+      if (!node) return out
+      if (node.tagName) out.push(node)
+      for (const child of node.childNodes || []) elements(child, out)
+      return out
+    }
+    for (const file of htmlFiles) {
+      const document = parse5.parse(fs.readFileSync(file, "utf8"))
+      const explorers = elements(document).filter((node) => hasClass(node, "explorer"))
+      if (!explorers.length) errors.push(`构建页面缺少导航 Explorer：${path.relative(publicDir, file)}`)
+      for (const explorer of explorers) {
+        const folders = elements(explorer).filter((node) => hasClass(node, "folder-outer"))
+        for (const folder of folders) {
+          const links = elements(folder).filter((node) => node.tagName === "a" && node.attrs?.some((a) => a.name === "href"))
+          if (!links.length) errors.push(`构建导航存在空子菜单：${path.relative(publicDir, file)}`)
+        }
+        const icons = elements(explorer).filter((node) => hasClass(node, "folder-icon"))
+        if (icons.length !== folders.length)
+          errors.push(`构建导航展开按钮与分类数量不一致：${path.relative(publicDir, file)}`)
+        const anchors = elements(explorer).filter((node) => node.tagName === "a")
+        const hrefs = anchors
+          .map((node) => node.attrs?.find((attr) => attr.name === "href")?.value)
+          .filter(Boolean)
+        const duplicateHrefs = hrefs.filter((href, index) => hrefs.indexOf(href) !== index)
+        if (duplicateHrefs.length)
+          errors.push(`构建导航存在重复入口：${path.relative(publicDir, file)} -> ${duplicateHrefs[0]}`)
+        const htmlRoutes = new Set(
+          htmlFiles.map((html) => {
+            const rel = path.relative(publicDir, html).replaceAll("\\", "/")
+            if (rel === "index.html") return "/"
+            return `/${rel.replace(/\/index\.html$/, "").replace(/\.html$/, "")}`
+          }),
+        )
+        for (const href of hrefs) {
+          if (!href.startsWith("/") || href.startsWith("//") || href.startsWith("/#")) continue
+          const route = href.split("#")[0].replace(/\/$/, "") || "/"
+          if (!htmlRoutes.has(route))
+            errors.push(`构建导航链接无对应页面：${path.relative(publicDir, file)} -> ${href}`)
+          if (/\/ai-drafts(?:\/|$)|\/history(?:\/|$)|\/redirect/i.test(route))
+            errors.push(`构建导航泄露草稿、历史或废弃入口：${route}`)
+        }
+      }
+    }
+  }
+  if (errors.length) {
+    console.error(errors.join("\n"))
+    process.exit(1)
+  }
+  console.log(`OK 构建导航 DOM 检查通过：${walk(publicDir).filter((file) => file.endsWith(".html")).length} 个 HTML 页面`)
 }
 console.log(
   JSON.stringify({

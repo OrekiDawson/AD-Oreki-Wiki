@@ -94,5 +94,8 @@ jobs:
         working-directory: .quartz-build
       - run: npx quartz build
         working-directory: .quartz-build
+      - name: Built navigation DOM and empty-menu gate
+        run: node scripts/check-navigation.mjs --built public
+        working-directory: .quartz-build
       - run: node scripts/verify-build.mjs
         working-directory: .quartz-build
