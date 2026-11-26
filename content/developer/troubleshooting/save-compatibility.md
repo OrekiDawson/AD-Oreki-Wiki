@@ -61,9 +61,9 @@ localStorage
 
 ## “没有保存”不一定是存档损坏
 
-Web 的 `canSave()` 会在三种状态下拒绝普通保存：正在选择符文、正在模拟进度，或游戏已进入禁止交互/保存的结束状态。`save()` 还会把根对象写成 `{ current, saves }`，而不是只写当前玩家对象。排查“文件时间没有更新”时，要同时检查保存条件、当前槽位和浏览器的 `dimensionSave` 键。
+在固定提交 [`storage.js` 中的 `canSave()`、`save()` 与备份写入逻辑`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/e1c93caa758de6c39cf814582123d4a35319eb25/src/core/storage/storage.js) 里，Web 的 `canSave()` 会在三种状态下拒绝普通保存：正在选择符文、正在模拟进度，或游戏已进入禁止交互/保存的结束状态。`save()` 还会把根对象写成 `{ current, saves }`，而不是只写当前玩家对象。排查“文件时间没有更新”时，要同时检查保存条件、当前槽位和浏览器的 `dimensionSave` 键。
 
-自动备份使用独立键名：正式环境为 `backupSave-{saveSlot}-{backupSlot}` 和 `backupTimes-{saveSlot}`；在线备份的间隔为 1 分钟、5 分钟、20 分钟和 1 小时，离线备份的间隔为 10 分钟、1 小时和 5 小时，另有一个保留槽。文件存在不代表它是最近一次有效状态；应读取备份时间并确认对应槽位。
+同一份固定提交中的备份逻辑使用独立键名：正式环境为 `backupSave-{saveSlot}-{backupSlot}` 和 `backupTimes-{saveSlot}`；在线备份的间隔为 1 分钟、5 分钟、20 分钟和 1 小时，离线备份的间隔为 10 分钟、1 小时和 5 小时，另有一个保留槽。这里的键名和间隔是该提交中备份常量/构造逻辑的事实，不应外推到其他版本。文件存在不代表它是最近一次有效状态；应读取备份时间并确认对应槽位。
 
 导入流程也会主动保存：`import()` 解码并通过 `checkPlayerObject()` 后，调用 `loadPlayerObject()`，清理部分运行时状态，随后执行 `save(true)`。如果导入后立刻关闭页面，先确认 `canSave()` 没有因模拟或结束状态阻止这次写入。
 
