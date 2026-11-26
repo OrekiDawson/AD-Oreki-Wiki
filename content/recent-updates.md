@@ -8,6 +8,10 @@ tags:
 
 这里显示最近进入当前内容树的正式条目；文章的具体修订记录仍以页面正文与仓库历史为准。
 
+- [玩家常见问题](/player/faq)
+- [自动化与阶段入口](/player/faq/automation-and-unlocks)
+- [平台与版本](/player/faq/platform-and-version)
+- [存档与兼容性](/player/faq/saves-and-compatibility)
 - [构建与交付：从源码到可交付产物](/developer/build)
 - [构建可追溯性：让 APK 对得上源码与输入](/developer/build/artifact-provenance)
 - [原版与 Oreki Edition：差异阅读地图](/player/gameplay/original-vs-mod)
@@ -27,8 +31,4 @@ tags:
 - [增长为什么会停：从指数到重置的选择](/player/antimatter-dimensions-decisions)
 - [故障排查：从症状回到源码](/developer/troubleshooting)
 - [Web Pages 产物身份：如何证明线上不是另一份代码](/developer/troubleshooting/web-pages-artifact-integrity)
-- [玩家常见问题](/player/faq)
 - [反物质维度：游戏总览与阅读路线](/player/antimatter-dimensions)
-- [玩法机制](/player/gameplay)
-- [派生状态与缓存失效：重置之后为什么还要重新计算](/developer/architecture/derived-state-invalidation)
-- [效果对象与倍率组合：从一项奖励到完整公式](/developer/architecture/effect-model)
