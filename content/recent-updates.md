@@ -8,6 +8,9 @@ tags:
 
 这里显示最近进入当前内容树的正式条目；文章的具体修订记录仍以页面正文与仓库历史为准。
 
+- [膨胀升级（被毁灭的现实）](/player/original/ow-dilation-upgrades-doomed)
+- [永恒挑战·挑战明细（被毁灭的现实）](/player/original/ow-eternity-challenges-challenges-pelle)
+- [计数频率·星系数量明细（被毁灭的现实）](/player/original/ow-tickspeed-galaxy-breakdown-doomed)
 - [从 Smali 调用点恢复可用 API](/developer/reverse-engineering/smali-recovery)
 - [自动化与阶段入口](/player/faq/automation-and-unlocks)
 - [平台与版本](/player/faq/platform-and-version)
@@ -29,6 +32,3 @@ tags:
 - [效果对象与倍率组合：从一项奖励到完整公式](/developer/architecture/effect-model)
 - [FAQ：入门、阶段与挑战](/player/faq/progression)
 - [阶段解锁：进度地图与排障入口](/player/gameplay/stage-gates)
-- [第一次进入与前几分钟](/player/getting-started/first-session)
-- [Web 模块启动链：全局兼容桥与初始化故障排查](/developer/troubleshooting/web-module-startup)
-- [增长为什么会停：从指数到重置的选择](/player/antimatter-dimensions-decisions)
