@@ -64,7 +64,7 @@ Oreki Edition 有 Android 与 Web 两套实现，目标是保持玩家可见的�
 
 ## 附属资料与历史证据
 
-[项目与仓库概览](/developer/project-overview)解释工程目标和平台基线；[双端交付证据](/developer/current/project-status)与[已知问题](/developer/current/known-issues)解释版本身份、运行边界和状态机排查；旧故障的原始报告保留在源码仓库和内部归档中，**不代替今天的源码**。
+[项目与仓库概览](/developer/project-overview)解释工程目标和平台基线；[双端交付证据](/developer/current/project-status)与[已知问题](/developer/current/known-issues)解释版本身份、运行边界和状态机排查；旧故障的原始报告保留在来源仓库的历史资料中，**不代替今天的源码**。
 
 [来源索引](/developer/references/source-index)用于回到源码、构建、测试或设备记录；[已审核 AI 摘要](/developer/ai-summaries/)只作为正文之后的辅助资料。它们不是入门路线，也不能替代源码、操作指南或故障排查正文。
 
