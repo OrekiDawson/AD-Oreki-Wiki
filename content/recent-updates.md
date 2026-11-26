@@ -8,6 +8,7 @@ tags:
 
 这里显示最近进入当前内容树的正式条目；文章的具体修订记录仍以页面正文与仓库历史为准。
 
+- [Android 构建与 AGP](/developer/build/agp)
 - [如何使用本知识库](/how-to-use)
 - [玩家专区](/player)
 - [反物质维度：游戏总览与阅读路线](/player/antimatter-dimensions)
@@ -31,4 +32,3 @@ tags:
 - [平台与版本](/player/faq/platform-and-version)
 - [自动化与阶段入口](/player/faq/automation-and-unlocks)
 - [效果对象与倍率组合：从一项奖励到完整公式](/developer/architecture/effect-model)
-- [构建与交付：从源码到可交付产物](/developer/build)
