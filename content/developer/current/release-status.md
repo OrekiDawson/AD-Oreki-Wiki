@@ -7,6 +7,7 @@ tags:
   - 版本管理
 aliases:
   - "/current/release-status"
+  - "/developer/history/2026-11-12-r103-release-baseline"
 ---
 
 “APK 能安装”不等于“版本可以发布”。一个可交付的 Android 版本，至少要同时拥有明确的身份、可验证的产物、兼容的签名、经过目标环境检验的行为，以及与下载渠道一致的文件。缺少其中任何一层，都只能称为候选版本。

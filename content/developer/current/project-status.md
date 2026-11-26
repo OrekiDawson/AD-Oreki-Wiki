@@ -8,6 +8,7 @@ tags:
   - 发布
 aliases:
   - "/current/project-status"
+  - "/developer/history/2026-11-20-r121-android-kvm"
 ---
 
 一个游戏版本“能不能交付”，不是由某个绿色标记决定的。源码、构建产物、设备运行和下载渠道分别回答不同问题；只有把它们按同一版本身份串起来，开发者才知道自己究竟证明了什么。Android 的[官方发布文档](https://developer.android.com/studio/publish)也把签名、测试和发布视为不同环节。

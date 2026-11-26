@@ -6,6 +6,8 @@ tags:
   - 自动化
   - Android
   - 排障
+aliases:
+  - "/developer/history/2026-11-15-r114-reality-autoeternity"
 ---
 
 自动购买器的“开关”并不只有一个。Android MOD 同时面对玩家的原版总开关、MOD 自己的总开关、单项自动器的当前状态，以及 MOD 对模式和间隔的托管策略。若把这些状态揉成一个 `enabled`，最常见的结果是：玩家刚关掉一个自动器，下一帧又被打开；或者 MOD 已经暂停，旧的恢复任务却在稍后突然写回。

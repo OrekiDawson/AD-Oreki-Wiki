@@ -7,6 +7,7 @@ tags:
   - 发布
 aliases:
   - "/build/apk-signing"
+  - "/developer/history/2026-11-15-signing-blocked"
 ---
 
 APK 的签名不是发布前贴上的装饰章，而是 Android 判断“这是不是同一个应用”的身份系统。文件内容、包名、证书和版本号共同决定它能否安装、能否覆盖旧版本，以及更新后是否仍有机会读取旧存档。
