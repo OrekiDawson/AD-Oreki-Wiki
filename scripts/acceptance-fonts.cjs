@@ -14,14 +14,7 @@ try {
 
 const base = process.env.KB_URL || 'http://127.0.0.1:8080';
 const out = process.env.KB_FONT_OUT || 'evidence/playwright-fonts.json';
-let siteConfig;
-try {
-  siteConfig = YAML.parse(fs.readFileSync('quartz.config.yaml', 'utf8'));
-} catch (error) {
-  console.error('无法读取或解析 quartz.config.yaml；请确认在仓库根目录执行并检查 YAML 语法。');
-  console.error(String(error).slice(0, 300));
-  process.exit(2);
-}
+const siteConfig = YAML.parse(fs.readFileSync('quartz.config.yaml', 'utf8'));
 const configuredHost = String(siteConfig?.configuration?.baseUrl || '').replace(/^https?:\/\//i, '').replace(/\/$/, '');
 if (!configuredHost) {
   console.error('quartz.config.yaml 的 configuration.baseUrl 不能为空；拒绝在未识别站点地址时执行生产环境字体验收。');
@@ -67,10 +60,16 @@ async function inspect(page) {
           && !['SCRIPT', 'STYLE', 'SVG', 'PATH'].includes(el.tagName);
       })
       .map((el) => getComputedStyle(el).fontFamily);
-    const numericCode = [...document.querySelectorAll('article p code, article li code, article td code')]
-      .map((el) => (el.textContent || '').trim())
-      .filter((text) => text.length <= 80 && /^[\s\d.eE+\-−×x^*/()→←=]+$/.test(text)
-        && /(?:(?<![A-Za-z0-9])(?:\d{1,3}(?:\.\d+)?)\s*[eE][+-]?\d+(?![A-Za-z0-9])|(?<!\d)e\d{2,}|(?<![A-Za-z0-9])\d{1,3}(?:\.\d+)?\s*[×x]\s*10\^\d)/.test(text));
+    const scientific = [...document.querySelectorAll('body *')]
+      .filter((el) => el.children.length === 0)
+      .filter((el) => {
+        const rect = el.getBoundingClientRect();
+        return rect.width > 0 && rect.height > 0 && (el.textContent || '').trim()
+          && /(?<![A-Za-z0-9])(?:\d{1,3}(?:\.\d+)?)\s*[eE][+-]?\d+(?![A-Za-z0-9])|(?<!\d)e\d{2,}|(?<![A-Za-z0-9])\d{1,3}(?:\.\d+)?\s*[×x]\s*10\^\d/.test(el.textContent)
+          && !el.closest('pre, code, kbd, samp, .katex, .math-inline, .math-block')
+          && !['SCRIPT', 'STYLE', 'SVG', 'PATH'].includes(el.tagName);
+      })
+      .map((el) => ({ text: (el.textContent || '').trim().slice(0, 120), fontFamily: getComputedStyle(el).fontFamily }));
     const sample = (name, selector) => {
       const el = document.querySelector(selector);
       if (!el) return { name, selector, missing: true, text: '', fontFamily: '' };
@@ -89,7 +88,7 @@ async function inspect(page) {
         ['math', '.katex'],
       ].map(([name, selector]) => sample(name, selector)),
       ordinaryFamilies: [...new Set(ordinary)],
-      numericCode,
+      scientific,
       thirdPartyFonts: performance.getEntriesByType('resource').map((entry) => entry.name)
         .filter((name) => /fonts\.(googleapis|gstatic)|typekit/i.test(name)),
     };
@@ -121,18 +120,22 @@ async function main() {
         result.errors.push(`font-family:${slug}:${name}:${sample.fontFamily}`);
       }
     }
+    for (const sample of inspected.scientific) {
+      if (!familyAllowed('ordinary', sample.fontFamily))
+        result.errors.push(`scientific-font:${slug}:${sample.text}:${sample.fontFamily}`);
+    }
     await page.screenshot({ path: `reports/font-${slug.replace(/\W+/g, '-').replace(/^-|-$/g, '')}.png`, fullPage: true });
   }
   await browser.close();
   fs.mkdirSync(path.dirname(out), { recursive: true });
   fs.writeFileSync(out, JSON.stringify(result, null, 2));
-  // 数学容器仍可能被可见的普通祖先包裹；KaTeX 单独按 math sample 验收。
-  const families = [...new Set(Object.values(result.pages).flatMap((item) => item.ordinaryFamilies)
+  // KaTeX 节点可能被 Quartz 包在可见的数学容器中；它们不属于普通文本，
+  // 从普通字体一致性集合中排除，但仍由上面的 math sample 单独验收。
+  const families = [...new Set(Object.values(result.pages)
+    .flatMap((item) => item.ordinaryFamilies)
     .filter((family) => !/KaTeX|math/i.test(family)))];
   const thirdParty = Object.values(result.pages).flatMap((item) => item.thirdPartyFonts);
-  const numericCode = Object.values(result.pages).flatMap((item) => item.numericCode || []);
   if (families.length !== 1) result.errors.push(`ordinary-font-families:${families.join('|')}`);
-  if (numericCode.length) result.errors.push(`scientific-notation-in-code:${numericCode.join('|')}`);
   if (thirdParty.length) result.errors.push(`third-party-fonts:${thirdParty.join('|')}`);
   console.log(JSON.stringify({ families, thirdParty, errors: result.errors }, null, 2));
   process.exit(result.errors.length ? 1 : 0);

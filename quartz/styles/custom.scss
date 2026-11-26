@@ -2,8 +2,8 @@
 
 // 全站使用操作系统原生字体；数学公式的 KaTeX 字体由数学插件单独管理。
 :root {
-  --headerFont: sans-serif;
-  --bodyFont: sans-serif;
+  --headerFont: system-ui, sans-serif;
+  --bodyFont: system-ui, sans-serif;
   --codeFont: ui-monospace, monospace;
 }
 
