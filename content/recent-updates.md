@@ -8,6 +8,8 @@ tags:
 
 这里显示最近进入当前内容树的正式条目；文章的具体修订记录仍以页面正文与仓库历史为准。
 
+- [Android 架构](/developer/architecture/android)
+- [第一次参与 Android 开发](/developer/first-contribution)
 - [Android 构建与 AGP](/developer/build/agp)
 - [如何使用本知识库](/how-to-use)
 - [玩家专区](/player)
@@ -30,5 +32,3 @@ tags:
 - [玩家常见问题](/player/faq)
 - [存档与兼容性](/player/faq/saves-and-compatibility)
 - [平台与版本](/player/faq/platform-and-version)
-- [自动化与阶段入口](/player/faq/automation-and-unlocks)
-- [效果对象与倍率组合：从一项奖励到完整公式](/developer/architecture/effect-model)
