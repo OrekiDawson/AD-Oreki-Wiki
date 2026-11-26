@@ -37,7 +37,6 @@ const CATEGORY_DIRS = [
   "content/developer/current/",
   "content/developer/troubleshooting/",
   "content/developer/references/",
-  "content/developer/evidence/",
   "content/developer/ai-summaries/",
 ]
 const REQUIRED_TERMS = ["永恒挑战", "自动购买器", "AGP", "Kotlin", "Lai Tela", "build_mod.py"]

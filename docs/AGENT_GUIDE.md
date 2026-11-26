@@ -91,7 +91,7 @@
 | `content/developer/troubleshooting/` | 故障与定位 |
 | `content/developer/current/` | 当前状态，必须有实际更新时间与证据 |
 | `content/developer/history/` | 历史档案，不代表现行结论 |
-| `content/developer/references/`、`evidence/` | 可追溯证据和来源索引 |
+| `content/developer/references/` | 可追溯证据和来源索引 |
 | `content/developer/ai-summaries/` | 历史已审核摘要的附属入口，不再作为核心导航 |
 | `content/ai-drafts/` | 未审草稿，禁止公开索引或作为权威引用 |
 
