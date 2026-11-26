@@ -176,6 +176,7 @@ const LEGACY_URL_TARGETS = {
   "gameplay/challenges": "player/gameplay/challenges",
   "gameplay/saves": "player/gameplay/saves",
   "gameplay/stage-gates": "player/gameplay/stage-gates",
+  "gameplay/progression-infinity-eternity": "player/gameplay/stage-progression",
   "current/project-status": "developer/current/project-status",
   "current/release-status": "developer/current/release-status",
   "current/known-issues": "developer/current/known-issues",

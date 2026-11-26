@@ -29,7 +29,7 @@ const SEARCH_TERMS = [
   ['build_mod.py', 'developer/build/build-mod-retirement'],
 ];
 
-const OLD_URLS = ['/architecture/kotlin-runtime', '/architecture/android', '/gameplay/challenges', '/build/agp', '/current/project-status'];
+const OLD_URLS = ['/architecture/kotlin-runtime', '/architecture/android', '/gameplay/challenges', '/gameplay/progression-infinity-eternity', '/build/agp', '/current/project-status'];
 const NEW_PAGES = [
   '/',
   '/player/',
