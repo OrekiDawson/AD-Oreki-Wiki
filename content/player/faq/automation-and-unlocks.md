@@ -6,6 +6,7 @@ tags:
   - 玩家
   - 自动化
 aliases:
+  - "/player/faq/automation-and-saves"
   - "/faq/automation-and-saves"
 ---
 
