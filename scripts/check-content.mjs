@@ -108,10 +108,10 @@ for (const f of files) {
   const isDraft = f.startsWith(DRAFT_DIR);
   const isHistory = f.startsWith(HISTORY_DIR);
   const isPlayer = f.startsWith(PLAYER_DIR);
-  const isOriginalTranslation = f.startsWith("content/player/original/") && !isIndex;
   const isRule = f === RULE_PAGE;
   const isPolicy = f === POLICY_PAGE;
   const isIndex = path.basename(f) === "index.md";
+  const isOriginalTranslation = f.startsWith("content/player/original/") && !isIndex;
   const isCategoryIndex = isIndex && CATEGORY_DIRS.includes(path.dirname(f) + "/");
   const fm = frontmatterOf(text);
 
