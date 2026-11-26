@@ -8,9 +8,12 @@ tags:
 
 这里显示最近进入当前内容树的正式条目；文章的具体修订记录仍以页面正文与仓库历史为准。
 
-- [反物质维度：游戏总览与阅读路线](/player/antimatter-dimensions)
+- [Web 模块启动链：全局兼容桥与初始化故障排查](/developer/troubleshooting/web-module-startup)
 - [生产链与重置：反物质维度如何成长](/player/antimatter-dimensions-core-loop)
 - [增长为什么会停：从指数到重置的选择](/player/antimatter-dimensions-decisions)
+- [故障排查：从症状回到源码](/developer/troubleshooting)
+- [Web Pages 产物身份：如何证明线上不是另一份代码](/developer/troubleshooting/web-pages-artifact-integrity)
+- [反物质维度：游戏总览与阅读路线](/player/antimatter-dimensions)
 - [玩法机制](/player/gameplay)
 - [阶段门禁排障：页面提前出现、按钮灰掉与重置后变化](/player/gameplay/stage-gate-troubleshooting)
 - [阶段解锁：进度地图与排障入口](/player/gameplay/stage-gates)
@@ -29,6 +32,3 @@ tags:
 - [Android GUI 同步桥：让游戏状态真正到达界面](/developer/architecture/android-gui-sync)
 - [挑战：三种限制玩法的阅读地图](/player/gameplay/challenges)
 - [自动保存与备份：保护每天的进度](/player/gameplay/autosave)
-- [存档安全：自动保存与兼容导入阅读地图](/player/gameplay/saves)
-- [Web 离线进度：模拟时间与真实时钟的边界](/developer/architecture/web-offline-simulation)
-- [存档兼容与导入验证](/player/gameplay/save-compatibility)
