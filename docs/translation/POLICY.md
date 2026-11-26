@@ -79,7 +79,7 @@ review_status: "NOT REVIEWED"      # NOT REVIEWED / STRUCTURE CHECKED / REVIEWED
 ## 6. 页面路径与命名
 
 - 文件：`content/player/original/ow-<english-slug>.md`（`ow-` 前缀避免与 MOD 页面同名冲突；旧 `/original/` URL 由兼容入口保持可访问）。
-- 标题：术语表中文名；与 MOD 页面同名冲突时加限定语（例如「反物质维度（游戏机制）」）。
+- 标题：统一使用 `原版:条目名` 显示命名空间，例如 `原版:无限`、`原版:时间研究`；本规则取代旧的“同名时加限定语”口径。命名空间只改变显示标题，不改变文件路径、公开 URL、aliases、原文标题、修订字段、许可或署名。
 - 不得移动或覆盖既有 MOD 页面与 URL。
 
 ## 7. 增量同步
