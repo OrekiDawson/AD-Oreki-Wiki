@@ -11,7 +11,7 @@ aliases:
 
 如果只把 Web 端看成一堆可以在浏览器里打开的 JavaScript 文件，很快就会迷路：真正的游戏状态在原版主循环里推进，MOD 的自动化又必须在合适的时机插入，页面还要同时照顾存档、桌面浏览器和 Android Chrome。读这套代码最省力的方式，是沿着一次启动和一次游戏循环往下走。
 
-本文以 Web 仓库 `AD-Oreki-Edition` 的当前 `main` 提交 `e1c93caa758de6c39cf814582123d4a35319eb25` 为源码核对点；上游游戏基线仍是 `IvarK/AntimatterDimensionsSourceCode` 的 `5409e320cecef96a917cca1dfb68f1f183e499ca`（2026-07-17，AD 11.5 / Reality Update）。两者是两个不同的版本坐标：前者说明 Oreki 端当前接线，后者说明原版游戏代码的冻结来源。
+本文以 [OrekiDawson/AD-Oreki-Edition-Web 的固定提交 e1c93caa](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/tree/e1c93caa758de6c39cf814582123d4a35319eb25) 为源码核对点；已用 GitHub API 核对，HTTP 200，核对日 2026-11-26。上游游戏基线仍是 [IvarK/AntimatterDimensionsSourceCode 的固定提交 5409e320](https://github.com/IvarK/AntimatterDimensionsSourceCode/tree/5409e320cecef96a917cca1dfb68f1f183e499ca)（2026-07-17，AD 11.5 / Reality Update）。两者是两个不同的版本坐标：前者说明 Oreki 端当前接线，后者说明原版游戏代码的冻结来源。
 
 本文的关键源码入口可直接对照 [Web 当前提交中的 `src/main.js`](https://github.com/OrekiDawson/AD-Oreki-Edition/blob/e1c93caa758de6c39cf814582123d4a35319eb25/src/main.js)、[`src/game.js`](https://github.com/OrekiDawson/AD-Oreki-Edition/blob/e1c93caa758de6c39cf814582123d4a35319eb25/src/game.js) 和 [Oreki 自动化模块目录](https://github.com/OrekiDawson/AD-Oreki-Edition/tree/e1c93caa758de6c39cf814582123d4a35319eb25/src/core)。原版循环与自动购买器则以 [上游冻结提交](https://github.com/IvarK/AntimatterDimensionsSourceCode/tree/5409e320cecef96a917cca1dfb68f1f183e499ca) 为对照。
 
