@@ -16,9 +16,9 @@ aliases:
   - "/original/ow-replicanti"
 ---
 
-**复制器（Replicanti）**是[无限](/player/original/ow-infinity)威望层内的一种机制，在玩家完成第一次[大坍缩](https://antimatterdimensions.wiki.gg/wiki/Big_Crunch)之后随时可以购买。不过，购买它需要 $1\text{e}140$ [无限点数](/player/original/ow-infinity)，所以通常只有在完成 8 个[无限挑战](/player/original/ow-challenges)之后才会解锁。
+**复制器（Replicanti）**是[无限](/player/original/ow-infinity)威望层内的一种机制，在玩家完成第一次[大坍缩](/player/original/ow-infinity)之后随时可以购买。不过，购买它需要 $1\text{e}140$ [无限点数](/player/original/ow-infinity)，所以通常只有在完成 8 个[无限挑战](/player/original/ow-infinity-challenges)之后才会解锁。
 
-和反物质一样，它们会在[大坍缩](https://antimatterdimensions.wiki.gg/wiki/Big_Crunch)时重置（除非玩家拥有[成就 95](https://antimatterdimensions.wiki.gg/wiki/Achievements)——在一小时内达到 1.80e308 复制器获得）；除非购买了时间研究 192，否则它们不能超过无限值。
+和反物质一样，它们会在[大坍缩](/player/original/ow-infinity)时重置（除非玩家拥有[成就 95](/player/original/ow-achievements)——在一小时内达到 1.80e308 复制器获得）；除非购买了时间研究 192，否则它们不能超过无限值。
 
 它们具有指数成长，且可以被其升级强化。
 
@@ -76,7 +76,7 @@ $$e^{\left(\ln(r)+\left[\left(1+t\right)\times r\times\ln(c+1)\times interval\di
 
 复制器星系的作用与[反物质星系](/player/original/ow-antimatter-galaxies)完全相同（会重置星系重置的所有普通内容），但它们不会改变第 8 反物质维度为获得下一个反物质星系所需的价格增长。
 
-它们的数量受第 3 个复制器升级限制，并会在无限时重置。若拥有[时间研究 33](/player/original/ow-time-studies)，会保留其中一半。若已解锁[成就 95](https://antimatterdimensions.wiki.gg/wiki/Achievements)，它提供的星系会在时间研究之后单独计算。
+它们的数量受第 3 个复制器升级限制，并会在无限时重置。若拥有[时间研究 33](/player/original/ow-time-studies)，会保留其中一半。若已解锁[成就 95](/player/original/ow-achievements)，它提供的星系会在时间研究之后单独计算。
 
 购买一个复制器星系时，复制器数量会被设为 1（除非玩家拥有成就 r126，此时复制器星系会把复制器数量除以 1.80e308）。
 
@@ -90,8 +90,8 @@ $$e^{\left(\ln(r)+\left[\left(1+t\right)\times r\times\ln(c+1)\times interval\di
 
 ## 提示
 
-- 玩家大约在 $\text{e}240$ IP 时可以达成[成就 95](https://antimatterdimensions.wiki.gg/wiki/Achievements)的要求。
-- 如果玩家想完成[成就 95](https://antimatterdimensions.wiki.gg/wiki/Achievements)，并且已经达到上述某个升级，就必须尽快购买一个星系，以免一小时计时过期。
+- 玩家大约在 $\text{e}240$ IP 时可以达成[成就 95](/player/original/ow-achievements)的要求。
+- 如果玩家想完成[成就 95](/player/original/ow-achievements)，并且已经达到上述某个升级，就必须尽快购买一个星系，以免一小时计时过期。
 - 玩家还需要注意复制器的早期阶段，因为它取决于随机数（RNG）。
 
 ## 琐事
@@ -99,7 +99,7 @@ $$e^{\left(\ln(r)+\left[\left(1+t\right)\times r\times\ln(c+1)\times interval\di
 - 最后一个间隔升级在 $\text{e}420$ IP 时购买，但如果玩家拥有时间研究 22，则变为 $\text{e}790$（如果在达到最后一个原版上限之后才购买该研究，数值又会变为 $\text{e}800$）。
 - Replicanti 的单数形式本应是「Replicantus」，但游戏对单数与复数都使用 Replicanti。
   - 在一条新闻滚动条消息中，游戏提到有三支队伍在争论 Replicanti 的单数形式：「Team Replicantus」「Team Also Replicanti」与「Team The Plural is Replicantis」。
-- 如果玩家没有任何升级或加成，达到 $1.80\text{e}308$ 复制器的预期时间是 19 小时 48 分 52 秒。但这几乎不会发生，因为玩家只需 $1\text{e}140$ [IP](https://antimatterdimensions.wiki.gg/wiki/IP)就能购买一个间隔升级。
+- 如果玩家没有任何升级或加成，达到 $1.80\text{e}308$ 复制器的预期时间是 19 小时 48 分 52 秒。但这几乎不会发生，因为玩家只需 $1\text{e}140$ 无限点数就能购买一个间隔升级。
 
 ## 来源与许可
 
