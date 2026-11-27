@@ -1,5 +1,5 @@
 ---
-title: "虚幻升级"
+title: "原版:虚幻升级"
 description: "原版 Wiki《Imaginary Upgrades》条目的简体中文翻译：虚幻机器、10 项可重复与 15 项一次性虚幻升级的解锁条件与效果"
 tags:
   - 原版Wiki翻译
@@ -18,7 +18,7 @@ aliases:
 
 **虚幻升级（Imaginary Upgrades）**使用**虚幻机器（Imaginary Machines，iM）**购买。它和[现实升级](/player/original/ow-reality-upgrades)很像：一次性升级要先满足条件才能买，但门槛和效果更离奇，其中几项直接决定了后两位天神能不能见到。
 
-虚幻升级在玩家开始获得虚幻机器时解锁。一次现实在不设 RM 上限时能取得至少 $\text{e}1,000$ [现实机器](/player/original/ow-reality)时，现实机器会停在 $\text{e}1,000$，其余产出转为虚幻机器；在原版规则下，这大致对应最高 $2.15\text{e}1,337,333$ 永恒点数。一共 10 项可重复、15 项一次性；第一行可重复升级专门强化现实层的可重复升级。
+虚幻升级在玩家开始获得虚幻机器时解锁。一次现实在不设 RM 上限时能取得至少 e1,000  [现实机器](/player/original/ow-reality)时，现实机器会停在 e1,000，其余产出转为虚幻机器；在原版规则下，这大致对应最高 2.15e1,337,333 永恒点数。一共 10 项可重复、15 项一次性；第一行可重复升级专门强化现实层的可重复升级。
 
 ## 虚幻机器
 
@@ -29,13 +29,13 @@ aliases:
 $$\max\left(\log_{10}(RM_{uncapped})-1000,0\right)^2
 \times\max\left(\log_{10}(RM_{uncapped})-100000,1\right)^{0.2}$$
 
-两项下限分别取 0 与 1；第二项在未截断 RM 的 $\log_{10}$ 不超过 $100,001$（约 $\text{e}100,001$）时保持为 1。
+两项下限分别取 0 与 1；第二项在未截断 RM 的 $\log_{10}$ 不超过 100,001（约 e100,001）时保持为 1。
 
 > 译注：部分旧文把第二个下限写成 0。源码使用 `max(..., 1)`，否则 RM 尚未超过上述阈值时会让整条上限错误地归零；本页按源码校正。
 
 和硬上限之前的现实机器不同，虚幻机器没法靠反复新现实刷出来：它只会随时间朝上限爬升，越接近上限越慢。默认速度是**每 60 秒把“上限与当前值之差”减半**，而且这个速度不受游戏速度修正影响；相关虚幻升级可以缩短这个时间。
 
-例如当前有 $1\text{e}7$ iM、上限为 $5\text{e}7$，缺口是 $4\text{e}7$；一分钟后数量升到 $3\text{e}7$，缺口剩下 $2\text{e}7$，两分钟后升到 $4\text{e}7$，如此逼近上限。
+例如当前有 1e7 iM、上限为 5e7，缺口是 4e7；一分钟后数量升到 3e7，缺口剩下 2e7，两分钟后升到 4e7，如此逼近上限。
 
 ## 可重复升级
 
@@ -92,12 +92,12 @@ $$\max\left(\log_{10}(RM_{uncapped})-1000,0\right)^2
 
 ## 来源与许可
 
-- 原文：[Imaginary Upgrades](https://antimatterdimensions.wiki.gg/index.php?title=Imaginary_Upgrades&oldid=3358)（修订 ID 3358；抓取于 2026-11-15）
+- 原文：[Imaginary Upgrades](https://antimatterdimensions.wiki.gg/index.php?title=Imaginary_Upgrades&oldid=3358)（修订 ID 3358）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Imaginary_Upgrades&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为简体中文翻译（改编），已修改：翻译正文与全部表格、按游戏内简体中文统一为“虚幻机器/虚幻升级”、依据官方源码修正虚幻机器上限公式与状态、界面图与信息框未转载；本页按相同许可共享。
 - 原文图片未转载：原页含桌面/移动界面图（Reality-imaginaryupgrades-interface--darktheme-desktop.png、-mobile.webp、buttonstates--darktheme-desktop.png）与现实按钮图，此处仅保留文字说明。
 - 原文中的动态占位符（如解锁条件里的 {current value}）是游戏实时显示的数值，译文保留占位写法。
-- 源码核对：[虚幻机器上限公式](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/91d5bed01509cd730a3158075c9b05c19a7a3260/src/core/machines.js#L108)（提交 `91d5bed01509cd730a3158075c9b05c19a7a3260`，2026-11-24 核对）。
+- 源码核对：虚幻机器上限公式（源码定位：OrekiDawson/AD-Oreki-Edition-Web@91d5bed01509cd730a3158075c9b05c19a7a3260/src/core/machines.js#L108）（提交 `91d5bed01509cd730a3158075c9b05c19a7a3260`，2026-11-24 核对）。
 
 ## 相关条目
 

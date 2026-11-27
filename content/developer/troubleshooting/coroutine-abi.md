@@ -1,5 +1,5 @@
 ---
-title: "协程 ABI 崩溃排查：先还原调用约定，再判断是否真的挂起"
+title: "协程 ABI 排查"
 description: "从 Kotlin suspend 降级、JVM/DEX 描述符、Continuation 实现和反射调用链定位混合运行时崩溃"
 tags:
   - 排查
@@ -12,7 +12,7 @@ aliases:
 
 协程 ABI 问题常常披着“某个方法突然找不到”或“动作调用后没有反应”的外衣。真正的根因通常更具体：调用者和被调用者对参数描述符、返回值、续体对象或类加载器的理解不一致。排查这类问题不能只看 Kotlin 源码，也不能只看反编译器生成的 Java；要把源码、JVM/DEX 形状和运行时对象逐层对上。
 
-## 源码里的 `suspend` 到底变成了什么
+## `suspend` 的实现
 
 以一个最小例子开始：
 
@@ -41,7 +41,7 @@ reset(Continuation<? super Boolean>): Object
 
 在 DEX/Smali 中，应检查完整描述符，而不是只看方法短名：参数顺序、`Continuation` 所属包、返回类型、静态/实例属性和继承链都属于 ABI。JADX 生成的 Java 只是阅读视图，最终以 DEX/Smali 的 `.method` 声明为准。
 
-## 带 `Continuation` 不等于“这是挂起函数”
+## `Continuation` 不是挂起
 
 本项目的永恒挑战入口提供了一个很好的反例。固定 Android 基线中的 `OrekiEcAutomation.kt` 记录了原版方法：
 
@@ -79,19 +79,19 @@ is3.D(ZLrj0;)Ljava/lang/Boolean;
 
 这类故障不要先改业务条件。若描述符不匹配，业务代码甚至还没有真正开始运行。
 
-### 不崩但动作不完成：区分返回值和状态提交
+### 返回值与状态
 
 反射 `invoke` 成功返回一个对象，不代表对象就是业务结果。对协程入口，要记录返回对象的类型、是否等于挂起标记，以及续体是否收到恢复；对同步入口，要记录返回的 `Boolean`，并立即回读关键状态。
 
 本项目的可迁移做法是记录一组最小状态：动作前后的资源余额、目标解锁位、当前挑战、完成次数和 `lastUpdate`。如果返回 `true` 但解锁位不变，问题在调用目标、实例或后置刷新；如果解锁位变了但界面不变，问题在缓存或 UI 事件；如果调用直接抛 `InvocationTargetException`，再展开其 cause 判断原版方法内部失败还是 ABI 入参不对。
 
-### 界面存在但循环不推进：不要把活性问题叫成 ABI
+### 循环不推进
 
 线程反复回到同一个完成回调，状态字段和时间都不变化，通常是 livelock 或调度器重复重试；线程停在锁、队列或 `park` 上，才沿阻塞链调查。协程 ABI 错误可能造成“没有后续状态提交”，但它不是所有“不动”的统一解释。
 
 项目中的自动化入口会把异常记为可见日志并返回无进展结果，而不是让每帧异常击穿主循环。排查时应同时看 ABI 日志、调度节拍和业务状态，不能只凭“页面还在显示”判断调用成功。
 
-## 一条从 APK 到源码的排查路径
+## 排查路径
 
 ### 1. 固定运行对象
 
@@ -123,7 +123,7 @@ is3.D(ZLrj0;)Ljava/lang/Boolean;
 
 ## 参考资料
 
-- Android 固定基线 [`GameApi.kt`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/fb1299a132f134eb4fab009643ee3fc3d6c57edf/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/GameApi.kt)、[`OrekiEcAutomation.kt`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/fb1299a132f134eb4fab009643ee3fc3d6c57edf/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiEcAutomation.kt) 与 [`OrekiEcContinuation.java`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/fb1299a132f134eb4fab009643ee3fc3d6c57edf/app/src/main/java/kajfosz/antimatterdimensions/OrekiEcContinuation.java)。
+- Android 固定基线 `GameApi.kt`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@fb1299a132f134eb4fab009643ee3fc3d6c57edf/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/GameApi.kt）、`OrekiEcAutomation.kt`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@fb1299a132f134eb4fab009643ee3fc3d6c57edf/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiEcAutomation.kt） 与 `OrekiEcContinuation.java`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@fb1299a132f134eb4fab009643ee3fc3d6c57edf/app/src/main/java/kajfosz/antimatterdimensions/OrekiEcContinuation.java）。
 - [Kotlin 协程基础](https://kotlinlang.org/docs/coroutines-basics.html)、[Continuation API](https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.coroutines/-continuation/) 与 [Android 运行时崩溃指南](https://developer.android.com/topic/performance/vitals/crash)。
 - [DEX 与 ABI](/developer/reverse-engineering/dex-abi) · [Kotlin 混合运行时 ABI](/developer/architecture/kotlin-runtime)。
 

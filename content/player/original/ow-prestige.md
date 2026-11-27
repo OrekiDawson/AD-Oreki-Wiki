@@ -1,5 +1,5 @@
 ---
-title: "重置成长（威望）"
+title: "原版:重置成长（威望）"
 description: "原版 Wiki《Prestige》条目的简体中文翻译：威望与威望层的定义，以及游戏中的重置机制"
 tags:
   - 原版Wiki翻译
@@ -23,11 +23,11 @@ aliases:
 ## 现有的威望机制
 
 - **无限之前：**
-  - [维度提升](/player/original/ow-dimension-boosts)：重置玩家的[反物质维度](/player/original/ow-antimatter-dimensions)和[计数频率](https://antimatterdimensions.wiki.gg/wiki/Tickspeed)升级，以解锁新的维度类型，或强化全部反物质维度；
+  - [维度提升](/player/original/ow-dimension-boosts)：重置玩家的[反物质维度](/player/original/ow-antimatter-dimensions)和[计数频率](/player/original/ow-tickspeed)升级，以解锁新的维度类型，或强化全部反物质维度；
   - [维度献祭](/player/original/ow-dimensional-sacrifice)：它不一定算完整的威望机制，但会重置除第 8 维度外所有[反物质维度](/player/original/ow-antimatter-dimensions)的数量，以换取第 8 反物质维度的倍率；
   - [反物质星系](/player/original/ow-antimatter-galaxies)：重置维度提升会重置的一切，以及维度提升次数本身，以提高计数频率升级的威力；
 - **无限：**
-  - [大坍缩](https://antimatterdimensions.wiki.gg/wiki/Big_Crunch)，即[无限](/player/original/ow-infinity)：第一个威望层。它引入[无限点数](/player/original/ow-infinity)作为新货币，以及大量可以用无限点数购买的升级；
+  - [大坍缩](/player/original/ow-infinity)，即[无限](/player/original/ow-infinity)：第一个威望层。它引入[无限点数](/player/original/ow-infinity)作为新货币，以及大量可以用无限点数购买的升级；
   - [复制器星系](https://antimatterdimensions.wiki.gg/wiki/Replicanti_Galaxy)：它不一定算完整的威望机制，但会重置[复制器](/player/original/ow-replicanti)，以换取一个复制器星系；
 - [永恒](/player/original/ow-eternity)：第二个威望层。它引入[永恒点数](/player/original/ow-eternity)、完全不同的升级系统和一种新的维度类型；
 - [现实](/player/original/ow-reality)：第三个威望层。它引入[现实机器](/player/original/ow-reality)、[符文](https://antimatterdimensions.wiki.gg/wiki/Glyphs)系统，以及后来出现的若干其他机制层。
@@ -35,7 +35,7 @@ aliases:
 
 ## 来源与许可
 
-- 原文：[Prestige](https://antimatterdimensions.wiki.gg/index.php?title=Prestige&oldid=3398)（修订 ID `3398`；最后编辑者 Adf；首次抓取于 2026-11-15；本批于 2026-11-26 复核，固定链接与修订 ID 未变）
+- 原文：[Prestige](https://antimatterdimensions.wiki.gg/index.php?title=Prestige&oldid=3398)（修订 ID `3398`；最后编辑者 Adf）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Prestige&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为简体中文翻译（改编），已修改：翻译正文、统一术语并移除原页面板、信息框和导航模板；图片未转载，本页按相同许可共享。
 

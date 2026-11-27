@@ -1,5 +1,5 @@
 ---
-title: "膨胀升级（被毁灭的现实）"
+title: "原版:膨胀升级（被毁灭的现实）"
 description: "原版 Wiki《Dilation/Upgrades (Doomed)》子页面的简体中文翻译：佩勒现实中可购买与已锁定的膨胀升级"
 tags:
   - 原版Wiki翻译
@@ -49,9 +49,9 @@ aliases:
 
 ## 来源与许可
 
-- 原文：[Dilation/Upgrades (Doomed)](https://antimatterdimensions.wiki.gg/index.php?title=Dilation%2FUpgrades_%28Doomed%29&oldid=3428)（修订 ID 3428；抓取于 2026-11-26）
+- 原文：[Dilation/Upgrades (Doomed)](https://antimatterdimensions.wiki.gg/index.php?title=Dilation%2FUpgrades_%28Doomed%29&oldid=3428)（修订 ID 3428）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Dilation/Upgrades_(Doomed)&action=history)
-- 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为简体中文翻译（改编），已修改：翻译两张升级表与公式、统一术语、词形变换保留原文；本页按相同许可共享。
+- 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为简体中文翻译（改编），已修改：翻译两张升级表与公式、统一术语、词形变换保留原文；图片未转载；本页按相同许可共享。
 - 原文无图片媒体，仅表格。
 
 ## 相关条目

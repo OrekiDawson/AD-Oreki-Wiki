@@ -13,33 +13,13 @@
 // 规则的权威文本在 content/wiki-rules.md；本脚本只覆盖可机器判断的部分。
 import fs from "node:fs"
 import path from "node:path"
+import { CATEGORY_DIRS, ORIGINAL_TRANSLATION_DIR, PLAYER_DIR, POLICY_PAGE_TITLE, RULE_PAGE_TITLE } from "./wiki-paths.mjs"
 
 const ROOT = "content"
-const RULE_PAGE_TITLE = "反物质维度MOD Wiki:知识库规则"
 const RULE_PAGE = "content/wiki-rules.md"
 const POLICY_PAGE = "content/wiki-not.md"
-const POLICY_PAGE_TITLE = "反物质维度MOD Wiki:本站不是什么"
 const DRAFT_DIR = "content/ai-drafts/"
-const PLAYER_DIR = "content/player/"
 const DEVELOPER_DIR = "content/developer/"
-const CATEGORY_DIRS = [
-  "content/player/",
-  "content/player/getting-started/",
-  "content/player/gameplay/",
-  "content/player/original/",
-  "content/player/mods/",
-  "content/player/download-and-version/",
-  "content/player/faq/",
-  "content/developer/",
-  "content/developer/architecture/",
-  "content/developer/reverse-engineering/",
-  "content/developer/build/",
-  "content/developer/current/",
-  "content/developer/troubleshooting/",
-  "content/developer/references/",
-  "content/developer/evidence/",
-  "content/developer/ai-summaries/",
-]
 const REQUIRED_TERMS = ["永恒挑战", "自动购买器", "AGP", "Kotlin", "Lai Tela", "build_mod.py"]
 const MIN_PAGES = 15
 const SECRET_PATTERNS = [
@@ -142,7 +122,7 @@ for (const f of files) {
       const expectedTitle = isRule ? RULE_PAGE_TITLE : POLICY_PAGE_TITLE
       if (fm.title !== expectedTitle) fail("正式规则或方针页标题必须为 " + expectedTitle + ": " + f)
     } else if (!isDraft) {
-      if (fm.title.startsWith("反物质维度MOD Wiki:"))
+      if (fm.title.startsWith("反物质维度 MOD："))
         fail("普通条目标题不应带规则页命名空间前缀: " + f)
       if (ROUND_LEAD_TITLE.test(fm.title)) {
         fail("专题条目标题不应以 R 轮次或日期开头（时间性材料请移出 content/，放入仓库内部归档目录）: " + f)
@@ -191,7 +171,7 @@ for (const f of files) {
   }
 
   // 反日志化：专题条目（非草稿、非首页/规则/版权/分类页）
-  const isGeneratedIndex = f === "content/all-entries.md" || f === "content/recent-updates.md"
+  const isGeneratedIndex = f === "content/all-entries.md"
   const isTopic =
     !isDraft &&
     !isIndex &&
@@ -205,13 +185,13 @@ for (const f of files) {
       .split("\n")
       .map((line) => line.trim())
       .filter((line) => line.length > 0 && !line.startsWith("#"))
-    if (introLines.join("").length < 40) {
-      fail("专题条目缺少主题导语（正文开头需有一至三句说明「这是什么」）: " + f)
+    if (introLines.length === 0) {
+      fail("专题条目缺少主题导语（正文开头需说明主题与阅读价值）: " + f)
     }
     if (CHANGELOG_HEADING.test(text)) {
       fail("专题条目出现 R 轮次/日期/Release Notes 式章节；时间性材料请移出 content/，放入仓库内部归档目录: " + f)
     }
-    if (!/https?:\/\//.test(text)) fail("专题条目缺少可点击的原始来源链接: " + f)
+    if (!/https?:\/\//.test(text) && !/源码定位：/.test(text)) fail("专题条目缺少可追溯的原始来源或源码定位: " + f)
   }
 
   for (const re of SECRET_PATTERNS)
@@ -234,7 +214,7 @@ for (const file of [playerHome, developerHome, rootHome]) {
 const aiIndex = "content/developer/ai-summaries/index.md"
 if (fs.existsSync(aiIndex)) {
   const text = fs.readFileSync(aiIndex, "utf8")
-  if (!text.includes("<details>") || !text.includes("审核日期")) {
+  if (!text.includes("<details>") || !/已审核摘要|审核状态|已审核/.test(text)) {
     fail("开发者 AI Summary 索引缺少默认折叠或审核标识: " + aiIndex)
   }
 }

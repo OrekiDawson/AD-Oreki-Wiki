@@ -1,6 +1,6 @@
 ---
-title: "Oreki Edition 是什么？"
-description: "了解 Oreki Edition 与原版的关系、平台差异和自动化设计"
+title: "MOD 介绍"
+description: "了解 MOD 与原版的关系、平台差异和自动化设计"
 tags:
   - OrekiEdition
   - 介绍
@@ -9,19 +9,19 @@ aliases:
   - "/mods"
 ---
 
-如果你熟悉《反物质维度》，会发现 Oreki Edition 仍然从同一条生产链出发：维度生产维度，维度生产反物质，重置把一次短跑变成下一次长跑。它不是原版官方更新，而是围绕原版玩法制作的 Android/Web MOD。
+如果你熟悉《反物质维度》，会发现本 MOD 仍然从同一条生产链出发：维度生产维度，维度生产反物质，重置把一次短跑变成下一次长跑。它不是原版官方更新，而是围绕原版玩法制作的 Android/Web MOD。
 
 它最有意思的地方不在于把数字改得更大，而在于试着回答一个很实际的问题：当玩家已经理解“买维度—重置—再买维度”之后，哪些重复操作可以交给机器，哪些决定仍应由玩家亲自做？
 
 ## 它保留了什么
 
-Oreki Edition 的核心成长脉络仍然是反物质维度、维度提升、星系、大坍缩、无限、永恒、时间研究、现实与天神。原版知识仍然有用；不确定某个机制属于原版还是 MOD 时，可以对照[原版与 Oreki Edition 的区别](/player/gameplay/original-vs-mod)。
+本 MOD 的核心成长脉络仍然是反物质维度、维度提升、星系、大坍缩、无限、永恒、时间研究、现实与天神。原版知识仍然有用；不确定某个机制属于原版还是 MOD 时，可以对照[原版与 MOD 的区别](/player/gameplay/original-vs-mod)。
 
 它也保留了这类游戏的基本节奏：早期购买和解锁，中期用重置压缩等待，后期让多个成长系统彼此叠加。换句话说，MOD 不会把“为什么要重置”改成单纯的“按一下就赢”。
 
 ## 它改变了什么
 
-Oreki Edition 的改动主要集中在三处：
+本 MOD 的改动主要集中在三处：
 
 - **自动化**：自动购买器和阶段调度器减少重复点击，按真实游戏状态决定下一步，而不是凭页面切换制造进度。
 - **阅读体验**：界面、教程和中文说明更强调“现在为什么能做这件事”，让新玩家不必先翻源码才能知道按钮用途。
@@ -48,13 +48,13 @@ Oreki Edition 的改动主要集中在三处：
 
 ## 继续阅读
 
-- [开始游玩 Oreki Edition](/player/getting-started)：从新档走到第一次大坍缩。
+- [开始游玩](/player/getting-started)：从新档走到第一次大坍缩。
 - [智能自动购买器](/player/gameplay/automation)：理解自动化会替你做什么、不会替你做什么。
 - [阶段门禁](/player/gameplay/stage-gates)：为什么某些按钮必须等到合法条件满足。
 - [玩家专区](/player/)：按机制、攻略、FAQ 和原版译文继续浏览。
 
 ## 资料
 
-- [Oreki Edition Web 源码仓库](https://github.com/OrekiDawson/AD-Oreki-Edition-Web)
-- [Oreki Edition Android Releases](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/releases)
-- [原版与 Oreki Edition 的区别](/player/gameplay/original-vs-mod)
+- [MOD Web 源码仓库](https://github.com/OrekiDawson/AD-Oreki-Edition-Web)
+- [MOD Android Releases](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/releases)
+- [原版与 MOD 的区别](/player/gameplay/original-vs-mod)

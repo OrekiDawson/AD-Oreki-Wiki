@@ -16,7 +16,7 @@ aliases:
 
 ## 先看结论边界
 
-当前最稳固的结论是：Web 已有一份可追溯的真实新档终局记录；Android 的开发候选可以安装并推进到首次现实，但终局仍未完成，不能作为正式发布版本。Web 的 [运行说明](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/f7044da0f80a50ccbe5cd827fea717b4d5a1eae6/reports/R104/web/r121-01/README.md)记录首次 `isGameEnd=true` 于 10451.1 秒，[结构化摘要](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/f7044da0f80a50cc5be5cd827fea717b4d5a1eae6/reports/R104/web/r121-01/summary.json)给出同一运行的事件和哈希边界；Android 的阶段故障与修复边界见 [故障排查](/developer/troubleshooting/)。旧 Android 候选的故障报告记录 APK SHA-256 `43e3f4fc42017541a37b81f7440e58fe8a67380ed9ff601d440038947091f1ac`；这不是修复后候选的发布证明。
+当前最稳固的结论是：Web 已有一份可追溯的真实新档终局记录；Android 的开发候选可以安装并推进到首次现实，但终局仍未完成，不能作为正式发布版本。Web 的 运行说明（源码定位：OrekiDawson/AD-Oreki-Edition-Web@f7044da0f80a50ccbe5cd827fea717b4d5a1eae6/reports/R104/web/r121-01/README.md）记录首次 `isGameEnd=true` 于 10451.1 秒，结构化摘要（源码定位：OrekiDawson/AD-Oreki-Edition-Web@f7044da0f80a50cc5be5cd827fea717b4d5a1eae6/reports/R104/web/r121-01/summary.json）给出同一运行的事件和哈希边界；Android 的阶段故障与修复边界见 [故障排查](/developer/troubleshooting/)。旧 Android 候选的故障报告记录 APK SHA-256 `43e3f4fc42017541a37b81f7440e58fe8a67380ed9ff601d440038947091f1ac`；这不是修复后候选的发布证明。
 
 这意味着以下判断可以成立：
 
@@ -43,7 +43,7 @@ aliases:
 
 ### 发布对象是否满足身份与渠道门禁？
 
-确认签名、版本状态、正式 Release 和渠道哈希。当前公开 Android 版本是 `android-update-3.21.0-a12b5cd6`；`versionCode=30210002`、`modVersionState=development` 的候选仍不是正式 Release。细节见[发布状态](/developer/current/release-status)和[APK 签名与升级兼容](/developer/build/apk-signing)。
+确认签名、版本状态、正式 Release 和渠道哈希。当前公开 Android 版本是 `android-update-3.21.0-a12b5cd6`；`versionCode=30210002`、`modVersionState=development` 的候选仍不是正式 Release。细节见[发布状态](/developer/current/release-status)和 [APK 签名与升级兼容](/developer/build/apk-signing)。
 
 ## 当前双端证据如何使用
 
@@ -57,7 +57,7 @@ aliases:
 
 表格的用途是防止越级推断，不是给项目贴一个永久状态标签。每当源码、APK 或部署 Commit 改变，都应重新绑定证据，而不是沿用旧候选的结论。
 
-## 目前最值得优先处理的工程问题
+## 优先问题
 
 Android 的首要风险是重置后的自动化状态机：当前资源会归零，历史进度不能归零；如果调度器只读前者，就会在挑战或现实之后回到错误分支。[自动化停滞排查](/developer/current/known-issues)给出状态快照和最小复现思路。
 
@@ -65,4 +65,4 @@ Android 的首要风险是重置后的自动化状态机：当前资源会归零
 
 ## 读者下一步
 
-如果你在改代码，先读[Android 架构](/developer/architecture/android)、[Kotlin 混合运行时 ABI](/developer/architecture/kotlin-runtime)和[自动化停滞排查](/developer/current/known-issues)。如果你在判断候选能否交付，先读[构建与 CI/CD](/developer/build/ci-cd)、[APK 签名](/developer/build/apk-signing)和[运行证据索引](/developer/evidence/)。如果你只需要确认公开下载对象，直接查看[发布状态](/developer/current/release-status)。
+如果你在改代码，先读 [Android 架构](/developer/architecture/android)、[Kotlin 混合运行时 ABI](/developer/architecture/kotlin-runtime) 和[自动化停滞排查](/developer/current/known-issues)。如果你在判断候选能否交付，先读[构建与 CI/CD](/developer/build/ci-cd)、[APK 签名](/developer/build/apk-signing)和[运行证据索引](/developer/evidence/)。如果你只需要确认公开下载对象，直接查看[发布状态](/developer/current/release-status)。

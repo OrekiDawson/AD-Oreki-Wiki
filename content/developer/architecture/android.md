@@ -1,6 +1,6 @@
 ---
-title: "Android 架构：宿主、适配层与业务调度"
-description: "从 App/Activity 宿主到 GameApi 和 Kotlin 自动化，理解 Oreki Edition Android 端的真实边界"
+title: "Android 架构"
+description: "从 App/Activity 宿主到 GameApi 和 Kotlin 自动化，理解 MOD Android 端的真实边界"
 tags:
   - 开发者
   - Android
@@ -9,7 +9,7 @@ aliases:
   - "/architecture/android"
 ---
 
-Oreki Edition 的 Android 端不是一款重新实现的《反物质维度》。APK 里有一个负责生命周期、界面和原版游戏循环的宿主，也有一层 Kotlin 业务代码负责读取状态、安排动作和显示 MOD 状态。两者之间的边界决定了这个项目最重要的工程习惯：Kotlin 可以决定“现在是否值得尝试”，但不能凭空制造一次大坍缩、改写原版存档，或把一次失败的调用算成成功。
+本 MOD 的 Android 端不是一款重新实现的《反物质维度》。APK 里有一个负责生命周期、界面和原版游戏循环的宿主，也有一层 Kotlin 业务代码负责读取状态、安排动作和显示 MOD 状态。两者之间的边界决定了这个项目最重要的工程习惯：Kotlin 可以决定“现在是否值得尝试”，但不能凭空制造一次大坍缩、改写原版存档，或把一次失败的调用算成成功。
 
 本文基于 Android 仓库固定 Commit [`9d8fc46`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/tree/9d8fc46ce99279720b5b3068027bb76bceb35756)。源码中的 Kotlin 入口、构建输入和规则文件可直接定位；App/Activity 等宿主组件则以构建阶段的 Manifest 与输入 DEX 为准，不把历史反编译目录冒充当前源码。
 
@@ -34,7 +34,7 @@ Oreki Kotlin：阶段判定、自动化调度、界面状态与设置
 
 把这几层混在一起，故障就会变得很难解释：Activity 重建不应清空玩家存档，GameApi 解析失败不应被当成“玩家没有资源”，调度器的 `noteNoop()` 也不应伪装成一次成功购买。
 
-## App 与 Activity：Android 外壳不是游戏规则
+## App 与 Activity
 
 当前完整游戏的组件入口来自构建阶段的 `AndroidManifest.xml`。`app/build.gradle.kts` 将 `oreki.fullGameStage` 指向的阶段目录作为 Manifest 输入，默认目录是 `build/agp-fullgame`；因此 App、MainActivity 以及其他组件的最终入口，必须与这份 Manifest 和输入 DEX 一起核对。`app/proguard-rules.pro`也按 Manifest 中真实存在的组件保留 `App`、`MainActivity`、`SpeedSettingsActivity` 和 `LoginActivity` 等类。
 
@@ -49,15 +49,15 @@ Oreki Kotlin：阶段判定、自动化调度、界面状态与设置
 
 这些入口很多不会出现在 Kotlin 业务代码的普通调用图里，所以它们同时也是 R8 的保留边界。构建专题中的 [R8 规则](/developer/build/r8)记录了 Manifest、JNI、WebView 和生成实现类的处理方式。
 
-## GameApi：把不稳定的宿主压缩到窄边界
+## GameApi 边界
 
-[`GameApi.kt`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/GameApi.kt) 解释了为什么这里采用缓存式 Java 反射：原版游戏类只存在于 APK 的 DEX 中，Kotlin 编译器不能把它们当作普通 Kotlin 类型库直接导入。生成一整套类型桩会遇到内部类、泛型擦除、继承和数千个相互引用；把整个游戏反编译成 Java 再编译则等于重写宿主。
+`GameApi.kt`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/GameApi.kt） 解释了为什么这里采用缓存式 Java 反射：原版游戏类只存在于 APK 的 DEX 中，Kotlin 编译器不能把它们当作普通 Kotlin 类型库直接导入。生成一整套类型桩会遇到内部类、泛型擦除、继承和数千个相互引用；把整个游戏反编译成 Java 再编译则等于重写宿主。
 
 于是 GameApi 把类名、字段和方法解析集中在一个适配层：首次使用时解析并缓存 `Class`、`Field` 或 `Method`，后续调用复用句柄，不在每次购买时重新按名称搜索。解析失败不会向主循环抛出未处理异常，而是返回空值或安全的否定结果，并记录 `OREKI_API_MISS`。这种选择牺牲了部分编译期类型检查，却把版本升级时的改动集中到了可核查的边界。
 
 GameApi 还必须与构建期别名保持同源。当前文件中的 3.19→3.20 映射，以及生成的 `OrekiBaselineBindings`，共同决定“可读的旧混淆名”如何落到当前 DEX 类名。只更新其中一边，会出现最难查的故障：Smali 描述符已经指向新类，Kotlin 却反射到了旧类或另一个恰好存在的短名。
 
-## 从一次自动化 tick 看调用链
+## 自动化调用链
 
 自动化业务位于 `app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/`。一拍的概念调用链是：
 
@@ -97,7 +97,7 @@ noteActed / noteNoop / noteFail
 
 **修改调度器**：为每个任务明确成功、无操作和异常三种结果；检查是否推进全局节拍、是否释放预约，以及失败后是否会造成饥饿或死锁。
 
-**修改构建输入**：根 `:app`才是完整游戏应用，阶段 Manifest、生成资源、assets 和 JNI 都由 [`app/build.gradle.kts`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/9d8fc46ce99279720b5b3068027bb76bceb35756/app/build.gradle.kts) 接入。不要恢复历史的 `agp/` 子工程或 bridge/fullGame 双工程口径。
+**修改构建输入**：根 `:app`才是完整游戏应用，阶段 Manifest、生成资源、assets 和 JNI 都由 `app/build.gradle.kts`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@9d8fc46ce99279720b5b3068027bb76bceb35756/app/build.gradle.kts） 接入。不要恢复历史的 `agp/` 子工程或 bridge/fullGame 双工程口径。
 
 ## 排障路径
 

@@ -1,5 +1,5 @@
 ---
-title: "快捷键"
+title: "原版:快捷键"
 description: "原版 Wiki《Shortcuts》条目的简体中文翻译：桌面版热键、Shift/Alt 组合、标签页切换、隐藏热键与移动版底部按钮"
 tags:
   - 原版Wiki翻译
@@ -101,7 +101,7 @@ Alt 是另一个修饰键：与任意有对应自动购买器的按键同时按�
 
 ## 移动版底部按钮
 
-底部按钮是手机版独有的功能，相当于热键，任何页签下都能快速执行动作。它们位于屏幕底部（名字由此而来），点一下执行一次，按住则连续执行。游戏内共 $6$ 个。
+底部按钮是手机版独有的功能，相当于热键，任何页签下都能快速执行动作。它们位于屏幕底部（名字由此而来），点一下执行一次，按住则连续执行。游戏内共 6 个。
 
 首次达到无限后还会解锁**吸附按钮**：按住某个底部按钮半秒即可吸附它，松手后它仍会自动执行，直到点它一次或改吸附另一个。被吸附的按钮外面有一圈高亮。
 
@@ -122,7 +122,7 @@ Alt 是另一个修饰键：与任意有对应自动购买器的按键同时按�
 
 ## 来源与许可
 
-- 原文：[Shortcuts](https://antimatterdimensions.wiki.gg/index.php?title=Shortcuts&oldid=3108)（修订 ID `3108`；最后编辑者 The1AndOnly6030；首次抓取于 2026-11-16；本批于 2026-11-26 复核，修订 ID 未变）
+- 原文：[Shortcuts](https://antimatterdimensions.wiki.gg/index.php?title=Shortcuts&oldid=3108)（修订 ID `3108`；最后编辑者 The1AndOnly6030）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Shortcuts&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为简体中文翻译（改编），已修改：翻译正文与全部按键表、图标改为文字描述、截图未转载；本页按相同许可共享。
 - 原文图片未转载：原页含热键列表弹窗与移动版底部按钮截图（Main-hotkeys-modal--darktheme-modern-desktop.png、Main-hotkeys-bottombutton--darktheme-mobile.png），此处仅保留文字说明。

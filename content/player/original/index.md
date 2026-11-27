@@ -1,5 +1,5 @@
 ---
-title: "原版 Wiki 中文翻译"
+title: "原版译文"
 description: "按原版 Wiki 的游戏阶段与知识分类查阅《反物质维度》中文译文"
 tags:
   - 原版Wiki翻译
@@ -8,15 +8,15 @@ aliases:
   - "/original"
 ---
 
-# 原版 Wiki 中文翻译
+# 原版译文
 
-这里是《反物质维度》原版 Wiki 的简体中文入口。栏目按原版 Wiki 的游戏阶段和知识分类组织，涵盖基础机制、无限、永恒、现实、天神、挑战与其他资料。本站只翻译原版知识；Oreki Edition 的改动请转到[原版与 Oreki Edition 的区别](/player/gameplay/original-vs-mod)。
+这里是《反物质维度》原版 Wiki 的简体中文入口。栏目按原版 Wiki 的游戏阶段和知识分类组织，涵盖基础机制、无限、永恒、现实、天神、挑战与其他资料。本站只翻译原版知识；本 MOD 的改动请转到[原版与 MOD 的区别](/player/gameplay/original-vs-mod)。
 
 ## 关于原版游戏
 
 《反物质维度》是一款增量游戏。玩家从反物质维度开始，借助维度提升、维度牺牲和反物质星系建立生产链；第一次无限会把重置转化为长期成长资源，并开放后续机制。
 
-原版可通过[官方 Web 版本](https://ivark.github.io/)、[Steam](https://store.steampowered.com/app/1399720/Antimatter_Dimensions/)、[Android](https://play.google.com/store/apps/details?id=com.kajfik.antimatterdimensions)和[iOS](https://apps.apple.com/app/antimatter-dimensions/id1659834045)游玩。平台版本与存档行为可能不同，具体以原版官方入口为准。
+原版可通过[官方 Web 版本](https://ivark.github.io/)、[Steam](https://store.steampowered.com/app/1399720/Antimatter_Dimensions/)、[Android](https://play.google.com/store/apps/details?id=com.kajfik.antimatterdimensions) 和 [iOS](https://apps.apple.com/app/antimatter-dimensions/id1659834045) 游玩。平台版本与存档行为可能不同，具体以原版官方入口为准。
 
 ## 从哪里开始
 
@@ -97,11 +97,11 @@ aliases:
 
 ## 社区与原始资料
 
-- [原版 Wiki 首页](https://antimatterdimensions.wiki.gg/wiki/Main_Page)：动态入口，仅用于查看原版最新页面与英文导航；MediaWiki API 于 2026-11-26 核对可达，不作为某篇译文的固定底本。
+- [原版 Wiki 首页](https://antimatterdimensions.wiki.gg/wiki/Main_Page)：动态入口，仅用于查看原版最新页面与英文导航，不作为某篇译文的固定底本。
 - [原版游戏源码](https://github.com/IvarK/AntimatterDimensionsSourceCode/tree/5409e320cecef96a917cca1dfb68f1f183e499ca)：用于核对游戏机制、公式和版本实现；引用固定到 commit `5409e320cecef96a917cca1dfb68f1f183e499ca`。
-- [原版 Wiki 页面目录](https://antimatterdimensions.wiki.gg/wiki/Antimatter_Dimensions_Wiki/pages)：MediaWiki API 于 2026-11-26 核对，页面修订号 `1312`；用于核对英文条目是否已被本站收录。
-- [翻译政策与来源清单](https://github.com/OrekiDawson/AD-Oreki-Wiki/tree/292b92e53d2b5c6f001028a58c3a63d9b3940283/docs/translation)：查看原始修订、署名和审校状态；链接固定到 2026-11-26 核对的仓库修订。
+- [原版 Wiki 页面目录](https://antimatterdimensions.wiki.gg/wiki/Antimatter_Dimensions_Wiki/pages)：用于核对英文条目是否已被本站收录。
+- [翻译政策与来源清单](https://github.com/OrekiDawson/AD-Oreki-Wiki/tree/292b92e53d2b5c6f001028a58c3a63d9b3940283/docs/translation)：查看原始修订、署名和审校状态。
 
 ## 译文边界与许可
 
-本专区是原版 Wiki 内容的中文翻译，不把 Oreki Edition 的数值、功能或开发记录混入原版正文。每篇译文保留原文标题、来源链接、原始修订号、翻译状态和 CC BY-SA 4.0 署名信息；原文与译文均按适用许可使用。发现术语或事实问题时，欢迎按[知识库规则](/wiki-rules)提出修改建议。
+本专区是原版 Wiki 内容的中文翻译，不把 本 MOD 的数值、功能或开发记录混入原版正文。每篇译文保留原文标题、来源链接、原始修订号、翻译状态和 CC BY-SA 4.0 署名信息；原文与译文均按适用许可使用。发现术语或事实问题时，欢迎按[知识库规则](/wiki-rules)提出修改建议。

@@ -1,5 +1,5 @@
 ---
-title: "Mod 一览"
+title: "原版:Mod 一览"
 description: "原版 Wiki《Mods》条目的简体中文翻译：现实更新期与更早期的社区 MOD 清单（作者、状态、内容与可用进度）"
 tags:
   - 原版Wiki翻译
@@ -25,7 +25,7 @@ aliases:
 | 名称 | 作者 | 内容 | 状态／备注 |
 | --- | --- | --- | --- |
 | [AD: Rewarded](https://rangaz.github.io/AntimatterDimensionsWithAchievementRewards/) | Rangazz | 为大量成就加入新的或强化的奖励，并附带其它改进 | 开发完成 |
-| [AD: Redemption Legacy](https://toilet45.github.io/ADRedemption/) | Royal 等 | 新增名为 Mending 的威望层与大量新功能，其中包括突破 $\text{e}9\text{e}15$ 反物质的能力 | 原本还有更多计划，留给它的 Break Eternity 移植版 |
+| [AD: Redemption Legacy](https://toilet45.github.io/ADRedemption/) | Royal 等 | 新增名为 Mending 的威望层与大量新功能，其中包括突破 e9e15 反物质的能力 | 原本还有更多计划，留给它的 Break Eternity 移植版 |
 
 原文表格另有一行空白占位。AD: Redemption Legacy 的作者栏原站注明「其他开发者：Amity、aswefljkd、cyxw、Hexa、incremental_gamer、sxy62146214、Wellington，以及致谢名单中的贡献者」。
 
@@ -53,8 +53,8 @@ aliases:
 ### AD: Smooth
 
 - 链接：<https://googolplexo.github.io/AntimatterDimensionsSmooth/>｜作者：Googolplex｜仓库：<https://github.com/Googolplexo/AntimatterDimensionsSmooth>｜状态：持续开发
-- 所有公式都改成平滑函数：软上限与（多数）硬上限被去掉或从开局就生效，因此整个游戏需要重新平衡，当前终局到 $\text{e}4000$。
-- 平衡范围：到 EC10 之前，或 $\text{e}100$ EP。
+- 所有公式都改成平滑函数：软上限与（多数）硬上限被去掉或从开局就生效，因此整个游戏需要重新平衡，当前终局到 e4000。
+- 平衡范围：到 EC10 之前，或 e100 EP。
 
 ### AD: Space
 
@@ -64,7 +64,7 @@ aliases:
 
 ## 来源与许可
 
-- 原文：[Mods](https://antimatterdimensions.wiki.gg/index.php?title=Mods&oldid=3129)（修订 ID 3129；抓取于 2026-11-15）
+- 原文：[Mods](https://antimatterdimensions.wiki.gg/index.php?title=Mods&oldid=3129)（修订 ID 3129）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Mods&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为简体中文翻译（改编），已修改：翻译正文与表格、把 MOD 信息框模板合并为列表条目、统一术语、看板图与加载图未转载；本页按相同许可共享。
 - 原文图片未转载：原页含四个 MOD 的加载画面截图（Mod-loadingscreen-faster/puzzled/rewarded/smooth/space.png），此处仅保留文字说明。

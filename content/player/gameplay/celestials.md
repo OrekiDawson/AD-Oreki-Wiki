@@ -1,6 +1,6 @@
 ---
-title: "天神系统：七位天神改变了什么"
-description: "从特蕾莎到佩勒，认识现实之后七位天神带来的资源、规则与成长方向"
+title: "天神"
+description: "七位天神的独立机制、资源、特殊现实与终局。"
 tags:
   - 玩法
   - 天神
@@ -9,65 +9,79 @@ aliases:
   - "/gameplay/celestials"
 ---
 
-现实之后，《反物质维度》不再只是把同一条数字曲线推得更高。七位天神会轮流改写熟悉的规则：符文变成配装题，时间变成需要管理的资源，暗物质带来另一条生产曲线，最后的毁灭则会拆掉一部分旧优势，要求你在新规则下重新建立增长。
+当玩家终于学会在无限、永恒与现实之间不断重来，游戏才介绍七位新的对手。它们叫天神（Celestials），却并不都是要靠更高攻击力击败的敌人；每位掌管不同的成长机制，带来自己的规则、故事与限制。
 
-原版的接触顺序是：**特蕾莎 → 鹿颈长 → 无名氏 → 薇 → 太阳神 → 莱特拉 → 佩勒**。它们会随着现实阶段和前置内容逐步开放，不是七个同时出现的升级按钮。[天神总览](https://antimatterdimensions.wiki.gg/wiki/Celestials?oldid=3187)
+原版买齐现实升级后，第一位天神特蕾莎出现。接下来，玩家会发现符文可以献祭，时间能够储存，原本互斥的研究可以同时获得，甚至连维度的等效购买量也可以用非整数表示。许多天神专属机制按真实时间计算，不随普通游戏加速同步变化。
 
-## 七位天神各自带来什么
+## 特蕾莎：现实的容器
 
-### 特蕾莎：学会把符文当成组合
+[特蕾莎](/player/original/ow-teresa)（Teresa），现实之神。她的玩法从一个可以投入现实机器的容器开始；投入到一定程度，就能开放新的奖励。原版容器达到 1e14 RM 后开放她的现实，那里 IP 与 EP 收益受到 $x^{0.55}$ 的削弱。
 
-特蕾莎（Teresa）围绕现实机器、符文和特殊现实展开。[特蕾莎资料](https://antimatterdimensions.wiki.gg/wiki/Teresa?oldid=3370)
+此前你可能只在乎背包里最强的那几枚符文。击败特蕾莎之后，舍弃符文也可以成为成长的一部分：她的现实会强化符文献祭，没能选中的装备不再只是占用空间的东西。
 
-她带来的第一个变化不是又一个倍率，而是让你开始比较符文之间的组合关系。普通现实循环稳定后，再把资源投向能直接改善当前限制的能力，通常比只追逐一次现实的短期产出更有价值。
+## 鹿颈长：倒写的名字
 
-### 鹿颈长：限制会改变符文的价值
+[鹿颈长](/player/original/ow-effarig)（Effarig）的名字本身就藏着一个玩笑：把 Giraffe（长颈鹿）倒着写，恰好是 Effarig。社区 Wiki 所引的开发日志将它与开发者 SpectralFlame 经常被误认成长颈鹿的头像联系起来。开发阶段，这位天神还与特蕾莎交换过名字，机制却没有交换。
 
-鹿颈长（Effarig）的特殊现实进一步强调符文搭配，并引入遗迹碎片等后期资源。[鹿颈长资料](https://antimatterdimensions.wiki.gg/wiki/Effarig?oldid=3371)
+原版将特蕾莎的容器灌满至 1e24 RM，即可解锁鹿颈长。每次现实可以获得遗迹碎片，收益与 EP 和使用过的不同符文类型有关；这些碎片能换取符文筛选、自动选择等功能。
 
-限制让熟悉的成长逐步变弱时，增加点击次数没有意义。你需要比较哪些符文仍然有效、哪些效果已经被当前规则削弱，再决定换配置还是换目标。
+鹿颈长的现实分无限、永恒、现实三层。你将在缩减后的规则下，再走一遍熟悉的三次重置。这一次，之前好不容易建立的符文组合会受到新的限制。
 
-### 无名氏：时间也可以成为资源
+## 无名氏：1e40 年
 
-无名氏（The Nameless Ones）把重点转向时间储存、释放和特殊规则。[无名氏资料](https://antimatterdimensions.wiki.gg/wiki/The_Nameless_Ones?oldid=3372)
+[无名氏](/player/original/ow-nameless-ones)（The Nameless Ones）管理储存的游戏时间。其一项升级价格达到 1e40 年，这里的单位确实是年，但并不是要你关掉电脑，等到宇宙老去。
 
-这一阶段的关键不只是在线多久，而是时间是否按当前规则储存、何时释放，以及释放后是否真的推动了目标。普通现实里的挂机习惯不能原封不动搬进来。
+黑洞可以储存时间，之后再释放；现实时间还可以用于增幅现实。无名氏的特殊现实则像一道谜题：它列出了大量削弱，却没有把所有可交互的秘密直接告诉玩家。仔细观察界面有时比提高倍率更重要。完成后，超立方体可扩大大部分无限维度的购买上限。
 
-### 薇：一场现实里的多条件目标
+游戏源码中的 Enslaved 是无名氏早期使用的内部名称，不是另外一位天神。[原版详细条目](/player/original/ow-nameless-ones)收录了改名背景以及隐藏机制的解法，含剧透。
 
-薇（V）的玩法围绕特殊成就和目标展开，奖励包括空间之理（Space Theorems），会让时间研究拥有更大的选择空间。[薇资料](https://antimatterdimensions.wiki.gg/wiki/V?oldid=3373)
+## 薇：不要买第八维度
 
-薇的特殊现实要求在**同一次现实**里同时满足多项条件。不同现实里积攒的临时条件不能简单相加，接近完成也不等于已经具备资格。Oreki Edition 调整过部分门槛，具体数值应以正在使用的版本和游戏内页面为准。
+[薇](/player/original/ow-v)（V）是成就之神。她的入场条件就很不寻常：原版成就 151「你真的不需要它」要求在当前无限中不购买第八反物质维度，却获得 800 个反物质星系。这里限制的是购买，不是要求其拥有数量始终为零。
 
-### 太阳神：把旧系统变成研究对象
+她的目标要求在规定条件下达到指定资源量，多个现实中的临时状态不能随意拼接。完成特殊成就获得的空间之理，可以解除时间研究中的部分路径限制。曾经只能二选一的研究，现在有了同时发挥作用的可能。
 
-太阳神（Ra）会重新利用此前天神的能力，并通过记忆（Memories）等系统逐步强化它们。[太阳神资料](https://antimatterdimensions.wiki.gg/wiki/Ra?oldid=3387)
+## 太阳神：过去的回声
 
-这不是把前四位天神简单重打一遍。太阳神更像一座研究站：你要判断哪些记忆或强化最能改善下一次现实，而早期奖励也会重新成为成长材料。
+[太阳神](/player/original/ow-ra)（Ra）的主题是记忆。此前四位天神的能力在这里重新成为成长对象：记忆碎片生产记忆，记忆等级进一步开放符文炼金和多种便利性功能。
 
-### 莱特拉：暗物质带来另一条生产曲线
+你不必抛下之前学到的所有东西，去理解一个完全陌生的生产链。许多曾经见过的机制，在新的规则下会再次获得意义。
 
-莱特拉（Lai Tela；原文常写作 Lai'tela）引入暗物质维度、奇点（Singularities）与连续统（Continuum）等机制。[莱特拉资料](https://antimatterdimensions.wiki.gg/wiki/Lai%27tela?oldid=3375)
+## 莱特拉：连续的维度
 
-这时的“变强”不再只等于把原有维度乘得更大。先弄清暗物质从哪里产生、通过什么重置保留，再决定购买和自动化策略。进入页面不等于已经完成特殊现实，当前版本的真实条件仍然有效。
+[莱特拉](/player/original/ow-laitela)（Lai'tela；英文资料也常写作 Lai Tela）引入暗物质维度。它们不仅产出暗物质，也产出暗能量；暗能量能够凝聚成奇点，累计奇点又提供长期强化。
 
-### 佩勒：把终局当作不可随意撤销的选择
+更特别的是连续统。游戏从开局便要求玩家一组一组地购买反物质维度，连续统却让相关购买能力能够以连续量表达。这个机制改变的是购买的数学形式，而不仅仅是把自动购买器的间隔变短。
 
-佩勒（Pelle）是最后一位天神。进入毁灭（Doom）后，许多依赖后期系统的强化会受到限制，你要在新的规则下重建前进路线。[佩勒资料](https://antimatterdimensions.wiki.gg/wiki/Pelle?oldid=3376)
+莱特拉的特殊现实还根据完成速度及可用维度层级设置限制。
 
-毁灭不是普通挑战，也不是可以随手试一下再退出的菜单。进入前先读游戏内警告、备份存档，并确认当前版本的退出和恢复边界；进入后先观察哪些资源和升级仍然有效，再规划下一步。
+## 佩勒：最后的选择
 
-## 天神系统的共同规律
+[佩勒](/player/original/ow-pelle)（Pelle），反物质之神，也是最后一位天神。进入毁灭现实后，许多曾经强大的能力会失效，新的裂痕、资源和升级接替了原本的玩法。
 
-天神页面亮起，不代表你已经准备好进入它的特殊现实。每一位天神都在问同一个问题：你是否理解这次限制拿走了什么，以及前一阶段留下的奖励能否成为解题工具。进入前先看符文、遗迹、时间储存、暗物质或终局警告，再决定是否出发。
+它不是能够随手退出的一般挑战。进入之前应阅读游戏警告，如希望保留毁灭前的独立进度，可以先[导出存档](/player/gameplay/saves)。
 
-原版概念与 Oreki Edition 的数值调整需要分开阅读。Android 与 Web 的版本、解锁条件和界面可能不同；集中对照见[原版行为与 Oreki Edition 修改](/player/gameplay/original-vs-mod)，源码实现见[天神判据与跨端编码](/developer/architecture/celestial-implementation)。
+至于七位天神与玩家究竟是什么关系，游戏后期会用逐渐变化的称谓与文本给出答案。这里不提前揭开结局。
 
-如果你正在准备一次特殊现实，而不是查天神百科，请继续读[特殊现实：准备、限制与排障](/player/gameplay/celestial-realities)。
+## 七位天神速查
 
-## 参考资料与相关条目
+| 天神 | 代表性机制 |
+| --- | --- |
+| 特蕾莎 | 符文献祭 |
+| 鹿颈长 | 遗迹碎片、符文管理 |
+| 无名氏 | 时间储存、超立方体 |
+| 薇 | 特殊成就、空间之理 |
+| 太阳神 | 记忆、符文炼金 |
+| 莱特拉 | 暗物质、奇点、连续统 |
+| 佩勒 | 毁灭、裂痕 |
 
-- [Celestials](https://antimatterdimensions.wiki.gg/wiki/Celestials?oldid=3187)
-- [薇的原版门槛定义](https://github.com/IvarK/AntimatterDimensionsSourceCode/blob/5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/secret-formula/celestials/v.js)
+各天神的原版详细数值及故事见上面的独立条目，MOD 差异见 [MOD 改动](/player/gameplay/mod-changes)，特殊现实操作见[特殊现实](/player/gameplay/celestial-realities)。
 
-[现实与时间研究](/player/gameplay/reality-time-studies) · [挑战与真实结算](/player/gameplay/challenges) · [智能自动购买器](/player/gameplay/automation) · [原版行为与 Oreki Edition 修改](/player/gameplay/original-vs-mod)
+## 资料来源
+- [Celestials](https://antimatterdimensions.wiki.gg/index.php?title=Celestials&oldid=3187)。
+- [天神导航原版译文](/player/original/ow-celestial-navigation)及上文各天神原版译文；原始修订、作者与许可见各页来源区。
+- [鹿颈长](https://antimatterdimensions.wiki.gg/index.php?title=Effarig&oldid=3371)：名字的来源与开发历史。
+- [无名氏](https://antimatterdimensions.wiki.gg/index.php?title=The_Nameless_Ones&oldid=3372)：储存时间、谜题和旧内部名称。
+- [特蕾莎](https://antimatterdimensions.wiki.gg/index.php?title=Teresa&oldid=3370)、[原版成就表](https://antimatterdimensions.wiki.gg/index.php?title=Achievements&oldid=3363)。
+
+本文依据原版社区 Wiki 的资料独立编写，涉及其内容的改编按  [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)  共享；原文贡献者见各固定修订的页面历史。

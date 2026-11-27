@@ -1,5 +1,5 @@
 ---
-title: "故障排查：从症状回到源码"
+title: "故障排查"
 description: "从崩溃、停滞和读档异常回到源码入口，建立可复现的排障路径"
 tags:
   - 排查
@@ -27,7 +27,7 @@ aliases:
 
 先把问题缩小到一行调用链，再扩大到整套构建或存档。否则每增加一份报告，噪声也会一起增加。
 
-## Android 崩溃：先找第一个应用栈帧
+## Android 崩溃定位
 
 对于启动崩溃或点击后崩溃，保留完整的 `logcat`，然后从异常类型向上找第一个属于应用代码的栈帧。系统启动器、Firebase 或 AndroidX 出现在栈顶，并不意味着它们制造了错误；它们常常只是第一个把错误调用触发出来的地方。
 
@@ -38,9 +38,9 @@ aliases:
 3. 这个类来自新增 Kotlin、冻结 JAR 还是原始 DEX；
 4. 构建时打包的输入是否就是设备上安装的 APK。
 
-不要先改调用者的异常处理。若 ABI 已经错位，吞掉异常只会把崩溃变成“按钮无反应”。具体的挂起函数调用链见[协程 ABI 崩溃排查](/developer/troubleshooting/coroutine-abi)，Android 的类来源与产物边界见[Android 架构](/developer/architecture/android)。
+不要先改调用者的异常处理。若 ABI 已经错位，吞掉异常只会把崩溃变成“按钮无反应”。具体的挂起函数调用链见[协程 ABI 崩溃排查](/developer/troubleshooting/coroutine-abi)，Android 的类来源与产物边界见 [Android 架构](/developer/architecture/android)。
 
-## tick 不推进：把“没变化”拆成三个状态
+## tick 不推进
 
 调度器停止工作时，先区分：
 
@@ -50,9 +50,9 @@ aliases:
 
 这三个状态在界面上都像“数字不动”，但修复位置完全不同。检查调用链时，沿着“唤醒 → 读取快照 → 判断阶段 → 执行动作 → 写回状态”逐段确认，而不是只看最后一个按钮。
 
-若修改了自动购买器配置，先确认调度器下一次 tick 读取的是哪份状态；某些受托配置会在下一次调度时按合法阶段重新校正。若问题只在切换页面后消失，应把它视为生命周期或状态同步线索，而不是修复结果。相关源码入口可从[双端行为一致性](/developer/architecture/parity)和[Android 自动化停滞的排查方法](/developer/current/known-issues)继续定位。
+若修改了自动购买器配置，先确认调度器下一次 tick 读取的是哪份状态；某些受托配置会在下一次调度时按合法阶段重新校正。若问题只在切换页面后消失，应把它视为生命周期或状态同步线索，而不是修复结果。相关源码入口可从[双端行为一致性](/developer/architecture/parity)和 [Android 自动化停滞的排查方法](/developer/current/known-issues)继续定位。
 
-## 读档异常：先确认格式，再谈迁移
+## 读档异常
 
 读档排查应保留原文件副本，并按以下顺序缩小范围：
 
@@ -73,6 +73,7 @@ aliases:
 ## 相关入口
 
 - [协程 ABI 崩溃排查](/developer/troubleshooting/coroutine-abi)
+- [Web Pages 产物身份](/developer/troubleshooting/web-pages-artifact-integrity)：区分部署错版、资源缺失、缓存漂移与运行时故障。
 - [存档兼容排查](/developer/troubleshooting/save-compatibility)
 - [来源索引](/developer/references/source-index)
 - [架构与运行时](/developer/architecture)

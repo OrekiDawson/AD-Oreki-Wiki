@@ -1,5 +1,5 @@
 ---
-title: "无限升级"
+title: "原版:无限升级"
 description: "原版 Wiki《Infinity Upgrades》条目的完整简体中文翻译：解锁、16 项不可重复升级入口与特殊升级"
 tags:
   - 原版Wiki翻译
@@ -30,7 +30,7 @@ aliases:
 
 由[成就 r41](/player/original/ow-achievements)「No DLC Required」解锁——会额外开放一些可购买的无限升级。
 
-`ipMult` 与一次性升级不同，可以重复购买：初始成本为 10 IP，每次购买后成本 ×10。成本超过 $\text{e}3,000,000$ [无限点数](/player/original/ow-infinity)后，后续成本成长会再叠加 $\times\text{e}10$；达到 $\text{e}6,000,000$ 时封顶。
+`ipMult` 与一次性升级不同，可以重复购买：初始成本为 10 IP，每次购买后成本 ×10。成本超过 e3,000,000  [无限点数](/player/original/ow-infinity)后，后续成本成长会再叠加 $\times\text{e}10$；达到 e6,000,000 时封顶。
 
 | ID | 成本（IP） | 效果 |
 | --- | --- | --- |
@@ -39,7 +39,7 @@ aliases:
 
 ## 来源与许可
 
-- 原文：[Infinity Upgrades](https://antimatterdimensions.wiki.gg/index.php?title=Infinity_Upgrades&oldid=3348)（修订 ID `3348`；最后编辑者 KrutarMarsons；抓取于 2026-11-15）
+- 原文：[Infinity Upgrades](https://antimatterdimensions.wiki.gg/index.php?title=Infinity_Upgrades&oldid=3348)（修订 ID `3348`；最后编辑者 KrutarMarsons）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Infinity_Upgrades&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为**简体中文翻译（改编）**，已修改：翻译正文与表格、统一术语、移除导航与信息框、图片未转载；本页按相同许可共享。
 - 原页通过子模板嵌入 16 项不可重复升级表；本页链接到已翻译的子页面，避免重复内容。

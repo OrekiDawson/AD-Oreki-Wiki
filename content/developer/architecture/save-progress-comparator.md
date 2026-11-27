@@ -1,5 +1,5 @@
 ---
-title: "存档进度比较器：用阶段与近似值判断谁更靠前"
+title: "存档进度比较"
 description: "从 Web ProgressChecker 源码理解跨阶段存档比较、阶段内进度和时间回退判断，避免用单一资源覆盖玩家进度"
 tags:
   - Web
@@ -11,7 +11,7 @@ tags:
 
 比较两份增量游戏存档，不能只问“哪个资源数字更大”。一份存档可能拥有更多现实机器，另一份可能还没现实却已经把永恒点数和挑战推进得更远；更高阶段的当前资源又可能在重置后变小。如果同步逻辑只挑最大的一个数字，结果很容易把真正更靠后的存档覆盖掉。
 
-Web 端用 `ProgressChecker` 把这个问题拆成两个层次：先识别存档已经到达的最高阶段，再用阶段内的近似进度比较接近的存档。本文依据固定提交 [`b28b231efa5b694ce1da8a1e508cfc3ecc099344`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/tree/b28b231efa5b694ce1da8a1e508cfc3ecc099344)，重点阅读 [`src/core/secret-formula/progress-checker.js`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/core/secret-formula/progress-checker.js) 与 [`src/core/storage/progress-checker.js`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/core/storage/progress-checker.js)。它讨论的是比较算法，不是存档文本如何编码，也不是离线时间如何补算。
+Web 端用 `ProgressChecker` 把这个问题拆成两个层次：先识别存档已经到达的最高阶段，再用阶段内的近似进度比较接近的存档。本文依据固定提交  [`b28b231efa5b694ce1da8a1e508cfc3ecc099344`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/tree/b28b231efa5b694ce1da8a1e508cfc3ecc099344)，重点阅读 `src/core/secret-formula/progress-checker.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/core/secret-formula/progress-checker.js） 与 `src/core/storage/progress-checker.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/core/storage/progress-checker.js）。它讨论的是比较算法，不是存档文本如何编码，也不是离线时间如何补算。
 
 ## 先承认：进度不是一条数轴
 
@@ -34,7 +34,7 @@ Web 端用 `ProgressChecker` 把这个问题拆成两个层次：先识别存档
 
 这不是给玩家排名，也不是生成精确的“完成百分比”。它的目标更窄：在两个候选存档明显不同的时候提供方向；接近时返回“不确定”，把选择交给上层流程或玩家。
 
-## 阶段表为什么必须从高到低扫描
+## 阶段表扫描
 
 `progressStages` 定义了从生产反物质、无限、打破无限、复制器、永恒、永恒挑战、时间膨胀，到现实、天神、虚幻机器、佩勒等阶段。每一项都有 `hasReached(save)`，还可能有建议资源和 `subProgressValue(save)`。
 
@@ -42,7 +42,7 @@ Web 端用 `ProgressChecker` 把这个问题拆成两个层次：先识别存档
 
 阶段表最后保留一个总能命中的开局条件，避免合法但非常早期的存档得到“没有阶段”的异常。新增阶段时，不能只在数组中插一项；还要同时定义稳定的阶段 ID、真实可核验的 `hasReached` 和合理的阶段内进度函数，并检查扫描顺序。
 
-## 阶段内进度只是“足够好的近似”
+## 阶段内近似
 
 `getCompositeProgress(save)` 先取得阶段，再计算：
 
@@ -54,7 +54,7 @@ composite = stage.id + min(subProgressValue(save), 1)
 
 这是一项有意的工程取舍。若要得到精确的全局进度，就必须为每个系统定义统一价值、处理重置保留项、平衡数量级，还要随着新机制不断重写评分函数。云冲突或恢复流程通常不值得承担这样的复杂度；“明显领先”“差不多”已经足以决定是否自动替换，接近的情况则应该保守处理。
 
-## 为什么不同阶段使用不同指标
+## 阶段指标
 
 阶段内函数必须选能代表该阶段方向、且能从原始存档对象读取的指标。例如：
 
@@ -67,7 +67,7 @@ composite = stage.id + min(subProgressValue(save), 1)
 
 这些函数并不要求所有资源都单调，也不假装不同阶段的“一个小数点”具有相同物理意义。它们只需要满足一个更实用的性质：在同一阶段，明显更靠后的存档大概率得到更大的近似值；无法满足时，就应缩小结论或返回不确定。
 
-## 为什么要对原始存档对象保持克制
+## 存档对象边界
 
 云比较和恢复流程处理的可能不是当前全局 `player`，而是刚解码、尚未安装到运行时的存档对象。`progress-checker.js` 的注释特别提醒，很多 Decimal 在这里仍是字符串，不能依赖只对当前玩家实例有效的访问器。
 
@@ -80,7 +80,7 @@ composite = stage.id + min(subProgressValue(save), 1)
 
 这条纯函数边界很重要。比较器若依赖当前页面、当前槽位或当前运行时缓存，同一份云存档在不同浏览器状态下可能得到不同结论；更糟的是，比较过程会产生副作用，导致“判断哪份更好”本身改变了游戏。
 
-## “差不多”为什么应该是合法结果
+## 近似结果
 
 `compareSaveProgress(first, second)` 计算两个 composite progress 的差值，只在差距超过一个小阈值时返回方向；差距很小时返回 `0`。这个 `0` 不是算法失败，而是安全设计：近似评分无法证明两份存档的真实差异，就不应该替玩家做不可逆覆盖。
 
@@ -118,7 +118,7 @@ composite = stage.id + min(subProgressValue(save), 1)
 
 如果某份晚期存档被判定为开局，优先检查后期字段是否存在、是否仍是字符串、`hasReached` 是否安全处理可选对象；不要先修改云端覆盖策略。如果阶段正确但方向反了，检查比较函数的返回值约定与调用者的排序方向，比较器返回码不应被当作普通的“分数差值”直接展示。
 
-## 新增阶段或指标时的工程门禁
+## 新增指标门禁
 
 扩展进度比较器至少要回答四个问题：
 
@@ -137,7 +137,7 @@ composite = stage.id + min(subProgressValue(save), 1)
 
 ## 来源与相关条目
 
-- 固定源码：[阶段定义 `progress-checker.js`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/core/secret-formula/progress-checker.js)、[比较器实现 `src/core/storage/progress-checker.js`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/core/storage/progress-checker.js)、[云存档边界 `cloud-saving.js`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/core/storage/cloud-saving.js)。
+- 固定源码：阶段定义 `progress-checker.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/core/secret-formula/progress-checker.js）、比较器实现 `src/core/storage/progress-checker.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/core/storage/progress-checker.js）、云存档边界 `cloud-saving.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/core/storage/cloud-saving.js）。
 - [存档兼容排查](/developer/troubleshooting/save-compatibility)：解释编码、迁移和备份；本文解释存档对象可用之后如何比较进度。
 - [Web 离线进度](/developer/architecture/web-offline-simulation)：解释时间模拟；离线时长不等于进度比较分数。
 - [超大数值模型](/developer/architecture/numeric-model)：解释 Decimal、指数和跨端数值边界。

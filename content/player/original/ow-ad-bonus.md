@@ -1,5 +1,5 @@
 ---
-title: "广告加成"
+title: "原版:广告加成"
 description: "原版 Wiki《Ad Bonus》条目的完整简体中文翻译：移动端专属广告加成、时长上限、永久购买与各阶段加成表"
 tags:
   - 原版Wiki翻译
@@ -59,7 +59,7 @@ aliases:
 
 ## 来源与许可
 
-- 原文：[Ad Bonus](https://antimatterdimensions.wiki.gg/index.php?title=Ad_Bonus&oldid=3443)（修订 ID `3443`；最后编辑者 Alex9127；抓取于 2026-11-26）
+- 原文：[Ad Bonus](https://antimatterdimensions.wiki.gg/index.php?title=Ad_Bonus&oldid=3443)（修订 ID `3443`；最后编辑者 Alex9127）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Ad_Bonus&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为**简体中文翻译（改编）**，已修改：翻译正文与四组表格、统一术语、移除多页签模板与导航、图片未转载；本页按相同许可共享。
 - 说明：原文以多页签模板（Regular / Reality / Celestials / Pelle）组织，译文按阶段展开为四张普通表格，内容与条件未改动。

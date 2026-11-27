@@ -73,13 +73,13 @@ for (const slug of [
 }
 // 类目显示名必须是中文（由各目录 index.md 的 title 提供）
 const CATEGORY_TITLES = {
-  "player/getting-started": "开始游玩 Oreki Edition",
+  "player/getting-started": "开始游玩",
   "player/gameplay": "玩法机制",
-  "player/original": "原版 Wiki 中文翻译",
-  "player/mods": "Oreki Edition 是什么？",
+  "player/original": "原版译文",
+  "player/mods": "MOD 介绍",
   "player/download-and-version": "下载与版本",
   "player/faq": "玩家常见问题",
-  "developer/architecture": "架构与运行时",
+  "developer/architecture": "架构",
   "developer/reverse-engineering": "逆向与语义映射",
   "developer/build": "构建与交付",
   "developer/current": "当前状态",
@@ -141,6 +141,8 @@ const LEGACY_URLS = [
   "references/terminology",
   "troubleshooting/coroutine-abi",
   "troubleshooting/save-compatibility",
+  "player/gameplay/autosave",
+  "player/gameplay/save-compatibility",
 ]
 for (const slug of LEGACY_URLS) {
   const aliasFile = path.join(PUB, slug + ".html")
@@ -186,6 +188,8 @@ const LEGACY_URL_TARGETS = {
   "references/terminology": "player/terminology",
   "troubleshooting/coroutine-abi": "developer/troubleshooting/coroutine-abi",
   "troubleshooting/save-compatibility": "developer/troubleshooting/save-compatibility",
+  "player/gameplay/autosave": "player/gameplay/saves",
+  "player/gameplay/save-compatibility": "player/gameplay/saves",
 }
 for (const [legacy, target] of Object.entries(LEGACY_URL_TARGETS)) {
   const aliasFile = path.join(PUB, legacy + ".html")
@@ -242,7 +246,7 @@ for (const rel of ["player/original/ow-infinity.html", "player/original/ow-dimen
 const aiSummary = path.join(PUB, "developer", "ai-summaries", "index.html")
 if (fs.existsSync(aiSummary)) {
   const html = fs.readFileSync(aiSummary, "utf8")
-  if (!html.includes("审核日期") || !html.includes("<details")) {
+  if (!html.includes("已审核摘要") || !html.includes("<details")) {
     fail("AI Summary 索引缺少审核标识或默认折叠结构")
   }
 }

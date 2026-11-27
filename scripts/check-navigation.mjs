@@ -1,29 +1,10 @@
 import fs from "node:fs"
 import path from "node:path"
-import { execFileSync } from "node:child_process"
 
 const root = process.cwd()
 const content = path.join(root, "content")
 const errors = []
 const builtOnly = process.argv[2] === "--built"
-const gitTimes = new Map()
-try {
-  let timestamp = 0
-  const history = execFileSync("git", ["log", "--format=%ct", "--name-only", "--", "content"], {
-    encoding: "utf8",
-  })
-  for (const line of history.split(/\r?\n/)) {
-    if (/^\d+$/.test(line)) timestamp = Number(line)
-    else if (line && timestamp && !gitTimes.has(line.replaceAll("\\", "/")))
-      gitTimes.set(line.replaceAll("\\", "/"), timestamp)
-  }
-} catch {}
-const updatedAt = (file) => {
-  return (
-    gitTimes.get(path.relative(root, file).replaceAll("\\", "/")) ??
-    Math.floor(fs.statSync(file).mtimeMs / 1000)
-  )
-}
 const walk = (dir) =>
   fs.readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
     const full = path.join(dir, entry.name)
@@ -46,8 +27,7 @@ const allEntries = fs.readFileSync(path.join(content, "all-entries.md"), "utf8")
 const formal = files.filter(
   (file) =>
     !file.includes(`${path.sep}ai-drafts${path.sep}`) &&
-    !file.endsWith(`${path.sep}all-entries.md`) &&
-    !file.endsWith(`${path.sep}recent-updates.md`),
+    !file.endsWith(`${path.sep}all-entries.md`),
 )
 const routeFor = (file) => {
   const rel = path.relative(content, file).replaceAll("\\", "/").replace(/\.md$/, "")
@@ -66,10 +46,6 @@ const indexedRoutes = [...allEntries.matchAll(/\]\((\/[^)]+)\)/g)].map((match) =
 )
 if (new Set(indexedRoutes).size !== formal.length)
   errors.push(`全部条目存在重复或额外入口：${new Set(indexedRoutes).size}/${formal.length}`)
-const recentText = fs.readFileSync(path.join(content, "recent-updates.md"), "utf8")
-const recentRoutes = [...recentText.matchAll(/\]\((\/[^)]+)\)/g)].map((match) =>
-  match[1].replace(/\/$/, ""),
-)
 const formalRoutes = new Set(formal.map(routeFor))
 
 // 目录模型门禁：只有存在真实下级正式页面的目录才允许成为可展开分类。
@@ -98,20 +74,17 @@ for (const file of formal) {
     }
   }
 }
-if (recentRoutes.length !== 24)
-  errors.push(`最近更新索引条目数应为 24，实际为 ${recentRoutes.length}`)
-if (new Set(recentRoutes).size !== recentRoutes.length) errors.push("最近更新索引存在重复入口")
-for (const route of recentRoutes)
-  if (!formalRoutes.has(route)) errors.push(`最近更新索引包含非正式页面：${route}`)
-const expectedRecentRoutes = formal
-  .map((file) => ({ route: routeFor(file), updatedAt: updatedAt(file) }))
-  .sort((a, b) => b.updatedAt - a.updatedAt || a.route.localeCompare(b.route))
-  .slice(0, 24)
-  .map((page) => page.route)
-const expectedRecentSet = new Set(expectedRecentRoutes)
-if (recentRoutes.some((route) => !expectedRecentSet.has(route)) || expectedRecentSet.size !== new Set(recentRoutes).size)
-  errors.push("最近更新索引的路线集合与页面更新时间不一致，请运行 node scripts/generate-navigation.mjs")
 const config = fs.readFileSync(path.join(root, "quartz.config.yaml"), "utf8")
+const navigationModelPath = path.join(root, "scripts/navigation-model.json")
+if (!fs.existsSync(navigationModelPath)) errors.push("缺少唯一导航模型：scripts/navigation-model.json")
+const navigationModel = fs.existsSync(navigationModelPath)
+  ? JSON.parse(fs.readFileSync(navigationModelPath, "utf8"))
+  : null
+const excluded = navigationModel?.excludedFromExplorer
+if (!excluded?.exact?.includes("/tags") || !excluded?.prefixes?.includes("/tags/"))
+  errors.push("导航模型未明确排除 tags/ 及标签根页面")
+if (navigationModel?.categories?.root?.some((rule) => rule.key === "recent-updates" || rule.key === "recent"))
+  errors.push("主导航仍包含已退役的最近更新入口")
 const yamlScalar = (name) => {
   const match = config.match(
     new RegExp(
@@ -130,7 +103,7 @@ const orderedExplorer = fs.readFileSync(
 if (!orderedExplorer.includes("developer/architecture") || !orderedExplorer.includes("developer/references"))
   errors.push("开发者导航缺少语义分类排序")
 if (!orderedExplorer.includes("current-page-ancestors")) errors.push("导航缺少当前页面高亮定位标记")
-if (!orderedExplorer.includes("node.children.length === 0") || !orderedExplorer.includes("filterFn"))
+if (!orderedExplorer.includes("filterNode") || !orderedExplorer.includes("/tags/") || !orderedExplorer.includes("node.children.length === 0") || !orderedExplorer.includes("filterFn"))
   errors.push("导航未阻止空子菜单和空白虚拟分类")
 if (leafDirectoryCount > 0 && !orderedExplorer.includes("node.isFolder = false"))
   errors.push(`发现 ${leafDirectoryCount} 个无下级条目的目录，但插件未将其降级为普通链接`)
@@ -207,6 +180,8 @@ if (builtOnly) {
             errors.push(`构建导航链接无对应页面：${path.relative(publicDir, file)} -> ${href}`)
           if (/\/ai-drafts(?:\/|$)|\/history(?:\/|$)|\/redirect/i.test(route))
             errors.push(`构建导航泄露草稿、历史或废弃入口：${route}`)
+          if (/^\/tags(?:\/|$)/i.test(route))
+            errors.push(`构建导航泄露标签索引：${path.relative(publicDir, file)} -> ${href}`)
         }
       }
     }

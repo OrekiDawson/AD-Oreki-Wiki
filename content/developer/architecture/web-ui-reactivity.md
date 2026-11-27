@@ -1,5 +1,5 @@
 ---
-title: "Web UI 反应式更新：从游戏事件到 Vue 视图"
+title: "Web 界面响应"
 description: "从 EventHub、GameUI 批量刷新和教程弹窗源码理解 Web 状态投影、生命周期与低频重算"
 tags:
   - Web
@@ -13,7 +13,7 @@ Web 端的界面不是把 `player` 对象直接“打印”到页面上。游戏
 
 当前 Web 实现选择了另一种边界：游戏逻辑发出事件，`GameUI` 把一轮变化合并成一次 UI flush，组件通过 `GAME_EVENT.UPDATE` 读取状态并更新自己的投影。教程弹窗又在这个基础上加入阶段签名、阅读位置和低频重算，让“页面会跟着游戏变化”与“页面不会每帧重复做昂贵工作”同时成立。
 
-本文依据 Web 固定提交 [`e1c93caa`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/tree/e1c93caa758de6c39cf814582123d4a35319eb25)，重点阅读 `src/core/event-hub.js`、`src/core/ui.js`、`src/components/modals/OrekiTutorialModal.js` 和教程状态模块。它不讨论 Web 离线时间的计算，也不把页面刷新误当成游戏逻辑或自动化动作。
+本文依据 Web 固定提交  [`e1c93caa`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/tree/e1c93caa758de6c39cf814582123d4a35319eb25)，重点阅读 `src/core/event-hub.js`、`src/core/ui.js`、`src/components/modals/OrekiTutorialModal.js` 和教程状态模块。它不讨论 Web 离线时间的计算，也不把页面刷新误当成游戏逻辑或自动化动作。
 
 ## 先分清逻辑事件和界面事件
 
@@ -35,7 +35,7 @@ Vue 计算属性和 DOM 更新
 
 `EventHub` 的监听器还记录所属 `target`。组件销毁时，`EventHub.ui.offAll(this)` 会移除该组件的监听，避免弹窗关闭后仍收到更新。这个清理动作看似只是内存管理，实际上也保护了状态正确性：一个已经不存在的组件如果继续响应事件，可能读到新存档并操作旧引用，表现为偶发的重复弹窗或控制台异常。
 
-## `GameUI.flushEvents()` 为什么要延后一拍
+## `GameUI.flushEvents()`
 
 `src/core/ui.js` 中的 `GameUI.dispatch` 不会每次调用都立即遍历所有组件。它先去重同名事件；如果尚未安排 flush，就使用 `Promise.resolve().then(...)` 安排一次微任务。随后 `flushEvents()` 批量派发已收集的事件，最后统一发出 `GAME_EVENT.UPDATE`。
 
@@ -76,7 +76,7 @@ Vue 计算属性和 DOM 更新
 
 不能因为 UI 队列只处理一次 `UPDATE`，就删除逻辑层的前后事件；也不能因为两个 UI 事件最终都触发 `UPDATE`，就认为它们对组件没有不同的含义。事件系统优化的目标是减少重复投影，而不是压扁游戏状态转移。
 
-## 教程弹窗：一个有边界的状态投影
+## 教程弹窗
 
 `OrekiTutorialModal.js` 是观察这套架构的好例子。它读取 `TUTORIAL_CHAPTERS`、附录、当前阶段快照和 `TutorialReadingPosition`，负责展示、切章和恢复阅读位置；源码注释明确说明它不写 `player`，也不改变游戏开关。
 
@@ -93,7 +93,7 @@ Vue 计算属性和 DOM 更新
 
 如果用户已经手动选择章节，阶段变化不能抢回焦点；如果打开附录，自动定位也不能把读者跳回主线。界面更新的正确性不仅是“数字新”，还包括不破坏用户正在进行的阅读意图。
 
-## 生命周期与阅读位置为什么要分开
+## 生命周期与阅读位置
 
 教程弹窗可能因为关闭、按 Esc、被更高优先级弹窗顶掉而销毁。组件在 `beforeDestroy()` 中通过弹窗队列判断自己是否仍在队列里：仍在队列通常表示被暂时顶掉，应保留章节和滚动位置；已经出队则表示用户关闭，下次主线章节应按当前阶段重新定位。附录作为查阅资料，则允许在显式关闭后记住位置。
 
@@ -131,7 +131,7 @@ Vue 计算属性和 DOM 更新
 
 ## 来源与相关条目
 
-- Web 固定源码：[事件总线 `src/core/event-hub.js`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/e1c93caa758de6c39cf814582123d4a35319eb25/src/core/event-hub.js)、[UI 混入与 flush `src/core/ui.js`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/e1c93caa758de6c39cf814582123d4a35319eb25/src/core/ui.js)、[教程弹窗 `OrekiTutorialModal.js`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/e1c93caa758de6c39cf814582123d4a35319eb25/src/components/modals/OrekiTutorialModal.js)。
+- Web 固定源码：事件总线 `src/core/event-hub.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@e1c93caa758de6c39cf814582123d4a35319eb25/src/core/event-hub.js）、UI 混入与 flush `src/core/ui.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@e1c93caa758de6c39cf814582123d4a35319eb25/src/core/ui.js）、教程弹窗 `OrekiTutorialModal.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@e1c93caa758de6c39cf814582123d4a35319eb25/src/components/modals/OrekiTutorialModal.js）。
 - [Web 端架构](/developer/architecture/web)：查看启动入口和主循环的职责边界。
 - [Web 离线进度](/developer/architecture/web-offline-simulation)：解释加载后的时间模拟；本文专注事件与视图投影。
 - [双端行为一致性](/developer/architecture/parity)：比较状态、结算与界面结果的跨端契约。

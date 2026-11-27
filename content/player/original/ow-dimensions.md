@@ -1,5 +1,5 @@
 ---
-title: "维度"
+title: "原版:维度"
 description: "原版 Wiki《Dimensions》条目的简体中文翻译：维度层级、累积数量与生产增长"
 tags:
   - 原版Wiki翻译
@@ -30,7 +30,7 @@ $$at^8+bt^7+ct^6+dt^5+et^4+ft^3+gt^2+ht$$
 
 宽泛地说，任何影响某种类型全部维度的倍率，都相当于把该倍率提高到 $x^8$ 次方；如果该类型只有 $n$ 个维度处于活动状态，则相当于 $x^n$ 次方。最能说明这一点的机制是[计数频率](/player/original/ow-tickspeed)：它会影响所有[反物质维度](/player/original/ow-antimatter-dimensions)的生产速度。
 
-计数频率初始为 $\times1.1245$。假设 8 个反物质维度全部解锁，单次购买计数频率最终会收敛为反物质获取量的 $\times2.5567$ 倍。这个效果本身并不算特别显著，但在[打破无限](/player/original/ow-break-infinity)后的价格成长机制启用前，每次计数频率升级的价格只以约 10 点反物质为底数增长；相对于当时的反物质增长速度，这已经对应 $0.4077$ 的[膨胀指数](https://en.wikipedia.org/wiki/Big_O_notation)。
+计数频率初始为 $\times1.1245$。假设 8 个反物质维度全部解锁，单次购买计数频率最终会收敛为反物质获取量的 $\times2.5567$ 倍。这个效果本身并不算特别显著，但在[打破无限](/player/original/ow-break-infinity)后的价格成长机制启用前，每次计数频率升级的价格只以约 10 点反物质为底数增长；相对于当时的反物质增长速度，这已经对应 0.4077 的[膨胀指数](https://en.wikipedia.org/wiki/Big_O_notation)。
 
 ## 来源与许可
 

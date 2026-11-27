@@ -2,6 +2,7 @@
 // 翻译专区检查：清单一致性 / 页面来源与许可 / 状态 / 占位符 / 覆盖率
 import fs from "node:fs"
 import path from "node:path"
+import { ORIGINAL_TITLE_PREFIX } from "./wiki-paths.mjs"
 
 const MANIFEST = "docs/translation/source-manifest.json"
 const PAGES_DIR = "content/player/original"
@@ -117,7 +118,9 @@ for (const file of pages) {
       fail(file + " 清单 path 不一致: " + entry.path)
     if (entry.zh_title !== "") {
       const title = text.match(/^title:\s*["']?(.*?)["']?\s*$/m)?.[1] ?? ""
-      if (title !== entry.zh_title)
+      const comparableTitle = title.replace(ORIGINAL_TITLE_PREFIX, "")
+      const comparableManifestTitle = String(entry.zh_title).replace(ORIGINAL_TITLE_PREFIX, "")
+      if (comparableTitle !== comparableManifestTitle)
         fail(file + " 中文标题与清单 zh_title 不一致: " + title + " vs " + entry.zh_title)
     }
   }
@@ -141,7 +144,9 @@ for (const p of articles) {
   }
   if (["REVIEWED", "VERIFIED AGAINST GAME"].includes(p.status)) {
     const key = p.path || p.zh_title || p.title
-    if (!reviewCorpus.includes(key) && !reviewCorpus.includes(p.zh_title || "\u0000")) {
+    const zhTitle = p.zh_title || ""
+    const bareZhTitle = zhTitle.replace(ORIGINAL_TITLE_PREFIX, "")
+    if (!reviewCorpus.includes(key) && !reviewCorpus.includes(zhTitle || "\u0000") && !reviewCorpus.includes(bareZhTitle || "\u0000")) {
       fail("清单标记 " + p.status + " 但缺少页面级审校记录: " + p.title)
     }
   }

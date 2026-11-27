@@ -10,11 +10,11 @@ aliases:
   - "/reverse-engineering"
 ---
 
-逆向工程不是把混淆类名机械翻译成漂亮的 Kotlin 名称，而是证明一段运行时代码究竟接受什么输入、返回什么结果，以及这份理解能否安全地被新代码使用。对 Oreki Edition 来说，DEX 是冻结的事实边界；语义映射是研究资料；Kotlin 适配层才是新增业务应该依赖的工程边界。
+逆向工程不是把混淆类名机械翻译成漂亮的 Kotlin 名称，而是证明一段运行时代码究竟接受什么输入、返回什么结果，以及这份理解能否安全地被新代码使用。对 本 MOD 来说，DEX 是冻结的事实边界；语义映射是研究资料；Kotlin 适配层才是新增业务应该依赖的工程边界。
 
 ## 一次调查从哪里开始
 
-先固定 Android 3.21 基线和待调查的行为，再从 DEX 或反编译结果找到类、方法、字段和调用点。接着用描述符确认参数与返回类型，用寄存器和控制流确认数据怎样流动，最后把结果与[3.21 绑定规则](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/fb1299a132f134eb4fab009643ee3fc3d6c57edf/baseline/versions/3.21/bindings.json)和[第一方类索引](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/fb1299a132f134eb4fab009643ee3fc3d6c57edf/docs/deobfuscation/data/first-party-3.21-index.csv)交叉核对。
+先固定 Android 3.21 基线和待调查的行为，再从 DEX 或反编译结果找到类、方法、字段和调用点。接着用描述符确认参数与返回类型，用寄存器和控制流确认数据怎样流动，最后把结果与 3.21 绑定规则（源码定位：OrekiDawson/AD-Oreki-Edition-Android@fb1299a132f134eb4fab009643ee3fc3d6c57edf/baseline/versions/3.21/bindings.json）和第一方类索引（源码定位：OrekiDawson/AD-Oreki-Edition-Android@fb1299a132f134eb4fab009643ee3fc3d6c57edf/docs/deobfuscation/data/first-party-3.21-index.csv）交叉核对。
 
 这个顺序很重要。短类名只能告诉你“产物里有一个符号”，不能告诉你它是玩家状态、视图对象还是临时包装器；绑定表也只能说明某个版本的映射，不能承诺下一版仍然如此。
 
@@ -24,7 +24,7 @@ DEX 保存的是类、字段、方法和字节码等运行时结构，不是带�
 
 描述符是跨工具最小、也最可靠的契约。例如同样叫 `a` 的方法，如果参数数量、对象类型或返回值不同，它们就是不同的调用边界。只有类名、方法名、字段名和描述符一起吻合，映射才足以进入适配层；缺少其中一项时，应保留为待核实线索。
 
-## 从结构恢复语义，而不是凭名字猜
+## 从结构恢复语义
 
 语义恢复要把三种证据拼在一起：调用者怎样使用结果，被调用者怎样读写状态，附近的常量、条件和生命周期如何限制它。一个返回布尔值的方法可能代表“已解锁”，也可能只是“缓存已存在”；只有追到状态变化和调用场景，才知道它在游戏中的意义。
 
@@ -34,9 +34,11 @@ DEX 保存的是类、字段、方法和字节码等运行时结构，不是带�
 2. **行为解释**：控制流和调用点支持某个语义判断；
 3. **工程契约**：Kotlin 或其他新代码已经用稳定的入口隔离了这个判断，并能在版本变化时集中修正。
 
-这三层不能互相冒充。结构事实不是功能验证，行为解释也不是发布许可。需要更完整的寄存器、描述符和恢复示例时，阅读[DEX 与 ABI 反混淆](/developer/reverse-engineering/dex-abi)。
+这三层不能互相冒充。结构事实不是功能验证，行为解释也不是发布许可。需要更完整的寄存器、描述符和恢复示例时，阅读 [DEX 与 ABI 反混淆](/developer/reverse-engineering/dex-abi)。
 
-## 为什么要把混淆 ABI 关在适配层里
+如果需要从反编译器的伪代码回到可验证的行为，继续阅读[反编译与源码恢复](/developer/reverse-engineering/decompilation)：它把版本固定、描述符核对、寄存器追踪和 Kotlin 适配层串成一条调查路径。
+
+## 混淆 ABI 边界
 
 直接让新业务到处调用混淆类，会把一次逆向推断扩散成整个项目的隐形依赖：版本一换，许多文件同时失效；一次反射失败，还可能在主循环里表现成看似无关的进度停滞。当前做法是把类、字段和方法解析集中在 `GameApi.kt` 等入口，把自动化和其他新业务依赖的语义接口留在 Kotlin 代码中；需要保留旧静态调用契约的地方，再通过明确的桥接进入旧运行时。
 
@@ -61,8 +63,8 @@ DEX 保存的是类、字段、方法和字节码等运行时结构，不是带�
 
 - [Android 开发者：DEX 文件格式](https://source.android.com/docs/core/runtime/dex-format)：DEX 的类、方法、字段和数据结构。
 - [Android 开发者：Dalvik 字节码](https://source.android.com/docs/core/runtime/dalvik-bytecode)：寄存器、指令和调用约定。
-- [Android `GameApi.kt`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/fb1299a132f134eb4fab009643ee3fc3d6c57edf/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/GameApi.kt)：集中式运行时适配入口。
-- [Android `OrekiAutomationScheduler.kt`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/fb1299a132f134eb4fab009643ee3fc3d6c57edf/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiAutomationScheduler.kt)：Kotlin 调度器与旧调用契约的结合点。
+- Android `GameApi.kt`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@fb1299a132f134eb4fab009643ee3fc3d6c57edf/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/GameApi.kt）：集中式运行时适配入口。
+- Android `OrekiAutomationScheduler.kt`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@fb1299a132f134eb4fab009643ee3fc3d6c57edf/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiAutomationScheduler.kt）：Kotlin 调度器与旧调用契约的结合点。
 - [Android 逆向资料目录](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/tree/fb1299a132f134eb4fab009643ee3fc3d6c57edf/docs/deobfuscation)：反编译、索引和版本迁移资料；不等同于可直接编译的游戏源码。
 
 返回[开发者参考](/developer/references/) · [架构与运行时](/developer/architecture/) · [构建与交付](/developer/build/)

@@ -1,5 +1,5 @@
 ---
-title: "天神导航·图库"
+title: "原版:天神导航·图库"
 description: "原版 Wiki《Celestial Navigation/Gallery》子页面的简体中文翻译：天神导航 47 张进度截图的图注（图片未转载）"
 tags:
   - 原版Wiki翻译
@@ -23,11 +23,11 @@ aliases:
 ## 进度图注（按原站顺序）
 
 1. 初始状态
-2. 向特蕾莎的 RM 容器灌注 $\text{e}14$ RM，解锁特蕾莎的现实
+2. 向特蕾莎的 RM 容器灌注 e14 RM，解锁特蕾莎的现实
 3. 完成特蕾莎的现实
-4. 灌注 $\text{e}21$ RM，解锁复兴点数商店
-5. 灌注 $\text{e}24$ RM，解锁鹿颈长
-6. 解锁鹿颈长的现实（花费 $5\text{e}11$ 遗迹碎片）
+4. 灌注 e21 RM，解锁复兴点数商店
+5. 灌注 e24 RM，解锁鹿颈长
+6. 解锁鹿颈长的现实（花费 5e11 遗迹碎片）
 7. 完成鹿颈长的无限层
 8. 完成鹿颈长的永恒层，解锁无名氏（为美观把最佳符文等级与稀有度改为 0）
 9. 完成鹿颈长的现实层，薇现身（最佳符文等级与稀有度改为 0）
@@ -68,14 +68,14 @@ aliases:
 44. 第五次达到星系生成器上限
 45. 全部裂痕 200%，且未生成任何星系
 46. 生成 100,000,000,000（e11）个星系，佩勒（青色）纹章完全成型
-47. 反物质达到 $\text{e}9,000,000,000,000,000$（e9 Qa）
+47. 反物质达到 e9,000,000,000,000,000（e9 Qa）
 48. （额外）螺旋在生成 210,000,000,000（2.1e11）个星系时停止
 
 > 原站图注里的「为美观改动」说明：部分截图为了让画面整洁，人为修改了最佳符文等级、稀有度、虚幻机器或星系生成数量；这类说明在图注中已保留（如上）。
 
 ## 来源与许可
 
-- 原文：[Celestial Navigation/Gallery](https://antimatterdimensions.wiki.gg/index.php?title=Celestial_Navigation%2FGallery&oldid=2816)（修订 ID 2816；抓取于 2026-11-15）
+- 原文：[Celestial Navigation/Gallery](https://antimatterdimensions.wiki.gg/index.php?title=Celestial_Navigation%2FGallery&oldid=2816)（修订 ID 2816）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Celestial_Navigation/Gallery&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为简体中文翻译（改编），已修改：翻译全部图注、把图片画廊改为有序列表、统一术语、**47 张截图全部未转载**；本页按相同许可共享。
 - 原文图片未转载：原页为纯图库，含 47 张 PNG（Cels-navigation-01…47 系列，外加最终帧），译文仅保留图注文字。

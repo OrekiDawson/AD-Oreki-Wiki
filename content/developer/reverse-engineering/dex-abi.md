@@ -1,5 +1,5 @@
 ---
-title: "DEX 与 Smali：从寄存器恢复可用的 Kotlin ABI"
+title: "DEX 与 ABI"
 description: "理解 Android DEX、寄存器、方法描述符与反编译边界，并把混淆宿主隔离在可诊断的 Kotlin 适配层之后"
 tags:
   - 逆向
@@ -13,7 +13,7 @@ aliases:
 
 把 APK 交给 JADX，得到一堆看起来像 Java 的文件，最容易让人产生一种错觉：源码已经回来了。实际上，DEX 只承诺运行时需要的结构和指令，反编译器是在这些事实之上补出变量名、控制流和类型解释。混淆后的 `a()` 可能是购买入口，也可能只是缓存读取；真正稳定的线索是描述符、寄存器流、调用者和状态写入。
 
-本文以 Android 3.21 的固定基线为边界，讨论如何从 DEX/Smali 恢复足够可靠的语义，再把它收进 Oreki Edition 的 Kotlin 适配层。目标不是把整款游戏“反编译回源码”，而是让一个需要读取玩家状态、调用原版动作的 MOD 知道：哪些事实已经证明，哪些仍是推断，哪些必须在版本升级时重新核对。
+本文以 Android 3.21 的固定基线为边界，讨论如何从 DEX/Smali 恢复足够可靠的语义，再把它收进本 MOD 的 Kotlin 适配层。目标不是把整款游戏“反编译回源码”，而是让一个需要读取玩家状态、调用原版动作的 MOD 知道：哪些事实已经证明，哪些仍是推断，哪些必须在版本升级时重新核对。
 
 ## DEX 里究竟保存了什么
 
@@ -39,7 +39,7 @@ Lpkg/Player;->g(Ljava/lang/String;)Z
 
 官方的 [DEX 文件格式](https://source.android.com/docs/core/runtime/dex-format)和 [Dalvik 字节码](https://source.android.com/docs/core/runtime/dalvik-bytecode)是工具输出之外的参照。遇到反编译器与 Smali 不一致时，先回到原型和指令，不要让一段漂亮的 Java 代码替 DEX 作证。
 
-## 寄存器与调用约定：先追值，再给名字
+## 调用约定
 
 DEX 方法使用寄存器而不是操作数栈。`.registers N` 给出整个方法的寄存器数量；参数通常以 `p0`、`p1` 的参数视图表示，临时值以 `v0`、`v1` 表示。实例方法的 `p0` 是 `this`，静态方法没有这个隐含对象；参数宽度由描述符决定，`J` 和 `D` 会占用两个连续槽位。
 
@@ -77,9 +77,9 @@ DEX 方法使用寄存器而不是操作数栈。`.registers N` 给出整个方�
 
 举例说，一个返回 `Z` 的 `g()` 可能表示“已解锁”、“缓存存在”或“本次操作允许”。只有追到它的调用场景、相关字段写入和生命周期，才能把结构事实升级成行为解释。若两个候选类都能解释当前调用点，正确做法是保留未绑定状态，继续寻找父类、接口、字段形状、调用者或资源引用等锚点；错误绑定比找不到类更危险，因为它会让错误数据看似正常地流过主循环。
 
-项目把这类证据集中在 Android 3.21 资料中：[绑定规则 `bindings.json`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/fb1299a132f134eb4fab009643ee3fc3d6c57edf/baseline/versions/3.21/bindings.json)约束描述符、结构指纹和调用关系，[第一方类索引](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/fb1299a132f134eb4fab009643ee3fc3d6c57edf/docs/deobfuscation/data/first-party-3.21-index.csv)提供类描述符、父类以及方法/字段数量等排除线索。数量不是语义，但能帮助识别“名字碰巧相同”的候选。
+项目把这类证据集中在 Android 3.21 资料中：绑定规则 `bindings.json`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@fb1299a132f134eb4fab009643ee3fc3d6c57edf/baseline/versions/3.21/bindings.json）约束描述符、结构指纹和调用关系，第一方类索引（源码定位：OrekiDawson/AD-Oreki-Edition-Android@fb1299a132f134eb4fab009643ee3fc3d6c57edf/docs/deobfuscation/data/first-party-3.21-index.csv）提供类描述符、父类以及方法/字段数量等排除线索。数量不是语义，但能帮助识别“名字碰巧相同”的候选。
 
-## 为什么不把整套 DEX 直接变成 Kotlin
+## 为何不直译 DEX
 
 Kotlin 编译器需要编译期可见的源码或类型信息；宿主游戏的混淆类只作为 APK 输入 DEX 存在，不能自然地当作一个可维护的 Kotlin module。生成类型桩或把整个游戏反编译后重编译，也会引入泛型擦除、内部类命名、继承树和数千个互相引用的同步问题。
 
@@ -87,7 +87,7 @@ Kotlin 编译器需要编译期可见的源码或类型信息；宿主游戏的�
 
 这是一种取舍，不是魔法：反射把一部分错误从编译期推迟到运行期，但把不稳定名称集中到少数适配点，版本升级时就能逐项复核。新增业务不应散落 `Class.forName("a/b")` 或混淆字段字符串，更不应绕过适配层直接写存档状态。
 
-## Kotlin、Smali 与静态桥如何接上
+## 静态桥接入
 
 旧调用点可能以静态 JVM 入口调用新增代码。Kotlin 的 `object` 保存调度器状态，`@JvmStatic` 为 `init(Context)`、`allow(String)`、`noteActed(String)` 等入口生成静态桥；这解决的是“调用者如何找到 Kotlin 函数”，并没有免除参数、返回类型和异常语义的 ABI 约束。
 
@@ -95,7 +95,7 @@ Kotlin 编译器需要编译期可见的源码或类型信息；宿主游戏的�
 
 ## 一次 ABI 故障的排查顺序
 
-### 先区分“找不到”“找错了”和“调用后语义不对”
+### ABI 三类故障
 
 - `ClassNotFoundException`：类描述符、类加载器或版本边界不匹配。
 - `NoSuchMethodException` / `NoSuchFieldException`：所有者、名称、参数原型或静态/实例性质不匹配。
@@ -120,9 +120,9 @@ Kotlin 编译器需要编译期可见的源码或类型信息；宿主游戏的�
 
 - [Android DEX 文件格式](https://source.android.com/docs/core/runtime/dex-format)：类、方法、字段及 DEX 数据结构。
 - [Dalvik 字节码参考](https://source.android.com/docs/core/runtime/dalvik-bytecode)：寄存器、指令和调用约定。
-- [Android `GameApi.kt`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/fb1299a132f134eb4fab009643ee3fc3d6c57edf/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/GameApi.kt)：集中式运行时适配入口。
-- [Android `OrekiAutomationScheduler.kt`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/fb1299a132f134eb4fab009643ee3fc3d6c57edf/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiAutomationScheduler.kt)：Kotlin 调度器与旧调用契约的结合点。
-- [3.21 绑定规则](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/fb1299a132f134eb4fab009643ee3fc3d6c57edf/baseline/versions/3.21/bindings.json)与[第一方类索引](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/fb1299a132f134eb4fab009643ee3fc3d6c57edf/docs/deobfuscation/data/first-party-3.21-index.csv)：版本绑定与结构证据。
-- [Android 逆向资料目录](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/tree/fb1299a132f134eb4fab009643ee3fc3d6c57edf/docs/deobfuscation)：反编译、索引和版本迁移资料，不等同于可直接编译的游戏源码。
+- Android `GameApi.kt`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@fb1299a132f134eb4fab009643ee3fc3d6c57edf/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/GameApi.kt）：集中式运行时适配入口。
+- Android `OrekiAutomationScheduler.kt`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@fb1299a132f134eb4fab009643ee3fc3d6c57edf/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiAutomationScheduler.kt）：Kotlin 调度器与旧调用契约的结合点。
+- 3.21 绑定规则（源码定位：OrekiDawson/AD-Oreki-Edition-Android@fb1299a132f134eb4fab009643ee3fc3d6c57edf/baseline/versions/3.21/bindings.json）与第一方类索引（源码定位：OrekiDawson/AD-Oreki-Edition-Android@fb1299a132f134eb4fab009643ee3fc3d6c57edf/docs/deobfuscation/data/first-party-3.21-index.csv）：版本绑定与结构证据。
+- Android 逆向资料目录（源码定位：OrekiDawson/AD-Oreki-Edition-Android@fb1299a132f134eb4fab009643ee3fc3d6c57edf/docs/deobfuscation）：反编译、索引和版本迁移资料，不等同于可直接编译的游戏源码。
 
 继续阅读：[逆向与语义映射](/developer/reverse-engineering/) · [Kotlin 混合运行时 ABI](/developer/architecture/kotlin-runtime) · [Android 架构](/developer/architecture/android) · [协程 ABI 崩溃排查](/developer/troubleshooting/coroutine-abi)

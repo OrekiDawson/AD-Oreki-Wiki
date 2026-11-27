@@ -1,6 +1,6 @@
 ---
-title: "Kotlin 混合运行时：把混淆宿主变成可诊断的边界"
-description: "理解 Oreki Edition 如何用 GameApi、静态桥和调度器连接 Kotlin 业务与原版 DEX"
+title: "Kotlin 运行时"
+description: "理解 MOD 如何用 GameApi、静态桥和调度器连接 Kotlin 业务与原版 DEX"
 tags:
   - 开发者
   - Android
@@ -12,7 +12,7 @@ aliases:
 
 把 Kotlin 加进普通 Android 项目，通常只是增加一个源码目录；把 Kotlin 加进已经编译、混淆、只能在运行时加载的游戏，则是在设计一条 ABI 边界。编译器看不见宿主的 `Player`、`BigDouble` 或自动购买器类型，但业务代码仍要读取它们、调用它们，并在版本变化时知道自己究竟调用了谁。
 
-本文基于 Android 固定 Commit [`9d8fc46`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/tree/9d8fc46ce99279720b5b3068027bb76bceb35756)，重点阅读 [`GameApi.kt`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/GameApi.kt)、`OrekiSpeed.kt`、`OrekiAutomationScheduler.kt`、[`app/build.gradle.kts`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/9d8fc46ce99279720b5b3068027bb76bceb35756/app/build.gradle.kts)以及 [`app/proguard-rules.pro`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/9d8fc46ce99279720b5b3068027bb76bceb35756/app/proguard-rules.pro)。
+本文基于 Android 固定 Commit [`9d8fc46`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/tree/9d8fc46ce99279720b5b3068027bb76bceb35756)，重点阅读 `GameApi.kt`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/GameApi.kt）、`OrekiSpeed.kt`、`OrekiAutomationScheduler.kt`、`app/build.gradle.kts`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@9d8fc46ce99279720b5b3068027bb76bceb35756/app/build.gradle.kts）以及 `app/proguard-rules.pro`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@9d8fc46ce99279720b5b3068027bb76bceb35756/app/proguard-rules.pro）。
 
 ## 两个世界，三种连接
 
@@ -67,13 +67,13 @@ Kotlin 业务层
 
 修改一个适配点时，先核对目标 DEX 中的方法签名、字段数量、继承关系和调用方，再同时检查构建期绑定。不要只因为一个短名类存在，就认为它是正确目标；混淆器可以在不同版本复用同一个短名。
 
-## 静态桥：让旧调用者不用认识 Kotlin
+## 静态桥
 
 Kotlin `object` 适合保存调度器或设置状态，但 Java/Smali 旧调用点通常需要静态方法。对外暴露的 `@JvmStatic` 方法会在生成的 JVM 类上提供静态入口，同时保留 Kotlin 单例的状态语义。这个桥解决的是“怎么调用”，不是“调用什么”：参数和返回类型仍是 ABI，内部仍必须通过 GameApi 访问宿主。
 
 例如调度器可以把 `allow(taskId)`、`noteActed(taskId)` 和 `noteNoop(taskId)`作为稳定的静态桥。若把 `Boolean` 改成可空返回，或移动参数顺序，已经编译的 Smali 调用者不会替你重新适配。反过来，若桥签名稳定，内部可以更换缓存、日志或反射实现，而不必修改每个调用点。
 
-## 初始化与 Android 生命周期
+## Android 生命周期
 
 `OrekiSpeed` 这类初始化入口需要处理 Android 的进程和 Activity 生命周期，而不是只在“第一次打开页面”时设置全局变量。长期对象应保存 `applicationContext`，避免把 Activity 引用带进进程级调度器；初始化应幂等，避免 Activity 重建、切后台恢复或多个组件入口重复启动帧泵。
 
@@ -85,7 +85,7 @@ Kotlin `object` 适合保存调度器或设置状态，但 Java/Smali 旧调用�
 
 如果把三者塞进同一个全局缓存，切换存档或重建 Activity 时就可能把上一份存档的暂停标记、旧 UI 引用或默认设置带到新状态中。
 
-## 调度器是状态机，不是线程锁
+## 调度状态机
 
 `OrekiAutomationScheduler` 的核心不是“开一个线程定时调用”，而是显式记录动作节拍、当前帧名额、每任务失败冷却、无操作重试窗口和预约状态。一次任务应遵循：
 

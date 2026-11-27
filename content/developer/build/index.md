@@ -1,5 +1,5 @@
 ---
-title: "构建与交付：从源码到可交付产物"
+title: "构建与交付"
 description: "沿着输入、编译、签名、验证与发布门禁定位 Android/Web 的构建任务"
 tags:
   - 构建
@@ -14,15 +14,17 @@ aliases:
 
 ### 输入与编译
 
-先读[AGP 构建管线](/developer/build/agp)，再结合[Android 架构](/developer/architecture/android)确认官方 DEX、资源、新增 Kotlin 和构建逻辑分别从哪里进入。需要修改混淆代码边界时，先看[DEX 与 ABI 语义恢复](/developer/reverse-engineering/dex-abi)，不要把反编译结果直接当成可编译源码。
+先读 [AGP 构建管线](/developer/build/agp)，再结合 [Android 架构](/developer/architecture/android)确认官方 DEX、资源、新增 Kotlin 和构建逻辑分别从哪里进入。需要修改混淆代码边界时，先看 [DEX 与 ABI 语义恢复](/developer/reverse-engineering/dex-abi)，不要把反编译结果直接当成可编译源码。
 
 ### 优化与产物
 
 [R8 分层策略](/developer/build/r8)解释 Release 优化为何有边界；[build_mod.py 退役](/developer/build/build-mod-retirement)说明旧补丁链怎样让位给标准 AGP 工程。这里关注的是输入和设计取舍，而不是某次构建的 PASS/FAIL 清单。
 
+[构建可追溯性](/developer/build/artifact-provenance)解释如何用输入指纹、私有资源摘要和 APK provenance 把交付产物绑定回确定的源码；当“同一提交”生成的文件不一致时，从这里开始排查。
+
 ### 安装与升级
 
-[APK 签名与升级兼容](/developer/build/apk-signing)回答“为什么同一个包名仍然不能覆盖安装”：证书、`versionCode`、签名方案和 Android 版本共同决定升级是否成立。涉及泛型字段恢复时，再看[Signature 回填与 Gson 存档](/developer/build/signature-backfill)。
+[APK 签名与升级兼容](/developer/build/apk-signing)回答“为什么同一个包名仍然不能覆盖安装”：证书、`versionCode`、签名方案和 Android 版本共同决定升级是否成立。涉及泛型字段恢复时，再看 [Signature 回填与 Gson 存档](/developer/build/signature-backfill)。
 
 ### CI、交付与回滚
 
@@ -43,4 +45,4 @@ aliases:
 - [证据库](/developer/evidence/)：区分实现、产物、行为和历史证据。
 - [发布状态](/developer/current/release-status)：查可交付候选，不替代发布机制说明。
 
-历史构建事件保留在源码仓库或内部证据目录，[AI Summary](/developer/ai-summaries/)仅作为已审核正文的附属速览；两者都不替代本页列出的操作指南和原理文章。
+历史构建事件保留在源码仓库或内部证据目录，[AI Summary](/developer/ai-summaries/) 仅作为已审核正文的附属速览；两者都不替代本页列出的操作指南和原理文章。

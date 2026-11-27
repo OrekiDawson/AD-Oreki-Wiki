@@ -1,5 +1,5 @@
 ---
-title: "从脚本补丁到 AGP：为什么 build_mod.py 必须退役"
+title: "构建脚本退役"
 description: "从 APK 构建边界、源码接管和可复现性解释旧补丁脚本的退役路径，以及如何判断迁移是否真的安全"
 tags:
   - 构建
@@ -32,7 +32,7 @@ aliases:
 
 `build-logic` 中的 source-takeover 清单就是这条边界的机器可读部分。它不能证明业务行为正确，却能防止一个很隐蔽的错误：源码看似接管成功，最终 APK 里却仍混入旧类，或者新旧两个版本同时存在。
 
-## 为什么增量构建尤其容易骗人
+## 增量构建陷阱
 
 Gradle 能看到文件输入和输出的快照，但原地修改 class、JAR 或 DEX 的脚本若没有把变换声明为任务输入输出，Gradle 可能复用变换前的缓存。结果是“源码已经改了，APK 仍来自旧字节码”。这也是退役工作必须把后处理建模进任务依赖、必要时关闭不透明缓存复用的原因。
 
@@ -59,8 +59,8 @@ Android 仓库的迁移台账记录了旧脚本已从当前主线物理删除，
 
 ## 参考资料
 
-- [Android 仓库的 build_mod 退役迁移台账](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/main/docs/BUILDMOD_RETIREMENT_LEDGER.md)
-- [Android `app/build.gradle.kts`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/main/app/build.gradle.kts)
+- Android 仓库的 build_mod 退役迁移台账（源码定位：OrekiDawson/AD-Oreki-Edition-Android@main/docs/BUILDMOD_RETIREMENT_LEDGER.md）
+- Android `app/build.gradle.kts`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@main/app/build.gradle.kts）
 - [Android AGP 构建管线](/developer/build/agp)
 - [源码接管与 ABI 兼容](/developer/architecture/android)
 - [CI/CD 与受保护门禁](/developer/build/ci-cd)

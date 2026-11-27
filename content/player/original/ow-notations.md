@@ -1,5 +1,5 @@
 ---
-title: "记数法"
+title: "原版:记数法"
 description: "原版 Wiki《Notations》条目的完整简体中文翻译：记数法列表、痛点记数法、标准/质数/字母与移动端专属记数法"
 tags:
   - 原版Wiki翻译
@@ -17,8 +17,6 @@ aliases:
 ---
 
 **记数法（Notations）**是游戏用来表示玩家货币数量的方式。游戏有多种记数法，从普通到勉强可读，再到完全不显示任何内容的都有。
-
-> 本页译自社区 Wiki 同名条目；原作标记该页仍需清理（Cleanup），译文保留原文信息。记数法的**名称是游戏内选项标签**，保留英文原名；说明与表格内容已翻译。
 
 ## 记数法列表
 
@@ -62,7 +60,7 @@ aliases:
 | Custom（自定义） | （玩家自建字母表） |
 | Random（随机） | （每次切换页签都会改变记数法） |
 
-## 「非痛点」记数法的工作原理
+## 非痛点记数法
 
 ### 科学、工程与对数
 
@@ -76,7 +74,7 @@ aliases:
 
 #### 混合变体（科学、工程与对数）
 
-它们与普通变体相同，只是让游戏对 1 Decillion（$1\text{e}33$）以下的所有数字都使用标准记数法。
+它们与普通变体相同，只是让游戏对 1 Decillion（1e33）以下的所有数字都使用标准记数法。
 
 ### 无限（Infinity）
 
@@ -86,7 +84,7 @@ aliases:
 
 ### 标准（Standard）
 
-这种记数法使用数字实际英文名的缩写。例如 $1\text{e}27=10$ Septillion，缩写为 $10$ Sp；$1\text{e}66=1$ Unvigintillion，缩写为 $1$UVg。
+这种记数法使用数字实际英文名的缩写。例如 $1\text{e}27=10$ Septillion，缩写为 10 Sp；$1\text{e}66=1$ Unvigintillion，缩写为 1UVg。
 
 它遵循一些奇怪的规则（比如总在 5 之后进位），随着进度推进会变得极其混乱。例子数字写作 **123.46 K**。
 
@@ -107,7 +105,7 @@ aliases:
 | Octillion | Oc | Novem | N | Nonaginta- | Nn | Nongintenti | Ne |  |  |
 | Nonillion | No |  |  |  |  |  |  |  |  |
 
-由于 $\text{e}9\text{e}15$ 的上限，游戏通常只能到达约 DFM-NNnNePC-NNnNeNA-NNnNeMC-NNnNeMI-NNnNe；但在特殊情况下也可能出现 Attillion 与 Zeptillion。不过，由于所用数字库的问题，它们可能反而让游戏显示「NaN undefined」。
+由于 e9e15 的上限，游戏通常只能到达约 DFM-NNnNePC-NNnNeNA-NNnNeMC-NNnNeMI-NNnNe；但在特殊情况下也可能出现 Attillion 与 Zeptillion。不过，由于所用数字库的问题，它们可能反而让游戏显示「NaN undefined」。
 
 | 示例 | 缩写 | 科学记数法 | 字符串到数字 |
 | --- | --- | --- | --- |
@@ -125,7 +123,7 @@ aliases:
 
 ### 字母 / 表情符号
 
-这些记数法使用 26 个字符，从 $1\text{e}3$ 起每达到 1000 就切换一个字符。所有字母用完后，会在第一个字符后再加一个符号。字母记数法按普通字母表排序，表情符号则按下面的列表。每个表情符号等同对应字母。它们也类似标准记数法，例如那种奇怪的进位机制同样适用。
+这些记数法使用 26 个字符，从 1e3 起每达到 1000 就切换一个字符。所有字母用完后，会在第一个字符后再加一个符号。字母记数法按普通字母表排序，表情符号则按下面的列表。每个表情符号等同对应字母。它们也类似标准记数法，例如那种奇怪的进位机制同样适用。
 
 例子数字写作 **123.46 a** 与 **123.46😠（Angry）**。
 
@@ -160,13 +158,9 @@ aliases:
 | y | 😋 (Yummy) |
 | z | ⚡ (Zap) |
 
-## 备注
-
-原文此节为空。
-
 ## 来源与许可
 
-- 原文：[Notations](https://antimatterdimensions.wiki.gg/index.php?title=Notations&oldid=3133)（修订 ID `3133`；最后编辑者 SheldonLikesToBeNoob；抓取于 2026-11-15）
+- 原文：[Notations](https://antimatterdimensions.wiki.gg/index.php?title=Notations&oldid=3133)（修订 ID `3133`；最后编辑者 SheldonLikesToBeNoob）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Notations&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为**简体中文翻译（改编）**，已修改：翻译正文与表格、统一术语、保留记数法英文名称与表情符号、移除导航模板；图片未转载。
 - 说明：表情符号属于游戏内容字符，按原样保留；「ALL」记数法的缩写与标准记数法相同，原文亦如此标注。

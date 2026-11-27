@@ -1,5 +1,5 @@
 ---
-title: "智能自动购买器：让重复操作按正确的节拍发生"
+title: "自动化"
 description: "理解原版自动购买器与 Oreki 调度器的分工、合法重置、收益判断和进度停滞排查"
 tags:
   - 玩法
@@ -8,17 +8,17 @@ aliases:
   - "/gameplay/automation"
 ---
 
-自动购买器最像一群勤快但各自看表的帮手：维度自动购买器只关心“现在能不能买”，大坍缩自动购买器只关心“现在能不能重置”。Oreki Edition 又加了一位调度员，负责判断当前阶段该做什么、什么时候轮到它，以及这次尝试到底有没有改变游戏。
+自动购买器最像一群勤快但各自看表的帮手：维度自动购买器只关心“现在能不能买”，大坍缩自动购买器只关心“现在能不能重置”。本 MOD 又加了一位调度员，负责判断当前阶段该做什么、什么时候轮到它，以及这次尝试到底有没有改变游戏。
 
 理解这个区别很有用。自动化不会凭空生成反物质、跳过解锁条件，也不会因为一个按钮亮着就保证进度会前进；它只是把本来可以合法完成的重复动作交给游戏自己执行。
 
 ## 两套节拍同时存在
 
-### 原版自动购买器：持续检查自己的任务
+### 原版自动购买器
 
 原版自动购买器随着游戏进度逐步解锁。维度、计数频率、维度提升、星系和大坍缩等自动器各自有间隔、批量或触发条件。它们的工作是重复执行一个已经明确的动作：资源够了就买，达到合法条件就重置。
 
-原版自动器仍然受游戏规则约束：没有货币时不会购买，尚未解锁时不会越级，挑战限制也不会因为自动化而消失。具体解锁和选项可参考[原版自动化资料](https://antimatterdimensions.wiki.gg/wiki/Automation?oldid=3396)；MOD 与原版的差异见[原版行为与 Oreki Edition 修改](/player/gameplay/original-vs-mod)。
+原版自动器仍然受游戏规则约束：没有货币时不会购买，尚未解锁时不会越级，挑战限制也不会因为自动化而消失。具体解锁和选项可参考[原版自动化资料](https://antimatterdimensions.wiki.gg/wiki/Automation?oldid=3396)；MOD 与原版的差异见[原版行为与 MOD 修改](/player/gameplay/original-vs-mod)。
 
 ### Oreki 调度器：定期重新判断路线
 
@@ -60,7 +60,7 @@ MOD 的统一调度节拍目前是 **1～60 秒，默认 10 秒**。它不是把
 
 ### 最后才轮到动作
 
-Android 的源码把这套节拍写成了清楚的协议：[`OrekiStageAuto.onAutoBuyerTick()`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiStageAuto.kt) 先准备一帧，再让 [`OrekiAutomationScheduler`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiAutomationScheduler.kt) 判断任务是否获得名额。动作完成后，调用方根据真实结果记录：
+Android 的源码把这套节拍写成了清楚的协议：`OrekiStageAuto.onAutoBuyerTick()`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiStageAuto.kt） 先准备一帧，再让 `OrekiAutomationScheduler`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiAutomationScheduler.kt） 判断任务是否获得名额。动作完成后，调用方根据真实结果记录：
 
 - **acted**：确实发生了购买、重置或其他状态改变；
 - **no-op**：调用合法，但条件尚未满足，游戏状态没有改变；
@@ -68,7 +68,7 @@ Android 的源码把这套节拍写成了清楚的协议：[`OrekiStageAuto.onAu
 
 这套记录避免了一个很隐蔽的错误：把“我尝试过”当成“游戏已经推进”。
 
-## 合法重置为什么不能被自动化绕过
+## 合法重置
 
 重置不是把几个数字归零，而是一次有规则的结算。大坍缩、永恒和现实都可能清除一部分低层资源，同时保留某些升级、记录或解锁；只有原版结算入口知道这一整套保留关系。
 
@@ -81,7 +81,7 @@ Android 的源码把这套节拍写成了清楚的协议：[`OrekiStageAuto.onAu
 
 它不应直接写入永恒次数、现实次数、阶段位图或自动器状态来模拟“已经完成”。这样做看似能让页面提前亮起，却会制造更难修复的存档：界面以为玩家已经进入高阶段，原版逻辑却没有相应的结算产物，之后的自动化就可能永远找不到合法下一步。
 
-## 为什么 no-op 会让人觉得“自动化坏了”
+## no-op 误判
 
 no-op 是最常见、也最容易被误判的结果。它表示任务确实被检查了，但这次没有产生状态变化，例如：
 
@@ -93,19 +93,19 @@ no-op 是最常见、也最容易被误判的结果。它表示任务确实被�
 
 no-op 不应像真实动作一样推进全局收益节拍，否则一个持续无效的任务会占住名额，把真正能推进的任务饿死。反过来，失败也不能永远立即重试，否则异常会变成高频循环。调度器把 no-op、真实动作和失败分开记录，正是为了让后续重试有不同的节奏。
 
-## 手动改了设置，为什么又恢复
+## 设置恢复
 
 对明确由 MOD 托管的项目，策略会在下一次有效调度时重新应用启用状态、模式或间隔。你刚把一个受管字段改掉，过几秒又看见它恢复，通常不是存档损坏，而是调度器重新执行了当前策略。
 
-有一个重要例外：当前 Android 实现会尊重玩家明确关闭自动永恒的操作；只有原版现实结算触发了专门的复位条件，托管逻辑才可能重新接管。不要把“普通受管字段会恢复”套用到所有自动器设置上。具体边界可查看 [R120 受管字段说明](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/9d8fc46ce99279720b5b3068027bb76bceb35756/reports/R120-01/scheduler-managed-authority.md) 和 [自动永恒托管实现](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiAutoEternityAdoption.kt)。
+有一个重要例外：当前 Android 实现会尊重玩家明确关闭自动永恒的操作；只有原版现实结算触发了专门的复位条件，托管逻辑才可能重新接管。不要把“普通受管字段会恢复”套用到所有自动器设置上。具体边界可查看 R120 受管字段说明（源码定位：OrekiDawson/AD-Oreki-Edition-Android@9d8fc46ce99279720b5b3068027bb76bceb35756/reports/R120-01/scheduler-managed-authority.md） 和 自动永恒托管实现（源码定位：OrekiDawson/AD-Oreki-Edition-Android@9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiAutoEternityAdoption.kt）。
 
 如果希望长期改变受管行为，应调整 MOD 的总开关、目标或管理设置，而不是反复改一个会被策略接管的字段。
 
-## 进度死锁：看起来在运行，其实没有有效状态转移
+## 进度死锁
 
 自动化死锁不一定伴随崩溃。更常见的画面是：资源还在增长，自动器也在尝试，但阶段和目标几分钟都不变。可以按下面顺序排查。
 
-### 1. 先确认“资源增长”是不是目标资源
+### 1. 目标资源
 
 某个维度数字变大，不代表当前阶段需要的无限点数、永恒点数或现实资源已经产生。先看自动化当前目标和下一步真正需要的条件，再判断它是否只是重复购买了低层资源。
 
@@ -135,4 +135,4 @@ no-op 不应像真实动作一样推进全局收益节拍，否则一个持续�
 
 ## 继续阅读
 
-[无限与永恒](/player/gameplay/progression-infinity-eternity) · [阶段解锁与页面显示](/player/gameplay/stage-gates) · [原版行为与 Oreki Edition 修改](/player/gameplay/original-vs-mod) · [存档兼容与自动保存](/player/gameplay/saves)
+[无限与永恒](/player/gameplay/progression-infinity-eternity) · [阶段解锁与页面显示](/player/gameplay/stage-gates) · [原版行为与 MOD 修改](/player/gameplay/original-vs-mod) · [存档兼容与自动保存](/player/gameplay/saves)

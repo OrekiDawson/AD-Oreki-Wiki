@@ -1,6 +1,6 @@
 ---
 title: "AGP 构建管线：从源码到 APK"
-description: "沿着 Oreki Edition 的真实 Gradle 配置，理解 :app 如何组装完整游戏、编译变体、签名并产出 APK"
+description: "沿着 MOD 的真实 Gradle 配置，理解 :app 如何组装完整游戏、编译变体、签名并产出 APK"
 tags:
   - 开发者
   - Android
@@ -10,7 +10,7 @@ aliases:
   - "/build/agp"
 ---
 
-Android 的构建不是“把 Kotlin 编译一下”。对 Oreki Edition 来说，APK 是一条装配线的终点：Gradle 先决定项目和插件，AGP 再为某个变体合并源码、资源、Manifest 与原生库，最后才进入打包和签名。任何一层输入不完整，得到的都可能只是一个能安装、却不是完整游戏的壳。
+Android 的构建不是“把 Kotlin 编译一下”。对本 MOD 来说，APK 是一条装配线的终点：Gradle 先决定项目和插件，AGP 再为某个变体合并源码、资源、Manifest 与原生库，最后才进入打包和签名。任何一层输入不完整，得到的都可能只是一个能安装、却不是完整游戏的壳。
 
 本文以 Android 仓库固定基线 [`9d8fc46`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/tree/9d8fc46ce99279720b5b3068027bb76bceb35756) 为例。若你正在研究其他 Commit，先替换文中的链接和事实，不要把历史目录结构当成当前工程入口。
 
@@ -18,13 +18,13 @@ Android 的构建不是“把 Kotlin 编译一下”。对 Oreki Edition 来说�
 
 从仓库根目录开始，Gradle 的配置顺序大致是：
 
-1. [`settings.gradle.kts`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/9d8fc46ce99279720b5b3068027bb76bceb35756/settings.gradle.kts) 通过 `include(":app")` 注册唯一 Android 应用模块，并用 `includeBuild("build-logic")` 加载本地约定插件。
-2. 根 [`build.gradle.kts`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/9d8fc46ce99279720b5b3068027bb76bceb35756/build.gradle.kts) 声明 `com.android.application` 版本 `9.5.2`，但不直接应用到根项目。
-3. [`app/build.gradle.kts`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/9d8fc46ce99279720b5b3068027bb76bceb35756/app/build.gradle.kts) 应用 Android 插件和 `oreki.android.*` 约定插件，随后配置 Android DSL、source set、build type、签名和验证任务。
+1. `settings.gradle.kts`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@9d8fc46ce99279720b5b3068027bb76bceb35756/settings.gradle.kts） 通过 `include(":app")` 注册唯一 Android 应用模块，并用 `includeBuild("build-logic")` 加载本地约定插件。
+2. 根 `build.gradle.kts`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@9d8fc46ce99279720b5b3068027bb76bceb35756/build.gradle.kts） 声明 `com.android.application` 版本 `9.5.2`，但不直接应用到根项目。
+3. `app/build.gradle.kts`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@9d8fc46ce99279720b5b3068027bb76bceb35756/app/build.gradle.kts） 应用 Android 插件和 `oreki.android.*` 约定插件，随后配置 Android DSL、source set、build type、签名和验证任务。
 
 这解释了一个常见误会：`build-logic/` 不是第二个游戏 App，`app/` 也不是只放 MOD 代码的桥接模块。当前配置把根 `:app` 定义为完整游戏应用；机器相关的完整游戏输入由 `local.properties` 和 `build-logic` 解析。
 
-## 一个 APK 是怎样被组装出来的
+## APK 组装
 
 `app/build.gradle.kts` 先从 `scripts/release-gate-policy.json` 读取版本身份，再解析几个输入：
 
@@ -57,7 +57,7 @@ AGP 的价值在于把这些输入映射到标准任务图，而不是替开发�
 
 `r8` 通过 `initWith(getByName("release"))` 继承 Release，再打开 `isMinifyEnabled = true`。因此它共享大部分应用配置，却不应被当作正式 Release 的替代品。R8 的输入边界、keep 规则和签名处置见 [R8 专题](/developer/build/r8)。
 
-## 签名门禁为什么在构建脚本里
+## 签名门禁
 
 Release 变体只有在 `keys/oreki.jks` 存在时才绑定 `release` signing config，并使用 `OREKI_KS_PASS` 提供密码；配置启用 V3 签名，关闭 V1、V2 与 V4。`packageRelease` 依赖 `verifyReleaseSigning`：没有密钥时，只有明确设置 `oreki.allowUnsignedReleaseExperiment=true` 才允许生成隔离实验包，而且脚本会把它标为不可发布的 unsigned experiment。
 
@@ -89,7 +89,7 @@ Release 变体只有在 `keys/oreki.jks` 存在时才绑定 `release` signing co
 
 **Release 被拒绝**：先判断是缺少 `keys/oreki.jks`，还是密码环境变量不可用。只有隔离实验才可显式允许 unsigned；不能把实验 APK 上传到正式渠道。
 
-**APK 能安装但游戏行为异常**：构建链只能证明产物被组装出来。回到[Android 架构](/developer/architecture/android)，分别验证 GameApi 反射、Kotlin/Smali 桥、存档和自动化调度；构建成功不能替代运行时证据。
+**APK 能安装但游戏行为异常**：构建链只能证明产物被组装出来。回到 [Android 架构](/developer/architecture/android)，分别验证 GameApi 反射、Kotlin/Smali 桥、存档和自动化调度；构建成功不能替代运行时证据。
 
 ## 这个设计值得带走的经验
 

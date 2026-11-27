@@ -1,5 +1,5 @@
 ---
-title: "维度提升"
+title: "原版:维度提升"
 description: "原版 Wiki《Dimension Boosts》条目的完整简体中文翻译：首个威望机制、解锁维度与降低需求的升级"
 tags:
   - 原版Wiki翻译
@@ -26,7 +26,7 @@ aliases:
 - 第五次维度提升解锁[维度献祭](/player/original/ow-dimensional-sacrifice)；
 - 每次维度提升都会给部分[反物质维度](/player/original/ow-antimatter-dimensions)一个 $\times 2$ 倍率。被加成的维度数量随维度提升次数增加，直到第 8 次及以后，会加成所有[反物质维度](/player/original/ow-antimatter-dimensions)。
 
-前 5 次维度提升需要当前最高已解锁维度达到 $20$ 个才能执行，其中第 5 次需要 $20$ 个第 8 维度。第 5 次之后的所有维度提升，都需要比上一次多 $15$ 个第 8 维度。
+前 5 次维度提升需要当前最高已解锁维度达到 20 个才能执行，其中第 5 次需要 20 个第 8 维度。第 5 次之后的所有维度提升，都需要比上一次多 15 个第 8 维度。
 
 | 维度提升次数 | 解锁内容 | 获得加成的维度 |
 | --- | --- | --- |
@@ -43,9 +43,9 @@ aliases:
 
 维度提升的初始需求以及成长增量，可以被游戏更后期的某些升级降低：
 
-- 第一列的第 4 个[无限升级](/player/original/ow-infinity-upgrades)会把维度提升与[反物质星系](/player/original/ow-antimatter-galaxies)的初始需求各降低 $9$ 个维度：维度提升的首次需求从 $20$ 个第 4 维度降为 $11$ 个，反物质星系则从 $80$ 个第 8 维度降为 $71$ 个；
-- [无限挑战 5](/player/original/ow-challenges)会把维度提升与[反物质星系](/player/original/ow-antimatter-galaxies)的初始需求降低 $1$ 个维度；
-- [时间研究](/player/original/ow-time-studies) 211 与 222 分别把维度提升的增量降低 $5$ 与 $2$；
+- 第一列的第 4 个[无限升级](/player/original/ow-infinity-upgrades)会把维度提升与[反物质星系](/player/original/ow-antimatter-galaxies)的初始需求各降低 9 个维度：维度提升的首次需求从 20 个第 4 维度降为 11 个，反物质星系则从 80 个第 8 维度降为 71 个；
+- [无限挑战 5](/player/original/ow-infinity-challenges) 会把维度提升与[反物质星系](/player/original/ow-antimatter-galaxies)的初始需求降低 1 个维度；
+- [时间研究](/player/original/ow-time-studies)  211 与 222 分别把维度提升的增量降低 5 与 2；
 - 充能[无限升级](/player/original/ow-infinity-upgrades)（第一列第 4 行）会进一步降低维度提升的需求。
 
 ## 琐事
@@ -54,7 +54,7 @@ aliases:
 
 ## 来源与许可
 
-- 原文：[Dimension Boosts](https://antimatterdimensions.wiki.gg/index.php?title=Dimension_Boosts&oldid=3333)（修订 ID `3333`；最后编辑者 KrutarMarsons；抓取于 2026-11-15）
+- 原文：[Dimension Boosts](https://antimatterdimensions.wiki.gg/index.php?title=Dimension_Boosts&oldid=3333)（修订 ID `3333`；最后编辑者 KrutarMarsons）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Dimension_Boosts&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为**简体中文翻译（改编）**，已修改：翻译正文与表格、统一术语、移除导航模板与信息框、图片未转载；本页按相同许可共享。
 - 原文表格中的合并单元格按普通表格展开；数值与文字未改动。

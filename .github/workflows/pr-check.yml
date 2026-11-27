@@ -79,14 +79,28 @@ jobs:
         run: bash -n scripts/verify-https.sh
       - name: HTTPS monitor regression tests (Node 24, no network or API calls)
         run: node --test scripts/tests/https-监控.test.mjs
+      - name: Wiki path and title namespace regression tests
+        run: node --test scripts/tests/wiki-paths.test.mjs
       - name: Translation zone checks (manifest / license / attribution / status)
         run: node scripts/check-translation.mjs
       - name: System font policy
         run: node scripts/check-fonts.mjs
       - name: Navigation coverage and public archive boundary
         run: node scripts/check-navigation.mjs
+      - name: Public link policy (source)
+        run: node scripts/check-public-links.mjs
+      - name: Public audit-log separation (source)
+        run: node scripts/check-public-audit-leaks.mjs
+      - name: MOD terminology policy (source)
+        run: node scripts/check-mod-terminology.mjs
+      - name: CJK spacing policy (source)
+        run: node scripts/check-cjk-spacing.mjs
+      - name: Title length and naming hard gate
+        run: node scripts/check-title-length.mjs
       - name: No page transition animation or progress bar
         run: node scripts/check-motion.mjs
+      - name: Mobile and desktop acceptance script syntax
+        run: node --check scripts/acceptance.cjs
       - run: bash scripts/bootstrap-quartz.sh .quartz-build
       - run: npm ci
         working-directory: .quartz-build
@@ -98,6 +112,21 @@ jobs:
         working-directory: .quartz-build
       - name: Built navigation DOM and empty-menu gate
         run: node scripts/check-navigation.mjs --built public
+        working-directory: .quartz-build
+      - name: Public link policy (built HTML)
+        run: node scripts/check-public-links.mjs --built public
+        working-directory: .quartz-build
+      - name: Public audit-log separation (built HTML)
+        run: node scripts/check-public-audit-leaks.mjs --built public
+        working-directory: .quartz-build
+      - name: MOD terminology policy (built HTML)
+        run: node scripts/check-mod-terminology.mjs --built public
+        working-directory: .quartz-build
+      - name: CJK spacing policy (built HTML)
+        run: node scripts/check-cjk-spacing.mjs --built public
+        working-directory: .quartz-build
+      - name: Built title length hard gate
+        run: node scripts/check-title-length.mjs --built public
         working-directory: .quartz-build
       - name: Built font policy
         run: node scripts/check-fonts.mjs --built public

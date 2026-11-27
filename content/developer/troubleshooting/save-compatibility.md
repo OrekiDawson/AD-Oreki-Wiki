@@ -14,9 +14,9 @@ aliases:
 
 排查时先问“哪一个边界失败”，再决定读源码、看样本还是做设备验证。不要一上来修改 JSON；那往往会把原始证据和迁移前状态一起毁掉。
 
-## 先分清 Android 文件和 Web 导出
+## Android 与 Web 存档
 
-Android 与 Web 使用不同的外层格式。Android 工具 [`savecodec-rs`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/tree/fb1299a132f134eb4fab009643ee3fc3d6c57edf/tools/savecodec-rs) 处理的是 Android 文本存档：
+Android 与 Web 使用不同的外层格式。Android 工具 `savecodec-rs`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@fb1299a132f134eb4fab009643ee3fc3d6c57edf/tools/savecodec-rs）处理的是 Android 文本存档：
 
 ```text
 AntimatterDimensionsAndroidSaveFormat + AAA + payload + EndOfSavefile
@@ -24,7 +24,7 @@ AntimatterDimensionsAndroidSaveFormat + AAA + payload + EndOfSavefile
 
 载荷中的 `0a`、`0b`、`0c` 分别还原为 `0`、`+`、`/`；随后补齐 Base64 的 `=`，解码并 gunzip。工具把输入限制为 32 MiB，解压结果限制为 64 MiB，退出码 0/1/2 分别表示成功、数据或 IO 错误、参数错误。这些是 Android 编解码器的边界，不是 Web 导出格式的通用规则。
 
-Web 的 [`serializer.js`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/e1c93caa758de6c39cf814582123d4a35319eb25/src/core/storage/serializer.js) 则把对象经 `JSON.stringify` 转换：`Set` 变成数组，`Infinity` 变成字符串；之后依次执行 `TextEncoder`、pako deflate、字节转字符串、Base64，以及 `0`/`+`/`/` 的可打印化替换，最后附加 `EndOfSavefile`。新格式以 `AntimatterDimensionsSavefileFormatAAB` 开头。没有显式转换器和真实导入验证时，两个平台的文件不能因为都包含 `player` 字段就互相兼容。
+Web 的 `serializer.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@e1c93caa758de6c39cf814582123d4a35319eb25/src/core/storage/serializer.js） 则把对象经 `JSON.stringify` 转换：`Set` 变成数组，`Infinity` 变成字符串；之后依次执行 `TextEncoder`、pako deflate、字节转字符串、Base64，以及 `0`/`+`/`/` 的可打印化替换，最后附加 `EndOfSavefile`。新格式以 `AntimatterDimensionsSavefileFormatAAB` 开头。没有显式转换器和真实导入验证时，两个平台的文件不能因为都包含 `player` 字段就互相兼容。
 
 Web 还保留旧存档的兼容路径：如果文本没有新的魔术前缀，`decodeText()` 会回退到旧的 `atob` 解码。这个回退只能说明“尝试按旧编码读取”，不能证明旧对象已经适配当前游戏。
 
@@ -59,7 +59,7 @@ localStorage
 
 取证时应分别保留：原始文本哈希、解码后的根对象、迁移后关键字段，以及首次加载后界面显示的阶段。只截一张“导入成功”或“资源变少”的截图，无法区分这三种情况。
 
-## “没有保存”不一定是存档损坏
+## 保存问题
 
 Web 的 `canSave()` 会在三种状态下拒绝普通保存：正在选择符文、正在模拟进度，或游戏已进入禁止交互/保存的结束状态。`save()` 还会把根对象写成 `{ current, saves }`，而不是只写当前玩家对象。排查“文件时间没有更新”时，要同时检查保存条件、当前槽位和浏览器的 `dimensionSave` 键。
 
@@ -71,7 +71,7 @@ Web 的 `canSave()` 会在三种状态下拒绝普通保存：正在选择符文
 
 ### 1. 冻结证据
 
-复制原始文件，不在原件上编辑；记录来源平台、游戏构建、浏览器或设备、文件大小、SHA-256 和导入时间。Android 夹具的路径、大小、哈希和阶段字段可参考 [`savestates/manifest.json`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/fb1299a132f134eb4fab009643ee3fc3d6c57edf/savestates/manifest.json)。
+复制原始文件，不在原件上编辑；记录来源平台、游戏构建、浏览器或设备、文件大小、SHA-256 和导入时间。Android 夹具的路径、大小、哈希和阶段字段可参考 `savestates/manifest.json`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@fb1299a132f134eb4fab009643ee3fc3d6c57edf/savestates/manifest.json）。
 
 ### 2. 只做编解码验证
 
@@ -99,8 +99,8 @@ Android 先用 `savecodec decode` 生成新 JSON，不要直接覆盖应用目�
 
 ## 参考资料
 
-- Android [`savecodec-rs/README.md`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/fb1299a132f134eb4fab009643ee3fc3d6c57edf/tools/savecodec-rs/README.md)、[`savestates/manifest.json`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/fb1299a132f134eb4fab009643ee3fc3d6c57edf/savestates/manifest.json)。
-- Web [`storage.js`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/e1c93caa758de6c39cf814582123d4a35319eb25/src/core/storage/storage.js)、[`serializer.js`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/e1c93caa758de6c39cf814582123d4a35319eb25/src/core/storage/serializer.js)、[`migrations.js`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/e1c93caa758de6c39cf814582123d4a35319eb25/src/core/storage/migrations.js)。
+- Android `savecodec-rs/README.md`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@fb1299a132f134eb4fab009643ee3fc3d6c57edf/tools/savecodec-rs/README.md）、`savestates/manifest.json`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@fb1299a132f134eb4fab009643ee3fc3d6c57edf/savestates/manifest.json）。
+- Web `storage.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@e1c93caa758de6c39cf814582123d4a35319eb25/src/core/storage/storage.js）、`serializer.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@e1c93caa758de6c39cf814582123d4a35319eb25/src/core/storage/serializer.js）、`migrations.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@e1c93caa758de6c39cf814582123d4a35319eb25/src/core/storage/migrations.js）。
 - [Web 存档与自动保存](/player/gameplay/saves) · [协程 ABI 崩溃排查](/developer/troubleshooting/coroutine-abi)。
 
 ## 相关条目

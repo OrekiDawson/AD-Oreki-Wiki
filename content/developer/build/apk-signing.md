@@ -1,6 +1,6 @@
 ---
 title: "APK 签名与升级兼容"
-description: "从 APK 签名方案、密钥轮换和版本身份理解 Oreki Edition 的安装与发布门禁"
+description: "从 APK 签名方案、密钥轮换和版本身份理解 MOD 的安装与发布门禁"
 tags:
   - 构建
   - 签名
@@ -11,7 +11,7 @@ aliases:
 
 APK 签名解决的不是“发布前给文件盖章”，而是 Android 的两个核心问题：这个包是不是同一个应用，以及这次更新是否仍然被系统信任。包名、证书身份、`versionCode` 和签名方案一起决定安装与覆盖升级；它们都正确，也只说明系统接受这份 APK，不说明游戏一定能读取旧存档或通过真实运行验收。
 
-本文先解释 Android 的签名模型，再落到 Oreki Edition 当前构建配置。项目里的实验脚本可以支持更多签名组合，但实验能力不等于当前 Release 策略；这条边界是本文最重要的结论。
+本文先解释 Android 的签名模型，再落到 MOD 当前构建配置。项目里的实验脚本可以支持更多签名组合，但实验能力不等于当前 Release 策略；这条边界是本文最重要的结论。
 
 ## Android 到底签了什么
 
@@ -46,24 +46,24 @@ V4：为增量安装准备的 APK 侧车签名
 
 这不是“版本越高就把前面全部替换掉”的简单阶梯。最终选择要同时考虑 `minSdk`、目标设备、升级路径、发布渠道和工具版本。
 
-## Oreki Edition 当前配置
+## MOD 当前配置
 
-当前 Android 仓库的 [`app/build.gradle.kts`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/main/app/build.gradle.kts) 把应用身份和签名配置集中在构建逻辑中：
+当前 Android 仓库的 `app/build.gradle.kts`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@main/app/build.gradle.kts） 把应用身份和签名配置集中在构建逻辑中：
 
 - `applicationId` 是 `net.oreki.antimatterdimensions`；
 - `compileSdk` 和 `targetSdk` 为 37，`minSdk` 为 32；
-- `versionCode`、`versionName` 从 [`scripts/release-gate-policy.json`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/main/scripts/release-gate-policy.json) 读取；
+- `versionCode`、`versionName` 从 `scripts/release-gate-policy.json`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@main/scripts/release-gate-policy.json） 读取；
 - Release 当前显式启用 V3，关闭 V1、V2 和 V4；
 - Release 默认关闭 R8 和资源压缩；独立的 `r8` 变体才打开代码压缩实验；
 - `keys/oreki.jks` 存在时才接入生产签名配置，别名为 `oreki`。
 
-因此当前 Release 的签名结论是“V3 生产签名路径”，不是“脚本能生成的所有方案都已启用”。仓库里的 [`scripts/sign_apk_hybrid.py`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/main/scripts/sign_apk_hybrid.py) 可以调用官方工具生成和验证更复杂的签名组合，包括 V3.2/V4 实验输出；它是实验与验签入口，不能反推 Gradle Release 已经改成 V3.2 或 V4。
+因此当前 Release 的签名结论是“V3 生产签名路径”，不是“脚本能生成的所有方案都已启用”。仓库里的 `scripts/sign_apk_hybrid.py`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@main/scripts/sign_apk_hybrid.py） 可以调用官方工具生成和验证更复杂的签名组合，包括 V3.2/V4 实验输出；它是实验与验签入口，不能反推 Gradle Release 已经改成 V3.2 或 V4。
 
 ## 应用身份的三个坐标
 
 ### 包名：系统认出的应用
 
-`applicationId` 改变后，Android 通常会把 APK 当成另一个应用。旧应用的存档、权限和覆盖安装关系不会因为显示名称相同而自动延续。Oreki Edition 的包名由发布策略约束，不能在构建脚本里随意改成临时名称后再拿去做升级测试。
+`applicationId` 改变后，Android 通常会把 APK 当成另一个应用。旧应用的存档、权限和覆盖安装关系不会因为显示名称相同而自动延续。本 MOD 的包名由发布策略约束，不能在构建脚本里随意改成临时名称后再拿去做升级测试。
 
 ### 证书：谁有权更新
 
@@ -73,7 +73,7 @@ V4：为增量安装准备的 APK 侧车签名
 
 `versionName` 主要给人阅读，`versionCode` 是系统和发布门禁比较新旧版本的整数。新 APK 即使签名正确，如果 `versionCode` 重复或倒退，也可能无法按预期升级。版本值应从发布策略和候选 APK 同时核对，不能只看文件名。
 
-## 密钥轮换：先设计升级链，再生成新包
+## 密钥轮换
 
 密钥轮换通常有两种原因：原密钥存在泄露风险，或希望迁移到更强的密钥。两种情况都不能靠“换一个密码”解决，因为密码只保护 keystore 的使用，应用身份由证书和签名谱系决定。
 
@@ -87,22 +87,22 @@ V4：为增量安装准备的 APK 侧车签名
 
 `apksigner` 提供 `--lineage` 和 `rotate` 等工具路径；但“工具命令成功”不等于工程轮换完成。必须在目标 API 范围中验证覆盖安装、签名信息、权限关系和回滚策略。若应用还通过其他商店或侧载渠道分发，所有渠道都必须认识同一条身份链。
 
-## 签名、存档与运行验收是三道门
+## 签名与存档
 
 签名正确只回答“系统允许安装”。它不回答游戏能否解析旧的 `player.json`；字段名称、泛型签名、混淆 ABI 和迁移逻辑共同决定存档是否可继续使用。一次升级验收至少应分成：旧包建立存档 → 安装新包 → 新包读取并修改存档 → 再保存并重新打开。
 
 同样，证书指纹一致只回答“身份一致”，不回答游戏行为一致。阶段门禁、自动购买器、GUI、挑战结算和跨端行为仍需要独立的设备或 Web 验收。把这些证据混成一条“签名检查通过”会让发布链看起来很完整，却漏掉真正的玩家风险。
 
-## 工程门禁怎样阻止错误的 Release
+## Release 门禁
 
-当前构建把签名判断放进 [`app/build.gradle.kts`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/main/app/build.gradle.kts) 的 `verifyReleaseSigning` 任务：
+当前构建把签名判断放进 `app/build.gradle.kts`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@main/app/build.gradle.kts） 的 `verifyReleaseSigning` 任务：
 
 1. 有 `keys/oreki.jks` 时，Release 走生产 keystore，并由后续工具核对 APK 的包名、版本和证书指纹。
 2. 没有 keystore 时，只有显式设置 `oreki.allowUnsignedReleaseExperiment=true` 才允许生成未签名隔离实验包。
 3. 这个实验状态会写入构建产物的 signing disposition，并明确标记“不得发布”。它不能被 Required Check 或文件存在本身升级成生产资格。
 4. `r8` 变体另有 `verifyR8SigningDisposition`，避免把 R8 实验包误当成稳定 Release。
 
-候选 APK 还要经过项目的 [`verify_release.py`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/main/scripts/verify_release.py) 和官方 `apksigner verify`。发布链应继续核对 APK SHA-256、`.idsig` 是否属于同一候选（只有启用 V4 时需要）、安装升级、启动、存档和真实 GUI 行为。
+候选 APK 还要经过项目的 `verify_release.py`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@main/scripts/verify_release.py） 和官方 `apksigner verify`。发布链应继续核对 APK SHA-256、`.idsig` 是否属于同一候选（只有启用 V4 时需要）、安装升级、启动、存档和真实 GUI 行为。
 
 可以把发布资格写成一个交集，而不是一个按钮：
 

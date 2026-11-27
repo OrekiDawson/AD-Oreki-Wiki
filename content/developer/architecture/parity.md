@@ -27,23 +27,23 @@ Android 和 Web 不可能共享同一套对象：Web 在浏览器里维护 JavaS
 
 ### Web：`passDiff` 驱动的浏览器循环
 
-浏览器入口 [`src/main.js`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/e1c93caa758de6c39cf814582123d4a35319eb25/src/main.js) 先检查浏览器，再调用 [`init()`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/e1c93caa758de6c39cf814582123d4a35319eb25/src/game.js)。初始化会加载存档，并通过 `Tabs.findRestorableTab` 把上次页签重新放回合法页签；这一步很重要：恢复界面不是绕过阶段门禁的后门。
+浏览器入口 `src/main.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@e1c93caa758de6c39cf814582123d4a35319eb25/src/main.js） 先检查浏览器，再调用 `init()`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@e1c93caa758de6c39cf814582123d4a35319eb25/src/game.js）。初始化会加载存档，并通过 `Tabs.findRestorableTab` 把上次页签重新放回合法页签；这一步很重要：恢复界面不是绕过阶段门禁的后门。
 
-正常运行由 [`gameLoop(passDiff)`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/e1c93caa758de6c39cf814582123d4a35319eb25/src/game.js) 接收经过的时间。循环处理原版生产和自动购买器，再让 Oreki 的策略模块参与，最后更新界面与事件。`passDiff` 是时间输入，不是“按钮点击次数”；浏览器失焦或加载存档后的离线进度会进入 `simulateTime`，以多个时间片重新调用游戏循环，而不是凭空把某个资源字段加到目标值。
+正常运行由 `gameLoop(passDiff)`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@e1c93caa758de6c39cf814582123d4a35319eb25/src/game.js） 接收经过的时间。循环处理原版生产和自动购买器，再让 Oreki 的策略模块参与，最后更新界面与事件。`passDiff` 是时间输入，不是“按钮点击次数”；浏览器失焦或加载存档后的离线进度会进入 `simulateTime`，以多个时间片重新调用游戏循环，而不是凭空把某个资源字段加到目标值。
 
-自动化本身位于 [`src/core/oreki-smart-executor.js`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/e1c93caa758de6c39cf814582123d4a35319eb25/src/core/oreki-smart-executor.js)。它根据阶段上限、玩家配置和策略结果选择动作，但动作仍要经过原版购买或重置入口。调度器的意义是限制“何时尝试”，不是替游戏核心回答“这次购买是否真的成功”。
+自动化本身位于 `src/core/oreki-smart-executor.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@e1c93caa758de6c39cf814582123d4a35319eb25/src/core/oreki-smart-executor.js）。它根据阶段上限、玩家配置和策略结果选择动作，但动作仍要经过原版购买或重置入口。调度器的意义是限制“何时尝试”，不是替游戏核心回答“这次购买是否真的成功”。
 
 ### Android：全局节拍包住原版入口
 
-Android 的自动化入口是 [`OrekiStageAuto.onAutoBuyerTick()`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiStageAuto.kt)。它先调用 [`OrekiAutomationScheduler.beginFrame()`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiAutomationScheduler.kt)，再对候选任务走 `allow → 执行 → noteActed/noteNoop` 的节拍协议。
+Android 的自动化入口是 `OrekiStageAuto.onAutoBuyerTick()`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiStageAuto.kt）。它先调用 `OrekiAutomationScheduler.beginFrame()`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiAutomationScheduler.kt），再对候选任务走 `allow → 执行 → noteActed/noteNoop` 的节拍协议。
 
-调度器明确维护全局间隔、预约窗口、失败冷却和 `frameActed`。因此“同一帧最多一个真动作”不是测试约定，而是实现约束；no-op 不应冒充成功，也不应更新真实动作时间。`OrekiStageAuto` 里的购买、坍缩和升级最后通过 [`GameApi`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/GameApi.kt) 进入官方运行时。适配层负责寻找和调用入口，不应直接写解锁位或发放免费资源。
+调度器明确维护全局间隔、预约窗口、失败冷却和 `frameActed`。因此“同一帧最多一个真动作”不是测试约定，而是实现约束；no-op 不应冒充成功，也不应更新真实动作时间。`OrekiStageAuto` 里的购买、坍缩和升级最后通过 `GameApi`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/GameApi.kt） 进入官方运行时。适配层负责寻找和调用入口，不应直接写解锁位或发放免费资源。
 
 这解释了一个常见误会：把 Web 的 `intervalSec` 原样搬到 Android，并不能保证两端同拍。Web 的节拍由浏览器循环和 `passDiff` 共同影响；Android 还受 Activity、线程调度和设备休眠影响。能对齐的是“经过一个合法节拍后发生什么”，不是两个设备的墙上时钟恰好同时按下按钮。
 
 ## 四层一致性契约
 
-### 1. 状态语义：同名字段可能不是同一个意思
+### 1. 状态语义
 
 跨端映射首先要记录字段的语义、编码、默认值和重置时机。升级位图、阶段枚举和挑战状态尤其危险：一个端的位号可能来自上游定义，另一个端可能经过绑定或适配层转换。直接复制整数，得到的可能是一个完全合法却没有任何对应解锁的状态。
 
@@ -54,13 +54,13 @@ Android 的自动化入口是 [`OrekiStageAuto.onAutoBuyerTick()`](https://githu
 - “拥有资源”与“满足解锁条件”；
 - 自动化的意图与原版入口实际接受的结果。
 
-### 2. 时间语义：一秒不是一个固定的 tick
+### 2. 时间语义
 
 Web 的 `gameLoop` 用 `passDiff` 表示经过的时间，离线模拟还会根据可用时间片和模拟精度重新分段。Android 的 `OrekiAutomationScheduler` 则用 `SystemClock` 记录真实间隔，并在每帧管理动作名额。两端都在处理时间，但时间的单位和边界不同。
 
 所以测试不应写成“点击一次，等待一帧”。更可靠的写法是：“从同一检查点开始，运行到下一次合法结算，比较结算前后的字段与资源”。如果要比较速度，记录真实时间、游戏时间和模拟时间三者；不要把界面刷新频率当成游戏进度。
 
-### 3. 数值语义：大数比较要比较表示和运算结果
+### 3. 数值语义
 
 反物质维度的数值远超 JavaScript `Number` 和普通 `Double` 的安全整数范围。跨端对照时，不能把大数先转成普通浮点数再比较精确相等，也不能只比较格式化后的字符串。应保留本端的大数表示，并至少比较数量级、阈值关系、收益是否为零和序列化后的关键字段。
 
@@ -81,7 +81,7 @@ Web 的 `gameLoop` 用 `passDiff` 表示经过的时间，离线模拟还会根�
 
 对每个自动化动作至少记录三件事：决策为何选择它、原版入口是否被调用、调用后哪个状态发生了变化。若只记录第一件事，调度器很容易把“我想买”误写成“我已经买了”。
 
-## 测试策略：比较状态转移，不比较截图
+## 状态转移测试
 
 双端测试最小单元应是“输入存档 + 动作序列 + 关键检查点”。可以从以下场景开始：
 
@@ -94,7 +94,7 @@ Web 的 `gameLoop` 用 `passDiff` 表示经过的时间，离线模拟还会根�
 
 测试夹具应保存输入、版本和动作序列；输出至少包含关键资源的数量级、阶段、重置计数、自动化决策/结果和保存后的字段。这样才能回答“分叉发生在哪一次转移”，而不是只能回答“最后看起来不一样”。
 
-## 差异排查：先找最后一个共同检查点
+## 差异排查
 
 ### 字段先分叉
 
