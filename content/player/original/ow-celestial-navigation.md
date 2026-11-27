@@ -1,5 +1,5 @@
 ---
-title: "天神导航"
+title: "原版:天神导航"
 description: "原版 Wiki《Celestial Navigation》条目的完整简体中文翻译：地图交互、背景与琐事"
 tags:
   - 原版Wiki翻译

@@ -1,5 +1,5 @@
 ---
-title: "超大数值：从尾数与指数到跨端一致性"
+title: "超大数值"
 description: "解释反物质维度为何不能依赖普通浮点数，以及 Web Decimal 与 Android BigDouble 如何表示、计算和验证超大数值"
 tags:
   - 架构

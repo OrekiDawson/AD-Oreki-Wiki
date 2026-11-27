@@ -1,5 +1,5 @@
 ---
-title: "重置成长（威望）"
+title: "原版:重置成长（威望）"
 description: "原版 Wiki《Prestige》条目的简体中文翻译：威望与威望层的定义，以及游戏中的重置机制"
 tags:
   - 原版Wiki翻译

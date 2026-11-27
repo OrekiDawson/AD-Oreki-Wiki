@@ -1,5 +1,5 @@
 ---
-title: "符文炼金"
+title: "原版:符文炼金"
 description: "原版 Wiki《Glyph Alchemy》条目的简体中文翻译：21 种炼金资源、精炼规则、反应机制与全部效果公式"
 tags:
   - 原版Wiki翻译

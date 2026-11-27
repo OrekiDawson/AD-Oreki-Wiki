@@ -1,5 +1,5 @@
 ---
-title: "膨胀升级（被毁灭的现实）"
+title: "原版:膨胀升级（被毁灭的现实）"
 description: "原版 Wiki《Dilation/Upgrades (Doomed)》子页面的简体中文翻译：佩勒现实中可购买与已锁定的膨胀升级"
 tags:
   - 原版Wiki翻译

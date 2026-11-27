@@ -1,5 +1,5 @@
 ---
-title: "永恒里程碑"
+title: "原版:永恒里程碑"
 description: "原版 Wiki《Eternity Milestones》条目的简体中文翻译：27 项永恒里程碑的所需次数、奖励与生效条件"
 tags:
   - 原版Wiki翻译

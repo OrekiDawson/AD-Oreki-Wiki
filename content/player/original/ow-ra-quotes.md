@@ -1,5 +1,5 @@
 ---
-title: "太阳神·引语"
+title: "原版:太阳神·引语"
 description: "原版 Wiki《Ra/Quotes》条目的完整简体中文翻译：太阳神在各触发条件下的全部台词"
 tags:
   - 原版Wiki翻译

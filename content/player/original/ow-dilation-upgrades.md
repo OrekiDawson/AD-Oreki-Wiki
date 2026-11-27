@@ -1,5 +1,5 @@
 ---
-title: "膨胀升级"
+title: "原版:膨胀升级"
 description: "原版 Wiki《Dilation/Upgrades》子页面的完整简体中文翻译：可重复与不可重复膨胀升级"
 tags:
   - 原版Wiki翻译

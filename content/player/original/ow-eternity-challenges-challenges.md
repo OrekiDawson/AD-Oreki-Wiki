@@ -1,5 +1,5 @@
 ---
-title: "永恒挑战·挑战明细"
+title: "原版:永恒挑战·挑战明细"
 description: "原版 Wiki《Eternity Challenges/Challenges》子页面的简体中文翻译：12 个永恒挑战的目标、限制、奖励与各档 IP 门槛"
 tags:
   - 原版Wiki翻译

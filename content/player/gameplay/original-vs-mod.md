@@ -1,5 +1,5 @@
 ---
-title: "原版与 Oreki Edition：差异阅读地图"
+title: "原版与 MOD 差异"
 description: "先判断一条规则属于原版、MOD 还是平台版本，再进入数值改动与 Android/Web 差异专题"
 tags:
   - 玩法

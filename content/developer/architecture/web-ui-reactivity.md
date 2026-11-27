@@ -1,5 +1,5 @@
 ---
-title: "Web UI 反应式更新：从游戏事件到 Vue 视图"
+title: "Web UI 反应式更新"
 description: "从 EventHub、GameUI 批量刷新和教程弹窗源码理解 Web 状态投影、生命周期与低频重算"
 tags:
   - Web

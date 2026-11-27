@@ -1,5 +1,5 @@
 ---
-title: "开始游玩 Oreki Edition：入门阅读地图"
+title: "开始游玩"
 description: "从首次进入游戏到第一次大坍缩，选择适合当前阶段的玩家教程"
 tags:
   - 入门

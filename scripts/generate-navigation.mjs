@@ -4,6 +4,9 @@ import { execFileSync } from "node:child_process"
 
 const root = process.cwd()
 const contentRoot = path.join(root, "content")
+const navigationModel = JSON.parse(
+  fs.readFileSync(path.join(root, "scripts/navigation-model.json"), "utf8"),
+)
 const generated = new Set(["all-entries.md", "recent-updates.md"])
 const configText = fs.readFileSync(path.join(root, "quartz.config.yaml"), "utf8")
 const pageTitleMatch = configText.match(
@@ -57,34 +60,38 @@ function frontmatter(file) {
 
 function route(file) {
   const rel = path.relative(contentRoot, file).replaceAll("\\", "/").replace(/\.md$/, "")
+  if (rel === "index") return "/"
   return rel.endsWith("/index") ? `/${rel.slice(0, -6)}` : `/${rel}`
+}
+
+function matches(rule, route) {
+  return (rule.exact ?? []).includes(route) || (rule.prefixes ?? []).some((prefix) =>
+    route === prefix.replace(/\/$/, "") || route.startsWith(prefix),
+  )
+}
+
+function categoryFor(route) {
+  for (const rootKey of ["player", "developer", "station"]) {
+    const rules = navigationModel.categories[rootKey] ?? []
+    const exact = rules.find((rule) => (rule.exact ?? []).includes(route))
+    if (exact) return { rootKey, rule: exact }
+  }
+  for (const rootKey of ["player", "developer", "station"]) {
+    const rule = (navigationModel.categories[rootKey] ?? []).find((candidate) => matches(candidate, route))
+    if (rule) return { rootKey, rule }
+  }
+  return null
 }
 
 const pages = walk(contentRoot)
   .filter((file) => !generated.has(path.basename(file)))
-  .map((file) => ({ file, route: route(file), ...frontmatter(file) }))
+  .map((file) => {
+    const page = { file, route: route(file), ...frontmatter(file) }
+    const category = categoryFor(page.route)
+    if (!category) throw new Error(`导航模型未为正式页面分配唯一分类：${page.route}`)
+    return { ...page, ...category }
+  })
   .sort((a, b) => a.title.localeCompare(b.title, "zh-CN", { numeric: true, sensitivity: "base" }))
-
-const groups = new Map([
-    [
-      "玩家专区",
-      pages.filter((page) => page.route === "/player" || page.route.startsWith("/player/")),
-    ],
-    [
-      "开发者专区",
-      pages.filter((page) => page.route === "/developer" || page.route.startsWith("/developer/")),
-    ],
-  [
-    "站务与公共页面",
-    pages.filter(
-      (page) =>
-        page.route !== "/player" &&
-        !page.route.startsWith("/player/") &&
-        page.route !== "/developer" &&
-        !page.route.startsWith("/developer/"),
-    ),
-  ],
-])
 
 const lines = [
   "---",
@@ -98,10 +105,15 @@ const lines = [
   `这里列出当前公开发布的 **${pages.length}** 个正式条目。草稿、内部归档、兼容入口和重定向不计入索引。`,
   "",
 ]
-for (const [name, entries] of groups) {
-  lines.push(`## ${name}`, "")
-  for (const page of entries) lines.push(`- [${page.title}](${page.route})`)
-  lines.push("")
+for (const rootGroup of navigationModel.root) {
+  lines.push(`## ${rootGroup.label}`, "")
+  for (const rule of [...(navigationModel.categories[rootGroup.key] ?? [])].sort((a, b) => a.order - b.order)) {
+    const entries = pages.filter((page) => page.rootKey === rootGroup.key && page.rule.key === rule.key)
+    if (!entries.length) continue
+    lines.push(`### ${rule.label}`, "")
+    for (const page of entries) lines.push(`- [${page.title}](${page.route})`)
+    lines.push("")
+  }
 }
 fs.writeFileSync(path.join(contentRoot, "all-entries.md"), `${lines.join("\n")}\n`)
 

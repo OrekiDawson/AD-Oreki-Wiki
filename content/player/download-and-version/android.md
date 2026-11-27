@@ -1,5 +1,5 @@
 ---
-title: "Android：Release、安装与升级"
+title: "Android 版本"
 description: "从官方 Release 选择 Android 包，理解签名覆盖安装并安全测试新版本"
 tags:
   - 玩家

@@ -1,5 +1,5 @@
 ---
-title: "Android 与 Web：版本和行为差异"
+title: "Android 与 Web"
 description: "理解 Oreki Edition 两端的基线、同名功能差异与玩家核对版本的方法"
 tags:
   - 玩法

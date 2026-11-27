@@ -1,5 +1,5 @@
 ---
-title: "维度提升"
+title: "原版:维度提升"
 description: "原版 Wiki《Dimension Boosts》条目的完整简体中文翻译：首个威望机制、解锁维度与降低需求的升级"
 tags:
   - 原版Wiki翻译

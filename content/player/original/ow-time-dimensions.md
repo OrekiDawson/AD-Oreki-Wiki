@@ -1,5 +1,5 @@
 ---
-title: "时间维度"
+title: "原版:时间维度"
 description: "原版 Wiki《Time Dimensions》条目的完整简体中文翻译：时间碎片、计数频率升级、价格成长与三段式成本表"
 tags:
   - 原版Wiki翻译

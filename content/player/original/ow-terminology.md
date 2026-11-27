@@ -1,5 +1,5 @@
 ---
-title: "术语（佩勒用词）"
+title: "原版:术语（佩勒用词）"
 description: "原版 Wiki《Terminology》条目的完整简体中文翻译：佩勒的多维用词表、含义与内部代号"
 tags:
   - 原版Wiki翻译

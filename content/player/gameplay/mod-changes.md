@@ -1,5 +1,5 @@
 ---
-title: "MOD 玩法改动：数值、解锁与自动化"
+title: "MOD 玩法改动"
 description: "集中查看 Oreki Edition 相对原版已核对的门槛缩放、玩法调整与自动化边界"
 tags:
   - 玩法

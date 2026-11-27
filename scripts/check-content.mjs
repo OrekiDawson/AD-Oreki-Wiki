@@ -142,8 +142,13 @@ for (const f of files) {
       const expectedTitle = isRule ? RULE_PAGE_TITLE : POLICY_PAGE_TITLE
       if (fm.title !== expectedTitle) fail("正式规则或方针页标题必须为 " + expectedTitle + ": " + f)
     } else if (!isDraft) {
-      if (fm.title.startsWith("反物质维度MOD Wiki:"))
+      const isOriginalTranslation = f.replaceAll("\\", "/").startsWith("content/player/original/") && !f.endsWith("/index.md")
+      if (!isOriginalTranslation && fm.title.startsWith("反物质维度MOD Wiki:"))
         fail("普通条目标题不应带规则页命名空间前缀: " + f)
+      if (isOriginalTranslation && !fm.title.startsWith("原版:"))
+        fail("原版译文标题必须使用「原版:条目名」命名空间: " + f)
+      if (!isOriginalTranslation && fm.title.startsWith("原版:"))
+        fail("非原版条目不得使用「原版:" + "」命名空间: " + f)
       if (ROUND_LEAD_TITLE.test(fm.title)) {
         fail("专题条目标题不应以 R 轮次或日期开头（时间性材料请移出 content/，放入仓库内部归档目录）: " + f)
       }

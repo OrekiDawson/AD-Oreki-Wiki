@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "root": [
+    { "key": "player", "label": "玩家专区", "route": "/player/", "order": 10 },
+    { "key": "developer", "label": "开发者专区", "route": "/developer/", "order": 20 },
+    { "key": "station", "label": "站务", "route": null, "order": 90 }
+  ],
+  "categories": {
+    "player": [
+      { "key": "getting-started", "label": "开始游玩", "route": "/player/getting-started/", "order": 10, "prefixes": ["/player/getting-started/"], "exact": ["/player", "/player/", "/player/antimatter-dimensions"] },
+      { "key": "download", "label": "下载与版本说明", "route": "/player/download-and-version/", "order": 20, "prefixes": ["/player/download-and-version/"] },
+      { "key": "mechanics", "label": "游戏机制", "route": "/player/gameplay/", "order": 30, "prefixes": ["/player/gameplay/"] },
+      { "key": "mod", "label": "MOD 特色", "route": "/player/mods/", "order": 40, "prefixes": ["/player/mods/"], "exact": ["/player/gameplay/mod-changes", "/player/gameplay/original-vs-mod"] },
+      { "key": "guides", "label": "游戏攻略", "route": "/player/gameplay/stage-progression", "order": 50, "exact": ["/player/getting-started/first-session", "/player/getting-started/first-crunch", "/player/gameplay/stage-progression", "/player/gameplay/infinity", "/player/gameplay/eternity", "/player/gameplay/reality", "/player/gameplay/reality-time-studies", "/player/gameplay/celestials", "/player/gameplay/celestial-realities", "/player/gameplay/challenges", "/player/gameplay/challenge-troubleshooting", "/player/gameplay/stage-gates", "/player/gameplay/stage-gate-troubleshooting"] },
+      { "key": "faq", "label": "常见问题", "route": "/player/faq/", "order": 60, "prefixes": ["/player/faq/"] },
+      { "key": "terms", "label": "术语表", "route": "/player/terminology/", "order": 70, "exact": ["/player/terminology"] },
+      { "key": "original", "label": "原版 Wiki 中文翻译", "route": "/player/original/", "order": 80, "prefixes": ["/player/original/"] }
+    ],
+    "developer": [
+      { "key": "onboarding", "label": "开发入门", "route": "/developer/first-contribution", "order": 10, "exact": ["/developer", "/developer/", "/developer/first-contribution", "/developer/project-overview"] },
+      { "key": "architecture", "label": "系统架构", "route": "/developer/architecture/", "order": 20, "prefixes": ["/developer/architecture/"] },
+      { "key": "reverse", "label": "源码与逆向工程", "route": "/developer/reverse-engineering/", "order": 30, "prefixes": ["/developer/reverse-engineering/"] },
+      { "key": "build", "label": "构建与发布", "route": "/developer/build/", "order": 40, "prefixes": ["/developer/build/"] },
+      { "key": "troubleshooting", "label": "故障排查", "route": "/developer/troubleshooting/", "order": 50, "prefixes": ["/developer/troubleshooting/"] },
+      { "key": "status", "label": "项目状态与运行证据", "route": "/developer/current/", "order": 60, "prefixes": ["/developer/current/", "/developer/evidence/", "/developer/ai-summaries/"] },
+      { "key": "reference", "label": "技术参考", "route": "/developer/references/", "order": 70, "prefixes": ["/developer/references/", "/developer/editorial-guidelines"] }
+    ],
+    "station": [
+      { "key": "all", "label": "全部条目", "route": "/all-entries", "order": 10, "exact": ["/", "/all-entries"] },
+      { "key": "recent", "label": "最近更新", "route": "/recent-updates", "order": 20, "exact": ["/recent-updates"] },
+      { "key": "rules", "label": "知识库规则", "route": "/wiki-rules", "order": 30, "exact": ["/wiki-rules"] },
+      { "key": "not", "label": "本站不是什么", "route": "/wiki-not", "order": 40, "exact": ["/wiki-not"] },
+      { "key": "copyright", "label": "版权与许可", "route": "/copyright", "order": 50, "exact": ["/copyright"] },
+      { "key": "how-to-use", "label": "本站使用说明", "route": "/how-to-use", "order": 60, "exact": ["/how-to-use"] }
+    ]
+  },
+  "folderLabels": {
+    "/player": "玩家专区",
+    "/player/getting-started": "开始游玩",
+    "/player/download-and-version": "下载与版本说明",
+    "/player/gameplay": "游戏机制",
+    "/player/mods": "MOD 特色",
+    "/player/faq": "常见问题",
+    "/player/terminology": "术语表",
+    "/player/original": "原版 Wiki 中文翻译",
+    "/developer": "开发者专区",
+    "/developer/first-contribution": "开发入门",
+    "/developer/project-overview": "项目概览",
+    "/developer/architecture": "系统架构",
+    "/developer/reverse-engineering": "源码与逆向工程",
+    "/developer/build": "构建与发布",
+    "/developer/troubleshooting": "故障排查",
+    "/developer/current": "项目状态",
+    "/developer/evidence": "运行证据",
+    "/developer/references": "技术参考",
+    "/developer/ai-summaries": "AI 摘要"
+  },
+  "stationLabels": {
+    "all-entries": "全部条目",
+    "recent-updates": "最近更新",
+    "wiki-rules": "知识库规则",
+    "wiki-not": "本站不是什么",
+    "copyright": "版权与许可",
+    "how-to-use": "本站使用说明"
+  }
+}

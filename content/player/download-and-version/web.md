@@ -1,5 +1,5 @@
 ---
-title: "Web：入口、缓存与版本识别"
+title: "Web 版本"
 description: "从正式 Web 入口进入 Oreki Edition，判断旧缓存、部署版本与游戏问题的边界"
 tags:
   - 玩家

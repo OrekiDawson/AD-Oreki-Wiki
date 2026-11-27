@@ -1,5 +1,5 @@
 ---
-title: "Android GUI 同步桥：让游戏状态真正到达界面"
+title: "Android GUI 同步桥"
 description: "从 GameApi、阶段快照和主线程队列理解 Android 自动化后的界面刷新、合并与排障"
 tags:
   - Android

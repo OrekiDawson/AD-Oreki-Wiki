@@ -7,6 +7,7 @@
 // 这两个函数必须**自包含**（不能引用模块作用域变量），常量需写在函数体内。
 import path from "node:path";
 import { pathToFileURL } from "node:url";
+import fs from "node:fs";
 
 // 以构建目录为基准解析官方 Explorer（npm ci 固定安装，即使 config 中禁用该条目仍存在）。
 const explorerModule = await import(
@@ -14,101 +15,26 @@ const explorerModule = await import(
 );
 const Explorer = explorerModule.Explorer;
 
-// 一级目录和开发者专区固定语义顺序（slug = 目录名/文件名；不随显示名变化，URL 不变）。
-function compare(a, b) {
-  const ROOT_ORDER = [
-    "player", // 1 玩家专区
-    "developer", // 2 开发者专区
-  ];
-  // 末尾独立站务区（页脚也有固定链接）。
-  const STATION = {
-    "all-entries": 90,
-    "recent-updates": 91,
-    "wiki-rules": 200,
-    "wiki-not": 201,
-    copyright: 202,
-    "how-to-use": 203,
-  };
-  const DEVELOPER_ORDER = {
-    "developer": 0,
-    "developer/first-contribution": 10,
-    "developer/project-overview": 20,
-    "developer/architecture": 30,
-    "developer/reverse-engineering": 40,
-    "developer/build": 50,
-    "developer/troubleshooting": 60,
-    "developer/current": 70,
-    "developer/references": 80,
-    "developer/evidence": 90,
-    "developer/ai-summaries": 100,
-    "developer/editorial-guidelines": 110,
-  };
-  const rank = (node) => {
-    if (!node || !node.slugSegment) return 100;
-    const key = (node.slug || "").replace(/\/index$/, "");
-    if (DEVELOPER_ORDER[key] !== undefined) return DEVELOPER_ORDER[key];
-    if (STATION[node.slugSegment] !== undefined) return STATION[node.slugSegment];
-    const idx = ROOT_ORDER.indexOf(node.slugSegment);
-    return idx === -1 ? 100 : idx;
-  };
-  const ra = rank(a);
-  const rb = rank(b);
-  if (ra !== rb) return ra - rb;
-  // 非一级节点沿用官方默认排序，避免改变既有子目录顺序。
-  return (a.displayName || "").localeCompare(b.displayName || "", undefined, {
-    numeric: true,
-    sensitivity: "base",
-  });
-}
-
-// 仅侧栏显示名覆盖：站务规则标题过长→短名；其余保持页面标题不变。
-function mapNode(node) {
-  const SIDEBAR_LABEL = {
-    player: "玩家专区",
-    developer: "开发者专区",
-    "wiki-rules": "知识库规则",
-    "wiki-not": "本站不是什么",
-    copyright: "版权与许可",
-    "how-to-use": "本站使用说明",
-    "developer/first-contribution": "第一次改动",
-    "developer/project-overview": "项目概览",
-    "developer/architecture": "系统架构",
-    "developer/reverse-engineering": "源码与逆向",
-    "developer/build": "构建与发布",
-    "developer/troubleshooting": "故障排查",
-    "developer/current": "项目状态",
-    "developer/references": "参考资料",
-    "developer/evidence": "运行证据",
-    "developer/ai-summaries": "AI 摘要",
-    "developer/editorial-guidelines": "编辑指南",
-    "developer/architecture/android": "Android 架构",
-    "developer/architecture/web": "Web 架构",
-    "developer/architecture/parity": "双端一致性",
-    "developer/architecture/celestial-implementation": "天神实现",
-    "developer/architecture/numeric-model": "超大数值",
-    "developer/architecture/kotlin-runtime": "Kotlin 运行时",
-    "developer/reverse-engineering/dex-abi": "DEX 与 ABI",
-    "developer/build/agp": "AGP 构建",
-    "developer/build/r8": "R8",
-    "developer/build/apk-signing": "APK 签名",
-    "developer/build/ci-cd": "CI/CD",
-    "developer/troubleshooting/coroutine-abi": "协程 ABI",
-    "developer/troubleshooting/save-compatibility": "存档兼容",
-    "developer/current/known-issues": "已知问题",
-    "developer/current/project-status": "双端状态",
-    "developer/current/release-status": "发布资格",
-    "developer/references/source-index": "来源索引",
-  };
-  // 只有存在真实下级页面的节点才是分类；仅有 index.md 的目录降级为普通链接。
-  if (node && node.isFolder && (!node.children || node.children.length === 0) && node.data) {
-    node.isFolder = false;
-  }
-  const labelKey = node?.slug?.replace(/\/index$/, "");
-  if (node && labelKey && SIDEBAR_LABEL[labelKey]) {
-    node.displayName = SIDEBAR_LABEL[labelKey];
-  }
-  return node;
-}
+// 统一导航模型是唯一分类、顺序和侧栏短标题来源；生成索引与 CI 也读取同一份 JSON。
+const navigationModel = JSON.parse(fs.readFileSync(path.join(process.cwd(), "scripts/navigation-model.json"), "utf8"));
+const modelSource = JSON.stringify(navigationModel);
+const compare = new Function("return function compare(a, b) {" +
+  "const MODEL = " + modelSource + ";" +
+  "const route = (node) => '/' + String(node?.slug || '').replace(/\\/index$/, '');" +
+  "const matches = (rule, value) => (rule.exact || []).includes(value) || (rule.prefixes || []).some((prefix) => value === prefix.replace(/\\/$/, '') || value.startsWith(prefix));" +
+  "const category = (value) => { for (const rootKey of ['player','developer','station']) { const rules = MODEL.categories[rootKey] || []; const exact = rules.find((rule) => (rule.exact || []).includes(value)); if (exact) return { rootKey, rule: exact }; } for (const rootKey of ['player','developer','station']) { const rule = (MODEL.categories[rootKey] || []).find((candidate) => matches(candidate, value)); if (rule) return { rootKey, rule }; } return null; };" +
+  "const rank = (node) => { const value = route(node); const root = MODEL.root.find((item) => item.key === node?.slugSegment); if (root) return root.order * 1000; const group = category(value); if (group) return (MODEL.root.find((item) => item.key === group.rootKey)?.order || 999) * 1000 + group.rule.order; const label = MODEL.stationLabels[node?.slugSegment]; return label ? 90000 : 50000; };" +
+  "const ra = rank(a), rb = rank(b); if (ra !== rb) return ra - rb; return (a.displayName || '').localeCompare((b.displayName || ''), undefined, { numeric: true, sensitivity: 'base' });" +
+"}")();
+const mapNode = new Function("return function mapNode(node) {" +
+  "const MODEL = " + modelSource + ";" +
+  "const key = '/' + String(node?.slug || '').replace(/\\/index$/, '');" +
+  "const labelKey = node?.slugSegment;" +
+  "if (node && MODEL.folderLabels[key]) node.displayName = MODEL.folderLabels[key];" +
+  "if (node && !node.isFolder && MODEL.stationLabels[labelKey]) node.displayName = MODEL.stationLabels[labelKey];" +
+  "if (node && node.isFolder && (!node.children || node.children.length === 0) && node.data) node.isFolder = false;" +
+  "return node;" +
+"}")();
 
 export function OrderedExplorer(opts = {}) {
   const explorer = Explorer({

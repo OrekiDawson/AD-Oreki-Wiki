@@ -1,5 +1,5 @@
 ---
-title: "虚幻升级"
+title: "原版:虚幻升级"
 description: "原版 Wiki《Imaginary Upgrades》条目的简体中文翻译：虚幻机器、10 项可重复与 15 项一次性虚幻升级的解锁条件与效果"
 tags:
   - 原版Wiki翻译

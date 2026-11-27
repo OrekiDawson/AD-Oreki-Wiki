@@ -10,148 +10,205 @@ tags:
 
 ## 玩家专区
 
-- [成就](/player/original/ow-achievements)
-- [充能无限升级](/player/original/ow-charged-infinity-upgrades)
-- [存档安全入口：先备份，再区分保存与迁移](/player/gameplay/saves)
+### 开始游玩
+
+- [反物质维度](/player/antimatter-dimensions)
+- [开始游玩](/player/getting-started)
+- [玩家专区](/player)
+
+### 下载与版本说明
+
+- [下载与版本](/player/download-and-version)
+- [Android 版本](/player/download-and-version/android)
+- [Web 版本](/player/download-and-version/web)
+
+### 游戏机制
+
+- [存档](/player/gameplay/saves)
 - [存档兼容与导入验证](/player/gameplay/save-compatibility)
-- [存档库](/player/original/ow-save-bank)
-- [打破无限](/player/original/ow-break-infinity)
+- [时间研究](/player/gameplay/time-studies)
+- [玩法机制](/player/gameplay)
+- [无限与永恒](/player/gameplay/progression-infinity-eternity)
+- [智能自动购买器](/player/gameplay/automation)
+- [自动保存与备份](/player/gameplay/autosave)
+- [Android 与 Web](/player/gameplay/platform-differences)
+
+### MOD 特色
+
+- [原版与 MOD 差异](/player/gameplay/original-vs-mod)
+- [MOD 玩法改动](/player/gameplay/mod-changes)
+- [Oreki Edition 介绍](/player/mods)
+
+### 游戏攻略
+
 - [第一次大坍缩与进入无限](/player/getting-started/first-crunch)
 - [第一次进入与前几分钟](/player/getting-started/first-session)
-- [第一次现实：重置前后的准备](/player/gameplay/reality)
-- [反物质维度](/player/antimatter-dimensions)
-- [反物质维度（游戏机制）](/player/original/ow-antimatter-dimensions)
-- [反物质星系](/player/original/ow-antimatter-galaxies)
-- [符文炼金](/player/original/ow-glyph-alchemy)
-- [复兴](/player/original/ow-perks)
-- [复制器](/player/original/ow-replicanti)
-- [广告加成](/player/original/ow-ad-bonus)
-- [黑洞](/player/original/ow-black-hole)
-- [计数频率](/player/original/ow-tickspeed)
-- [计数频率·星系数量明细（被毁灭的现实）](/player/original/ow-tickspeed-galaxy-breakdown-doomed)
-- [记数法](/player/original/ow-notations)
-- [阶段解锁：进度地图与排障入口](/player/gameplay/stage-gates)
-- [阶段进度：从新档到天神](/player/gameplay/stage-progression)
-- [阶段门禁排障：页面提前出现、按钮灰掉与重置后变化](/player/gameplay/stage-gate-troubleshooting)
-- [开始游玩 Oreki Edition：入门阅读地图](/player/getting-started)
-- [快捷键](/player/original/ow-shortcuts)
-- [莱特拉](/player/original/ow-laitela)
-- [莱特拉·引语](/player/original/ow-laitela-quotes)
-- [鹿颈长](/player/original/ow-effarig)
-- [鹿颈长·引语](/player/original/ow-effarig-quotes)
-- [秘密成就](/player/original/ow-achievements-secret-achievements)
-- [佩勒](/player/original/ow-pelle)
-- [佩勒升级](/player/original/ow-pelle-upgrades)
-- [膨胀升级](/player/original/ow-dilation-upgrades)
-- [膨胀升级（被毁灭的现实）](/player/original/ow-dilation-upgrades-doomed)
-- [普通挑战](/player/original/ow-normal-challenges)
-- [时间膨胀](/player/original/ow-dilation)
-- [时间维度](/player/original/ow-time-dimensions)
-- [时间研究](/player/original/ow-time-studies)
-- [时间研究：分叉、挑战与时间膨胀](/player/gameplay/time-studies)
-- [时间研究与现实：后永恒阶段阅读地图](/player/gameplay/reality-time-studies)
-- [术语（佩勒用词）](/player/original/ow-terminology)
-- [太阳神](/player/original/ow-ra)
-- [太阳神·引语](/player/original/ow-ra-quotes)
-- [特蕾莎](/player/original/ow-teresa)
-- [特殊现实：准备、限制与排障](/player/gameplay/celestial-realities)
-- [天神](/player/original/ow-celestials)
-- [天神导航](/player/original/ow-celestial-navigation)
-- [天神导航·图库](/player/original/ow-celestial-navigation-gallery)
-- [天神系统：七位天神改变了什么](/player/gameplay/celestials)
-- [挑战](/player/original/ow-challenges)
-- [挑战：三种限制玩法的阅读地图](/player/gameplay/challenges)
+- [第一次现实](/player/gameplay/reality)
+- [阶段解锁](/player/gameplay/stage-gates)
+- [阶段进度](/player/gameplay/stage-progression)
+- [阶段门禁排查](/player/gameplay/stage-gate-troubleshooting)
+- [时间研究与现实](/player/gameplay/reality-time-studies)
+- [特殊现实](/player/gameplay/celestial-realities)
+- [天神](/player/gameplay/celestials)
+- [挑战](/player/gameplay/challenges)
 - [挑战完成判定与卡关排障](/player/gameplay/challenge-troubleshooting)
-- [玩法机制](/player/gameplay)
+- [无限](/player/gameplay/infinity)
+- [永恒](/player/gameplay/eternity)
+
+### 常见问题
+
 - [玩家常见问题](/player/faq)
+
+### 术语表
+
 - [玩家术语表](/player/terminology)
-- [玩家专区](/player)
-- [薇](/player/original/ow-v)
-- [薇·引语](/player/original/ow-v-quotes)
-- [维度](/player/original/ow-dimensions)
-- [维度提升](/player/original/ow-dimension-boosts)
-- [维度献祭](/player/original/ow-dimensional-sacrifice)
-- [无名氏](/player/original/ow-nameless-ones)
-- [无名氏·引语](/player/original/ow-nameless-ones-quotes)
-- [无限](/player/original/ow-infinity)
-- [无限阶段：IP、打破无限与无限挑战](/player/gameplay/infinity)
-- [无限升级](/player/original/ow-infinity-upgrades)
-- [无限升级（升级表）](/player/original/ow-infinity-upgrades-upgrades)
-- [无限挑战](/player/original/ow-infinity-challenges)
-- [无限维度](/player/original/ow-infinity-dimensions)
-- [无限与永恒：两层重置的阅读地图](/player/gameplay/progression-infinity-eternity)
-- [下载与版本：先选平台，再核对来源](/player/download-and-version)
-- [现实](/player/original/ow-reality)
-- [现实升级](/player/original/ow-reality-upgrades)
-- [虚幻升级](/player/original/ow-imaginary-upgrades)
-- [永恒](/player/original/ow-eternity)
-- [永恒阶段：EP、时间研究与现实前置](/player/gameplay/eternity)
-- [永恒里程碑](/player/original/ow-eternity-milestones)
-- [永恒升级](/player/original/ow-eternity-upgrades)
-- [永恒挑战](/player/original/ow-eternity-challenges)
-- [永恒挑战·挑战明细](/player/original/ow-eternity-challenges-challenges)
-- [永恒挑战·挑战明细（被毁灭的现实）](/player/original/ow-eternity-challenges-challenges-pelle)
+
+### 原版 Wiki 中文翻译
+
 - [原版 Wiki 中文翻译](/player/original)
-- [原版与 Oreki Edition：差异阅读地图](/player/gameplay/original-vs-mod)
-- [智能自动购买器](/player/gameplay/automation)
-- [重置成长（威望）](/player/original/ow-prestige)
-- [自动保存与备份：保护每天的进度](/player/gameplay/autosave)
-- [自动化](/player/original/ow-automation)
-- [Android 与 Web：版本和行为差异](/player/gameplay/platform-differences)
-- [Android：Release、安装与升级](/player/download-and-version/android)
-- [MOD 玩法改动：数值、解锁与自动化](/player/gameplay/mod-changes)
-- [Mod 一览](/player/original/ow-mods)
-- [Oreki Edition 介绍](/player/mods)
-- [Web：入口、缓存与版本识别](/player/download-and-version/web)
+- [原版:成就](/player/original/ow-achievements)
+- [原版:充能无限升级](/player/original/ow-charged-infinity-upgrades)
+- [原版:存档库](/player/original/ow-save-bank)
+- [原版:打破无限](/player/original/ow-break-infinity)
+- [原版:反物质维度（游戏机制）](/player/original/ow-antimatter-dimensions)
+- [原版:反物质星系](/player/original/ow-antimatter-galaxies)
+- [原版:符文炼金](/player/original/ow-glyph-alchemy)
+- [原版:复兴](/player/original/ow-perks)
+- [原版:复制器](/player/original/ow-replicanti)
+- [原版:广告加成](/player/original/ow-ad-bonus)
+- [原版:黑洞](/player/original/ow-black-hole)
+- [原版:计数频率](/player/original/ow-tickspeed)
+- [原版:计数频率·星系数量明细（被毁灭的现实）](/player/original/ow-tickspeed-galaxy-breakdown-doomed)
+- [原版:记数法](/player/original/ow-notations)
+- [原版:快捷键](/player/original/ow-shortcuts)
+- [原版:莱特拉](/player/original/ow-laitela)
+- [原版:莱特拉·引语](/player/original/ow-laitela-quotes)
+- [原版:鹿颈长](/player/original/ow-effarig)
+- [原版:鹿颈长·引语](/player/original/ow-effarig-quotes)
+- [原版:秘密成就](/player/original/ow-achievements-secret-achievements)
+- [原版:佩勒](/player/original/ow-pelle)
+- [原版:佩勒升级](/player/original/ow-pelle-upgrades)
+- [原版:膨胀升级](/player/original/ow-dilation-upgrades)
+- [原版:膨胀升级（被毁灭的现实）](/player/original/ow-dilation-upgrades-doomed)
+- [原版:普通挑战](/player/original/ow-normal-challenges)
+- [原版:时间膨胀](/player/original/ow-dilation)
+- [原版:时间维度](/player/original/ow-time-dimensions)
+- [原版:时间研究](/player/original/ow-time-studies)
+- [原版:术语（佩勒用词）](/player/original/ow-terminology)
+- [原版:太阳神](/player/original/ow-ra)
+- [原版:太阳神·引语](/player/original/ow-ra-quotes)
+- [原版:特蕾莎](/player/original/ow-teresa)
+- [原版:天神](/player/original/ow-celestials)
+- [原版:天神导航](/player/original/ow-celestial-navigation)
+- [原版:天神导航·图库](/player/original/ow-celestial-navigation-gallery)
+- [原版:挑战](/player/original/ow-challenges)
+- [原版:薇](/player/original/ow-v)
+- [原版:薇·引语](/player/original/ow-v-quotes)
+- [原版:维度](/player/original/ow-dimensions)
+- [原版:维度提升](/player/original/ow-dimension-boosts)
+- [原版:维度献祭](/player/original/ow-dimensional-sacrifice)
+- [原版:无名氏](/player/original/ow-nameless-ones)
+- [原版:无名氏·引语](/player/original/ow-nameless-ones-quotes)
+- [原版:无限](/player/original/ow-infinity)
+- [原版:无限升级](/player/original/ow-infinity-upgrades)
+- [原版:无限升级（升级表）](/player/original/ow-infinity-upgrades-upgrades)
+- [原版:无限挑战](/player/original/ow-infinity-challenges)
+- [原版:无限维度](/player/original/ow-infinity-dimensions)
+- [原版:现实](/player/original/ow-reality)
+- [原版:现实升级](/player/original/ow-reality-upgrades)
+- [原版:虚幻升级](/player/original/ow-imaginary-upgrades)
+- [原版:永恒](/player/original/ow-eternity)
+- [原版:永恒里程碑](/player/original/ow-eternity-milestones)
+- [原版:永恒升级](/player/original/ow-eternity-upgrades)
+- [原版:永恒挑战](/player/original/ow-eternity-challenges)
+- [原版:永恒挑战·挑战明细](/player/original/ow-eternity-challenges-challenges)
+- [原版:永恒挑战·挑战明细（被毁灭的现实）](/player/original/ow-eternity-challenges-challenges-pelle)
+- [原版:重置成长（威望）](/player/original/ow-prestige)
+- [原版:自动化](/player/original/ow-automation)
+- [原版:Mod 一览](/player/original/ow-mods)
 
 ## 开发者专区
 
-- [参考资料](/developer/references)
-- [超大数值：从尾数与指数到跨端一致性](/developer/architecture/numeric-model)
-- [从 DEX 到 Kotlin：混淆 Android 游戏的 ABI 适配](/developer/reverse-engineering/dex-abi)
-- [从脚本补丁到 AGP：为什么 build_mod.py 必须退役](/developer/build/build-mod-retirement)
-- [从源码到可发布 APK：CI/CD 的分层设计](/developer/build/ci-cd)
-- [存档兼容排查：先辨认格式，再追踪迁移](/developer/troubleshooting/save-compatibility)
-- [存档进度比较器：用阶段与近似值判断谁更靠前](/developer/architecture/save-progress-comparator)
+### 开发入门
+
 - [第一次参与 Android 开发](/developer/first-contribution)
-- [调度器状态机：购买决策、合法重置与进度死锁](/developer/architecture/scheduler-state-machine)
-- [发布资格：从一个 APK 到可交付版本](/developer/current/release-status)
-- [构建与交付：从源码到可交付产物](/developer/build)
-- [故障排查：从症状回到源码](/developer/troubleshooting)
-- [架构与运行时：从入口到运行时](/developer/architecture)
-- [教程内容管线：用一份数据驱动双端章节](/developer/architecture/tutorial-content-pipeline)
-- [开发者文档怎么读、怎么写](/developer/editorial-guidelines)
 - [开发者专区](/developer)
-- [来源索引：怎样从证据找到真正的代码](/developer/references/source-index)
-- [逆向与语义映射](/developer/reverse-engineering)
-- [如何阅读当前工程状态](/developer/current)
-- [如何阅读双端项目状态](/developer/current/project-status)
+- [Oreki Edition 项目地图](/developer/project-overview)
+
+### 系统架构
+
+- [超大数值](/developer/architecture/numeric-model)
+- [存档进度比较器](/developer/architecture/save-progress-comparator)
+- [调度器状态机](/developer/architecture/scheduler-state-machine)
+- [教程内容管线](/developer/architecture/tutorial-content-pipeline)
 - [双端行为一致性](/developer/architecture/parity)
 - [天神判据与跨端编码](/developer/architecture/celestial-implementation)
-- [协程 ABI 崩溃排查：从 Continuation 到真实调用](/developer/troubleshooting/coroutine-abi)
-- [运行证据索引](/developer/evidence)
-- [自动化状态所有权：玩家意图、托管配置与执行闸门](/developer/architecture/automation-ownership)
-- [AI Summary 索引](/developer/ai-summaries)
+- [系统架构](/developer/architecture)
+- [自动化状态所有权](/developer/architecture/automation-ownership)
 - [Android 工程为什么要回到根目录](/developer/architecture/directory-migration)
-- [Android 构建与 AGP](/developer/build/agp)
 - [Android 架构](/developer/architecture/android)
 - [Android 阶段门禁与 GUI 判据](/developer/architecture/gui-stage-gates)
-- [Android 自动化停滞的排查方法](/developer/current/known-issues)
-- [Android GUI 同步桥：让游戏状态真正到达界面](/developer/architecture/android-gui-sync)
-- [APK 签名与升级兼容](/developer/build/apk-signing)
-- [DEX 泛型签名回填：让 Gson 看见存档里的真实类型](/developer/build/signature-backfill)
-- [Kotlin 混合运行时：在混淆宿主上建立一条可靠的 ABI 边界](/developer/architecture/kotlin-runtime)
-- [Oreki Edition 项目地图](/developer/project-overview)
-- [R8：在混合 DEX 工程中管理代码边界](/developer/build/r8)
-- [Web 端架构：从浏览器入口到统一调度](/developer/architecture/web)
-- [Web 离线进度：模拟时间与真实时钟的边界](/developer/architecture/web-offline-simulation)
-- [Web UI 反应式更新：从游戏事件到 Vue 视图](/developer/architecture/web-ui-reactivity)
+- [Android GUI 同步桥](/developer/architecture/android-gui-sync)
+- [Kotlin 运行时](/developer/architecture/kotlin-runtime)
+- [Web 端架构](/developer/architecture/web)
+- [Web 离线进度](/developer/architecture/web-offline-simulation)
+- [Web UI 反应式更新](/developer/architecture/web-ui-reactivity)
 
-## 站务与公共页面
+### 源码与逆向工程
+
+- [逆向与语义映射](/developer/reverse-engineering)
+- [DEX 与 Kotlin](/developer/reverse-engineering/dex-abi)
+
+### 构建与发布
+
+- [构建与发布](/developer/build)
+- [Android 构建与 AGP](/developer/build/agp)
+- [APK 签名与升级兼容](/developer/build/apk-signing)
+- [build_mod.py 退役](/developer/build/build-mod-retirement)
+- [CI/CD 构建交付](/developer/build/ci-cd)
+- [DEX 泛型签名回填](/developer/build/signature-backfill)
+- [R8 混淆与优化](/developer/build/r8)
+
+### 故障排查
+
+- [存档兼容排查](/developer/troubleshooting/save-compatibility)
+- [故障排查](/developer/troubleshooting)
+- [协程 ABI](/developer/troubleshooting/coroutine-abi)
+
+### 项目状态与运行证据
+
+- [发布资格](/developer/current/release-status)
+- [如何阅读当前工程状态](/developer/current)
+- [如何阅读双端项目状态](/developer/current/project-status)
+- [运行证据索引](/developer/evidence)
+- [AI Summary 索引](/developer/ai-summaries)
+- [Android 自动化停滞的排查方法](/developer/current/known-issues)
+
+### 技术参考
+
+- [参考资料](/developer/references)
+- [开发者文档怎么读、怎么写](/developer/editorial-guidelines)
+- [源码索引](/developer/references/source-index)
+
+## 站务
+
+### 全部条目
+
+- [反物质维度 MOD Wiki](/)
+
+### 知识库规则
+
+- [反物质维度MOD Wiki:知识库规则](/wiki-rules)
+
+### 本站不是什么
+
+- [反物质维度MOD Wiki:本站不是什么](/wiki-not)
+
+### 版权与许可
 
 - [版权与许可](/copyright)
-- [反物质维度 MOD Wiki](/index)
-- [反物质维度MOD Wiki:本站不是什么](/wiki-not)
-- [反物质维度MOD Wiki:知识库规则](/wiki-rules)
+
+### 本站使用说明
+
 - [如何使用本知识库](/how-to-use)
 

@@ -1,5 +1,5 @@
 ---
-title: "无名氏"
+title: "原版:无名氏"
 description: "原版 Wiki《The Nameless Ones》条目的完整简体中文翻译：时间之神无名氏的黑洞放电、储存时间、两项升级、九项现实效果与超立方体数据表"
 tags:
   - 原版Wiki翻译

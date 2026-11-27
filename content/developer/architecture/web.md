@@ -1,5 +1,5 @@
 ---
-title: "Web 端架构：从浏览器入口到统一调度"
+title: "Web 端架构"
 description: "沿 index.html、游戏主循环、原版自动器和 Oreki 调度器理解 Web 端的运行时边界"
 tags:
   - Web

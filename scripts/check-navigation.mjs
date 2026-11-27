@@ -51,6 +51,7 @@ const formal = files.filter(
 )
 const routeFor = (file) => {
   const rel = path.relative(content, file).replaceAll("\\", "/").replace(/\.md$/, "")
+  if (rel === "index") return "/"
   return rel.endsWith("/index") ? `/${rel.slice(0, -6)}` : `/${rel}`
 }
 for (const file of formal)
@@ -61,13 +62,13 @@ const declaredCount = Number(
 )
 if (declaredCount !== formal.length)
   errors.push(`全部条目数量过期：页面 ${formal.length}，索引声明 ${declaredCount}`)
-const indexedRoutes = [...allEntries.matchAll(/\]\((\/[^)]+)\)/g)].map((match) =>
+const indexedRoutes = [...allEntries.matchAll(/\]\((\/[^)]*)\)/g)].map((match) =>
   match[1].replace(/\/$/, ""),
 )
 if (new Set(indexedRoutes).size !== formal.length)
   errors.push(`全部条目存在重复或额外入口：${new Set(indexedRoutes).size}/${formal.length}`)
 const recentText = fs.readFileSync(path.join(content, "recent-updates.md"), "utf8")
-const recentRoutes = [...recentText.matchAll(/\]\((\/[^)]+)\)/g)].map((match) =>
+const recentRoutes = [...recentText.matchAll(/\]\((\/[^)]*)\)/g)].map((match) =>
   match[1].replace(/\/$/, ""),
 )
 const formalRoutes = new Set(formal.map(routeFor))
@@ -112,6 +113,11 @@ const expectedRecentSet = new Set(expectedRecentRoutes)
 if (recentRoutes.some((route) => !expectedRecentSet.has(route)) || expectedRecentSet.size !== new Set(recentRoutes).size)
   errors.push("最近更新索引的路线集合与页面更新时间不一致，请运行 node scripts/generate-navigation.mjs")
 const config = fs.readFileSync(path.join(root, "quartz.config.yaml"), "utf8")
+const navigationModelPath = path.join(root, "scripts/navigation-model.json")
+if (!fs.existsSync(navigationModelPath)) errors.push("缺少唯一导航模型：scripts/navigation-model.json")
+const navigationModel = fs.existsSync(navigationModelPath)
+  ? JSON.parse(fs.readFileSync(navigationModelPath, "utf8"))
+  : null
 const yamlScalar = (name) => {
   const match = config.match(
     new RegExp(
@@ -127,8 +133,13 @@ const orderedExplorer = fs.readFileSync(
   path.join(root, "scripts/quartz-plugins/ordered-explorer/dist/index.js"),
   "utf8",
 )
-if (!orderedExplorer.includes("developer/architecture") || !orderedExplorer.includes("developer/references"))
-  errors.push("开发者导航缺少语义分类排序")
+const modelLabels = navigationModel
+  ? Object.values(navigationModel.categories ?? {}).flat().map((rule) => rule.label)
+  : []
+if (!navigationModel || modelLabels.length < 10 || !modelLabels.includes("系统架构") || !modelLabels.includes("构建与发布"))
+  errors.push("唯一导航模型缺少完整的语义分类排序")
+if (navigationModel && navigationModel.version !== 1)
+  errors.push("导航模型版本未声明为当前版本 1")
 if (!orderedExplorer.includes("current-page-ancestors")) errors.push("导航缺少当前页面高亮定位标记")
 if (!orderedExplorer.includes("node.children.length === 0") || !orderedExplorer.includes("filterFn"))
   errors.push("导航未阻止空子菜单和空白虚拟分类")

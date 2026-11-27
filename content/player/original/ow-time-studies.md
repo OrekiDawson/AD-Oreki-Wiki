@@ -1,5 +1,5 @@
 ---
-title: "时间研究"
+title: "原版:时间研究"
 description: "原版 Wiki《Time Studies》条目的完整简体中文翻译：研究树、时间之理、分叉限制与全部研究表"
 tags:
   - 原版Wiki翻译

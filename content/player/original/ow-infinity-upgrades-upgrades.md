@@ -1,5 +1,5 @@
 ---
-title: "无限升级（升级表）"
+title: "原版:无限升级（升级表）"
 description: "原版 Wiki《Infinity Upgrades/Upgrades》子页面的完整简体中文翻译：四列共 16 项不可重复无限升级"
 tags:
   - 原版Wiki翻译

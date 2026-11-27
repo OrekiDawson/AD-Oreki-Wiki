@@ -1,5 +1,5 @@
 ---
-title: "广告加成"
+title: "原版:广告加成"
 description: "原版 Wiki《Ad Bonus》条目的完整简体中文翻译：移动端专属广告加成、时长上限、永久购买与各阶段加成表"
 tags:
   - 原版Wiki翻译

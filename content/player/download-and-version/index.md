@@ -1,5 +1,5 @@
 ---
-title: "下载与版本：先选平台，再核对来源"
+title: "下载与版本"
 description: "从 Android Release 和 Web 入口进入 Oreki Edition，并在更新前保护存档"
 tags:
   - 玩家

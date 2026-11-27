@@ -1,5 +1,5 @@
 ---
-title: "存档库"
+title: "原版:存档库"
 description: "原版 Wiki《Save Bank》条目的简体中文翻译：社区存档库站点（Buck4437）的用途与投稿方式"
 tags:
   - 原版Wiki翻译
