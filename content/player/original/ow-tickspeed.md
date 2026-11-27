@@ -1,5 +1,5 @@
 ---
-title: "计数频率"
+title: "原版:计数频率"
 description: "原版 Wiki《Tickspeed》条目的简体中文翻译：计数频率加成公式、有效星系数与星系强度系数的全部来源"
 tags:
   - 原版Wiki翻译

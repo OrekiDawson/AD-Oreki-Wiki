@@ -1,5 +1,5 @@
 ---
-title: "现实"
+title: "原版:现实"
 description: "原版 Wiki《Reality》条目的简体中文翻译：现实怎么解锁、重置什么、现实机器公式与符文等级怎么算"
 tags:
   - 原版Wiki翻译

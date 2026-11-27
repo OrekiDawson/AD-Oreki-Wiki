@@ -1,5 +1,5 @@
 ---
-title: "计数频率·星系数量明细（被毁灭的现实）"
+title: "原版:计数频率·星系数量明细（被毁灭的现实）"
 description: "原版 Wiki《Tickspeed/Galaxy count breakdown (Doomed)》子页面的简体中文翻译：佩勒现实中影响有效星系数量的来源与公式"
 tags:
   - 原版Wiki翻译

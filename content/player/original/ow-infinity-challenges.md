@@ -1,5 +1,5 @@
 ---
-title: "无限挑战"
+title: "原版:无限挑战"
 description: "原版 Wiki《Infinity Challenges》条目的简体中文翻译：8 个无限挑战的解锁门槛、目标、限制、奖励与快捷重置"
 tags:
   - 原版Wiki翻译

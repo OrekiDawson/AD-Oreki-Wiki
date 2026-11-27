@@ -1,5 +1,5 @@
 ---
-title: "特蕾莎"
+title: "原版:特蕾莎"
 description: "原版 Wiki《Teresa》条目的完整简体中文翻译：现实之神特蕾莎的 RM 容器、里程碑、复兴点数商店、特蕾莎的现实与引语"
 tags:
   - 原版Wiki翻译

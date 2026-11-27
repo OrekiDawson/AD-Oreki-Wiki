@@ -1,5 +1,5 @@
 ---
-title: "黑洞"
+title: "原版:黑洞"
 description: "原版 Wiki《Black Hole》条目的完整简体中文翻译：解锁条件、充能与暂停、第二个黑洞与升级表"
 tags:
   - 原版Wiki翻译

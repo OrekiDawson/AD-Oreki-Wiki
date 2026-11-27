@@ -1,5 +1,5 @@
 ---
-title: "永恒"
+title: "原版:永恒"
 description: "原版 Wiki《Eternity》条目的完整简体中文翻译：解锁条件、永恒点数公式、永恒次数与复位范围"
 tags:
   - 原版Wiki翻译

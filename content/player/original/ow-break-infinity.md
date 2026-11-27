@@ -1,5 +1,5 @@
 ---
-title: "打破无限"
+title: "原版:打破无限"
 description: "原版 Wiki《Break Infinity》条目的完整简体中文翻译：解锁条件、无限后价格成长、无限点数成长与升级列表"
 tags:
   - 原版Wiki翻译

@@ -1,5 +1,5 @@
 ---
-title: "复制器"
+title: "原版:复制器"
 description: "原版 Wiki《Replicanti》条目的完整简体中文翻译：指数成长、升级、无限维度加成与复制器星系"
 tags:
   - 原版Wiki翻译

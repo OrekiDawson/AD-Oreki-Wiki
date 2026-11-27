@@ -1,5 +1,5 @@
 ---
-title: "永恒挑战"
+title: "原版:永恒挑战"
 description: "原版 Wiki《Eternity Challenges》条目的完整简体中文翻译：解锁、重置、12 关前置与各完成次数门槛"
 tags:
   - 原版Wiki翻译

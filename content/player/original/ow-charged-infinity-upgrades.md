@@ -1,5 +1,5 @@
 ---
-title: "充能无限升级"
+title: "原版:充能无限升级"
 description: "原版 Wiki《Infinity Upgrades/Upgrades (Charged)》子页面的简体中文翻译：12 项充能无限升级的效果与公式"
 tags:
   - 原版Wiki翻译

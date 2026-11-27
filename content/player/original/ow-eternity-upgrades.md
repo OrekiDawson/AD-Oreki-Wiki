@@ -1,5 +1,5 @@
 ---
-title: "永恒升级"
+title: "原版:永恒升级"
 description: "原版 Wiki《Eternity Upgrades》条目的简体中文翻译：6 项一次性永恒升级与可无限重复的 EP x5 升级"
 tags:
   - 原版Wiki翻译

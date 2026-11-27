@@ -1,5 +1,5 @@
 ---
-title: "鹿颈长·引语"
+title: "原版:鹿颈长·引语"
 description: "原版 Wiki《Effarig/Quotes》条目的完整简体中文翻译：鹿颈长在各触发条件下的全部台词"
 tags:
   - 原版Wiki翻译

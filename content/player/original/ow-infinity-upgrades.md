@@ -1,5 +1,5 @@
 ---
-title: "无限升级"
+title: "原版:无限升级"
 description: "原版 Wiki《Infinity Upgrades》条目的完整简体中文翻译：解锁、16 项不可重复升级入口与特殊升级"
 tags:
   - 原版Wiki翻译

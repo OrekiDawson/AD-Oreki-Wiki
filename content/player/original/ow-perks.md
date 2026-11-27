@@ -1,5 +1,5 @@
 ---
-title: "复兴"
+title: "原版:复兴"
 description: "原版 Wiki《Perks》条目的简体中文翻译：复兴树 48 个节点、家族、前置关系、效果与自动化点数"
 tags:
   - 原版Wiki翻译

@@ -1,5 +1,5 @@
 ---
-title: "记数法"
+title: "原版:记数法"
 description: "原版 Wiki《Notations》条目的完整简体中文翻译：记数法列表、痛点记数法、标准/质数/字母与移动端专属记数法"
 tags:
   - 原版Wiki翻译

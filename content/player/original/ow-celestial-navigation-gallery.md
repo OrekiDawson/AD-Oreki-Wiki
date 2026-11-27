@@ -1,5 +1,5 @@
 ---
-title: "天神导航·图库"
+title: "原版:天神导航·图库"
 description: "原版 Wiki《Celestial Navigation/Gallery》子页面的简体中文翻译：天神导航 47 张进度截图的图注（图片未转载）"
 tags:
   - 原版Wiki翻译
