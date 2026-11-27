@@ -8,6 +8,7 @@ tags:
 
 这里显示最近进入当前内容树的正式条目；文章的具体修订记录仍以页面正文与仓库历史为准。
 
+- [反物质维度MOD Wiki:知识库规则](/wiki-rules)
 - [玩家专区](/player)
 - [反物质维度：游戏总览与阅读路线](/player/antimatter-dimensions)
 - [下载与版本：先选平台，再核对来源](/player/download-and-version)
@@ -31,4 +32,3 @@ tags:
 - [维度献祭](/player/original/ow-dimensional-sacrifice)
 - [复制器](/player/original/ow-replicanti)
 - [反物质维度（游戏机制）](/player/original/ow-antimatter-dimensions)
-- [反物质星系](/player/original/ow-antimatter-galaxies)
