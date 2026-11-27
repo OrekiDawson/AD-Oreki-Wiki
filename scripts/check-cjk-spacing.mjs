@@ -45,6 +45,9 @@ function visibleHtml(source) {
     .replace(/<pre\b[\s\S]*?<\/pre>/gi, ' ')
     .replace(/<code\b[\s\S]*?<\/code>/gi, ' ')
     .replace(/<math\b[\s\S]*?<\/math>/gi, ' ')
+    // Quartz 插件可能把函数序列化到 data 属性；属性不是读者可见正文，
+    // 且其中的比较符号会干扰 HTML 标签过滤。
+    .replace(/\sdata-quartz-[\w:-]+=("[\s\S]*?"|'[\s\S]*?')/gi, ' ')
     .replace(/https?:\/\/[^\s"'<]+/gi, ' ')
     .replace(/<[^>]*>/g, ' ');
 }
