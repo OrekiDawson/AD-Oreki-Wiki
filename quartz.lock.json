@@ -1,0 +1,17 @@
+{
+  "version": "1.0.0",
+  "plugins": {
+    "ordered-explorer": {
+      "source": "./scripts/quartz-plugins/ordered-explorer",
+      "resolved": "C:\\Users\\Oreki\\Documents\\Codex\\2026-11-27\\r130-pr158-latest-review-wt\\scripts\\quartz-plugins\\ordered-explorer",
+      "commit": "local",
+      "installedAt": "2026-11-27T05:14:14.027Z"
+    },
+    "translation-folder-cleanup": {
+      "source": "./scripts/quartz-plugins/translation-folder-cleanup",
+      "resolved": "C:\\Users\\Oreki\\Documents\\Codex\\2026-11-27\\r130-pr158-latest-review-wt\\scripts\\quartz-plugins\\translation-folder-cleanup",
+      "commit": "local",
+      "installedAt": "2026-11-27T05:14:14.025Z"
+    }
+  }
+}
