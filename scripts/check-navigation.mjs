@@ -75,6 +75,16 @@ for (const file of formal) {
   }
 }
 const config = fs.readFileSync(path.join(root, "quartz.config.yaml"), "utf8")
+const navigationModelPath = path.join(root, "scripts/navigation-model.json")
+if (!fs.existsSync(navigationModelPath)) errors.push("缺少唯一导航模型：scripts/navigation-model.json")
+const navigationModel = fs.existsSync(navigationModelPath)
+  ? JSON.parse(fs.readFileSync(navigationModelPath, "utf8"))
+  : null
+const excluded = navigationModel?.excludedFromExplorer
+if (!excluded?.exact?.includes("/tags") || !excluded?.prefixes?.includes("/tags/"))
+  errors.push("导航模型未明确排除 tags/ 及标签根页面")
+if (navigationModel?.categories?.root?.some((rule) => rule.key === "recent-updates" || rule.key === "recent"))
+  errors.push("主导航仍包含已退役的最近更新入口")
 const yamlScalar = (name) => {
   const match = config.match(
     new RegExp(
@@ -93,7 +103,7 @@ const orderedExplorer = fs.readFileSync(
 if (!orderedExplorer.includes("developer/architecture") || !orderedExplorer.includes("developer/references"))
   errors.push("开发者导航缺少语义分类排序")
 if (!orderedExplorer.includes("current-page-ancestors")) errors.push("导航缺少当前页面高亮定位标记")
-if (!orderedExplorer.includes("node.children.length === 0") || !orderedExplorer.includes("filterFn"))
+if (!orderedExplorer.includes("filterNode") || !orderedExplorer.includes("/tags/") || !orderedExplorer.includes("node.children.length === 0") || !orderedExplorer.includes("filterFn"))
   errors.push("导航未阻止空子菜单和空白虚拟分类")
 if (leafDirectoryCount > 0 && !orderedExplorer.includes("node.isFolder = false"))
   errors.push(`发现 ${leafDirectoryCount} 个无下级条目的目录，但插件未将其降级为普通链接`)
@@ -170,6 +180,8 @@ if (builtOnly) {
             errors.push(`构建导航链接无对应页面：${path.relative(publicDir, file)} -> ${href}`)
           if (/\/ai-drafts(?:\/|$)|\/history(?:\/|$)|\/redirect/i.test(route))
             errors.push(`构建导航泄露草稿、历史或废弃入口：${route}`)
+          if (/^\/tags(?:\/|$)/i.test(route))
+            errors.push(`构建导航泄露标签索引：${path.relative(publicDir, file)} -> ${href}`)
         }
       }
     }

@@ -109,12 +109,25 @@ function mapNode(node) {
   return node;
 }
 
+// 标签页、内部归档和重定向仍可由 Quartz 生成或保留 URL，但不属于主导航。
+// 过滤函数必须自包含，因为 Explorer 会把它序列化到浏览器端执行。
+function filterNode(node) {
+  const EXCLUDED = {
+    exact: ["/tags"],
+    prefixes: ["/tags/", "/ai-drafts/", "/developer/history/", "/redirect/"],
+  };
+  const route = "/" + String(node?.slug || "").replace(/\/index$/, "").replace(/^\/+/, "");
+  if (EXCLUDED.exact.includes(route)) return false;
+  if (EXCLUDED.prefixes.some((prefix) => route === prefix.replace(/\/$/, "") || route.startsWith(prefix))) return false;
+  return !(node.isFolder && (!node.children || node.children.length === 0) && !node.data);
+}
+
 export function OrderedExplorer(opts = {}) {
   const explorer = Explorer({
     ...opts,
     sortFn: compare,
     mapFn: mapNode,
-    filterFn: (node) => !(node.isFolder && (!node.children || node.children.length === 0) && !node.data),
+    filterFn: filterNode,
   });
   const expandCurrent = `
 document.addEventListener("nav", () => {

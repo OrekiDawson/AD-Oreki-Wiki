@@ -1,4 +1,8 @@
 {
+  "excludedFromExplorer": {
+    "exact": ["/tags"],
+    "prefixes": ["/tags/", "/ai-drafts/", "/developer/history/", "/redirect/"]
+  },
   "categories": {
     "root": [
       { "key": "player", "route": "/player", "label": "玩家专区" },
