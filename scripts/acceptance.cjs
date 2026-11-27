@@ -184,6 +184,25 @@ async function run() {
   results.mobile.relatedNav = await page.locator('article .wiki-related-nav a[href]').count();
   if (await toggle2.count()) { await toggle2.click({ force: true }).catch(() => {}); await page.waitForTimeout(400); }
 
+  // 真实点击切页，观察加载条创建与滚动动画，不只检查静态 CSS。
+  await page.goto(BASE + '/player/', { waitUntil: 'load' });
+  await page.waitForTimeout(500);
+  const motionLink = page.locator('article a[href*="/player/gameplay"]').first();
+  await page.evaluate(() => {
+    window.__wikiMotion = { progress: false, smooth: getComputedStyle(document.documentElement).scrollBehavior };
+    const observer = new MutationObserver(records => {
+      for (const record of records) for (const node of record.addedNodes) {
+        if (node.nodeType === 1 && (node.matches('.navigation-progress') || node.querySelector('.navigation-progress'))) window.__wikiMotion.progress = true;
+      }
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
+  });
+  if (await motionLink.count()) {
+    const target = await motionLink.evaluate(el => el.pathname.replace(/\/$/, ''));
+    await motionLink.click();
+    await page.waitForURL(url => url.pathname.replace(/\/$/, '') === target);
+    results.mobile.motion = await page.evaluate(() => window.__wikiMotion || null);
+  }
   // 搜索
   const searchInput = page.locator('input.search-bar, input[name="search"], input[type="search"], input[placeholder]').first();
   if (await searchInput.count()) {
@@ -304,6 +323,7 @@ async function run() {
   if (!results.mobile.sidebarCollapsed) bad.push('sidebar-collapse');
   if (!results.mobile.sidebarActive ||
     !results.mobile.sidebarActive.includes('/player/gameplay/challenges')) bad.push('sidebar-active');
+  if (!results.mobile.motion || results.mobile.motion.progress || results.mobile.motion.smooth !== 'auto') bad.push('real-navigation-motion');
   if (!results.mobile.relatedNav) bad.push('related-navigation-missing');
   if (!results.desktop.topicGroups.includes('双端共通机制') || !results.desktop.topicGroups.includes('站务')) bad.push('desktop-topic-groups');
   if (!results.mobile.darkmodeToggled) bad.push('darkmode');
