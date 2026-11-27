@@ -73,7 +73,7 @@ for (const slug of [
 }
 // 类目显示名必须是中文（由各目录 index.md 的 title 提供）
 const CATEGORY_TITLES = {
-  "player/getting-started": "开始游玩 Oreki Edition",
+  "player/getting-started": "开始游玩",
   "player/gameplay": "玩法机制",
   "player/original": "原版 Wiki 中文翻译",
   "player/mods": "Oreki Edition 介绍",
