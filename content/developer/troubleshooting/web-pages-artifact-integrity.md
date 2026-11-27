@@ -37,7 +37,7 @@ tags:
 
 因此，不能用“CI 绿了”证明线上版本，也不能用“浏览器启动了”反推部署身份。
 
-## 第一步：确认部署对象没有漂移
+## 一、确认部署对象
 
 部署工作流通过 `workflow_dispatch` 接收 `approved_sha`。它先检出这个精确提交，再要求：
 
@@ -51,7 +51,7 @@ git rev-parse HEAD == approved_sha == GITHUB_SHA
 
 当前仓库还需要受保护的 `web-production` 环境，并通过凭据触发 Pages 仓的 `deploy-approved-web.yml`。这意味着源仓库的成功只代表部署请求通过了自己的门槛，不能把它当成生产 Pages 已经完成更新。
 
-## 第二步：检查 staging 是否是一个闭合的站点
+## 二、检查 staging
 
 `scripts/check_pages_staging.py`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/scripts/check_pages_staging.py；具体文件证据留在内部核验记录） 检查的是组装后的目录，而不是 Git 工作树。它验证：
 
@@ -65,7 +65,7 @@ git rev-parse HEAD == approved_sha == GITHUB_SHA
 
 修改组装脚本后，应该用一个故意缺失的资源做负向测试：暂时移走被 `index.html` 引用的文件，检查器必须失败。若缺文件仍然通过，说明守卫没有覆盖真实引用路径。
 
-## 第三步：用线上身份文件排除错版
+## 三、核对线上身份
 
 Pages 站点中的 `deployment.json` 是给验收脚本读取的身份记录，内容类似：
 
@@ -80,7 +80,7 @@ Pages 站点中的 `deployment.json` 是给验收脚本读取的身份记录，�
 
 如果 `web_sha` 或 `web_ci_run_id` 与批准值不符，先停止后续浏览器检查。继续点击页面只会把一份身份不明的站点当成候选。若身份文件正确但页面仍旧，说明问题转移到了静态文件或缓存层，而不是继续修改部署元数据。
 
-## 第四步：比较资源字节，再进入浏览器
+## 四、比较资源
 
 `verify-live.mjs`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/reports/R109-01/web-pages/verify-live.mjs；具体文件证据留在内部核验记录） 读取线上 `deployment.json` 时加入缓存破坏参数，然后把线上与批准提交中的 `src/main.js` 分别下载，比较长度和 SHA-256。
 

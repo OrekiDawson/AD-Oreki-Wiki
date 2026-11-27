@@ -33,7 +33,7 @@ aliases:
 
 遇到冲突时，先写清版本和问题边界，再回到离问题最近的证据层。一个“源码看起来合理”的解释，不能代替一次真实导入、安装或运行验证；一份 CI 记录也不能自动证明玩家流程。
 
-## Android：从入口、映射到产物
+## Android 源码路径
 
 [AD-Oreki-Edition-Android](https://github.com/OrekiDawson/AD-Oreki-Edition-Android) 的本批核查基线是 [`9d8fc46`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/tree/9d8fc46ce99279720b5b3068027bb76bceb35756)。建议按三步调查：
 
@@ -43,7 +43,7 @@ aliases:
 
 源码能证明设计和调用关系；只有构建输入、APK/DEX 与运行证据都对上，才可以继续声称“该实现到达设备”。
 
-## Web：从游戏循环走到存档边界
+## Web 源码路径
 
 [AD-Oreki-Edition-Web](https://github.com/OrekiDawson/AD-Oreki-Edition-Web) 的调查应固定一个具体 Commit，从 `src/core/` 的游戏循环和机制模块开始，再进入存储目录。存档问题不要只搜索 `save`：应同时核对槽位/备份、序列化编码和字段迁移，区分“文本无法解码”“对象能解码但缺少字段”“读档后阶段重新计算”三类故障。
 

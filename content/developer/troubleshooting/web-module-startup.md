@@ -35,7 +35,7 @@ speed-config
 
 不要用“页面没有报错”代替这三层判断；浏览器可能只在控制台记录 `pageerror`，而页面本身仍然保持空壳。
 
-## `shims` 是有意的运行时注入
+## `shims` 注入
 
 `src/shims.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/shims.js；具体文件证据留在内部核验记录） 从模块导入 CodeMirror、Decimal 和 Vue，然后把它们写入 `window`：
 
@@ -54,7 +54,7 @@ window.Vue = Vue;
 
 第二种问题尤其隐蔽。两个看似相同的 `Decimal` 构造器可能让 `instanceof` 判断失效，数值却仍能打印出来，直到某条类型分支才崩溃。
 
-## `merge-globals` 如何处理遗留代码
+## `merge-globals`
 
 `src/merge-globals.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/merge-globals.js；具体文件证据留在内部核验记录） 使用 `mergeIntoGlobal()` 遍历模块的命名导出，把它们挂到 `window`。它有一个刻意严格的规则：如果目标名称已经存在，就直接抛错，而不是静默覆盖。
 
@@ -70,7 +70,7 @@ window[key] = value;
 
 文件把导出分成三类：核心工具和数据库、保留的旧组件全局、`core/globals.js` 与 `game.js` 的统一导出。注释明确要求不要继续把新的全局塞进组件文件。这个边界很有价值：新代码优先使用显式 `import`，只有确实需要兼容旧调用方时才扩展桥，并为名称和所有者写出稳定的归属。
 
-## 为什么 `game.js` 不能随处直接 import
+## `game.js` 导入边界
 
 全局桥的最后一步导入 `game.js`，再把它的导出合并到 `window`。看起来像是反向依赖，实际是为旧模块提供例如 `gainedInfinityPoints()` 这类运行时入口。`src/core/oreki-smart-strategy.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/core/oreki-smart-strategy.js；具体文件证据留在内部核验记录） 的源码注释给出了重要取舍：这个 MOD 策略模块直接调用全局函数，而不是重新 `import game.js`，以免形成这样的 ESM 环：
 
@@ -85,7 +85,7 @@ ESM 循环依赖不一定立刻抛出清晰错误；更危险的情况是模块�
 
 这也解释了为什么“把所有 import 改成全局”不是修复方案。全局桥本身有初始化顺序和命名冲突门禁；它适合承接既有兼容边界，不适合成为新业务的默认依赖注入方式。
 
-## 浏览器检查与游戏初始化是两个判据
+## 浏览器与初始化判据
 
 `src/game.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/game.js；具体文件证据留在内部核验记录） 的 `browserCheck()` 只负责判断用户代理是否属于支持范围。`init()` 还要继续完成运行环境、存档、自动化和界面相关的初始化。源码另有 `window.onload` 路径，会再次执行浏览器检查并设置 `GameUI.initialized`；这说明“支持的浏览器”和“UI 已经准备好”是两个状态，不应在排障中合并成一个布尔值。
 

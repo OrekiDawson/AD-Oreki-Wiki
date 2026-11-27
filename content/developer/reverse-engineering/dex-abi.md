@@ -59,7 +59,7 @@ allow(Ljava/lang/String;)Z
 
 ## 为什么采用混合运行时
 
-### 直接把游戏 DEX 编译进 Kotlin 并不现实
+### DEX 与 Kotlin
 
 Kotlin 编译器需要可用的源码或编译期类型信息；宿主游戏类只存在于 APK 的 DEX 中，不能简单地把 DEX 当作 Kotlin 类路径来编译。项目曾考虑生成同名类型桩，也考虑过把游戏整体反编译成 Java 再编译，但这两条路都把问题扩大了：泛型擦除、内部类命名、继承树和数千个互相引用的类型，会制造一套需要长期同步的伪源码。
 
@@ -73,7 +73,7 @@ Kotlin 编译器需要可用的源码或编译期类型信息；宿主游戏类�
 
 这个策略同时避免两种坏结果：让一个版本不兼容直接崩溃，或让自动化悄悄停摆却没有线索。日志不是正文里的验收奖章，而是开发者排查时要关联到具体类、描述符和调用路径的证据。
 
-## 开发者如何定位一次 ABI 故障
+## 定位 ABI 故障
 
 先区分“找不到”与“找错了”。`ClassNotFoundException`、`NoSuchMethodException` 和 `NoSuchFieldException` 指向解析边界；`IllegalArgumentException`、`ClassCastException` 或返回值语义异常，则可能意味着描述符、所有者类或版本绑定错误。不要先改调用方的条件判断，先把日志中的语义名称还原成宿主 DEX 的完整描述符。
 
