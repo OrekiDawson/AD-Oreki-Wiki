@@ -23,7 +23,9 @@ function scan(file, label) {
       .replace(/`[^`]*`/g, ' ')
       .replace(/https?:\/\/[^\s)>]+/gi, ' ')
       .replace(/OrekiDawson\/AD-Oreki-Edition-(?:Android|Web)/g, ' ')
-      .replace(/AD-Oreki-Edition(?:-(?:Android|Web))?/g, ' ');
+      .replace(/AD-Oreki-Edition(?:-(?:Android|Web))?/g, ' ')
+      .replace(/\/tags\/orekiedition\b/gi, ' ')
+      .replace(/>\s*orekiedition\s*</gi, '><');
     if (forbidden.test(visible)) hits.push({ file: label, line: index + 1, text: line.trim() });
     forbidden.lastIndex = 0;
   });
