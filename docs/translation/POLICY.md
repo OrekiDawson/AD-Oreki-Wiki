@@ -1,6 +1,6 @@
 # 原版 Wiki 中文翻译专区规范
 
-本文件定义 `content/player/original/` 玩家专区原版翻译的来源、许可、署名、翻译标准、状态与增量同步方式。规则受 `content/wiki-rules.md` 约束；两者冲突时以 `content/wiki-rules.md` 为准。
+本文件定义 `content/player/original/` 玩家专区原版翻译的来源、许可、署名、翻译标准、状态与增量同步方式。公开写作原则与版权总纲见 `content/wiki-rules.md`；本文件独立负责翻译状态等级、清单字段与增量同步口径，二者不重复定义同一状态事实。
 
 ## 1. 专区边界
 
