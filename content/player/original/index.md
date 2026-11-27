@@ -39,10 +39,10 @@ aliases:
 - [原版:重置成长（威望）](/player/original/ow-prestige)
 - [原版:自动化](/player/original/ow-automation)
 - [原版:普通挑战](/player/original/ow-normal-challenges)
-- [原版:无限](/player/original/ow-infinity)
 
 ### 无限
 
+- [原版:无限](/player/original/ow-infinity)
 - [原版:无限升级](/player/original/ow-infinity-upgrades)
 - [原版:无限升级（升级表）](/player/original/ow-infinity-upgrades-upgrades)
 - [原版:打破无限](/player/original/ow-break-infinity)
@@ -93,10 +93,10 @@ aliases:
 - [原版:永恒挑战明细](/player/original/ow-eternity-challenges-challenges-pelle)
 - [原版:膨胀升级（被毁灭的现实）](/player/original/ow-dilation-upgrades-doomed)
 - [原版:计数频率明细](/player/original/ow-tickspeed-galaxy-breakdown-doomed)
-- [原版:术语（佩勒用词）](/player/original/ow-terminology)
 
 ### 通用资料
 
+- [原版:术语（佩勒用词）](/player/original/ow-terminology)
 - [原版:挑战](/player/original/ow-challenges)
 - [原版:成就](/player/original/ow-achievements)
 - [原版:秘密成就](/player/original/ow-achievements-secret-achievements)
