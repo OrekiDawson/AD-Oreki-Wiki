@@ -18,7 +18,7 @@ aliases:
 
 1. 确认对应自动购买器已经解锁，且总开关打开。
 2. 确认当前资源足够，没有挑战或特殊现实禁用这项操作。
-3. 如果使用 Oreki Edition，观察一个完整的调度节拍。统一调度器默认每 10 秒检查一次受管策略，可调整为 1～60 秒；这不是原版每个自动购买器自己的内部间隔。
+3. 如果使用 本 MOD，观察一个完整的调度节拍。统一调度器默认每 10 秒检查一次受管策略，可调整为 1～60 秒；这不是原版每个自动购买器自己的内部间隔。
 4. 仍无变化时，记录平台、版本、阶段和受影响的项目，再反馈问题。
 
 原版自动器和 MOD 调度器各自负责什么，见[智能自动购买器](/player/gameplay/automation)。
@@ -45,6 +45,6 @@ aliases:
 
 ## 相关条目
 
-[智能自动购买器](/player/gameplay/automation) · [挑战完成判定与卡关排障](/player/gameplay/challenge-troubleshooting) · [阶段门禁](/player/gameplay/stage-gates) · [原版与 Oreki Edition 的区别](/player/gameplay/original-vs-mod)
+[智能自动购买器](/player/gameplay/automation) · [挑战完成判定与卡关排障](/player/gameplay/challenge-troubleshooting) · [阶段门禁](/player/gameplay/stage-gates) · [原版与 MOD 的区别](/player/gameplay/original-vs-mod)
 
 原版自动化与挑战条件的基础资料：[Automation](https://antimatterdimensions.wiki.gg/wiki/Automation?oldid=3396)、[Challenges](https://antimatterdimensions.wiki.gg/wiki/Challenges?oldid=3106) 和 [Eternity Challenges](https://antimatterdimensions.wiki.gg/wiki/Eternity_Challenges?oldid=3347)。

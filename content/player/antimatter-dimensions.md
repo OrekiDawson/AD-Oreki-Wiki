@@ -11,7 +11,7 @@ aliases:
 
 有些游戏怕玩家把世界毁掉，《反物质维度》却把毁灭世界设计成了奖励。你花上好一阵子积累反物质，终于撑破了宇宙的数值上限，游戏给你的第一份报酬，基础情况下只有一个无限点数。后来，你甚至会嫌一次宇宙坍缩花的时间太长。
 
-这就是《反物质维度》（Antimatter Dimensions），一款由 IvarK 等开发者制作的增量游戏。原版有[网页版](https://ivark.github.io/)、[Steam 版](https://store.steampowered.com/app/1399720/Antimatter_Dimensions/)和移动版。Oreki Edition 是本站介绍的 MOD；具体差异集中记录于[原版与 MOD](/player/gameplay/original-vs-mod)。
+这就是《反物质维度》（Antimatter Dimensions），一款由 IvarK 等开发者制作的增量游戏。原版有[网页版](https://ivark.github.io/)、[Steam 版](https://store.steampowered.com/app/1399720/Antimatter_Dimensions/)和移动版。本 MOD 是本站介绍的 MOD；具体差异集中记录于[原版与 MOD](/player/gameplay/original-vs-mod)。
 
 ## 从十到无限
 

@@ -1,6 +1,6 @@
 ---
 title: "Android 与 Web：版本和行为差异"
-description: "理解 Oreki Edition 两端的基线、同名功能差异与玩家核对版本的方法"
+description: "理解 MOD 两端的基线、同名功能差异与玩家核对版本的方法"
 tags:
   - 玩法
   - Android
@@ -10,7 +10,7 @@ aliases:
   - "/gameplay/platform-differences"
 ---
 
-Android 和 Web 都叫 Oreki Edition，却不是同一份程序。Android 以官方 3.21.0 游戏 DEX 和 Kotlin 适配层为基础，Web 则以冻结的上游网页源码和 JavaScript MOD 模块为基础；两端共享玩法目标，但不共享构建链、版本号或所有原版功能。
+Android 和 Web 都叫 本 MOD，却不是同一份程序。Android 以官方 3.21.0 游戏 DEX 和 Kotlin 适配层为基础，Web 则以冻结的上游网页源码和 JavaScript MOD 模块为基础；两端共享玩法目标，但不共享构建链、版本号或所有原版功能。
 
 ## 同名功能差异
 
@@ -49,7 +49,7 @@ Android 和 Web 都叫 Oreki Edition，却不是同一份程序。Android 以官
 ## 来源与延伸
 
 - [Android 3.21.0 基线](https://github.com/OrekiDawson/AD-Oreki-Edition-Android)
-- [Oreki Edition Web](https://github.com/OrekiDawson/AD-Oreki-Edition-Web)
+- [MOD Web](https://github.com/OrekiDawson/AD-Oreki-Edition-Web)
 - 原版网页源码固定基线（源码定位：IvarK/AntimatterDimensionsSourceCode@5409e320cecef96a917cca1dfb68f1f183e499ca/；具体文件证据留在内部核验记录）
 - [双端行为一致性](/developer/architecture/parity)：面向开发者的实现与行为契约说明。
 

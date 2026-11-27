@@ -65,7 +65,7 @@ $M$ 是 IP 倍率，$AM_{max}$ 是本次无限达到过的最高反物质。成�
 
 终于，当 IP 本身达到约 1.80e308，并满足第八无限维度等前置条件，第一次[永恒](/player/gameplay/eternity)便在眼前。你曾经用来衡量终点的那个数字再度出现了，只是这次单位变成了无限点数。
 
-Oreki Edition 的实际数值和自动化差异见[原版与 MOD](/player/gameplay/original-vs-mod)及[智能自动购买器](/player/gameplay/automation)。
+本 MOD 的实际数值和自动化差异见[原版与 MOD](/player/gameplay/original-vs-mod)及[智能自动购买器](/player/gameplay/automation)。
 
 ## 资料来源
 - [Infinity](https://antimatterdimensions.wiki.gg/index.php?title=Infinity&oldid=3113)、[Break Infinity](https://antimatterdimensions.wiki.gg/index.php?title=Break_Infinity&oldid=3349)。

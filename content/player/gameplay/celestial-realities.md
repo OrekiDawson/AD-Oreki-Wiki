@@ -75,7 +75,7 @@ aliases:
 
 ## 原版与 MOD 的版本边界
 
-Oreki Edition 调整过部分天神门槛、熵增长和计时窗口，Android 与 Web 也不一定使用同一套界面或实现。攻略中的具体数值不能跨版本直接套用；遇到数值差异，先看[原版行为与 Oreki Edition 修改](/player/gameplay/original-vs-mod)，再以正在使用的版本的游戏内说明为准。
+本 MOD 调整过部分天神门槛、熵增长和计时窗口，Android 与 Web 也不一定使用同一套界面或实现。攻略中的具体数值不能跨版本直接套用；遇到数值差异，先看[原版行为与 MOD 修改](/player/gameplay/original-vs-mod)，再以正在使用的版本的游戏内说明为准。
 
 不要用开发者报告中的历史结果替代当前玩家事实。源码层的判据和跨端差异可读[天神判据与跨端编码](/developer/architecture/celestial-implementation)，但玩家是否满足条件，最终仍要回到当前存档和真实结算。
 

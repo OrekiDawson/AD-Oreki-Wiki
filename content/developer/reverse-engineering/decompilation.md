@@ -15,7 +15,7 @@ aliases:
 
 ## 固定版本
 
-同一个短类名在不同 APK 中可能指向不同的类型；同一方法的参数也可能因重载或编译器生成代码而改变。调查开始时先记录 APK 的版本、签名摘要、使用的 DEX 文件和反编译工具版本。对 Oreki Edition 的 Android 3.21 基线，版本绑定文件（源码定位：OrekiDawson/AD-Oreki-Edition-Android@fb1299a132f134eb4fab009643ee3fc3d6c57edf/baseline/versions/3.21/bindings.json；具体文件证据留在内部核验记录）和第一方类索引（源码定位：OrekiDawson/AD-Oreki-Edition-Android@fb1299a132f134eb4fab009643ee3fc3d6c57edf/docs/deobfuscation/data/first-party-3.21-index.csv；具体文件证据留在内部核验记录）只描述该版本的外部边界，不能被当成上游源码的永久映射。
+同一个短类名在不同 APK 中可能指向不同的类型；同一方法的参数也可能因重载或编译器生成代码而改变。调查开始时先记录 APK 的版本、签名摘要、使用的 DEX 文件和反编译工具版本。对 本 MOD 的 Android 3.21 基线，版本绑定文件（源码定位：OrekiDawson/AD-Oreki-Edition-Android@fb1299a132f134eb4fab009643ee3fc3d6c57edf/baseline/versions/3.21/bindings.json；具体文件证据留在内部核验记录）和第一方类索引（源码定位：OrekiDawson/AD-Oreki-Edition-Android@fb1299a132f134eb4fab009643ee3fc3d6c57edf/docs/deobfuscation/data/first-party-3.21-index.csv；具体文件证据留在内部核验记录）只描述该版本的外部边界，不能被当成上游源码的永久映射。
 
 这一步看似保守，却能避免最昂贵的误判：把新版本的结果套回旧版本，随后在 Kotlin 中“修正”一个根本不存在于当前产物的 API。版本信息应与调查笔记和恢复后的测试样本一起保存，而不是只写在文章标题里。
 

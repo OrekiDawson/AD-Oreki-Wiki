@@ -14,7 +14,7 @@ tags:
 <details>
 <summary>AI Summary：Kotlin 混合运行时与 ABI 边界（审核日期 2026-11-21；依据：官方 3.21.0 反编译读码 + 已构建 APK 的 5 分钟自动化运行；180 分钟终局与正式发布验收 NOT RUN）</summary>
 
-Oreki Edition Android 以官方 3.21.0 混淆 DEX 为只读基线，新增业务由 Kotlin 编译并与官方运行时共同组成最终 APK。风险集中在官方混淆类、方法、字段描述符与新增 Kotlin 调用之间的类型边界；修改 ABI 适配时必须核对当前 3.21.0 的签名和调用链，不能沿用旧版本符号。本文摘要依据 [Kotlin 混合运行时 ABI](/developer/architecture/kotlin-runtime) 与 [DEX 与 ABI 反混淆](/developer/reverse-engineering/dex-abi) 的正文和固定来源整理，不新增技术断言，也不能代替构建或真实验收。
+MOD Android 以官方 3.21.0 混淆 DEX 为只读基线，新增业务由 Kotlin 编译并与官方运行时共同组成最终 APK。风险集中在官方混淆类、方法、字段描述符与新增 Kotlin 调用之间的类型边界；修改 ABI 适配时必须核对当前 3.21.0 的签名和调用链，不能沿用旧版本符号。本文摘要依据 [Kotlin 混合运行时 ABI](/developer/architecture/kotlin-runtime) 与 [DEX 与 ABI 反混淆](/developer/reverse-engineering/dex-abi) 的正文和固定来源整理，不新增技术断言，也不能代替构建或真实验收。
 
 </details>
 

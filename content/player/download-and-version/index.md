@@ -1,6 +1,6 @@
 ---
 title: "下载与版本"
-description: "从 Android Release 和 Web 入口进入 Oreki Edition，并在更新前保护存档"
+description: "从 Android Release 和 Web 入口进入 MOD，并在更新前保护存档"
 tags:
   - 玩家
   - 下载
@@ -22,4 +22,4 @@ aliases:
 
 至少记录平台、Android Release 标签或 Web 页面版本信息、存档是新建还是导入，以及能稳定复现的操作顺序。不要用“昨天下载的”代替版本号，也不要把另一个平台的表现当作当前平台证据。
 
-继续阅读：[玩家常见问题](/player/faq/) · [原版与 Oreki Edition 的区别](/player/gameplay/original-vs-mod) · [存档安全](/player/gameplay/saves)
+继续阅读：[玩家常见问题](/player/faq/) · [原版与 MOD 的区别](/player/gameplay/original-vs-mod) · [存档安全](/player/gameplay/saves)

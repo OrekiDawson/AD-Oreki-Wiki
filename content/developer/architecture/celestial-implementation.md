@@ -53,7 +53,7 @@ Web 上游使用升级对象的 `id` 组织虚构升级；Android 的移植层�
 
 ## 数值调整与原版语义要分开
 
-Oreki Edition 会改变部分门槛和成本，例如 Web 当前源码把 IU15 的反物质指数门槛集中成常量，并把 IU25 成本接到 MOD 常量；这类调整属于平衡层。解锁条件的组合、购买时的真实扣除、失败条件与重置清理仍属于机制层。
+本 MOD 会改变部分门槛和成本，例如 Web 当前源码把 IU15 的反物质指数门槛集中成常量，并把 IU25 成本接到 MOD 常量；这类调整属于平衡层。解锁条件的组合、购买时的真实扣除、失败条件与重置清理仍属于机制层。
 
 修改数值时，优先保持机制层不变：让购买继续走 `ImaginaryUpgrade.purchase()`，让资源继续通过 `Currency` 扣除，让锁定状态继续由状态对象计算。若为了“方便自动化”直接写入位图或跳过购买，测试也许会更快，却失去了对存档兼容和真实进度的意义。
 
@@ -93,7 +93,7 @@ OrekiSmartExecutor 注册模块
 
 若天神页面可见但策略不前进，先检查本端位图与读取器；若策略判定正确但购买失败，检查当前现实上下文、资源扣费和 `hasFailed`；若购买成功但下一阶段仍不可见，检查重置后缓存刷新与导航守卫。若 Android 与 Web 分叉，先用同一已知存档比较编码，再比较动作调用链，最后才比较数值常量。
 
-玩家侧的推进路线仍见[天神系统](/player/gameplay/celestials)，原版与 MOD 的数值差异见[原版行为与 Oreki Edition 修改](/player/gameplay/original-vs-mod)。旧版事实核查与历史证据入口保留在 [Android FACTS 文档](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/tree/3b2d8284f2aca7132168998ee32497b3c4c17b8e/docs/facts)；其中的历史运行结论不替代当前源码核对。
+玩家侧的推进路线仍见[天神系统](/player/gameplay/celestials)，原版与 MOD 的数值差异见[原版行为与 MOD 修改](/player/gameplay/original-vs-mod)。旧版事实核查与历史证据入口保留在 [Android FACTS 文档](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/tree/3b2d8284f2aca7132168998ee32497b3c4c17b8e/docs/facts)；其中的历史运行结论不替代当前源码核对。
 
 ## 相关条目
 

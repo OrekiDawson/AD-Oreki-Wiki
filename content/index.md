@@ -97,7 +97,7 @@ tags:
 <p class="home-kicker">原版百科</p>
 <h2>原版译文怎么读</h2>
 </div>
-<p>原版译文保留原文修订、术语、公式和 CC BY-SA 4.0 署名；Oreki Edition 的改动另行说明。可以从<a href="/player/original/">原版中文译文总览</a>进入，也可以按主题浏览：</p>
+<p>原版译文保留原文修订、术语、公式和 CC BY-SA 4.0 署名；本 MOD 的改动另行说明。可以从<a href="/player/original/">原版中文译文总览</a>进入，也可以按主题浏览：</p>
 <p class="home-inline-links"><a href="/player/original/ow-dimensions">维度</a><a href="/player/original/ow-challenges">挑战</a><a href="/player/original/ow-achievements">成就</a><a href="/player/original/ow-time-studies">时间研究</a><a href="/player/original/ow-celestials">天神</a><a href="/player/terminology">术语表</a></p>
 </section>
 

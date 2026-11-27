@@ -89,6 +89,10 @@ jobs:
         run: node scripts/check-navigation.mjs
       - name: Public link policy (source)
         run: node scripts/check-public-links.mjs
+      - name: MOD terminology policy (source)
+        run: node scripts/check-mod-terminology.mjs
+      - name: CJK spacing policy (source)
+        run: node scripts/check-cjk-spacing.mjs
       - name: Title length and naming hard gate
         run: node scripts/check-title-length.mjs
       - name: No page transition animation or progress bar
@@ -107,6 +111,12 @@ jobs:
         working-directory: .quartz-build
       - name: Public link policy (built HTML)
         run: node scripts/check-public-links.mjs --built public
+        working-directory: .quartz-build
+      - name: MOD terminology policy (built HTML)
+        run: node scripts/check-mod-terminology.mjs --built public
+        working-directory: .quartz-build
+      - name: CJK spacing policy (built HTML)
+        run: node scripts/check-cjk-spacing.mjs --built public
         working-directory: .quartz-build
       - name: Built title length hard gate
         run: node scripts/check-title-length.mjs --built public

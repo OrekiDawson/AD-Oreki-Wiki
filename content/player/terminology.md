@@ -1,6 +1,6 @@
 ---
 title: "玩家术语表"
-description: "《反物质维度》与 Oreki Edition 中常见玩法术语的简明解释"
+description: "《反物质维度》与 MOD 中常见玩法术语的简明解释"
 tags:
   - 玩家
   - 参考
@@ -8,7 +8,7 @@ aliases:
   - "/references/terminology"
 ---
 
-有些词第一次出现时像是按钮名称，玩到后面才会发现它们其实描述的是整套成长逻辑。本表先给出玩家需要的含义；更完整的操作和公式，请沿链接阅读对应条目。术语的原始定义可对照 [Antimatter Dimensions Wiki 的 Terminology 条目](https://antimatterdimensions.wiki.gg/wiki/Terminology)，本站译文会在玩家专区页面中注明 Oreki Edition 的差异。
+有些词第一次出现时像是按钮名称，玩到后面才会发现它们其实描述的是整套成长逻辑。本表先给出玩家需要的含义；更完整的操作和公式，请沿链接阅读对应条目。术语的原始定义可对照 [Antimatter Dimensions Wiki 的 Terminology 条目](https://antimatterdimensions.wiki.gg/wiki/Terminology)，本站译文会在玩家专区页面中注明 本 MOD 的差异。
 
 ## 成长与重置
 
@@ -44,9 +44,9 @@ aliases:
 | 保留项        | 发生重置后仍然存在的资源、升级或解锁。不同重置层和挑战的保留范围不同。                                           |
 | 前置条件      | 让按钮、升级或页面出现并可用所需满足的条件。资源足够不一定代表前置条件已经满足。                                 |
 | 存档导入/导出 | 将当前存档编码为文本并在另一份游戏实例中恢复。操作前应先保留一份原始备份。                                       |
-| 原版          | 本站所译原始 Wiki 对应的《Antimatter Dimensions》规则。原版和 Oreki Edition 的数值、界面或自动化差异应分别阅读。 |
-| Oreki Edition | 本站项目所指的 MOD 版本；它可能调整成长、自动化或界面，不能用原版条目的每个数字替代核对。                        |
+| 原版          | 本站所译原始 Wiki 对应的《Antimatter Dimensions》规则。原版和 MOD 的数值、界面或自动化差异应分别阅读。 |
+| MOD | 本站项目所指的 MOD 版本；它可能调整成长、自动化或界面，不能用原版条目的每个数字替代核对。                        |
 
 ## 继续阅读
 
-[游戏总览](/player/antimatter-dimensions) · [玩法机制](/player/gameplay/) · [原版与 Oreki Edition 的区别](/player/gameplay/original-vs-mod) · [玩家常见问题](/player/faq/)
+[游戏总览](/player/antimatter-dimensions) · [玩法机制](/player/gameplay/) · [原版与 MOD 的区别](/player/gameplay/original-vs-mod) · [玩家常见问题](/player/faq/)

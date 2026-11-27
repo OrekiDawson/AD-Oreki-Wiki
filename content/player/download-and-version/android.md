@@ -10,7 +10,7 @@ aliases:
   - "/download-and-version/android"
 ---
 
-Android 版本请从 [AD Oreki Edition Android Releases](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/releases) 进入。优先选择正式 Release，在发布页核对 APK 资产、版本标签和说明；不要把 Draft、预发布或失败候选当成稳定包。
+Android 版本请从 [AD MOD Android Releases](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/releases) 进入。优先选择正式 Release，在发布页核对 APK 资产、版本标签和说明；不要把 Draft、预发布或失败候选当成稳定包。
 
 ## 安装前先保护存档
 
@@ -32,4 +32,4 @@ Android 版本请从 [AD Oreki Edition Android Releases](https://github.com/Orek
 
 保留原始备份、Release 标签、安装前后的版本和系统错误提示。不要通过卸载、清除数据和反复覆盖安装来“碰碰运气”；先到[玩家常见问题](/player/faq/)区分安装、升级、存档和游戏行为问题。
 
-相关入口：[下载与版本总览](/player/download-and-version/) · [存档安全](/player/gameplay/saves) · [原版与 Oreki Edition 的区别](/player/gameplay/original-vs-mod)
+相关入口：[下载与版本总览](/player/download-and-version/) · [存档安全](/player/gameplay/saves) · [原版与 MOD 的区别](/player/gameplay/original-vs-mod)

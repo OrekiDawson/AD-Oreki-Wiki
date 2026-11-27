@@ -16,10 +16,10 @@ import path from "node:path"
 import { CATEGORY_DIRS, ORIGINAL_TRANSLATION_DIR, PLAYER_DIR } from "./wiki-paths.mjs"
 
 const ROOT = "content"
-const RULE_PAGE_TITLE = "反物质维度MOD Wiki:知识库规则"
+const RULE_PAGE_TITLE = "反物质维度 MOD：知识库规则"
 const RULE_PAGE = "content/wiki-rules.md"
 const POLICY_PAGE = "content/wiki-not.md"
-const POLICY_PAGE_TITLE = "反物质维度MOD Wiki:本站不是什么"
+const POLICY_PAGE_TITLE = "反物质维度 MOD：本站不是什么"
 const DRAFT_DIR = "content/ai-drafts/"
 const DEVELOPER_DIR = "content/developer/"
 const REQUIRED_TERMS = ["永恒挑战", "自动购买器", "AGP", "Kotlin", "Lai Tela", "build_mod.py"]
@@ -124,7 +124,7 @@ for (const f of files) {
       const expectedTitle = isRule ? RULE_PAGE_TITLE : POLICY_PAGE_TITLE
       if (fm.title !== expectedTitle) fail("正式规则或方针页标题必须为 " + expectedTitle + ": " + f)
     } else if (!isDraft) {
-      if (fm.title.startsWith("反物质维度MOD Wiki:"))
+      if (fm.title.startsWith("反物质维度 MOD："))
         fail("普通条目标题不应带规则页命名空间前缀: " + f)
       if (ROUND_LEAD_TITLE.test(fm.title)) {
         fail("专题条目标题不应以 R 轮次或日期开头（时间性材料请移出 content/，放入仓库内部归档目录）: " + f)

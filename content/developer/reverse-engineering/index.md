@@ -10,11 +10,11 @@ aliases:
   - "/reverse-engineering"
 ---
 
-逆向工程不是把混淆类名机械翻译成漂亮的 Kotlin 名称，而是证明一段运行时代码究竟接受什么输入、返回什么结果，以及这份理解能否安全地被新代码使用。对 Oreki Edition 来说，DEX 是冻结的事实边界；语义映射是研究资料；Kotlin 适配层才是新增业务应该依赖的工程边界。
+逆向工程不是把混淆类名机械翻译成漂亮的 Kotlin 名称，而是证明一段运行时代码究竟接受什么输入、返回什么结果，以及这份理解能否安全地被新代码使用。对 本 MOD 来说，DEX 是冻结的事实边界；语义映射是研究资料；Kotlin 适配层才是新增业务应该依赖的工程边界。
 
 ## 一次调查从哪里开始
 
-先固定 Android 3.21 基线和待调查的行为，再从 DEX 或反编译结果找到类、方法、字段和调用点。接着用描述符确认参数与返回类型，用寄存器和控制流确认数据怎样流动，最后把结果与3.21 绑定规则（源码定位：OrekiDawson/AD-Oreki-Edition-Android@fb1299a132f134eb4fab009643ee3fc3d6c57edf/baseline/versions/3.21/bindings.json；具体文件证据留在内部核验记录）和第一方类索引（源码定位：OrekiDawson/AD-Oreki-Edition-Android@fb1299a132f134eb4fab009643ee3fc3d6c57edf/docs/deobfuscation/data/first-party-3.21-index.csv；具体文件证据留在内部核验记录）交叉核对。
+先固定 Android 3.21 基线和待调查的行为，再从 DEX 或反编译结果找到类、方法、字段和调用点。接着用描述符确认参数与返回类型，用寄存器和控制流确认数据怎样流动，最后把结果与 3.21 绑定规则（源码定位：OrekiDawson/AD-Oreki-Edition-Android@fb1299a132f134eb4fab009643ee3fc3d6c57edf/baseline/versions/3.21/bindings.json；具体文件证据留在内部核验记录）和第一方类索引（源码定位：OrekiDawson/AD-Oreki-Edition-Android@fb1299a132f134eb4fab009643ee3fc3d6c57edf/docs/deobfuscation/data/first-party-3.21-index.csv；具体文件证据留在内部核验记录）交叉核对。
 
 这个顺序很重要。短类名只能告诉你“产物里有一个符号”，不能告诉你它是玩家状态、视图对象还是临时包装器；绑定表也只能说明某个版本的映射，不能承诺下一版仍然如此。
 

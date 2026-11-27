@@ -13,7 +13,7 @@ APK 的签名不是发布前贴上的装饰章，而是 Android 判断“这是�
 
 ## 覆盖安装究竟在比较什么
 
-对 Oreki Edition，当前发布策略把应用身份集中在 `scripts/release-gate-policy.json`：包名为 `net.oreki.antimatterdimensions`，原版基线为 3.21.0，证书指纹和 `versionCode` 由策略文件与发布工件共同约束。包名改变会得到另一个应用；签名身份不兼容时，Android 不会把它当成原应用的升级；`versionCode` 不能重复或倒退，否则更新排序和门禁都会出问题。
+对 本 MOD，当前发布策略把应用身份集中在 `scripts/release-gate-policy.json`：包名为 `net.oreki.antimatterdimensions`，原版基线为 3.21.0，证书指纹和 `versionCode` 由策略文件与发布工件共同约束。包名改变会得到另一个应用；签名身份不兼容时，Android 不会把它当成原应用的升级；`versionCode` 不能重复或倒退，否则更新排序和门禁都会出问题。
 
 `versionName` 是给人看的版本标签，`versionCode` 是系统比较新旧的整数。当前策略中的 `30210002` 是开发中的候选身份，不能写成“已发布版本”；真正的发布上限应以已核验的公开 Release 和策略状态为准。
 

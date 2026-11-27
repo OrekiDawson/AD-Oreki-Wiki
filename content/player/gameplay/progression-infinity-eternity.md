@@ -29,6 +29,6 @@ aliases:
 
 两层重置的原版术语与阶段关系可对照 [Antimatter Dimensions Wiki](https://antimatterdimensions.wiki.gg/wiki/Antimatter_Dimensions)，本站页面另行说明 MOD 与平台边界。
 
-继续阅读：[现实与时间研究](/player/gameplay/reality-time-studies) · [挑战与真实结算](/player/gameplay/challenges) · [原版行为与 Oreki Edition 修改](/player/gameplay/original-vs-mod)
+继续阅读：[现实与时间研究](/player/gameplay/reality-time-studies) · [挑战与真实结算](/player/gameplay/challenges) · [原版行为与 MOD 修改](/player/gameplay/original-vs-mod)
 
 原版阶段说明可参阅[Antimatter Dimensions Wiki](https://antimatterdimensions.wiki.gg/wiki/Main_Page)；不同版本的门槛和保留规则以当前游戏为准。

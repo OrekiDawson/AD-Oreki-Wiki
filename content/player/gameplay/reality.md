@@ -55,7 +55,7 @@ $$RM=\left\lfloor1000^{L/4000-1}\right\rfloor.$$
 
 Infinity Points、Eternity Points，下一层却不叫 Reality Points，而叫 Reality Machines。原版社区 Wiki 还记录过一个可能的命名线索：官方 Discord 在 2017 年 12 月已有 Reality Dimension 身份组，早于更新内容公布。两者之间的实际因果关系尚无确定依据。
 
-接下来见[天神](/player/gameplay/celestials)。首次现实的前置详见[时间研究](/player/gameplay/time-studies)，Oreki Edition 的条件变动见[原版与 MOD](/player/gameplay/original-vs-mod)。
+接下来见[天神](/player/gameplay/celestials)。首次现实的前置详见[时间研究](/player/gameplay/time-studies)，本 MOD 的条件变动见[原版与 MOD](/player/gameplay/original-vs-mod)。
 
 ## 资料来源
 - [Reality](https://antimatterdimensions.wiki.gg/index.php?title=Reality&oldid=3235)、现实机器换算（源码定位：IvarK/AntimatterDimensionsSourceCode@5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/machines.js；具体文件证据留在内部核验记录）。
