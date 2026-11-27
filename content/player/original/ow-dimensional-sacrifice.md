@@ -22,10 +22,6 @@ aliases:
 
 普通挑战 12 中只重置第 1 至第 6 维度；获得成就 118「IT'S OVER 9000」后，献祭不再清空这些数量。普通挑战 8 又会改变规则，使所有维度连同倍率和价格一起重置。
 
-> 本页译自社区 Wiki 同名条目；原作标记该页仍需清理（Cleanup），译文保留原文信息。
-
-原文此页包含桌面端和移动端献祭界面图 `Antimatter-sacrifice-interface--darktheme-desktop.png`、`Antimatter-sacrifice-interface--darktheme-mobile.png`，以及成就图标 `Main-achievements-icon-r81--mobile.png`；本译文未转载这些图片，仅保留文字说明。
-
 ## 机制
 
 维度献祭的总倍率取决于截至当前累计献祭的第 1 [反物质维度](/player/original/ow-antimatter-dimensions)数量。本次献祭新增的倍率则由当前第 1 维度数量相对于既有累计量决定，结果会累积到第 8 维度的总献祭倍率中。因此，先以 ×10 献祭再以 ×4 献祭，与先以 ×8 再以 ×5 献祭的效果相同。
@@ -70,10 +66,6 @@ $$\frac{m^{0.05}}{n^{0.04}} \times j$$
 | 维度献祭获得的倍率小于或等于 ×1 | 加成为 ×1 |
 | 玩家在任意[普通挑战](/player/original/ow-normal-challenges)或[无限挑战](/player/original/ow-infinity-challenges)中 | 已达到挑战目标 |
 | 以上条件都不满足 | 需要大坍缩 |
-
-## 琐事
-
-原文此节为空；脚注章节亦为空。
 
 ## 来源与许可
 
