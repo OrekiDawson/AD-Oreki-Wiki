@@ -46,11 +46,9 @@ export function comparePageRoutes(model, a, b) {
       const prefix = parent ? parent + "/" : ""
       const rank = key => { const n = order.indexOf(prefix + key); return n < 0 ? 1000 : n }
       return rank(aa[i]) - rank(bb[i]) ||
-        (aa.length === i + 1 && bb.length === i + 1
-          ? a.title.localeCompare(b.title, "zh-CN")
-          : aa[i].localeCompare(bb[i], "zh-CN", { numeric: true }))
+        aa[i].localeCompare(bb[i], "zh-CN", { numeric: true, sensitivity: "base" })
     }
     parent = parent ? parent + "/" + aa[i] : aa[i]
   }
-  return aa.length - bb.length
+  return aa.length - bb.length || a.route.localeCompare(b.route, "zh-CN", { numeric: true, sensitivity: "base" })
 }

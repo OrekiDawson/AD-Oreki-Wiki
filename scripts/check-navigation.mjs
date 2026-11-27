@@ -33,6 +33,14 @@ const routeFor = (file) => {
   const rel = path.relative(content, file).replaceAll("\\", "/").replace(/\.md$/, "")
   return rel.endsWith("/index") ? `/${rel.slice(0, -6)}` : `/${rel}`
 }
+const titleFor = (file) => {
+  const text = fs.readFileSync(file, "utf8")
+  const match = text.match(/^---\r?\n([\s\S]*?)\r?\n---/)
+  const title = match?.[1].match(
+    /^title:\s*(?:"([^"\r\n]*)"|'([^'\r\n]*)'|([^#\r\n]*?))\s*(?:#.*)?$/m,
+  )
+  return (title?.[1] ?? title?.[2] ?? title?.[3])?.trim() ?? path.basename(file, ".md")
+}
 for (const file of formal)
   if (!allEntries.includes(`](${routeFor(file)})`))
     errors.push(`正式页面未进入全部条目索引：${routeFor(file)}`)
@@ -102,7 +110,7 @@ const orderedExplorer = fs.readFileSync(
 )
 // 执行实际可序列化回调，而非检查重复的硬编码数组。
 if (navigationModel) {
-  const { createNavigationCallbacks } = await import("./navigation-runtime.mjs")
+  const { comparePageRoutes, createNavigationCallbacks } = await import("./navigation-runtime.mjs")
   const { runInNewContext } = await import("node:vm")
   const callbacks = createNavigationCallbacks(navigationModel)
   const compare = runInNewContext("(" + callbacks.compare.toString() + ")")
@@ -114,6 +122,27 @@ if (navigationModel) {
     const sorted = routes.slice().reverse().map(node).sort(compare).map(n => n.slug)
     if (JSON.stringify(sorted) !== JSON.stringify(routes)) errors.push("导航排序不一致：" + label)
   }
+  const generatedPages = formal.map((file) => ({
+    file,
+    route: routeFor(file),
+    title: titleFor(file),
+  })).sort((a, b) => comparePageRoutes(navigationModel, a, b))
+  const generatedRoutes = generatedPages.map((page) => page.route)
+  if (JSON.stringify(indexedRoutes) !== JSON.stringify(generatedRoutes))
+    errors.push("全部条目索引未按导航模型生成，需重新运行 generate-navigation.mjs")
+  const comparatorSamples = [
+    node("player/aaa"),
+    node("player/aaa/child"),
+    node("player/zzz"),
+  ]
+  for (const a of comparatorSamples)
+    for (const b of comparatorSamples)
+      for (const c of comparatorSamples)
+        if (compare(a, b) <= 0 && compare(b, c) <= 0 && compare(a, c) > 0)
+          errors.push("导航比较器不满足传递性")
+  const sampleOnce = comparatorSamples.slice().sort(compare).map((item) => item.slug)
+  const sampleTwice = comparatorSamples.slice().reverse().sort(compare).map((item) => item.slug)
+  if (JSON.stringify(sampleOnce) !== JSON.stringify(sampleTwice)) errors.push("导航比较器结果不确定")
   if (rootOrder[0] !== "player" || rootOrder[1] !== "developer") errors.push("玩家专区必须在开发者专区之前")
   assertOrder(rootOrder, "根级")
   if (JSON.stringify(navigationModel.stationEntries) !== JSON.stringify(rootOrder.slice(2)))

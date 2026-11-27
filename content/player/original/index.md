@@ -114,7 +114,7 @@ aliases:
 ## 社区与原始资料
 
 - [原版 Wiki 首页](https://antimatterdimensions.wiki.gg/wiki/Main_Page)：动态入口，仅用于查看原版最新页面与英文导航，不作为某篇译文的固定底本。
-- [原版游戏源码](https://github.com/IvarK/AntimatterDimensionsSourceCode)：用于核对游戏机制、公式和版本实现。
+- [原版游戏源码（固定版本）](https://github.com/IvarK/AntimatterDimensionsSourceCode/tree/5409e320cecef96a917cca1dfb68f1f183e499ca)：用于核对游戏机制、公式和版本实现；译文复核以该提交为版本边界。
 - [原版 Wiki 页面目录](https://antimatterdimensions.wiki.gg/wiki/Antimatter_Dimensions_Wiki/pages)：用于核对英文条目是否已被本站收录。
 - [知识库规则](/wiki-rules)：了解译文来源、署名与编辑规范。
 

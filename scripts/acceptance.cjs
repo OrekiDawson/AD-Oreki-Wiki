@@ -19,6 +19,10 @@ try {
 
 const BASE = process.env.KB_URL || 'http://localhost:8081';
 const OUT = process.env.KB_OUT || 'evidence/playwright-mobile.json';
+const NAVIGATION_MODEL = JSON.parse(
+  fs.readFileSync(path.join(__dirname, 'navigation-model.json'), 'utf8'),
+);
+const EXPECTED_SIDEBAR = NAVIGATION_MODEL.categories.root.map((entry) => entry.label);
 
 const SEARCH_TERMS = [
   ['永恒挑战', 'player/gameplay/challenges'],
@@ -109,7 +113,6 @@ async function run() {
   }
 
   // 移动端侧栏：真实 DOM 渲染顺序断言（不读配置文本）
-  const EXPECTED_SIDEBAR = ['玩家专区', '开发者专区', '全部条目', '知识库规则', '本站不是什么', '版权与许可', '本站使用说明'];
   const sidebarToggle = page.locator('.explorer .explorer-toggle').first();
   if (await sidebarToggle.count()) {
     await sidebarToggle.click({ force: true }).catch(() => {});
