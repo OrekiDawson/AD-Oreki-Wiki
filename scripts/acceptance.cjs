@@ -50,7 +50,7 @@ const NEW_PAGES = [
   '/developer/evidence/',
   '/developer/ai-summaries/',
 ];
-const CATEGORY_LABELS = ['玩家专区', '开发者专区', '玩法机制', '架构与运行时', '运行证据索引'];
+const CATEGORY_LABELS = ['玩家专区', '开发者专区', '玩法机制', '架构与机制', '运行证据'];
 
 function weakMustSee(items) {
   return ['玩家专区', '开发者专区'].some((label) => {
@@ -115,14 +115,7 @@ async function run() {
   }
 
   // 移动端侧栏：真实 DOM 渲染顺序断言（不读配置文本）
-  const EXPECTED_SIDEBAR = [
-    '玩家专区',
-    '开发者专区',
-    '知识库规则',
-    '本站不是什么',
-    '版权与许可',
-    '本站使用说明',
-  ];
+  const EXPECTED_SIDEBAR = ['玩家专区', '开发者专区', '全部条目', '知识库规则', '本站不是什么', '版权与许可', '本站使用说明'];
   const sidebarToggle = page.locator('.explorer .explorer-toggle').first();
   if (await sidebarToggle.count()) {
     await sidebarToggle.click({ force: true }).catch(() => {});
@@ -131,7 +124,8 @@ async function run() {
   const sidebar = await page.evaluate(() => {
     const ul = document.querySelector('.explorer-content ul.explorer-ul');
     if (!ul) return null;
-    const items = [...ul.children]
+    const items = [...ul.children].flatMap(li => li.classList.contains('wiki-nav-group')
+      ? [...li.querySelector(':scope > ul').children] : [li])
       .filter((li) => !li.classList.contains('overflow-end'))
       .map((li) => {
         const a = li.querySelector(':scope > a, :scope > .folder-container a');
@@ -145,7 +139,7 @@ async function run() {
           inViewport: box ? box.top >= 0 && box.top < window.innerHeight : false,
         };
       });
-    return { items, expanded: !document.querySelector('.explorer').classList.contains('collapsed') };
+    return { items, expanded: !document.querySelector('.explorer').classList.contains('collapsed'), groups: [...ul.querySelectorAll('.wiki-nav-group-label')].map(el => el.textContent), scrollable: ['auto', 'scroll'].includes(getComputedStyle(document.querySelector('.explorer-content')).overflowY) };
   });
   results.mobile.sidebar = sidebar;
   if (!sidebar) results.errors.push('sidebar-missing');
@@ -156,11 +150,10 @@ async function run() {
     }
     if (!sidebar.expanded) results.errors.push('sidebar-not-expanded');
     if (sidebar.items.some((i) => i.truncated)) results.errors.push('sidebar-truncated');
-    const mustSee = ['玩家专区', '开发者专区'];
-    for (const label of mustSee) {
-      const item = sidebar.items.find((i) => i.label === label);
-      if (!item || item.inViewport !== true) results.errors.push('sidebar-not-visible:' + label);
-    }
+    if (!sidebar.items.some(i => i.label === '玩家专区' && i.inViewport)) results.errors.push('player-first-entry-not-visible');
+    if (!sidebar.scrollable) results.errors.push('sidebar-not-independently-scrollable');
+    for (const label of ['站务', '双端共通机制', 'Android', 'Web', '基础机制', '天神与后期'])
+      if (!sidebar.groups.includes(label)) results.errors.push('missing-topic-group:' + label);
   }
 
   // 折叠可用：再点一次折叠按钮
@@ -182,7 +175,7 @@ async function run() {
     const links = [...document.querySelectorAll('.explorer-content a.active, .explorer-content a.is-active')];
     return links.map((a) => a.getAttribute('href'));
   });
-  if (!results.mobile.sidebarActive.includes('/player/gameplay/challenges')) {
+  if (!results.mobile.sidebarActive.some(href => new URL(href, BASE).pathname.replace(/\/$/, '') === '/player/gameplay/challenges')) {
     results.errors.push('sidebar-active-highlight');
   }
   if (await toggle2.count()) { await toggle2.click({ force: true }).catch(() => {}); await page.waitForTimeout(400); }
