@@ -82,6 +82,6 @@ aliases:
 - [天神导航原版译文](/player/original/ow-celestial-navigation)及上文各天神原版译文；原始修订、作者与许可见各页来源区。
 - [鹿颈长](https://antimatterdimensions.wiki.gg/index.php?title=Effarig&oldid=3371)：名字的来源与开发历史。
 - [无名氏](https://antimatterdimensions.wiki.gg/index.php?title=The_Nameless_Ones&oldid=3372)：储存时间、谜题和旧内部名称。
-- [特蕾莎](https://antimatterdimensions.wiki.gg/index.php?title=Teresa&oldid=3370)、[原版成就表](https://antimatterdimensions.wiki.gg/index.php?title=Achievements&oldid=3363)。
+- [特蕾莎](https://antimatterdimensions.wiki.gg/index.php?title=Teresa&oldid=3370)、[原版成就表](https://antimatterdimensions.wiki.gg/index.php?title=Achievements&oldid=3363)（均已用 MediaWiki API 核对标题、修订号与 HTTP 200；2026-11-27 复核）。
 
 本文依据原版社区 Wiki 的资料独立编写，涉及其内容的改编按  [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)  共享；原文贡献者见各固定修订的页面历史。

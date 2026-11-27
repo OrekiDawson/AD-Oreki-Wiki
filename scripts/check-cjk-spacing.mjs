@@ -44,17 +44,18 @@ function visibleHtml(source) {
     'breadcrumb-container', 'explorer', 'toc', 'recent-notes',
     'folder-container', 'page-listing', 'section-ul', 'section', 'tags', 'meta', 'page-list',
   ]);
-  const withoutGeneratedChrome = removeElements(source, (tag, attrs) => {
+  const sanitized = source
+    .replace(/<script\b[\s\S]*?<\/script>/gi, ' ')
+    .replace(/<style\b[\s\S]*?<\/style>/gi, ' ')
+    .replace(/<pre\b[\s\S]*?<\/pre>/gi, ' ')
+    .replace(/<code\b[\s\S]*?<\/code>/gi, ' ')
+    .replace(/<math\b[\s\S]*?<\/math>/gi, ' ');
+  const withoutGeneratedChrome = removeElements(sanitized, (tag, attrs) => {
     if (['nav', 'aside', 'footer', 'header'].includes(tag)) return true;
     const classes = attrs.match(/\bclass=["']([^"']*)["']/i)?.[1]?.split(/\s+/) ?? [];
     return classes.some((name) => generatedClasses.has(name));
   });
   return withoutGeneratedChrome
-    .replace(/<script\b[\s\S]*?<\/script>/gi, ' ')
-    .replace(/<style\b[\s\S]*?<\/style>/gi, ' ')
-    .replace(/<pre\b[\s\S]*?<\/pre>/gi, ' ')
-    .replace(/<code\b[\s\S]*?<\/code>/gi, ' ')
-    .replace(/<math\b[\s\S]*?<\/math>/gi, ' ')
     // Quartz 插件可能把函数序列化到 data 属性；属性不是读者可见正文，
     // 且其中的比较符号会干扰 HTML 标签过滤。
     .replace(/\sdata-quartz-[\w:-]+=("[\s\S]*?"|'[\s\S]*?')/gi, ' ')
@@ -67,6 +68,7 @@ function visibleHtml(source) {
 // `<div.*?</div>`，因为这些容器内部还会嵌套多个 div。
 function removeElements(source, shouldRemove) {
   const token = /<(?:(?:[^>"']|"[^"]*"|'[^']*')*)>/g;
+  const voidElements = new Set(['area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link', 'meta', 'param', 'source', 'track', 'wbr']);
   const stack = [];
   let output = '';
   let cursor = 0;
@@ -74,7 +76,7 @@ function removeElements(source, shouldRemove) {
   for (const match of source.matchAll(token)) {
     const raw = match[0];
     const start = match.index ?? 0;
-    if (!suppressed) output += source.slice(cursor, start);
+    if (!suppressed) output += source.slice(cursor, start) + ' ';
     cursor = start + raw.length;
     const close = raw.match(/^<\/\s*([\w-]+)/);
     if (close) {
@@ -84,7 +86,7 @@ function removeElements(source, shouldRemove) {
     }
     const open = raw.match(/^<\s*([\w-]+)([^>]*)>/);
     if (!open) continue;
-    const selfClosing = /\/\s*>$/.test(raw);
+    const selfClosing = /\/\s*>$/.test(raw) || voidElements.has(open[1].toLowerCase());
     const remove = shouldRemove(open[1].toLowerCase(), open[2]);
     if (remove) suppressed += 1;
     if (!selfClosing) stack.push({ remove });
