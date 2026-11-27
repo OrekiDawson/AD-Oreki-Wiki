@@ -65,7 +65,7 @@ Android 构建页最容易让人迷路的地方，不是 Gradle 命令本身，�
 - **配置阶段找不到完整游戏输入**：先检查 `oreki.fullGameStage` 的实际解析路径，再查阶段目录、`build/agp-generated-res`、`build/agp-fullgame-assets` 和 `scripts/payload/lib`。
 - **资源或 Manifest 阶段失败**：核对输入是否属于同一冻结基线，不要用旧缓存或同名 APK 代替来源不明的文件。
 - **Release 被签名门禁拒绝**：确认 `keys/oreki.jks` 和密码环境变量是否按仓库规则可用；不要把 unsigned 实验包上传为正式包。
-- **构建成功但游戏行为异常**：回到 [Android 架构](/developer/architecture/android)，分别检查 `GameApi`、自动化调度和阶段判定；构建绿灯不能证明这些运行时路径正确。
+- **构建成功但游戏行为异常**：回到  [Android 架构](/developer/architecture/android)，分别检查 `GameApi`、自动化调度和阶段判定；构建绿灯不能证明这些运行时路径正确。
 
 ## 相关条目
 

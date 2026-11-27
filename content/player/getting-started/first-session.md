@@ -11,7 +11,7 @@ aliases:
 
 先别急着认识无限、永恒和天神。打开游戏时，你真正需要理解的只有一件事：怎样让反物质自己增长。
 
-网页版入口为 [oreki.net](https://oreki.net/)，Android 版本可从[下载与版本说明](/player/download-and-version/)取得。初次游玩使用空存档槽；已有存档的玩家请先阅读[存档](/player/gameplay/saves)，保留原来的进度。
+网页版入口为  [oreki.net](https://oreki.net/)，Android 版本可从[下载与版本说明](/player/download-and-version/)取得。初次游玩使用空存档槽；已有存档的玩家请先阅读[存档](/player/gameplay/saves)，保留原来的进度。
 
 ## 让第一维度工作
 
@@ -50,4 +50,4 @@ aliases:
 - [Tickspeed](https://antimatterdimensions.wiki.gg/index.php?title=Tickspeed&oldid=3334)、[Dimension Boosts](https://antimatterdimensions.wiki.gg/index.php?title=Dimension_Boosts&oldid=3333)、[Antimatter Galaxies](https://antimatterdimensions.wiki.gg/index.php?title=Antimatter_Galaxies&oldid=3335)。
 - [原版成就表](https://antimatterdimensions.wiki.gg/index.php?title=Achievements&oldid=3363)：成就 23。
 
-本文依据原版社区 Wiki 的资料独立编写，涉及其内容的改编按 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) 共享；原文贡献者见各固定修订的页面历史。
+本文依据原版社区 Wiki 的资料独立编写，涉及其内容的改编按  [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)  共享；原文贡献者见各固定修订的页面历史。

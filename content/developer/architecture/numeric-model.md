@@ -42,7 +42,7 @@ value = mantissa × 10^exponent
 
 Android 3.21 基线的 `BigDouble.smali`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545/reports/r50/apk_a13/smali/kajfosz/antimatterdimensions/BigDouble.smali；具体文件证据留在内部核验记录） 明确声明了 `mantissa:D` 与 `exponent:D` 两个实例字段，并保留 `Comparable<BigDouble>` 与 `Serializable` 的类型信息。它还包含最大指数、最小指数、归一化容差和最大有效位数等常量。
 
-这给源码恢复一个重要提示：反编译器显示两个 `double` 字段，并不意味着游戏逻辑可以把整个对象替换成一个 `double`。比较、归一化、序列化和可变性都属于 `BigDouble` 的语义。Android Kotlin 适配层应通过 [DEX 与 ABI](/developer/reverse-engineering/dex-abi) 记录的类名、描述符和调用边界使用宿主对象，而不是复制一套“看起来相似”的数字类。
+这给源码恢复一个重要提示：反编译器显示两个 `double` 字段，并不意味着游戏逻辑可以把整个对象替换成一个 `double`。比较、归一化、序列化和可变性都属于 `BigDouble` 的语义。Android Kotlin 适配层应通过  [DEX 与 ABI](/developer/reverse-engineering/dex-abi)  记录的类名、描述符和调用边界使用宿主对象，而不是复制一套“看起来相似”的数字类。
 
 ## 运算为什么要先看指数
 

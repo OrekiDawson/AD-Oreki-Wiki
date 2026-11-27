@@ -10,7 +10,7 @@ aliases:
   - "/download-and-version/web"
 ---
 
-Web 版入口是 [oreki.net](https://oreki.net/)。源码仓库中的变更不会自动改变正式入口；判断自己正在玩的版本时，以实际打开的站点和页面显示为准，而不是以某个 GitHub commit 或转发链接推断。
+Web 版入口是  [oreki.net](https://oreki.net/)。源码仓库中的变更不会自动改变正式入口；判断自己正在玩的版本时，以实际打开的站点和页面显示为准，而不是以某个 GitHub commit 或转发链接推断。
 
 ## 页面看起来像旧版本怎么办
 

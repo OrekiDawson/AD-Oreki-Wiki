@@ -33,32 +33,32 @@ aliases:
 
 ### AD: FASTer
 
-- 链接：<https://wyxkk.github.io/ADfaster/>｜作者：WYXkk｜仓库：<https://github.com/wyxkk/ADfaster>｜状态：已完成
+- 链接：<0>｜作者：WYXkk｜仓库：<1>｜状态：已完成
 - 主要改动：把游戏大部分流程加速约 1000 倍。单纯加速说不通的地方另有补偿效果，细节见「How to Play」第二条。作者的目标是跳过时间墙、直接享受 AD。
 - 可用内容：直到通关。
 
 ### AD: Puzzled
 
-- 链接：<https://aquamarine309.github.io/ADPuzzled/>｜作者：aquamarine｜仓库：<https://github.com/aquamarine309/ADPuzzled>｜状态：持续开发
+- 链接：<0>｜作者：aquamarine｜仓库：<1>｜状态：持续开发
 - 把玩法改成解谜向：多数机制更像「问题—解法」，而不是常规的增量策略。无限之后会解锁「Logic」页签，代价是失去反物质维度，需要靠逻辑点数购买升级重新解锁。
-- 它其实是同一作者旧作 <https://aquamarine309.github.io/ADPuzzleTestVer/> 的重写版。
+- 它其实是同一作者旧作 <0> 的重写版。
 - 可用内容：到 9 次永恒。
 
 ### AD: Rewarded
 
-- 链接：<https://rangaz.github.io/AntimatterDimensionsWithAchievementRewards/>｜作者：Rangazz｜仓库：<https://github.com/Rangaz/AntimatterDimensionsWithAchievementRewards>｜状态：已完成
+- 链接：<0>｜作者：Rangazz｜仓库：<1>｜状态：已完成
 - 目标是让原作每一个成就都有有意思的奖励，并新增一个复兴节点（ACHEH）来强化已有奖励。整体会稍快一些，玩法（尤其后期）与原版有区别。
 - 可用内容：直到通关。
 
 ### AD: Smooth
 
-- 链接：<https://googolplexo.github.io/AntimatterDimensionsSmooth/>｜作者：Googolplex｜仓库：<https://github.com/Googolplexo/AntimatterDimensionsSmooth>｜状态：持续开发
+- 链接：<0>｜作者：Googolplex｜仓库：<1>｜状态：持续开发
 - 所有公式都改成平滑函数：软上限与（多数）硬上限被去掉或从开局就生效，因此整个游戏需要重新平衡，当前终局到 e4000。
 - 平衡范围：到 EC10 之前，或 e100 EP。
 
 ### AD: Space
 
-- 链接：<https://qwqe308.github.io/AD-Space-Mod/>｜作者：QwQe308｜仓库：<https://github.com/QwQe308/AD-Space-Mod>｜状态：持续开发
+- 链接：<0>｜作者：QwQe308｜仓库：<1>｜状态：持续开发
 - 新增一种名为「Space」的资源，它会随时间被动增长（不是被生产出来），并削弱反物质产量——设定上是「反物质变大，留给反物质的空间就少了」；作为补偿，加入了类似佩勒裂痕的「Research」机制。
 - 平衡范围：到时间研究 181；之后并非被锁住，只是再往后没有专属玩法了。
 

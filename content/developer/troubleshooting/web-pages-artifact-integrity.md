@@ -10,7 +10,7 @@ tags:
 
 “页面能打开”只说明浏览器收到了可解析的 HTML。它不能说明页面来自批准的提交，也不能说明脚本、样式和媒体文件属于同一份构建。静态站点出现白屏、旧界面或部分功能失效时，先判断问题是在部署身份、目录组装、资源缓存还是运行时；否则很容易反复发布，却始终没有增加有效证据。
 
-本文讨论 Web Pages 的产物身份和排障顺序。源码、部署工作流和验证脚本以 Web 仓库提交 [`b28b231efa5b694ce1da8a1e508cfc3ecc099344`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/tree/b28b231efa5b694ce1da8a1e508cfc3ecc099344) 为参考；它解释的是静态站点如何证明“发布了哪一版”，不是某次部署已经成功的报告。
+本文讨论 Web Pages 的产物身份和排障顺序。源码、部署工作流和验证脚本以 Web 仓库提交  [`b28b231efa5b694ce1da8a1e508cfc3ecc099344`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/tree/b28b231efa5b694ce1da8a1e508cfc3ecc099344)  为参考；它解释的是静态站点如何证明“发布了哪一版”，不是某次部署已经成功的报告。
 
 ## 先把故障分成四层
 

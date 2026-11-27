@@ -16,7 +16,7 @@ aliases:
   - "/original/ow-save-bank"
 ---
 
-存档库（Save Bank）是 Buck4437 做的一个网站，地址是 <https://buck4437.github.io/save-bank>。
+存档库（Save Bank）是 Buck4437 做的一个网站，地址是 <0>。
 
 站内收着游戏各个阶段的存档，其中包括「通关后」（Post-game，即超过第一次通关进度）的存档。用途不少：测试、找回进度等等。
 

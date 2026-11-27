@@ -61,4 +61,4 @@ aliases:
 
 [下载与版本](/player/download-and-version/) · [原版行为与 MOD 修改](/player/gameplay/original-vs-mod) · [阶段门禁](/player/gameplay/stage-gates) · [玩家常见问题](/player/faq/)
 
-原版导出入口可参阅[Antimatter Dimensions Wiki 的存档页面](https://antimatterdimensions.wiki.gg/wiki/Save)；平台实现和 MOD 行为可能不同，具体保留项以当前版本为准。
+原版导出入口可参阅 [Antimatter Dimensions Wiki 的存档页面](https://antimatterdimensions.wiki.gg/wiki/Save)；平台实现和 MOD 行为可能不同，具体保留项以当前版本为准。

@@ -13,7 +13,7 @@ Web 端的界面不是把 `player` 对象直接“打印”到页面上。游戏
 
 当前 Web 实现选择了另一种边界：游戏逻辑发出事件，`GameUI` 把一轮变化合并成一次 UI flush，组件通过 `GAME_EVENT.UPDATE` 读取状态并更新自己的投影。教程弹窗又在这个基础上加入阶段签名、阅读位置和低频重算，让“页面会跟着游戏变化”与“页面不会每帧重复做昂贵工作”同时成立。
 
-本文依据 Web 固定提交 [`e1c93caa`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/tree/e1c93caa758de6c39cf814582123d4a35319eb25)，重点阅读 `src/core/event-hub.js`、`src/core/ui.js`、`src/components/modals/OrekiTutorialModal.js` 和教程状态模块。它不讨论 Web 离线时间的计算，也不把页面刷新误当成游戏逻辑或自动化动作。
+本文依据 Web 固定提交  [`e1c93caa`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/tree/e1c93caa758de6c39cf814582123d4a35319eb25)，重点阅读 `src/core/event-hub.js`、`src/core/ui.js`、`src/components/modals/OrekiTutorialModal.js` 和教程状态模块。它不讨论 Web 离线时间的计算，也不把页面刷新误当成游戏逻辑或自动化动作。
 
 ## 先分清逻辑事件和界面事件
 

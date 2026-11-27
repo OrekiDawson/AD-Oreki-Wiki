@@ -11,7 +11,7 @@ tags:
 
 比较两份增量游戏存档，不能只问“哪个资源数字更大”。一份存档可能拥有更多现实机器，另一份可能还没现实却已经把永恒点数和挑战推进得更远；更高阶段的当前资源又可能在重置后变小。如果同步逻辑只挑最大的一个数字，结果很容易把真正更靠后的存档覆盖掉。
 
-Web 端用 `ProgressChecker` 把这个问题拆成两个层次：先识别存档已经到达的最高阶段，再用阶段内的近似进度比较接近的存档。本文依据固定提交 [`b28b231efa5b694ce1da8a1e508cfc3ecc099344`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/tree/b28b231efa5b694ce1da8a1e508cfc3ecc099344)，重点阅读 `src/core/secret-formula/progress-checker.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/core/secret-formula/progress-checker.js；具体文件证据留在内部核验记录） 与 `src/core/storage/progress-checker.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/core/storage/progress-checker.js；具体文件证据留在内部核验记录）。它讨论的是比较算法，不是存档文本如何编码，也不是离线时间如何补算。
+Web 端用 `ProgressChecker` 把这个问题拆成两个层次：先识别存档已经到达的最高阶段，再用阶段内的近似进度比较接近的存档。本文依据固定提交  [`b28b231efa5b694ce1da8a1e508cfc3ecc099344`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/tree/b28b231efa5b694ce1da8a1e508cfc3ecc099344)，重点阅读 `src/core/secret-formula/progress-checker.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/core/secret-formula/progress-checker.js；具体文件证据留在内部核验记录） 与 `src/core/storage/progress-checker.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/core/storage/progress-checker.js；具体文件证据留在内部核验记录）。它讨论的是比较算法，不是存档文本如何编码，也不是离线时间如何补算。
 
 ## 先承认：进度不是一条数轴
 

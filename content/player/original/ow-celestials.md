@@ -16,7 +16,7 @@ aliases:
   - "/original/ow-celestials"
 ---
 
-**天神（Celestials）**是游戏最后的主要功能，也是《反物质维度》的主要对立者。每位天神都有独特的机制、升级与性格。击败他们会奖励玩家强力加成、新功能或解锁其他天神。**击败全部 7 位天神是通关游戏的必要条件。** 购买全部[现实升级](/player/original/ow-reality-upgrades)会解锁[第一位天神](/player/original/ow-teresa)；[成就 147「Master of Reality」](https://antimatterdimensions.wiki.gg/wiki/Achievements)的奖励就是解锁特蕾莎。在网页版源码中，拥有该成就会让游戏自动解锁特蕾莎页签，无论玩家是否真的买齐了全部现实升级。
+**天神（Celestials）**是游戏最后的主要功能，也是《反物质维度》的主要对立者。每位天神都有独特的机制、升级与性格。击败他们会奖励玩家强力加成、新功能或解锁其他天神。**击败全部 7 位天神是通关游戏的必要条件。** 购买全部[现实升级](/player/original/ow-reality-upgrades)会解锁[第一位天神](/player/original/ow-teresa)；[成就 147「Master of Reality」](https://antimatterdimensions.wiki.gg/wiki/Achievements) 的奖励就是解锁特蕾莎。在网页版源码中，拥有该成就会让游戏自动解锁特蕾莎页签，无论玩家是否真的买齐了全部现实升级。
 
 所有天神都有自己的「天神现实」，但现实与每位天神以及游戏其余部分的关系取决于该天神。天神也是无时间的存在：除非另有说明，天神引入的新机制不受游戏速度倍率影响，而是以**真实时间**计算。
 

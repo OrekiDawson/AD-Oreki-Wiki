@@ -18,11 +18,11 @@ aliases:
 
 ### 我想理解 Android 的运行时
 
-[Android 架构](/developer/architecture/android)解释 AGP 输入、官方 DEX、新增 Kotlin 与最终 APK 如何接在一起。[Kotlin 混合运行时 ABI](/developer/architecture/kotlin-runtime)解释编译期看不见宿主时如何建立调用边界；遇到类、方法或寄存器找不到，则转到[DEX 与 ABI 语义恢复](/developer/reverse-engineering/dex-abi)。
+[Android 架构](/developer/architecture/android)解释 AGP 输入、官方 DEX、新增 Kotlin 与最终 APK 如何接在一起。[Kotlin 混合运行时 ABI](/developer/architecture/kotlin-runtime) 解释编译期看不见宿主时如何建立调用边界；遇到类、方法或寄存器找不到，则转到 [DEX 与 ABI 语义恢复](/developer/reverse-engineering/dex-abi)。
 
 ### 我想理解 Web 与双端差异
 
-[Web 架构](/developer/architecture/web)沿启动、主循环和 MOD 调度器追踪浏览器端；[双端行为一致性](/developer/architecture/parity)把阶段、资源、挑战和自动化拆成可观察的行为契约；遇到 $e^{308}$ 以上的资源、阈值或读档差异时，继续看[超大数值：从尾数与指数到跨端一致性](/developer/architecture/numeric-model)。实现阶段门禁或天神时，继续看[GUI 阶段门禁](/developer/architecture/gui-stage-gates)和[天神解锁与跨端实现](/developer/architecture/celestial-implementation)。
+[Web 架构](/developer/architecture/web)沿启动、主循环和 MOD 调度器追踪浏览器端；[双端行为一致性](/developer/architecture/parity)把阶段、资源、挑战和自动化拆成可观察的行为契约；遇到 $e^{308}$ 以上的资源、阈值或读档差异时，继续看[超大数值：从尾数与指数到跨端一致性](/developer/architecture/numeric-model)。实现阶段门禁或天神时，继续看 [GUI 阶段门禁](/developer/architecture/gui-stage-gates)和[天神解锁与跨端实现](/developer/architecture/celestial-implementation)。
 
 ## 一条从源码到行为的路线
 
@@ -31,7 +31,7 @@ aliases:
 ```
 
 1. 用[项目总览](/developer/project-overview)建立名词和目录坐标。
-2. 选择[Android 架构](/developer/architecture/android)或[Web 架构](/developer/architecture/web)，确认改动属于哪一端。
+2. 选择 [Android 架构](/developer/architecture/android)或 [Web 架构](/developer/architecture/web)，确认改动属于哪一端。
 3. 沿具体实现阅读 Kotlin 运行时、DEX/ABI 映射或阶段门禁专题，不只看文件清单。
 4. 用[双端行为一致性](/developer/architecture/parity)检查改动是否改变另一端应保持的玩家行为。
 5. 进入[构建与交付](/developer/build/)，把“代码能编译”与“产物能安装、能验证、能发布”分开处理。
@@ -48,6 +48,6 @@ aliases:
 
 ## 附属资料
 
-固定源码入口见[源码索引](/developer/references/source-index)，实现与产物证据见[证据库](/developer/evidence/)，版本变化请回到对应源码仓库的提交历史。[AI Summary](/developer/ai-summaries/)只作已核实正文的辅助速览，不替代技术文章。
+固定源码入口见[源码索引](/developer/references/source-index)，实现与产物证据见[证据库](/developer/evidence/)，版本变化请回到对应源码仓库的提交历史。[AI Summary](/developer/ai-summaries/) 只作已核实正文的辅助速览，不替代技术文章。
 
 继续阅读：[构建与交付](/developer/build/) · [故障排查](/developer/troubleshooting/) · [开发者首页](/developer/)

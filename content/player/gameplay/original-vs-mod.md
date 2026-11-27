@@ -17,11 +17,11 @@ aliases:
 
 ### 我想知道 MOD 改了哪些玩法
 
-阅读[MOD 玩法改动：数值、解锁与自动化](/player/gameplay/mod-changes)。那里集中说明已核对的门槛缩放、自动化增强和仍保留原版语义的结算边界。
+阅读 [MOD 玩法改动：数值、解锁与自动化](/player/gameplay/mod-changes)。那里集中说明已核对的门槛缩放、自动化增强和仍保留原版语义的结算边界。
 
 ### Android 与 Web 互通
 
-阅读[Android 与 Web：版本和行为差异](/player/gameplay/platform-differences)。那里解释两端基线、同名功能的实现差异以及遇到版本不一致时怎样核对。
+阅读 [Android 与 Web：版本和行为差异](/player/gameplay/platform-differences)。那里解释两端基线、同名功能的实现差异以及遇到版本不一致时怎样核对。
 
 ## 阅读判断顺序
 
@@ -31,10 +31,10 @@ aliases:
 
 本 MOD 的额外目标（例如真实新档的体验时间）是工程目标或特定条件下的结果，不是所有设备、版本和玩家都能获得的保证。涉及存档、重置和阶段时，优先相信当前游戏的合法入口和真实结算。
 
-原版机制的背景可对照 [Antimatter Dimensions Wiki](https://antimatterdimensions.wiki.gg/wiki/Antimatter_Dimensions)，本文只整理与 本 MOD 差异判断直接相关的入口。
+原版机制的背景可对照  [Antimatter Dimensions Wiki](https://antimatterdimensions.wiki.gg/wiki/Antimatter_Dimensions)，本文只整理与 本 MOD 差异判断直接相关的入口。
 
 ## 相关入口
 
 [MOD 玩法改动：数值、解锁与自动化](/player/gameplay/mod-changes) · [Android 与 Web：版本和行为差异](/player/gameplay/platform-differences) · [智能自动购买器](/player/gameplay/automation) · [阶段解锁与页面显示](/player/gameplay/stage-gates) · [存档安全](/player/gameplay/saves)
 
-原版规则可对照[Antimatter Dimensions Wiki](https://antimatterdimensions.wiki.gg/wiki/Main_Page)；具体 MOD 数值仍应以对应版本源码和游戏内说明为准。
+原版规则可对照 [Antimatter Dimensions Wiki](https://antimatterdimensions.wiki.gg/wiki/Main_Page)；具体 MOD 数值仍应以对应版本源码和游戏内说明为准。

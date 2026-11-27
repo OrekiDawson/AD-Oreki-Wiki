@@ -40,7 +40,7 @@ app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/
 
 旧布局最容易制造两种假象。第一种是重复类：旧目录和新目录各有一份同名 Kotlin，Gradle 可能在编译阶段报重复，也可能因为 Source Set 配置变化而悄悄换用另一份。第二种是错觉：开发者编辑了 `app/src/main/kotlin/`，但某个脚本仍从旧树生成或复制文件，最后看到的 APK 与编辑内容脱节。
 
-因此迁移期间不能只改目录。每次移动都要反查消费者：`sourceSets`、生成脚本、绑定表、R8 keep 规则、CI 路径过滤和教程命令。迁移记录中曾使用 `git mv` 保留文件历史，并以目录守卫确认旧树与新树没有重叠；这些历史证据可从 [Android Issue #61](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/issues/61)、[PR #83](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/pull/83) 和 [PR #84](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/pull/84) 追溯，但它们是迁移证据，不是今天构建成功的替代品。
+因此迁移期间不能只改目录。每次移动都要反查消费者：`sourceSets`、生成脚本、绑定表、R8 keep 规则、CI 路径过滤和教程命令。迁移记录中曾使用 `git mv` 保留文件历史，并以目录守卫确认旧树与新树没有重叠；这些历史证据可从  [Android Issue #61](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/issues/61)、[PR #83](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/pull/83)  和  [PR #84](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/pull/84)  追溯，但它们是迁移证据，不是今天构建成功的替代品。
 
 ## 修改目录时怎样保持可追溯
 

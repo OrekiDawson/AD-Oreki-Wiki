@@ -38,7 +38,7 @@ aliases:
 3. 这个类来自新增 Kotlin、冻结 JAR 还是原始 DEX；
 4. 构建时打包的输入是否就是设备上安装的 APK。
 
-不要先改调用者的异常处理。若 ABI 已经错位，吞掉异常只会把崩溃变成“按钮无反应”。具体的挂起函数调用链见[协程 ABI 崩溃排查](/developer/troubleshooting/coroutine-abi)，Android 的类来源与产物边界见[Android 架构](/developer/architecture/android)。
+不要先改调用者的异常处理。若 ABI 已经错位，吞掉异常只会把崩溃变成“按钮无反应”。具体的挂起函数调用链见[协程 ABI 崩溃排查](/developer/troubleshooting/coroutine-abi)，Android 的类来源与产物边界见 [Android 架构](/developer/architecture/android)。
 
 ## tick 不推进
 
@@ -50,7 +50,7 @@ aliases:
 
 这三个状态在界面上都像“数字不动”，但修复位置完全不同。检查调用链时，沿着“唤醒 → 读取快照 → 判断阶段 → 执行动作 → 写回状态”逐段确认，而不是只看最后一个按钮。
 
-若修改了自动购买器配置，先确认调度器下一次 tick 读取的是哪份状态；某些受托配置会在下一次调度时按合法阶段重新校正。若问题只在切换页面后消失，应把它视为生命周期或状态同步线索，而不是修复结果。相关源码入口可从[双端行为一致性](/developer/architecture/parity)和[Android 自动化停滞的排查方法](/developer/current/known-issues)继续定位。
+若修改了自动购买器配置，先确认调度器下一次 tick 读取的是哪份状态；某些受托配置会在下一次调度时按合法阶段重新校正。若问题只在切换页面后消失，应把它视为生命周期或状态同步线索，而不是修复结果。相关源码入口可从[双端行为一致性](/developer/architecture/parity)和 [Android 自动化停滞的排查方法](/developer/current/known-issues)继续定位。
 
 ## 读档异常
 

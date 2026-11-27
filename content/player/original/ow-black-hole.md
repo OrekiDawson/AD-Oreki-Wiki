@@ -16,7 +16,7 @@ aliases:
   - "/original/ow-black-hole"
 ---
 
-**黑洞（Black Hole）**是完成第一次现实后才会出现的系统。与[符文](https://antimatterdimensions.wiki.gg/wiki/Glyphs)、[现实升级](/player/original/ow-reality-upgrades)和[复兴](/player/original/ow-perks)不同，黑洞子页签只在执行过现实重置后亮起。花费 100 [现实机器](/player/original/ow-reality)可以解锁第一个黑洞。
+**黑洞（Black Hole）**是完成第一次现实后才会出现的系统。与[符文](https://antimatterdimensions.wiki.gg/wiki/Glyphs)、[现实升级](/player/original/ow-reality-upgrades)和[复兴](/player/original/ow-perks)不同，黑洞子页签只在执行过现实重置后亮起。花费 100  [现实机器](/player/original/ow-reality)可以解锁第一个黑洞。
 
 黑洞按“非激活间隔—激活持续时间”循环。激活时，它会提高整个游戏的游戏速度，效果相当于把同样的时间重复计算多次；间隔、强度和持续时间可以分别升级。黑洞有 5 秒游戏时间的充能与加速恢复过程；暂停后恢复时，速度也会从零逐步升到完整强度。
 

@@ -26,7 +26,7 @@ tags:
 
 第一次大坍缩后，可以沿着[无限与永恒](/player/gameplay/progression-infinity-eternity)阅读；进入时间研究与现实阶段后，再看[现实与时间研究](/player/gameplay/reality-time-studies)。[挑战与真实结算](/player/gameplay/challenges)解释那些会改变规则的特殊关卡，[智能自动购买器](/player/gameplay/automation)和[存档安全](/player/gameplay/saves)则负责把日常操作和存档风险讲清楚。你不必按顺序读完，知道自己正处在哪个阶段，就能从对应条目继续。
 
-如果你玩的是本 MOD，先读[MOD 介绍](/player/mods/)和[原版与 MOD](/player/gameplay/original-vs-mod)。这两页帮助你判断：眼前的数值是原版设计、MOD 调整，还是某个版本的界面差异。
+如果你玩的是本 MOD，先读 [MOD 介绍](/player/mods/)和[原版与 MOD](/player/gameplay/original-vs-mod)。这两页帮助你判断：眼前的数值是原版设计、MOD 调整，还是某个版本的界面差异。
 
 ## 原版译文与本站条目的边界
 

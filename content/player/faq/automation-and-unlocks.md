@@ -47,4 +47,4 @@ aliases:
 
 [智能自动购买器](/player/gameplay/automation) · [挑战完成判定与卡关排障](/player/gameplay/challenge-troubleshooting) · [阶段门禁](/player/gameplay/stage-gates) · [原版与 MOD 的区别](/player/gameplay/original-vs-mod)
 
-原版自动化与挑战条件的基础资料：[Automation](https://antimatterdimensions.wiki.gg/wiki/Automation?oldid=3396)、[Challenges](https://antimatterdimensions.wiki.gg/wiki/Challenges?oldid=3106) 和 [Eternity Challenges](https://antimatterdimensions.wiki.gg/wiki/Eternity_Challenges?oldid=3347)。
+原版自动化与挑战条件的基础资料：[Automation](https://antimatterdimensions.wiki.gg/wiki/Automation?oldid=3396)、[Challenges](https://antimatterdimensions.wiki.gg/wiki/Challenges?oldid=3106)  和  [Eternity Challenges](https://antimatterdimensions.wiki.gg/wiki/Eternity_Challenges?oldid=3347)。

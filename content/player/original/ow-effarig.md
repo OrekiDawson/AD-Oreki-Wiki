@@ -88,7 +88,7 @@ $$nerfFactor = 3 * \left( 1-\frac{c}{c+\sqrt{\log_{10}\left(resource\right)}} \r
 - 鹿颈长的名字源自「Giraffe」（长颈鹿）倒写；这来自一位知名开发者「SpectralFlame」，其头像经常被误认成长颈鹿[^cel-name-easter-egg]。
 - 在正式发布之前（更准确地说，是开发稍晚的阶段），鹿颈长曾被称作[「特蕾莎」](/player/original/ow-teresa)，也就是前一位天神。原因是两人的机制虽然未变，但名字最初被交换了顺序，鹿颈长本该是现实之神、特蕾莎本该是远古遗物之神[^cel-name-easter-egg]。
 
-[^cel-name-easter-egg]: 原文参考资料：AD 开发日志第 4 篇 <https://cyip92.github.io/site/#/ADdevlog/4>（外部链接，未转载内容）。
+[^cel-name-easter-egg]: 原文参考资料：AD 开发日志第 4 篇 <0>（外部链接，未转载内容）。
 [^rs]: 也称 RS（Relic Shards）；原文在术语区单独列出该缩写。
 
 ### 术语

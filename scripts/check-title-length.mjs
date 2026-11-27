@@ -49,14 +49,14 @@ const record = ({ kind, route, file, line, title }) => {
   else seen.set(duplicateKey, route)
   }
 }
-const walk = (dir) => fs.readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
+const walk = (dir, extension = ".md", base = contentRoot) => fs.readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
   const full = path.join(dir, entry.name)
   if (entry.isDirectory()) {
-    const rel = path.relative(contentRoot, full).replaceAll("\\", "/")
-    if (rel === "ai-drafts" || rel === "developer/history") return []
-    return walk(full)
+    const rel = path.relative(base, full).replaceAll("\\", "/")
+    if (base === contentRoot && (rel === "ai-drafts" || rel === "developer/history")) return []
+    return walk(full, extension, base)
   }
-  return entry.name.endsWith(".md") ? [full] : []
+  return entry.name.endsWith(extension) ? [full] : []
 })
 const frontmatterTitle = (text) => text.match(/^title:[ \t]*(?:"([^"]*)"|'([^']*)'|([^#\r\n][^#\r\n]*?))[ \t]*(?:#.*)?$/m)?.slice(1).find(Boolean)?.trim() ?? ""
 
@@ -85,7 +85,8 @@ for (const key of Object.keys(exceptions)) if (!usedExceptions.has(key))
 
 if (builtOnly) {
   const publicDir = path.resolve(root, process.argv[3] || "public")
-  const htmlFiles = fs.existsSync(publicDir) ? walk(publicDir).filter((file) => file.endsWith(".html")) : []
+  const htmlFiles = fs.existsSync(publicDir) ? walk(publicDir, ".html", publicDir) : []
+  if (!htmlFiles.length) violations.push({ kind: "MISSING_BUILT_HTML", route: "(build)", file: publicDir, line: 1, title: "", actual: 0, limit: 0 })
   for (const file of htmlFiles) {
     const rel = path.relative(publicDir, file).replaceAll("\\", "/")
     const route = rel === "index.html" ? "/" : `/${rel.replace(/\/index\.html$/, "").replace(/\.html$/, "")}`

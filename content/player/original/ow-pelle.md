@@ -121,7 +121,7 @@ $$\frac{6^{6^{6^{\tfrac{DecayFactor+100}{1,000}}}}-6}{100,000}+10^{\tfrac{DecayF
 
 - 佩勒的名字是「Hevipelle」的变位词；更准确地说，是去掉前缀「Hevi-」之后剩下的部分。Hevipelle 也是更广为人知的《反物质维度》创作者[^pelle-name]。
 
-[^pelle-name]: 原文参考资料：AD 开发日志第 4 篇 <https://cyip92.github.io/site/#/ADdevlog/4>（外部链接，未转载内容）。
+[^pelle-name]: 原文参考资料：AD 开发日志第 4 篇 <0>（外部链接，未转载内容）。
 
 ### 脚注
 

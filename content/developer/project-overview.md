@@ -66,9 +66,9 @@ Android 根 `:app` 的构建输入至少包括：
 
 ## 如何选择阅读路径
 
-- 想改 Android 业务：先读 [Android 架构](/developer/architecture/android)，再看 [混合运行时 ABI](/developer/architecture/kotlin-runtime) 和 [目录迁移](/developer/architecture/directory-migration)。
-- 想改构建：从 [AGP 构建管线](/developer/build/agp) 开始，随后看 [R8](/developer/build/r8)、[APK 签名](/developer/build/apk-signing) 和 [CI/CD](/developer/build/ci-cd)。
-- 想改 Web 或对齐双端：读 [Web 架构](/developer/architecture/web) 与 [双端一致性](/developer/architecture/parity)，再回到具体的 `src/core/` 或 Android `GameApi`。
+- 想改 Android 业务：先读  [Android 架构](/developer/architecture/android)，再看 [混合运行时 ABI](/developer/architecture/kotlin-runtime)  和 [目录迁移](/developer/architecture/directory-migration)。
+- 想改构建：从  [AGP 构建管线](/developer/build/agp) 开始，随后看  [R8](/developer/build/r8)、[APK 签名](/developer/build/apk-signing) 和  [CI/CD](/developer/build/ci-cd)。
+- 想改 Web 或对齐双端：读  [Web 架构](/developer/architecture/web) 与 [双端一致性](/developer/architecture/parity)，再回到具体的 `src/core/` 或 Android `GameApi`。
 - 第一次贡献：按 [第一次参与 Android 开发](/developer/first-contribution) 完成一条可解释、可验证的小闭环。
 - 遇到“源码看着对、游戏表现不对”：先查 [来源索引](/developer/references/source-index) 的版本边界，再进入 [故障排查](/developer/troubleshooting/)；不要用旧报告的 PASS 替代当前候选的运行证据。
 

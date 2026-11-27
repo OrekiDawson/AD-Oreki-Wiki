@@ -175,7 +175,7 @@ $$BM * 0.965^{(G - 2) * S - 2}$$
 
 主条目：[打破无限](/player/original/ow-break-infinity)·无限之后的成长。
 
-当成本超过无限值（1.80e308）后，价格成长开始额外累积：默认每级再乘以 10。对应的[打破无限](/player/original/ow-break-infinity)升级可以把该倍率从 10 降下来，[永恒挑战 11](/player/original/ow-eternity-challenges)还会继续降低价格增速。
+当成本超过无限值（1.80e308）后，价格成长开始额外累积：默认每级再乘以 10。对应的[打破无限](/player/original/ow-break-infinity)升级可以把该倍率从 10 降下来，[永恒挑战 11](/player/original/ow-eternity-challenges) 还会继续降低价格增速。
 
 ## 琐事
 

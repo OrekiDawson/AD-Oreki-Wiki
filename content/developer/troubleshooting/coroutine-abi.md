@@ -55,9 +55,9 @@ reset(Continuation): Object
 
 ## 参考资料
 
-- [Kotlin 协程官方文档](https://kotlinlang.org/docs/coroutines-basics.html)与 [Continuation API](https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.coroutines/-continuation/)。
+- [Kotlin 协程官方文档](https://kotlinlang.org/docs/coroutines-basics.html)与  [Continuation API](https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.coroutines/-continuation/)。
 - Android 官方 [调试运行时崩溃指南](https://developer.android.com/topic/performance/vitals/crash)。
-- Android 当前源码基线 [`fb1299a`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/tree/fb1299a132f134eb4fab009643ee3fc3d6c57edf) 中的 `GameApi.kt`、`OrekiEcAutomation.kt` 与 `OrekiDilationAutomation.kt`。
+- Android 当前源码基线  [`fb1299a`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/tree/fb1299a132f134eb4fab009643ee3fc3d6c57edf)  中的 `GameApi.kt`、`OrekiEcAutomation.kt` 与 `OrekiDilationAutomation.kt`。
 
 ## 相关条目
 

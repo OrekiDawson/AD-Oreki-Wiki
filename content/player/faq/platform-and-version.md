@@ -13,7 +13,7 @@ aliases:
 
 ## 平台选择
 
-想在手机上使用独立应用，可以从 [Android Releases](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/releases) 下载 APK；想直接在浏览器游玩，可以打开 [oreki.net](https://oreki.net/)。两端以玩法尽量一致为目标，但发布版本、界面和存档环境可能不同。
+想在手机上使用独立应用，可以从  [Android Releases](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/releases)  下载 APK；想直接在浏览器游玩，可以打开  [oreki.net](https://oreki.net/)。两端以玩法尽量一致为目标，但发布版本、界面和存档环境可能不同。
 
 下载前先看对应发布页面的版本说明。安装文件名只能帮助识别文件，不能代替发布页面中的版本、变更和已知问题。
 

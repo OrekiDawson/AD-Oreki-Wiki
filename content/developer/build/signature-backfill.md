@@ -52,7 +52,7 @@ Java 的字段描述符会把 `List<DarkMatterDimensionState>` 擦除成普通�
 
 ## 适用边界
 
-回填只解决“转换链丢失泛型元数据”这一类问题。它不能修复字段名被 R8 改写、类本身 ABI 不兼容、JSON schema 已经改变、APK 证书不匹配或业务代码错误。若错误发生在安装升级，先看 [APK 签名与升级兼容](/developer/build/apk-signing)；若错误发生在状态结构迁移，继续看[存档兼容与自动保存](/player/gameplay/saves)和[存档兼容排查](/developer/troubleshooting/save-compatibility)。
+回填只解决“转换链丢失泛型元数据”这一类问题。它不能修复字段名被 R8 改写、类本身 ABI 不兼容、JSON schema 已经改变、APK 证书不匹配或业务代码错误。若错误发生在安装升级，先看  [APK 签名与升级兼容](/developer/build/apk-signing)；若错误发生在状态结构迁移，继续看[存档兼容与自动保存](/player/gameplay/saves)和[存档兼容排查](/developer/troubleshooting/save-compatibility)。
 
 ## 参考资料
 

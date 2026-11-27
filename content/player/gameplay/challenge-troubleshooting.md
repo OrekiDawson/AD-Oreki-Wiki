@@ -66,4 +66,4 @@ MOD 可能调整挑战门槛和自动化节奏，但不应把历史报告当成�
 
 [挑战：三种限制玩法的阅读地图](/player/gameplay/challenges) · [现实与时间研究](/player/gameplay/reality-time-studies) · [阶段解锁与页面显示](/player/gameplay/stage-gates) · [玩家常见问题](/player/faq/)
 
-挑战的原版条件可对照[Antimatter Dimensions Wiki](https://antimatterdimensions.wiki.gg/wiki/Challenges)；当前 MOD 的门槛和结算以游戏内版本为准。
+挑战的原版条件可对照 [Antimatter Dimensions Wiki](https://antimatterdimensions.wiki.gg/wiki/Challenges)；当前 MOD 的门槛和结算以游戏内版本为准。

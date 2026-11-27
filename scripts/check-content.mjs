@@ -173,7 +173,7 @@ for (const f of files) {
   }
 
   // 反日志化：专题条目（非草稿、非首页/规则/版权/分类页）
-  const isGeneratedIndex = f === "content/all-entries.md" || f === "content/recent-updates.md"
+  const isGeneratedIndex = f === "content/all-entries.md"
   const isTopic =
     !isDraft &&
     !isIndex &&

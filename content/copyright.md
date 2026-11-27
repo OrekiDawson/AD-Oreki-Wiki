@@ -47,12 +47,12 @@ tags:
 
 **软件许可与文字许可相互独立。**
 
-本站采用 [Quartz](https://github.com/jackyzha0/quartz) 构建网站，仓库中保留其原有的 [MIT 许可证](https://opensource.org/license/mit)及版权声明。其他主题、插件、构建工具和第三方代码以各项目实际许可为准。
+本站采用  [Quartz](https://github.com/jackyzha0/quartz)  构建网站，仓库中保留其原有的  [MIT 许可证](https://opensource.org/license/mit)及版权声明。其他主题、插件、构建工具和第三方代码以各项目实际许可为准。
 
 转载或修改软件时，须保留适用的版权声明与许可证；不能仅凭本站文字采用 CC BY-SA 4.0，便认为所有代码都适用同一种许可。
 
 ## 发现版权问题
 
-如果你发现署名遗漏、素材许可不明、来源错误或其他版权问题，可以在[Wiki 仓库](https://github.com/OrekiDawson/AD-Oreki-Wiki)报告，并提供原始出处或有关权利的信息。相关素材在核实前应暂停公开使用。
+如果你发现署名遗漏、素材许可不明、来源错误或其他版权问题，可以在 [Wiki 仓库](https://github.com/OrekiDawson/AD-Oreki-Wiki)报告，并提供原始出处或有关权利的信息。相关素材在核实前应暂停公开使用。
 
-本页是许可的通俗说明，不代替[CC BY-SA 4.0 正式法律文本](https://creativecommons.org/licenses/by-sa/4.0/legalcode)或其他适用协议。本站只授予自身有权授予的权利；特定内容另有明确许可时，以其实际许可为准。
+本页是许可的通俗说明，不代替 [CC BY-SA 4.0 正式法律文本](https://creativecommons.org/licenses/by-sa/4.0/legalcode)或其他适用协议。本站只授予自身有权授予的权利；特定内容另有明确许可时，以其实际许可为准。

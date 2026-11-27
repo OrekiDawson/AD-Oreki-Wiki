@@ -63,11 +63,11 @@ EC4 尤其反常：先积累大量无限次数才有资格进入，进去以后�
 
 如果你愿意仔细观察研究树，或许还会发现它没有画出来的内容。[秘密成就](/player/original/ow-achievements-secret-achievements)中有相应的记录，想自己寻找答案的读者可以先跳过。
 
-完整数值及前置关系见[原版时间研究](/player/original/ow-time-studies)，MOD 的调度与具体差异见[MOD 改动](/player/gameplay/mod-changes)。
+完整数值及前置关系见[原版时间研究](/player/original/ow-time-studies)，MOD 的调度与具体差异见 [MOD 改动](/player/gameplay/mod-changes)。
 
 ## 资料来源
 - [Time Studies](https://antimatterdimensions.wiki.gg/index.php?title=Time_Studies&oldid=3343)、普通时间研究定义（源码定位：IvarK/AntimatterDimensionsSourceCode@5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/secret-formula/eternity/time-studies/normal-time-studies.js；具体文件证据留在内部核验记录）。
 - [Eternity Challenges](https://antimatterdimensions.wiki.gg/index.php?title=Eternity_Challenges&oldid=3347)、[Reality](https://antimatterdimensions.wiki.gg/index.php?title=Reality&oldid=3235)。
 - [原版时间膨胀](/player/original/ow-dilation)、[原版薇](/player/original/ow-v)。
 
-本文依据原版社区 Wiki 的资料独立编写，涉及其内容的改编按 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) 共享；原文贡献者见各固定修订的页面历史。
+本文依据原版社区 Wiki 的资料独立编写，涉及其内容的改编按  [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)  共享；原文贡献者见各固定修订的页面历史。

@@ -43,7 +43,7 @@ aliases:
 
 ### 发布对象是否满足身份与渠道门禁？
 
-确认签名、版本状态、正式 Release 和渠道哈希。当前公开 Android 版本是 `android-update-3.21.0-a12b5cd6`；`versionCode=30210002`、`modVersionState=development` 的候选仍不是正式 Release。细节见[发布状态](/developer/current/release-status)和[APK 签名与升级兼容](/developer/build/apk-signing)。
+确认签名、版本状态、正式 Release 和渠道哈希。当前公开 Android 版本是 `android-update-3.21.0-a12b5cd6`；`versionCode=30210002`、`modVersionState=development` 的候选仍不是正式 Release。细节见[发布状态](/developer/current/release-status)和 [APK 签名与升级兼容](/developer/build/apk-signing)。
 
 ## 当前双端证据如何使用
 
@@ -65,4 +65,4 @@ Android 的首要风险是重置后的自动化状态机：当前资源会归零
 
 ## 读者下一步
 
-如果你在改代码，先读[Android 架构](/developer/architecture/android)、[Kotlin 混合运行时 ABI](/developer/architecture/kotlin-runtime)和[自动化停滞排查](/developer/current/known-issues)。如果你在判断候选能否交付，先读[构建与 CI/CD](/developer/build/ci-cd)、[APK 签名](/developer/build/apk-signing)和[运行证据索引](/developer/evidence/)。如果你只需要确认公开下载对象，直接查看[发布状态](/developer/current/release-status)。
+如果你在改代码，先读 [Android 架构](/developer/architecture/android)、[Kotlin 混合运行时 ABI](/developer/architecture/kotlin-runtime) 和[自动化停滞排查](/developer/current/known-issues)。如果你在判断候选能否交付，先读[构建与 CI/CD](/developer/build/ci-cd)、[APK 签名](/developer/build/apk-signing)和[运行证据索引](/developer/evidence/)。如果你只需要确认公开下载对象，直接查看[发布状态](/developer/current/release-status)。

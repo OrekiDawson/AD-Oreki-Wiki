@@ -16,7 +16,7 @@ aliases:
   - "/original/ow-infinity-dimensions"
 ---
 
-**无限维度（Infinity Dimensions）**是一种新的[维度](/player/original/ow-dimensions)：玩家在[打破无限](/player/original/ow-break-infinity)之后即可解锁第一个无限维度。达到对应维度的反物质需求后，点击顶部大坍缩按钮区域的解锁按钮即可解锁它。首次永恒之前，解锁第 1 无限维度还需要持有 e8 [无限点数](/player/original/ow-infinity)。普通大坍缩只清空产出中的数量，所有无限维度会在永恒时完整重置。与普通维度一样，无限维度也只有 8 个。
+**无限维度（Infinity Dimensions）**是一种新的[维度](/player/original/ow-dimensions)：玩家在[打破无限](/player/original/ow-break-infinity)之后即可解锁第一个无限维度。达到对应维度的反物质需求后，点击顶部大坍缩按钮区域的解锁按钮即可解锁它。首次永恒之前，解锁第 1 无限维度还需要持有 e8  [无限点数](/player/original/ow-infinity)。普通大坍缩只清空产出中的数量，所有无限维度会在永恒时完整重置。与普通维度一样，无限维度也只有 8 个。
 
 > 本页译自社区 Wiki 同名条目；原作标记该页仍需清理（Cleanup），译文保留原文信息。
 
@@ -34,7 +34,7 @@ aliases:
 
 与[反物质维度](/player/original/ow-antimatter-dimensions)不同，购买倍率不再对所有维度都相同。下表列出每个无限维度的成本、[反物质](/player/original/ow-antimatter-dimensions)需求与成本成长：
 
-| 无限维度 | 反物质需求 | 初始 [IP](/player/original/ow-infinity) 成本 | 成本成长 | 购买倍率 |
+| 无限维度 | 反物质需求 | 初始  [IP](/player/original/ow-infinity)  成本 | 成本成长 | 购买倍率 |
 | --- | --- | --- | --- | --- |
 | 1 | 1e1,100 | 1e8 | $\times 1\text{e}3$ | $\times 50$ |
 | 2 | 1e1,900 | 1e9 | $\times 1\text{e}6$ | $\times 30$ |

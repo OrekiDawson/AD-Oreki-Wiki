@@ -12,7 +12,7 @@ aliases:
 
 自动购买器最难排查的故障，往往不是闪退，而是“看起来一切都活着”：界面还在刷新，线程也没有退出，资源却不再增长。此时继续增加轮询频率通常没有帮助。真正需要回答的是：调度器看到了什么状态，为什么据此选择了当前分支，以及一次重置是否把“曾经完成过”误读成了“现在仍然拥有”。
 
-本文讨论 Android MOD 托管层中的这类状态机故障。源码与行为示例以固定的 [Android 源码提交 a1617a9](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/tree/a1617a9e0d652a16ba050be25bb3f5b1a5ef1c43) 为依据；它用于解释排查方法，不代表当前 APK 的发布资格。候选版本和正式版本的边界见[发布状态](/developer/current/release-status)。
+本文讨论 Android MOD 托管层中的这类状态机故障。源码与行为示例以固定的  [Android 源码提交 a1617a9](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/tree/a1617a9e0d652a16ba050be25bb3f5b1a5ef1c43)  为依据；它用于解释排查方法，不代表当前 APK 的发布资格。候选版本和正式版本的边界见[发布状态](/developer/current/release-status)。
 
 ## 先画出状态边界
 

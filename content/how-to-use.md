@@ -57,4 +57,4 @@ aliases:
 
 ## 相关条目
 
-[入门指南](/player/getting-started/) · [反物质维度MOD Wiki:知识库规则](/wiki-rules) · [来源索引](/developer/references/source-index)
+[入门指南](/player/getting-started/) · [反物质维度 MOD Wiki:知识库规则](/wiki-rules) · [来源索引](/developer/references/source-index)

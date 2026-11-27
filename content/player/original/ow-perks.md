@@ -95,7 +95,7 @@ aliases:
 - 只有反物质与无限两个家族没有菱形节点。
 - 桌面版复兴树的背景是透明的。
 - 桌面版复兴树的视觉在所有主题下保持一致，只有两个例外：设计主题会在进入页签时改变所有节点尺寸，且除缩放外交互时会快速波动；盲文主题会移除所有连线，若开启了编号显示也会隐藏编号。
-- 桌面版的复兴树用 [vis.js 的 Vis Network](https://visjs.github.io/vis-network/docs/network/) 渲染——一个浏览器端的动态可视化库，拖动节点正是它提供的。
+- 桌面版的复兴树用  [vis.js 的 Vis Network](https://visjs.github.io/vis-network/docs/network/)  渲染——一个浏览器端的动态可视化库，拖动节点正是它提供的。
 
 ## 来源与许可
 

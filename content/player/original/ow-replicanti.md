@@ -16,7 +16,7 @@ aliases:
   - "/original/ow-replicanti"
 ---
 
-**复制器（Replicanti）**是[无限](/player/original/ow-infinity)威望层内的一种机制，在玩家完成第一次[大坍缩](/player/original/ow-infinity)之后随时可以购买。不过，购买它需要 1e140 [无限点数](/player/original/ow-infinity)，所以通常只有在完成 8 个[无限挑战](/player/original/ow-infinity-challenges)之后才会解锁。
+**复制器（Replicanti）**是[无限](/player/original/ow-infinity)威望层内的一种机制，在玩家完成第一次[大坍缩](/player/original/ow-infinity)之后随时可以购买。不过，购买它需要 1e140  [无限点数](/player/original/ow-infinity)，所以通常只有在完成 8 个[无限挑战](/player/original/ow-infinity-challenges)之后才会解锁。
 
 和反物质一样，它们会在[大坍缩](/player/original/ow-infinity)时重置（除非玩家拥有[成就 95](/player/original/ow-achievements)——在一小时内达到 1.80e308 复制器获得）；除非购买了时间研究 192，否则它们不能超过无限值。
 
@@ -54,7 +54,7 @@ $$e^{\left(\ln(r)+\left[\left(1+t\right)\times r\times\ln(c+1)\times interval\di
 
 ### 最大复制器星系数
 
-玩家可购买的复制器星系数量上限初始为 0，可通过购买该升级提高。该升级的数值可以被[时间研究 131](/player/original/ow-time-studies)显著提高。
+玩家可购买的复制器星系数量上限初始为 0，可通过购买该升级提高。该升级的数值可以被[时间研究 131](/player/original/ow-time-studies) 显著提高。
 
 ### 升级成本成长
 
@@ -88,7 +88,7 @@ $$e^{\left(\ln(r)+\left[\left(1+t\right)\times r\times\ln(c+1)\times interval\di
 
 ## 提示
 
-- 玩家大约在 e240 IP 时可以达成[成就 95](/player/original/ow-achievements)的要求。
+- 玩家大约在 e240 IP 时可以达成[成就 95](/player/original/ow-achievements) 的要求。
 - 如果玩家想完成[成就 95](/player/original/ow-achievements)，并且已经达到上述某个升级，就必须尽快购买一个星系，以免一小时计时过期。
 - 玩家还需要注意复制器的早期阶段，因为它取决于随机数（RNG）。
 

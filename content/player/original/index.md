@@ -16,7 +16,7 @@ aliases:
 
 《反物质维度》是一款增量游戏。玩家从反物质维度开始，借助维度提升、维度牺牲和反物质星系建立生产链；第一次无限会把重置转化为长期成长资源，并开放后续机制。
 
-原版可通过[官方 Web 版本](https://ivark.github.io/)、[Steam](https://store.steampowered.com/app/1399720/Antimatter_Dimensions/)、[Android](https://play.google.com/store/apps/details?id=com.kajfik.antimatterdimensions)和[iOS](https://apps.apple.com/app/antimatter-dimensions/id1659834045)游玩。平台版本与存档行为可能不同，具体以原版官方入口为准。
+原版可通过[官方 Web 版本](https://ivark.github.io/)、[Steam](https://store.steampowered.com/app/1399720/Antimatter_Dimensions/)、[Android](https://play.google.com/store/apps/details?id=com.kajfik.antimatterdimensions) 和 [iOS](https://apps.apple.com/app/antimatter-dimensions/id1659834045) 游玩。平台版本与存档行为可能不同，具体以原版官方入口为准。
 
 ## 从哪里开始
 

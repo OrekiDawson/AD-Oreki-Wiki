@@ -54,4 +54,4 @@ aliases:
 
 如果答案彼此矛盾，先备份存档，再阅读[阶段解锁与排障](/player/gameplay/stage-gates)。阶段顺序可以帮助你定位问题，但不能替代当前游戏对条件的实际判断。
 
-原版进程资料可对照[Antimatter Dimensions Wiki（修订 3325）](https://antimatterdimensions.wiki.gg/index.php?title=Antimatter_Dimensions&oldid=3325)；上述专门页面修订号于 2026-11-26 复核，不同版本和 MOD 的解锁条件可能不同。
+原版进程资料可对照 [Antimatter Dimensions Wiki（修订 3325）](https://antimatterdimensions.wiki.gg/index.php?title=Antimatter_Dimensions&oldid=3325)；上述专门页面修订号于 2026-11-26 复核，不同版本和 MOD 的解锁条件可能不同。

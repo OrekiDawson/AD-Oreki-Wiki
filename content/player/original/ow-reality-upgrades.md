@@ -24,7 +24,7 @@ aliases:
 
 ## 可重复升级
 
-可无限重复购买，但每次购买都会提高成本。在某些成本区间，成本成长会变得更严厉——在 e30 与 1.80e308 [现实机器](/player/original/ow-reality)以上。
+可无限重复购买，但每次购买都会提高成本。在某些成本区间，成本成长会变得更严厉——在 e30 与 1.80e308  [现实机器](/player/original/ow-reality)以上。
 
 | 名称 | 初始 RM 成本 | 成本成长 | 在 1e30 RM 之后的成长 | 在 1.80e308 RM 之后的成长 | 效果 |
 | --- | --- | --- | --- | --- | --- |
@@ -53,7 +53,7 @@ aliases:
 | 名称 | 解锁条件 | 效果 | 检查事件 | 可锁定 | AP | 细节 |
 | --- | --- | --- | --- | --- | --- | --- |
 | 无垠涌动（The Boundless Flow） | 存入 1e12 无限次数 | 每秒获得正常无限化所得无限次数的 10% | （首次）解锁[现实](/player/original/ow-reality)；（之后）执行永恒 |  | 5 |  |
-| 先验存在（The Knowing Existence） | 在不完成[永恒挑战 1](/player/original/ow-eternity-challenges)的情况下，以 1e70 永恒点数完成永恒 | 永恒点数倍率基于现实次数和[时间之理](/player/original/ow-time-studies)数量 | （之后）执行永恒 | 是 |  | $\max(TT-1000,2)^{\log_2(\min(Realities,10^4))}$ |
+| 先验存在（The Knowing Existence） | 在不完成[永恒挑战 1](/player/original/ow-eternity-challenges) 的情况下，以 1e70 永恒点数完成永恒 | 永恒点数倍率基于现实次数和[时间之理](/player/original/ow-time-studies)数量 | （之后）执行永恒 | 是 |  | $\max(TT-1000,2)^{\log_2(\min(Realities,10^4))}$ |
 | 遥控律序（The Telemechanical Process） | 在未购买第 5～8 时间维度的情况下以 1e4000 永恒点数完成永恒 | 解锁时间维度与 ×5 永恒点数的自动购买器，并改进永恒自动购买器 | （之后）执行永恒 | 是 | 10 |  |
 | 永恒流转（The Eternal Flow） | 1e7 永恒次数 | 每秒获得等于现实次数的永恒次数 | （首次）解锁现实；（之后）执行永恒 |  | 5 | 与其他永恒倍率相乘 |
 | 永谜悖谬（The Paradoxical Forever） | 在未购买 ×5 永恒点数倍率时拥有 1e10 永恒点数 | 基于 ×5 永恒点数倍率提高超光速粒子获取 | （之后）执行永恒 | 是 |  | $\max\left(\frac{\sqrt{\log_{10}(epMult)}}{9},1\right)$ |

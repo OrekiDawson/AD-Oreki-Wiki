@@ -65,11 +65,11 @@ $M$ 是 IP 倍率，$AM_{max}$ 是本次无限达到过的最高反物质。成�
 
 终于，当 IP 本身达到约 1.80e308，并满足第八无限维度等前置条件，第一次[永恒](/player/gameplay/eternity)便在眼前。你曾经用来衡量终点的那个数字再度出现了，只是这次单位变成了无限点数。
 
-本 MOD 的实际数值和自动化差异见[原版与 MOD](/player/gameplay/original-vs-mod)及[智能自动购买器](/player/gameplay/automation)。
+本 MOD 的实际数值和自动化差异见[原版与 MOD](/player/gameplay/original-vs-mod) 及[智能自动购买器](/player/gameplay/automation)。
 
 ## 资料来源
 - [Infinity](https://antimatterdimensions.wiki.gg/index.php?title=Infinity&oldid=3113)、[Break Infinity](https://antimatterdimensions.wiki.gg/index.php?title=Break_Infinity&oldid=3349)。
 - [Infinity Dimensions](https://antimatterdimensions.wiki.gg/index.php?title=Infinity_Dimensions&oldid=3344)、[Infinity Challenges](https://antimatterdimensions.wiki.gg/index.php?title=Infinity_Challenges&oldid=3359)。
 - [Eternity](https://antimatterdimensions.wiki.gg/index.php?title=Eternity&oldid=3118)；大坍缩奖励及入口（源码定位：IvarK/AntimatterDimensionsSourceCode@5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/big-crunch.js；具体文件证据留在内部核验记录）、玩家重置条件（源码定位：IvarK/AntimatterDimensionsSourceCode@5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/player.js；具体文件证据留在内部核验记录）。
 
-本文依据原版社区 Wiki 的资料独立编写，涉及其内容的改编按 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) 共享；原文贡献者见各固定修订的页面历史。
+本文依据原版社区 Wiki 的资料独立编写，涉及其内容的改编按  [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)  共享；原文贡献者见各固定修订的页面历史。

@@ -30,7 +30,7 @@ aliases:
 - [永恒升级 4](/player/original/ow-eternity-upgrades)：时间维度也吃成就乘数；
 - 现实升级「Paradoxically Attain」：按成就乘数提升超光速粒子；
 - 鹿颈长符文效果「成就乘数幂」：把成就乘数取幂；
-- [薇成就](/player/original/ow-v) 30 项里程碑：黑洞强度吃成就乘数（两个黑洞都算）；
+- [薇成就](/player/original/ow-v)  30 项里程碑：黑洞强度吃成就乘数（两个黑洞都算）；
 - [太阳神](/player/original/ow-ra) 的薇记忆 25 级里程碑：成就乘数再 ^1.5。
 
 ## 成就列表

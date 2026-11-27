@@ -107,7 +107,7 @@ $$Max\left(100^{Completions}~*~\left(\frac{360}{Seconds}\right)^2,~1\right)$$
 | -------------------- | ---------------- | ---------------- | ---------------- | ---------------- | ---------------- |
 | 每次凝聚的基础奇点数 | 1.17e52 | 9.10e53 | 4.98e55 | 2.02e57 | 6.38e58 |
 
-还有其他手段可以提高奇点获取，例如可重复购买的[虚幻升级「Entropic Condensing」](https://antimatterdimensions.wiki.gg/wiki/Imaginary_Upgrades)与对应的奇点里程碑。
+还有其他手段可以提高奇点获取，例如可重复购买的[虚幻升级「Entropic Condensing」](https://antimatterdimensions.wiki.gg/wiki/Imaginary_Upgrades) 与对应的奇点里程碑。
 
 ### 奇点里程碑
 
@@ -184,7 +184,7 @@ $$Max\left(100^{Completions}~*~\left(\frac{360}{Seconds}\right)^2,~1\right)$$
 
 - 莱特拉的名字源自芬兰电视剧《Salatut elämät》中的角色「Ismo Laitela」。把该角色的名字倒过来就得到「Omsi」；Omsi 是本作的主要开发者之一，她同时负责[成就](https://antimatterdimensions.wiki.gg/wiki/Achievements)的美术，以及移动版上呈现的整体美术风格[^laitela-name]。
 
-[^laitela-name]: 原文参考资料：AD 开发日志第 4 篇 <https://cyip92.github.io/site/#/ADdevlog/4>（外部链接，未转载内容）。
+[^laitela-name]: 原文参考资料：AD 开发日志第 4 篇 <0>（外部链接，未转载内容）。
 
 ### 脚注
 

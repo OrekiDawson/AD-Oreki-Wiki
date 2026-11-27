@@ -30,7 +30,7 @@ aliases:
 
 由[成就 r41](/player/original/ow-achievements)「No DLC Required」解锁——会额外开放一些可购买的无限升级。
 
-`ipMult` 与一次性升级不同，可以重复购买：初始成本为 10 IP，每次购买后成本 ×10。成本超过 e3,000,000 [无限点数](/player/original/ow-infinity)后，后续成本成长会再叠加 $\times\text{e}10$；达到 e6,000,000 时封顶。
+`ipMult` 与一次性升级不同，可以重复购买：初始成本为 10 IP，每次购买后成本 ×10。成本超过 e3,000,000  [无限点数](/player/original/ow-infinity)后，后续成本成长会再叠加 $\times\text{e}10$；达到 e6,000,000 时封顶。
 
 | ID | 成本（IP） | 效果 |
 | --- | --- | --- |

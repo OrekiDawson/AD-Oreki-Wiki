@@ -31,7 +31,7 @@ function visibleMarkdown(source) {
     if (fenced) return '';
     return line
       .replace(/`[^`]*`/g, ' ')
-      .replace(/!?(?:\[[^\]]*\])\([^)]*\)/g, ' ')
+      .replace(/!?(?:\[([^\]]*)\])\([^)]*\)/g, '$1')
       .replace(/https?:\/\/[^\s)>]+/g, ' ')
       .replace(/\$\$?[\s\S]*?\$\$?/g, ' ')
       .replace(/<[^>]*>/g, ' ');

@@ -18,7 +18,7 @@ aliases:
 
 **时间膨胀（Time Dilation）**是[永恒威望层](/player/original/ow-eternity)引入的最后一个主要机制。它包含一个被修改、被削弱的永恒；首次完成它会解锁两种新货币——超光速粒子（Tachyon Particles）与膨胀时间（Dilated Time），可用于购买膨胀升级。
 
-购买 [EC11 与 EC12](/player/original/ow-eternity-challenges)研究下方的“解锁时间膨胀”[时间研究](/player/original/ow-time-studies)即可解锁膨胀。该研究要求已经购买 231～234 中的任意一项；若没有 DILR 复兴节点豁免，还需要累计拥有 12,900 [时间之理](/player/original/ow-time-studies)，并各完成永恒挑战 11 与 12 五（5）次。研究本身消耗 5,000 时间之理，但会永久解锁这个机制。
+购买  [EC11 与 EC12](/player/original/ow-eternity-challenges) 研究下方的“解锁时间膨胀”[时间研究](/player/original/ow-time-studies)即可解锁膨胀。该研究要求已经购买 231～234 中的任意一项；若没有 DILR 复兴节点豁免，还需要累计拥有 12,900  [时间之理](/player/original/ow-time-studies)，并各完成永恒挑战 11 与 12 五（5）次。研究本身消耗 5,000 时间之理，但会永久解锁这个机制。
 
 解锁膨胀后，最后四个[时间维度](/player/original/ow-time-dimensions)可以购买，解锁研究分别消耗 $\text{1e6}$ 到 $\text{1e9}$ 时间之理。膨胀升级第 10 项可以按超光速粒子被动生成时间之理；第 8 项则允许同时购买[维度分叉](/player/original/ow-time-studies)的全部三条路径。
 
@@ -58,7 +58,7 @@ $$Tachyons = TP_{Mult}\times\left(\frac{\log_{10}\left(AM_{\text{膨胀中最高
 | --- | --- | --- | --- |
 | 136 | 我跟你讲，时间是相对的（I told you already, time is relative） | 进入时间膨胀。 | — |
 | 137 | 你终于考虑到时间膨胀了！（Now you're thinking with dilation!） | 在膨胀状态下于 1 分钟或更短时间内获得 e260,000 反物质。 | 膨胀状态下获得 $\times 2$ 膨胀时间与时间之理。 |
-| 138 | 这是我为了摆脱你必须做的事。（This is what I have to do to get rid of you.） | 在膨胀状态下、没有任何时间研究时达到 e26,000 [无限点数](/player/original/ow-infinity)。 | 移除主动与挂机时间研究路径中时间研究 131 与 133 的负面效果。 |
+| 138 | 这是我为了摆脱你必须做的事。（This is what I have to do to get rid of you.） | 在膨胀状态下、没有任何时间研究时达到 e26,000  [无限点数](/player/original/ow-infinity)。 | 移除主动与挂机时间研究路径中时间研究 131 与 133 的负面效果。 |
 | 161 | 小伙子，你来错地儿了（that's where you're wrong kiddo） | 在膨胀状态下获得 e100,000,000 反物质。 | — |
 | 187 | 膨胀时间持有者（The One with Dilated Time） | 在[被毁灭](/player/original/ow-pelle)状态下解锁膨胀。 | 每项可重复膨胀时间倍率升级的倍率提高 $\times 1.35$。 |
 

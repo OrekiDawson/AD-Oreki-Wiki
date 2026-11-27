@@ -10,7 +10,7 @@ tags:
 
 自动购买器的“开关”并不只有一个。Android MOD 同时面对玩家的原版总开关、MOD 自己的总开关、单项自动器的当前状态，以及 MOD 对模式和间隔的托管策略。若把这些状态揉成一个 `enabled`，最常见的结果是：玩家刚关掉一个自动器，下一帧又被打开；或者 MOD 已经暂停，旧的恢复任务却在稍后突然写回。
 
-本文只讨论一个比“调度器如何选任务”更窄的问题：**某个值现在归谁所有，什么条件下允许写入，写入之后如何证明没有越权。**源码依据是 Android 仓库固定提交 [`1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/tree/1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545)。本文不是 APK 行为验收；它是阅读和修改托管自动购买器时的实现地图。
+本文只讨论一个比“调度器如何选任务”更窄的问题：**某个值现在归谁所有，什么条件下允许写入，写入之后如何证明没有越权。**源码依据是 Android 仓库固定提交  [`1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/tree/1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545)。本文不是 APK 行为验收；它是阅读和修改托管自动购买器时的实现地图。
 
 ## 先画出三条边界
 

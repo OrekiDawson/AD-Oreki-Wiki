@@ -20,7 +20,7 @@ tags:
 
 ## 有效问题报告
 
-先保护存档，再写清平台与版本、发生阶段、操作过程、预期与实际结果四类信息；必要时附去除敏感信息的截图。Android 问题可发到 [Android Issues](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/issues)，Web 问题可发到 [Web Issues](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/issues)。不要公开账号令牌、私人文件路径或包含个人数据的存档。
+先保护存档，再写清平台与版本、发生阶段、操作过程、预期与实际结果四类信息；必要时附去除敏感信息的截图。Android 问题可发到  [Android Issues](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/issues)，Web 问题可发到  [Web Issues](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/issues)。不要公开账号令牌、私人文件路径或包含个人数据的存档。
 
 ## 进一步阅读
 

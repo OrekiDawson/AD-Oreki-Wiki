@@ -81,7 +81,7 @@ Web 源码 SHA ─────┼─> 构建输入与候选 Run ─> APK SHA-256
 
 ### 安装或升级失败
 
-产物可追溯不等于产物可升级。确认 APK 摘要一致后，再比较包名、`versionCode`、证书指纹和签名方案；相关的 Android 安装边界见[APK 签名与升级兼容](/developer/build/apk-signing)。
+产物可追溯不等于产物可升级。确认 APK 摘要一致后，再比较包名、`versionCode`、证书指纹和签名方案；相关的 Android 安装边界见 [APK 签名与升级兼容](/developer/build/apk-signing)。
 
 ## 开发者应保留什么
 

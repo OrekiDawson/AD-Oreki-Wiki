@@ -40,7 +40,7 @@ aliases:
 
 ### 储存的现实时间
 
-储存现实时间会把游戏速度设为零，实际上暂停游戏的 tick 速率[^footnote-1]，这意味着任何被动获得的东西——[维度](/player/original/ow-dimensions)产出、[复制器](/player/original/ow-replicanti) tick、以及像[时间研究 181](/player/original/ow-time-studies)的被动[无限点数](/player/original/ow-infinity)产出、[特蕾莎容器里程碑](/player/original/ow-teresa)之一的[永恒点数](/player/original/ow-eternity)产出——全部停止；只有符文挑选、购买/重置时间研究这类交互操作不会被禁用。
+储存现实时间会把游戏速度设为零，实际上暂停游戏的 tick 速率[^footnote-1]，这意味着任何被动获得的东西——[维度](/player/original/ow-dimensions)产出、[复制器](/player/original/ow-replicanti)  tick、以及像[时间研究 181](/player/original/ow-time-studies) 的被动[无限点数](/player/original/ow-infinity)产出、[特蕾莎容器里程碑](/player/original/ow-teresa)之一的[永恒点数](/player/original/ow-eternity)产出——全部停止；只有符文挑选、购买/重置时间研究这类交互操作不会被禁用。
 
 与储存「游戏」时间有 $100\%$ 转换效率不同；现实时间只有 $70\%$ 的效率——因此让游戏储存现实时间 100 秒，只会保留 70 秒的现实时间。储存的现实时间上限为 8 小时[^footnote-2]。
 
@@ -104,7 +104,7 @@ $$\max\left ( 1,~\frac{\left\lfloor RealTime_{\text{Stored}} \right\rfloor}{\max
 
 ## 超立方体
 
-完成无名氏的现实后，玩家可以购买超立方体（Tesseracts），这种资源会永久提高[无限维度](/player/original/ow-infinity-dimensions) 1–7 的购买上限。超立方体的[无限点数](/player/original/ow-infinity)成本按超指数增长；作为补偿，每一个后续超立方体对无限维度购买上限的提升都更强。
+完成无名氏的现实后，玩家可以购买超立方体（Tesseracts），这种资源会永久提高[无限维度](/player/original/ow-infinity-dimensions)  1–7 的购买上限。超立方体的[无限点数](/player/original/ow-infinity)成本按超指数增长；作为补偿，每一个后续超立方体对无限维度购买上限的提升都更强。
 
 无限维度页签上有一个按钮，显示玩家拥有多少个超立方体、下一个超立方体对无限维度购买上限的提升量，以及下一个超立方体的价格。当可以购买超立方体时，该按钮的外观会变化。
 
@@ -134,9 +134,9 @@ $$\max\left ( 1,~\frac{\left\lfloor RealTime_{\text{Stored}} \right\rfloor}{\max
 - 最初他们的称号是「Enslaved」而不是「The Nameless Ones」[^cel-name-change]。这一命名最终因为明显的伦理问题被更改，但在游戏源代码中你仍会看到内部把无名氏称为「Enslaved」。
 - 无名氏代表整个测试团队，或者《反物质维度》的玩家群体[^cel-name-easter-egg]。这与他们最初的名字「Enslaved」相关，暗含一个玩笑：把「测试者」或「玩家」说成被困在 Hevipelle 地下室里、被迫玩他那邪恶游戏的人。
 
-[^cel-name-change]: 原文参考资料：AD 开发日志第 7 篇 <https://cyip92.github.io/site/#/ADdevlog/7>；以及上游 PR <https://github.com/IvarK/AntimatterDimensionsSourceCode/pull/2944>（外部链接，未转载内容）。
+[^cel-name-change]: 原文参考资料：AD 开发日志第 7 篇 <0>；以及上游 PR <1>（外部链接，未转载内容）。
 
-[^cel-name-easter-egg]: 原文参考资料：AD 开发日志第 4 篇 <https://cyip92.github.io/site/#/ADdevlog/4>（外部链接，未转载内容）。
+[^cel-name-easter-egg]: 原文参考资料：AD 开发日志第 4 篇 <0>（外部链接，未转载内容）。
 
 ### 脚注
 

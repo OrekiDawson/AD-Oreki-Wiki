@@ -75,7 +75,7 @@ aliases:
 | 莱特拉 | 暗物质、奇点、连续统 |
 | 佩勒 | 毁灭、裂痕 |
 
-各天神的原版详细数值及故事见上面的独立条目，MOD 差异见[MOD 改动](/player/gameplay/mod-changes)，特殊现实操作见[特殊现实](/player/gameplay/celestial-realities)。
+各天神的原版详细数值及故事见上面的独立条目，MOD 差异见 [MOD 改动](/player/gameplay/mod-changes)，特殊现实操作见[特殊现实](/player/gameplay/celestial-realities)。
 
 ## 资料来源
 - [Celestials](https://antimatterdimensions.wiki.gg/index.php?title=Celestials&oldid=3187)。
@@ -84,4 +84,4 @@ aliases:
 - [无名氏](https://antimatterdimensions.wiki.gg/index.php?title=The_Nameless_Ones&oldid=3372)：储存时间、谜题和旧内部名称。
 - [特蕾莎](https://antimatterdimensions.wiki.gg/index.php?title=Teresa&oldid=3370)、[原版成就表](https://antimatterdimensions.wiki.gg/index.php?title=Achievements&oldid=3363)。
 
-本文依据原版社区 Wiki 的资料独立编写，涉及其内容的改编按 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) 共享；原文贡献者见各固定修订的页面历史。
+本文依据原版社区 Wiki 的资料独立编写，涉及其内容的改编按  [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)  共享；原文贡献者见各固定修订的页面历史。

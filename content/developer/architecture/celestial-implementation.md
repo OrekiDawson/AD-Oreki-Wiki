@@ -93,7 +93,7 @@ OrekiSmartExecutor 注册模块
 
 若天神页面可见但策略不前进，先检查本端位图与读取器；若策略判定正确但购买失败，检查当前现实上下文、资源扣费和 `hasFailed`；若购买成功但下一阶段仍不可见，检查重置后缓存刷新与导航守卫。若 Android 与 Web 分叉，先用同一已知存档比较编码，再比较动作调用链，最后才比较数值常量。
 
-玩家侧的推进路线仍见[天神系统](/player/gameplay/celestials)，原版与 MOD 的数值差异见[原版行为与 MOD 修改](/player/gameplay/original-vs-mod)。旧版事实核查与历史证据入口保留在 [Android FACTS 文档](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/tree/3b2d8284f2aca7132168998ee32497b3c4c17b8e/docs/facts)；其中的历史运行结论不替代当前源码核对。
+玩家侧的推进路线仍见[天神系统](/player/gameplay/celestials)，原版与 MOD 的数值差异见[原版行为与 MOD 修改](/player/gameplay/original-vs-mod)。旧版事实核查与历史证据入口保留在  [Android FACTS 文档](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/tree/3b2d8284f2aca7132168998ee32497b3c4c17b8e/docs/facts)；其中的历史运行结论不替代当前源码核对。
 
 ## 相关条目
 

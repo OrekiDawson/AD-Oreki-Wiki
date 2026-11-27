@@ -10,7 +10,7 @@ tags:
 
 第一次参与这个项目，不必从反编译整套官方 DEX 开始。更稳妥的练习是：拿到 Android 仓库，认出真正的构建入口，沿着一条 Kotlin 调用链读到原版适配层，再做一个有事实依据的小改动。这样你学到的是项目如何工作，而不是只记住几个目录名。
 
-本文以 Android `main` 的 [`9d8fc46`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/tree/9d8fc46ce99279720b5b3068027bb76bceb35756) 为源码基线。命令适合在仓库根目录执行；构建是否能继续取决于本机 Android SDK、JDK 17、Gradle 输入和权限，本文作者没有把读码结果冒充设备运行结果。
+本文以 Android `main` 的  [`9d8fc46`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/tree/9d8fc46ce99279720b5b3068027bb76bceb35756)  为源码基线。命令适合在仓库根目录执行；构建是否能继续取决于本机 Android SDK、JDK 17、Gradle 输入和权限，本文作者没有把读码结果冒充设备运行结果。
 
 ## 先认出真正的工程入口
 

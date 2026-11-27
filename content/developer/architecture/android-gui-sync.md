@@ -10,7 +10,7 @@ tags:
 
 “游戏已经变了，但页面还没变”是 Android MOD 里很有迷惑性的故障。自动购买可能确实扣了资源，阶段判定也可能已经更新，屏幕却仍显示旧的按钮、旧的自动购买器设置或旧的侧栏。反过来，页面偶尔跳到新阶段，也不代表存档和游戏核心已经完成了对应结算。
 
-这不是简单的“多调用一次刷新”。界面同步要同时处理状态快照、Android 主线程、Activity 生命周期、请求合并和阶段导航。本文从固定的 Android 源码提交 [`1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/tree/1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545) 解释这条同步桥，并给出区分“核心状态没变”“刷新请求没送达”和“页面仍用旧投影”的排查方法。
+这不是简单的“多调用一次刷新”。界面同步要同时处理状态快照、Android 主线程、Activity 生命周期、请求合并和阶段导航。本文从固定的 Android 源码提交  [`1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/tree/1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545)  解释这条同步桥，并给出区分“核心状态没变”“刷新请求没送达”和“页面仍用旧投影”的排查方法。
 
 ## 界面不是游戏状态的真值
 

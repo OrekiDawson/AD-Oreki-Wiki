@@ -10,7 +10,7 @@ tags:
 
 增量游戏里最容易误解的一件事是“离线了多久”。玩家看到的是浏览器重新打开后的结果，程序面对的却是至少三种时间：设备时钟经过的真实时间、存档记录的最后更新时间，以及游戏内部允许补算的模拟时间。把它们混成一个数字，就会出现资源重复增长、离线进度过少，或者浏览器挂起后下一次打开突然跨过多个阶段。
 
-本文只讨论 Web 端的时间账本和离线模拟，不讨论自动购买策略本身。源码坐标固定在 Web 仓库提交 [`e1c93caa`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/tree/e1c93caa758de6c39cf814582123d4a35319eb25)，重点是 `src/game.js`、`src/core/storage/storage.js` 和 `src/core/intervals.js`。这些文件解释“时间怎样进入游戏”；它们不能单独证明某个浏览器或某份存档已经完成了真实运行验收。
+本文只讨论 Web 端的时间账本和离线模拟，不讨论自动购买策略本身。源码坐标固定在 Web 仓库提交  [`e1c93caa`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/tree/e1c93caa758de6c39cf814582123d4a35319eb25)，重点是 `src/game.js`、`src/core/storage/storage.js` 和 `src/core/intervals.js`。这些文件解释“时间怎样进入游戏”；它们不能单独证明某个浏览器或某份存档已经完成了真实运行验收。
 
 ## 三只钟不是一只钟
 

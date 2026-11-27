@@ -23,7 +23,6 @@ function compare(a, b) {
   // 末尾独立站务区（页脚也有固定链接）。
   const STATION = {
     "all-entries": 90,
-    "recent-updates": 91,
     "wiki-rules": 200,
     "wiki-not": 201,
     copyright: 202,

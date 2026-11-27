@@ -4,7 +4,6 @@
       { "key": "player", "route": "/player", "label": "玩家专区" },
       { "key": "developer", "route": "/developer", "label": "开发者专区" },
       { "key": "all-entries", "route": "/all-entries", "label": "全部条目" },
-      { "key": "recent-updates", "route": "/recent-updates", "label": "最近更新" },
       { "key": "wiki-rules", "route": "/wiki-rules", "label": "知识库规则" },
       { "key": "wiki-not", "route": "/wiki-not", "label": "本站不是什么" },
       { "key": "copyright", "route": "/copyright", "label": "版权与许可" },

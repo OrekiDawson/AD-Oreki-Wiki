@@ -73,7 +73,7 @@ aliases:
 |     |                      |                                                                                                                              | 第 4 档 | 4,900               |                                                               |                                   |
 |     |                      |                                                                                                                              | 第 5 档 | 5,200               |                                                               |                                   |
 |     |                      |                                                                                                                              | 第 6 档 | 5,500               |                                                               |                                   |
-| 2   | Se7en deadly matters | 在[永恒挑战 7](/player/original/ow-eternity-challenges)中获得 {req} 无限点数。                                               | 第 1 档 | e600,000     | $1,000~(1\text{e}3;~1~\text{K})$ / $/\text{e}1,200$           |                                   |
+| 2   | Se7en deadly matters | 在[永恒挑战 7](/player/original/ow-eternity-challenges) 中获得 {req} 无限点数。                                               | 第 1 档 | e600,000     | $1,000~(1\text{e}3;~1~\text{K})$ / $/\text{e}1,200$           |                                   |
 |     |                      |                                                                                                                              | 第 2 档 | e720,000     |                                                               |                                   |
 |     |                      |                                                                                                                              | 第 3 档 | e840,000     |                                                               |                                   |
 |     |                      |                                                                                                                              | 第 4 档 | e960,000     |                                                               |                                   |
@@ -182,9 +182,9 @@ aliases:
   - 她符号的外圈是一个六边形；
   - 讽刺的是，薇是第 4 位天神，而她的名字在罗马数字里是 5。
 
-[^v-name]: 原文参考资料：AD 开发日志第 4 篇 <https://cyip92.github.io/site/#/ADdevlog/4>（外部链接，未转载内容）。
+[^v-name]: 原文参考资料：AD 开发日志第 4 篇 <0>（外部链接，未转载内容）。
 
-[^movie-reference]: 原文参考资料：AD 开发日志第 8 篇 <https://cyip92.github.io/site/#/ADdevlog/8>（外部链接，未转载内容）。
+[^movie-reference]: 原文参考资料：AD 开发日志第 8 篇 <0>（外部链接，未转载内容）。
 
 ### 脚注
 
