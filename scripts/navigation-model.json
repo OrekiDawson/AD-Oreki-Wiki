@@ -1,17 +1,52 @@
 {
   "excludedFromExplorer": {
-    "exact": ["/tags"],
-    "prefixes": ["/tags/", "/ai-drafts/", "/developer/history/", "/redirect/"]
+    "exact": [
+      "/tags"
+    ],
+    "prefixes": [
+      "/tags/",
+      "/ai-drafts/",
+      "/developer/history/",
+      "/redirect/"
+    ]
   },
   "categories": {
     "root": [
-      { "key": "player", "route": "/player", "label": "玩家专区" },
-      { "key": "developer", "route": "/developer", "label": "开发者专区" },
-      { "key": "all-entries", "route": "/all-entries", "label": "全部条目" },
-      { "key": "wiki-rules", "route": "/wiki-rules", "label": "知识库规则" },
-      { "key": "wiki-not", "route": "/wiki-not", "label": "本站不是什么" },
-      { "key": "copyright", "route": "/copyright", "label": "版权与许可" },
-      { "key": "how-to-use", "route": "/how-to-use", "label": "本站使用说明" }
+      {
+        "key": "player",
+        "route": "/player",
+        "label": "玩家专区"
+      },
+      {
+        "key": "developer",
+        "route": "/developer",
+        "label": "开发者专区"
+      },
+      {
+        "key": "all-entries",
+        "route": "/all-entries",
+        "label": "全部条目"
+      },
+      {
+        "key": "wiki-rules",
+        "route": "/wiki-rules",
+        "label": "知识库规则"
+      },
+      {
+        "key": "wiki-not",
+        "route": "/wiki-not",
+        "label": "本站不是什么"
+      },
+      {
+        "key": "copyright",
+        "route": "/copyright",
+        "label": "版权与许可"
+      },
+      {
+        "key": "how-to-use",
+        "route": "/how-to-use",
+        "label": "本站使用说明"
+      }
     ]
   },
   "folderLabels": {
@@ -23,7 +58,7 @@
     "how-to-use": "本站使用说明",
     "developer/first-contribution": "第一次改动",
     "developer/project-overview": "项目概览",
-    "developer/architecture": "系统架构",
+    "developer/architecture": "架构与机制",
     "developer/reverse-engineering": "源码与逆向",
     "developer/build": "构建与发布",
     "developer/troubleshooting": "故障排查",
@@ -48,6 +83,465 @@
     "developer/current/known-issues": "已知问题",
     "developer/current/project-status": "双端状态",
     "developer/current/release-status": "发布资格",
-    "developer/references/source-index": "来源索引"
-  }
+    "developer/references/source-index": "来源索引",
+    "developer/architecture/directory-migration": "Android 目录迁移",
+    "developer/architecture/save-progress-comparator": "存档进度比较",
+    "developer/architecture/scheduler-state-machine": "调度器状态机",
+    "developer/architecture/automation-ownership": "自动化所有权",
+    "developer/architecture/tutorial-content-pipeline": "教程管线",
+    "developer/architecture/gui-stage-gates": "Android 阶段门禁",
+    "developer/architecture/android-gui-sync": "Android 界面同步",
+    "developer/architecture/derived-state-invalidation": "派生状态",
+    "developer/architecture/effect-model": "效果模型",
+    "developer/architecture/web-ui-reactivity": "Web 界面响应",
+    "developer/architecture/web-offline-simulation": "Web 离线进度",
+    "developer/reverse-engineering/smali-recovery": "Smali 接口恢复",
+    "developer/reverse-engineering/decompilation": "反编译与源码恢复",
+    "developer/build/build-mod-retirement": "旧构建脚本退役",
+    "developer/build/artifact-provenance": "构建溯源",
+    "developer/build/signature-backfill": "DEX 签名回填",
+    "developer/troubleshooting/web-module-startup": "Web 启动链",
+    "developer/troubleshooting/web-pages-artifact-integrity": "Pages 产物校验",
+    "player/getting-started": "开始游玩",
+    "player/download-and-version": "下载与版本",
+    "player/antimatter-dimensions": "游戏总览",
+    "player/antimatter-dimensions-core-loop": "生产机制",
+    "player/antimatter-dimensions-decisions": "增长与重置",
+    "player/gameplay": "玩法机制",
+    "player/mods": "MOD 介绍",
+    "player/faq": "常见问题",
+    "player/terminology": "术语表",
+    "player/original": "原版译文",
+    "player/gameplay/stage-progression": "成长路线",
+    "player/gameplay/progression-infinity-eternity": "无限与永恒",
+    "player/gameplay/reality-time-studies": "时间研究路线",
+    "player/gameplay/celestial-realities": "特殊现实",
+    "player/gameplay/challenge-troubleshooting": "挑战排障",
+    "player/gameplay/automation": "智能自动购买器",
+    "player/gameplay/stage-gates": "阶段解锁",
+    "player/gameplay/original-vs-mod": "原版与 MOD",
+    "player/gameplay/mod-changes": "MOD 玩法改动",
+    "player/gameplay/platform-differences": "平台差异",
+    "player/download-and-version/android": "Android 安装与升级",
+    "player/download-and-version/web": "Web 入口与缓存",
+    "player/faq/progression": "进度与挑战",
+    "player/faq/saves-and-compatibility": "存档与兼容",
+    "player/faq/automation-and-unlocks": "自动化与解锁",
+    "player/original/ow-achievements": "成就",
+    "player/original/ow-charged-infinity-upgrades": "充能无限升级",
+    "player/original/ow-save-bank": "存档库",
+    "player/original/ow-break-infinity": "打破无限",
+    "player/original/ow-antimatter-dimensions": "反物质维度（游戏机制）",
+    "player/original/ow-antimatter-galaxies": "反物质星系",
+    "player/original/ow-glyph-alchemy": "符文炼金",
+    "player/original/ow-perks": "复兴",
+    "player/original/ow-replicanti": "复制器",
+    "player/original/ow-ad-bonus": "广告加成",
+    "player/original/ow-black-hole": "黑洞",
+    "player/original/ow-tickspeed": "计数频率",
+    "player/original/ow-tickspeed-galaxy-breakdown-doomed": "计数频率明细",
+    "player/original/ow-notations": "记数法",
+    "player/original/ow-shortcuts": "快捷键",
+    "player/original/ow-laitela": "莱特拉",
+    "player/original/ow-laitela-quotes": "莱特拉·引语",
+    "player/original/ow-effarig": "鹿颈长",
+    "player/original/ow-effarig-quotes": "鹿颈长·引语",
+    "player/original/ow-achievements-secret-achievements": "秘密成就",
+    "player/original/ow-pelle": "佩勒",
+    "player/original/ow-pelle-upgrades": "佩勒升级",
+    "player/original/ow-dilation-upgrades": "膨胀升级",
+    "player/original/ow-dilation-upgrades-doomed": "膨胀升级（被毁灭的现实）",
+    "player/original/ow-normal-challenges": "普通挑战",
+    "player/original/ow-dilation": "时间膨胀",
+    "player/original/ow-time-dimensions": "时间维度",
+    "player/original/ow-time-studies": "时间研究",
+    "player/original/ow-terminology": "术语（佩勒用词）",
+    "player/original/ow-ra": "太阳神",
+    "player/original/ow-ra-quotes": "太阳神·引语",
+    "player/original/ow-teresa": "特蕾莎",
+    "player/original/ow-celestials": "天神",
+    "player/original/ow-celestial-navigation": "天神导航",
+    "player/original/ow-celestial-navigation-gallery": "天神导航·图库",
+    "player/original/ow-challenges": "挑战",
+    "player/original/ow-v": "薇",
+    "player/original/ow-v-quotes": "薇·引语",
+    "player/original/ow-dimensions": "维度",
+    "player/original/ow-dimension-boosts": "维度提升",
+    "player/original/ow-dimensional-sacrifice": "维度献祭",
+    "player/original/ow-nameless-ones": "无名氏",
+    "player/original/ow-nameless-ones-quotes": "无名氏·引语",
+    "player/original/ow-infinity": "无限",
+    "player/original/ow-infinity-upgrades": "无限升级",
+    "player/original/ow-infinity-upgrades-upgrades": "无限升级（升级表）",
+    "player/original/ow-infinity-challenges": "无限挑战",
+    "player/original/ow-infinity-dimensions": "无限维度",
+    "player/original/ow-reality": "现实",
+    "player/original/ow-reality-upgrades": "现实升级",
+    "player/original/ow-imaginary-upgrades": "虚幻升级",
+    "player/original/ow-eternity": "永恒",
+    "player/original/ow-eternity-milestones": "永恒里程碑",
+    "player/original/ow-eternity-upgrades": "永恒升级",
+    "player/original/ow-eternity-challenges": "永恒挑战",
+    "player/original/ow-eternity-challenges-challenges": "永恒挑战·挑战明细",
+    "player/original/ow-eternity-challenges-challenges-pelle": "永恒挑战明细",
+    "player/original/ow-prestige": "重置成长（威望）",
+    "player/original/ow-automation": "自动化",
+    "player/original/ow-mods": "Mod 一览"
+  },
+  "childOrder": {
+    "developer/architecture": [
+      "developer/architecture/parity",
+      "developer/architecture/numeric-model",
+      "developer/architecture/save-progress-comparator",
+      "developer/architecture/effect-model",
+      "developer/architecture/derived-state-invalidation",
+      "developer/architecture/scheduler-state-machine",
+      "developer/architecture/automation-ownership",
+      "developer/architecture/celestial-implementation",
+      "developer/architecture/tutorial-content-pipeline",
+      "developer/architecture/android",
+      "developer/architecture/directory-migration",
+      "developer/architecture/kotlin-runtime",
+      "developer/architecture/gui-stage-gates",
+      "developer/architecture/android-gui-sync",
+      "developer/architecture/web",
+      "developer/architecture/web-ui-reactivity",
+      "developer/architecture/web-offline-simulation"
+    ],
+    "developer/reverse-engineering": [
+      "developer/reverse-engineering/decompilation",
+      "developer/reverse-engineering/smali-recovery",
+      "developer/reverse-engineering/dex-abi"
+    ],
+    "developer/build": [
+      "developer/build/agp",
+      "developer/build/build-mod-retirement",
+      "developer/build/r8",
+      "developer/build/apk-signing",
+      "developer/build/signature-backfill",
+      "developer/build/artifact-provenance",
+      "developer/build/ci-cd"
+    ],
+    "developer/troubleshooting": [
+      "developer/troubleshooting/save-compatibility",
+      "developer/troubleshooting/coroutine-abi",
+      "developer/troubleshooting/web-module-startup",
+      "developer/troubleshooting/web-pages-artifact-integrity"
+    ],
+    "developer/current": [
+      "developer/current/project-status",
+      "developer/current/known-issues",
+      "developer/current/release-status"
+    ],
+    "player": [
+      "player/getting-started",
+      "player/download-and-version",
+      "player/antimatter-dimensions",
+      "player/antimatter-dimensions-core-loop",
+      "player/antimatter-dimensions-decisions",
+      "player/gameplay",
+      "player/mods",
+      "player/faq",
+      "player/terminology",
+      "player/original"
+    ],
+    "player/getting-started": [
+      "player/getting-started/first-session",
+      "player/getting-started/first-crunch"
+    ],
+    "player/download-and-version": [
+      "player/download-and-version/android",
+      "player/download-and-version/web"
+    ],
+    "player/gameplay": [
+      "player/gameplay/stage-progression",
+      "player/gameplay/infinity",
+      "player/gameplay/progression-infinity-eternity",
+      "player/gameplay/eternity",
+      "player/gameplay/time-studies",
+      "player/gameplay/reality-time-studies",
+      "player/gameplay/reality",
+      "player/gameplay/celestials",
+      "player/gameplay/celestial-realities",
+      "player/gameplay/challenges",
+      "player/gameplay/challenge-troubleshooting",
+      "player/gameplay/automation",
+      "player/gameplay/stage-gates",
+      "player/gameplay/saves",
+      "player/gameplay/original-vs-mod",
+      "player/gameplay/mod-changes",
+      "player/gameplay/platform-differences"
+    ],
+    "player/faq": [
+      "player/faq/platform-and-version",
+      "player/faq/progression",
+      "player/faq/automation-and-unlocks",
+      "player/faq/saves-and-compatibility"
+    ],
+    "player/original": [
+      "player/original/ow-antimatter-dimensions",
+      "player/original/ow-dimensions",
+      "player/original/ow-dimension-boosts",
+      "player/original/ow-dimensional-sacrifice",
+      "player/original/ow-antimatter-galaxies",
+      "player/original/ow-prestige",
+      "player/original/ow-automation",
+      "player/original/ow-normal-challenges",
+      "player/original/ow-infinity",
+      "player/original/ow-infinity-upgrades",
+      "player/original/ow-infinity-upgrades-upgrades",
+      "player/original/ow-break-infinity",
+      "player/original/ow-infinity-dimensions",
+      "player/original/ow-infinity-challenges",
+      "player/original/ow-replicanti",
+      "player/original/ow-eternity",
+      "player/original/ow-eternity-upgrades",
+      "player/original/ow-eternity-milestones",
+      "player/original/ow-time-studies",
+      "player/original/ow-time-dimensions",
+      "player/original/ow-eternity-challenges",
+      "player/original/ow-eternity-challenges-challenges",
+      "player/original/ow-dilation",
+      "player/original/ow-dilation-upgrades",
+      "player/original/ow-reality",
+      "player/original/ow-reality-upgrades",
+      "player/original/ow-perks",
+      "player/original/ow-black-hole",
+      "player/original/ow-celestials",
+      "player/original/ow-celestial-navigation",
+      "player/original/ow-celestial-navigation-gallery",
+      "player/original/ow-teresa",
+      "player/original/ow-effarig",
+      "player/original/ow-effarig-quotes",
+      "player/original/ow-nameless-ones",
+      "player/original/ow-nameless-ones-quotes",
+      "player/original/ow-v",
+      "player/original/ow-v-quotes",
+      "player/original/ow-ra",
+      "player/original/ow-ra-quotes",
+      "player/original/ow-charged-infinity-upgrades",
+      "player/original/ow-glyph-alchemy",
+      "player/original/ow-laitela",
+      "player/original/ow-laitela-quotes",
+      "player/original/ow-imaginary-upgrades",
+      "player/original/ow-pelle",
+      "player/original/ow-pelle-upgrades",
+      "player/original/ow-eternity-challenges-challenges-pelle",
+      "player/original/ow-dilation-upgrades-doomed",
+      "player/original/ow-tickspeed-galaxy-breakdown-doomed",
+      "player/original/ow-terminology",
+      "player/original/ow-challenges",
+      "player/original/ow-achievements",
+      "player/original/ow-achievements-secret-achievements",
+      "player/original/ow-tickspeed",
+      "player/original/ow-notations",
+      "player/original/ow-shortcuts",
+      "player/original/ow-save-bank",
+      "player/original/ow-ad-bonus",
+      "player/original/ow-mods"
+    ],
+    "developer": [
+      "developer/first-contribution",
+      "developer/project-overview",
+      "developer/architecture",
+      "developer/reverse-engineering",
+      "developer/build",
+      "developer/troubleshooting",
+      "developer/current",
+      "developer/references",
+      "developer/evidence",
+      "developer/ai-summaries",
+      "developer/editorial-guidelines"
+    ]
+  },
+  "topicGroups": {
+    "player/gameplay": [
+      {
+        "label": "成长路线",
+        "entries": [
+          "player/gameplay/stage-progression"
+        ]
+      },
+      {
+        "label": "无限",
+        "entries": [
+          "player/gameplay/infinity",
+          "player/gameplay/progression-infinity-eternity"
+        ]
+      },
+      {
+        "label": "永恒",
+        "entries": [
+          "player/gameplay/eternity",
+          "player/gameplay/time-studies",
+          "player/gameplay/reality-time-studies"
+        ]
+      },
+      {
+        "label": "现实",
+        "entries": [
+          "player/gameplay/reality"
+        ]
+      },
+      {
+        "label": "天神",
+        "entries": [
+          "player/gameplay/celestials",
+          "player/gameplay/celestial-realities"
+        ]
+      },
+      {
+        "label": "通用机制",
+        "entries": [
+          "player/gameplay/challenges",
+          "player/gameplay/challenge-troubleshooting",
+          "player/gameplay/automation",
+          "player/gameplay/stage-gates",
+          "player/gameplay/saves"
+        ]
+      },
+      {
+        "label": "MOD 差异",
+        "entries": [
+          "player/gameplay/original-vs-mod",
+          "player/gameplay/mod-changes",
+          "player/gameplay/platform-differences"
+        ]
+      }
+    ],
+    "player/original": [
+      {
+        "label": "基础机制",
+        "entries": [
+          "player/original/ow-antimatter-dimensions",
+          "player/original/ow-dimensions",
+          "player/original/ow-dimension-boosts",
+          "player/original/ow-dimensional-sacrifice",
+          "player/original/ow-antimatter-galaxies",
+          "player/original/ow-prestige",
+          "player/original/ow-automation",
+          "player/original/ow-normal-challenges"
+        ]
+      },
+      {
+        "label": "无限",
+        "entries": [
+          "player/original/ow-infinity",
+          "player/original/ow-infinity-upgrades",
+          "player/original/ow-infinity-upgrades-upgrades",
+          "player/original/ow-break-infinity",
+          "player/original/ow-infinity-dimensions",
+          "player/original/ow-infinity-challenges",
+          "player/original/ow-replicanti"
+        ]
+      },
+      {
+        "label": "永恒与时间膨胀",
+        "entries": [
+          "player/original/ow-eternity",
+          "player/original/ow-eternity-upgrades",
+          "player/original/ow-eternity-milestones",
+          "player/original/ow-time-studies",
+          "player/original/ow-time-dimensions",
+          "player/original/ow-eternity-challenges",
+          "player/original/ow-eternity-challenges-challenges",
+          "player/original/ow-dilation",
+          "player/original/ow-dilation-upgrades"
+        ]
+      },
+      {
+        "label": "现实",
+        "entries": [
+          "player/original/ow-reality",
+          "player/original/ow-reality-upgrades",
+          "player/original/ow-perks",
+          "player/original/ow-black-hole"
+        ]
+      },
+      {
+        "label": "天神与后期",
+        "entries": [
+          "player/original/ow-celestials",
+          "player/original/ow-celestial-navigation",
+          "player/original/ow-celestial-navigation-gallery",
+          "player/original/ow-teresa",
+          "player/original/ow-effarig",
+          "player/original/ow-effarig-quotes",
+          "player/original/ow-nameless-ones",
+          "player/original/ow-nameless-ones-quotes",
+          "player/original/ow-v",
+          "player/original/ow-v-quotes",
+          "player/original/ow-ra",
+          "player/original/ow-ra-quotes",
+          "player/original/ow-charged-infinity-upgrades",
+          "player/original/ow-glyph-alchemy",
+          "player/original/ow-laitela",
+          "player/original/ow-laitela-quotes",
+          "player/original/ow-imaginary-upgrades",
+          "player/original/ow-pelle",
+          "player/original/ow-pelle-upgrades",
+          "player/original/ow-eternity-challenges-challenges-pelle",
+          "player/original/ow-dilation-upgrades-doomed",
+          "player/original/ow-tickspeed-galaxy-breakdown-doomed"
+        ]
+      },
+      {
+        "label": "通用资料",
+        "entries": [
+          "player/original/ow-terminology",
+          "player/original/ow-challenges",
+          "player/original/ow-achievements",
+          "player/original/ow-achievements-secret-achievements",
+          "player/original/ow-tickspeed",
+          "player/original/ow-notations",
+          "player/original/ow-shortcuts",
+          "player/original/ow-save-bank",
+          "player/original/ow-ad-bonus",
+          "player/original/ow-mods"
+        ]
+      }
+    ],
+    "developer/architecture": [
+      {
+        "label": "双端共通机制",
+        "entries": [
+          "developer/architecture/parity",
+          "developer/architecture/numeric-model",
+          "developer/architecture/save-progress-comparator",
+          "developer/architecture/effect-model",
+          "developer/architecture/derived-state-invalidation",
+          "developer/architecture/scheduler-state-machine",
+          "developer/architecture/automation-ownership",
+          "developer/architecture/celestial-implementation",
+          "developer/architecture/tutorial-content-pipeline"
+        ]
+      },
+      {
+        "label": "Android",
+        "entries": [
+          "developer/architecture/android",
+          "developer/architecture/directory-migration",
+          "developer/architecture/kotlin-runtime",
+          "developer/architecture/gui-stage-gates",
+          "developer/architecture/android-gui-sync"
+        ]
+      },
+      {
+        "label": "Web",
+        "entries": [
+          "developer/architecture/web",
+          "developer/architecture/web-ui-reactivity",
+          "developer/architecture/web-offline-simulation"
+        ]
+      }
+    ]
+  },
+  "stationLabel": "站务",
+  "stationEntries": [
+    "all-entries",
+    "wiki-rules",
+    "wiki-not",
+    "copyright",
+    "how-to-use"
+  ]
 }

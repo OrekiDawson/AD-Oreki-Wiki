@@ -19,6 +19,10 @@ try {
 
 const BASE = process.env.KB_URL || 'http://localhost:8081';
 const OUT = process.env.KB_OUT || 'evidence/playwright-mobile.json';
+const NAVIGATION_MODEL = JSON.parse(
+  fs.readFileSync(path.join(__dirname, 'navigation-model.json'), 'utf8'),
+);
+const EXPECTED_SIDEBAR = NAVIGATION_MODEL.categories.root.map((entry) => entry.label);
 
 const SEARCH_TERMS = [
   ['永恒挑战', 'player/gameplay/challenges'],
@@ -50,14 +54,8 @@ const NEW_PAGES = [
   '/developer/evidence/',
   '/developer/ai-summaries/',
 ];
-const CATEGORY_LABELS = ['玩家专区', '开发者专区', '玩法机制', '架构与运行时', '运行证据索引'];
+const CATEGORY_LABELS = ['玩家专区', '开发者专区', '玩法机制', '架构与机制', '运行证据'];
 
-function weakMustSee(items) {
-  return ['玩家专区', '开发者专区'].some((label) => {
-    const item = items.find((i) => i.label === label);
-    return !item || item.inViewport !== true;
-  });
-}
 
 async function run() {
   const browser = await chromium.launch({ headless: true });
@@ -115,14 +113,6 @@ async function run() {
   }
 
   // 移动端侧栏：真实 DOM 渲染顺序断言（不读配置文本）
-  const EXPECTED_SIDEBAR = [
-    '玩家专区',
-    '开发者专区',
-    '知识库规则',
-    '本站不是什么',
-    '版权与许可',
-    '本站使用说明',
-  ];
   const sidebarToggle = page.locator('.explorer .explorer-toggle').first();
   if (await sidebarToggle.count()) {
     await sidebarToggle.click({ force: true }).catch(() => {});
@@ -131,7 +121,8 @@ async function run() {
   const sidebar = await page.evaluate(() => {
     const ul = document.querySelector('.explorer-content ul.explorer-ul');
     if (!ul) return null;
-    const items = [...ul.children]
+    const items = [...ul.children].flatMap(li => li.classList.contains('wiki-nav-group')
+      ? [...li.querySelector(':scope > ul').children] : [li])
       .filter((li) => !li.classList.contains('overflow-end'))
       .map((li) => {
         const a = li.querySelector(':scope > a, :scope > .folder-container a');
@@ -145,7 +136,16 @@ async function run() {
           inViewport: box ? box.top >= 0 && box.top < window.innerHeight : false,
         };
       });
-    return { items, expanded: !document.querySelector('.explorer').classList.contains('collapsed') };
+    return { items, expanded: !document.querySelector('.explorer').classList.contains('collapsed'), groups: [...ul.querySelectorAll('.wiki-nav-group-label')].map(el => el.textContent), scrollable: ['auto', 'scroll'].includes(getComputedStyle(document.querySelector('.explorer-content')).overflowY) };
+  });
+  if (sidebar) sidebar.scrollIndependent = await page.evaluate(() => {
+    const panel = document.querySelector('.explorer-content');
+    if (!panel || panel.scrollHeight <= panel.clientHeight) return false;
+    const before = window.scrollY, top = panel.scrollTop;
+    panel.scrollTop = Math.min(panel.scrollHeight - panel.clientHeight, top + 200);
+    const moved = panel.scrollTop !== top && window.scrollY === before;
+    panel.scrollTop = top;
+    return moved;
   });
   results.mobile.sidebar = sidebar;
   if (!sidebar) results.errors.push('sidebar-missing');
@@ -156,11 +156,10 @@ async function run() {
     }
     if (!sidebar.expanded) results.errors.push('sidebar-not-expanded');
     if (sidebar.items.some((i) => i.truncated)) results.errors.push('sidebar-truncated');
-    const mustSee = ['玩家专区', '开发者专区'];
-    for (const label of mustSee) {
-      const item = sidebar.items.find((i) => i.label === label);
-      if (!item || item.inViewport !== true) results.errors.push('sidebar-not-visible:' + label);
-    }
+    if (!sidebar.items.some(i => i.label === '玩家专区' && i.inViewport)) results.errors.push('player-first-entry-not-visible');
+    if (!sidebar.scrollable) results.errors.push('sidebar-not-independently-scrollable');
+    for (const label of ['站务', '双端共通机制', 'Android', 'Web', '基础机制', '天神与后期'])
+      if (!sidebar.groups.includes(label)) results.errors.push('missing-topic-group:' + label);
   }
 
   // 折叠可用：再点一次折叠按钮
@@ -180,13 +179,33 @@ async function run() {
   if (await toggle2.count()) { await toggle2.click({ force: true }).catch(() => {}); await page.waitForTimeout(600); }
   results.mobile.sidebarActive = await page.evaluate(() => {
     const links = [...document.querySelectorAll('.explorer-content a.active, .explorer-content a.is-active')];
-    return links.map((a) => a.getAttribute('href'));
+    return links.map((a) => a.pathname.replace(/\/$/, ''));
   });
-  if (!results.mobile.sidebarActive.includes('/player/gameplay/challenges')) {
+  if (!results.mobile.sidebarActive.some(href => new URL(href, BASE).pathname.replace(/\/$/, '') === '/player/gameplay/challenges')) {
     results.errors.push('sidebar-active-highlight');
   }
+  results.mobile.relatedNav = await page.locator('article .wiki-related-nav a[href]').count();
   if (await toggle2.count()) { await toggle2.click({ force: true }).catch(() => {}); await page.waitForTimeout(400); }
 
+  // 真实点击切页，观察加载条创建与滚动动画，不只检查静态 CSS。
+  await page.goto(BASE + '/player/', { waitUntil: 'load' });
+  await page.waitForTimeout(500);
+  const motionLink = page.locator('article a[href*="/player/gameplay"]').first();
+  await page.evaluate(() => {
+    window.__wikiMotion = { progress: false, smooth: getComputedStyle(document.documentElement).scrollBehavior };
+    const observer = new MutationObserver(records => {
+      for (const record of records) for (const node of record.addedNodes) {
+        if (node.nodeType === 1 && (node.matches('.navigation-progress') || node.querySelector('.navigation-progress'))) window.__wikiMotion.progress = true;
+      }
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
+  });
+  if (await motionLink.count()) {
+    const target = await motionLink.evaluate(el => el.pathname.replace(/\/$/, ''));
+    await motionLink.click();
+    await page.waitForURL(url => url.pathname.replace(/\/$/, '') === target);
+    results.mobile.motion = await page.evaluate(() => window.__wikiMotion || null);
+  }
   // 搜索
   const searchInput = page.locator('input.search-bar, input[name="search"], input[type="search"], input[placeholder]').first();
   if (await searchInput.count()) {
@@ -243,12 +262,14 @@ async function run() {
   const trHtml = await page.content();
   results.mobile.translationHasLicense = trHtml.includes('CC BY-SA 4.0') && trHtml.includes('来源与许可');
   await page.goto(BASE + '/player/original/', { waitUntil: 'load' });
-  results.mobile.translationFolderListingHidden = await page.locator('.page-listing').evaluate(
-    (el) => getComputedStyle(el).display === 'none'
-  );
-  results.mobile.translationPropertiesHidden = await page.locator('.note-properties').evaluate(
-    (el) => getComputedStyle(el).display === 'none'
-  );
+  const folderListing = page.locator('.page-listing');
+  const noteProperties = page.locator('.note-properties');
+  results.mobile.translationFolderListingHidden =
+    (await folderListing.count()) === 0 ||
+    await folderListing.evaluate((el) => getComputedStyle(el).display === 'none');
+  results.mobile.translationPropertiesHidden =
+    (await noteProperties.count()) === 0 ||
+    await noteProperties.evaluate((el) => getComputedStyle(el).display === 'none');
   await page.goto(BASE + '/developer/build/agp', { waitUntil: 'load' });
   await page.waitForTimeout(800);
   results.mobile.codePre = await page.locator('pre').count();
@@ -273,6 +294,8 @@ async function run() {
   const desktop = await browser.newContext({ viewport: { width: 1280, height: 900 } });
   const dpage = await desktop.newPage();
   await dpage.goto(BASE + '/', { waitUntil: 'load' });
+  await dpage.locator('.wiki-nav-group-label').first().waitFor({ state: 'attached', timeout: 10000 }).catch(() => {});
+  results.desktop.topicGroups = await dpage.locator('.wiki-nav-group-label').allTextContents();
   results.desktop.title = await dpage.title();
   results.desktop.overflow = await dpage.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
   results.desktop.hasSearch = (await dpage.locator('input[type="search"], input[placeholder]').count()) > 0;
@@ -297,11 +320,17 @@ async function run() {
     if (results.mobile.sidebar.items.map((i) => i.label).join('|') !== EXPECTED_SIDEBAR.join('|')) bad.push('sidebar-order');
     if (!results.mobile.sidebar.expanded) bad.push('sidebar-expanded');
     if (results.mobile.sidebar.items.some((i) => i.truncated)) bad.push('sidebar-truncated');
-    if (weakMustSee(results.mobile.sidebar.items)) bad.push('sidebar-visibility');
+    if (!results.mobile.sidebar.items.some(i => i.label === '玩家专区' && i.inViewport)) bad.push('sidebar-visibility');
+    if (!results.mobile.sidebar.scrollable || !results.mobile.sidebar.scrollIndependent) bad.push('sidebar-independent-scroll');
+    for (const label of ['站务', '双端共通机制', 'Android', 'Web', '基础机制', '天神与后期'])
+      if (!results.mobile.sidebar.groups.includes(label)) bad.push('missing-topic-group:' + label);
   }
   if (!results.mobile.sidebarCollapsed) bad.push('sidebar-collapse');
   if (!results.mobile.sidebarActive ||
     !results.mobile.sidebarActive.includes('/player/gameplay/challenges')) bad.push('sidebar-active');
+  if (!results.mobile.motion || results.mobile.motion.progress || results.mobile.motion.smooth !== 'auto') bad.push('real-navigation-motion');
+  if (!results.mobile.relatedNav) bad.push('related-navigation-missing');
+  if (!results.desktop.topicGroups.includes('双端共通机制') || !results.desktop.topicGroups.includes('站务')) bad.push('desktop-topic-groups');
   if (!results.mobile.darkmodeToggled) bad.push('darkmode');
   if (results.mobile.frontendContract.tagLinks || results.mobile.frontendContract.tagLabels) bad.push('tag-index-leaked-in-explorer');
   if (results.mobile.frontendContract.emptyFolders) bad.push('empty-explorer-folder');

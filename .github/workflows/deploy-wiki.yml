@@ -29,6 +29,8 @@ jobs:
         run: node scripts/check-translation.mjs
       - name: System font policy
         run: node scripts/check-fonts.mjs
+      - name: Generate formal article index from content tree
+        run: node scripts/generate-navigation.mjs
       - name: Navigation coverage and public archive boundary
         run: node scripts/check-navigation.mjs
       - name: Public link policy (source)

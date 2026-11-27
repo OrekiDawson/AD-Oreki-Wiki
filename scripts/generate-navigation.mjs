@@ -1,9 +1,12 @@
 import fs from "node:fs"
 import path from "node:path"
+import { comparePageRoutes, createNavigationCallbacks } from "./navigation-runtime.mjs"
 
 const root = process.cwd()
 const contentRoot = path.join(root, "content")
 const generated = new Set(["all-entries.md"])
+const model = JSON.parse(fs.readFileSync(path.join(root, "scripts/navigation-model.json"), "utf8"))
+const { filterNode } = createNavigationCallbacks(model)
 const configText = fs.readFileSync(path.join(root, "quartz.config.yaml"), "utf8")
 const pageTitleMatch = configText.match(
   /^\s*pageTitle:\s*(?:"([^"\r\n]*)"|'([^'\r\n]*)'|([^#\r\n]*?))\s*(?:#.*)?$/m,
@@ -44,7 +47,8 @@ function route(file) {
 const pages = walk(contentRoot)
   .filter((file) => !generated.has(path.basename(file)))
   .map((file) => ({ file, route: route(file), ...frontmatter(file) }))
-  .sort((a, b) => a.title.localeCompare(b.title, "zh-CN", { numeric: true, sensitivity: "base" }))
+  .filter(page => filterNode({ slug: page.route.slice(1), data: {} }))
+  .sort((a, b) => comparePageRoutes(model, a, b))
 
 const groups = new Map([
     [

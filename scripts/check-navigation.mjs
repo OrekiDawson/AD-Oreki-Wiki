@@ -33,6 +33,14 @@ const routeFor = (file) => {
   const rel = path.relative(content, file).replaceAll("\\", "/").replace(/\.md$/, "")
   return rel.endsWith("/index") ? `/${rel.slice(0, -6)}` : `/${rel}`
 }
+const titleFor = (file) => {
+  const text = fs.readFileSync(file, "utf8")
+  const match = text.match(/^---\r?\n([\s\S]*?)\r?\n---/)
+  const title = match?.[1].match(
+    /^title:\s*(?:"([^"\r\n]*)"|'([^'\r\n]*)'|([^#\r\n]*?))\s*(?:#.*)?$/m,
+  )
+  return (title?.[1] ?? title?.[2] ?? title?.[3])?.trim() ?? path.basename(file, ".md")
+}
 for (const file of formal)
   if (!allEntries.includes(`](${routeFor(file)})`))
     errors.push(`正式页面未进入全部条目索引：${routeFor(file)}`)
@@ -100,13 +108,79 @@ const orderedExplorer = fs.readFileSync(
   path.join(root, "scripts/quartz-plugins/ordered-explorer/dist/index.js"),
   "utf8",
 )
-if (!orderedExplorer.includes("developer/architecture") || !orderedExplorer.includes("developer/references"))
-  errors.push("开发者导航缺少语义分类排序")
-if (!orderedExplorer.includes("current-page-ancestors")) errors.push("导航缺少当前页面高亮定位标记")
-if (!orderedExplorer.includes("filterNode") || !orderedExplorer.includes("/tags/") || !orderedExplorer.includes("node.children.length === 0") || !orderedExplorer.includes("filterFn"))
-  errors.push("导航未阻止空子菜单和空白虚拟分类")
-if (leafDirectoryCount > 0 && !orderedExplorer.includes("node.isFolder = false"))
-  errors.push(`发现 ${leafDirectoryCount} 个无下级条目的目录，但插件未将其降级为普通链接`)
+// 执行实际可序列化回调，而非检查重复的硬编码数组。
+if (navigationModel) {
+  const { comparePageRoutes, createNavigationCallbacks } = await import("./navigation-runtime.mjs")
+  const { runInNewContext } = await import("node:vm")
+  const callbacks = createNavigationCallbacks(navigationModel)
+  const compare = runInNewContext("(" + callbacks.compare.toString() + ")")
+  const mapNode = runInNewContext("(" + callbacks.mapNode.toString() + ")")
+  const filterNode = runInNewContext("(" + callbacks.filterNode.toString() + ")")
+  const node = slug => ({ slug, slugSegment: slug.split("/").at(-1), displayName: slug })
+  const rootOrder = navigationModel.categories.root.map(entry => entry.key)
+  const assertOrder = (routes, label) => {
+    const sorted = routes.slice().reverse().map(node).sort(compare).map(n => n.slug)
+    if (JSON.stringify(sorted) !== JSON.stringify(routes)) errors.push("导航排序不一致：" + label)
+  }
+  const generatedPages = formal.map((file) => ({
+    file,
+    route: routeFor(file),
+    title: titleFor(file),
+  })).sort((a, b) => comparePageRoutes(navigationModel, a, b))
+  const generatedRoutes = generatedPages.map((page) => page.route)
+  if (JSON.stringify(indexedRoutes) !== JSON.stringify(generatedRoutes))
+    errors.push("全部条目索引未按导航模型生成，需重新运行 generate-navigation.mjs")
+  const comparatorSamples = [
+    node("player/aaa"),
+    node("player/aaa/child"),
+    node("player/zzz"),
+  ]
+  for (const a of comparatorSamples)
+    for (const b of comparatorSamples)
+      for (const c of comparatorSamples)
+        if (compare(a, b) <= 0 && compare(b, c) <= 0 && compare(a, c) > 0)
+          errors.push("导航比较器不满足传递性")
+  const sampleOnce = comparatorSamples.slice().sort(compare).map((item) => item.slug)
+  const sampleTwice = comparatorSamples.slice().reverse().sort(compare).map((item) => item.slug)
+  if (JSON.stringify(sampleOnce) !== JSON.stringify(sampleTwice)) errors.push("导航比较器结果不确定")
+  if (rootOrder[0] !== "player" || rootOrder[1] !== "developer") errors.push("玩家专区必须在开发者专区之前")
+  assertOrder(rootOrder, "根级")
+  if (JSON.stringify(navigationModel.stationEntries) !== JSON.stringify(rootOrder.slice(2)))
+    errors.push("站务入口与根级导航不一致")
+  const childRoutes = new Set()
+  for (const [parent, children] of Object.entries(navigationModel.childOrder)) {
+    if (!formalRoutes.has("/" + parent)) errors.push("导航排序分类不存在：" + parent)
+    for (const route of children) {
+      if (!route.startsWith(parent + "/") || !formalRoutes.has("/" + route))
+        errors.push("导航条目不存在或分类错误：" + route)
+      if (childRoutes.has(route)) errors.push("导航条目重复：" + route)
+      childRoutes.add(route)
+    }
+    // 反向检查真实直接子页面，新增条目不能悄悄落到默认排序末尾。
+    for (const route of formalRoutes) {
+      if (route.startsWith('/' + parent + '/') && route.split('/').length === parent.split('/').length + 2 && !children.includes(route.slice(1)))
+        errors.push('正式子页面未登记语义排序：' + route)
+    }
+    assertOrder(children, parent)
+  }
+  for (const [parent, groups] of Object.entries(navigationModel.topicGroups || {})) {
+    const entries = groups.flatMap(group => group.entries)
+    if (groups.some(group => !group.label || !group.entries.length) ||
+        JSON.stringify(entries) !== JSON.stringify(navigationModel.childOrder[parent]))
+      errors.push("专题分组为空、遗漏或顺序不一致：" + parent)
+  }
+  for (const [slug, label] of Object.entries(navigationModel.folderLabels))
+    if (mapNode(node(slug)).displayName !== label) errors.push("侧栏名称不一致：" + slug)
+  for (const slug of ["tags", "tags/test", "ai-drafts/test", "developer/history/test", "redirect/test"])
+    if (filterNode(node(slug))) errors.push("导航未排除：" + slug)
+  if (mapNode({ ...node("test"), isFolder: true, children: [], data: {} }).isFolder)
+    errors.push("叶子目录未降级为普通链接")
+  if (filterNode({ ...node("test"), isFolder: true, children: [] }))
+    errors.push("无真实页面的空目录未排除")
+}
+if (!orderedExplorer.includes("navigation-runtime.mjs") || !orderedExplorer.includes("navigation-model.json"))
+  errors.push("Explorer 未使用唯一导航数据源")
+if (!orderedExplorer.includes("current-page-ancestors")) errors.push("导航缺少当前页面定位标记")
 const assetManifestPath = path.join(root, "docs/translation/original-image-manifest.json")
 if (!fs.existsSync(assetManifestPath)) errors.push("缺少原版译文图片来源清单")
 else {
