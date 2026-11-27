@@ -25,12 +25,15 @@ tags:
 
 这一小段足以让你了解“文件入口在哪里、如何运行、怎么验证一处改动”，之后再进入更复杂的业务模块。
 
-## 按任务进入
+## 按主题进入
 
 | 现在要完成的任务 | 入口 | 下一步 |
 | --- | --- | --- |
 | 第一次改动 | [第一次参与开发](/developer/first-contribution) | 先完成 Web 最小闭环，再选择平台 |
-| 找到功能所在的模块和调用链 | [架构总览](/developer/architecture/) | [Android 架构](/developer/architecture/android)、[Web 架构](/developer/architecture/web) |
+| 理解游戏共同机制 | [架构与机制](/developer/architecture/) | [双端一致性](/developer/architecture/parity)、[调度器状态机](/developer/architecture/scheduler-state-machine) |
+| 定位 Android 实现 | [Android 架构](/developer/architecture/android) | [Kotlin 运行时](/developer/architecture/kotlin-runtime)、[阶段门禁](/developer/architecture/gui-stage-gates) |
+| 定位 Web 实现 | [Web 架构](/developer/architecture/web) | [界面响应](/developer/architecture/web-ui-reactivity)、[离线进度](/developer/architecture/web-offline-simulation) |
+| 恢复混淆代码与接口 | [源码与逆向](/developer/reverse-engineering/) | [反编译与源码恢复](/developer/reverse-engineering/decompilation)、[DEX 与 ABI](/developer/reverse-engineering/dex-abi) |
 | 在本地构建并验证 Android | [构建与交付](/developer/build/) | [AGP 构建管线](/developer/build/agp)、[R8](/developer/build/r8)、[CI/CD](/developer/build/ci-cd) |
 | 对照两端行为 | [双端行为一致性](/developer/architecture/parity) | 逐项核对输入、资源变化、解锁与结算，不把目标当成实测结果 |
 | 根据症状缩小故障范围 | [故障排查](/developer/troubleshooting/) | [协程 ABI](/developer/troubleshooting/coroutine-abi)、[存档兼容](/developer/troubleshooting/save-compatibility) |
