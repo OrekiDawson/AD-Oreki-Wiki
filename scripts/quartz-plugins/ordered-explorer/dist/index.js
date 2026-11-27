@@ -20,6 +20,13 @@ function clientNavigation(model) {
       return decodeURI(url.pathname).replace(/^\/+|\/+$/g, "").replace(/\/index(?:\.html)?$/, "").replace(/\.html$/, "");
     } catch { return ""; }
   };
+  const closeMobileExplorer = () => {
+    const explorer = document.querySelector(".explorer");
+    if (!explorer || !window.matchMedia("(max-width: 800px)").matches) return;
+    explorer.classList.add("collapsed");
+    explorer.setAttribute("aria-expanded", "false");
+    document.documentElement.classList.remove("mobile-no-scroll");
+  };
   const ownLink = li => li.querySelector(":scope > a[href], :scope > .folder-container a[href]");
   const routeOf = li => { const href = ownLink(li)?.getAttribute("href"); return href ? normalize(href) : ""; };
   const group = (list, definition) => {
@@ -117,8 +124,10 @@ function clientNavigation(model) {
   }
   document.addEventListener("nav", () => { pending = true; schedule(); }, { passive: true });
   document.addEventListener("click", event => {
-    if (event.target.closest?.(".explorer-toggle")) { pending = true; schedule(); }
-  }, { passive: true });
+    const target = event.target instanceof Element ? event.target : null;
+    if (target?.closest(".explorer-content a")) closeMobileExplorer();
+    if (target?.closest(".explorer-toggle")) { pending = true; schedule(); }
+  }, { capture: true, passive: true });
   schedule();
 }
 

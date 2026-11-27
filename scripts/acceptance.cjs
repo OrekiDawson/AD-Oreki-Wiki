@@ -115,8 +115,23 @@ async function run() {
   // 移动端侧栏：真实 DOM 渲染顺序断言（不读配置文本）
   const sidebarToggle = page.locator('.explorer .explorer-toggle').first();
   if (await sidebarToggle.count()) {
+    const drawerBefore = await page.evaluate(() => {
+      const drawer = document.querySelector('.explorer-content');
+      if (!drawer) return null;
+      const style = getComputedStyle(drawer);
+      return { transform: style.transform, transition: style.transition };
+    });
     await sidebarToggle.click({ force: true }).catch(() => {});
-    await page.waitForTimeout(700);
+    await page.waitForTimeout(50);
+    const drawerAfter = await page.evaluate(() => {
+      const drawer = document.querySelector('.explorer-content');
+      const explorer = document.querySelector('.explorer');
+      if (!drawer || !explorer) return null;
+      const style = getComputedStyle(drawer);
+      return { transform: style.transform, transition: style.transition, expanded: !explorer.classList.contains('collapsed') };
+    });
+    results.mobile.drawer = { before: drawerBefore, after: drawerAfter };
+    if (!drawerAfter?.expanded || !/none|0s/.test(drawerAfter.transition)) results.errors.push('drawer-open-animation');
   }
   const sidebar = await page.evaluate(() => {
     const ul = document.querySelector('.explorer-content ul.explorer-ul');
@@ -183,6 +198,14 @@ async function run() {
   });
   if (!results.mobile.sidebarActive.some(href => new URL(href, BASE).pathname.replace(/\/$/, '') === '/player/gameplay/challenges')) {
     results.errors.push('sidebar-active-highlight');
+  }
+  const drawerLink = page.locator('.explorer-content a[href*="/player/"]').first();
+  if (await drawerLink.count()) {
+    await drawerLink.click({ force: true }).catch(() => {});
+    await page.waitForTimeout(250);
+    const closedAfterLink = await page.evaluate(() => document.querySelector('.explorer')?.classList.contains('collapsed'));
+    results.mobile.drawerClosedAfterLink = closedAfterLink;
+    if (!closedAfterLink) results.errors.push('drawer-link-did-not-close');
   }
   results.mobile.relatedNav = await page.locator('article .wiki-related-nav a[href]').count();
   if (await toggle2.count()) { await toggle2.click({ force: true }).catch(() => {}); await page.waitForTimeout(400); }

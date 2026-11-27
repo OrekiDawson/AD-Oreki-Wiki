@@ -51,6 +51,33 @@ html {
   }
 }
 
+// 移动端 Explorer 是即时抽屉：导航展开/收起不能滑入滑出，也不能让正文跟着横移。
+// Quartz 默认 Explorer 的这组过渡只适用于其原始交互，本站保留 SPA，但禁用抽屉动效。
+@media all and ($mobile) {
+  .page > #quartz-body > :not(.sidebar.left:has(.explorer)),
+  .page > #quartz-body.lock-scroll > :not(.sidebar.left:has(.explorer)),
+  .explorer .explorer-content,
+  .explorer .explorer-content .folder-outer,
+  .explorer .folder-icon,
+  .explorer svg {
+    transition: none !important;
+  }
+
+  .explorer.collapsed > .explorer-content {
+    transform: translateX(-100vw) !important;
+  }
+
+  .explorer:not(.collapsed) > .explorer-content {
+    transform: translateX(0) !important;
+  }
+
+  .explorer .mobile-explorer,
+  .explorer .explorer-content a {
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+  }
+}
+
 ::view-transition-group(root),
 ::view-transition-old(root),
 ::view-transition-new(root) {
