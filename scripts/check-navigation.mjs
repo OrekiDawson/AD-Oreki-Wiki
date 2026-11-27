@@ -105,6 +105,21 @@ const childOrderSource = orderedExplorer.match(/const CHILD_ORDER = \{([\s\S]*?)
 const childRanks = new Map(
   [...childOrderSource.matchAll(/"([^"]+)": (\d+),/g)].map((match) => [match[1], Number(match[2])]),
 )
+const rootOrder = navigationModel?.categories?.root?.map((entry) => entry.key) ?? []
+const rootOrderSource = orderedExplorer.match(/const ROOT_ORDER = (\[[^\n]+\]);/)?.[1]
+if (rootOrder[0] !== "player" || rootOrder[1] !== "developer") errors.push("玩家专区必须在开发者专区之前")
+if (!rootOrderSource || JSON.stringify(JSON.parse(rootOrderSource)) !== JSON.stringify(rootOrder))
+  errors.push("根级导航模型与 Explorer 顺序不一致")
+// 不只核对数组声明，还执行实际比较器，防止其他优先级覆盖根级顺序。
+const compareSource = orderedExplorer.match(/function compare\(a, b\) \{[\s\S]*?\n\}/)?.[0]
+if (!compareSource) errors.push("缺少导航比较器")
+else {
+  const { runInNewContext } = await import("node:vm")
+  const compare = runInNewContext("(" + compareSource + ")")
+  const nodes = rootOrder.map((slug) => ({ slug, slugSegment: slug, displayName: slug })).reverse()
+  if (JSON.stringify(nodes.sort(compare).map((node) => node.slug)) !== JSON.stringify(rootOrder))
+    errors.push("根级导航实际排序错误")
+}
 const childRoutes = new Set()
 for (const [parent, children] of Object.entries(navigationModel?.childOrder ?? {})) {
   if (!formalRoutes.has("/" + parent)) errors.push(`导航排序分类不存在：${parent}`)
