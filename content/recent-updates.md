@@ -8,12 +8,13 @@ tags:
 
 这里显示最近进入当前内容树的正式条目；文章的具体修订记录仍以页面正文与仓库历史为准。
 
-- [反编译与源码恢复](/developer/reverse-engineering/decompilation)
 - [玩法机制](/player/gameplay)
 - [存档安全：自动保存、备份与兼容导入](/player/gameplay/saves)
+- [反编译与源码恢复](/developer/reverse-engineering/decompilation)
 - [玩家常见问题](/player/faq)
 - [自动化与阶段入口](/player/faq/automation-and-unlocks)
 - [平台与版本](/player/faq/platform-and-version)
+- [逆向与语义映射](/developer/reverse-engineering)
 - [膨胀升级（被毁灭的现实）](/player/original/ow-dilation-upgrades-doomed)
 - [永恒挑战·挑战明细（被毁灭的现实）](/player/original/ow-eternity-challenges-challenges-pelle)
 - [计数频率·星系数量明细（被毁灭的现实）](/player/original/ow-tickspeed-galaxy-breakdown-doomed)
@@ -31,4 +32,3 @@ tags:
 - [构建可追溯性：让 APK 对得上源码与输入](/developer/build/artifact-provenance)
 - [存档与兼容性](/player/faq/saves-and-compatibility)
 - [原版与 Oreki Edition：差异阅读地图](/player/gameplay/original-vs-mod)
-- [无限与永恒：两层重置的阅读地图](/player/gameplay/progression-infinity-eternity)
