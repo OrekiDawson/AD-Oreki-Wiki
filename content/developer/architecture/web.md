@@ -12,7 +12,7 @@ Web 端不是“把几个 JavaScript 文件放进浏览器”。原版游戏循�
 
 本文以 Web 仓库固定提交 [`e1c93caa`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/tree/e1c93caa758de6c39cf814582123d4a35319eb25) 为实现坐标；原版游戏机制以冻结上游 [`5409e320`](https://github.com/IvarK/AntimatterDimensionsSourceCode/tree/5409e320cecef96a917cca1dfb68f1f183e499ca) 为对照。两者是不同的版本边界：前者说明 Oreki 端怎样接线，后者说明原版循环和机制来自哪里。
 
-## 启动：页面只负责把运行时接起来
+## 启动与运行时
 
 入口链可以压缩成：
 
