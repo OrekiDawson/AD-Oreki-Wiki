@@ -58,10 +58,13 @@ function clientNavigation(model) {
       observer.observe(explorer, { childList: true, subtree: true });
     }
     if (!rootList) return;
+    explorer.setAttribute('data-current-page-ancestors', 'ready');
     if (panel !== scroll) {
       panel = scroll;
       panel.scrollTop = savedTop;
-      panel.addEventListener("scroll", () => { if (panel === scroll) savedTop = scroll.scrollTop; }, { passive: true });
+      panel.addEventListener("scroll", () => {
+        if (panel === scroll && scroll.clientHeight && !explorer.classList.contains('collapsed')) savedTop = scroll.scrollTop;
+      }, { passive: true });
       pending = true;
     }
     for (const [parent, definitions] of Object.entries(model.topicGroups || {})) {
