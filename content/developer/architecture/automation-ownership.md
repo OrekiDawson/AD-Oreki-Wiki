@@ -115,8 +115,8 @@ wantCrunch=true,  ownedByMod=false, pausedByStagePolicy=true  → false
 - [调度器状态机](/developer/architecture/scheduler-state-machine)：解释任务选择、重置和进度死锁，不替代本页的所有权边界。
 - [Android GUI 同步桥](/developer/architecture/android-gui-sync)：解释状态如何到达界面。
 - [Android 架构](/developer/architecture/android)：查看构建输入、运行时和 `GameApi` 的总体关系。
-- [`OrekiPlayerIntent.kt`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiPlayerIntent.kt)：玩家意图、pending 和关闭闩锁。
-- [`OrekiManagedAutobuyerAuthority.kt`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiManagedAutobuyerAuthority.kt)：托管目标的纯判据。
-- [`OrekiAutomationScheduler.kt`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiAutomationScheduler.kt)：执行节拍、预约和结果记账。
+- `OrekiPlayerIntent.kt`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiPlayerIntent.kt；具体文件证据留在内部核验记录）：玩家意图、pending 和关闭闩锁。
+- `OrekiManagedAutobuyerAuthority.kt`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiManagedAutobuyerAuthority.kt；具体文件证据留在内部核验记录）：托管目标的纯判据。
+- `OrekiAutomationScheduler.kt`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiAutomationScheduler.kt；具体文件证据留在内部核验记录）：执行节拍、预约和结果记账。
 
 本文只完成源码阅读与文档写作，未执行 Android APK 构建、设备操作或长时间自动化验收。

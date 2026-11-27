@@ -11,7 +11,7 @@ tags:
 
 比较两份增量游戏存档，不能只问“哪个资源数字更大”。一份存档可能拥有更多现实机器，另一份可能还没现实却已经把永恒点数和挑战推进得更远；更高阶段的当前资源又可能在重置后变小。如果同步逻辑只挑最大的一个数字，结果很容易把真正更靠后的存档覆盖掉。
 
-Web 端用 `ProgressChecker` 把这个问题拆成两个层次：先识别存档已经到达的最高阶段，再用阶段内的近似进度比较接近的存档。本文依据固定提交 [`b28b231efa5b694ce1da8a1e508cfc3ecc099344`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/tree/b28b231efa5b694ce1da8a1e508cfc3ecc099344)，重点阅读 [`src/core/secret-formula/progress-checker.js`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/core/secret-formula/progress-checker.js) 与 [`src/core/storage/progress-checker.js`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/core/storage/progress-checker.js)。它讨论的是比较算法，不是存档文本如何编码，也不是离线时间如何补算。
+Web 端用 `ProgressChecker` 把这个问题拆成两个层次：先识别存档已经到达的最高阶段，再用阶段内的近似进度比较接近的存档。本文依据固定提交 [`b28b231efa5b694ce1da8a1e508cfc3ecc099344`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/tree/b28b231efa5b694ce1da8a1e508cfc3ecc099344)，重点阅读 `src/core/secret-formula/progress-checker.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/core/secret-formula/progress-checker.js；具体文件证据留在内部核验记录） 与 `src/core/storage/progress-checker.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/core/storage/progress-checker.js；具体文件证据留在内部核验记录）。它讨论的是比较算法，不是存档文本如何编码，也不是离线时间如何补算。
 
 ## 先承认：进度不是一条数轴
 
@@ -137,7 +137,7 @@ composite = stage.id + min(subProgressValue(save), 1)
 
 ## 来源与相关条目
 
-- 固定源码：[阶段定义 `progress-checker.js`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/core/secret-formula/progress-checker.js)、[比较器实现 `src/core/storage/progress-checker.js`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/core/storage/progress-checker.js)、[云存档边界 `cloud-saving.js`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/core/storage/cloud-saving.js)。
+- 固定源码：阶段定义 `progress-checker.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/core/secret-formula/progress-checker.js；具体文件证据留在内部核验记录）、比较器实现 `src/core/storage/progress-checker.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/core/storage/progress-checker.js；具体文件证据留在内部核验记录）、云存档边界 `cloud-saving.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/core/storage/cloud-saving.js；具体文件证据留在内部核验记录）。
 - [存档兼容排查](/developer/troubleshooting/save-compatibility)：解释编码、迁移和备份；本文解释存档对象可用之后如何比较进度。
 - [Web 离线进度](/developer/architecture/web-offline-simulation)：解释时间模拟；离线时长不等于进度比较分数。
 - [超大数值模型](/developer/architecture/numeric-model)：解释 Decimal、指数和跨端数值边界。

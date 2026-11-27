@@ -31,6 +31,8 @@ jobs:
         run: node scripts/check-fonts.mjs
       - name: Navigation coverage and public archive boundary
         run: node scripts/check-navigation.mjs
+      - name: Public link policy (source)
+        run: node scripts/check-public-links.mjs
       - name: No page transition animation or progress bar
         run: node scripts/check-motion.mjs
       - name: Prepare Quartz 5 source (pinned)
@@ -53,6 +55,9 @@ jobs:
       - name: Built navigation DOM and empty-menu gate
         working-directory: .quartz-build
         run: node scripts/check-navigation.mjs --built public
+      - name: Public link policy (built HTML)
+        working-directory: .quartz-build
+        run: node scripts/check-public-links.mjs --built public
       - name: Built font policy
         working-directory: .quartz-build
         run: node scripts/check-fonts.mjs --built public

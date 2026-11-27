@@ -97,7 +97,7 @@ $$\max\left(\log_{10}(RM_{uncapped})-1000,0\right)^2
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为简体中文翻译（改编），已修改：翻译正文与全部表格、按游戏内简体中文统一为“虚幻机器/虚幻升级”、依据官方源码修正虚幻机器上限公式与状态、界面图与信息框未转载；本页按相同许可共享。
 - 原文图片未转载：原页含桌面/移动界面图（Reality-imaginaryupgrades-interface--darktheme-desktop.png、-mobile.webp、buttonstates--darktheme-desktop.png）与现实按钮图，此处仅保留文字说明。
 - 原文中的动态占位符（如解锁条件里的 {current value}）是游戏实时显示的数值，译文保留占位写法。
-- 源码核对：[虚幻机器上限公式](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/91d5bed01509cd730a3158075c9b05c19a7a3260/src/core/machines.js#L108)（提交 `91d5bed01509cd730a3158075c9b05c19a7a3260`，2026-11-24 核对）。
+- 源码核对：虚幻机器上限公式（源码定位：OrekiDawson/AD-Oreki-Edition-Web@91d5bed01509cd730a3158075c9b05c19a7a3260/src/core/machines.js#L108；具体文件证据留在内部核验记录）（提交 `91d5bed01509cd730a3158075c9b05c19a7a3260`，2026-11-24 核对）。
 
 ## 相关条目
 

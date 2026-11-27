@@ -59,8 +59,8 @@ Android 仓库的迁移台账记录了旧脚本已从当前主线物理删除，
 
 ## 参考资料
 
-- [Android 仓库的 build_mod 退役迁移台账](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/main/docs/BUILDMOD_RETIREMENT_LEDGER.md)
-- [Android `app/build.gradle.kts`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/main/app/build.gradle.kts)
+- Android 仓库的 build_mod 退役迁移台账（源码定位：OrekiDawson/AD-Oreki-Edition-Android@main/docs/BUILDMOD_RETIREMENT_LEDGER.md；具体文件证据留在内部核验记录）
+- Android `app/build.gradle.kts`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@main/app/build.gradle.kts；具体文件证据留在内部核验记录）
 - [Android AGP 构建管线](/developer/build/agp)
 - [源码接管与 ABI 兼容](/developer/architecture/android)
 - [CI/CD 与受保护门禁](/developer/build/ci-cd)

@@ -40,15 +40,15 @@ Workspace 和历史报告可以帮助追溯证据，但不是 Android 或 Web �
 
 ## Android：把未知的 DEX 收束在适配边界
 
-Android 当前仓库的根工程由 [`settings.gradle.kts`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/9d8fc46ce99279720b5b3068027bb76bceb35756/settings.gradle.kts) 和 `:app` 组成。生产 Kotlin 位于 `app/src/main/kotlin/`；构建时生成的绑定位于 `build/kt/generated`，完整游戏的 Manifest、资源、assets 和 JNI 输入由 [`app/build.gradle.kts`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/9d8fc46ce99279720b5b3068027bb76bceb35756/app/build.gradle.kts) 和 `build-logic` 接入。
+Android 当前仓库的根工程由 `settings.gradle.kts`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@9d8fc46ce99279720b5b3068027bb76bceb35756/settings.gradle.kts；具体文件证据留在内部核验记录） 和 `:app` 组成。生产 Kotlin 位于 `app/src/main/kotlin/`；构建时生成的绑定位于 `build/kt/generated`，完整游戏的 Manifest、资源、assets 和 JNI 输入由 `app/build.gradle.kts`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@9d8fc46ce99279720b5b3068027bb76bceb35756/app/build.gradle.kts；具体文件证据留在内部核验记录） 和 `build-logic` 接入。
 
-Android 的特别之处在于，官方游戏类并不是 MOD 的普通编译期依赖。 [`GameApi.kt`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/GameApi.kt) 因此承担一个窄而关键的边界：根据版本绑定解析类、字段和方法，缓存句柄，把失败转成可观察的 `OREKI_API_MISS`，再向调度器和 UI 提供语义化访问。自动化调度器不应该自己猜混淆名；它只应通过 `GameApi` 读取玩家状态或请求原版动作。
+Android 的特别之处在于，官方游戏类并不是 MOD 的普通编译期依赖。 `GameApi.kt`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/GameApi.kt；具体文件证据留在内部核验记录） 因此承担一个窄而关键的边界：根据版本绑定解析类、字段和方法，缓存句柄，把失败转成可观察的 `OREKI_API_MISS`，再向调度器和 UI 提供语义化访问。自动化调度器不应该自己猜混淆名；它只应通过 `GameApi` 读取玩家状态或请求原版动作。
 
 这也解释了为什么“把所有反编译类全部翻译成 Kotlin”不是默认的第一步：那会把整个官方运行时变成第二个需要同步的源码项目。更可维护的拆分是，MOD 自己拥有状态机、节拍和界面；原版对象的形状变化集中由适配层吸收。
 
 ## Web：浏览器入口更直接，但因果仍要追踪
 
-Web 从 [`src/main.js`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/e1c93caa758de6c39cf814582123d4a35319eb25/src/main.js) 进入，浏览器检查通过后初始化 [`src/game.js`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/e1c93caa758de6c39cf814582123d4a35319eb25/src/game.js)。游戏循环、自动化注册表和页面同步在后续模块展开。这里没有 Android 那样的 DEX 反射边界，却有另一种边界问题：DOM、游戏状态和自动化策略若互相直接改写，页面看似更新，存档或下一次 tick 可能仍然落后。
+Web 从 `src/main.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@e1c93caa758de6c39cf814582123d4a35319eb25/src/main.js；具体文件证据留在内部核验记录） 进入，浏览器检查通过后初始化 `src/game.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@e1c93caa758de6c39cf814582123d4a35319eb25/src/game.js；具体文件证据留在内部核验记录）。游戏循环、自动化注册表和页面同步在后续模块展开。这里没有 Android 那样的 DEX 反射边界，却有另一种边界问题：DOM、游戏状态和自动化策略若互相直接改写，页面看似更新，存档或下一次 tick 可能仍然落后。
 
 因此比较双端时，不要比较函数名或文件数量，而要比较行为链：一次购买是否检查同样的前置，是否真实扣除资源，是否触发正确的重置副作用，保存字段是否更新，下一次 tick 是否还能继续。界面不同并不自动表示不一致；因果不同才是问题。
 

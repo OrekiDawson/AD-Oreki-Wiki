@@ -29,7 +29,7 @@ tags:
 
 ## 第三方素材清单
 
-机器可读清单位于仓库的 [`docs/translation/original-image-manifest.json`](https://github.com/OrekiDawson/AD-Oreki-Wiki/blob/main/docs/translation/original-image-manifest.json)。它记录原版译文对应页面发现的图片、来源页面、本站资源路径、许可证、署名和恢复状态；`待核实` 或 `INCOMPLETE` 的素材不得进入正式页面。图片恢复与逐页核查方法见[原版译文图片恢复清单](https://github.com/OrekiDawson/AD-Oreki-Wiki/blob/main/docs/translation/%E5%8E%9F%E7%89%88%E8%AF%91%E6%96%87%E5%9B%BE%E7%89%87%E6%81%A2%E5%A4%8D%E6%B8%85%E5%8D%95.md)。
+机器可读清单位于仓库的 `docs/translation/original-image-manifest.json`（源码定位：OrekiDawson/AD-Oreki-Wiki@main/docs/translation/original-image-manifest.json；具体文件证据留在内部核验记录）。它记录原版译文对应页面发现的图片、来源页面、本站资源路径、许可证、署名和恢复状态；`待核实` 或 `INCOMPLETE` 的素材不得进入正式页面。图片恢复与逐页核查方法见原版译文图片恢复清单（源码定位：OrekiDawson/AD-Oreki-Wiki@main/docs/translation/%E5%8E%9F%E7%89%88%E8%AF%91%E6%96%87%E5%9B%BE%E7%89%87%E6%81%A2%E5%A4%8D%E6%B8%85%E5%8D%95.md；具体文件证据留在内部核验记录）。
 
 本站目前使用的原创站点标识位于仓库 `static/icon.svg` 与 `static/icon.png`，由本项目制作；它不代表原版游戏 Logo，也不改变原版游戏或第三方素材的权利归属。
 
@@ -42,7 +42,7 @@ tags:
 3. [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)许可链接；
 4. 翻译、删改、整合或其他修改声明。
 
-不要把原版游戏素材、第三方图片、软件代码或外部资料标成本站原创，也不要暗示原作者认可你的改编。仓库中的[内容许可文件](https://github.com/OrekiDawson/AD-Oreki-Wiki/blob/main/LICENSE-CONTENT.md)和[软件许可文件](https://github.com/OrekiDawson/AD-Oreki-Wiki/blob/main/LICENSE.txt)分别适用各自范围。
+不要把原版游戏素材、第三方图片、软件代码或外部资料标成本站原创，也不要暗示原作者认可你的改编。仓库中的内容许可文件（源码定位：OrekiDawson/AD-Oreki-Wiki@main/LICENSE-CONTENT.md；具体文件证据留在内部核验记录）和软件许可文件（源码定位：OrekiDawson/AD-Oreki-Wiki@main/LICENSE.txt；具体文件证据留在内部核验记录）分别适用各自范围。
 
 ## 发现问题
 

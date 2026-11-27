@@ -25,7 +25,7 @@ Oreki Edition 的改动大致分成两类：一类改变数字或解锁门槛，
 | 莱特拉熵速率除数    | $10^{11}$                   | $2 \times 10^7$                 | 熵增长节奏改变，具体效果取决于当前实现           |
 | 全局自动化节拍      | 各自动购买器自己的间隔/批量 | 统一调度层 1～60 秒，默认 10 秒 | 调度器重新判断策略，不把所有购买器锁成 10 秒     |
 
-原版常量可从[固定上游源码](https://github.com/IvarK/AntimatterDimensionsSourceCode/blob/5409e320cecef96a917cca1dfb68f1f183e499ca)核对，MOD 侧则应查看当前 Android/Web 实现。表中的数字是帮助玩家建立方向感，不应替代当前版本的游戏内说明。
+原版常量可从固定上游源码（源码定位：IvarK/AntimatterDimensionsSourceCode@5409e320cecef96a917cca1dfb68f1f183e499ca/；具体文件证据留在内部核验记录）核对，MOD 侧则应查看当前 Android/Web 实现。表中的数字是帮助玩家建立方向感，不应替代当前版本的游戏内说明。
 
 ## 自动化改动改变的是操作，不是裁决
 
@@ -45,9 +45,9 @@ Oreki Edition 的改动大致分成两类：一类改变数字或解锁门槛，
 
 ## 参考来源
 
-- [V 原版门槛](https://github.com/IvarK/AntimatterDimensionsSourceCode/blob/5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/secret-formula/celestials/v.js)
-- [虚构升级原版门槛](https://github.com/IvarK/AntimatterDimensionsSourceCode/blob/5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/secret-formula/reality/imaginary-upgrades.js)
-- [莱特拉原版实现](https://github.com/IvarK/AntimatterDimensionsSourceCode/blob/5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/celestials/laitela/laitela.js)
+- V 原版门槛（源码定位：IvarK/AntimatterDimensionsSourceCode@5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/secret-formula/celestials/v.js；具体文件证据留在内部核验记录）
+- 虚构升级原版门槛（源码定位：IvarK/AntimatterDimensionsSourceCode@5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/secret-formula/reality/imaginary-upgrades.js；具体文件证据留在内部核验记录）
+- 莱特拉原版实现（源码定位：IvarK/AntimatterDimensionsSourceCode@5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/celestials/laitela/laitela.js；具体文件证据留在内部核验记录）
 - [原版社区 Wiki](https://antimatterdimensions.wiki.gg/wiki/Antimatter_Dimensions)
 
 继续阅读：[Android 与 Web：版本和行为差异](/player/gameplay/platform-differences) · [天神系统](/player/gameplay/celestials) · [原版玩法译文](/player/original/)

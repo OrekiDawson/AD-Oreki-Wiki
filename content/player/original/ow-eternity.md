@@ -67,7 +67,7 @@ $$\left\lfloor EP_{mult} \times 5^{\frac{\log_{10}\left( IP_{\text{highest this 
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为**简体中文翻译（改编）**，已修改：翻译正文与公式，统一术语，把原式中的中文变量名改为原文英文变量名并加中文解释，移除导航模板与信息框，图片未转载；本页按相同许可共享。
 - 原文图片未转载：原文该页不含图片或其它媒体，仅有文字与公式。
 - 原文存在两处拼写错误：公式里的 Eternnity 与正文的 Eterntiies，按上下文分别指「本次永恒」与「永恒次数」，译文已按原意处理并在本块注明。
-- 源码核对：[`src/core/eternity.js`](https://github.com/IvarK/AntimatterDimensionsSourceCode/blob/5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/eternity.js) 的奖励计算与重置范围，以及 [`src/core/player.js`](https://github.com/IvarK/AntimatterDimensionsSourceCode/blob/5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/player.js) 的永恒入口条件。
+- 源码核对：`src/core/eternity.js`（源码定位：IvarK/AntimatterDimensionsSourceCode@5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/eternity.js；具体文件证据留在内部核验记录） 的奖励计算与重置范围，以及 `src/core/player.js`（源码定位：IvarK/AntimatterDimensionsSourceCode@5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/player.js；具体文件证据留在内部核验记录） 的永恒入口条件。
 
 ## 相关条目
 
