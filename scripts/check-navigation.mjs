@@ -100,47 +100,53 @@ const orderedExplorer = fs.readFileSync(
   path.join(root, "scripts/quartz-plugins/ordered-explorer/dist/index.js"),
   "utf8",
 )
-// 模型与浏览器端序列化排序函数保持一致，避免新增专题后两处配置分叉。
-const childOrderSource = orderedExplorer.match(/const CHILD_ORDER = \{([\s\S]*?)\n  \};/)?.[1] ?? ""
-const childRanks = new Map(
-  [...childOrderSource.matchAll(/"([^"]+)": (\d+),/g)].map((match) => [match[1], Number(match[2])]),
-)
-const rootOrder = navigationModel?.categories?.root?.map((entry) => entry.key) ?? []
-const rootOrderSource = orderedExplorer.match(/const ROOT_ORDER = (\[[^\n]+\]);/)?.[1]
-if (rootOrder[0] !== "player" || rootOrder[1] !== "developer") errors.push("玩家专区必须在开发者专区之前")
-if (!rootOrderSource || JSON.stringify(JSON.parse(rootOrderSource)) !== JSON.stringify(rootOrder))
-  errors.push("根级导航模型与 Explorer 顺序不一致")
-// 不只核对数组声明，还执行实际比较器，防止其他优先级覆盖根级顺序。
-const compareSource = orderedExplorer.match(/function compare\(a, b\) \{[\s\S]*?\n\}/)?.[0]
-if (!compareSource) errors.push("缺少导航比较器")
-else {
+// 执行实际可序列化回调，而非检查重复的硬编码数组。
+if (navigationModel) {
+  const { createNavigationCallbacks } = await import("./navigation-runtime.mjs")
   const { runInNewContext } = await import("node:vm")
-  const compare = runInNewContext("(" + compareSource + ")")
-  const nodes = rootOrder.map((slug) => ({ slug, slugSegment: slug, displayName: slug })).reverse()
-  if (JSON.stringify(nodes.sort(compare).map((node) => node.slug)) !== JSON.stringify(rootOrder))
-    errors.push("根级导航实际排序错误")
+  const callbacks = createNavigationCallbacks(navigationModel)
+  const compare = runInNewContext("(" + callbacks.compare.toString() + ")")
+  const mapNode = runInNewContext("(" + callbacks.mapNode.toString() + ")")
+  const filterNode = runInNewContext("(" + callbacks.filterNode.toString() + ")")
+  const node = slug => ({ slug, slugSegment: slug.split("/").at(-1), displayName: slug })
+  const rootOrder = navigationModel.categories.root.map(entry => entry.key)
+  const assertOrder = (routes, label) => {
+    const sorted = routes.slice().reverse().map(node).sort(compare).map(n => n.slug)
+    if (JSON.stringify(sorted) !== JSON.stringify(routes)) errors.push("导航排序不一致：" + label)
+  }
+  if (rootOrder[0] !== "player" || rootOrder[1] !== "developer") errors.push("玩家专区必须在开发者专区之前")
+  assertOrder(rootOrder, "根级")
+  if (JSON.stringify(navigationModel.stationEntries) !== JSON.stringify(rootOrder.slice(2)))
+    errors.push("站务入口与根级导航不一致")
+  const childRoutes = new Set()
+  for (const [parent, children] of Object.entries(navigationModel.childOrder)) {
+    if (!formalRoutes.has("/" + parent)) errors.push("导航排序分类不存在：" + parent)
+    for (const route of children) {
+      if (!route.startsWith(parent + "/") || !formalRoutes.has("/" + route))
+        errors.push("导航条目不存在或分类错误：" + route)
+      if (childRoutes.has(route)) errors.push("导航条目重复：" + route)
+      childRoutes.add(route)
+    }
+    assertOrder(children, parent)
+  }
+  for (const [parent, groups] of Object.entries(navigationModel.topicGroups || {})) {
+    const entries = groups.flatMap(group => group.entries)
+    if (groups.some(group => !group.label || !group.entries.length) ||
+        JSON.stringify(entries) !== JSON.stringify(navigationModel.childOrder[parent]))
+      errors.push("专题分组为空、遗漏或顺序不一致：" + parent)
+  }
+  for (const [slug, label] of Object.entries(navigationModel.folderLabels))
+    if (mapNode(node(slug)).displayName !== label) errors.push("侧栏名称不一致：" + slug)
+  for (const slug of ["tags", "tags/test", "ai-drafts/test", "developer/history/test", "redirect/test"])
+    if (filterNode(node(slug))) errors.push("导航未排除：" + slug)
+  if (mapNode({ ...node("test"), isFolder: true, children: [], data: {} }).isFolder)
+    errors.push("叶子目录未降级为普通链接")
+  if (filterNode({ ...node("test"), isFolder: true, children: [] }))
+    errors.push("无真实页面的空目录未排除")
 }
-const childRoutes = new Set()
-for (const [parent, children] of Object.entries(navigationModel?.childOrder ?? {})) {
-  if (!formalRoutes.has("/" + parent)) errors.push(`导航排序分类不存在：${parent}`)
-  children.forEach((route, index) => {
-    if (!route.startsWith(parent + "/") || !formalRoutes.has("/" + route))
-      errors.push(`导航排序条目不存在或分类错误：${route}`)
-    if (childRoutes.has(route)) errors.push(`导航排序条目重复：${route}`)
-    childRoutes.add(route)
-    if (childRanks.get(route) !== index + 1) errors.push(`导航模型与 Explorer 排序不一致：${route}`)
-  })
-}
-for (const route of childRanks.keys())
-  if (!childRoutes.has(route)) errors.push(`Explorer 存在未登记的专题排序：${route}`)
-
-if (!orderedExplorer.includes("developer/architecture") || !orderedExplorer.includes("developer/references"))
-  errors.push("开发者导航缺少语义分类排序")
-if (!orderedExplorer.includes("current-page-ancestors")) errors.push("导航缺少当前页面高亮定位标记")
-if (!orderedExplorer.includes("filterNode") || !orderedExplorer.includes("/tags/") || !orderedExplorer.includes("node.children.length === 0") || !orderedExplorer.includes("filterFn"))
-  errors.push("导航未阻止空子菜单和空白虚拟分类")
-if (leafDirectoryCount > 0 && !orderedExplorer.includes("node.isFolder = false"))
-  errors.push(`发现 ${leafDirectoryCount} 个无下级条目的目录，但插件未将其降级为普通链接`)
+if (!orderedExplorer.includes("navigation-runtime.mjs") || !orderedExplorer.includes("navigation-model.json"))
+  errors.push("Explorer 未使用唯一导航数据源")
+if (!orderedExplorer.includes("current-page-ancestors")) errors.push("导航缺少当前页面定位标记")
 const assetManifestPath = path.join(root, "docs/translation/original-image-manifest.json")
 if (!fs.existsSync(assetManifestPath)) errors.push("缺少原版译文图片来源清单")
 else {
