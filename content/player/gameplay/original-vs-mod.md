@@ -19,11 +19,11 @@ aliases:
 
 阅读[MOD 玩法改动：数值、解锁与自动化](/player/gameplay/mod-changes)。那里集中说明已核对的门槛缩放、自动化增强和仍保留原版语义的结算边界。
 
-### 我想知道 Android 和 Web 能不能照搬
+### Android 与 Web 互通
 
 阅读[Android 与 Web：版本和行为差异](/player/gameplay/platform-differences)。那里解释两端基线、同名功能的实现差异以及遇到版本不一致时怎样核对。
 
-## 读其他玩家页面时的判断顺序
+## 阅读判断顺序
 
 1. 先看文章标注的原版、MOD、Android 或 Web 范围。
 2. 再看适用版本；旧版社区攻略不能自动代表当前 MOD。

@@ -64,7 +64,7 @@ $$e^{\left(\ln(r)+\left[\left(1+t\right)\times r\times\ln(c+1)\times interval\di
 | 间隔 | 1000 毫秒 | 1e140 IP | ×e10 | ×0.9 | 50 毫秒（拥有时间研究 22 时可提高到 1 毫秒） |
 | 最大复制器星系数 | 0 | 1e170 IP | $\times \text{e}25\times \text{e}5^{UpgradesBought}$（后期会显著更严厉，见「星系成本成长」） | $+1$ | 无限 |
 
-## [无限维度](/player/original/ow-infinity-dimensions)加成
+## 无限维度加成
 
 复制器在游戏早期的主要用途是为无限维度提供加成，公式为 $\log_2(replicanti)^2$。玩家到达永恒后可以购买时间研究 21，为加成再增加 $replicanti^{0.032}$；时间研究 102 会再次以 $\left(boost\times 5^{RG}\right)$ 提高加成（$RG$ 为复制器星系数）。
 
