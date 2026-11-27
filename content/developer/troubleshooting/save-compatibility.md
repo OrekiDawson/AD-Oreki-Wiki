@@ -1,56 +1,108 @@
 ---
 title: "存档兼容排查"
-description: "从编码边界、字段迁移、备份槽位和运行时状态入手，诊断读档失败与静默重置"
+description: "从 Android 编解码、Web 序列化、字段迁移和运行时恢复四个边界定位存档失败"
 tags:
   - 排查
   - 存档
+  - Web
+  - Android
 aliases:
   - "/troubleshooting/save-compatibility"
 ---
 
-“文件能打开”不是“存档兼容”。存档要经过编码、解码、对象校验、字段迁移、默认值合并和游戏状态重建；其中任何一层出错，最终都可能只表现为资源变少、页面回到早期阶段，甚至像新档一样安静地出现。排查的第一步不是手改 JSON，而是确认这份文件属于哪个运行时、哪一种编码和哪一代字段结构。
+存档问题最容易误判的地方，是“导入成功”只说明按钮走完了一段代码，并不说明玩家状态已经被正确恢复。一个存档至少要经过四个边界：文本能否解码、解码结果是否像玩家对象、旧字段能否迁移到当前结构，以及运行时是否依据这些字段重建出同一个游戏状态。
 
-## 平台文件差异
+排查时先问“哪一个边界失败”，再决定读源码、看样本还是做设备验证。不要一上来修改 JSON；那往往会把原始证据和迁移前状态一起毁掉。
 
-Android 测试样本的核心是 `files/player.json` 原文。仓内 `tools/savecodec-rs` 记录的文本格式以 `AntimatterDimensionsAndroidSaveFormat` 开头，载荷经过替换规则、Base64 和 gzip；工具还设置了 32 MiB 输入与 64 MiB 解压上限。它是 Android 端的编解码边界，不因为里面也出现 `player` 字段就自动等于 Web 导出文本。
+## Android 与 Web 存档
 
-Web 则由 `GameSaveSerializer` 先把对象 `JSON.stringify`，把 `Set` 转成数组、把 `Infinity` 表示成字符串，再经过 `TextEncoder`、pako deflate、可打印化 Base64 和字符替换，最后附加 `EndOfSavefile`。开头的 `AntimatterDimensionsSavefileFormatAAB` 是 Web 编码版本标记。没有经过明确适配和真实读写验证时，不要把 Web 导出直接推给 Android，也不要把 Android 的 `player.json` 当成 Web 导入文本。
+Android 与 Web 使用不同的外层格式。Android 工具 `savecodec-rs`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@fb1299a132f134eb4fab009643ee3fc3d6c57edf/tools/savecodec-rs）处理的是 Android 文本存档：
 
-## 读档其实是一个管线
+```text
+AntimatterDimensionsAndroidSaveFormat + AAA + payload + EndOfSavefile
+```
 
-Web 的 `GameStorage.load()` 先取出本地存储值并解码；`loadRoot()` 再区分旧的单对象格式和包含 `current`、`saves` 的多槽格式。进入玩家对象后，`checkPlayerObject()` 只做最低限度的可识别性和 NaN 检查，随后 `migrations.patchPreReality()`、开发环境迁移和 `patchPostReality()` 按顺序改写对象，再用默认玩家结构补齐缺失字段。最后才重建 UI、符文缓存、自动化后端并决定是否模拟离线时间。
+载荷中的 `0a`、`0b`、`0c` 分别还原为 `0`、`+`、`/`；随后补齐 Base64 的 `=`，解码并 gunzip。工具把输入限制为 32 MiB，解压结果限制为 64 MiB，退出码 0/1/2 分别表示成功、数据或 IO 错误、参数错误。这些是 Android 编解码器的边界，不是 Web 导出格式的通用规则。
 
-这解释了两个常见错觉：字段缺失不一定意味着文件损坏，因为迁移可能会补上它；迁移完成也不意味着游戏状态可信，因为阶段、缓存和离线模拟还会重新计算。诊断时要记录“解码后对象”“迁移后对象”和“首次显示的游戏状态”这三个边界，而不是只看导入按钮有没有弹出成功提示。
+Web 的 `serializer.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@e1c93caa758de6c39cf814582123d4a35319eb25/src/core/storage/serializer.js） 则把对象经 `JSON.stringify` 转换：`Set` 变成数组，`Infinity` 变成字符串；之后依次执行 `TextEncoder`、pako deflate、字节转字符串、Base64，以及 `0`/`+`/`/` 的可打印化替换，最后附加 `EndOfSavefile`。新格式以 `AntimatterDimensionsSavefileFormatAAB` 开头。没有显式转换器和真实导入验证时，两个平台的文件不能因为都包含 `player` 字段就互相兼容。
 
-## 逐层缩小故障范围
+Web 还保留旧存档的兼容路径：如果文本没有新的魔术前缀，`decodeText()` 会回退到旧的 `atob` 解码。这个回退只能说明“尝试按旧编码读取”，不能证明旧对象已经适配当前游戏。
 
-先保留原文件副本并计算 SHA-256，记录来源、版本、平台和导入前后时间。对 Android，确认文件是否放在应用实际使用的 `files` 目录，并且备份槽位没有把刚注入的主文件回滚掉；仓内样本说明了覆盖 `player.json` 与若干 `playerBackup*` 的测试方法，但这只适用于受控测试设备，不应照搬到用户真实存档。
+## Web 读档的实际调用链
 
-然后判断失败发生在哪一层：
+从浏览器本地存储恢复时，调用链可简化为：
 
-- 开头不符合平台格式、解压失败或 JSON 无法解析，是编码边界问题；先查文件是否被截断、是否把另一平台的导出当作输入。
-- 能解析但缺少关键字段，查看迁移函数是否覆盖该版本；重点关注字段改名、数组到对象的重组、`Decimal`/数字类型转换和旧自动购买器结构。
-- 能读入但进度退回，比较迁移前后的阶段判据与保留字段；不要只盯着显示数值，许多资源会在下一次 tick 依据维度和解锁状态重算。
-- 导入后完全不保存或界面不再推进，转查逻辑线程、保存条件和协程 ABI。保存管线可能根本没有获得一次运行机会，不能先给存档背锅。
+```text
+localStorage
+  -> GameSaveSerializer.deserialize
+  -> GameStorage.loadRoot
+  -> GameStorage.loadPlayerObject
+  -> migrations.patchPreReality
+  -> deepmerge / 开发环境迁移
+  -> migrations.patchPostReality
+  -> UI、符文缓存、自动化后端和离线进度恢复
+```
 
-Web 还要检查 `canSave()`：选择符文、模拟进度或游戏结束状态可能暂时禁止保存；`save()` 写入的是带 `current` 和 `saves` 的根对象，备份则使用独立的 `backupSave-*` 与备份时间键。文件存在不代表它是最近一次有效保存。
+`GameStorage.loadRoot()` 先区分两种根结构。没有 `saves` 字段的旧对象会被放入槽位 0，并立即按当前多槽格式保存；有 `current` 与 `saves` 的对象则恢复当前槽位。于是，“旧格式被成功打开”可能已经伴随一次格式升级，原始文本必须在操作前另存。
 
-## 样本验证
+进入 `loadPlayerObject()` 后，`checkPlayerObject()` 只做最低限度检查：对象不能为空，必须有 `money` 或 `antimatter`，并且不能递归发现 NaN。它不是完整 schema 验证器。检查通过后，迁移函数按顺序修改对象；缺失字段再由默认玩家结构补齐，最后才恢复 UI 状态、重建符文相关缓存并记录 `lastUpdate`。因此，解码成功、迁移成功和界面看起来正常是三个不同的结论。
 
-仓内 `savestates/manifest.json` 为测试夹具记录了路径、大小、SHA-256 和部分阶段字段；`late/invalid/` 中的损坏样本明确标为负向夹具。它们适合验证“错误是否被识别”和“合法阶段是否保留”，不适合伪造玩家进度。测试时应先用新档建立基线，再导入一个固定样本，读回关键字段，重启后再次读取；每一步都保留输入哈希和输出差异。
+`migrations.js` 把 `firstRealityMigration` 定为 13，并将迁移分为 `patchPreReality()` 与 `patchPostReality()`。前者负责跨越现实更新前后的结构边界，后者负责当前迁移表中更晚的字段变化。调查旧存档时，应记录输入对象的 `version`，并对照它实际经过的迁移区间，而不是只引用“当前版本支持旧档”。
 
-Rust `savecodec` 适合检查 Android 编码层，Web 的 `serializer.js` 和迁移源码适合解释 Web 行为。二者都不能代替设备或浏览器上的真实导入，因为文件权限、localStorage、备份回滚、离线模拟和 UI 阶段门禁都在编解码器之外。
+## “像新档”时先定位回退点
 
-## 安全边界与可迁移经验
+`loadPlayerObject()` 在对象为空、解码失败或最低限度检查失败时，会深合并 `Player.defaultStart` 并重新设置创建时间。用户看到的新档界面，可能来自三类完全不同的原因：
 
-任何实验都先复制存档，绝不覆盖唯一用户文件；不要用手写 JSON 冒充合法夹具，也不要把“解析成功”写成“跨版本互通”。跨版本兼容的可靠做法是：为每个格式保留版本标记和迁移入口，迁移后执行最小结构校验，再用真实阶段样本验证读、写、重启三件事。跨平台则应设计显式转换器，逐字段定义精度、缺省值、枚举和不可转换字段，而不是依赖两个 JSON 恰好长得相似。
+1. 文本根本没有解码成对象；
+2. 对象存在，但没有 `money`/`antimatter` 或含 NaN，被运行时判为无效；
+3. 对象通过检查，但迁移、阶段门禁或 UI 恢复让可见页面回到较早阶段。
+
+取证时应分别保留：原始文本哈希、解码后的根对象、迁移后关键字段，以及首次加载后界面显示的阶段。只截一张“导入成功”或“资源变少”的截图，无法区分这三种情况。
+
+## 保存问题
+
+Web 的 `canSave()` 会在三种状态下拒绝普通保存：正在选择符文、正在模拟进度，或游戏已进入禁止交互/保存的结束状态。`save()` 还会把根对象写成 `{ current, saves }`，而不是只写当前玩家对象。排查“文件时间没有更新”时，要同时检查保存条件、当前槽位和浏览器的 `dimensionSave` 键。
+
+自动备份使用独立键名：正式环境为 `backupSave-{saveSlot}-{backupSlot}` 和 `backupTimes-{saveSlot}`；在线备份的间隔为 1 分钟、5 分钟、20 分钟和 1 小时，离线备份的间隔为 10 分钟、1 小时和 5 小时，另有一个保留槽。文件存在不代表它是最近一次有效状态；应读取备份时间并确认对应槽位。
+
+导入流程也会主动保存：`import()` 解码并通过 `checkPlayerObject()` 后，调用 `loadPlayerObject()`，清理部分运行时状态，随后执行 `save(true)`。如果导入后立刻关闭页面，先确认 `canSave()` 没有因模拟或结束状态阻止这次写入。
+
+## 一套可复现的排查顺序
+
+### 1. 冻结证据
+
+复制原始文件，不在原件上编辑；记录来源平台、游戏构建、浏览器或设备、文件大小、SHA-256 和导入时间。Android 夹具的路径、大小、哈希和阶段字段可参考 `savestates/manifest.json`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@fb1299a132f134eb4fab009643ee3fc3d6c57edf/savestates/manifest.json）。
+
+### 2. 只做编解码验证
+
+Android 先用 `savecodec decode` 生成新 JSON，不要直接覆盖应用目录；Web 先独立调用序列化器或在浏览器副本中导入。此步只回答“文本能否解码”，不回答“玩家进度是否正确”。
+
+### 3. 比较迁移前后字段
+
+至少比较 `version`、现实/永恒/无限计数、主要货币、解锁标记、`lastUpdate` 和备份计时器。对字段缺失，要查迁移函数是补默认值、改名、转换类型，还是根本没有覆盖该旧版本。
+
+### 4. 重新启动并复读
+
+导入后保存、退出并重新启动，再读取同一槽位。第一次显示正确而重启后回退，重点查 `localStorage` 写入、槽位选择和自动备份；两次都正确但玩法阶段不同，重点查阶段门禁、缓存重建和离线模拟。
+
+### 5. 用合法夹具复现
+
+优先使用仓库中带哈希和来源的合法样本；`savestates/late/invalid/` 中标为负向夹具的文件只用于确认失败路径，不能当作跨版本兼容成功的证据。每次实验保留输入哈希、工具版本、迁移前后差异和重启结果。
+
+## 兼容边界与安全结论
+
+- 编解码兼容不等于 schema 兼容；能 gunzip 或 `JSON.parse` 只证明外层格式可读。
+- 旧字段可迁移不等于阶段等价；默认值合并、解锁检查、缓存重建和离线模拟都可能改变可见结果。
+- Web 多槽根对象、Android `player.json` 和备份槽不是同一层级的交换格式。
+- 没有固定版本、原始哈希和真实重启结果的“互通成功”只能记为推断。
+- 任何修复先复制存档；不要用手写 JSON 覆盖唯一用户文件，也不要把负向夹具发布成合法存档。
 
 ## 参考资料
 
-- Android 当前仓库的 `savestates/README.md`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@fb1299a132f134eb4fab009643ee3fc3d6c57edf/savestates/README.md；具体文件证据留在内部核验记录）、`manifest.json`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@fb1299a132f134eb4fab009643ee3fc3d6c57edf/savestates/manifest.json；具体文件证据留在内部核验记录） 与 `savecodec-rs/README.md`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@fb1299a132f134eb4fab009643ee3fc3d6c57edf/tools/savecodec-rs/README.md；具体文件证据留在内部核验记录）。
-- Web 当前基线  [`e1c93caa`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/tree/e1c93caa758de6c39cf814582123d4a35319eb25)  中的 `src/core/storage/storage.js`、`serializer.js` 与 `migrations.js`。
-- [MDN：Web Storage API](https://developer.mozilla.org/docs/Web/API/Web_Storage_API)  与  [Android：应用数据和文件](https://developer.android.com/training/data-storage/app-specific)。
+- Android `savecodec-rs/README.md`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@fb1299a132f134eb4fab009643ee3fc3d6c57edf/tools/savecodec-rs/README.md）、`savestates/manifest.json`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@fb1299a132f134eb4fab009643ee3fc3d6c57edf/savestates/manifest.json）。
+- Web `storage.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@e1c93caa758de6c39cf814582123d4a35319eb25/src/core/storage/storage.js）、`serializer.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@e1c93caa758de6c39cf814582123d4a35319eb25/src/core/storage/serializer.js）、`migrations.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@e1c93caa758de6c39cf814582123d4a35319eb25/src/core/storage/migrations.js）。
+- [Web 存档与自动保存](/player/gameplay/saves) · [协程 ABI 崩溃排查](/developer/troubleshooting/coroutine-abi)。
 
 ## 相关条目
 
-[存档兼容与自动保存](/player/gameplay/saves) · [协程 ABI 崩溃排查](/developer/troubleshooting/coroutine-abi) · [来源索引](/developer/references/source-index) · [DEX 与 ABI](/developer/reverse-engineering/dex-abi)
+[来源索引](/developer/references/source-index) · [Web 架构](/developer/architecture/web) · [Android 架构](/developer/architecture/android) · [故障排查](/developer/troubleshooting/)

@@ -66,7 +66,7 @@ EC4 尤其反常：先积累大量无限次数才有资格进入，进去以后�
 完整数值及前置关系见[原版时间研究](/player/original/ow-time-studies)，MOD 的调度与具体差异见 [MOD 改动](/player/gameplay/mod-changes)。
 
 ## 资料来源
-- [Time Studies](https://antimatterdimensions.wiki.gg/index.php?title=Time_Studies&oldid=3343)、普通时间研究定义（源码定位：IvarK/AntimatterDimensionsSourceCode@5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/secret-formula/eternity/time-studies/normal-time-studies.js；具体文件证据留在内部核验记录）。
+- [Time Studies](https://antimatterdimensions.wiki.gg/index.php?title=Time_Studies&oldid=3343)、普通时间研究定义（源码定位：IvarK/AntimatterDimensionsSourceCode@5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/secret-formula/eternity/time-studies/normal-time-studies.js）。
 - [Eternity Challenges](https://antimatterdimensions.wiki.gg/index.php?title=Eternity_Challenges&oldid=3347)、[Reality](https://antimatterdimensions.wiki.gg/index.php?title=Reality&oldid=3235)。
 - [原版时间膨胀](/player/original/ow-dilation)、[原版薇](/player/original/ow-v)。
 

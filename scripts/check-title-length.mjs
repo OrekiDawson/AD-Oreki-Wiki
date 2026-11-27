@@ -97,7 +97,9 @@ if (builtOnly) {
     const route = rel === "index.html" ? "/" : `/${rel.replace(/\/index\.html$/, "").replace(/\.html$/, "")}`
     // 标签页保留 URL 和元数据，但属于 Quartz 自动生成的辅助索引；
     // 不把其重复的文章标题当作公开条目的 H1-H4 违规。
-    if (route === "/tags" || route.startsWith("/tags/")) continue
+    // 标签页与未公开 AI 草稿是 Quartz 生成/保留的辅助路径，不属于正式公开文章；
+    // 它们不进入主导航、搜索与正式标题质量统计，但必须保留原有 URL 和元数据。
+    if (route === "/tags" || route.startsWith("/tags/") || route.includes("/ai-drafts/")) continue
     const html = fs.readFileSync(file, "utf8")
     for (const match of html.matchAll(/<h([1-4])\b[^>]*>([\s\S]*?)<\/h\1>/gi)) {
       const kind = `H${match[1]}`

@@ -39,7 +39,7 @@ aliases:
 
 1. 先读 `app/src/main/kotlin/` 中的 Kotlin 接管层。`GameApi.kt` 集中缓存混淆宿主的类、字段和方法解析；架构页解释这些入口怎样被调度器使用。
 2. 再读基线绑定和 DEX/Smali 证据，确认一个短名类的真实签名、继承关系和调用契约。绑定表是这个版本的映射，不是未来版本的永久 API。
-3. 最后读 `app/build.gradle.kts`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@9d8fc46ce99279720b5b3068027bb76bceb35756/app/build.gradle.kts；具体文件证据留在内部核验记录）、`build-logic/`、`app/proguard-rules.pro` 和产物检查，确认代码怎样进入变体、APK 和运行时。
+3. 最后读 `app/build.gradle.kts`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@9d8fc46ce99279720b5b3068027bb76bceb35756/app/build.gradle.kts）、`build-logic/`、`app/proguard-rules.pro` 和产物检查，确认代码怎样进入变体、APK 和运行时。
 
 源码能证明设计和调用关系；只有构建输入、APK/DEX 与运行证据都对上，才可以继续声称“该实现到达设备”。
 

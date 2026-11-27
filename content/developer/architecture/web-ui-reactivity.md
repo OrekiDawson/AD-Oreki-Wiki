@@ -131,7 +131,7 @@ Vue 计算属性和 DOM 更新
 
 ## 来源与相关条目
 
-- Web 固定源码：事件总线 `src/core/event-hub.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@e1c93caa758de6c39cf814582123d4a35319eb25/src/core/event-hub.js；具体文件证据留在内部核验记录）、UI 混入与 flush `src/core/ui.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@e1c93caa758de6c39cf814582123d4a35319eb25/src/core/ui.js；具体文件证据留在内部核验记录）、教程弹窗 `OrekiTutorialModal.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@e1c93caa758de6c39cf814582123d4a35319eb25/src/components/modals/OrekiTutorialModal.js；具体文件证据留在内部核验记录）。
+- Web 固定源码：事件总线 `src/core/event-hub.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@e1c93caa758de6c39cf814582123d4a35319eb25/src/core/event-hub.js）、UI 混入与 flush `src/core/ui.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@e1c93caa758de6c39cf814582123d4a35319eb25/src/core/ui.js）、教程弹窗 `OrekiTutorialModal.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@e1c93caa758de6c39cf814582123d4a35319eb25/src/components/modals/OrekiTutorialModal.js）。
 - [Web 端架构](/developer/architecture/web)：查看启动入口和主循环的职责边界。
 - [Web 离线进度](/developer/architecture/web-offline-simulation)：解释加载后的时间模拟；本文专注事件与视图投影。
 - [双端行为一致性](/developer/architecture/parity)：比较状态、结算与界面结果的跨端契约。

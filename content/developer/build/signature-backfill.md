@@ -56,10 +56,10 @@ Java 的字段描述符会把 `List<DarkMatterDimensionState>` 擦除成普通�
 
 ## 参考资料
 
-- `sig_backfill.py`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@main/scripts/agp/sig_backfill.py；具体文件证据留在内部核验记录）
-- AGP 完整游戏：泛型 Signature 回填（源码定位：OrekiDawson/AD-Oreki-Edition-Android@main/docs/AGP_SIGNATURE_BACKFILL.md；具体文件证据留在内部核验记录）
-- 官方 DEX 与候选字段的 Signature 对照证据（源码定位：OrekiDawson/AD-Oreki-Edition-Android@main/reports/R111-01/p0-agp-save-reload/signature-loss-excerpt.txt；具体文件证据留在内部核验记录）
-- 晚期存档读写矩阵说明（源码定位：OrekiDawson/AD-Oreki-Edition-Android@main/savestates/late/README.md；具体文件证据留在内部核验记录）
+- `sig_backfill.py`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@main/scripts/agp/sig_backfill.py）
+- AGP 完整游戏：泛型 Signature 回填（源码定位：OrekiDawson/AD-Oreki-Edition-Android@main/docs/AGP_SIGNATURE_BACKFILL.md）
+- 官方 DEX 与候选字段的 Signature 对照证据（源码定位：OrekiDawson/AD-Oreki-Edition-Android@main/reports/R111-01/p0-agp-save-reload/signature-loss-excerpt.txt）
+- 晚期存档读写矩阵说明（源码定位：OrekiDawson/AD-Oreki-Edition-Android@main/savestates/late/README.md）
 - [APK 签名与升级兼容](/developer/build/apk-signing)
 
 ## 相关条目

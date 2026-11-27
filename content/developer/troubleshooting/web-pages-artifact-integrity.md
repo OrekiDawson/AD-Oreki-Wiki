@@ -53,7 +53,7 @@ git rev-parse HEAD == approved_sha == GITHUB_SHA
 
 ## 二、检查 staging
 
-`scripts/check_pages_staging.py`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/scripts/check_pages_staging.py；具体文件证据留在内部核验记录） 检查的是组装后的目录，而不是 Git 工作树。它验证：
+`scripts/check_pages_staging.py`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/scripts/check_pages_staging.py） 检查的是组装后的目录，而不是 Git 工作树。它验证：
 
 - `.nojekyll`、`index.html`、`src/main.js` 和 `public/icon.png` 存在；
 - `src`、`modules`、`public` 目录存在；
@@ -82,7 +82,7 @@ Pages 站点中的 `deployment.json` 是给验收脚本读取的身份记录，�
 
 ## 四、比较资源
 
-`verify-live.mjs`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/reports/R109-01/web-pages/verify-live.mjs；具体文件证据留在内部核验记录） 读取线上 `deployment.json` 时加入缓存破坏参数，然后把线上与批准提交中的 `src/main.js` 分别下载，比较长度和 SHA-256。
+`verify-live.mjs`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/reports/R109-01/web-pages/verify-live.mjs） 读取线上 `deployment.json` 时加入缓存破坏参数，然后把线上与批准提交中的 `src/main.js` 分别下载，比较长度和 SHA-256。
 
 这个入口脚本是有用的第一根探针，因为它连接 shims、全局桥和游戏入口，但它不是整站哈希。不同结果应这样解释：
 
@@ -131,7 +131,7 @@ Pages 站点中的 `deployment.json` 是给验收脚本读取的身份记录，�
 
 修改部署工作流或组装脚本后，按以下顺序验证：
 
-1. 用 `check_deploy_workflow.mjs`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/scripts/check_deploy_workflow.mjs；具体文件证据留在内部核验记录） 确认精确 SHA、对应 CI、受保护环境和 Pages dispatch 仍然存在；
+1. 用 `check_deploy_workflow.mjs`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/scripts/check_deploy_workflow.mjs） 确认精确 SHA、对应 CI、受保护环境和 Pages dispatch 仍然存在；
 2. 在临时 staging 目录中执行一次缺资源的负向测试；
 3. 从同一候选生成 `deployment.json`，核对 SHA 和 CI 运行编号；
 4. 部署后先检查身份与受影响资源字节，再做移动浏览器启动、时钟和导航检查。
@@ -140,8 +140,8 @@ Pages 站点中的 `deployment.json` 是给验收脚本读取的身份记录，�
 
 ## 相关入口
 
-- Pages 请求工作流 `deploy.yml`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/.github/workflows/deploy.yml；具体文件证据留在内部核验记录）：批准提交、CI 复用、环境保护和 Pages dispatch。
-- staging 检查器 `check_pages_staging.py`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/scripts/check_pages_staging.py；具体文件证据留在内部核验记录）：站点结构、CNAME 与本地资源路径检查。
-- 工作流结构守卫 `check_deploy_workflow.mjs`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/scripts/check_deploy_workflow.mjs；具体文件证据留在内部核验记录）：阻止浮动分支和直接覆盖 Pages。
-- 线上验证 `verify-live.mjs`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/reports/R109-01/web-pages/verify-live.mjs；具体文件证据留在内部核验记录）：线上身份、资源字节与移动浏览器检查。
+- Pages 请求工作流 `deploy.yml`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/.github/workflows/deploy.yml）：批准提交、CI 复用、环境保护和 Pages dispatch。
+- staging 检查器 `check_pages_staging.py`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/scripts/check_pages_staging.py）：站点结构、CNAME 与本地资源路径检查。
+- 工作流结构守卫 `check_deploy_workflow.mjs`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/scripts/check_deploy_workflow.mjs）：阻止浮动分支和直接覆盖 Pages。
+- 线上验证 `verify-live.mjs`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/reports/R109-01/web-pages/verify-live.mjs）：线上身份、资源字节与移动浏览器检查。
 - [Web 端架构](/developer/architecture/web)：身份和资源通过后，继续定位模块初始化和游戏循环故障。

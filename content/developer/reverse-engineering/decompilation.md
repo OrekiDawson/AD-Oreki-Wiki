@@ -15,7 +15,7 @@ aliases:
 
 ## 固定版本
 
-同一个短类名在不同 APK 中可能指向不同的类型；同一方法的参数也可能因重载或编译器生成代码而改变。调查开始时先记录 APK 的版本、签名摘要、使用的 DEX 文件和反编译工具版本。对 本 MOD 的 Android 3.21 基线，版本绑定文件（源码定位：OrekiDawson/AD-Oreki-Edition-Android@fb1299a132f134eb4fab009643ee3fc3d6c57edf/baseline/versions/3.21/bindings.json；具体文件证据留在内部核验记录）和第一方类索引（源码定位：OrekiDawson/AD-Oreki-Edition-Android@fb1299a132f134eb4fab009643ee3fc3d6c57edf/docs/deobfuscation/data/first-party-3.21-index.csv；具体文件证据留在内部核验记录）只描述该版本的外部边界，不能被当成上游源码的永久映射。
+同一个短类名在不同 APK 中可能指向不同的类型；同一方法的参数也可能因重载或编译器生成代码而改变。调查开始时先记录 APK 的版本、签名摘要、使用的 DEX 文件和反编译工具版本。对本 MOD 的 Android 3.21 基线，版本绑定文件（源码定位：OrekiDawson/AD-Oreki-Edition-Android@fb1299a132f134eb4fab009643ee3fc3d6c57edf/baseline/versions/3.21/bindings.json）和第一方类索引（源码定位：OrekiDawson/AD-Oreki-Edition-Android@fb1299a132f134eb4fab009643ee3fc3d6c57edf/docs/deobfuscation/data/first-party-3.21-index.csv）只描述该版本的外部边界，不能被当成上游源码的永久映射。
 
 这一步看似保守，却能避免最昂贵的误判：把新版本的结果套回旧版本，随后在 Kotlin 中“修正”一个根本不存在于当前产物的 API。版本信息应与调查笔记和恢复后的测试样本一起保存，而不是只写在文章标题里。
 
@@ -94,4 +94,4 @@ DEX 保存类、字段、方法、类型描述符和 Dalvik 字节码。Smali �
 - [Android 开源项目：DEX 文件格式](https://source.android.com/docs/core/runtime/dex-format)：DEX 结构与索引表的官方说明。
 - [Android 开源项目：Dalvik 字节码](https://source.android.com/docs/core/runtime/dalvik-bytecode)：寄存器、指令和调用约定。
 - [Android 开源项目：ART 与 Dalvik](https://source.android.com/docs/core/runtime)：Android 运行时及字节码执行背景，页面标注最后更新为 2026-10-09 UTC。
-- [Android 逆向资料目录](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/tree/fb1299a132f134eb4fab009643ee3fc3d6c57edf/docs/deobfuscation)：本项目固定版本的索引、绑定与调查资料；它们不是可直接编译的上游源码。
+- Android 逆向资料目录（源码定位：OrekiDawson/AD-Oreki-Edition-Android@fb1299a132f134eb4fab009643ee3fc3d6c57edf/docs/deobfuscation）：本项目固定版本的索引、绑定与调查资料；它们不是可直接编译的上游源码。

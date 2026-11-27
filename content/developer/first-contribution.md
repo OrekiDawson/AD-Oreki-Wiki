@@ -23,7 +23,7 @@ git status --short
 git rev-parse HEAD
 ```
 
-当前根 `settings.gradle.kts`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@9d8fc46ce99279720b5b3068027bb76bceb35756/settings.gradle.kts；具体文件证据留在内部核验记录） 只包含 `:app`，并引入 `build-logic`。因此生产应用的第一观察点是根 `:app`，不是历史上的嵌套 `agp/` 目录。接着阅读 `app/build.gradle.kts`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@9d8fc46ce99279720b5b3068027bb76bceb35756/app/build.gradle.kts；具体文件证据留在内部核验记录）：这里能看到 SDK、ABI、变体、签名、生成 Kotlin 和完整游戏资源是怎样接进 APK 的。
+当前根 `settings.gradle.kts`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@9d8fc46ce99279720b5b3068027bb76bceb35756/settings.gradle.kts） 只包含 `:app`，并引入 `build-logic`。因此生产应用的第一观察点是根 `:app`，不是历史上的嵌套 `agp/` 目录。接着阅读 `app/build.gradle.kts`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@9d8fc46ce99279720b5b3068027bb76bceb35756/app/build.gradle.kts）：这里能看到 SDK、ABI、变体、签名、生成 Kotlin 和完整游戏资源是怎样接进 APK 的。
 
 环境检查可以先做成只读动作：
 
@@ -37,11 +37,11 @@ Windows PowerShell 使用 `./gradlew.bat --version`。项目的 Kotlin/Java 编�
 
 ## 调用链示例
 
-从 `OrekiStageAuto.kt`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiStageAuto.kt；具体文件证据留在内部核验记录） 的自动购买 tick 开始，关注三个问题：谁决定现在能不能动作，谁调用原版对象，谁把结果告诉下一次 tick。
+从 `OrekiStageAuto.kt`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiStageAuto.kt） 的自动购买 tick 开始，关注三个问题：谁决定现在能不能动作，谁调用原版对象，谁把结果告诉下一次 tick。
 
-调度器 `OrekiAutomationScheduler.kt`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiAutomationScheduler.kt；具体文件证据留在内部核验记录） 只负责节拍和闸门。调用方先通过 `allow(taskId)` 请求名额，真实动作发生后调用 `noteActed`；没有满足原版条件时使用 `noteNoop`，异常则进入失败冷却。于是“调度器允许尝试”和“游戏真的买到东西”是两个不同事实。
+调度器 `OrekiAutomationScheduler.kt`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiAutomationScheduler.kt） 只负责节拍和闸门。调用方先通过 `allow(taskId)` 请求名额，真实动作发生后调用 `noteActed`；没有满足原版条件时使用 `noteNoop`，异常则进入失败冷却。于是“调度器允许尝试”和“游戏真的买到东西”是两个不同事实。
 
-原版对象则由 `GameApi.kt`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/GameApi.kt；具体文件证据留在内部核验记录） 适配。因为官方游戏类来自 DEX，MOD 的 Kotlin 不能在普通编译期直接引用完整类型；`GameApi` 集中解析并缓存类、字段和方法，把混淆名与版本差异挡在边界内。修改自动化策略时，优先调用这个语义层，不要在新文件里复制 `Class.forName` 或散落混淆字段。
+原版对象则由 `GameApi.kt`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/GameApi.kt） 适配。因为官方游戏类来自 DEX，MOD 的 Kotlin 不能在普通编译期直接引用完整类型；`GameApi` 集中解析并缓存类、字段和方法，把混淆名与版本差异挡在边界内。修改自动化策略时，优先调用这个语义层，不要在新文件里复制 `Class.forName` 或散落混淆字段。
 
 这条链的阅读结果应该能用一句话说清：
 
