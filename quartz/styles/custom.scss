@@ -28,6 +28,11 @@
   font-family: KaTeX_Main, KaTeX_Math, var(--bodyFont);
 }
 
+// Quartz 原版在 html 上设置平滑滚动，SPA 切页 scrollTo 会被它动画化。
+html {
+  scroll-behavior: auto !important;
+}
+
 // 百科页面切换应立即显示目标内容；保留 Quartz enableSPA 的客户端导航，不显示进度条或过渡动画。
 .navigation-progress,
 .page-transition,
