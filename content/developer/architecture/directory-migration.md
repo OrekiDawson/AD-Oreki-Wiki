@@ -13,7 +13,7 @@ Android 工程的目录不是收纳箱，而是构建系统的一张地图。地
 
 Oreki Edition 曾同时保留脚本生成的 Kotlin 树、嵌套 AGP 工程和补丁资产。目录迁移的真正目标不是把文件摆得更整齐，而是让三个问题有唯一答案：生产代码在哪里，Gradle 从哪里取它，最终 APK 能否追溯到这些输入。
 
-## 现在的地图：根工程负责构建，`app` 负责应用
+## 工程地图
 
 当前 Android 仓库的 `settings.gradle.kts`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@9d8fc46ce99279720b5b3068027bb76bceb35756/settings.gradle.kts；具体文件证据留在内部核验记录） 只注册根项目和 `:app`，并通过 `includeBuild("build-logic")` 加载本地约定插件。根 `build.gradle.kts`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@9d8fc46ce99279720b5b3068027bb76bceb35756/build.gradle.kts；具体文件证据留在内部核验记录） 提供 Android Gradle Plugin；真正决定 SDK、变体、Source Set 和签名策略的是 `app/build.gradle.kts`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@9d8fc46ce99279720b5b3068027bb76bceb35756/app/build.gradle.kts；具体文件证据留在内部核验记录）。
 
@@ -25,7 +25,7 @@ app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/
 
 这里的“规范”有一个容易忽略的含义：目录本身并不会让 Kotlin 自动进入 APK，AGP 仍要在 `main` Source Set 中注册它；反过来，Source Set 也不应继续把已退役的旧目录偷偷加入编译。当前目录策略文件 `scripts/agp/directory-layout.json`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@9d8fc46ce99279720b5b3068027bb76bceb35756/scripts/agp/directory-layout.json；具体文件证据留在内部核验记录） 标记为 `root`，布局守卫 `scripts/check_directory_layout.py`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@9d8fc46ce99279720b5b3068027bb76bceb35756/scripts/check_directory_layout.py；具体文件证据留在内部核验记录） 会检查这一点。
 
-## 迁移解决的不是 `git mv`，而是输入边界
+## 输入边界
 
 一次可靠的迁移至少要同时处理四条边：
 
@@ -56,7 +56,7 @@ git diff --check
 
 迁移后新增 Kotlin 应直接放在规范目录，并让调用方依赖语义化的适配层，例如 `GameApi.kt`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/GameApi.kt；具体文件证据留在内部核验记录），不要把旧目录名或混淆类名继续扩散到业务代码中。这样目录迁移和 ABI 迁移才不会互相打架。
 
-## 常见故障：代码在树里，却不在 APK 里
+## 常见故障
 
 遇到“源码能找到、运行时没有变化”，按输入链缩小范围：
 
