@@ -50,7 +50,7 @@ Android 和 Web 都叫 Oreki Edition，却不是同一份程序。Android 以官
 
 - [Android 3.21.0 基线](https://github.com/OrekiDawson/AD-Oreki-Edition-Android)
 - [Oreki Edition Web](https://github.com/OrekiDawson/AD-Oreki-Edition-Web)
-- [原版网页源码固定基线](https://github.com/IvarK/AntimatterDimensionsSourceCode/blob/5409e320cecef96a917cca1dfb68f1f183e499ca)
+- 原版网页源码固定基线（源码定位：IvarK/AntimatterDimensionsSourceCode@5409e320cecef96a917cca1dfb68f1f183e499ca/；具体文件证据留在内部核验记录）
 - [双端行为一致性](/developer/architecture/parity)：面向开发者的实现与行为契约说明。
 
 继续阅读：[MOD 玩法改动：数值、解锁与自动化](/player/gameplay/mod-changes) · [智能自动购买器](/player/gameplay/automation) · [存档安全](/player/gameplay/saves)

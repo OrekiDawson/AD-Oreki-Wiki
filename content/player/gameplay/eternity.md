@@ -66,7 +66,7 @@ $$10^x\longmapsto10^{x^{0.75}}.$$
 最后几个时间维度在这条路上开放。永恒之后还有一个新的名字：[现实](/player/gameplay/reality)。
 
 ## 资料来源
-- [Eternity](https://antimatterdimensions.wiki.gg/index.php?title=Eternity&oldid=3118)、[永恒奖励与重置](https://github.com/IvarK/AntimatterDimensionsSourceCode/blob/5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/eternity.js)。
+- [Eternity](https://antimatterdimensions.wiki.gg/index.php?title=Eternity&oldid=3118)、永恒奖励与重置（源码定位：IvarK/AntimatterDimensionsSourceCode@5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/eternity.js；具体文件证据留在内部核验记录）。
 - [Infinity Dimensions](https://antimatterdimensions.wiki.gg/index.php?title=Infinity_Dimensions&oldid=3344)、[Time Studies](https://antimatterdimensions.wiki.gg/index.php?title=Time_Studies&oldid=3343)、[Eternity Challenges](https://antimatterdimensions.wiki.gg/index.php?title=Eternity_Challenges&oldid=3347)。
 - [原版时间维度](/player/original/ow-time-dimensions) · [原版永恒里程碑](/player/original/ow-eternity-milestones) · [原版时间膨胀](/player/original/ow-dilation)。
 

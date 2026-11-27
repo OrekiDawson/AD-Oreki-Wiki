@@ -45,7 +45,7 @@ $$RM=\left\lfloor1000^{L/4000-1}\right\rfloor.$$
 | 1e6000 | 31 |
 | 1e8000 | 74 |
 
-原版第一次现实即使远远超过 1e8000 EP，也不能靠继续堆基础 EP 无限制地提高 RM。这使「立刻开始下一轮」和「先把收益做高」成为真实的选择。上表不包含后来可能获得的额外 RM 倍率，具体定义见[现实机器源码](https://github.com/IvarK/AntimatterDimensionsSourceCode/blob/5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/machines.js)。
+原版第一次现实即使远远超过 1e8000 EP，也不能靠继续堆基础 EP 无限制地提高 RM。这使「立刻开始下一轮」和「先把收益做高」成为真实的选择。上表不包含后来可能获得的额外 RM 倍率，具体定义见现实机器源码（源码定位：IvarK/AntimatterDimensionsSourceCode@5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/machines.js；具体文件证据留在内部核验记录）。
 
 ## 符文、黑洞与自动机
 
@@ -58,7 +58,7 @@ Infinity Points、Eternity Points，下一层却不叫 Reality Points，而叫 R
 接下来见[天神](/player/gameplay/celestials)。首次现实的前置详见[时间研究](/player/gameplay/time-studies)，Oreki Edition 的条件变动见[原版与 MOD](/player/gameplay/original-vs-mod)。
 
 ## 资料来源
-- [Reality](https://antimatterdimensions.wiki.gg/index.php?title=Reality&oldid=3235)、[现实机器换算](https://github.com/IvarK/AntimatterDimensionsSourceCode/blob/5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/machines.js)。
+- [Reality](https://antimatterdimensions.wiki.gg/index.php?title=Reality&oldid=3235)、现实机器换算（源码定位：IvarK/AntimatterDimensionsSourceCode@5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/machines.js；具体文件证据留在内部核验记录）。
 - [Time Studies](https://antimatterdimensions.wiki.gg/index.php?title=Time_Studies&oldid=3343)、[原版现实升级](/player/original/ow-reality-upgrades)、[原版黑洞](/player/original/ow-black-hole)。
 - [原版成就表](https://antimatterdimensions.wiki.gg/index.php?title=Achievements&oldid=3363)：成就 148。
 

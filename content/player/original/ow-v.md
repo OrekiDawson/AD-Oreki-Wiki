@@ -98,7 +98,7 @@ aliases:
 |     |                      |                                                                                                                              | 第 5 档 | 55                  |                                                               |                                   |
 |     |                      |                                                                                                                              | 第 6 档 | 56                  |                                                               |                                   |
 
-[^v-code]: 原文参考资料：V 的天神数据文件 <https://github.com/IvarK/AntimatterDimensionsSourceCode/blob/master/src/core/secret-formula/celestials/v.js#L71>（外部链接，未转载内容）。
+[^v-code]: 原文参考资料：V 的天神数据文件 （源码定位：IvarK/AntimatterDimensionsSourceCode@master/src/core/secret-formula/celestials/v.js#L71；具体文件证据留在内部核验记录）（外部链接，未转载内容）。
 
 ### 空间之理
 
@@ -131,7 +131,7 @@ aliases:
 | achievementBH      | 拥有 30 个 薇成就  | 成就乘数影响[黑洞](/player/original/ow-black-hole)强度                                                                         | 等于成就乘数。由于会同时影响两个黑洞，实际游戏速度乘数会被平方，例如成就乘数 $\times 1,200$ 会带来 $\times 1,440,000~(1.44\text{e}6;~1.44~\text{M})$ 的游戏速度     | 5          |
 | raUnlock           | 拥有 36 个 薇成就  | 把所有时间研究的空间之理成本降低 2；解锁[太阳神](/player/original/ow-ra)（被遗忘之神）                                       |                                                                                                                                                                     | 6          |
 
-[^fast-auto-ec]: 代码使用公式 $\tfrac{20~\text{Minutes}}{Achievement~Multiplier}$，因此自动完成速度不受 PEC 复兴加成影响。原文参考资料：<https://github.com/IvarK/AntimatterDimensionsSourceCode/blob/master/src/core/secret-formula/celestials/v.js#L222-L224>（外部链接，未转载内容）。
+[^fast-auto-ec]: 代码使用公式 $\tfrac{20~\text{Minutes}}{Achievement~Multiplier}$，因此自动完成速度不受 PEC 复兴加成影响。原文参考资料：（源码定位：IvarK/AntimatterDimensionsSourceCode@master/src/core/secret-formula/celestials/v.js#L222-L224；具体文件证据留在内部核验记录）（外部链接，未转载内容）。
 
 ## 困难薇成就
 
@@ -159,7 +159,7 @@ aliases:
 |     |                     |                                                                                           | 第 4 档 | 9,000        |                                        |                       |          |                                                                 |
 |     |                     |                                                                                           | 第 5 档 | 10,000       |                                        |                       |          |                                                                 |
 
-[^v-code-2]: 原文参考资料：V 的天神数据文件 <https://github.com/IvarK/AntimatterDimensionsSourceCode/blob/master/src/core/secret-formula/celestials/v.js#L151>（外部链接，未转载内容）。
+[^v-code-2]: 原文参考资料：V 的天神数据文件 （源码定位：IvarK/AntimatterDimensionsSourceCode@master/src/core/secret-formula/celestials/v.js#L151；具体文件证据留在内部核验记录）（外部链接，未转载内容）。
 
 ## 琐事
 

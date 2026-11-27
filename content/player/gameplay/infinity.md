@@ -70,6 +70,6 @@ Oreki Edition 的实际数值和自动化差异见[原版与 MOD](/player/gamepl
 ## 资料来源
 - [Infinity](https://antimatterdimensions.wiki.gg/index.php?title=Infinity&oldid=3113)、[Break Infinity](https://antimatterdimensions.wiki.gg/index.php?title=Break_Infinity&oldid=3349)。
 - [Infinity Dimensions](https://antimatterdimensions.wiki.gg/index.php?title=Infinity_Dimensions&oldid=3344)、[Infinity Challenges](https://antimatterdimensions.wiki.gg/index.php?title=Infinity_Challenges&oldid=3359)。
-- [Eternity](https://antimatterdimensions.wiki.gg/index.php?title=Eternity&oldid=3118)；[大坍缩奖励及入口](https://github.com/IvarK/AntimatterDimensionsSourceCode/blob/5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/big-crunch.js)、[玩家重置条件](https://github.com/IvarK/AntimatterDimensionsSourceCode/blob/5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/player.js)。
+- [Eternity](https://antimatterdimensions.wiki.gg/index.php?title=Eternity&oldid=3118)；大坍缩奖励及入口（源码定位：IvarK/AntimatterDimensionsSourceCode@5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/big-crunch.js；具体文件证据留在内部核验记录）、玩家重置条件（源码定位：IvarK/AntimatterDimensionsSourceCode@5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/player.js；具体文件证据留在内部核验记录）。
 
 本文依据原版社区 Wiki 的资料独立编写，涉及其内容的改编按 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) 共享；原文贡献者见各固定修订的页面历史。

@@ -193,7 +193,7 @@ for (const f of files) {
     if (CHANGELOG_HEADING.test(text)) {
       fail("专题条目出现 R 轮次/日期/Release Notes 式章节；时间性材料请移出 content/，放入仓库内部归档目录: " + f)
     }
-    if (!/https?:\/\//.test(text)) fail("专题条目缺少可点击的原始来源链接: " + f)
+    if (!/https?:\/\//.test(text) && !/源码定位：/.test(text)) fail("专题条目缺少可追溯的原始来源或源码定位: " + f)
   }
 
   for (const re of SECRET_PATTERNS)

@@ -77,7 +77,7 @@ tags:
 5. **参考资料与相关条目**：可点击的固定来源和 Wiki 内部链接。
 6. **专区与检索**：普通玩家正文不嵌入 AI Summary；开发者技术条目可按下方规则提供已审核、默认折叠、带来源的 AI Summary。站内搜索由 Quartz 内建搜索依据正文及元数据提供。
 
-参见 [按用途选择的中文条目样板](https://github.com/OrekiDawson/AD-Oreki-Wiki/blob/main/docs/ARTICLE_TEMPLATE.md)。模板只用作提示，不是机械填空要求；**历史文档不自动批量改格式**。
+参见 按用途选择的中文条目样板（源码定位：OrekiDawson/AD-Oreki-Wiki@main/docs/ARTICLE_TEMPLATE.md；具体文件证据留在内部核验记录）。模板只用作提示，不是机械填空要求；**历史文档不自动批量改格式**。
 
 ### 五、编辑与审阅纪律
 
@@ -238,7 +238,7 @@ tags:
 
 - 只有 `REVIEWED` 与 `VERIFIED AGAINST GAME` 计入「已审校覆盖率」；`STRUCTURE CHECKED`、`TRANSLATED` 单独统计，不计入。
 - 没有逐段审校记录时不得标 `REVIEWED`；没有源码/运行证据时不得标 `VERIFIED AGAINST GAME`。机器翻译、格式检查、字符串比对都不等于内容审校。
-- 翻译专区的具体字段与清单口径见 [docs/translation/POLICY.md](https://github.com/OrekiDawson/AD-Oreki-Wiki/blob/main/docs/translation/POLICY.md)；本页等级定义与 POLICY 冲突时以本页为准。
+- 翻译专区的具体字段与清单口径见 docs/translation/POLICY.md（源码定位：OrekiDawson/AD-Oreki-Wiki@main/docs/translation/POLICY.md；具体文件证据留在内部核验记录）；本页等级定义与 POLICY 冲突时以本页为准。
 
 ## 普通条目与历史归档：反日志化规则
 
@@ -302,7 +302,7 @@ tags:
 - 翻译工程允许机器辅助，但**状态必须如实**：未逐段审校只能标 `TRANSLATED` 或 `STRUCTURE CHECKED`，不能标 `REVIEWED`/「已校对」。
 - 仅链接来源不等于取得转载许可；引用少量必要内容时也应说明出处。
 - 游戏本体、素材、商标与第三方代码的版权归各自权利人，本站的 CC BY-SA 4.0 授权不覆盖它们。
-- **原版 Wiki 中文翻译**统一放在 `content/player/original/` 专区，页面路由为 `/player/original/`，旧 `/original/` 路径通过兼容入口保留。每页必须标注原文标题、URL、修订 ID、页面历史（贡献者入口）、抓取时间与「已修改（翻译）」；翻译规则、署名模板与状态定义见 [docs/translation/POLICY.md](https://github.com/OrekiDawson/AD-Oreki-Wiki/blob/main/docs/translation/POLICY.md)，译名见 [glossary.md](https://github.com/OrekiDawson/AD-Oreki-Wiki/blob/main/docs/translation/glossary.md)。图片与第三方素材不转载。
+- **原版 Wiki 中文翻译**统一放在 `content/player/original/` 专区，页面路由为 `/player/original/`，旧 `/original/` 路径通过兼容入口保留。每页必须标注原文标题、URL、修订 ID、页面历史（贡献者入口）、抓取时间与「已修改（翻译）」；翻译规则、署名模板与状态定义见 docs/translation/POLICY.md（源码定位：OrekiDawson/AD-Oreki-Wiki@main/docs/translation/POLICY.md；具体文件证据留在内部核验记录），译名见 glossary.md（源码定位：OrekiDawson/AD-Oreki-Wiki@main/docs/translation/glossary.md；具体文件证据留在内部核验记录）。图片与第三方素材不转载。
 
 ## 借鉴中文维基百科的补充方针
 
