@@ -10,6 +10,12 @@ const cssBlock = (selector) => {
 }
 if (!/^\s*enableSPA:\s*true\s*$/m.test(config))
   errors.push("Quartz enableSPA 必须保持 true，以保留快速客户端导航")
+const htmlBlock = cssBlock("html")
+if (!/scroll-behavior:\s*auto\s*!important/.test(htmlBlock))
+  errors.push("必须禁用 Quartz 根元素的平滑滚动")
+const bootstrap = fs.readFileSync("scripts/bootstrap-quartz.sh", "utf8")
+if (!bootstrap.includes("startLoading()") || !bootstrap.includes("SPA loading animation was not removed"))
+  errors.push("构建必须移除 SPA 路由的进度条创建逻辑")
 const progressBlock = cssBlock(".navigation-progress")
 const pageTransitionBlock = cssBlock(".page-transition")
 if (!/display:\s*none\s*!important/.test(progressBlock))
