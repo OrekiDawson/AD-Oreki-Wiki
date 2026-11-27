@@ -8,6 +8,7 @@ tags:
 
 这里显示最近进入当前内容树的正式条目；文章的具体修订记录仍以页面正文与仓库历史为准。
 
+- [开始游玩](/player/getting-started)
 - [版权与许可](/copyright)
 - [开发者专区](/developer)
 - [Android 架构](/developer/architecture/android)
@@ -31,4 +32,3 @@ tags:
 - [第一次参与 Android 开发](/developer/first-contribution)
 - [Oreki Edition 项目地图](/developer/project-overview)
 - [来源索引：怎样从证据找到真正的代码](/developer/references/source-index)
-- [逆向与语义映射](/developer/reverse-engineering)
