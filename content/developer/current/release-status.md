@@ -66,9 +66,9 @@ a12b5cd620280465805ec844ea9a8554277e51d87d769dde4120fa5db842da87
 ## 参考资料
 
 - Android 发布门禁策略（源码定位：OrekiDawson/AD-Oreki-Edition-Android@b0e0881b5eadabf40e2eb35ef8547e5aa56d40ae/scripts/release-gate-policy.json）
-- Android 应用构建与签名配置（源码定位：OrekiDawson/AD-Oreki-Edition-Android@main/app/build.gradle.kts）
+- Android 应用构建与签名配置（源码定位：OrekiDawson/AD-Oreki-Edition-Android@b0e0881b5eadabf40e2eb35ef8547e5aa56d40ae/app/build.gradle.kts）
 - [当前公开稳定 Release](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/releases/tag/android-update-3.21.0-a12b5cd6)
-- Release 构建预算脚本（源码定位：OrekiDawson/AD-Oreki-Edition-Android@main/scripts/release_budget.py）
+- Release 构建预算脚本（源码定位：OrekiDawson/AD-Oreki-Edition-Android@b0e0881b5eadabf40e2eb35ef8547e5aa56d40ae/scripts/release_budget.py）
 - [APK 签名与升级兼容](/developer/build/apk-signing)
 - [CI/CD 与受保护门禁](/developer/build/ci-cd)
 
