@@ -24,7 +24,7 @@ aliases:
 
 ## 档案
 
-无名氏，时间之神，别号「篡位者」。完成鹿颈长的永恒后就能见到他们。他们把时间做成资源：黑洞放电可以「储存游戏时间」，也能以七成效率储存现实时间，后者用于增幅现实——同一场现实按倍数多算几次。只有两项升级，都用储存的游戏时间买，第二项（$1\text{e}40$ 年）开启他们的现实。那个现实是全作最苛刻的一关：九项明面效果加若干隐藏效果，本质是一道谜题；通关后可以买超立方体，永久抬高无限维度 1–7 的购买上限。
+无名氏，时间之神，别号「篡位者」。完成鹿颈长的永恒后就能见到他们。他们把时间做成资源：黑洞放电可以「储存游戏时间」，也能以七成效率储存现实时间，后者用于增幅现实——同一场现实按倍数多算几次。只有两项升级，都用储存的游戏时间买，第二项（1e40 年）开启他们的现实。那个现实是全作最苛刻的一关：九项明面效果加若干隐藏效果，本质是一道谜题；通关后可以买超立方体，永久抬高无限维度 1–7 的购买上限。
 
 ## 黑洞放电
 
@@ -42,11 +42,11 @@ aliases:
 
 储存现实时间会把游戏速度设为零，实际上暂停游戏的 tick 速率[^footnote-1]，这意味着任何被动获得的东西——[维度](/player/original/ow-dimensions)产出、[复制器](/player/original/ow-replicanti) tick、以及像[时间研究 181](/player/original/ow-time-studies)的被动[无限点数](/player/original/ow-infinity)产出、[特蕾莎容器里程碑](/player/original/ow-teresa)之一的[永恒点数](/player/original/ow-eternity)产出——全部停止；只有符文挑选、购买/重置时间研究这类交互操作不会被禁用。
 
-与储存「游戏」时间有 $100\%$ 转换效率不同；现实时间只有 $70\%$ 的效率——因此让游戏储存现实时间 $100$ 秒，只会保留 $70$ 秒的现实时间。储存的现实时间上限为 $8$ 小时[^footnote-2]。
+与储存「游戏」时间有 $100\%$ 转换效率不同；现实时间只有 $70\%$ 的效率——因此让游戏储存现实时间 100 秒，只会保留 70 秒的现实时间。储存的现实时间上限为 8 小时[^footnote-2]。
 
 储存的现实时间用于增幅现实：单次现实中获得的所有资源——即[现实机器](/player/original/ow-reality)、符文（数量而非等级）、[复兴点数](https://antimatterdimensions.wiki.gg/wiki/Perks)与[遗迹碎片](/player/original/ow-effarig)——都会被提升，就像那次现实被执行了多次一样。
 
-例如，若一次现实会产出等级 $3,000$ 的符文与 $4\text{e}29~(400~\text{Oc})$ 现实机器，而增幅乘数为 $\times 200$，那么同一次现实将改为产出 200 个等级 $3,000$ 的符文与 $8\text{e}31~(80~\text{No})$ 现实机器。
+例如，若一次现实会产出等级 3,000 的符文与 $4\text{e}29~(400~\text{Oc})$ 现实机器，而增幅乘数为 $\times 200$，那么同一次现实将改为产出 200 个等级 3,000 的符文与 $8\text{e}31~(80~\text{No})$ 现实机器。
 
 现实的增幅乘数同时取决于储存的现实时间与该次现实中花掉的现实时间。储存的现实时间越多，乘数按正比直接越大；而现实内花的时间越多，乘数按反比越小。
 
@@ -56,7 +56,7 @@ $$\max\left ( 1,~\frac{\left\lfloor RealTime_{\text{Stored}} \right\rfloor}{\max
 
 [^footnote-1]: 某些后续机制除外。
 
-[^footnote-2]: 要完全充满 $8\text{h}$ 的现实时间储存，实际需要 $11$ 小时 $25$ 分 $42.857$ 秒；即整整 $41,142.857$ 秒。
+[^footnote-2]: 要完全充满 $8\text{h}$ 的现实时间储存，实际需要 11 小时 25 分 42.857 秒；即整整 41,142.857 秒。
 
 ## 升级
 
@@ -64,8 +64,8 @@ $$\max\left ( 1,~\frac{\left\lfloor RealTime_{\text{Stored}} \right\rfloor}{\max
 
 | ID[^id-naming]         | 成本（储存的游戏年数） | 描述                                                                                                                                         |
 | ---------------------- | ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| FREE_TICKSPEED_SOFTCAP | $1\text{e}35$          | 把[时间维度](/player/original/ow-time-dimensions)对[计数频率升级](https://antimatterdimensions.wiki.gg/wiki/Tickspeed)的软上限延后 $100,000$ |
-| RUN                    | $1\text{e}40$          | 解锁[无名氏的现实](#现实)（需要等级 $5,000$ 的符文与一个 $100\%$ 稀有度的符文）                                                              |
+| FREE_TICKSPEED_SOFTCAP | 1e35          | 把[时间维度](/player/original/ow-time-dimensions)对[计数频率升级](https://antimatterdimensions.wiki.gg/wiki/Tickspeed)的软上限延后 100,000 |
+| RUN                    | 1e40          | 解锁[无名氏的现实](#现实)（需要等级 5,000 的符文与一个 $100\%$ 稀有度的符文）                                                              |
 
 [^id-naming]: 这里的命名方式与大多数其他 ID 不同，用的是常量的 SCREAMING_SNAKE_CASE 命名法，而不是变量常用的 camelCase。原因是无名氏的升级信息直接写在[源代码中对应的文件](https://github.com/IvarK/AntimatterDimensionsSourceCode/blob/master/src/core/celestials/enslaved.js)里，而不像通常那样放在外部委托文件（一般位于 [secret-formula](https://github.com/IvarK/AntimatterDimensionsSourceCode/blob/master/src/core/secret-formula)）中。
 
@@ -77,8 +77,8 @@ $$\max\left ( 1,~\frac{\left\lfloor RealTime_{\text{Stored}} \right\rfloor}{\max
 
 | 描述                                                                                                                                                                                               | 详情                                                                                                                                                                                                                                             |
 | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [符文等级](https://antimatterdimensions.wiki.gg/wiki/Glyphs#Glyph_Level)被提升到至少 $5,000$。                                                                                                     |                                                                                                                                                                                                                                                  |
-| [无限维度](/player/original/ow-infinity-dimensions)、[时间维度](/player/original/ow-time-dimensions)与第 8 层[反物质维度](/player/original/ow-dimensions)的购买次数各限 $1$ 次。                   |                                                                                                                                                                                                                                                  |
+| [符文等级](https://antimatterdimensions.wiki.gg/wiki/Glyphs#Glyph_Level)被提升到至少 5,000。                                                                                                     |                                                                                                                                                                                                                                                  |
+| [无限维度](/player/original/ow-infinity-dimensions)、[时间维度](/player/original/ow-time-dimensions)与第 8 层[反物质维度](/player/original/ow-dimensions)的购买次数各限 1 次。                   |                                                                                                                                                                                                                                                  |
 | 反物质维度乘数始终处于[膨胀](/player/original/ow-dilation)状态（[符文效果](https://antimatterdimensions.wiki.gg/wiki/Glyphs#Effects)仍只在真正的[时间膨胀](/player/original/ow-dilation)中生效）。 | 处于膨胀状态时，反物质维度乘数不会被膨胀两次。                                                                                                                                                                                                   |
 | [时间研究 192](/player/original/ow-time-studies)（不设上限的[复制器](/player/original/ow-replicanti)）被锁定。                                                                                     |                                                                                                                                                                                                                                                  |
 | [黑洞](/player/original/ow-black-hole)被禁用。                                                                                                                                                     |                                                                                                                                                                                                                                                  |
@@ -112,11 +112,11 @@ $$\max\left ( 1,~\frac{\left\lfloor RealTime_{\text{Stored}} \right\rfloor}{\max
 
 | 超立方体 # | 无限维度 1–7 购买上限提升                            | 无限维度 1–7 总购买上限                           | 成本（IP）                                                                          |
 | ---------- | ---------------------------------------------------- | ------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| 1          | $5\text{e}5~(500~\text{K})$                          | $2.5\text{e}6~(2.5~\text{M})$                     | $\text{e}20,000,000$                                                                |
-| 2          | $5\text{e}5~(500~\text{K})$                          | $3\text{e}6~(3~\text{M})$                         | $\text{e}40,000,000$                                                                |
-| 3          | $1\text{e}6~(1~\text{M})$                            | $4\text{e}6~(4~\text{M})$                         | $\text{e}60,000,000$                                                                |
-| 4          | $2\text{e}6~(2~\text{M})$                            | $6\text{e}6~(6~\text{M})$                         | $\text{e}120,000,000$                                                               |
-| 5          | $4\text{e}6~(4~\text{M})$                            | $1\text{e}7~(10~\text{M})$                        | $\text{e}480,000,000$                                                               |
+| 1          | $5\text{e}5~(500~\text{K})$                          | $2.5\text{e}6~(2.5~\text{M})$                     | e20,000,000                                                                |
+| 2          | $5\text{e}5~(500~\text{K})$                          | $3\text{e}6~(3~\text{M})$                         | e40,000,000                                                                |
+| 3          | $1\text{e}6~(1~\text{M})$                            | $4\text{e}6~(4~\text{M})$                         | e60,000,000                                                                |
+| 4          | $2\text{e}6~(2~\text{M})$                            | $6\text{e}6~(6~\text{M})$                         | e120,000,000                                                               |
+| 5          | $4\text{e}6~(4~\text{M})$                            | $1\text{e}7~(10~\text{M})$                        | e480,000,000                                                               |
 | 6          | $8\text{e}6~(8~\text{M})$                            | $1.8\text{e}7~(18~\text{M})$                      | $\text{e}2,880,000,000~(\text{e}2.88\text{e}9;~\text{e}2.88~\text{B})$              |
 | 7          | $1.6\text{e}7~(16~\text{M})$                         | $3.4\text{e}7~(34~\text{M})$                      | $\text{e}23,040,000,000~(\text{e}2.304\text{e}10;~\text{e}23.04~\text{B})$          |
 | 8          | $3.2\text{e}7~(32~\text{M})$                         | $6.6\text{e}7~(66~\text{M})$                      | $\text{e}230,400,000,000~(\text{e}2.304\text{e}11;~\text{e}230.4~\text{B})$         |
@@ -124,13 +124,13 @@ $$\max\left ( 1,~\frac{\left\lfloor RealTime_{\text{Stored}} \right\rfloor}{\max
 | 10         | $1.28\text{e}8~(128~\text{M})$                       | $2.58\text{e}8~(258~\text{M})$                    | $\text{e}38,707,200,000,000~(\text{e}3.871\text{e}13;~\text{e}38.71~\text{T})$      |
 | 11         | $2.56\text{e}8~(256~\text{M})$                       | $5.14\text{e}8~(514~\text{M})$                    | $\text{e}619,315,200,000,000~(\text{e}6.193\text{e}14;~\text{e}619.3~\text{T})$     |
 | 12         | $5.12\text{e}8~(512~\text{M})$                       | $1.026\text{e}9~(1.026~\text{B})$                 | $\text{e}11,147,673,600,000,000~(\text{e}1.115\text{e}16;~\text{e}11.15~\text{Qa})$ |
-| 13+        | $2.5\text{e}5 * 2^{\left(\text{Tesseract}-1\right)}$ | $2\text{e}6 + 2.5\text{e}5 * 2^\text{Tesseracts}$ | $\text{e}1.80\text{e}308$                                                           |
+| 13+        | $2.5\text{e}5 * 2^{\left(\text{Tesseract}-1\right)}$ | $2\text{e}6 + 2.5\text{e}5 * 2^\text{Tesseracts}$ | e1.80e308                                                           |
 
-原文在 13+ 行的公式处带有一条编辑注释：该公式对第 1 个超立方体给出的数值不正确（$2.5\text{e}5$ 而非 $5\text{e}5$），其余情况准确。
+原文在 13+ 行的公式处带有一条编辑注释：该公式对第 1 个超立方体给出的数值不正确（2.5e5 而非 5e5），其余情况准确。
 
 ## 琐事
 
-- 在 Android 3.11.0 版本之前，无名氏的现实中没有禁用献祭。如果玩家在挑战 8 中达到 5 次维度提升，就能轻易达到 $1\text{e}9\text{e}15$ 的反物质上限。
+- 在 Android 3.11.0 版本之前，无名氏的现实中没有禁用献祭。如果玩家在挑战 8 中达到 5 次维度提升，就能轻易达到 1e9e15 的反物质上限。
 - 最初他们的称号是「Enslaved」而不是「The Nameless Ones」[^cel-name-change]。这一命名最终因为明显的伦理问题被更改，但在游戏源代码中你仍会看到内部把无名氏称为「Enslaved」。
 - 无名氏代表整个测试团队，或者《反物质维度》的玩家群体[^cel-name-easter-egg]。这与他们最初的名字「Enslaved」相关，暗含一个玩笑：把「测试者」或「玩家」说成被困在 Hevipelle 地下室里、被迫玩他那邪恶游戏的人。
 

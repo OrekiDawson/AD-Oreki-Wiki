@@ -24,41 +24,41 @@ aliases:
 
 ## 可重复升级
 
-可无限重复购买，但每次购买都会提高成本。在某些成本区间，成本成长会变得更严厉——在 $\text{e}30$ 与 1.80e308 [现实机器](/player/original/ow-reality)以上。
+可无限重复购买，但每次购买都会提高成本。在某些成本区间，成本成长会变得更严厉——在 e30 与 1.80e308 [现实机器](/player/original/ow-reality)以上。
 
-| 名称 | 初始 RM 成本 | 成本成长 | 在 $1\text{e}30$ RM 之后的成长 | 在 $1.80\text{e}308$ RM 之后的成长 | 效果 |
+| 名称 | 初始 RM 成本 | 成本成长 | 在 1e30 RM 之后的成长 | 在 1.80e308 RM 之后的成长 | 效果 |
 | --- | --- | --- | --- | --- | --- |
-| 时间放大器（Temporal Amplifier） | $1$ | ×30 | 每级在现有成长上 $+3$ | 每级把现有成长 ×30 | [膨胀时间](/player/original/ow-dilation)获取速度变为 3 倍 |
-| 复制放大器（Replicative Amplifier） | $1$ | ×30 | 每级在现有成长上 $+3$ | 每级把现有成长 ×30 | [复制器](/player/original/ow-replicanti)成长速度变为 3 倍 |
-| 永恒放大器（Eternal Amplifier） | $2$ | ×30 | 每级在现有成长上 $+3$ | 每级把现有成长 ×30 | 获得 3 倍[永恒次数](/player/original/ow-eternity) |
-| 超光速放大器（Superluminal Amplifier） | $2$ | ×30 | 每级在现有成长上 $+3$ | 每级把现有成长 ×30 | 获得 3 倍[超光速粒子](/player/original/ow-dilation) |
-| 无界放大器（Boundless Amplifier） | $3$ | ×50 | 每级在现有成长上 $+5$ | 每级把现有成长 ×50 | 获得 5 倍[无限次数](/player/original/ow-infinity) |
+| 时间放大器（Temporal Amplifier） | 1 | ×30 | 每级在现有成长上 $+3$ | 每级把现有成长 ×30 | [膨胀时间](/player/original/ow-dilation)获取速度变为 3 倍 |
+| 复制放大器（Replicative Amplifier） | 1 | ×30 | 每级在现有成长上 $+3$ | 每级把现有成长 ×30 | [复制器](/player/original/ow-replicanti)成长速度变为 3 倍 |
+| 永恒放大器（Eternal Amplifier） | 2 | ×30 | 每级在现有成长上 $+3$ | 每级把现有成长 ×30 | 获得 3 倍[永恒次数](/player/original/ow-eternity) |
+| 超光速放大器（Superluminal Amplifier） | 2 | ×30 | 每级在现有成长上 $+3$ | 每级把现有成长 ×30 | 获得 3 倍[超光速粒子](/player/original/ow-dilation) |
+| 无界放大器（Boundless Amplifier） | 3 | ×50 | 每级在现有成长上 $+5$ | 每级把现有成长 ×50 | 获得 5 倍[无限次数](/player/original/ow-infinity) |
 
 ## 不可重复升级
 
 一次性购买，效果独特且强力。每个不可重复升级都有一个解锁条件，在特定[游戏事件](https://antimatterdimensions.wiki.gg/wiki/Event_Hub)派发时检查。条件一旦满足，该升级就永久解锁，即使在新现实开始时也是如此。部分升级还会给予[自动点数](https://antimatterdimensions.wiki.gg/wiki/Automator)。
 
-### 第 2 行（成本：$15$ RM）
+### 第 2 行（成本：15 RM）
 
 | 名称 | 解锁条件 | 效果 | 检查事件 | 可锁定 | AP | 细节 |
 | --- | --- | --- | --- | --- | --- | --- |
 | 宇宙重影（Cosmically Duplicate） | 在不使用复制器星系的情况下完成第一次手动永恒 | [复制器](/player/original/ow-replicanti)速度基于[复制器星系](/player/original/ow-replicanti)数量相乘 | （之前）执行[永恒](https://antimatterdimensions.wiki.gg/wiki/Event_Hub#Eternity) | 是 |  | $1+\left(\frac{RG_{amount}}{50}\right)$ |
 | 无尽造物（Innumerably Construct） | 在最多 1 个反物质星系的情况下完成第一次无限 | [无限](/player/original/ow-infinity)获取基于[反物质星系](/player/original/ow-antimatter-galaxies)数量提高 | （之前）[大坍缩](/player/original/ow-infinity) | 是 |  | $1+\left(\frac{AG_{amount}}{30}\right)$ |
 | 逆理成就（Paradoxically Attain） | 在没有任何自动成就的情况下手动永恒 | [超光速粒子](/player/original/ow-dilation)获取基于[成就](https://antimatterdimensions.wiki.gg/wiki/Achievements)倍率提高 | （之前）执行永恒 | 是 |  | $\sqrt{Ach_{mult}}$ |
-| 词域扩张（Linguistically Expand） | 只装备一枚至少 3 级的符文，以 $1\text{e}4000$ 永恒点数完成永恒 | 再获得一个[符文](https://antimatterdimensions.wiki.gg/wiki/Glyphs)槽位 | （之后）执行永恒 | 是 |  |  |
-| 生存延续（Existentially Prolong） | 以至少 $1\text{e}400$ 无限点数完成第一次手动永恒 | 每个[现实](/player/original/ow-reality)开始时拥有 100 永恒次数（同样作用于当前现实） | （之前）执行永恒 | 是 | 15 |  |
+| 词域扩张（Linguistically Expand） | 只装备一枚至少 3 级的符文，以 1e4000 永恒点数完成永恒 | 再获得一个[符文](https://antimatterdimensions.wiki.gg/wiki/Glyphs)槽位 | （之后）执行永恒 | 是 |  |  |
+| 生存延续（Existentially Prolong） | 以至少 1e400 无限点数完成第一次手动永恒 | 每个[现实](/player/original/ow-reality)开始时拥有 100 永恒次数（同样作用于当前现实） | （之前）执行永恒 | 是 | 15 |  |
 
-### 第 3 行（成本：$50$ RM）
+### 第 3 行（成本：50 RM）
 
 | 名称 | 解锁条件 | 效果 | 检查事件 | 可锁定 | AP | 细节 |
 | --- | --- | --- | --- | --- | --- | --- |
-| 无垠涌动（The Boundless Flow） | 存入 $1\text{e}12$ 无限次数 | 每秒获得正常无限化所得无限次数的 10% | （首次）解锁[现实](/player/original/ow-reality)；（之后）执行永恒 |  | 5 |  |
-| 先验存在（The Knowing Existence） | 在不完成[永恒挑战 1](/player/original/ow-eternity-challenges)的情况下，以 $1\text{e}70$ 永恒点数完成永恒 | 永恒点数倍率基于现实次数和[时间之理](/player/original/ow-time-studies)数量 | （之后）执行永恒 | 是 |  | $\max(TT-1000,2)^{\log_2(\min(Realities,10^4))}$ |
-| 遥控律序（The Telemechanical Process） | 在未购买第 5～8 时间维度的情况下以 $1\text{e}4000$ 永恒点数完成永恒 | 解锁时间维度与 ×5 永恒点数的自动购买器，并改进永恒自动购买器 | （之后）执行永恒 | 是 | 10 |  |
-| 永恒流转（The Eternal Flow） | $1\text{e}7$ 永恒次数 | 每秒获得等于现实次数的永恒次数 | （首次）解锁现实；（之后）执行永恒 |  | 5 | 与其他永恒倍率相乘 |
-| 永谜悖谬（The Paradoxical Forever） | 在未购买 ×5 永恒点数倍率时拥有 $1\text{e}10$ 永恒点数 | 基于 ×5 永恒点数倍率提高超光速粒子获取 | （之后）执行永恒 | 是 |  | $\max\left(\frac{\sqrt{\log_{10}(epMult)}}{9},1\right)$ |
+| 无垠涌动（The Boundless Flow） | 存入 1e12 无限次数 | 每秒获得正常无限化所得无限次数的 10% | （首次）解锁[现实](/player/original/ow-reality)；（之后）执行永恒 |  | 5 |  |
+| 先验存在（The Knowing Existence） | 在不完成[永恒挑战 1](/player/original/ow-eternity-challenges)的情况下，以 1e70 永恒点数完成永恒 | 永恒点数倍率基于现实次数和[时间之理](/player/original/ow-time-studies)数量 | （之后）执行永恒 | 是 |  | $\max(TT-1000,2)^{\log_2(\min(Realities,10^4))}$ |
+| 遥控律序（The Telemechanical Process） | 在未购买第 5～8 时间维度的情况下以 1e4000 永恒点数完成永恒 | 解锁时间维度与 ×5 永恒点数的自动购买器，并改进永恒自动购买器 | （之后）执行永恒 | 是 | 10 |  |
+| 永恒流转（The Eternal Flow） | 1e7 永恒次数 | 每秒获得等于现实次数的永恒次数 | （首次）解锁现实；（之后）执行永恒 |  | 5 | 与其他永恒倍率相乘 |
+| 永谜悖谬（The Paradoxical Forever） | 在未购买 ×5 永恒点数倍率时拥有 1e10 永恒点数 | 基于 ×5 永恒点数倍率提高超光速粒子获取 | （之后）执行永恒 | 是 |  | $\max\left(\frac{\sqrt{\log_{10}(epMult)}}{9},1\right)$ |
 
-### 第 4 行（成本：$1,500$ RM）
+### 第 4 行（成本：1,500 RM）
 
 | 名称 | 解锁条件 | 效果 | 检查事件 | 可锁定 | AP | 细节 |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -68,15 +68,15 @@ aliases:
 | 净化赋能（Scour to Empower） | 一次拥有总计 30 枚以上非同伴符文 | 可[献祭符文](https://antimatterdimensions.wiki.gg/wiki/Glyph_Sacrifice)获得永久加成（Shift + 点击） | （之前）执行现实 |  |  | 见[符文献祭](https://antimatterdimensions.wiki.gg/wiki/Glyphs#Glyph%20Sacrifice) |
 | 奇点宇称（Parity of Singularity） | 解锁黑洞后累计 100 天游戏内时间，离线模拟推进的时间也计入 | 解锁另一个[黑洞](/player/original/ow-black-hole) | （之后）每个 tick |  | 10 |  |
 
-### 第 5 行（成本：$100,000$ RM）
+### 第 5 行（成本：100,000 RM）
 
 | 名称 | 解锁条件 | 效果 | 检查事件 | 可锁定 | AP | 细节 |
 | --- | --- | --- | --- | --- | --- | --- |
-| 宇宙合璧（Cosmic Conglomerate） | 反物质星系、复制器星系与超光速粒子星系的合计数量达到 $2,800$ | 遥距[反物质星系](/player/original/ow-antimatter-galaxies)的成长起点推迟到 100,000 个星系 | （之后）每个 tick |  |  |  |
-| 超越时光（Temporal Transcendence） | $1\text{e}28000$ 时间碎片 | 时间维度倍率基于本现实已过天数 | （之后）每个 tick |  |  | $10^{(1+2\times\log_{10}(days+1))^{1.6}}$ |
+| 宇宙合璧（Cosmic Conglomerate） | 反物质星系、复制器星系与超光速粒子星系的合计数量达到 2,800 | 遥距[反物质星系](/player/original/ow-antimatter-galaxies)的成长起点推迟到 100,000 个星系 | （之后）每个 tick |  |  |  |
+| 超越时光（Temporal Transcendence） | 1e28000 时间碎片 | 时间维度倍率基于本现实已过天数 | （之后）每个 tick |  |  | $10^{(1+2\times\log_{10}(days+1))^{1.6}}$ |
 | 快速复现（Replicative Rapidity） | 在 15 分钟游戏时间内完成一次现实 | 复制器速度基于最快现实的游戏时间提高 | （之前）执行现实 |  |  | $\min\left(\frac{900}{T},180\right)$；$T$ 为最快现实的游戏时间秒数 |
-| 合成之象（Synthetic Symbolism） | 不装备符文，在一次现实中获得至少 $5,000$ 现实机器 | 再获得一个符文槽位 | （之前）执行现实 | 是 |  |  |
-| 轻松现实（Effortless Existence） | 达到 $1\text{e}11111$ 永恒点数 | 解锁现实自动购买器与对应自动机命令 | （之后）执行永恒 |  | 100 |  |
+| 合成之象（Synthetic Symbolism） | 不装备符文，在一次现实中获得至少 5,000 现实机器 | 再获得一个符文槽位 | （之前）执行现实 | 是 |  |  |
+| 轻松现实（Effortless Existence） | 达到 1e11111 永恒点数 | 解锁现实自动购买器与对应自动机命令 | （之后）执行永恒 |  | 100 |  |
 
 ## 琐事
 

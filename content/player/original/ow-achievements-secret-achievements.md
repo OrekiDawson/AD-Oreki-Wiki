@@ -34,7 +34,7 @@ aliases:
 | S22 | 深炸 / Deep fried | 使用 emoji 记数法时累计购买 100,000 个反物质星系。 | — | 移动端名称：Professional landscaper. |
 | S23 | 站住，罪犯！/ Stop right there criminal scum! | 打开控制台。 | 使用下列任一组合：Ctrl/⌘+Shift+C、Ctrl/⌘+Shift+I、Ctrl/⌘+Shift+J 或 F12。 | 同桌面 |
 | S24 | 真实新闻 / Real news | 点击一条「点击会有反应」的新闻滚动条消息。 | 另见：新闻。 | 移动端：点击那条让你点它的新闻 |
-| S25 | 嘘……这是个秘密 / Shhh... It's a secret | 发现一个秘密主题。 | 桌面版共有 $12$ 个秘密主题可发现。 | 移动端截至 3.13.2（Android）/1.7（iOS）只有 1 个可用：Galactic；导入其它名字无效 |
+| S25 | 嘘……这是个秘密 / Shhh... It's a secret | 发现一个秘密主题。 | 桌面版共有 12 个秘密主题可发现。 | 移动端截至 3.13.2（Android）/1.7（iOS）只有 1 个可用：Galactic；导入其它名字无效 |
 | S26 | 你是个失败者 / You're a failure | 不刷新页面的情况下让永恒挑战失败 10 次。你这辈子在干嘛…… | — | 同桌面 |
 | S27 | 它不叫物质维度对吧？/ It's not called matter dimensions is it? | 获得无限物质。 | 进入无限挑战 6；挑战 11 也可行，但需要足够高的游戏速度。 | 同桌面 |
 | S28 | 不错。/ Nice. | 别装不知道你干了什么。 | 在任意自动购买器输入框里填「69」。 | 同桌面 |

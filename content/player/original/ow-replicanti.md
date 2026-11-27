@@ -16,7 +16,7 @@ aliases:
   - "/original/ow-replicanti"
 ---
 
-**复制器（Replicanti）**是[无限](/player/original/ow-infinity)威望层内的一种机制，在玩家完成第一次[大坍缩](/player/original/ow-infinity)之后随时可以购买。不过，购买它需要 $1\text{e}140$ [无限点数](/player/original/ow-infinity)，所以通常只有在完成 8 个[无限挑战](/player/original/ow-infinity-challenges)之后才会解锁。
+**复制器（Replicanti）**是[无限](/player/original/ow-infinity)威望层内的一种机制，在玩家完成第一次[大坍缩](/player/original/ow-infinity)之后随时可以购买。不过，购买它需要 1e140 [无限点数](/player/original/ow-infinity)，所以通常只有在完成 8 个[无限挑战](/player/original/ow-infinity-challenges)之后才会解锁。
 
 和反物质一样，它们会在[大坍缩](/player/original/ow-infinity)时重置（除非玩家拥有[成就 95](/player/original/ow-achievements)——在一小时内达到 1.80e308 复制器获得）；除非购买了时间研究 192，否则它们不能超过无限值。
 
@@ -36,7 +36,7 @@ $$e^{\left(\ln(r)+\left[\left(1+t\right)\times r\times\ln(c+1)\times interval\di
 
 其中 $n=\log(1.2)\div 308$。
 
-超过 1.80e308 复制器后，间隔按 $1.2^{\left(\log Replicanti\div cap\right)\div 308}$ 增加；也就是说，大多数情况下每 1.80e308 个复制器会使间隔乘以约 $1.2$。
+超过 1.80e308 复制器后，间隔按 $1.2^{\left(\log Replicanti\div cap\right)\div 308}$ 增加；也就是说，大多数情况下每 1.80e308 个复制器会使间隔乘以约 1.2。
 
 ## 到达无限的估算时间
 
@@ -60,9 +60,9 @@ $$e^{\left(\ln(r)+\left[\left(1+t\right)\times r\times\ln(c+1)\times interval\di
 
 | 升级 | 基础效果 | 基础成本 | 价格增长 | 每级效果 | 最大提升 |
 | --- | --- | --- | --- | --- | --- |
-| 概率 | $1\%$ | $1\text{e}150$ IP | ×e15 | $+1\%$ | $+100\%$ |
-| 间隔 | $1000$ 毫秒 | $1\text{e}140$ IP | ×e10 | ×0.9 | $50$ 毫秒（拥有时间研究 22 时可提高到 $1$ 毫秒） |
-| 最大复制器星系数 | 0 | $1\text{e}170$ IP | $\times \text{e}25\times \text{e}5^{UpgradesBought}$（后期会显著更严厉，见「星系成本成长」） | $+1$ | 无限 |
+| 概率 | $1\%$ | 1e150 IP | ×e15 | $+1\%$ | $+100\%$ |
+| 间隔 | 1000 毫秒 | 1e140 IP | ×e10 | ×0.9 | 50 毫秒（拥有时间研究 22 时可提高到 1 毫秒） |
+| 最大复制器星系数 | 0 | 1e170 IP | $\times \text{e}25\times \text{e}5^{UpgradesBought}$（后期会显著更严厉，见「星系成本成长」） | $+1$ | 无限 |
 
 ## [无限维度](/player/original/ow-infinity-dimensions)加成
 
@@ -82,22 +82,22 @@ $$e^{\left(\ln(r)+\left[\left(1+t\right)\times r\times\ln(c+1)\times interval\di
 
 ### 星系成本成长
 
-当玩家达到 100 个复制器星系（约 $\text{e}27000$ IP）时，第 3 个复制器升级的成本成长会变得严厉得多：从每次购买 $\times \text{e}25$ 变为 $\times \text{e}75$ IP，且每个星系的加项增长到 $\times \text{e}55$ IP。
+当玩家达到 100 个复制器星系（约 e27000 IP）时，第 3 个复制器升级的成本成长会变得严厉得多：从每次购买 $\times \text{e}25$ 变为 $\times \text{e}75$ IP，且每个星系的加项增长到 $\times \text{e}55$ IP。
 
-在 1000 个星系时（约 $\text{e}2975170$ IP）成长会进一步加剧：普通倍率暴涨到每次购买 $\times \text{e}50280$ IP，加项增长到 $\times 1\text{e}55\times\left(1\text{e}5^{\left(Galaxies-1000\right)}\right)$ IP。
+在 1000 个星系时（约 e2975170 IP）成长会进一步加剧：普通倍率暴涨到每次购买 $\times \text{e}50280$ IP，加项增长到 $\times 1\text{e}55\times\left(1\text{e}5^{\left(Galaxies-1000\right)}\right)$ IP。
 
 ## 提示
 
-- 玩家大约在 $\text{e}240$ IP 时可以达成[成就 95](/player/original/ow-achievements)的要求。
+- 玩家大约在 e240 IP 时可以达成[成就 95](/player/original/ow-achievements)的要求。
 - 如果玩家想完成[成就 95](/player/original/ow-achievements)，并且已经达到上述某个升级，就必须尽快购买一个星系，以免一小时计时过期。
 - 玩家还需要注意复制器的早期阶段，因为它取决于随机数（RNG）。
 
 ## 琐事
 
-- 最后一个间隔升级在 $\text{e}420$ IP 时购买，但如果玩家拥有时间研究 22，则变为 $\text{e}790$（如果在达到最后一个原版上限之后才购买该研究，数值又会变为 $\text{e}800$）。
+- 最后一个间隔升级在 e420 IP 时购买，但如果玩家拥有时间研究 22，则变为 e790（如果在达到最后一个原版上限之后才购买该研究，数值又会变为 e800）。
 - Replicanti 的单数形式本应是「Replicantus」，但游戏对单数与复数都使用 Replicanti。
   - 在一条新闻滚动条消息中，游戏提到有三支队伍在争论 Replicanti 的单数形式：「Team Replicantus」「Team Also Replicanti」与「Team The Plural is Replicantis」。
-- 如果玩家没有任何升级或加成，达到 $1.80\text{e}308$ 复制器的预期时间是 19 小时 48 分 52 秒。但这几乎不会发生，因为玩家只需 $1\text{e}140$ 无限点数就能购买一个间隔升级。
+- 如果玩家没有任何升级或加成，达到 1.80e308 复制器的预期时间是 19 小时 48 分 52 秒。但这几乎不会发生，因为玩家只需 1e140 无限点数就能购买一个间隔升级。
 
 ## 来源与许可
 

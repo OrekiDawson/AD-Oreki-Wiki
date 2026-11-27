@@ -16,7 +16,7 @@ aliases:
   - "/original/ow-infinity-dimensions"
 ---
 
-**无限维度（Infinity Dimensions）**是一种新的[维度](/player/original/ow-dimensions)：玩家在[打破无限](/player/original/ow-break-infinity)之后即可解锁第一个无限维度。达到对应维度的反物质需求后，点击顶部大坍缩按钮区域的解锁按钮即可解锁它。首次永恒之前，解锁第 1 无限维度还需要持有 $\text{e}8$ [无限点数](/player/original/ow-infinity)。普通大坍缩只清空产出中的数量，所有无限维度会在永恒时完整重置。与普通维度一样，无限维度也只有 8 个。
+**无限维度（Infinity Dimensions）**是一种新的[维度](/player/original/ow-dimensions)：玩家在[打破无限](/player/original/ow-break-infinity)之后即可解锁第一个无限维度。达到对应维度的反物质需求后，点击顶部大坍缩按钮区域的解锁按钮即可解锁它。首次永恒之前，解锁第 1 无限维度还需要持有 e8 [无限点数](/player/original/ow-infinity)。普通大坍缩只清空产出中的数量，所有无限维度会在永恒时完整重置。与普通维度一样，无限维度也只有 8 个。
 
 > 本页译自社区 Wiki 同名条目；原作标记该页仍需清理（Cleanup），译文保留原文信息。
 
@@ -26,7 +26,7 @@ aliases:
 
 ## 无限之力
 
-第一个无限维度不生产反物质，而是生产一种新货币：**无限之力（Infinity Power）**。无限之力会在无限时重置，并为**所有**反物质维度提供巨大加成，实际公式为 $\max(1, InfinityPower^7)$。基础状态下，每个第 1 无限维度每秒生成 $1$ 无限之力，之后再受到相应倍率影响。
+第一个无限维度不生产反物质，而是生产一种新货币：**无限之力（Infinity Power）**。无限之力会在无限时重置，并为**所有**反物质维度提供巨大加成，实际公式为 $\max(1, InfinityPower^7)$。基础状态下，每个第 1 无限维度每秒生成 1 无限之力，之后再受到相应倍率影响。
 
 ## 成长与倍率
 
@@ -36,14 +36,14 @@ aliases:
 
 | 无限维度 | 反物质需求 | 初始 [IP](/player/original/ow-infinity) 成本 | 成本成长 | 购买倍率 |
 | --- | --- | --- | --- | --- |
-| 1 | $1\text{e}1,100$ | $1\text{e}8$ | $\times 1\text{e}3$ | $\times 50$ |
-| 2 | $1\text{e}1,900$ | $1\text{e}9$ | $\times 1\text{e}6$ | $\times 30$ |
-| 3 | $1\text{e}2,400$ | $1\text{e}10$ | $\times 1\text{e}8$ | $\times 10$ |
-| 4 | $1\text{e}10,500$ | $1\text{e}20$ | $\times 1\text{e}10$ | $\times 5$ |
-| 5 | $1\text{e}30,000$ | $1\text{e}140$ | $\times 1\text{e}15$ | $\times 5$ |
-| 6 | $1\text{e}45,000$ | $1\text{e}200$ | $\times 1\text{e}20$ | $\times 5$ |
-| 7 | $1\text{e}54,000$ | $1\text{e}250$ | $\times 1\text{e}25$ | $\times 5$ |
-| 8 | $1\text{e}60,000$ | $1\text{e}280$ | $\times 1\text{e}30$ | $\times 5$ |
+| 1 | 1e1,100 | 1e8 | $\times 1\text{e}3$ | $\times 50$ |
+| 2 | 1e1,900 | 1e9 | $\times 1\text{e}6$ | $\times 30$ |
+| 3 | 1e2,400 | 1e10 | $\times 1\text{e}8$ | $\times 10$ |
+| 4 | 1e10,500 | 1e20 | $\times 1\text{e}10$ | $\times 5$ |
+| 5 | 1e30,000 | 1e140 | $\times 1\text{e}15$ | $\times 5$ |
+| 6 | 1e45,000 | 1e200 | $\times 1\text{e}20$ | $\times 5$ |
+| 7 | 1e54,000 | 1e250 | $\times 1\text{e}25$ | $\times 5$ |
+| 8 | 1e60,000 | 1e280 | $\times 1\text{e}30$ | $\times 5$ |
 
 ## 来源与许可
 

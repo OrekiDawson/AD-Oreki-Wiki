@@ -24,13 +24,13 @@ aliases:
 
 ## 档案
 
-特蕾莎，现实之神，别号「谄媚者」。买齐全部[现实升级](/player/original/ow-reality-upgrades)并取得[成就 147](https://antimatterdimensions.wiki.gg/wiki/Achievements)后，玩家才会见到她。她管两样东西：一是 RM 容器（把现实机器抽走灌注，换取 RM 乘数），二是复兴点数商店——两者都围绕现实机器与符文展开。她的[现实](#现实)要把容器灌到 $1\text{e}14$ RM 才开，进去之后 IP 与 EP 获取变成 $x^{0.55}$、来自符文的时间之理产出被禁用，完成条件是现实内 EP 超过 $\text{e}4,000$，奖励则是强化符文献祭。这个现实可以反复打，打得越好奖励越高。网页版与 Android 分别随 2022 年 12 月 17 日、2024 年 4 月 1 日的现实更新加入，Steam 与 iOS 首发即有。
+特蕾莎，现实之神，别号「谄媚者」。买齐全部[现实升级](/player/original/ow-reality-upgrades)并取得[成就 147](https://antimatterdimensions.wiki.gg/wiki/Achievements)后，玩家才会见到她。她管两样东西：一是 RM 容器（把现实机器抽走灌注，换取 RM 乘数），二是复兴点数商店——两者都围绕现实机器与符文展开。她的[现实](#现实)要把容器灌到 1e14 RM 才开，进去之后 IP 与 EP 获取变成 $x^{0.55}$、来自符文的时间之理产出被禁用，完成条件是现实内 EP 超过 e4,000，奖励则是强化符文献祭。这个现实可以反复打，打得越好奖励越高。网页版与 Android 分别随 2022 年 12 月 17 日、2024 年 4 月 1 日的现实更新加入，Steam 与 iOS 首发即有。
 
 ## 机制
 
 ### RM 容器灌注
 
-该机制允许把已获得的[现实机器](/player/original/ow-reality)抽走灌注，把灌注的 RM 转化为 RM 获取加成；加成上限为 $1\text{e}24$ RM，提供 $\times 250$ 的 RM 乘数。容器是对数式的：要让容器达到 $50\%$ 的容量，需要灌注 $1\text{e}12$ RM。
+该机制允许把已获得的[现实机器](/player/original/ow-reality)抽走灌注，把灌注的 RM 转化为 RM 获取加成；加成上限为 1e24 RM，提供 $\times 250$ 的 RM 乘数。容器是对数式的：要让容器达到 $50\%$ 的容量，需要灌注 1e12 RM。
 
 来自容器的 RM 乘数：
 
@@ -42,35 +42,35 @@ $$
 
 | ID         | 需求          | 奖励                                                                                        | 提供的 RM 加成  | 详情                                                      |
 | ---------- | ------------- | ------------------------------------------------------------------------------------------- | --------------- | --------------------------------------------------------- |
-| glyphLevel | $1\text{e}6$  | 开始现实时已解锁全部[永恒升级](https://antimatterdimensions.wiki.gg/wiki/Eternity_Upgrades) | $\times 3.97$   |                                                           |
-| undo       | $1\text{e}10$ | 解锁装备[符文](https://antimatterdimensions.wiki.gg/wiki/Glyphs)的「撤销」选项              | $\times 9.95$   |                                                           |
-| run        | $1\text{e}14$ | 解锁[特蕾莎的现实](#现实)                                                                   | $\times 25.00$  |                                                           |
-| epGen      | $1\text{e}18$ | 解锁被动[永恒点数](/player/original/ow-eternity)产出                                        | $\times 62.80$  | 本现实内，每秒获得「本现实峰值 EP」在每分钟维度下的 $1\%$ |
-| shop       | $1\text{e}21$ | 解锁[复兴点数商店](#复兴点数商店)                                                           | $\times 125.00$ |                                                           |
-| effarig    | $1\text{e}24$ | 解锁[鹿颈长](/player/original/ow-effarig)，远古遗物之神                                     | $\times 250.00$ |                                                           |
+| glyphLevel | 1e6  | 开始现实时已解锁全部[永恒升级](https://antimatterdimensions.wiki.gg/wiki/Eternity_Upgrades) | $\times 3.97$   |                                                           |
+| undo       | 1e10 | 解锁装备[符文](https://antimatterdimensions.wiki.gg/wiki/Glyphs)的「撤销」选项              | $\times 9.95$   |                                                           |
+| run        | 1e14 | 解锁[特蕾莎的现实](#现实)                                                                   | $\times 25.00$  |                                                           |
+| epGen      | 1e18 | 解锁被动[永恒点数](/player/original/ow-eternity)产出                                        | $\times 62.80$  | 本现实内，每秒获得「本现实峰值 EP」在每分钟维度下的 $1\%$ |
+| shop       | 1e21 | 解锁[复兴点数商店](#复兴点数商店)                                                           | $\times 125.00$ |                                                           |
+| effarig    | 1e24 | 解锁[鹿颈长](/player/original/ow-effarig)，远古遗物之神                                     | $\times 250.00$ |                                                           |
 
 ### 复兴点数商店
 
-当容器灌注的 RM 超过 $\text{e}21$ 后，即可用[复兴点数](https://antimatterdimensions.wiki.gg/wiki/Perks)购买升级，其中许多升级可以多次购买。
+当容器灌注的 RM 超过 e21 后，即可用[复兴点数](https://antimatterdimensions.wiki.gg/wiki/Perks)购买升级，其中许多升级可以多次购买。
 
 | ID           | PP 成本（成长）                  | 描述                                                                             | 等级上限 | 上限时效果                             |
 | ------------ | -------------------------------- | -------------------------------------------------------------------------------- | -------- | -------------------------------------- |
-| glyphLevel   | $1\left ( \times 2 \right )$     | 把不稳定前的符文等级提高 $5\%$（乘算）                                           | $11$     | $\times 1.71$                          |
-| rmMult       | $1\left ( \times 2 \right )$     | 现实机器获取翻倍                                                                 | $11$     | $\times 2.05\text{e}3~(2.05~\text{K})$ |
-| bulkDilation | $100\left ( \times 2 \right )$   | 膨胀自动购买器一次购买两倍的膨胀升级                                             | $4$      | $\times 16.00$                         |
-| autoSpeed    | $1,000\left ( \times 2 \right )$ | 无限维度、时间维度、膨胀与复制器自动购买器速度 $\times 2$                        | $2$      | $\times 4.00$                          |
-| musicGlyph   | $1$                              | 获得一个随机类型的音乐符文，其等级为你最高符文的 $80\%$[^music-glyph-generation] | $\infin$ | 不适用                                 |
+| glyphLevel   | $1\left ( \times 2 \right )$     | 把不稳定前的符文等级提高 $5\%$（乘算）                                           | 11     | $\times 1.71$                          |
+| rmMult       | $1\left ( \times 2 \right )$     | 现实机器获取翻倍                                                                 | 11     | $\times 2.05\text{e}3~(2.05~\text{K})$ |
+| bulkDilation | $100\left ( \times 2 \right )$   | 膨胀自动购买器一次购买两倍的膨胀升级                                             | 4      | $\times 16.00$                         |
+| autoSpeed    | $1,000\left ( \times 2 \right )$ | 无限维度、时间维度、膨胀与复制器自动购买器速度 $\times 2$                        | 2      | $\times 4.00$                          |
+| musicGlyph   | 1                              | 获得一个随机类型的音乐符文，其等级为你最高符文的 $80\%$[^music-glyph-generation] | $\infin$ | 不适用                                 |
 
 [^music-glyph-generation]: 音乐符文遵循符文生成规则，点击时会发出声音，且其外观不可更改。
 
 ## 现实
 
-向容器灌注超过 $1\text{e}14$ RM 后，会引入一种类似[挑战](/player/original/ow-challenges)的新机制。不过与[无限](/player/original/ow-infinity)、[永恒](/player/original/ow-eternity)这类层数更多、处境更艰难的挑战不同：进入被削弱的[现实](/player/original/ow-reality)所带的缺点与削弱比普通挑战、无限挑战与永恒挑战都多。特蕾莎的现实一旦进入就会施加这些惩罚：
+向容器灌注超过 1e14 RM 后，会引入一种类似[挑战](/player/original/ow-challenges)的新机制。不过与[无限](/player/original/ow-infinity)、[永恒](/player/original/ow-eternity)这类层数更多、处境更艰难的挑战不同：进入被削弱的[现实](/player/original/ow-reality)所带的缺点与削弱比普通挑战、无限挑战与永恒挑战都多。特蕾莎的现实一旦进入就会施加这些惩罚：
 
 - 时间之理产出<sup>（来自[膨胀符文](https://antimatterdimensions.wiki.gg/wiki/Glyphs)）</sup>被禁用。
 - [无限点数](/player/original/ow-infinity)与[永恒点数](/player/original/ow-eternity)获取被开方：$p^{0.55}$。
 
-完成特蕾莎的现实的方式，是在该现实内取得超过 $\text{e}4,000$ [永恒点数](/player/original/ow-eternity)，完成会提供[符文献祭](https://antimatterdimensions.wiki.gg/wiki/Glyph_Sacrifice)加成。
+完成特蕾莎的现实的方式，是在该现实内取得超过 e4,000 [永恒点数](/player/original/ow-eternity)，完成会提供[符文献祭](https://antimatterdimensions.wiki.gg/wiki/Glyph_Sacrifice)加成。
 
 特蕾莎的现实可以无限次重复进入，也就是说可以反复挑战她的现实。达到新的最高[反物质](https://antimatterdimensions.wiki.gg/wiki/Antimatter)数量可以提升该现实给予的奖励。
 
