@@ -10,7 +10,7 @@ aliases:
   - "/gameplay/platform-differences"
 ---
 
-Android 和 Web 都叫 本 MOD，却不是同一份程序。Android 以官方 3.21.0 游戏 DEX 和 Kotlin 适配层为基础，Web 则以冻结的上游网页源码和 JavaScript MOD 模块为基础；两端共享玩法目标，但不共享构建链、版本号或所有原版功能。
+Android 和 Web 都使用本 MOD 这个名称，却不是同一份程序。Android 以官方 3.21.0 游戏 DEX 和 Kotlin 适配层为基础，Web 则以冻结的上游网页源码和 JavaScript MOD 模块为基础；两端共享玩法目标，但不共享构建链、版本号或所有原版功能。
 
 ## 同名功能差异
 

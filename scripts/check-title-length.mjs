@@ -6,7 +6,11 @@ const contentRoot = path.join(root, "content")
 const builtOnly = process.argv[2] === "--built"
 const modelPath = path.join(root, "scripts/navigation-model.json")
 const exceptionsPath = path.join(root, "scripts/title-exceptions.json")
-const navigationModel = fs.existsSync(modelPath) ? JSON.parse(fs.readFileSync(modelPath, "utf8")) : {}
+if (!fs.existsSync(modelPath)) {
+  console.error(JSON.stringify({ violations: [{ kind: "MISSING_MODEL", file: modelPath, line: 1, title: "", actual: 0, limit: 0 }] }, null, 2))
+  process.exit(1)
+}
+const navigationModel = JSON.parse(fs.readFileSync(modelPath, "utf8"))
 const exceptions = fs.existsSync(exceptionsPath) ? JSON.parse(fs.readFileSync(exceptionsPath, "utf8")) : {}
 const violations = []
 const seen = new Map()

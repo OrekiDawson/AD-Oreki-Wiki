@@ -39,7 +39,16 @@ function visibleMarkdown(source) {
 }
 
 function visibleHtml(source) {
-  return source
+  const generatedClasses = new Set([
+    'sidebar', 'page-header', 'page-footer', 'content-meta', 'breadcrumbs',
+    'breadcrumb-container', 'explorer', 'toc', 'recent-notes',
+  ]);
+  const withoutGeneratedChrome = removeElements(source, (tag, attrs) => {
+    if (['nav', 'aside', 'footer', 'header'].includes(tag)) return true;
+    const classes = attrs.match(/\bclass=["']([^"']*)["']/i)?.[1]?.split(/\s+/) ?? [];
+    return classes.some((name) => generatedClasses.has(name));
+  });
+  return withoutGeneratedChrome
     .replace(/<script\b[\s\S]*?<\/script>/gi, ' ')
     .replace(/<style\b[\s\S]*?<\/style>/gi, ' ')
     .replace(/<pre\b[\s\S]*?<\/pre>/gi, ' ')
@@ -51,6 +60,36 @@ function visibleHtml(source) {
     .replace(/https?:\/\/[^\s"'<]+/gi, ' ')
     // 属性值可能包含字面 `>`；按引号边界匹配标签，避免把属性代码当成正文。
     .replace(/<(?:[^>"']|"[^"]*"|'[^']*')*>/g, ' ');
+}
+
+// 只剥离 Quartz 生成的导航、侧栏、元数据和页脚。不能用简单的
+// `<div.*?</div>`，因为这些容器内部还会嵌套多个 div。
+function removeElements(source, shouldRemove) {
+  const token = /<(?:(?:[^>"']|"[^"]*"|'[^']*')*)>/g;
+  const stack = [];
+  let output = '';
+  let cursor = 0;
+  let suppressed = 0;
+  for (const match of source.matchAll(token)) {
+    const raw = match[0];
+    const start = match.index ?? 0;
+    if (!suppressed) output += source.slice(cursor, start);
+    cursor = start + raw.length;
+    const close = raw.match(/^<\/\s*([\w-]+)/);
+    if (close) {
+      const entry = stack.pop();
+      if (entry?.remove) suppressed -= 1;
+      continue;
+    }
+    const open = raw.match(/^<\s*([\w-]+)([^>]*)>/);
+    if (!open) continue;
+    const selfClosing = /\/\s*>$/.test(raw);
+    const remove = shouldRemove(open[1].toLowerCase(), open[2]);
+    if (remove) suppressed += 1;
+    if (!selfClosing) stack.push({ remove });
+  }
+  if (!suppressed) output += source.slice(cursor);
+  return output;
 }
 
 function scan(text, file) {
