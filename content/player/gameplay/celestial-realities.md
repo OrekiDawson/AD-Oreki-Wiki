@@ -81,7 +81,7 @@ Oreki Edition 调整过部分天神门槛、熵增长和计时窗口，Android �
 
 ## 相关条目
 
-[天神系统：七位天神改变了什么](/player/gameplay/celestials) · [现实与时间研究](/player/gameplay/reality-time-studies) · [挑战与真实结算](/player/gameplay/challenges) · [存档兼容与自动保存](/player/gameplay/saves)
+[天神系统：七位天神改变了什么](/player/gameplay/celestials) · [现实与时间研究](/player/gameplay/reality-time-studies) · [挑战与真实结算](/player/gameplay/challenges) · [存档安全](/player/gameplay/saves)
 
 ## 参考资料
 

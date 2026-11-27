@@ -35,6 +35,6 @@ Oreki Edition 的额外目标（例如真实新档的体验时间）是工程目
 
 ## 相关入口
 
-[MOD 玩法改动：数值、解锁与自动化](/player/gameplay/mod-changes) · [Android 与 Web：版本和行为差异](/player/gameplay/platform-differences) · [智能自动购买器](/player/gameplay/automation) · [阶段解锁与页面显示](/player/gameplay/stage-gates) · [存档兼容与自动保存](/player/gameplay/saves)
+[MOD 玩法改动：数值、解锁与自动化](/player/gameplay/mod-changes) · [Android 与 Web：版本和行为差异](/player/gameplay/platform-differences) · [智能自动购买器](/player/gameplay/automation) · [阶段解锁与页面显示](/player/gameplay/stage-gates) · [存档安全](/player/gameplay/saves)
 
 原版规则可对照[Antimatter Dimensions Wiki](https://antimatterdimensions.wiki.gg/wiki/Main_Page)；具体 MOD 数值仍应以对应版本源码和游戏内说明为准。

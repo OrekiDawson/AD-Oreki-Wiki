@@ -24,7 +24,7 @@ aliases:
 - [挑战与真实结算](/player/gameplay/challenges)：三类挑战怎样解锁、完成，以及常见的卡关原因。
 - [挑战排障](/player/gameplay/challenge-troubleshooting)：完成判定、入口条件、次数和存档异常。
 - [智能自动购买器](/player/gameplay/automation)：阶段感知、目标驱动与手动优先的自动化设计。
-- [存档兼容与自动保存](/player/gameplay/saves)：导出备份、Stable/Pre-release 选择、导入与重启后的检查。
+- [存档安全](/player/gameplay/saves)：导出备份、Stable/Pre-release 选择、导入与重启后的检查。
 - [自动保存与备份](/player/gameplay/autosave)：日常保存、导出和独立备份。
 - [存档兼容](/player/gameplay/save-compatibility)：跨版本、跨平台导入与回滚验证。
 - [原版与 MOD 差异](/player/gameplay/original-vs-mod)：判断规则属于原版、MOD 还是平台差异。

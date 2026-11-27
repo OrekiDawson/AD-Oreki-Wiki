@@ -58,7 +58,7 @@ aliases:
 2. 保留导入前备份和当前版本信息；
 3. 确认是否执行了真实结算；
 4. 检查是否跨平台、跨版本或使用了 MOD 与原版之间的存档；
-5. 按[存档兼容与自动保存](/player/gameplay/saves)的步骤验证，而不是重复清档。
+5. 按[存档安全](/player/gameplay/saves)的步骤验证，而不是重复清档。
 
 MOD 可能调整挑战门槛和自动化节奏，但不应把历史报告当成当前玩家事实。遇到版本差异，参见[原版行为与 Oreki Edition 修改](/player/gameplay/original-vs-mod)。
 
