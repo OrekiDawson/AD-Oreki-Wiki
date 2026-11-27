@@ -75,6 +75,13 @@ const NEW_PAGES = [
   '/developer/ai-summaries/',
 ];
 const CATEGORY_LABELS = ['玩家专区', '开发者专区', '玩法机制', '架构与机制', '运行证据'];
+const transitionsDisabled = (state) => {
+  if (!state) return false;
+  const properties = String(state.transitionProperty || '').split(',').map((value) => value.trim());
+  const durations = String(state.transitionDuration || '').split(',').map((value) => Number.parseFloat(value) || 0);
+  return properties.length > 0 && properties.every((property) => property === 'none')
+    || durations.length > 0 && durations.every((duration) => duration === 0);
+};
 
 
 async function run() {
@@ -150,10 +157,16 @@ async function run() {
       const explorer = document.querySelector('.explorer');
       if (!drawer || !explorer) return null;
       const style = getComputedStyle(drawer);
-      return { transform: style.transform, transition: style.transition, expanded: !explorer.classList.contains('collapsed') };
+      return {
+        transform: style.transform,
+        transition: style.transition,
+        transitionProperty: style.transitionProperty,
+        transitionDuration: style.transitionDuration,
+        expanded: !explorer.classList.contains('collapsed'),
+      };
     });
     results.mobile.drawer = { before: drawerBefore, after: drawerAfter };
-    if (!drawerAfter?.expanded || !/none|0s/.test(drawerAfter.transition)) results.errors.push('drawer-open-animation');
+    if (!drawerAfter?.expanded || !transitionsDisabled(drawerAfter)) results.errors.push('drawer-open-animation');
   }
   const sidebar = await page.evaluate(() => {
     const ul = document.querySelector('.explorer-content ul.explorer-ul');
