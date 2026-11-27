@@ -41,9 +41,12 @@ const record = ({ kind, route, file, line, title }) => {
   }
   if (actual > limit) violations.push({ kind, route, file, line, title, actual, limit })
   if (kind === "H1") {
-    const owner = seen.get(title)
-    if (owner) violations.push({ kind: "DUPLICATE_H1", route, file, line, title, actual, limit, duplicate: owner })
-    else seen.set(title, route)
+  // 原版译文拥有独立命名空间：其中文标题可以与玩家专区原创机制页相同，
+  // 但同一命名空间内仍必须保持唯一，避免把命名空间例外变成重复标题豁免。
+  const duplicateKey = route.startsWith("/player/original/") ? `original:${title}` : title
+  const owner = seen.get(duplicateKey)
+  if (owner) violations.push({ kind: "DUPLICATE_H1", route, file, line, title, actual, limit, duplicate: owner })
+  else seen.set(duplicateKey, route)
   }
 }
 const walk = (dir) => fs.readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
