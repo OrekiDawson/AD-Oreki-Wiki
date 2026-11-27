@@ -19,13 +19,21 @@ aliases:
 
 [鹿颈长](/player/original/ow-effarig)（Effarig）引入遗迹碎片与更深入的符文管理。特殊现实分成无限、永恒、现实三个层次，各层会削弱不同效果并在完成时发放奖励。遗迹碎片可用于解锁符文筛选、自动选择等能力，因此大量符文的管理方式会随之改变。
 
+鹿颈长的英文名 Effarig 是 Giraffe（长颈鹿）的倒写。这是开发者头像相关的玩笑：SpectralFlame 的头像经常被误认成长颈鹿。开发阶段，鹿颈长与特蕾莎的名称还曾经交换，机制本身没有因此互换。相关背景见[鹿颈长](https://antimatterdimensions.wiki.gg/index.php?title=Effarig&oldid=3371)及其所引的开发日志。
+
 ## 无名氏
 
 [无名氏](/player/original/ow-nameless-ones)（The Nameless Ones）围绕时间展开。黑洞产生的加速可以被储存，随后释放；特殊现实包含异常限制和谜题，有些关卡解法并不是单纯提高倍率。完成后开放超立方体，扩展无限维度的购买上限。
 
+无名氏的一项升级标价 1e40 年的储存游戏时间。这个单位不是要求玩家在现实中等上那么多年，而是利用黑洞的游戏时间加速等机制累积。其特殊现实还隐藏了一些未列在普通规则中的谜题，解法可能涉及界面上不显眼的变化；[详细条目](/player/original/ow-nameless-ones)含解法剧透。
+
+无名氏在开发阶段曾使用 Enslaved 这一名称，后来改名；部分原版源码仍然保留旧内部标识。因此读代码时看到 Enslaved，并不代表存在另一位天神。
+
 ## 薇
 
 [薇](/player/original/ow-v)（V）的现实围绕特殊成就展开。奖励取决于在指定条件下达到的目标，不能把不同轮现实的临时资源简单合并。薇提供空间之理，使时间研究树不再完全受原有互斥分叉的束缚。这也是先前必须二选一的研究能在后期共同发挥作用的原因。
+
+薇的原版解锁成就 151「你真的不需要它」要求在当前无限中不购买第八反物质维度，却取得 800 个反物质星系。高阶维度自行生产低阶维度的机制，使这一类看起来不可能的条件在后期成为可解的题目。见[原版成就表](https://antimatterdimensions.wiki.gg/index.php?title=Achievements&oldid=3363)。
 
 ## 太阳神
 
@@ -63,5 +71,8 @@ aliases:
 
 - [Celestials](https://antimatterdimensions.wiki.gg/index.php?title=Celestials&oldid=3187)。
 - [天神导航原版译文](/player/original/ow-celestial-navigation)及上文各天神原版译文；原始修订、作者与许可见各页来源区。
+
+- [鹿颈长](https://antimatterdimensions.wiki.gg/index.php?title=Effarig&oldid=3371)：名字的来源与开发历史。
+- [无名氏](https://antimatterdimensions.wiki.gg/index.php?title=The_Nameless_Ones&oldid=3372)：储存时间、谜题和旧内部名称。
 
 本文依据原版社区 Wiki 的资料独立编写，涉及其内容的改编按 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) 共享；原文贡献者见各固定修订的页面历史。

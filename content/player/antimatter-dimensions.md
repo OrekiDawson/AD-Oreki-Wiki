@@ -37,6 +37,14 @@ aliases:
 
 游戏还以普通挑战、无限挑战和永恒挑战改变生产规则。比如普通挑战 12 让维度隔级生产，形成两条生产链；时间膨胀则压缩倍率的指数。详细规则见[挑战](/player/gameplay/challenges)。
 
+## 游戏里的玩笑
+
+游戏的成就名称经常把数值规则变成笑话。成就 23「第 9 个维度是假的」要求恰好拥有 99 个第八反物质维度，奖励也是第八维度的 10% 加成。第九维度并没有因此解锁。
+
+成就 28「那么做毫无意义……」要求在已有超过 1e150 个第一维度时，再购买一个第一维度。这个微不足道的购买反而会带来第一维度 10% 的加成。与普通升级不同，一些成就鼓励玩家刻意做看起来不划算的事。
+
+此外，阅读到 50 条不同的新闻消息也能获得成就「假新闻！」。新闻滚动条并不参与正常的维度生产，却是游戏幽默感的重要来源。更多例子见[原版成就](/player/original/ow-achievements)及[秘密成就](/player/original/ow-achievements-secret-achievements)。
+
 ## 发展历史
 
 原版的现实更新经历约四年半开发，于 2022 年 12 月 17 日随 Steam 版同步推出，2024 年 4 月 1 日移植至 Android。这次更新加入第三个主要重置层及后期天神内容，也统一了早期「维度跃迁」与「维度提升」的名称。原来以永恒为末端的玩法由此延伸到完整的终局。
@@ -52,5 +60,7 @@ aliases:
 - [Dimension Boosts](https://antimatterdimensions.wiki.gg/index.php?title=Dimension_Boosts&oldid=3333)：旧名称。
 - [Normal Challenges](https://antimatterdimensions.wiki.gg/index.php?title=Normal_Challenges&oldid=3341)：挑战 12。
 - [原版游戏源码](https://github.com/IvarK/AntimatterDimensionsSourceCode/tree/5409e320cecef96a917cca1dfb68f1f183e499ca)。
+
+- [原版成就表](https://antimatterdimensions.wiki.gg/index.php?title=Achievements&oldid=3363)：成就 22、23、28。
 
 本文依据原版社区 Wiki 的资料独立编写，涉及其内容的改编按 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) 共享；原文贡献者见各固定修订的页面历史。

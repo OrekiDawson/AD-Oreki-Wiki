@@ -36,6 +36,10 @@ aliases:
 
 NC12 尤其值得注意：第一、第二维度都直接生产反物质，第三维度生产第一维度，第四维度生产第二维度。这将正常的八级生产链拆为两条链。原版还提高第二、第四和第六维度的部分效果作为补偿。
 
+### 只有一个维度
+
+成就 71「错误 909：找不到维度」把 NC2 的玩法进一步缩到只剩一个第一反物质维度，并且不允许使用维度提升或星系。玩家需要在这组限制下抵达无限。奖励却非常实用：第一反物质维度 ×3。正因为后期有跨层强化，这种开局几乎不可想象的条件才有可能完成。
+
 ## 无限挑战
 
 无限挑战具有独立的反物质开放门槛及完成目标。有时进入挑战所需的普通反物质比挑战内的目标还高，因为挑战规则改变了生产能力。
@@ -59,6 +63,10 @@ EC4 的特别之处在于，它在进入前要求大量无限次数，挑战中�
 
 EC11 和 EC12 的研究分支条件有特殊限制，并与时间膨胀的后续解锁关系密切。各次目标、限制和完整奖励见[原版永恒挑战](/player/original/ow-eternity-challenges)。
 
+## 时间也能成为限制
+
+EC12 会大幅减慢游戏速度，要求玩家在规定的游戏时间内完成目标。游戏甚至为试图利用这个挑战加速时间的行为设置了秘密成就「我真丢人」（SHAME ON ME）。这个玩笑只有在理解游戏时间、现实时间和黑洞的区别之后才更有意思。具体触发涉及后期机制，见[秘密成就](/player/original/ow-achievements-secret-achievements)。
+
 ## 历史
 
 现实更新以前的桌面版 NC7 曾让每十个维度的购买倍率随机变化；后来的版本改为由维度提升决定。历史挑战编号也发生过调整，旧攻略中的编号可能与现版不同。
@@ -70,5 +78,7 @@ EC11 和 EC12 的研究分支条件有特殊限制，并与时间膨胀的后续
 - [Normal Challenges](https://antimatterdimensions.wiki.gg/index.php?title=Normal_Challenges&oldid=3341)。
 - [Infinity Challenges](https://antimatterdimensions.wiki.gg/index.php?title=Infinity_Challenges&oldid=3359)。
 - [Eternity Challenges](https://antimatterdimensions.wiki.gg/index.php?title=Eternity_Challenges&oldid=3347)。
+
+- [原版成就表](https://antimatterdimensions.wiki.gg/index.php?title=Achievements&oldid=3363)：成就 71。
 
 本文依据原版社区 Wiki 的资料独立编写，涉及其内容的改编按 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) 共享；原文贡献者见各固定修订的页面历史。

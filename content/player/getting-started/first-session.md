@@ -23,6 +23,10 @@ aliases:
 
 如果还差两三个购买量就能凑满十个，先比较这项升级与更高维度的价格，通常比随机点击所有可买按钮更容易理解当前增长瓶颈。
 
+### 99 个第八维度
+
+以后解锁第八维度时，可以留意成就 23 的条件：恰好拥有 99 个第八维度。这项成就奖励第八维度 10% 加成，并不会真的解锁第九维度。它还提示了一个早期容易忽略的区别：成就有时看的是当前拥有量，而购买倍率看的是累计购买次数。不要把两个数字当成同一个。
+
 ## 计数频率
 
 当计数频率升级可用时，尝试购买一次，观察整条生产链加速。原版未获得星系的基础状态下，一次升级约带来 ×1.125 的生产速度效果。由于它同时影响多个维度，高阶链已经建立时，效果可以在随后一段时间逐级放大。
@@ -49,5 +53,7 @@ aliases:
 
 - [Antimatter Dimensions](https://antimatterdimensions.wiki.gg/index.php?title=Antimatter_Dimensions&oldid=3325)。
 - [Tickspeed](https://antimatterdimensions.wiki.gg/index.php?title=Tickspeed&oldid=3334)、[Dimension Boosts](https://antimatterdimensions.wiki.gg/index.php?title=Dimension_Boosts&oldid=3333)、[Antimatter Galaxies](https://antimatterdimensions.wiki.gg/index.php?title=Antimatter_Galaxies&oldid=3335)。
+
+- [原版成就表](https://antimatterdimensions.wiki.gg/index.php?title=Achievements&oldid=3363)：成就 23。
 
 本文依据原版社区 Wiki 的资料独立编写，涉及其内容的改编按 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) 共享；原文贡献者见各固定修订的页面历史。

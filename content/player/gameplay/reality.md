@@ -21,7 +21,7 @@ aliases:
 
 普通现实会重置永恒及以下的大部分进度，包括时间研究、永恒挑战完成次数、低层货币和前十三行成就；通用统计及最佳挑战用时通常保留。复兴与现实升级随后提供更多开局能力。
 
-首次现实获得固定的威力符文以及一枚同伴符文。同伴符文记录第一次现实的永恒点数，成为存档中一项具有纪念意义的物品。之后的新现实允许选择获得的符文，并积累现实机器和复兴点。
+首次现实获得固定的 20% 稀有度威力符文（仅带反物质维度威力效果），以及一枚同伴符文。同伴符文记录第一次现实的永恒点数，成为存档中一项具有纪念意义的物品。之后的新现实允许选择获得的符文，并积累现实机器和复兴点。
 
 「重新开始当前现实」不等同于完成新现实：它让本轮重来，但不会发放正常现实奖励，也不会重新抽取已确定的符文。
 
@@ -53,6 +53,12 @@ $$RM=\left\lfloor1000^{L/4000-1}\right\rfloor.$$
 
 黑洞以周期性的游戏时间加速改变资源增长速度。它不是简单的一项反物质倍率，后续无名氏还会引入储存与释放时间的能力。自动机允许以脚本编排游戏操作，这与普通自动购买器的重复购买机制有所不同。
 
+## 第一次现实的纪念
+
+同伴符文的意义不仅是纪念第一次现实的 EP：即使后来换上不同等级和稀有度的符文，它仍然保留最初那次结算的记录。成就 148「皇家同花顺」要求装备各一种基础符文进行现实，其奖励也按不同符文类型数提高符文等级；但同伴符文不计入这个类型数。它是纪念品与常规配装规则之间一个特别的例外。
+
+现实也是唯一一个主要货币不以 Points 结尾的主要重置层：Infinity Points、Eternity Points 之后不是 Reality Points，而是 Reality Machines。社区 Wiki 还记录了一条未经最终证实的命名线索：官方 Discord 在 2017 年 12 月已经有 Reality Dimension 身份组，早于现实更新公布一年多。不能仅据此断言更新名称的实际来源。
+
 ## 现实更新
 
 现实更新于 2022 年 12 月 17 日与 Steam 版同步发布，2024 年 4 月 1 日移植到 Android。它将原有的无限和永恒流程扩展为通往天神的完整成长链。
@@ -63,5 +69,7 @@ $$RM=\left\lfloor1000^{L/4000-1}\right\rfloor.$$
 
 - [Reality](https://antimatterdimensions.wiki.gg/index.php?title=Reality&oldid=3235)、[现实机器换算](https://github.com/IvarK/AntimatterDimensionsSourceCode/blob/5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/machines.js)。
 - [Time Studies](https://antimatterdimensions.wiki.gg/index.php?title=Time_Studies&oldid=3343)、[原版现实升级](/player/original/ow-reality-upgrades)、[原版黑洞](/player/original/ow-black-hole)。
+
+- [原版成就表](https://antimatterdimensions.wiki.gg/index.php?title=Achievements&oldid=3363)：成就 148。
 
 本文依据原版社区 Wiki 的资料独立编写，涉及其内容的改编按 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) 共享；原文贡献者见各固定修订的页面历史。
