@@ -1,5 +1,5 @@
 ---
-title: "莱特拉"
+title: "原版:莱特拉"
 description: "原版 Wiki《Lai'tela》条目的完整简体中文翻译：维度之神莱特拉的熵与现实、暗物质维度、升格、湮灭、奇点与三类奇点里程碑"
 tags:
   - 原版Wiki翻译
@@ -107,7 +107,7 @@ $$Max\left(100^{Completions}~*~\left(\frac{360}{Seconds}\right)^2,~1\right)$$
 | -------------------- | ---------------- | ---------------- | ---------------- | ---------------- | ---------------- |
 | 每次凝聚的基础奇点数 | 1.17e52 | 9.10e53 | 4.98e55 | 2.02e57 | 6.38e58 |
 
-还有其他手段可以提高奇点获取，例如可重复购买的[虚幻升级「Entropic Condensing」](https://antimatterdimensions.wiki.gg/wiki/Imaginary_Upgrades)与对应的奇点里程碑。
+还有其他手段可以提高奇点获取，例如可重复购买的[虚幻升级「Entropic Condensing」](https://antimatterdimensions.wiki.gg/wiki/Imaginary_Upgrades) 与对应的奇点里程碑。
 
 ### 奇点里程碑
 
@@ -184,7 +184,7 @@ $$Max\left(100^{Completions}~*~\left(\frac{360}{Seconds}\right)^2,~1\right)$$
 
 - 莱特拉的名字源自芬兰电视剧《Salatut elämät》中的角色「Ismo Laitela」。把该角色的名字倒过来就得到「Omsi」；Omsi 是本作的主要开发者之一，她同时负责[成就](https://antimatterdimensions.wiki.gg/wiki/Achievements)的美术，以及移动版上呈现的整体美术风格[^laitela-name]。
 
-[^laitela-name]: 原文参考资料：AD 开发日志第 4 篇 <https://cyip92.github.io/site/#/ADdevlog/4>（外部链接，未转载内容）。
+[^laitela-name]: 原文参考资料：AD 开发日志第 4 篇 <0>（外部链接，未转载内容）。
 
 ### 脚注
 
@@ -196,7 +196,7 @@ $$Max\left(100^{Completions}~*~\left(\frac{360}{Seconds}\right)^2,~1\right)$$
 
 ## 来源与许可
 
-- 原文：[Laitela](https://antimatterdimensions.wiki.gg/index.php?title=Laitela&oldid=3432)（页面 ID 919；修订 ID 3432；最后编辑者 KrutarMarsons；抓取于 2026-11-26）
+- 原文：[Laitela](https://antimatterdimensions.wiki.gg/index.php?title=Laitela&oldid=3432)（页面 ID 919；修订 ID 3432；最后编辑者 KrutarMarsons）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Laitela&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为**简体中文翻译（改编）**，已修改：翻译正文与全部表格，统一术语，把信息框内容改写为要点表，把 FontAwesome 图标改为文字描述、模板脚注改为页内脚注，移除导航模板与模板结构，图片未转载；本页按相同许可共享。
 - 原文图片未转载：原页含天神静态图（Cel6-runreality-static--desktop.gif）、动画（Cel6-runreality-active--desktop.gif）、导航图（Cel6-navigation-complete--desktop.png）、界面图（Cel6-interface--darktheme-desktop.png）与奇点里程碑弹窗图（Cel6-singularitymilestones-modal--darktheme-desktop.png）。原图注含义：「身处莱特拉的现实之中」「莱特拉的完整界面」「桌面版中的奇点里程碑弹窗」。请到原页查看图片。

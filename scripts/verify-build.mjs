@@ -75,11 +75,11 @@ for (const slug of [
 const CATEGORY_TITLES = {
   "player/getting-started": "开始游玩",
   "player/gameplay": "玩法机制",
-  "player/original": "原版 Wiki 中文翻译",
-  "player/mods": "Oreki Edition 介绍",
+  "player/original": "原版译文",
+  "player/mods": "MOD 介绍",
   "player/download-and-version": "下载与版本",
   "player/faq": "玩家常见问题",
-  "developer/architecture": "架构与运行时",
+  "developer/architecture": "架构",
   "developer/reverse-engineering": "逆向与语义映射",
   "developer/build": "构建与交付",
   "developer/current": "当前状态",
@@ -246,7 +246,7 @@ for (const rel of ["player/original/ow-infinity.html", "player/original/ow-dimen
 const aiSummary = path.join(PUB, "developer", "ai-summaries", "index.html")
 if (fs.existsSync(aiSummary)) {
   const html = fs.readFileSync(aiSummary, "utf8")
-  if (!html.includes("审核日期") || !html.includes("<details")) {
+  if (!html.includes("已审核摘要") || !html.includes("<details")) {
     fail("AI Summary 索引缺少审核标识或默认折叠结构")
   }
 }

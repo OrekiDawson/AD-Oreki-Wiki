@@ -1,5 +1,5 @@
 ---
-title: "复制器"
+title: "原版:复制器"
 description: "原版 Wiki《Replicanti》条目的完整简体中文翻译：指数成长、升级、无限维度加成与复制器星系"
 tags:
   - 原版Wiki翻译
@@ -16,7 +16,7 @@ aliases:
   - "/original/ow-replicanti"
 ---
 
-**复制器（Replicanti）**是[无限](/player/original/ow-infinity)威望层内的一种机制，在玩家完成第一次[大坍缩](/player/original/ow-infinity)之后随时可以购买。不过，购买它需要 1e140 [无限点数](/player/original/ow-infinity)，所以通常只有在完成 8 个[无限挑战](/player/original/ow-infinity-challenges)之后才会解锁。
+**复制器（Replicanti）**是[无限](/player/original/ow-infinity)威望层内的一种机制，在玩家完成第一次[大坍缩](/player/original/ow-infinity)之后随时可以购买。不过，购买它需要 1e140  [无限点数](/player/original/ow-infinity)，所以通常只有在完成 8 个[无限挑战](/player/original/ow-infinity-challenges)之后才会解锁。
 
 和反物质一样，它们会在[大坍缩](/player/original/ow-infinity)时重置（除非玩家拥有[成就 95](/player/original/ow-achievements)——在一小时内达到 1.80e308 复制器获得）；除非购买了时间研究 192，否则它们不能超过无限值。
 
@@ -54,7 +54,7 @@ $$e^{\left(\ln(r)+\left[\left(1+t\right)\times r\times\ln(c+1)\times interval\di
 
 ### 最大复制器星系数
 
-玩家可购买的复制器星系数量上限初始为 0，可通过购买该升级提高。该升级的数值可以被[时间研究 131](/player/original/ow-time-studies)显著提高。
+玩家可购买的复制器星系数量上限初始为 0，可通过购买该升级提高。该升级的数值可以被[时间研究 131](/player/original/ow-time-studies) 显著提高。
 
 ### 升级成本成长
 
@@ -64,7 +64,7 @@ $$e^{\left(\ln(r)+\left[\left(1+t\right)\times r\times\ln(c+1)\times interval\di
 | 间隔 | 1000 毫秒 | 1e140 IP | ×e10 | ×0.9 | 50 毫秒（拥有时间研究 22 时可提高到 1 毫秒） |
 | 最大复制器星系数 | 0 | 1e170 IP | $\times \text{e}25\times \text{e}5^{UpgradesBought}$（后期会显著更严厉，见「星系成本成长」） | $+1$ | 无限 |
 
-## [无限维度](/player/original/ow-infinity-dimensions)加成
+## 无限维度加成
 
 复制器在游戏早期的主要用途是为无限维度提供加成，公式为 $\log_2(replicanti)^2$。玩家到达永恒后可以购买时间研究 21，为加成再增加 $replicanti^{0.032}$；时间研究 102 会再次以 $\left(boost\times 5^{RG}\right)$ 提高加成（$RG$ 为复制器星系数）。
 
@@ -88,7 +88,7 @@ $$e^{\left(\ln(r)+\left[\left(1+t\right)\times r\times\ln(c+1)\times interval\di
 
 ## 提示
 
-- 玩家大约在 e240 IP 时可以达成[成就 95](/player/original/ow-achievements)的要求。
+- 玩家大约在 e240 IP 时可以达成[成就 95](/player/original/ow-achievements) 的要求。
 - 如果玩家想完成[成就 95](/player/original/ow-achievements)，并且已经达到上述某个升级，就必须尽快购买一个星系，以免一小时计时过期。
 - 玩家还需要注意复制器的早期阶段，因为它取决于随机数（RNG）。
 
@@ -101,7 +101,7 @@ $$e^{\left(\ln(r)+\left[\left(1+t\right)\times r\times\ln(c+1)\times interval\di
 
 ## 来源与许可
 
-- 原文：[Replicanti](https://antimatterdimensions.wiki.gg/index.php?title=Replicanti&oldid=3350)（修订 ID `3350`；最后编辑者 KrutarMarsons；抓取于 2026-11-15）
+- 原文：[Replicanti](https://antimatterdimensions.wiki.gg/index.php?title=Replicanti&oldid=3350)（修订 ID `3350`；最后编辑者 KrutarMarsons）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Replicanti&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为**简体中文翻译（改编）**，已修改：翻译正文与表格、统一术语、移除导航模板与信息框、图片未转载；本页按相同许可共享。
 - 原文中的公式排版不统一（如 0,032 与 1e5 等写法）按 LaTeX 规范化；数值与逻辑未改动。

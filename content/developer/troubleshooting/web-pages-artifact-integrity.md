@@ -1,5 +1,5 @@
 ---
-title: Web Pages 产物身份：如何证明线上不是另一份代码
+title: "Pages 产物校验"
 description: 从部署提交、静态资源和浏览器行为三个层面定位 Web Pages 的错版、缺文件与缓存问题。
 tags:
   - 开发者
@@ -10,7 +10,7 @@ tags:
 
 “页面能打开”只说明浏览器收到了可解析的 HTML。它不能说明页面来自批准的提交，也不能说明脚本、样式和媒体文件属于同一份构建。静态站点出现白屏、旧界面或部分功能失效时，先判断问题是在部署身份、目录组装、资源缓存还是运行时；否则很容易反复发布，却始终没有增加有效证据。
 
-本文讨论 Web Pages 的产物身份和排障顺序。源码、部署工作流和验证脚本以 Web 仓库提交 [`b28b231efa5b694ce1da8a1e508cfc3ecc099344`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/tree/b28b231efa5b694ce1da8a1e508cfc3ecc099344) 为参考；它解释的是静态站点如何证明“发布了哪一版”，不是某次部署已经成功的报告。
+本文讨论 Web Pages 的产物身份和排障顺序。源码、部署工作流和验证脚本以 Web 仓库提交  [`b28b231efa5b694ce1da8a1e508cfc3ecc099344`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/tree/b28b231efa5b694ce1da8a1e508cfc3ecc099344)  为参考；它解释的是静态站点如何证明“发布了哪一版”，不是某次部署已经成功的报告。
 
 ## 先把故障分成四层
 
@@ -37,7 +37,7 @@ tags:
 
 因此，不能用“CI 绿了”证明线上版本，也不能用“浏览器启动了”反推部署身份。
 
-## 第一步：确认部署对象没有漂移
+## 一、确认部署对象
 
 部署工作流通过 `workflow_dispatch` 接收 `approved_sha`。它先检出这个精确提交，再要求：
 
@@ -51,9 +51,9 @@ git rev-parse HEAD == approved_sha == GITHUB_SHA
 
 当前仓库还需要受保护的 `web-production` 环境，并通过凭据触发 Pages 仓的 `deploy-approved-web.yml`。这意味着源仓库的成功只代表部署请求通过了自己的门槛，不能把它当成生产 Pages 已经完成更新。
 
-## 第二步：检查 staging 是否是一个闭合的站点
+## 二、检查 staging
 
-`scripts/check_pages_staging.py`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/scripts/check_pages_staging.py；[固定提交 b28b231](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/commit/b28b231efa5b694ce1da8a1e508cfc3ecc099344)；具体文件证据留在内部核验记录） 检查的是组装后的目录，而不是 Git 工作树。它验证：
+`scripts/check_pages_staging.py`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/scripts/check_pages_staging.py；具体文件证据留在内部核验记录） 检查的是组装后的目录，而不是 Git 工作树。它验证：
 
 - `.nojekyll`、`index.html`、`src/main.js` 和 `public/icon.png` 存在；
 - `src`、`modules`、`public` 目录存在；
@@ -65,7 +65,7 @@ git rev-parse HEAD == approved_sha == GITHUB_SHA
 
 修改组装脚本后，应该用一个故意缺失的资源做负向测试：暂时移走被 `index.html` 引用的文件，检查器必须失败。若缺文件仍然通过，说明守卫没有覆盖真实引用路径。
 
-## 第三步：用线上身份文件排除错版
+## 三、核对线上身份
 
 Pages 站点中的 `deployment.json` 是给验收脚本读取的身份记录，内容类似：
 
@@ -80,9 +80,9 @@ Pages 站点中的 `deployment.json` 是给验收脚本读取的身份记录，�
 
 如果 `web_sha` 或 `web_ci_run_id` 与批准值不符，先停止后续浏览器检查。继续点击页面只会把一份身份不明的站点当成候选。若身份文件正确但页面仍旧，说明问题转移到了静态文件或缓存层，而不是继续修改部署元数据。
 
-## 第四步：比较资源字节，再进入浏览器
+## 四、比较资源
 
-`verify-live.mjs`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/reports/R109-01/web-pages/verify-live.mjs；[固定提交 b28b231](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/commit/b28b231efa5b694ce1da8a1e508cfc3ecc099344)；具体文件证据留在内部核验记录） 读取线上 `deployment.json` 时加入缓存破坏参数，然后把线上与批准提交中的 `src/main.js` 分别下载，比较长度和 SHA-256。
+`verify-live.mjs`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/reports/R109-01/web-pages/verify-live.mjs；具体文件证据留在内部核验记录） 读取线上 `deployment.json` 时加入缓存破坏参数，然后把线上与批准提交中的 `src/main.js` 分别下载，比较长度和 SHA-256。
 
 这个入口脚本是有用的第一根探针，因为它连接 shims、全局桥和游戏入口，但它不是整站哈希。不同结果应这样解释：
 
@@ -131,7 +131,7 @@ Pages 站点中的 `deployment.json` 是给验收脚本读取的身份记录，�
 
 修改部署工作流或组装脚本后，按以下顺序验证：
 
-1. 用 `check_deploy_workflow.mjs`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/scripts/check_deploy_workflow.mjs；[固定提交 b28b231](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/commit/b28b231efa5b694ce1da8a1e508cfc3ecc099344)；具体文件证据留在内部核验记录） 确认精确 SHA、对应 CI、受保护环境和 Pages dispatch 仍然存在；
+1. 用 `check_deploy_workflow.mjs`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/scripts/check_deploy_workflow.mjs；具体文件证据留在内部核验记录） 确认精确 SHA、对应 CI、受保护环境和 Pages dispatch 仍然存在；
 2. 在临时 staging 目录中执行一次缺资源的负向测试；
 3. 从同一候选生成 `deployment.json`，核对 SHA 和 CI 运行编号；
 4. 部署后先检查身份与受影响资源字节，再做移动浏览器启动、时钟和导航检查。
@@ -140,8 +140,8 @@ Pages 站点中的 `deployment.json` 是给验收脚本读取的身份记录，�
 
 ## 相关入口
 
-- Pages 请求工作流 `deploy.yml`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/.github/workflows/deploy.yml；[固定提交 b28b231](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/commit/b28b231efa5b694ce1da8a1e508cfc3ecc099344)；具体文件证据留在内部核验记录）：批准提交、CI 复用、环境保护和 Pages dispatch。
-- staging 检查器 `check_pages_staging.py`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/scripts/check_pages_staging.py；[固定提交 b28b231](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/commit/b28b231efa5b694ce1da8a1e508cfc3ecc099344)；具体文件证据留在内部核验记录）：站点结构、CNAME 与本地资源路径检查。
-- 工作流结构守卫 `check_deploy_workflow.mjs`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/scripts/check_deploy_workflow.mjs；[固定提交 b28b231](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/commit/b28b231efa5b694ce1da8a1e508cfc3ecc099344)；具体文件证据留在内部核验记录）：阻止浮动分支和直接覆盖 Pages。
-- 线上验证 `verify-live.mjs`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/reports/R109-01/web-pages/verify-live.mjs；[固定提交 b28b231](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/commit/b28b231efa5b694ce1da8a1e508cfc3ecc099344)；具体文件证据留在内部核验记录）：线上身份、资源字节与移动浏览器检查。
+- Pages 请求工作流 `deploy.yml`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/.github/workflows/deploy.yml；具体文件证据留在内部核验记录）：批准提交、CI 复用、环境保护和 Pages dispatch。
+- staging 检查器 `check_pages_staging.py`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/scripts/check_pages_staging.py；具体文件证据留在内部核验记录）：站点结构、CNAME 与本地资源路径检查。
+- 工作流结构守卫 `check_deploy_workflow.mjs`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/scripts/check_deploy_workflow.mjs；具体文件证据留在内部核验记录）：阻止浮动分支和直接覆盖 Pages。
+- 线上验证 `verify-live.mjs`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/reports/R109-01/web-pages/verify-live.mjs；具体文件证据留在内部核验记录）：线上身份、资源字节与移动浏览器检查。
 - [Web 端架构](/developer/architecture/web)：身份和资源通过后，继续定位模块初始化和游戏循环故障。

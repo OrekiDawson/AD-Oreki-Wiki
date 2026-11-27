@@ -1,5 +1,5 @@
 ---
-title: "黑洞"
+title: "原版:黑洞"
 description: "原版 Wiki《Black Hole》条目的完整简体中文翻译：解锁条件、充能与暂停、第二个黑洞与升级表"
 tags:
   - 原版Wiki翻译
@@ -16,7 +16,7 @@ aliases:
   - "/original/ow-black-hole"
 ---
 
-**黑洞（Black Hole）**是完成第一次现实后才会出现的系统。与[符文](https://antimatterdimensions.wiki.gg/wiki/Glyphs)、[现实升级](/player/original/ow-reality-upgrades)和[复兴](/player/original/ow-perks)不同，黑洞子页签只在执行过现实重置后亮起。花费 100 [现实机器](/player/original/ow-reality)可以解锁第一个黑洞。
+**黑洞（Black Hole）**是完成第一次现实后才会出现的系统。与[符文](https://antimatterdimensions.wiki.gg/wiki/Glyphs)、[现实升级](/player/original/ow-reality-upgrades)和[复兴](/player/original/ow-perks)不同，黑洞子页签只在执行过现实重置后亮起。花费 100  [现实机器](/player/original/ow-reality)可以解锁第一个黑洞。
 
 黑洞按“非激活间隔—激活持续时间”循环。激活时，它会提高整个游戏的游戏速度，效果相当于把同样的时间重复计算多次；间隔、强度和持续时间可以分别升级。黑洞有 5 秒游戏时间的充能与加速恢复过程；暂停后恢复时，速度也会从零逐步升到完整强度。
 
@@ -63,7 +63,7 @@ aliases:
 
 ## 来源与许可
 
-- 原文：[Black Hole](https://antimatterdimensions.wiki.gg/index.php?title=Black_Hole&oldid=3360)（修订 ID `3360`；最后编辑者 KrutarMarsons；抓取于 2026-11-15）
+- 原文：[Black Hole](https://antimatterdimensions.wiki.gg/index.php?title=Black_Hole&oldid=3360)（修订 ID `3360`；最后编辑者 KrutarMarsons）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Black_Hole&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为**简体中文翻译（改编）**，已修改：翻译正文与表格、统一术语、依据官方源码补齐首次加速、永久启动、黑洞 2 依赖和离线循环边界、移除导航模板与信息框、图片未转载；本页按相同许可共享。
 - 原站正文是维护标记为小作品的短条目，升级表也没有展开高成本阶段的说明；译文保留原表数值，并以源码可确认的规则补足阅读所需的机制。

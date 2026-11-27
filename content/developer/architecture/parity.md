@@ -11,7 +11,7 @@ aliases:
 
 Android 和 Web 的源码不可能逐行相同：一端把官方 APK 的运行时接到 Kotlin 适配层，另一端则在 JavaScript 游戏内核上加入 MOD 模块。双端对齐真正要解决的问题是：给定同一类存档和同一串玩家动作，两端是否经过各自的实现后到达同一个可观察结果。这里的“同一个”指阶段、结算、资源变化、自动化决策和可见界面，而不是文件名或版本号相同。
 
-## 先定义边界：什么必须一致，什么可以不同
+## 一致性边界
 
 可以不同的是实现手段。例如 Web 通过 `gameLoop()` 驱动原版生产与自动购买器，再由 `OrekiSmartExecutor` 注册 `early`、`eternity`、`reality`、`perk` 和 `endgame` 等模块；Android 则由 `OrekiStageAuto` 把同类动作接入 APK 的调用路径。它们不共享对象，也不共享 JavaScript 的事件总线。
 
@@ -47,7 +47,7 @@ Web 的 `gameLoop(passDiff)` 会处理真实时间、游戏时间、后台休眠
 
 比较自动购买器时，不要把“最后拥有了某件升级”当作充分证据。应同时确认资源被扣除、重置副作用发生、保存字段更新，并且下一次 tick 仍能继续。Web 的执行器通过注册表把策略动词映射到真实模块；Android 的调度器也应把动作收束到 `GameApi` 和原版方法，而不是从旁边直接写字段。
 
-### 展示层：页面是状态的投影，不是状态本身
+### 展示层投影
 
 阶段页签、按钮和教程章节只是状态投影。一个页面能被路由打开，不代表其门槛已满足；一个按钮显示出来，也不代表结算条件可用。应把存档字段、阶段真值和界面状态分开采样，再定位是判据、导航还是渲染层出了偏差。
 
@@ -63,7 +63,7 @@ Web 的 `gameLoop(passDiff)` 会处理真实时间、游戏时间、后台休眠
 
 每个场景都应保存“输入存档、动作序列、关键输出”。这样当两端不一致时，可以判断是编码差异、时间差异、动作顺序还是显示层问题，而不是凭截图猜测。
 
-## 排障：先找分叉点，再看代码
+## 排障分叉点
 
 若 Web 和 Android 在同一阶段分叉，先比较最后一个共同结算点的存档，而不是从 UI 开始追。若字段不同，沿重置函数追写入者；若字段相同而页面不同，检查阶段真值与导航守卫；若资源相同但自动化不同，检查调度节拍、动作是否被原版条件拒绝，以及浏览器后台补偿是否改变了 `diff`。
 
@@ -71,7 +71,7 @@ Web 的 `gameLoop(passDiff)` 会处理真实时间、游戏时间、后台休眠
 
 ## 来源与历史边界
 
-Android 当前实现可从 `OrekiGuiStage.kt`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiGuiStage.kt；[固定提交 9d8fc46](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/commit/9d8fc46ce99279720b5b3068027bb76bceb35756)；具体文件证据留在内部核验记录）、`OrekiStageAuto.kt`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiStageAuto.kt；[固定提交 9d8fc46](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/commit/9d8fc46ce99279720b5b3068027bb76bceb35756)；具体文件证据留在内部核验记录） 和 `GameApi.kt` 追踪；Web 可从 `game.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@e1c93caa758de6c39cf814582123d4a35319eb25/src/game.js；[固定提交 e1c93ca](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/commit/e1c93caa758de6c39cf814582123d4a35319eb25)；具体文件证据留在内部核验记录）、执行器和天神自动化模块追踪。Android/Web 的历史验收记录仍保留在各仓库报告中，但历史运行结果不自动代表当前候选构建。
+Android 当前实现可从 `OrekiGuiStage.kt`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiGuiStage.kt；具体文件证据留在内部核验记录）、`OrekiStageAuto.kt`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiStageAuto.kt；具体文件证据留在内部核验记录） 和 `GameApi.kt` 追踪；Web 可从 `game.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@e1c93caa758de6c39cf814582123d4a35319eb25/src/game.js；具体文件证据留在内部核验记录）、执行器和天神自动化模块追踪。Android/Web 的历史验收记录仍保留在各仓库报告中，但历史运行结果不自动代表当前候选构建。
 
 ## 相关条目
 

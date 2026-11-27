@@ -1,5 +1,5 @@
 ---
-title: "复兴"
+title: "原版:复兴"
 description: "原版 Wiki《Perks》条目的简体中文翻译：复兴树 48 个节点、家族、前置关系、效果与自动化点数"
 tags:
   - 原版Wiki翻译
@@ -95,16 +95,16 @@ aliases:
 - 只有反物质与无限两个家族没有菱形节点。
 - 桌面版复兴树的背景是透明的。
 - 桌面版复兴树的视觉在所有主题下保持一致，只有两个例外：设计主题会在进入页签时改变所有节点尺寸，且除缩放外交互时会快速波动；盲文主题会移除所有连线，若开启了编号显示也会隐藏编号。
-- 桌面版的复兴树用 [vis.js 的 Vis Network](https://visjs.github.io/vis-network/docs/network/) 渲染——一个浏览器端的动态可视化库，拖动节点正是它提供的。
+- 桌面版的复兴树用  [vis.js 的 Vis Network](https://visjs.github.io/vis-network/docs/network/)  渲染——一个浏览器端的动态可视化库，拖动节点正是它提供的。
 
 ## 来源与许可
 
-- 原文：[Perks](https://antimatterdimensions.wiki.gg/index.php?title=Perks&oldid=3354)（修订 ID 3354；抓取于 2026-11-15）
+- 原文：[Perks](https://antimatterdimensions.wiki.gg/index.php?title=Perks&oldid=3354)（修订 ID 3354）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Perks&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为简体中文翻译（改编），已修改：翻译正文与 48 行节点表、把节点图标改为中文节点名、依据官方源码澄清无向相邻关系与部分游戏内术语、图库改为图注列表、界面图未转载；本页按相同许可共享。
 - 原文图片未转载：原页含桌面深色/浅色与移动版复兴树截图、七种布局截图与两个主题截图，此处仅保留文字说明。
 - 原文脚注说明「七种布局中一种锁在隐藏主题后」；译注：桌面版的节点拖拽依赖 vis.js 实现。
-- 源码核对：复兴树 vis-network 渲染入口（源码定位：OrekiDawson/AD-Oreki-Edition-Web@91d5bed01509cd730a3158075c9b05c19a7a3260/src/components/tabs/perks/PerksTab.js#L1；[固定提交 91d5bed](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/commit/91d5bed01509cd730a3158075c9b05c19a7a3260)；具体文件证据留在内部核验记录）（提交 `91d5bed01509cd730a3158075c9b05c19a7a3260`，2026-11-24 核对）。
+- 源码核对：复兴树 vis-network 渲染入口（源码定位：OrekiDawson/AD-Oreki-Edition-Web@91d5bed01509cd730a3158075c9b05c19a7a3260/src/components/tabs/perks/PerksTab.js#L1；具体文件证据留在内部核验记录）（提交 `91d5bed01509cd730a3158075c9b05c19a7a3260`，2026-11-24 核对）。
 
 ## 相关条目
 

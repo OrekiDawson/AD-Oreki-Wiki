@@ -1,6 +1,6 @@
 ---
 title: "开发者专区"
-description: "第一次参与 Oreki Edition、定位 Android/Web 代码、构建验证和排查问题的实际入口"
+description: "第一次参与 MOD、定位 Android/Web 代码、构建验证和排查问题的实际入口"
 aliases:
   - "/history"
   - "/developer/history"
@@ -11,17 +11,17 @@ tags:
 
 这里面向想要**读懂代码、完成一次修改或定位故障**的人。你不需要先读几十份 R 轮次报告。先选择一个具体任务，再去对应的源码和操作手册；历史构建与测试报告只在需要核验证据时阅读。
 
-Oreki Edition 有 Android 与 Web 两套实现，目标是保持玩家可见的成长规则一致，但两边的代码、构建工具和发布方式并不相同。请选择你准备修改的平台。
+本 MOD 有 Android 与 Web 两套实现，目标是保持玩家可见的成长规则一致，但两边的代码、构建工具和发布方式并不相同。请选择你准备修改的平台。
 
-## 第一次来：完成一条最小开发路径
+## 最小开发路径
 
 从[第一次参与开发](/developer/first-contribution)开始。它选择 **Web 本地只读运行 → 跟踪启动入口 → 提交一次有来源的文档小改动**作为练习，避免上来就碰签名、官方 DEX 或真实存档。
 
 你会实际遇到三个文件：
 
-- `serve.mjs`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@90d89de2048332f3c329ae6834ebee2675453a02/serve.mjs；[固定提交 90d89de](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/commit/90d89de2048332f3c329ae6834ebee2675453a02)；具体文件证据留在内部核验记录）：提供本地 HTTP 服务，让浏览器能加载 ES 模块。
-- `src/main.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@90d89de2048332f3c329ae6834ebee2675453a02/src/main.js；[固定提交 90d89de](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/commit/90d89de2048332f3c329ae6834ebee2675453a02)；具体文件证据留在内部核验记录）：导入基础模块并在浏览器检查通过后调用 `init()`。
-- `src/game.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@90d89de2048332f3c329ae6834ebee2675453a02/src/game.js；[固定提交 90d89de](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/commit/90d89de2048332f3c329ae6834ebee2675453a02)；具体文件证据留在内部核验记录）：游戏初始化、运行流程与部分 MOD 自动化的集成点。
+- `serve.mjs`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@90d89de2048332f3c329ae6834ebee2675453a02/serve.mjs；具体文件证据留在内部核验记录）：提供本地 HTTP 服务，让浏览器能加载 ES 模块。
+- `src/main.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@90d89de2048332f3c329ae6834ebee2675453a02/src/main.js；具体文件证据留在内部核验记录）：导入基础模块并在浏览器检查通过后调用 `init()`。
+- `src/game.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@90d89de2048332f3c329ae6834ebee2675453a02/src/game.js；具体文件证据留在内部核验记录）：游戏初始化、运行流程与部分 MOD 自动化的集成点。
 
 这一小段足以让你了解“文件入口在哪里、如何运行、怎么验证一处改动”，之后再进入更复杂的业务模块。
 
@@ -44,13 +44,13 @@ Oreki Edition 有 Android 与 Web 两套实现，目标是保持玩家可见的�
 
 ## 两套代码在哪里？
 
-**Android**：[OrekiDawson/AD-Oreki-Edition-Android](https://github.com/OrekiDawson/AD-Oreki-Edition-Android)。当前仓库根目录的 `:app` 是 Android 应用模块，生产业务代码位于 `app/src/main/kotlin/`，构建输入和门禁由根 `app/build.gradle.kts` 与 `build-logic/` 共同准备。官方 3.21.0 DEX 属于冻结基线，不允许用新 Java/Smali 业务直接覆盖。源码阅读可从 `OrekiStageAuto.kt`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiStageAuto.kt；[固定提交 9d8fc46](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/commit/9d8fc46ce99279720b5b3068027bb76bceb35756)；具体文件证据留在内部核验记录） 开始。
+**Android**：[OrekiDawson/AD-Oreki-Edition-Android](https://github.com/OrekiDawson/AD-Oreki-Edition-Android)。当前仓库根目录的 `:app` 是 Android 应用模块，生产业务代码位于 `app/src/main/kotlin/`，构建输入和门禁由根 `app/build.gradle.kts` 与 `build-logic/` 共同准备。官方 3.21.0 DEX 属于冻结基线，不允许用新 Java/Smali 业务直接覆盖。源码阅读可从 `OrekiStageAuto.kt`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiStageAuto.kt；具体文件证据留在内部核验记录） 开始。
 
 **Web**：[OrekiDawson/AD-Oreki-Edition-Web](https://github.com/OrekiDawson/AD-Oreki-Edition-Web)。入口在 `src/`，核心机制与 MOD 扩展在 `src/core/`，浏览器组件在 `src/components/`。Web 基于冻结的上游快照，不可把 Android 中的混淆类名当作 Web 模块名。
 
 **两套代码各有自己的边界。** Android 与 Web 共享玩家可见的成长规则，但使用不同的语言、模块和构建工具；阅读源码时应以对应平台的入口、类型和调用链为准。
 
-## 怎么判断一项工作已经完成？
+## 完成判据
 
 开发文档里常见的几种“成功”其实是不同的层级：
 

@@ -1,5 +1,5 @@
 ---
-title: "薇"
+title: "原版:薇"
 description: "原版 Wiki《V》条目的完整简体中文翻译：成就之神薇的现实解锁六项要求、薇成就 36 项、空间之理、里程碑与困难薇成就"
 tags:
   - 原版Wiki翻译
@@ -73,7 +73,7 @@ aliases:
 |     |                      |                                                                                                                              | 第 4 档 | 4,900               |                                                               |                                   |
 |     |                      |                                                                                                                              | 第 5 档 | 5,200               |                                                               |                                   |
 |     |                      |                                                                                                                              | 第 6 档 | 5,500               |                                                               |                                   |
-| 2   | Se7en deadly matters | 在[永恒挑战 7](/player/original/ow-eternity-challenges)中获得 {req} 无限点数。                                               | 第 1 档 | e600,000     | $1,000~(1\text{e}3;~1~\text{K})$ / $/\text{e}1,200$           |                                   |
+| 2   | Se7en deadly matters | 在[永恒挑战 7](/player/original/ow-eternity-challenges) 中获得 {req} 无限点数。                                               | 第 1 档 | e600,000     | $1,000~(1\text{e}3;~1~\text{K})$ / $/\text{e}1,200$           |                                   |
 |     |                      |                                                                                                                              | 第 2 档 | e720,000     |                                                               |                                   |
 |     |                      |                                                                                                                              | 第 3 档 | e840,000     |                                                               |                                   |
 |     |                      |                                                                                                                              | 第 4 档 | e960,000     |                                                               |                                   |
@@ -182,9 +182,9 @@ aliases:
   - 她符号的外圈是一个六边形；
   - 讽刺的是，薇是第 4 位天神，而她的名字在罗马数字里是 5。
 
-[^v-name]: 原文参考资料：AD 开发日志第 4 篇 <https://cyip92.github.io/site/#/ADdevlog/4>（外部链接，未转载内容）。
+[^v-name]: 原文参考资料：AD 开发日志第 4 篇 <0>（外部链接，未转载内容）。
 
-[^movie-reference]: 原文参考资料：AD 开发日志第 8 篇 <https://cyip92.github.io/site/#/ADdevlog/8>（外部链接，未转载内容）。
+[^movie-reference]: 原文参考资料：AD 开发日志第 8 篇 <0>（外部链接，未转载内容）。
 
 ### 脚注
 
@@ -196,7 +196,7 @@ aliases:
 
 ## 来源与许可
 
-- 原文：[V](https://antimatterdimensions.wiki.gg/index.php?title=V&oldid=3431)（页面 ID 554；修订 ID 3431；最后编辑者 KrutarMarsons；抓取于 2026-11-26）
+- 原文：[V](https://antimatterdimensions.wiki.gg/index.php?title=V&oldid=3431)（页面 ID 554；修订 ID 3431；最后编辑者 KrutarMarsons）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=V&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为**简体中文翻译（改编）**，已修改：翻译正文与全部表格，统一术语，把信息框内容改写为要点表，把模板内折叠块改写为引用块、模板脚注改为页内脚注，移除导航模板与模板结构，图片未转载；本页按相同许可共享。
 - 原文图片未转载：原页含天神静态图（Cel4-runreality-static--desktop.png）、动画（Cel4-runreality-active--desktop.gif）、导航图（Cel4-navigation-complete--desktop.png）、界面图（Cel4-normalachievements-interface--darktheme-desktop.png、Cel4-interface-requirements--darktheme-desktop.png、Cel4-hardachievements-interface--darktheme-desktop.png）。原图注含义：「去掉文字后的薇现实按钮」「身处薇的现实之中，同样去掉了文字」「天神导航中的薇」「薇的完整界面」「解锁薇的现实所需的要求」「解锁困难薇成就后的薇界面」。请到原页查看图片。

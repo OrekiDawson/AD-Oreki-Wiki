@@ -1,5 +1,5 @@
 ---
-title: "自动化状态所有权：玩家意图、托管配置与执行闸门"
+title: "自动化所有权"
 description: "从 Android Kotlin 源码理解自动购买器何时让路、何时恢复，以及为什么状态所有权不能由一个开关代替"
 tags:
   - 架构
@@ -10,7 +10,7 @@ tags:
 
 自动购买器的“开关”并不只有一个。Android MOD 同时面对玩家的原版总开关、MOD 自己的总开关、单项自动器的当前状态，以及 MOD 对模式和间隔的托管策略。若把这些状态揉成一个 `enabled`，最常见的结果是：玩家刚关掉一个自动器，下一帧又被打开；或者 MOD 已经暂停，旧的恢复任务却在稍后突然写回。
 
-本文只讨论一个比“调度器如何选任务”更窄的问题：**某个值现在归谁所有，什么条件下允许写入，写入之后如何证明没有越权。**源码依据是 Android 仓库固定提交 [`1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/tree/1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545)。本文不是 APK 行为验收；它是阅读和修改托管自动购买器时的实现地图。
+本文只讨论一个比“调度器如何选任务”更窄的问题：**某个值现在归谁所有，什么条件下允许写入，写入之后如何证明没有越权。**源码依据是 Android 仓库固定提交  [`1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/tree/1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545)。本文不是 APK 行为验收；它是阅读和修改托管自动购买器时的实现地图。
 
 ## 先画出三条边界
 
@@ -36,7 +36,7 @@ OrekiStageAuto → GameApi → 原版自动购买器
 
 因此，`mayTouchAutobuyers()`、`effectiveCrunchTarget()` 和 `allow()` 不能互相替代。它们分别属于意图、目标和执行三个问题。
 
-## 玩家意图不是一次点击，而是时间语义
+## 玩家意图
 
 `OrekiPlayerIntent.refresh()` 先检查 MOD 调度器是否开启，再读取原版自动购买器总开关。原版总开关为关闭时，它登记 `masterPlayerDisabled`；为开启时才清除这份玩家意图。`mayTouchAutobuyers()` 返回的只是“玩家是否明确关过”，并不表示当前一定可以接管。调用方仍需同时确认原版总开关现值和 MOD 总开关。
 
@@ -77,7 +77,7 @@ wantCrunch=true,  ownedByMod=false, pausedByStagePolicy=true  → false
 
 但得到 `true` 仍不等于可以调用原版写入入口。调用方还要确认这一拍是否是新的配置 tick、玩家是否已让路，以及执行闸门是否允许当前任务。
 
-## `allow()` 是执行闸门，不是所有权判定
+## `allow()` 执行闸门
 
 `OrekiAutomationScheduler.allow(taskId)` 的前置顺序体现了执行层的责任：MOD 未启用时拒绝；原版总开关关闭时拒绝；未知任务拒绝；随后再检查同帧名额、失败冷却、`no-op` 静默窗、全局节拍和任务预约。`beginFrame()` 会清掉上一帧的真执行名额并记录帧起点，`noteActed()`、`noteNoop()` 和 `noteFail()` 则必须释放预约并记录不同结果。
 
@@ -115,8 +115,8 @@ wantCrunch=true,  ownedByMod=false, pausedByStagePolicy=true  → false
 - [调度器状态机](/developer/architecture/scheduler-state-machine)：解释任务选择、重置和进度死锁，不替代本页的所有权边界。
 - [Android GUI 同步桥](/developer/architecture/android-gui-sync)：解释状态如何到达界面。
 - [Android 架构](/developer/architecture/android)：查看构建输入、运行时和 `GameApi` 的总体关系。
-- `OrekiPlayerIntent.kt`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiPlayerIntent.kt；[固定提交 1ec0c9c](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/commit/1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545)；具体文件证据留在内部核验记录）：玩家意图、pending 和关闭闩锁。
-- `OrekiManagedAutobuyerAuthority.kt`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiManagedAutobuyerAuthority.kt；[固定提交 1ec0c9c](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/commit/1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545)；具体文件证据留在内部核验记录）：托管目标的纯判据。
-- `OrekiAutomationScheduler.kt`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiAutomationScheduler.kt；[固定提交 1ec0c9c](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/commit/1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545)；具体文件证据留在内部核验记录）：执行节拍、预约和结果记账。
+- `OrekiPlayerIntent.kt`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiPlayerIntent.kt；具体文件证据留在内部核验记录）：玩家意图、pending 和关闭闩锁。
+- `OrekiManagedAutobuyerAuthority.kt`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiManagedAutobuyerAuthority.kt；具体文件证据留在内部核验记录）：托管目标的纯判据。
+- `OrekiAutomationScheduler.kt`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiAutomationScheduler.kt；具体文件证据留在内部核验记录）：执行节拍、预约和结果记账。
 
 本文只完成源码阅读与文档写作，未执行 Android APK 构建、设备操作或长时间自动化验收。

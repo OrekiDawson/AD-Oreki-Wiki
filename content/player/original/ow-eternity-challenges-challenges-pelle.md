@@ -1,5 +1,5 @@
 ---
-title: "永恒挑战·挑战明细（被毁灭的现实）"
+title: "原版:永恒挑战明细"
 description: "原版 Wiki《Eternity Challenges/Challenges (Pelle)》子页面的简体中文翻译：佩勒中被上调的永恒挑战目标与专属改动"
 tags:
   - 原版Wiki翻译
@@ -56,7 +56,7 @@ aliases:
 
 ## 来源与许可
 
-- 原文：[Eternity Challenges/Challenges (Pelle)](https://antimatterdimensions.wiki.gg/index.php?title=Eternity_Challenges%2FChallenges_%28Pelle%29&oldid=3156)（修订 ID 3156；抓取于 2026-11-15）
+- 原文：[Eternity Challenges/Challenges (Pelle)](https://antimatterdimensions.wiki.gg/index.php?title=Eternity_Challenges%2FChallenges_%28Pelle%29&oldid=3156)（修订 ID 3156）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Eternity_Challenges/Challenges_(Pelle)&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为简体中文翻译（改编），已修改：翻译两张表格与全部公式、把佩勒配色高亮改为「佩勒中改动」列、词形变换保留原样、折叠表展开；图片未转载；本页按相同许可共享。
 - 原文无图片媒体；脚注（裂痕效果可见条件、游戏速度效果禁用、时限按游戏时间计）已并入正文与表格。

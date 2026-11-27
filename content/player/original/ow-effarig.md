@@ -1,5 +1,5 @@
 ---
-title: "鹿颈长"
+title: "原版:鹿颈长"
 description: "原版 Wiki《Effarig》条目的完整简体中文翻译：远古遗物之神鹿颈长的遗迹碎片、商店升级、三层现实与削弱公式"
 tags:
   - 原版Wiki翻译
@@ -88,7 +88,7 @@ $$nerfFactor = 3 * \left( 1-\frac{c}{c+\sqrt{\log_{10}\left(resource\right)}} \r
 - 鹿颈长的名字源自「Giraffe」（长颈鹿）倒写；这来自一位知名开发者「SpectralFlame」，其头像经常被误认成长颈鹿[^cel-name-easter-egg]。
 - 在正式发布之前（更准确地说，是开发稍晚的阶段），鹿颈长曾被称作[「特蕾莎」](/player/original/ow-teresa)，也就是前一位天神。原因是两人的机制虽然未变，但名字最初被交换了顺序，鹿颈长本该是现实之神、特蕾莎本该是远古遗物之神[^cel-name-easter-egg]。
 
-[^cel-name-easter-egg]: 原文参考资料：AD 开发日志第 4 篇 <https://cyip92.github.io/site/#/ADdevlog/4>（外部链接，未转载内容）。
+[^cel-name-easter-egg]: 原文参考资料：AD 开发日志第 4 篇 <0>（外部链接，未转载内容）。
 [^rs]: 也称 RS（Relic Shards）；原文在术语区单独列出该缩写。
 
 ### 术语
@@ -105,7 +105,7 @@ $$nerfFactor = 3 * \left( 1-\frac{c}{c+\sqrt{\log_{10}\left(resource\right)}} \r
 
 ## 来源与许可
 
-- 原文：[Effarig](https://antimatterdimensions.wiki.gg/index.php?title=Effarig&oldid=3371)（页面 ID 378；修订 ID 3371；最后编辑者 KrutarMarsons；抓取于 2026-11-15）
+- 原文：[Effarig](https://antimatterdimensions.wiki.gg/index.php?title=Effarig&oldid=3371)（页面 ID 378；修订 ID 3371；最后编辑者 KrutarMarsons）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Effarig&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为**简体中文翻译（改编）**，已修改：翻译正文、表格与公式，统一术语，把信息框内容改写为要点表，把模板内脚注改为页内脚注，移除导航模板与模板结构，图片未转载；本页按相同许可共享。
 - 原文图片未转载：原页含天神动画（Cel2-runreality-static--desktop.gif、Cel2-runreality-active--desktop.gif）、导航图（Cel2-navigation-complete--desktop.png）与界面截图（Cel2-interface--darktheme-desktop.png）。请到原页查看图片。

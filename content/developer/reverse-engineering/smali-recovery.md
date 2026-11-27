@@ -35,7 +35,7 @@ if-eqz v1, :blocked
 
 这几行已经给出比函数名更多的事实：调用是静态的，唯一参数是 `java.lang.String`，返回值是原始 `boolean`，且调用者把它当作条件分支。Kotlin 侧若改成可空 `Boolean`、交换参数或删掉静态桥，问题就不再是“策略逻辑不同”，而是 ABI 已经断裂。
 
-## 第一步：从方法原型读取寄存器
+## 一、读取方法原型
 
 Smali 的 `p0`、`p1` 是参数视图，`v0`、`v1` 是局部寄存器视图。不要按变量名猜类型，要从方法声明和调用指令一起读。
 
@@ -62,7 +62,7 @@ Smali 的 `p0`、`p1` 是参数视图，`v0`、`v1` 是局部寄存器视图。�
 
 对 `BigDouble` 一类数值对象尤其要谨慎：字段里出现两个 `double`，不代表调用方可以把对象拆成一个普通 `double`。对象的归一化、比较和序列化都属于它的 ABI 语义。
 
-## 第二步：沿着调用者确认语义
+## 二、确认调用语义
 
 同一个混淆方法名可能有重载，也可能被不同阶段以不同方式调用。恢复语义时，至少向上追一个调用者、向下追一个被调用者：
 
@@ -76,7 +76,7 @@ Smali 的 `p0`、`p1` 是参数视图，`v0`、`v1` 是局部寄存器视图。�
 
 如果调用者只用返回值作 `if-eqz`，它更像判定函数；如果调用者先传入资源对象和价格，再看到 `subtract`/写回，才有理由把它解释成购买动作。注释、反编译器变量名和附近的字符串都是线索，不能替代数据流。
 
-## 第三步：辨认 Kotlin 生成的桥
+## 三、辨认 Kotlin 桥
 
 Kotlin 的 `object`、默认参数和协程会产生源码中没有直接写出的类成员。一个常见的适配方式是：
 
@@ -89,13 +89,13 @@ object OrekiAutomationScheduler {
 
 `@JvmStatic` 让 Java/Smali 调用方能够看见静态入口；它解决的是“怎样调用 Kotlin 单例”，不解决“这个入口应该执行什么”。真正的兼容契约仍是生成后的所有者、方法名、参数描述符和返回类型。
 
-Android 当前调度器源码 [`OrekiAutomationScheduler.kt`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiAutomationScheduler.kt；[固定提交 1ec0c9c](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/commit/1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545)；具体文件证据留在内部核验记录） 采用 `object` 并暴露静态桥；它维护全局节拍、`beginFrame`、`allow`、`noteActed`、`noteNoop` 和 `noteFail`。因此逆向恢复不能只看“有一个 allow 函数”，还要确认调用方是否在真实动作后按结果通知调度器，避免把 no-op 或失败记成成功。
+Android 当前调度器源码 [`OrekiAutomationScheduler.kt`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiAutomationScheduler.kt；具体文件证据留在内部核验记录） 采用 `object` 并暴露静态桥；它维护全局节拍、`beginFrame`、`allow`、`noteActed`、`noteNoop` 和 `noteFail`。因此逆向恢复不能只看“有一个 allow 函数”，还要确认调用方是否在真实动作后按结果通知调度器，避免把 no-op 或失败记成成功。
 
 协程方法则要额外注意 `Continuation` 参数、返回的挂起标记和生成的内部类。看到一个看似多余的对象参数时，先回到方法描述符与调用者，不要为了让 Kotlin 签名“变得好看”而删除它。
 
-## 第四步：用固定证据排除错误绑定
+## 四、排除错误绑定
 
-项目的 3.21 绑定表（源码定位：OrekiDawson/AD-Oreki-Edition-Android@fb1299a132f134eb4fab009643ee3fc3d6c57edf/baseline/versions/3.21/bindings.json；[固定提交 fb1299a](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/commit/fb1299a132f134eb4fab009643ee3fc3d6c57edf)；具体文件证据留在内部核验记录） 与第一方类索引（源码定位：OrekiDawson/AD-Oreki-Edition-Android@fb1299a132f134eb4fab009643ee3fc3d6c57edf/docs/deobfuscation/data/first-party-3.21-index.csv；[固定提交 fb1299a](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/commit/fb1299a132f134eb4fab009643ee3fc3d6c57edf)；具体文件证据留在内部核验记录）用于验证结构事实：类描述符、父类、方法/字段数量和映射状态应与目标 APK 属于同一基线。
+项目的 3.21 绑定表（源码定位：OrekiDawson/AD-Oreki-Edition-Android@fb1299a132f134eb4fab009643ee3fc3d6c57edf/baseline/versions/3.21/bindings.json；具体文件证据留在内部核验记录） 与第一方类索引（源码定位：OrekiDawson/AD-Oreki-Edition-Android@fb1299a132f134eb4fab009643ee3fc3d6c57edf/docs/deobfuscation/data/first-party-3.21-index.csv；具体文件证据留在内部核验记录）用于验证结构事实：类描述符、父类、方法/字段数量和映射状态应与目标 APK 属于同一基线。
 
 一个短类名匹配不够。至少要交叉检查：
 

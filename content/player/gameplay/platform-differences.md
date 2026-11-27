@@ -1,6 +1,6 @@
 ---
 title: "Android 与 Web：版本和行为差异"
-description: "理解 Oreki Edition 两端的基线、同名功能差异与玩家核对版本的方法"
+description: "理解 MOD 两端的基线、同名功能差异与玩家核对版本的方法"
 tags:
   - 玩法
   - Android
@@ -10,15 +10,15 @@ aliases:
   - "/gameplay/platform-differences"
 ---
 
-Android 和 Web 都叫 Oreki Edition，却不是同一份程序。Android 以官方 3.21.0 游戏 DEX 和 Kotlin 适配层为基础，Web 则以冻结的上游网页源码和 JavaScript MOD 模块为基础；两端共享玩法目标，但不共享构建链、版本号或所有原版功能。
+Android 和 Web 都使用本 MOD 这个名称，却不是同一份程序。Android 以官方 3.21.0 游戏 DEX 和 Kotlin 适配层为基础，Web 则以冻结的上游网页源码和 JavaScript MOD 模块为基础；两端共享玩法目标，但不共享构建链、版本号或所有原版功能。
 
-## 为什么同名功能不能直接照搬
+## 同名功能差异
 
 同一个按钮可能由不同代码实现，同一个数值也可能处于不同的版本边界。例如已核对的一项差异是：Android 原版带有无限维度自动购买器，而 Web 原版没有，Web 端的相关能力由 MOD 自己补充。看到两端都有“无限维度自动化”时，不能因此推断它们使用相同的默认间隔、状态字段或重置时机。
 
 自动化也存在两种时间：Web 的游戏循环根据浏览器经过的时间和离线模拟分段推进，Android 的调度器还受到 Activity、线程和设备休眠影响。因此可以比较“合法节拍后发生了什么”，不能要求两台设备在墙上时钟的同一秒执行动作。
 
-## 玩家怎样判断自己正在使用哪一套规则
+## 识别当前规则
 
 1. 先确认平台：Android APK、Web 浏览器或原版页面。
 2. 再确认版本：APK 版本、网页发布版本或当前下载页面标识。
@@ -49,7 +49,7 @@ Android 和 Web 都叫 Oreki Edition，却不是同一份程序。Android 以官
 ## 来源与延伸
 
 - [Android 3.21.0 基线](https://github.com/OrekiDawson/AD-Oreki-Edition-Android)
-- [Oreki Edition Web](https://github.com/OrekiDawson/AD-Oreki-Edition-Web)
+- [MOD Web](https://github.com/OrekiDawson/AD-Oreki-Edition-Web)
 - 原版网页源码固定基线（源码定位：IvarK/AntimatterDimensionsSourceCode@5409e320cecef96a917cca1dfb68f1f183e499ca/；具体文件证据留在内部核验记录）
 - [双端行为一致性](/developer/architecture/parity)：面向开发者的实现与行为契约说明。
 

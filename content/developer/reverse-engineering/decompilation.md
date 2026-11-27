@@ -13,9 +13,9 @@ aliases:
 
 反编译的终点不是生成一份“看起来像 Kotlin”的文件，而是回答一个更窄、更有用的问题：旧 APK 在某个版本中究竟实现了什么行为，新代码可以依赖哪一条边界。反编译器能把字节码排成近似 Java 的形状，却不会替我们恢复被擦掉的变量名、泛型、协程语义或设计意图。因此，源码恢复必须把工具输出降格为线索，把 DEX 结构、调用路径和运行结果合成可复核的证据。
 
-## 先固定版本，再谈“原始源码”
+## 固定版本
 
-同一个短类名在不同 APK 中可能指向不同的类型；同一方法的参数也可能因重载或编译器生成代码而改变。调查开始时先记录 APK 的版本、签名摘要、使用的 DEX 文件和反编译工具版本。对 Oreki Edition 的 Android 3.21 基线，版本绑定文件（源码定位：OrekiDawson/AD-Oreki-Edition-Android@fb1299a132f134eb4fab009643ee3fc3d6c57edf/baseline/versions/3.21/bindings.json；[固定提交 fb1299a](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/commit/fb1299a132f134eb4fab009643ee3fc3d6c57edf)；具体文件证据留在内部核验记录）和第一方类索引（源码定位：OrekiDawson/AD-Oreki-Edition-Android@fb1299a132f134eb4fab009643ee3fc3d6c57edf/docs/deobfuscation/data/first-party-3.21-index.csv；[固定提交 fb1299a](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/commit/fb1299a132f134eb4fab009643ee3fc3d6c57edf)；具体文件证据留在内部核验记录）只描述该版本的外部边界，不能被当成上游源码的永久映射。
+同一个短类名在不同 APK 中可能指向不同的类型；同一方法的参数也可能因重载或编译器生成代码而改变。调查开始时先记录 APK 的版本、签名摘要、使用的 DEX 文件和反编译工具版本。对 本 MOD 的 Android 3.21 基线，版本绑定文件（源码定位：OrekiDawson/AD-Oreki-Edition-Android@fb1299a132f134eb4fab009643ee3fc3d6c57edf/baseline/versions/3.21/bindings.json；具体文件证据留在内部核验记录）和第一方类索引（源码定位：OrekiDawson/AD-Oreki-Edition-Android@fb1299a132f134eb4fab009643ee3fc3d6c57edf/docs/deobfuscation/data/first-party-3.21-index.csv；具体文件证据留在内部核验记录）只描述该版本的外部边界，不能被当成上游源码的永久映射。
 
 这一步看似保守，却能避免最昂贵的误判：把新版本的结果套回旧版本，随后在 Kotlin 中“修正”一个根本不存在于当前产物的 API。版本信息应与调查笔记和恢复后的测试样本一起保存，而不是只写在文章标题里。
 
@@ -23,7 +23,7 @@ aliases:
 
 本文把结论分成三层：DEX、Smali 和描述符直接支持的结构事实；由控制流与调用点支持的行为解释；以及在指定 APK 中实际运行测试确认的工程契约。上文链接的绑定文件和类索引只核对 Android 3.21 的静态映射，不能证明其他版本相同；本文没有把静态阅读当成运行验证，也不把尚未执行的测试写成已通过。
 
-## DEX、Smali 与反编译器各自告诉你什么
+## 反编译工具
 
 DEX 保存类、字段、方法、类型描述符和 Dalvik 字节码。Smali 是更接近这些结构的文本表示，适合检查寄存器、指令和分支；反编译器则把同一结构重新组织成 Java/Kotlin 风格，适合快速浏览控制流。三者不是三个独立的事实源：反编译结果始终可以回到 Smali 和 DEX 验证，尤其要警惕以下情况：
 
@@ -56,7 +56,7 @@ DEX 保存类、字段、方法、类型描述符和 Dalvik 字节码。Smali �
 
 恢复记录应区分三种结论：DEX 中直接可见的结构事实、由控制流和调用点支持的行为解释、已经由运行测试确认的工程契约。前两层不能冒充第三层；一次成功的本地调用也不能自动证明下一版 APK 兼容。
 
-## 为什么新代码要经过 Kotlin 适配层
+## Kotlin 适配层
 
 把混淆类直接散落在业务代码中，等于把一次逆向推断复制成几十个隐形依赖。版本改变时，失败点会从一个解析入口扩散到购买逻辑、UI 和存档处理；如果失败发生在主循环中，玩家看到的可能只是“数字不再增长”。
 
@@ -93,5 +93,5 @@ DEX 保存类、字段、方法、类型描述符和 Dalvik 字节码。Smali �
 
 - [Android 开源项目：DEX 文件格式](https://source.android.com/docs/core/runtime/dex-format)：DEX 结构与索引表的官方说明。
 - [Android 开源项目：Dalvik 字节码](https://source.android.com/docs/core/runtime/dalvik-bytecode)：寄存器、指令和调用约定。
-- [Android 开源项目：ART 与 Dalvik](https://source.android.com/docs/core/runtime)：Android 运行时及字节码执行背景；2026-11-27 核对 HTTP 200，页面标注最后更新为 2026-10-09 UTC。
+- [Android 开源项目：ART 与 Dalvik](https://source.android.com/docs/core/runtime)：Android 运行时及字节码执行背景，页面标注最后更新为 2026-10-09 UTC。
 - [Android 逆向资料目录](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/tree/fb1299a132f134eb4fab009643ee3fc3d6c57edf/docs/deobfuscation)：本项目固定版本的索引、绑定与调查资料；它们不是可直接编译的上游源码。

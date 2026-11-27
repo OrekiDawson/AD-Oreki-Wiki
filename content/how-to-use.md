@@ -8,7 +8,7 @@ aliases:
 ---
 
 
-本站是《反物质维度》Oreki Edition MOD 的**中文技术百科**，主要供人阅读，同时提供结构化索引帮助检索。本条目说明不同读者该从哪里开始、怎样核对一条结论，以及怎样提交修改。
+本站是《反物质维度》本 MOD 的**中文技术百科**，主要供人阅读，同时提供结构化索引帮助检索。本条目说明不同读者该从哪里开始、怎样核对一条结论，以及怎样提交修改。
 
 ## 按目标选择入口
 
@@ -57,4 +57,4 @@ aliases:
 
 ## 相关条目
 
-[入门指南](/player/getting-started/) · [反物质维度MOD Wiki:知识库规则](/wiki-rules) · [来源索引](/developer/references/source-index)
+[入门指南](/player/getting-started/) · [反物质维度 MOD Wiki:知识库规则](/wiki-rules) · [来源索引](/developer/references/source-index)

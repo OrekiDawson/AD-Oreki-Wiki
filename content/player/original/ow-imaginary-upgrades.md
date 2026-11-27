@@ -1,5 +1,5 @@
 ---
-title: "虚幻升级"
+title: "原版:虚幻升级"
 description: "原版 Wiki《Imaginary Upgrades》条目的简体中文翻译：虚幻机器、10 项可重复与 15 项一次性虚幻升级的解锁条件与效果"
 tags:
   - 原版Wiki翻译
@@ -18,7 +18,7 @@ aliases:
 
 **虚幻升级（Imaginary Upgrades）**使用**虚幻机器（Imaginary Machines，iM）**购买。它和[现实升级](/player/original/ow-reality-upgrades)很像：一次性升级要先满足条件才能买，但门槛和效果更离奇，其中几项直接决定了后两位天神能不能见到。
 
-虚幻升级在玩家开始获得虚幻机器时解锁。一次现实在不设 RM 上限时能取得至少 e1,000 [现实机器](/player/original/ow-reality)时，现实机器会停在 e1,000，其余产出转为虚幻机器；在原版规则下，这大致对应最高 2.15e1,337,333 永恒点数。一共 10 项可重复、15 项一次性；第一行可重复升级专门强化现实层的可重复升级。
+虚幻升级在玩家开始获得虚幻机器时解锁。一次现实在不设 RM 上限时能取得至少 e1,000  [现实机器](/player/original/ow-reality)时，现实机器会停在 e1,000，其余产出转为虚幻机器；在原版规则下，这大致对应最高 2.15e1,337,333 永恒点数。一共 10 项可重复、15 项一次性；第一行可重复升级专门强化现实层的可重复升级。
 
 ## 虚幻机器
 
@@ -92,12 +92,12 @@ $$\max\left(\log_{10}(RM_{uncapped})-1000,0\right)^2
 
 ## 来源与许可
 
-- 原文：[Imaginary Upgrades](https://antimatterdimensions.wiki.gg/index.php?title=Imaginary_Upgrades&oldid=3358)（修订 ID 3358；抓取于 2026-11-15）
+- 原文：[Imaginary Upgrades](https://antimatterdimensions.wiki.gg/index.php?title=Imaginary_Upgrades&oldid=3358)（修订 ID 3358）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Imaginary_Upgrades&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为简体中文翻译（改编），已修改：翻译正文与全部表格、按游戏内简体中文统一为“虚幻机器/虚幻升级”、依据官方源码修正虚幻机器上限公式与状态、界面图与信息框未转载；本页按相同许可共享。
 - 原文图片未转载：原页含桌面/移动界面图（Reality-imaginaryupgrades-interface--darktheme-desktop.png、-mobile.webp、buttonstates--darktheme-desktop.png）与现实按钮图，此处仅保留文字说明。
 - 原文中的动态占位符（如解锁条件里的 {current value}）是游戏实时显示的数值，译文保留占位写法。
-- 源码核对：虚幻机器上限公式（源码定位：OrekiDawson/AD-Oreki-Edition-Web@91d5bed01509cd730a3158075c9b05c19a7a3260/src/core/machines.js#L108；[固定提交 91d5bed](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/commit/91d5bed01509cd730a3158075c9b05c19a7a3260)；具体文件证据留在内部核验记录）（提交 `91d5bed01509cd730a3158075c9b05c19a7a3260`，2026-11-24 核对）。
+- 源码核对：虚幻机器上限公式（源码定位：OrekiDawson/AD-Oreki-Edition-Web@91d5bed01509cd730a3158075c9b05c19a7a3260/src/core/machines.js#L108；具体文件证据留在内部核验记录）（提交 `91d5bed01509cd730a3158075c9b05c19a7a3260`，2026-11-24 核对）。
 
 ## 相关条目
 

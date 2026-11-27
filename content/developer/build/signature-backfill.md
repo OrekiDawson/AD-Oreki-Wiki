@@ -1,5 +1,5 @@
 ---
-title: "DEX 泛型签名回填：让 Gson 看见存档里的真实类型"
+title: "DEX 签名回填"
 description: "解释 DEX 注解在转换链中丢失后为何会破坏 Gson 存档，以及如何在 D8 之前恢复并验证泛型 Signature"
 tags:
   - DEX
@@ -33,7 +33,7 @@ Java 的字段描述符会把 `List<DarkMatterDimensionState>` 擦除成普通�
 
 项目中的 `scripts/agp/sig_backfill.py` 负责这一类元数据处理，`docs/AGP_SIGNATURE_BACKFILL.md` 记录了它接入 AGP 完整游戏链的背景和边界。脚本的价值在于把回填变成可重复的构建步骤，而不是把一次手工修 JAR 当作永久解决方案。
 
-## 如何验证，而不是只看编译成功
+## 验证签名回填
 
 编译成功只能证明 Java/Kotlin 语法和类引用成立，不能证明存档类型恢复。建议按三个层次验证：
 
@@ -52,7 +52,7 @@ Java 的字段描述符会把 `List<DarkMatterDimensionState>` 擦除成普通�
 
 ## 适用边界
 
-回填只解决“转换链丢失泛型元数据”这一类问题。它不能修复字段名被 R8 改写、类本身 ABI 不兼容、JSON schema 已经改变、APK 证书不匹配或业务代码错误。若错误发生在安装升级，先看 [APK 签名与升级兼容](/developer/build/apk-signing)；若错误发生在状态结构迁移，继续看[存档兼容与自动保存](/player/gameplay/saves)和[存档兼容排查](/developer/troubleshooting/save-compatibility)。
+回填只解决“转换链丢失泛型元数据”这一类问题。它不能修复字段名被 R8 改写、类本身 ABI 不兼容、JSON schema 已经改变、APK 证书不匹配或业务代码错误。若错误发生在安装升级，先看  [APK 签名与升级兼容](/developer/build/apk-signing)；若错误发生在状态结构迁移，继续看[存档兼容与自动保存](/player/gameplay/saves)和[存档兼容排查](/developer/troubleshooting/save-compatibility)。
 
 ## 参考资料
 

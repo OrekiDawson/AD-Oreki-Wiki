@@ -1,5 +1,5 @@
 ---
-title: "存档兼容排查：先辨认格式，再追踪迁移"
+title: "存档兼容排查"
 description: "从编码边界、字段迁移、备份槽位和运行时状态入手，诊断读档失败与静默重置"
 tags:
   - 排查
@@ -10,7 +10,7 @@ aliases:
 
 “文件能打开”不是“存档兼容”。存档要经过编码、解码、对象校验、字段迁移、默认值合并和游戏状态重建；其中任何一层出错，最终都可能只表现为资源变少、页面回到早期阶段，甚至像新档一样安静地出现。排查的第一步不是手改 JSON，而是确认这份文件属于哪个运行时、哪一种编码和哪一代字段结构。
 
-## Android 与 Web 不是同一种文件
+## 平台文件差异
 
 Android 测试样本的核心是 `files/player.json` 原文。仓内 `tools/savecodec-rs` 记录的文本格式以 `AntimatterDimensionsAndroidSaveFormat` 开头，载荷经过替换规则、Base64 和 gzip；工具还设置了 32 MiB 输入与 64 MiB 解压上限。它是 Android 端的编解码边界，不因为里面也出现 `player` 字段就自动等于 Web 导出文本。
 
@@ -35,7 +35,7 @@ Web 的 `GameStorage.load()` 先取出本地存储值并解码；`loadRoot()` �
 
 Web 还要检查 `canSave()`：选择符文、模拟进度或游戏结束状态可能暂时禁止保存；`save()` 写入的是带 `current` 和 `saves` 的根对象，备份则使用独立的 `backupSave-*` 与备份时间键。文件存在不代表它是最近一次有效保存。
 
-## 用样本验证，而不是用想象改文件
+## 样本验证
 
 仓内 `savestates/manifest.json` 为测试夹具记录了路径、大小、SHA-256 和部分阶段字段；`late/invalid/` 中的损坏样本明确标为负向夹具。它们适合验证“错误是否被识别”和“合法阶段是否保留”，不适合伪造玩家进度。测试时应先用新档建立基线，再导入一个固定样本，读回关键字段，重启后再次读取；每一步都保留输入哈希和输出差异。
 
@@ -47,9 +47,9 @@ Rust `savecodec` 适合检查 Android 编码层，Web 的 `serializer.js` 和迁
 
 ## 参考资料
 
-- Android 当前仓库的 `savestates/README.md`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@fb1299a132f134eb4fab009643ee3fc3d6c57edf/savestates/README.md；[固定提交 fb1299a](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/commit/fb1299a132f134eb4fab009643ee3fc3d6c57edf)；具体文件证据留在内部核验记录）、`manifest.json`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@fb1299a132f134eb4fab009643ee3fc3d6c57edf/savestates/manifest.json；[固定提交 fb1299a](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/commit/fb1299a132f134eb4fab009643ee3fc3d6c57edf)；具体文件证据留在内部核验记录） 与 `savecodec-rs/README.md`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@fb1299a132f134eb4fab009643ee3fc3d6c57edf/tools/savecodec-rs/README.md；[固定提交 fb1299a](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/commit/fb1299a132f134eb4fab009643ee3fc3d6c57edf)；具体文件证据留在内部核验记录）。
-- Web 当前基线 [`e1c93caa`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/tree/e1c93caa758de6c39cf814582123d4a35319eb25) 中的 `src/core/storage/storage.js`、`serializer.js` 与 `migrations.js`。
-- [MDN：Web Storage API](https://developer.mozilla.org/docs/Web/API/Web_Storage_API) 与 [Android：应用数据和文件](https://developer.android.com/training/data-storage/app-specific)。
+- Android 当前仓库的 `savestates/README.md`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@fb1299a132f134eb4fab009643ee3fc3d6c57edf/savestates/README.md；具体文件证据留在内部核验记录）、`manifest.json`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@fb1299a132f134eb4fab009643ee3fc3d6c57edf/savestates/manifest.json；具体文件证据留在内部核验记录） 与 `savecodec-rs/README.md`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@fb1299a132f134eb4fab009643ee3fc3d6c57edf/tools/savecodec-rs/README.md；具体文件证据留在内部核验记录）。
+- Web 当前基线  [`e1c93caa`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/tree/e1c93caa758de6c39cf814582123d4a35319eb25)  中的 `src/core/storage/storage.js`、`serializer.js` 与 `migrations.js`。
+- [MDN：Web Storage API](https://developer.mozilla.org/docs/Web/API/Web_Storage_API)  与  [Android：应用数据和文件](https://developer.android.com/training/data-storage/app-specific)。
 
 ## 相关条目
 

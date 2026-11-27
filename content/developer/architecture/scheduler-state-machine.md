@@ -1,5 +1,5 @@
 ---
-title: "调度器状态机：购买决策、合法重置与进度死锁"
+title: "调度器状态机"
 description: "从 Android 与 Web 源码理解自动化如何选择动作、确认结果，并避免在重置后陷入无效循环"
 tags:
   - 架构
@@ -12,7 +12,7 @@ tags:
 
 本文把 Android 和 Web 的自动化实现抽象成一个可读、可验证的状态机。重点不是某个轮次修过什么，而是回答三个开发问题：一次购买决策经过哪些门；重置怎样保持合法；如何区分资源不足、调度器空转和真正的进度死锁。源码坐标固定在 Android `1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545` 与 Web `e1c93caa758de6c39cf814582123d4a35319eb25`。
 
-## 先把“自动化”拆成四种状态
+## 自动化状态
 
 不要把一个布尔值 `enabled` 当成完整的自动化状态。一个可排查的调度周期至少有四步：
 
@@ -31,9 +31,9 @@ tags:
 
 这四种结果的后续节拍不同。把 `no-op` 当成成功，会让调度器以为自己在推进；把 `blocked` 当成异常，会把正常等待误报成崩溃；把 `fail` 当成资源不足，又会掩盖 ABI 或调用链问题。
 
-## Android：一帧如何获得动作名额
+## Android 动作名额
 
-Android 的自动化入口是 `OrekiStageAuto.onAutoBuyerTick()`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiStageAuto.kt；[固定提交 1ec0c9c](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/commit/1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545)；具体文件证据留在内部核验记录）。它先开启一帧，再同步必要的游戏与界面状态，随后把受管任务交给 `OrekiAutomationScheduler`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiAutomationScheduler.kt；[固定提交 1ec0c9c](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/commit/1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545)；具体文件证据留在内部核验记录）。可以把这条链理解为：
+Android 的自动化入口是 `OrekiStageAuto.onAutoBuyerTick()`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiStageAuto.kt；具体文件证据留在内部核验记录）。它先开启一帧，再同步必要的游戏与界面状态，随后把受管任务交给 `OrekiAutomationScheduler`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiAutomationScheduler.kt；具体文件证据留在内部核验记录）。可以把这条链理解为：
 
 ```text
 onAutoBuyerTick
@@ -47,11 +47,11 @@ onAutoBuyerTick
 
 调度器的任务顺序也不是任意排序。任务 ID 列表承担了兼容性职责，新增任务应追加而不是重排旧编号；否则保存的任务配置或诊断信息可能指向另一项操作。遇到某项任务长期抢不到机会时，应查看紧急任务与全局节拍，而不是简单把所有间隔调到最小。
 
-## Web：策略先做选择，执行器再承担副作用
+## Web 策略与执行
 
-Web 的主循环在 `src/game.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@e1c93caa758de6c39cf814582123d4a35319eb25/src/game.js；[固定提交 e1c93ca](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/commit/e1c93caa758de6c39cf814582123d4a35319eb25)；具体文件证据留在内部核验记录）。它先按游戏时间运行原版生产和自动购买器，再进入 MOD 的策略与执行层。这个顺序很重要：MOD 应该在原版状态已经推进后作决定，而不是另起一条生产循环，与原版同时争夺资源。
+Web 的主循环在 `src/game.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@e1c93caa758de6c39cf814582123d4a35319eb25/src/game.js；具体文件证据留在内部核验记录）。它先按游戏时间运行原版生产和自动购买器，再进入 MOD 的策略与执行层。这个顺序很重要：MOD 应该在原版状态已经推进后作决定，而不是另起一条生产循环，与原版同时争夺资源。
 
-在 `oreki-smart-executor.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@e1c93caa758de6c39cf814582123d4a35319eb25/src/core/oreki-smart-executor.js；[固定提交 e1c93ca](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/commit/e1c93caa758de6c39cf814582123d4a35319eb25)；具体文件证据留在内部核验记录） 中，策略数据提供候选路线，执行器负责间隔、阶段门、手动让路窗口和动作结果。一个健康的职责分界是：
+在 `oreki-smart-executor.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@e1c93caa758de6c39cf814582123d4a35319eb25/src/core/oreki-smart-executor.js；具体文件证据留在内部核验记录） 中，策略数据提供候选路线，执行器负责间隔、阶段门、手动让路窗口和动作结果。一个健康的职责分界是：
 
 ```text
 策略层：当前阶段的目标是什么？
@@ -80,7 +80,7 @@ otherwise                      → fail
 
 判断购买是否成功也不能只看函数是否返回或按钮是否被调用。更可靠的成功判据是检查与动作对应的状态变化：货币减少且购买数增加，或重置次数增加且上一层资源按规则清零。没有变化的合法调用是 `no-op`，应回到下一轮重新读取，而不是推进历史标记。
 
-## 合法重置：让游戏规则完成清理
+## 合法重置
 
 重置是状态机中最容易被“快捷修复”破坏的一步。合法流程应由游戏原有入口完成：
 
@@ -89,7 +89,7 @@ otherwise                      → fail
 3. 等待原版结算清理当前资源、发放奖励并更新历史记录；
 4. 下一轮重新读取状态，再选择恢复、再积累或下一阶段动作。
 
-不要在自动化层直接把 `infinityCount`、货币或阶段字段写成目标值。这样虽然可能让页面暂时出现“已解锁”，却跳过了奖励、升级、挑战完成和存档序列化之间的约束。Android 的原版对象访问集中在 `GameApi.kt`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/GameApi.kt；[固定提交 1ec0c9c](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/commit/1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545)；具体文件证据留在内部核验记录）；Web 则应沿主循环和阶段模块调用的原版入口追踪。两端的实现名称可以不同，但“请求重置—由游戏结算—重新读状态”的边界必须相同。
+不要在自动化层直接把 `infinityCount`、货币或阶段字段写成目标值。这样虽然可能让页面暂时出现“已解锁”，却跳过了奖励、升级、挑战完成和存档序列化之间的约束。Android 的原版对象访问集中在 `GameApi.kt`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/GameApi.kt；具体文件证据留在内部核验记录）；Web 则应沿主循环和阶段模块调用的原版入口追踪。两端的实现名称可以不同，但“请求重置—由游戏结算—重新读状态”的边界必须相同。
 
 ## 进度死锁与普通等待的区别
 
@@ -105,7 +105,7 @@ otherwise                      → fail
 
 还要区分**饥饿**与**死锁**：饥饿是某个低优先级任务长期得不到动作名额，系统仍在推进；死锁是没有任何相关状态能向目标方向移动。前者应检查优先级、全局间隔和紧急任务，后者应检查状态转换图是否存在可达出口。
 
-## 一套不依赖日志数量的排查方法
+## 排查方法
 
 先为一个调度周期保存最小快照，而不是把整份存档打印出来：当前阶段、目标任务、重置历史、相关资源、自动化开关、上一次动作及其结果。然后按下面顺序缩小范围：
 

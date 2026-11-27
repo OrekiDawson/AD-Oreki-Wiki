@@ -1,5 +1,5 @@
 ---
-title: "特蕾莎"
+title: "原版:特蕾莎"
 description: "原版 Wiki《Teresa》条目的完整简体中文翻译：现实之神特蕾莎的 RM 容器、里程碑、复兴点数商店、特蕾莎的现实与引语"
 tags:
   - 原版Wiki翻译
@@ -20,11 +20,11 @@ aliases:
 >
 > 证明你的价值。
 
-特蕾莎引入的核心机制是[RM 容器灌注](#rm-容器灌注)。
+特蕾莎引入的核心机制是 [RM 容器灌注](#rm-容器灌注)。
 
 ## 档案
 
-特蕾莎，现实之神，别号「谄媚者」。买齐全部[现实升级](/player/original/ow-reality-upgrades)并取得[成就 147](https://antimatterdimensions.wiki.gg/wiki/Achievements)后，玩家才会见到她。她管两样东西：一是 RM 容器（把现实机器抽走灌注，换取 RM 乘数），二是复兴点数商店——两者都围绕现实机器与符文展开。她的[现实](#现实)要把容器灌到 1e14 RM 才开，进去之后 IP 与 EP 获取变成 $x^{0.55}$、来自符文的时间之理产出被禁用，完成条件是现实内 EP 超过 e4,000，奖励则是强化符文献祭。这个现实可以反复打，打得越好奖励越高。网页版与 Android 分别随 2022 年 12 月 17 日、2024 年 4 月 1 日的现实更新加入，Steam 与 iOS 首发即有。
+特蕾莎，现实之神，别号「谄媚者」。买齐全部[现实升级](/player/original/ow-reality-upgrades)并取得[成就 147](https://antimatterdimensions.wiki.gg/wiki/Achievements) 后，玩家才会见到她。她管两样东西：一是 RM 容器（把现实机器抽走灌注，换取 RM 乘数），二是复兴点数商店——两者都围绕现实机器与符文展开。她的[现实](#现实)要把容器灌到 1e14 RM 才开，进去之后 IP 与 EP 获取变成 $x^{0.55}$、来自符文的时间之理产出被禁用，完成条件是现实内 EP 超过 e4,000，奖励则是强化符文献祭。这个现实可以反复打，打得越好奖励越高。网页版与 Android 分别随 2022 年 12 月 17 日、2024 年 4 月 1 日的现实更新加入，Steam 与 iOS 首发即有。
 
 ## 机制
 
@@ -70,7 +70,7 @@ $$
 - 时间之理产出<sup>（来自[膨胀符文](https://antimatterdimensions.wiki.gg/wiki/Glyphs)）</sup>被禁用。
 - [无限点数](/player/original/ow-infinity)与[永恒点数](/player/original/ow-eternity)获取被开方：$p^{0.55}$。
 
-完成特蕾莎的现实的方式，是在该现实内取得超过 e4,000 [永恒点数](/player/original/ow-eternity)，完成会提供[符文献祭](https://antimatterdimensions.wiki.gg/wiki/Glyph_Sacrifice)加成。
+完成特蕾莎的现实的方式，是在该现实内取得超过 e4,000  [永恒点数](/player/original/ow-eternity)，完成会提供[符文献祭](https://antimatterdimensions.wiki.gg/wiki/Glyph_Sacrifice)加成。
 
 特蕾莎的现实可以无限次重复进入，也就是说可以反复挑战她的现实。达到新的最高[反物质](https://antimatterdimensions.wiki.gg/wiki/Antimatter)数量可以提升该现实给予的奖励。
 
@@ -118,7 +118,7 @@ $$
 - 特蕾莎的名字源自「Boo」；这是超级马力欧系列中同名角色日文名的罗马字。Boo 曾是《反物质维度》官方 Discord 服务器的版主[^cel-name-easter-egg]。
 - 在正式发布之前（更准确地说，是开发稍晚的阶段），特蕾莎曾被称作[「鹿颈长」](/player/original/ow-effarig)，也就是下一位天神。原因是两人的机制虽然未变，但名字最初被交换了顺序，鹿颈长本该是现实之神、特蕾莎本该是远古遗物之神[^cel-name-easter-egg]。
 
-[^cel-name-easter-egg]: 原文参考资料：AD 开发日志第 4 篇 <https://cyip92.github.io/site/#/ADdevlog/4>（外部链接，未转载内容）。
+[^cel-name-easter-egg]: 原文参考资料：AD 开发日志第 4 篇 <0>（外部链接，未转载内容）。
 
 ### 脚注
 
@@ -130,7 +130,7 @@ $$
 
 ## 来源与许可
 
-- 原文：[Teresa](https://antimatterdimensions.wiki.gg/index.php?title=Teresa&oldid=3370)（页面 ID `292`；修订 ID `3370`；最后编辑者 KrutarMarsons；抓取于 2026-11-15）
+- 原文：[Teresa](https://antimatterdimensions.wiki.gg/index.php?title=Teresa&oldid=3370)（页面 ID `292`；修订 ID `3370`；最后编辑者 KrutarMarsons）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Teresa&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为**简体中文翻译（改编）**，已修改：翻译正文、表格与引语，统一术语，把信息框内容改写为要点表，移除导航模板与模板结构，图片未转载；本页按相同许可共享。
 - 原文图片未转载：原页含天神动画（`Cel1-runreality-static--desktop.gif`、`Cel1-runreality-active--desktop.gif`）、导航图（`Cel1-navigation-complete--desktop.png`）与界面截图（`Cel1-interface--darktheme-desktop.png`）。其图注含义为：「身处特蕾莎的现实之中」「两个同心圆，颜色为群青色，中间由一道笔画相连，正中是特蕾莎的符号——黑色叠于另一圆之上」「特蕾莎的完整界面；最高反物质所在现实的符文组合记录在特蕾莎的现实界面中」。请到原页查看图片。

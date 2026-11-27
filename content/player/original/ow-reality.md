@@ -1,5 +1,5 @@
 ---
-title: "现实"
+title: "原版:现实"
 description: "原版 Wiki《Reality》条目的简体中文翻译：现实怎么解锁、重置什么、现实机器公式与符文等级怎么算"
 tags:
   - 原版Wiki翻译
@@ -16,7 +16,7 @@ aliases:
   - "/original/ow-reality"
 ---
 
-现实是游戏第三个、也是最后一个主要威望层。买下最后一项[时间研究](/player/original/ow-time-studies)「解锁现实」后开启；这项研究要求已购买第 8 时间维度、本次现实达到 e4,000 [永恒点数](/player/original/ow-eternity)，并完成前 13 行[成就](https://antimatterdimensions.wiki.gg/wiki/Achievements)。取得资格后，每执行一次新现实，此前攒下的大部分进度都会归零，换来现实机器、一枚符文和一个复兴点数。
+现实是游戏第三个、也是最后一个主要威望层。买下最后一项[时间研究](/player/original/ow-time-studies)「解锁现实」后开启；这项研究要求已购买第 8 时间维度、本次现实达到 e4,000  [永恒点数](/player/original/ow-eternity)，并完成前 13 行[成就](https://antimatterdimensions.wiki.gg/wiki/Achievements)。取得资格后，每执行一次新现实，此前攒下的大部分进度都会归零，换来现实机器、一枚符文和一个复兴点数。
 
 第一次完成现实重置时，游戏同时开放[符文](https://antimatterdimensions.wiki.gg/wiki/Glyphs)、[现实升级](/player/original/ow-reality-upgrades)与复兴；[黑洞](/player/original/ow-black-hole)和自动机也会出现，但要另外满足条件才能完整使用。买下「解锁现实」研究后，玩家可以先看到现实页签和它的前三个子页签；黑洞与自动机页签要等第一次现实结算后才亮起。
 
@@ -77,11 +77,11 @@ aliases:
 
 - 「Reality」这个名字可能来自《反物质维度》官方 Discord 的一个高级身份组「Reality Dimension」。该身份组 2017 年 12 月 14 日就建好了，比现实更新及其内容公布早了整整一年多。
 - 三个威望层里，现实的唯一主要货币不以「Points」结尾。
-- 现实的解锁条件也是三层中唯一不是 1.80e308 [反物质](/player/original/ow-antimatter-dimensions)或[无限点数](/player/original/ow-infinity)的那个。
+- 现实的解锁条件也是三层中唯一不是 1.80e308  [反物质](/player/original/ow-antimatter-dimensions)或[无限点数](/player/original/ow-infinity)的那个。
 
 ## 来源与许可
 
-- 原文：[Reality](https://antimatterdimensions.wiki.gg/index.php?title=Reality&oldid=3235)（修订 ID 3235；最后编辑者 KrutarMarsons；首次抓取于 2026-11-15；本批于 2026-11-26 复核，修订 ID 未变）
+- 原文：[Reality](https://antimatterdimensions.wiki.gg/index.php?title=Reality&oldid=3235)（修订 ID 3235；最后编辑者 KrutarMarsons）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Reality&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为简体中文翻译（改编），已修改：翻译正文与表格、统一术语、移除导航模板与信息框及缩略图、图片未转载；另补充依据官方源码核对的现实解锁前置与虚幻机器边界；本页按相同许可共享。
 - 译者注：原文把符文、现实升级、复兴、黑洞与自动机作为子模板整页嵌入；这里只保留主线正文与入口说明，子系统的完整内容留给各自条目。

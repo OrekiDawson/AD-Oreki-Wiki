@@ -1,5 +1,5 @@
 ---
-title: "超大数值：从尾数与指数到跨端一致性"
+title: "数值模型"
 description: "解释反物质维度为何不能依赖普通浮点数，以及 Web Decimal 与 Android BigDouble 如何表示、计算和验证超大数值"
 tags:
   - 架构
@@ -12,7 +12,7 @@ tags:
 
 因此游戏把大数拆成两个更容易控制的部分：**尾数**和**指数**。这不是为了让数字看起来更长，而是把“数量级”和“数量级以内的比例”分开保存，使比较、乘除和显示都能在远超普通浮点范围的区间工作。
 
-## 为什么不能直接使用普通浮点数
+## 普通浮点数的局限
 
 IEEE 754 双精度浮点数的指数范围和有效位数都有限。它适合普通业务金额，却不适合一个会把资源推到 $e^{100000}$ 以上的放置游戏：
 
@@ -25,9 +25,9 @@ Web 原版在普通数字达到上限后使用 `break_infinity.js` 的 `Decimal`
 
 ## 两端的实际表示
 
-### Web：`Decimal` 的规范化尾数与指数
+### Web：`Decimal` 表示
 
-Web 的 `modules/break_infinity.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/modules/break_infinity.js；[固定提交 b28b231](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/commit/b28b231efa5b694ce1da8a1e508cfc3ecc099344)；具体文件证据留在内部核验记录） 在构造 `Decimal` 时维护 `mantissa` 与 `exponent`。规范化后的值可以近似理解为：
+Web 的 `modules/break_infinity.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/modules/break_infinity.js；具体文件证据留在内部核验记录） 在构造 `Decimal` 时维护 `mantissa` 与 `exponent`。规范化后的值可以近似理解为：
 
 ```text
 value = mantissa × 10^exponent
@@ -36,13 +36,13 @@ value = mantissa × 10^exponent
 
 零、负数、`NaN` 和无穷大需要单独处理。源码还设置了普通数字指数范围、最大指数和有效位数等边界；这些常量不是“显示格式”，而是运算实现的一部分。
 
-游戏的货币层在 `src/core/currency.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/core/currency.js；[固定提交 b28b231](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/commit/b28b231efa5b694ce1da8a1e508cfc3ecc099344)；具体文件证据留在内部核验记录） 中通过 `DecimalCurrency` 暴露 `mantissa`、`exponent` 和 Decimal 运算对象。上层购买、阈值和生产代码应使用 `plus`、`times`、`gte`、`log10` 等 Decimal 操作，而不是把 `.toNumber()` 后再计算。
+游戏的货币层在 `src/core/currency.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/core/currency.js；具体文件证据留在内部核验记录） 中通过 `DecimalCurrency` 暴露 `mantissa`、`exponent` 和 Decimal 运算对象。上层购买、阈值和生产代码应使用 `plus`、`times`、`gte`、`log10` 等 Decimal 操作，而不是把 `.toNumber()` 后再计算。
 
 ### Android：宿主 DEX 的 `BigDouble`
 
-Android 3.21 基线的 `BigDouble.smali`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545/reports/r50/apk_a13/smali/kajfosz/antimatterdimensions/BigDouble.smali；[固定提交 1ec0c9c](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/commit/1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545)；具体文件证据留在内部核验记录） 明确声明了 `mantissa:D` 与 `exponent:D` 两个实例字段，并保留 `Comparable<BigDouble>` 与 `Serializable` 的类型信息。它还包含最大指数、最小指数、归一化容差和最大有效位数等常量。
+Android 3.21 基线的 `BigDouble.smali`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545/reports/r50/apk_a13/smali/kajfosz/antimatterdimensions/BigDouble.smali；具体文件证据留在内部核验记录） 明确声明了 `mantissa:D` 与 `exponent:D` 两个实例字段，并保留 `Comparable<BigDouble>` 与 `Serializable` 的类型信息。它还包含最大指数、最小指数、归一化容差和最大有效位数等常量。
 
-这给源码恢复一个重要提示：反编译器显示两个 `double` 字段，并不意味着游戏逻辑可以把整个对象替换成一个 `double`。比较、归一化、序列化和可变性都属于 `BigDouble` 的语义。Android Kotlin 适配层应通过 [DEX 与 ABI](/developer/reverse-engineering/dex-abi) 记录的类名、描述符和调用边界使用宿主对象，而不是复制一套“看起来相似”的数字类。
+这给源码恢复一个重要提示：反编译器显示两个 `double` 字段，并不意味着游戏逻辑可以把整个对象替换成一个 `double`。比较、归一化、序列化和可变性都属于 `BigDouble` 的语义。Android Kotlin 适配层应通过  [DEX 与 ABI](/developer/reverse-engineering/dex-abi)  记录的类名、描述符和调用边界使用宿主对象，而不是复制一套“看起来相似”的数字类。
 
 ## 运算为什么要先看指数
 
@@ -93,7 +93,7 @@ Web 的 `Decimal` 与 Android 的 `BigDouble` 都能表达“尾数 × 十的指
 
 如果显示都为 $e^{308}$ 但只有一端解锁，优先比较阈值判断前的指数、尾数和舍入；如果数值显示不同但阈值、结算和读回值一致，问题可能只是 notation 层，而不是玩法分叉。
 
-## 为什么“大数错误”经常伪装成玩法错误
+## 大数错误
 
 一个购买按钮不出现，未必是阶段门禁写错；它可能收到一个被 `toNumber()` 截断的资源值。一次现实结算没有发生，也未必是自动化调度器停了；收益比较可能在转换为普通数字时变成 `Infinity`、`0` 或失去精度。读档后资源回到默认值，则可能是序列化器把大数对象当普通 JSON 数字处理。
 
@@ -121,7 +121,7 @@ Web 的 `Decimal` 与 Android 的 `BigDouble` 都能表达“尾数 × 十的指
 
 ### 跨端与存档往返
 
-用同一组 `(mantissa, exponent)` 或等价输入分别交给 Web 与 Android，比较数量级、阈值结果和序列化往返。再把这些值放进合法阶段存档，执行读取、修改、保存、重启四步；“解析成功”不能替代“数值与阶段仍正确”。Web 仓库已有 `validate_number_currency.mjs`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/scripts/validate_number_currency.mjs；[固定提交 b28b231](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/commit/b28b231efa5b694ce1da8a1e508cfc3ecc099344)；具体文件证据留在内部核验记录） 这类数值 API 检查入口，可作为新增回归测试的落点。
+用同一组 `(mantissa, exponent)` 或等价输入分别交给 Web 与 Android，比较数量级、阈值结果和序列化往返。再把这些值放进合法阶段存档，执行读取、修改、保存、重启四步；“解析成功”不能替代“数值与阶段仍正确”。Web 仓库已有 `validate_number_currency.mjs`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/scripts/validate_number_currency.mjs；具体文件证据留在内部核验记录） 这类数值 API 检查入口，可作为新增回归测试的落点。
 
 ## 一条工程判断
 

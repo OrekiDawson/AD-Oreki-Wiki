@@ -1,5 +1,5 @@
 ---
-title: "构建可追溯性：让 APK 对得上源码与输入"
+title: "构建溯源"
 description: "理解构建输入指纹、私有资源摘要和 APK provenance 如何把一个交付产物绑定回确定的源码"
 tags:
   - 构建
@@ -11,9 +11,9 @@ aliases:
 
 一个 APK 的文件名可以随意复制，构建证据不能。开发者真正需要回答的是：这份 APK 用的是哪一次源码、哪一份 Web 输入、哪套构建工具，以及它是否就是后来验签和发布的那一份文件。
 
-Oreki Edition 的构建链把这个问题拆成两件事：先为会影响 APK 的输入生成指纹，再把指纹、来源提交和产物摘要写入 provenance。这样，发布故障不必从一个模糊的“构建成功”重新猜起，而可以沿着同一条证据链回到具体输入。
+本 MOD 的构建链把这个问题拆成两件事：先为会影响 APK 的输入生成指纹，再把指纹、来源提交和产物摘要写入 provenance。这样，发布故障不必从一个模糊的“构建成功”重新猜起，而可以沿着同一条证据链回到具体输入。
 
-## “同一个提交”为什么还不够
+## 提交与产物
 
 源码提交只描述 Git 能看到的内容。完整游戏构建还依赖一些不进入公开仓库的输入，例如官方解码树、游戏 JAR、Web 策略文件和构建工具。Android 工程的 `app/build.gradle.kts` 会从 `local.properties` 解析完整游戏输入目录，并把生成的 Kotlin、资源、Manifest、assets 和 JNI 库接入 `main` source set；这些目录缺失时，提交本身并不能重现完整 APK。
 
@@ -35,7 +35,7 @@ Android 仓库的 `scripts/release_budget.py` 只把可能改变 APK 的文件�
 
 这一步有两个作用。第一，它能识别“源码没变，但工具变了”的重建；第二，它能拒绝把一次无输入变化的重复构建冒充为新的候选。指纹不是安全签名，也不是对 APK 内容的替代，它只是回答“构建使用了哪些输入”。最终文件仍需单独计算 APK 的 SHA-256。
 
-## 私有输入也要有公开可核对的摘要
+## 私有输入摘要
 
 候选工作流不会把完整游戏资源提交到公开仓库。它从受保护的 HTTPS 地址下载构建资源包，先检查 URL、访问令牌和预置 SHA-256，再限制压缩包只能展开到允许的目录。工作流还会逐项检查游戏 JAR、官方基线、解码 split 和 Web 单源 JSON 是否存在。
 
@@ -50,7 +50,7 @@ Android 仓库的 `scripts/release_budget.py` 只把可能改变 APK 的文件�
 
 缺少私有输入时，正确结果是构建在输入检查处停止，而不是生成一个删减内容的“成功 APK”。这条边界尤其重要：可安装的空壳包只能证明打包工具工作，不能证明完整游戏已经被构建。
 
-## provenance 连接了哪些事实
+## provenance 事实
 
 候选工作流在 APK 生成并通过独立验签后，写入候选目录的 provenance。它把源码 SHA、Web 引用、构建运行编号、游戏 JAR 和资源包摘要、版本身份、证书摘要以及验证报告放在同一个候选上下文中。
 
@@ -81,7 +81,7 @@ Web 源码 SHA ─────┼─> 构建输入与候选 Run ─> APK SHA-256
 
 ### 安装或升级失败
 
-产物可追溯不等于产物可升级。确认 APK 摘要一致后，再比较包名、`versionCode`、证书指纹和签名方案；相关的 Android 安装边界见[APK 签名与升级兼容](/developer/build/apk-signing)。
+产物可追溯不等于产物可升级。确认 APK 摘要一致后，再比较包名、`versionCode`、证书指纹和签名方案；相关的 Android 安装边界见 [APK 签名与升级兼容](/developer/build/apk-signing)。
 
 ## 开发者应保留什么
 
@@ -91,10 +91,10 @@ Web 源码 SHA ─────┼─> 构建输入与候选 Run ─> APK SHA-256
 
 ## 参考资料
 
-* Android 构建脚本（固定提交）（源码定位：OrekiDawson/AD-Oreki-Edition-Android@b0e0881b5eadabf40e2eb35ef8547e5aa56d40ae/app/build.gradle.kts；[固定提交 b0e0881](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/commit/b0e0881b5eadabf40e2eb35ef8547e5aa56d40ae)；具体文件证据留在内部核验记录）
-* 发布门禁策略（固定提交）（源码定位：OrekiDawson/AD-Oreki-Edition-Android@b0e0881b5eadabf40e2eb35ef8547e5aa56d40ae/scripts/release-gate-policy.json；[固定提交 b0e0881](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/commit/b0e0881b5eadabf40e2eb35ef8547e5aa56d40ae)；具体文件证据留在内部核验记录）
-* 构建预算与输入指纹脚本（固定提交）（源码定位：OrekiDawson/AD-Oreki-Edition-Android@b0e0881b5eadabf40e2eb35ef8547e5aa56d40ae/scripts/release_budget.py；[固定提交 b0e0881](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/commit/b0e0881b5eadabf40e2eb35ef8547e5aa56d40ae)；具体文件证据留在内部核验记录）
-* 候选构建工作流（固定提交 1ec0c9ca）（源码定位：OrekiDawson/AD-Oreki-Edition-Android@1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545/.github/workflows/candidate-unified.yml；[固定提交 1ec0c9c](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/commit/1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545)；具体文件证据留在内部核验记录）
+* Android 构建脚本（固定提交）（源码定位：OrekiDawson/AD-Oreki-Edition-Android@b0e0881b5eadabf40e2eb35ef8547e5aa56d40ae/app/build.gradle.kts；具体文件证据留在内部核验记录）
+* 发布门禁策略（固定提交）（源码定位：OrekiDawson/AD-Oreki-Edition-Android@b0e0881b5eadabf40e2eb35ef8547e5aa56d40ae/scripts/release-gate-policy.json；具体文件证据留在内部核验记录）
+* 构建预算与输入指纹脚本（固定提交）（源码定位：OrekiDawson/AD-Oreki-Edition-Android@b0e0881b5eadabf40e2eb35ef8547e5aa56d40ae/scripts/release_budget.py；具体文件证据留在内部核验记录）
+* 候选构建工作流（固定提交 1ec0c9ca）（源码定位：OrekiDawson/AD-Oreki-Edition-Android@1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545/.github/workflows/candidate-unified.yml；具体文件证据留在内部核验记录）
 
 ## 相关条目
 

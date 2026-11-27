@@ -1,5 +1,5 @@
 ---
-title: "无限挑战"
+title: "原版:无限挑战"
 description: "原版 Wiki《Infinity Challenges》条目的简体中文翻译：8 个无限挑战的解锁门槛、目标、限制、奖励与快捷重置"
 tags:
   - 原版Wiki翻译
@@ -35,7 +35,7 @@ aliases:
 | 5 | e18,000 | e16,500 | 购买第 1–4 层反物质维度会抬高所有更便宜的 AD 成本；购买第 5–8 层会抬高所有更贵的 AD 成本 | 所有星系效果 +10%，且星系与维度提升的需求各降 1 | 是 |  |
 | 6 | e22,500 | 2e22,222 | 一旦拥有至少 1 个第 2 层反物质维度，指数增长的「正物质（Matter）」会不断压低所有反物质维度乘数 | 按计数频率提供无限维度乘数 | 是 | 计数频率^0.0005 |
 | 7 | e23,000 | e10,000 | 不能购买反物质星系；维度提升的基础乘数上限提高到 ×10 | 维度提升乘数下限提高到 ×4 | 否 |  |
-| 8 | e28,000 | e27,000 | AD 产量随时间持续快速下降；购买反物质维度或计数频率升级会把产量重置回 100%，然后再次下降 | 按第 1 与第 8 层 AD 乘数给 AD 2–7 提供乘数 | 是 | 下降公式 0.8446303389034288^max(0, 毫秒−上次购买毫秒)；奖励 (AD1乘数×AD8乘数)^0.02 |
+| 8 | e28,000 | e27,000 | AD 产量随时间持续快速下降；购买反物质维度或计数频率升级会把产量重置回 100%，然后再次下降 | 按第 1 与第 8 层 AD 乘数给 AD 2–7 提供乘数 | 是 | 下降公式 0.8446303389034288^max(0, 毫秒 − 上次购买毫秒)；奖励 (AD 1 乘数 × AD 8 乘数)^0.02 |
 
 ## 相关成就
 
@@ -54,9 +54,8 @@ aliases:
 
 ## 来源与许可
 
-- 原文：[Infinity Challenges](https://antimatterdimensions.wiki.gg/index.php?title=Infinity_Challenges&oldid=3359)（修订 ID 3359；最后编辑者 KrutarMarsons；抓取于 2026-11-16T00:10:00+08:00）
-- 来源访问说明：固定修订在 2026-11-23 复核时受 Cloudflare 403 限制；修订号与正文通过相邻修订、Internet Archive 快照、当前页面及上游源码交叉核对。
-- 源码核对：infinity-challenges.js（源码定位：IvarK/AntimatterDimensionsSourceCode@5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/infinity-challenges.js；[固定提交 5409e32](https://github.com/IvarK/AntimatterDimensionsSourceCode/commit/5409e320cecef96a917cca1dfb68f1f183e499ca)；具体文件证据留在内部核验记录）、挑战配置（源码定位：IvarK/AntimatterDimensionsSourceCode@5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/secret-formula/challenges/infinity-challenges.js；[固定提交 5409e32](https://github.com/IvarK/AntimatterDimensionsSourceCode/commit/5409e320cecef96a917cca1dfb68f1f183e499ca)；具体文件证据留在内部核验记录）（固定提交 `5409e32`；核对解锁阈值、目标、奖励、下降公式与倍率）。
+- 原文：[Infinity Challenges](https://antimatterdimensions.wiki.gg/index.php?title=Infinity_Challenges&oldid=3359)（修订 ID 3359；最后编辑者 KrutarMarsons）
+- 源码核对：infinity-challenges.js（源码定位：IvarK/AntimatterDimensionsSourceCode@5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/infinity-challenges.js；具体文件证据留在内部核验记录）、挑战配置（源码定位：IvarK/AntimatterDimensionsSourceCode@5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/secret-formula/challenges/infinity-challenges.js；具体文件证据留在内部核验记录）（固定提交 `5409e32`；核对解锁阈值、目标、奖励、下降公式与倍率）。
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Infinity_Challenges&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为简体中文翻译（改编），已修改：翻译正文与表格、统一术语、公式保留原式、界面图与信息框未转载；本页按相同许可共享。
 - 原文图片未转载：原页含桌面现代/经典与移动版界面截图（Break-infinitychallenges-interface--*），此处仅保留文字说明。

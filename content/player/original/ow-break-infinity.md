@@ -1,5 +1,5 @@
 ---
-title: "打破无限"
+title: "原版:打破无限"
 description: "原版 Wiki《Break Infinity》条目的完整简体中文翻译：解锁条件、无限后价格成长、无限点数成长与升级列表"
 tags:
   - 原版Wiki翻译
@@ -79,9 +79,8 @@ aliases:
 
 ## 来源与许可
 
-- 原文：[Break Infinity](https://antimatterdimensions.wiki.gg/index.php?title=Break_Infinity&oldid=3349)（修订 ID `3349`；最后编辑者 KrutarMarsons；抓取于 2026-11-15T21:45:00+08:00）
-- 来源访问说明：固定修订在 2026-11-23 复核时受 Cloudflare 403 限制；修订号与正文通过相邻修订、Internet Archive 快照、当前页面及上游源码交叉核对。
-- 源码核对：game.js（源码定位：IvarK/AntimatterDimensionsSourceCode@5409e320cecef96a917cca1dfb68f1f183e499ca/src/game.js；[固定提交 5409e32](https://github.com/IvarK/AntimatterDimensionsSourceCode/commit/5409e320cecef96a917cca1dfb68f1f183e499ca)；具体文件证据留在内部核验记录）、break-infinity-upgrades.js（源码定位：IvarK/AntimatterDimensionsSourceCode@5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/secret-formula/infinity/break-infinity-upgrades.js；[固定提交 5409e32](https://github.com/IvarK/AntimatterDimensionsSourceCode/commit/5409e320cecef96a917cca1dfb68f1f183e499ca)；具体文件证据留在内部核验记录）（固定提交 `5409e32`；核对解锁入口、升级成本与倍率上限）。
+- 原文：[Break Infinity](https://antimatterdimensions.wiki.gg/index.php?title=Break_Infinity&oldid=3349)（修订 ID `3349`；最后编辑者 KrutarMarsons）
+- 源码核对：game.js（源码定位：IvarK/AntimatterDimensionsSourceCode@5409e320cecef96a917cca1dfb68f1f183e499ca/src/game.js；具体文件证据留在内部核验记录）、break-infinity-upgrades.js（源码定位：IvarK/AntimatterDimensionsSourceCode@5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/secret-formula/infinity/break-infinity-upgrades.js；具体文件证据留在内部核验记录）（固定提交 `5409e32`；核对解锁入口、升级成本与倍率上限）。
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Break_Infinity&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为**简体中文翻译（改编）**，已修改：翻译正文与表格、统一术语、移除导航模板与信息框、图片未转载；本页按相同许可共享。
 - 原文表格的合并表头按语义展开为普通列；所有行与数值完整保留。

@@ -1,5 +1,5 @@
 ---
-title: "教程内容管线：用一份数据驱动双端章节"
+title: "教程内容管线"
 description: "从教程 JSON、阶段派生和生成校验源码理解 Android/Web 共用内容如何保持结构一致"
 tags:
   - 架构
@@ -11,9 +11,9 @@ tags:
 
 游戏内教程最容易退化成两份互相漂移的文本：Web 改了章节，Android 仍显示旧稿；弹窗里修了一个术语，生成资产却没有更新；章节少了一个字段，界面不报错，只是悄悄少了一段内容。对读者来说，这些问题都像“教程偶尔不可信”；对开发者来说，根因是内容没有被当成有版本、有结构、有生成边界的数据产品。
 
-当前项目把教程正文集中到一份 JSON，并让 Web 与 Android 分别消费它。本文依据固定源码提交 [`b28b231efa5b694ce1da8a1e508cfc3ecc099344`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/tree/b28b231efa5b694ce1da8a1e508cfc3ecc099344)，解释这条内容管线的契约、阶段派生、生成校验和排障方法。重点是“内容怎样可靠地到达两个运行时”，不是教程 UI 怎样排版，也不是玩家应当怎样推进游戏。
+当前项目把教程正文集中到一份 JSON，并让 Web 与 Android 分别消费它。本文依据固定源码提交  [`b28b231efa5b694ce1da8a1e508cfc3ecc099344`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/tree/b28b231efa5b694ce1da8a1e508cfc3ecc099344)，解释这条内容管线的契约、阶段派生、生成校验和排障方法。重点是“内容怎样可靠地到达两个运行时”，不是教程 UI 怎样排版，也不是玩家应当怎样推进游戏。
 
-## 唯一内容源为什么必须是 JSON
+## 唯一内容源
 
 `src/core/oreki-tutorial-data.json` 是正文的单一来源。它保存 `schemaVersion`、更新时间、阶段提示、章节和附录；章节正文由若干结构化字段组成，附录则是独立的查阅材料。`src/core/oreki-tutorial.js` 导入生成后的模块并暴露这些数据，但不在 JavaScript 中再写一份章节正文。
 
@@ -27,7 +27,7 @@ JSON 正文
 
 如果渲染组件里再补一段“临时说明”，就会出现三个版本：JSON、Web 组件和 Android 资产。下一次翻译或术语修订时，没人能回答哪一份才是权威。正确的修复位置是内容源或生成器，而不是在某个按钮点击后临时替换字符串。
 
-## 章节字段是数据契约，不是随手的对象属性
+## 章节字段契约
 
 当前章节围绕十类读者信息组织：阶段目标、进入条件、具体操作、购买优先级、自动化配置、挑战攻略、关键数值、完成判据、下一步和常见卡点。字段的价值在于让工具可以检查“章节是否完整”，而不是强迫每一章写成一样的文章。
 
@@ -35,9 +35,9 @@ JSON 正文
 
 `schemaVersion` 则是结构版本，不是游戏版本。游戏升级可能只改变一个解锁数值，内容结构却保持不变；反过来，新增附录或改变字段类型，就应考虑结构版本。读取器遇到不认识的 schema 时应警告或拒绝猜测，不应把未知字段默默当成空字符串。
 
-## Web 生成模块解决了什么问题
+## Web 生成模块
 
-浏览器端源码通过 `src/core/oreki-tutorial.js` 使用 `oreki-tutorial-data.gen.js`。生成脚本 `scripts/gen_tutorial_module.mjs`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/scripts/gen_tutorial_module.mjs；[固定提交 b28b231](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/commit/b28b231efa5b694ce1da8a1e508cfc3ecc099344)；具体文件证据留在内部核验记录） 把 JSON 机械转换为 ESM 模块，生成文件顶部明确标记“自动生成，请勿手改”。
+浏览器端源码通过 `src/core/oreki-tutorial.js` 使用 `oreki-tutorial-data.gen.js`。生成脚本 `scripts/gen_tutorial_module.mjs`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/scripts/gen_tutorial_module.mjs；具体文件证据留在内部核验记录） 把 JSON 机械转换为 ESM 模块，生成文件顶部明确标记“自动生成，请勿手改”。
 
 之所以保留这个中间层，是因为项目的浏览器兼容边界不保证直接使用 JSON module import。生成器让运行时只加载普通 JavaScript 模块，同时把源文件、生成命令和校验命令写进产物注释，降低“改了 JSON 但浏览器仍拿旧模块”的风险。
 
@@ -49,7 +49,7 @@ parse(JSON) → serialize(ESM)
 
 如果生成文件里出现手工修改，下一次生成就会覆盖它；如果生成文件与 JSON 不一致，应该修复生成流程或重新生成，而不是把生成物提交成“临时正确”。
 
-## 阶段判定与内容展示必须分层
+## 阶段与展示
 
 `oreki-tutorial.js` 还负责把玩家状态派生为教程阶段快照。阶段定义分别提供 `unlocked` 与 `entered` 判据，快照把每一层标为“已进入”“条件已满足，尚未进入”或“未解锁”。这三种状态不能压成一个布尔值：玩家可能已经解锁某机制，却还没有真正完成第一次进入；更高层结算还可能清理低层当前资源。
 
@@ -64,7 +64,7 @@ parse(JSON) → serialize(ESM)
 
 不要为了修一段教程文字，往 JSON 里加入当前客户端才能理解的 View ID、DOM 选择器或 Android 资源名；那会把内容数据变成渲染代码，重新制造平台分叉。
 
-## 章节 ID 和阅读顺序是兼容性边界
+## 章节兼容性
 
 章节使用稳定 ID，而不是把数组下标当作永久身份。读取器可以通过 `findTutorialEntry(id)` 在章节和附录中查找条目；阅读位置保存的是 ID 与滚动偏移，而不是一份章节对象。这样即使章节顺序调整，旧的阅读位置仍有机会定位到同一条内容。
 
@@ -74,7 +74,7 @@ parse(JSON) → serialize(ESM)
 
 ## 校验器应该拦什么错误
 
-`scripts/validate_tutorial.mjs`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/scripts/validate_tutorial.mjs；[固定提交 b28b231](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/commit/b28b231efa5b694ce1da8a1e508cfc3ecc099344)；具体文件证据留在内部核验记录） 的价值不在于生成一串绿色数字，而在于把“内容结构错误”尽早变成失败。至少应检查：
+`scripts/validate_tutorial.mjs`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/scripts/validate_tutorial.mjs；具体文件证据留在内部核验记录） 的价值不在于生成一串绿色数字，而在于把“内容结构错误”尽早变成失败。至少应检查：
 
 - schema 版本是否是生成器支持的版本；
 - 章节是否存在、ID 是否重复或断裂；
@@ -128,7 +128,7 @@ parse(JSON) → serialize(ESM)
 
 ## 来源与相关条目
 
-- 固定源码：教程读取与阶段派生 `src/core/oreki-tutorial.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/core/oreki-tutorial.js；[固定提交 b28b231](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/commit/b28b231efa5b694ce1da8a1e508cfc3ecc099344)；具体文件证据留在内部核验记录）、唯一内容源 `src/core/oreki-tutorial-data.json`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/core/oreki-tutorial-data.json；[固定提交 b28b231](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/commit/b28b231efa5b694ce1da8a1e508cfc3ecc099344)；具体文件证据留在内部核验记录）、生成器（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/scripts/gen_tutorial_module.mjs；[固定提交 b28b231](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/commit/b28b231efa5b694ce1da8a1e508cfc3ecc099344)；具体文件证据留在内部核验记录）、结构校验器（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/scripts/validate_tutorial.mjs；[固定提交 b28b231](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/commit/b28b231efa5b694ce1da8a1e508cfc3ecc099344)；具体文件证据留在内部核验记录）。
+- 固定源码：教程读取与阶段派生 `src/core/oreki-tutorial.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/core/oreki-tutorial.js；具体文件证据留在内部核验记录）、唯一内容源 `src/core/oreki-tutorial-data.json`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/core/oreki-tutorial-data.json；具体文件证据留在内部核验记录）、生成器（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/scripts/gen_tutorial_module.mjs；具体文件证据留在内部核验记录）、结构校验器（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/scripts/validate_tutorial.mjs；具体文件证据留在内部核验记录）。
 - [Web UI 反应式更新](/developer/architecture/web-ui-reactivity)：解释组件如何消费已准备好的内容；本文聚焦内容源与生成边界。
 - [Web 端架构](/developer/architecture/web)：解释启动和主循环，不替代教程数据契约。
 - [存档兼容排查](/developer/troubleshooting/save-compatibility)：处理玩家存档迁移；教程内容数据不属于存档状态。

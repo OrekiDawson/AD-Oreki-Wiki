@@ -1,5 +1,5 @@
 ---
-title: "记数法"
+title: "原版:记数法"
 description: "原版 Wiki《Notations》条目的完整简体中文翻译：记数法列表、痛点记数法、标准/质数/字母与移动端专属记数法"
 tags:
   - 原版Wiki翻译
@@ -60,7 +60,7 @@ aliases:
 | Custom（自定义） | （玩家自建字母表） |
 | Random（随机） | （每次切换页签都会改变记数法） |
 
-## 「非痛点」记数法的工作原理
+## 非痛点记数法
 
 ### 科学、工程与对数
 
@@ -160,7 +160,7 @@ aliases:
 
 ## 来源与许可
 
-- 原文：[Notations](https://antimatterdimensions.wiki.gg/index.php?title=Notations&oldid=3133)（修订 ID `3133`；最后编辑者 SheldonLikesToBeNoob；抓取于 2026-11-15）
+- 原文：[Notations](https://antimatterdimensions.wiki.gg/index.php?title=Notations&oldid=3133)（修订 ID `3133`；最后编辑者 SheldonLikesToBeNoob）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Notations&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为**简体中文翻译（改编）**，已修改：翻译正文与表格、统一术语、保留记数法英文名称与表情符号、移除导航模板；图片未转载。
 - 说明：表情符号属于游戏内容字符，按原样保留；「ALL」记数法的缩写与标准记数法相同，原文亦如此标注。

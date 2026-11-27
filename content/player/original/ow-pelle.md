@@ -1,5 +1,5 @@
 ---
-title: "佩勒"
+title: "原版:佩勒"
 description: "原版 Wiki《Pelle》条目的完整简体中文翻译：反物质之神佩勒的末日现实、冲击、裂痕、裂痕里程碑与被毁灭现实的惩罚"
 tags:
   - 原版Wiki翻译
@@ -121,7 +121,7 @@ $$\frac{6^{6^{6^{\tfrac{DecayFactor+100}{1,000}}}}-6}{100,000}+10^{\tfrac{DecayF
 
 - 佩勒的名字是「Hevipelle」的变位词；更准确地说，是去掉前缀「Hevi-」之后剩下的部分。Hevipelle 也是更广为人知的《反物质维度》创作者[^pelle-name]。
 
-[^pelle-name]: 原文参考资料：AD 开发日志第 4 篇 <https://cyip92.github.io/site/#/ADdevlog/4>（外部链接，未转载内容）。
+[^pelle-name]: 原文参考资料：AD 开发日志第 4 篇 <0>（外部链接，未转载内容）。
 
 ### 脚注
 
@@ -133,7 +133,7 @@ $$\frac{6^{6^{6^{\tfrac{DecayFactor+100}{1,000}}}}-6}{100,000}+10^{\tfrac{DecayF
 
 ## 来源与许可
 
-- 原文：[Pelle](https://antimatterdimensions.wiki.gg/index.php?title=Pelle&oldid=3433)（页面 ID 366；修订 ID 3433；最后编辑者 KrutarMarsons；抓取于 2026-11-26）
+- 原文：[Pelle](https://antimatterdimensions.wiki.gg/index.php?title=Pelle&oldid=3433)（页面 ID 366；修订 ID 3433；最后编辑者 KrutarMarsons）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Pelle&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为**简体中文翻译（改编）**，已修改：翻译正文与全部表格，统一术语，把信息框内容改写为要点表，把佩勒的「词形变换（wordshift）」多重写法译为「A/B/C」形式并保留英文原名，把模板脚注改为页内脚注，移除导航模板与模板结构，图片未转载；本页按相同许可共享。
 - 原文图片未转载：原页含天神静态图（Cel7-runreality-static--desktop.gif）与导航图（Cel7-navigation-complete--desktop.png）；原文界面图为空。请到原页查看图片。

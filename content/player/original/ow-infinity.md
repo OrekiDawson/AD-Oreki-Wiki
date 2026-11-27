@@ -1,5 +1,5 @@
 ---
-title: "无限"
+title: "原版:无限"
 description: "原版 Wiki《Infinity》条目的简体中文翻译：大坍缩怎么触发、无限点数怎么算、无限次数有什么用"
 tags:
   - 原版Wiki翻译
@@ -36,7 +36,7 @@ aliases:
 
 $$\left\lfloor IP_{Mult}\times 10^{\frac{\log_{10}\left(AM_{\text{highest this Infinity}}\right)}{\min\left(308,~Ach_{103},~TS_{111}\right)}-0.75}\right\rfloor$$
 
-$IP_{Mult}$ 是各项无限点数倍率的乘积，$AM_{\text{highest this Infinity}}$ 是**本次无限中**达到的最高反物质；分母里的 $Ach_{103}$ 与 $TS_{111}$ 分别对应[成就 103](https://antimatterdimensions.wiki.gg/wiki/Achievements)和[时间研究 111](/player/original/ow-time-studies)，两者都拿到时取更小的那个，都还没拿到时分母就是 308。未打破无限时，整个式子退化为除以 308 的简单形态。
+$IP_{Mult}$ 是各项无限点数倍率的乘积，$AM_{\text{highest this Infinity}}$ 是**本次无限中**达到的最高反物质；分母里的 $Ach_{103}$ 与 $TS_{111}$ 分别对应[成就 103](https://antimatterdimensions.wiki.gg/wiki/Achievements) 和[时间研究 111](/player/original/ow-time-studies)，两者都拿到时取更小的那个，都还没拿到时分母就是 308。未打破无限时，整个式子退化为除以 308 的简单形态。
 
 把数字代进去，能看出几个不太直观的结果。恰好 1.80e308 反物质时，打破无限后拿到的基础无限点数约是 1.78167，而不是整数 1。反物质每多乘 1e308，无限点数就乘以 10；拿到成就 103 后，反物质每乘 1e307.8 就能让无限点数再乘 10；拿到时间研究 111 后，这个倍数降到 1e285——这也是该研究对无限点数影响格外大的原因。
 
@@ -44,18 +44,18 @@ $IP_{Mult}$ 是各项无限点数倍率的乘积，$AM_{\text{highest this Infin
 
 永恒之前，一次大坍缩只算 1 次无限，而绝大多数提高无限次数的倍率都要等到永恒甚至更后面才出现。
 
-和无限点数不同，无限次数在永恒之前几乎只是计数器：它记录你坍缩了多少次，同时决定某些[无限升级](/player/original/ow-infinity-upgrades)和[打破无限升级](/player/original/ow-break-infinity)的强度。进永恒之后，[时间研究 32](/player/original/ow-time-studies)、[成就 87](https://antimatterdimensions.wiki.gg/wiki/Achievements)之类的手段才开始堆高它。它同时也是一道门槛，例如解锁[永恒挑战 4](/player/original/ow-eternity-challenges)就要求一定的无限次数。
+和无限点数不同，无限次数在永恒之前几乎只是计数器：它记录你坍缩了多少次，同时决定某些[无限升级](/player/original/ow-infinity-upgrades)和[打破无限升级](/player/original/ow-break-infinity)的强度。进永恒之后，[时间研究 32](/player/original/ow-time-studies)、[成就 87](https://antimatterdimensions.wiki.gg/wiki/Achievements) 之类的手段才开始堆高它。它同时也是一道门槛，例如解锁[永恒挑战 4](/player/original/ow-eternity-challenges) 就要求一定的无限次数。
 
 这两个数字经常被混为一谈，但用途完全不同：无限点数是这一层的主要货币，花得到处都是；无限次数是重置次数，基本上买不了东西，只在特定条件里被点名。
 
 ## 琐事
 
-- 无限的数值是 $2^{1024}$，约 1.79769e308。这正好是 64 位 [IEEE 754 浮点数](http://en.wikipedia.org/wiki/IEEE_754#Basic_and_interchange_formats)能表示的上限，也是 JavaScript 里普通数字的最大值——游戏最初就是跑在浏览器里的。
-- 超过无限值之后，游戏改用 [Patashu 的 Break Infinity 库](https://patashu.github.io/break_infinity.js/index.html)与 `Decimal` 构造函数。带 `Decimal` 的变量不再是原始数字，而是一个对象，里面存着尾数（`mantissa`）与指数（`exponent`），游戏中大量数值都靠它扛住。
+- 无限的数值是 $2^{1024}$，约 1.79769e308。这正好是 64 位  [IEEE 754 浮点数](http://en.wikipedia.org/wiki/IEEE_754#Basic_and_interchange_formats)能表示的上限，也是 JavaScript 里普通数字的最大值——游戏最初就是跑在浏览器里的。
+- 超过无限值之后，游戏改用  [Patashu 的 Break Infinity 库](https://patashu.github.io/break_infinity.js/index.html)与 `Decimal` 构造函数。带 `Decimal` 的变量不再是原始数字，而是一个对象，里面存着尾数（`mantissa`）与指数（`exponent`），游戏中大量数值都靠它扛住。
 
 ## 来源与许可
 
-- 原文：[Infinity](https://antimatterdimensions.wiki.gg/index.php?title=Infinity&oldid=3113)（修订 ID 3113；最后编辑者 The1AndOnly6030；抓取于 2026-11-15）
+- 原文：[Infinity](https://antimatterdimensions.wiki.gg/index.php?title=Infinity&oldid=3113)（修订 ID 3113；最后编辑者 The1AndOnly6030）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Infinity&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为简体中文翻译（改编），已修改：正文按中文习惯重写、统一术语、公式与数值保留原文、导航模板与信息框未转载、图片未转载；本页按相同许可共享。
 - 译者注：原文用可折叠模板给出公式的两种等价写法，这里合并成一条，并把变量名保持英文以便与源码对照；原文中「Infintiies」的拼写错误按上下文译为「无限次数」。

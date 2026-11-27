@@ -19,7 +19,7 @@ aliases:
 
 大坍缩是无限阶段的真正入口：它不只是让一个页面亮起来，而是完成了一次可验证的重置，并把 IP、无限升级和挑战等系统接到存档上。若只是看到了“无限”相关入口，却没有完成大坍缩，就仍应按新档或大坍缩前的状态理解。
 
-## 打破无限：越过旧的数字天花板
+## 打破无限
 
 无限阶段的目标不再是第一次碰到上限，而是用 IP、无限维度和挑战奖励提高增长能力。准备工作完成后，玩家才能进入打破无限的路线，逐渐让增长越过原先的浮点数天花板。
 
@@ -54,4 +54,4 @@ aliases:
 
 如果答案彼此矛盾，先备份存档，再阅读[阶段解锁与排障](/player/gameplay/stage-gates)。阶段顺序可以帮助你定位问题，但不能替代当前游戏对条件的实际判断。
 
-原版进程资料可对照[Antimatter Dimensions Wiki（修订 3325）](https://antimatterdimensions.wiki.gg/index.php?title=Antimatter_Dimensions&oldid=3325)；上述专门页面修订号于 2026-11-26 复核，不同版本和 MOD 的解锁条件可能不同。
+原版进程资料可对照 [Antimatter Dimensions Wiki（修订 3325）](https://antimatterdimensions.wiki.gg/index.php?title=Antimatter_Dimensions&oldid=3325)；不同版本和 MOD 的解锁条件可能不同。

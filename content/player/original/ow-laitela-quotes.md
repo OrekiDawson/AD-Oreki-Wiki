@@ -1,5 +1,5 @@
 ---
-title: "莱特拉·引语"
+title: "原版:莱特拉·引语"
 description: "原版 Wiki《Laitela/Quotes》条目的完整简体中文翻译：莱特拉在各触发条件下的全部台词"
 tags:
   - 原版Wiki翻译
@@ -35,7 +35,7 @@ aliases:
 
 （引语结束）
 
-### 第一次在 30 秒内使莱特拉的现实失稳时
+### 30 秒内首次失稳
 
 > 与我之下的其他存在不同，我不需要现实。
 > 因为我只需创造它们，明知它们终将崩塌。
@@ -47,7 +47,7 @@ aliases:
 
 （引语结束）
 
-### 第二次在 30 秒内使莱特拉的现实失稳时
+### 30 秒内再次失稳
 
 > 你……似乎玩得太开心了。
 > 就像他们面对命运之前那样。
@@ -96,7 +96,7 @@ aliases:
 
 （引语结束）
 
-### 在莱特拉的现实中已有 4 个维度被禁用时
+### 4 个维度禁用
 
 > 我不明白……
 > 以前也有其他存在……以这种方式掌控维度吗？
@@ -109,7 +109,7 @@ aliases:
 
 （引语结束）
 
-### 购买虚幻升级「Existential Elimination」时
+### 购买虚幻升级
 
 > 这一切都不可能，超出我的理解……
 > 除非……这一切只是循环的一部分？
@@ -130,7 +130,7 @@ aliases:
 
 （引语结束）
 
-### 在莱特拉的现实中全部 8 个维度都被禁用时
+### 8 个维度禁用
 
 > 我好像……有什么话要说……
 > 我不确定……
@@ -143,7 +143,7 @@ aliases:
 
 ## 来源与许可
 
-- 原文：[Laitela/Quotes](https://antimatterdimensions.wiki.gg/index.php?title=Laitela%2FQuotes&oldid=2773)（页面 ID 920；修订 ID 2773；首次抓取于 2026-11-15；2026-11-17 复核抓取，修订 ID 未变）
+- 原文：[Laitela/Quotes](https://antimatterdimensions.wiki.gg/index.php?title=Laitela%2FQuotes&oldid=2773)（页面 ID 920；修订 ID 2773）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Laitela/Quotes&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为**简体中文翻译（改编）**，已修改：翻译全部引语与触发条件，把引语模板的「结束条件/换行」标记改为段落与引用块，把原站符号字体改为 Unicode 字符 ᛝ，移除导航模板与模板结构，图片未转载；本页按相同许可共享。
 - 原文图片未转载：原文该页不含图片或其它媒体，仅有文字台词。

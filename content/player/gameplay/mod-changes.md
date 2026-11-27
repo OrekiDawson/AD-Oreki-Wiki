@@ -1,6 +1,6 @@
 ---
 title: "MOD 玩法改动：数值、解锁与自动化"
-description: "集中查看 Oreki Edition 相对原版已核对的门槛缩放、玩法调整与自动化边界"
+description: "集中查看 MOD 相对原版已核对的门槛缩放、玩法调整与自动化边界"
 tags:
   - 玩法
   - MOD
@@ -9,13 +9,13 @@ aliases:
   - "/gameplay/mod-changes"
 ---
 
-Oreki Edition 的改动大致分成两类：一类改变数字或解锁门槛，让后期系统更早进入可玩的节奏；另一类增加操作层，例如统一自动化调度和阶段提示。无论哪一类，真正的挑战结算、资源扣除和重置保留关系仍应由游戏的合法入口完成。
+本 MOD 的改动大致分成两类：一类改变数字或解锁门槛，让后期系统更早进入可玩的节奏；另一类增加操作层，例如统一自动化调度和阶段提示。无论哪一类，真正的挑战结算、资源扣除和重置保留关系仍应由游戏的合法入口完成。
 
 ## 已核对的玩家可见差异
 
 下表只列出当前资料能够支持的代表性差异。数值属于对应版本的实现，不是永远不变的规则：
 
-| 机制                | 原版                        | Oreki Edition                   | 玩家应该怎样理解                                 |
+| 机制                | 原版                        | MOD                   | 玩家应该怎样理解                                 |
 | ------------------- | --------------------------- | ------------------------------- | ------------------------------------------------ |
 | V 解锁所需现实次数  | 10000                       | 60                              | MOD 缩短准备期，但仍需满足当前页面列出的其他条件 |
 | V 解锁所需膨胀时间  | $10^{320}$                  | $10^{30}$                       | 数字变小不等于可以跳过 V 的特殊目标              |
@@ -27,7 +27,7 @@ Oreki Edition 的改动大致分成两类：一类改变数字或解锁门槛，
 
 原版常量可从固定上游源码（源码定位：IvarK/AntimatterDimensionsSourceCode@5409e320cecef96a917cca1dfb68f1f183e499ca/；具体文件证据留在内部核验记录）核对，MOD 侧则应查看当前 Android/Web 实现。表中的数字是帮助玩家建立方向感，不应替代当前版本的游戏内说明。
 
-## 自动化改动改变的是操作，不是裁决
+## 自动化与裁决
 
 原版已经有自己的自动购买器。MOD 增加的统一调度层负责判断阶段、目标和受管配置，减少重复点击，但不会凭空创造 IP、EP 或天神解锁，也不会把一次 no-op 当作真实结算。
 
@@ -45,9 +45,9 @@ Oreki Edition 的改动大致分成两类：一类改变数字或解锁门槛，
 
 ## 参考来源
 
-- V 原版门槛（源码定位：IvarK/AntimatterDimensionsSourceCode@5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/secret-formula/celestials/v.js；[固定提交 5409e32](https://github.com/IvarK/AntimatterDimensionsSourceCode/commit/5409e320cecef96a917cca1dfb68f1f183e499ca)；具体文件证据留在内部核验记录）
-- 虚构升级原版门槛（源码定位：IvarK/AntimatterDimensionsSourceCode@5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/secret-formula/reality/imaginary-upgrades.js；[固定提交 5409e32](https://github.com/IvarK/AntimatterDimensionsSourceCode/commit/5409e320cecef96a917cca1dfb68f1f183e499ca)；具体文件证据留在内部核验记录）
-- 莱特拉原版实现（源码定位：IvarK/AntimatterDimensionsSourceCode@5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/celestials/laitela/laitela.js；[固定提交 5409e32](https://github.com/IvarK/AntimatterDimensionsSourceCode/commit/5409e320cecef96a917cca1dfb68f1f183e499ca)；具体文件证据留在内部核验记录）
+- V 原版门槛（源码定位：IvarK/AntimatterDimensionsSourceCode@5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/secret-formula/celestials/v.js；具体文件证据留在内部核验记录）
+- 虚构升级原版门槛（源码定位：IvarK/AntimatterDimensionsSourceCode@5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/secret-formula/reality/imaginary-upgrades.js；具体文件证据留在内部核验记录）
+- 莱特拉原版实现（源码定位：IvarK/AntimatterDimensionsSourceCode@5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/celestials/laitela/laitela.js；具体文件证据留在内部核验记录）
 - [原版社区 Wiki](https://antimatterdimensions.wiki.gg/wiki/Antimatter_Dimensions)
 
 继续阅读：[Android 与 Web：版本和行为差异](/player/gameplay/platform-differences) · [天神系统](/player/gameplay/celestials) · [原版玩法译文](/player/original/)

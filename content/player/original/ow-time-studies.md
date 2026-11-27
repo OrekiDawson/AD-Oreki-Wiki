@@ -1,5 +1,5 @@
 ---
-title: "时间研究"
+title: "原版:时间研究"
 description: "原版 Wiki《Time Studies》条目的完整简体中文翻译：研究树、时间之理、分叉限制与全部研究表"
 tags:
   - 原版Wiki翻译
@@ -147,7 +147,7 @@ aliases:
 
 ## 来源与许可
 
-- 原文：[Time Studies](https://antimatterdimensions.wiki.gg/index.php?title=Time_Studies&oldid=3343)（修订 ID `3343`；最后编辑者 KrutarMarsons；首次抓取于 2026-11-15；本批于 2026-11-26 复核，修订 ID 未变）
+- 原文：[Time Studies](https://antimatterdimensions.wiki.gg/index.php?title=Time_Studies&oldid=3343)（修订 ID `3343`；最后编辑者 KrutarMarsons）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Time_Studies&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为**简体中文翻译（改编）**，已修改：翻译正文与全部研究表、统一术语、按原文修正公式排版；图片未转载。
 - 说明：部分研究的公式原文以子模板/主条目链接给出（如 111 指向《无限》、228 指向《维度献祭》），译文保留指向并注明；研究 ID 与数值未改动。

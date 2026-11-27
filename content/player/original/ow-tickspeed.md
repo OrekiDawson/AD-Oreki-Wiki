@@ -1,5 +1,5 @@
 ---
-title: "计数频率"
+title: "原版:计数频率"
 description: "原版 Wiki《Tickspeed》条目的简体中文翻译：计数频率加成公式、有效星系数与星系强度系数的全部来源"
 tags:
   - 原版Wiki翻译
@@ -175,7 +175,7 @@ $$BM * 0.965^{(G - 2) * S - 2}$$
 
 主条目：[打破无限](/player/original/ow-break-infinity)·无限之后的成长。
 
-当成本超过无限值（1.80e308）后，价格成长开始额外累积：默认每级再乘以 10。对应的[打破无限](/player/original/ow-break-infinity)升级可以把该倍率从 10 降下来，[永恒挑战 11](/player/original/ow-eternity-challenges)还会继续降低价格增速。
+当成本超过无限值（1.80e308）后，价格成长开始额外累积：默认每级再乘以 10。对应的[打破无限](/player/original/ow-break-infinity)升级可以把该倍率从 10 降下来，[永恒挑战 11](/player/original/ow-eternity-challenges) 还会继续降低价格增速。
 
 ## 琐事
 
@@ -183,7 +183,7 @@ $$BM * 0.965^{(G - 2) * S - 2}$$
 
 ## 来源与许可
 
-- 原文：[Tickspeed](https://antimatterdimensions.wiki.gg/index.php?title=Tickspeed&oldid=3334)（修订 ID 3334；最后编辑者 KrutarMarsons；抓取于 2026-11-15）
+- 原文：[Tickspeed](https://antimatterdimensions.wiki.gg/index.php?title=Tickspeed&oldid=3334)（修订 ID 3334；最后编辑者 KrutarMarsons）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Tickspeed&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为简体中文翻译（改编），已修改：翻译正文与全部表格公式、把原文按天神分页的多标签表格展开为小节、统一术语、界面图与信息框未转载；本页按相同许可共享。
 - 原文图片未转载：原页含桌面版与移动版计数频率界面截图（Antimatter-tickspeed-interface--darktheme-desktop/mobile.jpg），此处仅保留文字说明。

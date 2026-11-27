@@ -1,6 +1,6 @@
 ---
 title: "Web：入口、缓存与版本识别"
-description: "从正式 Web 入口进入 Oreki Edition，判断旧缓存、部署版本与游戏问题的边界"
+description: "从正式 Web 入口进入 MOD，判断旧缓存、部署版本与游戏问题的边界"
 tags:
   - 玩家
   - Web
@@ -10,7 +10,7 @@ aliases:
   - "/download-and-version/web"
 ---
 
-Web 版入口是 [oreki.net](https://oreki.net/)。源码仓库中的变更不会自动改变正式入口；判断自己正在玩的版本时，以实际打开的站点和页面显示为准，而不是以某个 GitHub commit 或转发链接推断。
+Web 版入口是  [oreki.net](https://oreki.net/)。源码仓库中的变更不会自动改变正式入口；判断自己正在玩的版本时，以实际打开的站点和页面显示为准，而不是以某个 GitHub commit 或转发链接推断。
 
 ## 页面看起来像旧版本怎么办
 
@@ -22,8 +22,8 @@ Web 版入口是 [oreki.net](https://oreki.net/)。源码仓库中的变更不�
 
 在更换浏览器、清理站点数据或测试新部署前，先使用游戏内导出功能，把副本保存到浏览器之外。导入后检查阶段、资源、研究和自动购买器，再正常离开并重新打开确认状态仍在；具体迁移步骤见[存档安全](/player/gameplay/saves)。
 
-## Web 与 Android 不应直接互相推断
+## 平台互推边界
 
-两端都叫 Oreki Edition，却可能使用不同的游戏基线、自动化实现和发布版本。Android 的安装包版本、签名与 Activity 生命周期不适用于 Web；Web 的浏览器缓存、站点数据和离线行为也不等于 Android 本地存储。遇到同名功能表现不同，先阅读[原版与 Oreki Edition 的区别](/player/gameplay/original-vs-mod)，再分别记录平台与版本。
+两端都叫 本 MOD，却可能使用不同的游戏基线、自动化实现和发布版本。Android 的安装包版本、签名与 Activity 生命周期不适用于 Web；Web 的浏览器缓存、站点数据和离线行为也不等于 Android 本地存储。遇到同名功能表现不同，先阅读[原版与 MOD 的区别](/player/gameplay/original-vs-mod)，再分别记录平台与版本。
 
 相关入口：[下载与版本总览](/player/download-and-version/) · [存档安全](/player/gameplay/saves) · [玩家常见问题](/player/faq/)

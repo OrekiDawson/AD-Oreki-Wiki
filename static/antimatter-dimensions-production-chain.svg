@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="280" viewBox="0 0 1200 280" role="img" aria-labelledby="title desc">
+  <title id="title">反物质维度生产链</title>
+  <desc id="desc">第八维度逐级生产至第一维度，第一维度再生产反物质。</desc>
+  <defs>
+    <linearGradient id="panel" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#17233d"/>
+      <stop offset="1" stop-color="#263b63"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L9,3 L0,6 Z" fill="#9bd3ff"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="280" rx="18" fill="#0d1426"/>
+  <text x="48" y="48" fill="#f2f6ff" font-size="26" font-family="system-ui, sans-serif" font-weight="700">八级维度：每一层都把产量传给下一层</text>
+  <g font-family="system-ui, sans-serif" text-anchor="middle">
+    <g fill="url(#panel)" stroke="#6ea8dc" stroke-width="2">
+      <rect x="35" y="100" width="122" height="92" rx="12"/><rect x="177" y="100" width="122" height="92" rx="12"/>
+      <rect x="319" y="100" width="122" height="92" rx="12"/><rect x="461" y="100" width="122" height="92" rx="12"/>
+      <rect x="603" y="100" width="122" height="92" rx="12"/><rect x="745" y="100" width="122" height="92" rx="12"/>
+      <rect x="887" y="100" width="122" height="92" rx="12"/><rect x="1029" y="100" width="136" height="92" rx="12" fill="#493b70"/>
+    </g>
+    <g fill="#ffffff" font-size="22" font-weight="700">
+      <text x="96" y="138">第八维度</text><text x="238" y="138">第七维度</text><text x="380" y="138">第六维度</text><text x="522" y="138">第五维度</text>
+      <text x="664" y="138">第四维度</text><text x="806" y="138">第三维度</text><text x="948" y="138">第二维度</text><text x="1097" y="138">第一维度</text>
+    </g>
+    <g fill="#cde7ff" font-size="16">
+      <text x="96" y="166">生产第七维度</text><text x="238" y="166">生产第六维度</text><text x="380" y="166">生产第五维度</text><text x="522" y="166">生产第四维度</text>
+      <text x="664" y="166">生产第三维度</text><text x="806" y="166">生产第二维度</text><text x="948" y="166">生产第一维度</text><text x="1097" y="166">生产反物质</text>
+    </g>
+    <g stroke="#9bd3ff" stroke-width="3" fill="none" marker-end="url(#arrow)">
+      <path d="M157 146 H170"/><path d="M299 146 H312"/><path d="M441 146 H454"/><path d="M583 146 H596"/>
+      <path d="M725 146 H738"/><path d="M867 146 H880"/><path d="M1009 146 H1022"/>
+    </g>
+    <text x="600" y="240" fill="#dcecff" font-size="18">高阶维度的产量会沿链条累积；购买倍率、计数频率与星系会共同放大这条链</text>
+  </g>
+</svg>

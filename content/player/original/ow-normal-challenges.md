@@ -1,5 +1,5 @@
 ---
-title: "普通挑战"
+title: "原版:普通挑战"
 description: "原版 Wiki《Normal Challenges》条目的简体中文翻译：12 个普通挑战的限制、奖励、快捷重置与相关成就"
 tags:
   - 原版Wiki翻译
@@ -72,8 +72,8 @@ aliases:
 
 ## 来源与许可
 
-- 原文：[Normal Challenges](https://antimatterdimensions.wiki.gg/index.php?title=Normal_Challenges&oldid=3341)（修订 ID 3341；最后编辑者 KrutarMarsons；抓取于 2026-11-16T00:40:00+08:00）
-- 源码核对：normal-challenges.js（源码定位：IvarK/AntimatterDimensionsSourceCode@5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/normal-challenges.js；[固定提交 5409e32](https://github.com/IvarK/AntimatterDimensionsSourceCode/commit/5409e320cecef96a917cca1dfb68f1f183e499ca)；具体文件证据留在内部核验记录）、挑战配置（源码定位：IvarK/AntimatterDimensionsSourceCode@5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/secret-formula/challenges/normal-challenges.js；[固定提交 5409e32](https://github.com/IvarK/AntimatterDimensionsSourceCode/commit/5409e320cecef96a917cca1dfb68f1f183e499ca)；具体文件证据留在内部核验记录）（固定提交 `5409e32`；核对解锁、目标、快捷重置、重置换范围与奖励）。
+- 原文：[Normal Challenges](https://antimatterdimensions.wiki.gg/index.php?title=Normal_Challenges&oldid=3341)（修订 ID 3341；最后编辑者 KrutarMarsons）
+- 源码核对：normal-challenges.js（源码定位：IvarK/AntimatterDimensionsSourceCode@5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/normal-challenges.js；具体文件证据留在内部核验记录）、挑战配置（源码定位：IvarK/AntimatterDimensionsSourceCode@5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/secret-formula/challenges/normal-challenges.js；具体文件证据留在内部核验记录）（固定提交 `5409e32`；核对解锁、目标、快捷重置、重置换范围与奖励）。
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Normal_Challenges&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为简体中文翻译（改编），已修改：翻译正文与表格、统一术语、公式保留原式、界面图与成就图标未转载；本页按相同许可共享。
 - 原文图片未转载：原页含桌面现代/经典与移动版挑战界面截图，以及成就图标；译文仅保留文字说明。

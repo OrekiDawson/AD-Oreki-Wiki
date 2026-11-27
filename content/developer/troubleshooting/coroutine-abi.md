@@ -1,5 +1,5 @@
 ---
-title: "协程 ABI 崩溃排查：从 Continuation 到真实调用"
+title: "协程 ABI 排障"
 description: "理解 Kotlin suspend 方法在 DEX 中的形状，并用日志、字节码和调用路径定位混合运行时故障"
 tags:
   - 排查
@@ -11,7 +11,7 @@ aliases:
 
 在 Kotlin 源码里，挂起函数像普通函数一样自然；到了 JVM/DEX，它会多出一个 `Continuation` 参数，返回值也可能暂时表现为 `Object`。反编译器把混淆名、协程状态机和不同版本的 Kotlin 运行时揉在一起后，调用者看到的就不再是源码签名。这个差异不是“反射很脆弱”这么简单：它决定了方法能不能被找到、参数能不能通过校验，以及一次本应完成的游戏动作会不会停在半路。
 
-## 先理解 ABI，而不是先改异常行
+## 先理解 ABI
 
 一个近似的源码函数：
 
@@ -55,9 +55,9 @@ reset(Continuation): Object
 
 ## 参考资料
 
-- [Kotlin 协程官方文档](https://kotlinlang.org/docs/coroutines-basics.html)与 [Continuation API](https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.coroutines/-continuation/)。
+- [Kotlin 协程官方文档](https://kotlinlang.org/docs/coroutines-basics.html)与  [Continuation API](https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.coroutines/-continuation/)。
 - Android 官方 [调试运行时崩溃指南](https://developer.android.com/topic/performance/vitals/crash)。
-- Android 当前源码基线 [`fb1299a`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/tree/fb1299a132f134eb4fab009643ee3fc3d6c57edf) 中的 `GameApi.kt`、`OrekiEcAutomation.kt` 与 `OrekiDilationAutomation.kt`。
+- Android 当前源码基线  [`fb1299a`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/tree/fb1299a132f134eb4fab009643ee3fc3d6c57edf)  中的 `GameApi.kt`、`OrekiEcAutomation.kt` 与 `OrekiDilationAutomation.kt`。
 
 ## 相关条目
 

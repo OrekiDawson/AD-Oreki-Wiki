@@ -1,5 +1,5 @@
 ---
-title: "永恒升级"
+title: "原版:永恒升级"
 description: "原版 Wiki《Eternity Upgrades》条目的简体中文翻译：6 项一次性永恒升级与可无限重复的 EP x5 升级"
 tags:
   - 原版Wiki翻译
@@ -52,7 +52,7 @@ epMult 与无限层的 ipMult 一样可以无限重复购买，每买一次成�
 
 ## 来源与许可
 
-- 原文：[Eternity Upgrades](https://antimatterdimensions.wiki.gg/index.php?title=Eternity_Upgrades&oldid=3461)（修订 ID 3461；抓取于 2026-11-26）
+- 原文：[Eternity Upgrades](https://antimatterdimensions.wiki.gg/index.php?title=Eternity_Upgrades&oldid=3461)（修订 ID 3461）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Eternity_Upgrades&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为简体中文翻译（改编），已修改：翻译正文与表格、统一术语、公式保留原式、界面图与信息框未转载；本页按相同许可共享。
 - 原文图片未转载：原页含桌面版与移动版界面截图（Eternity-eternityupgrades-interface--darktheme-desktop.png / -mobile.png），此处仅保留文字说明。

@@ -1,5 +1,5 @@
 ---
-title: "无限维度"
+title: "原版:无限维度"
 description: "原版 Wiki《Infinity Dimensions》条目的完整简体中文翻译：解锁、产出、无限之力与价格成长表"
 tags:
   - 原版Wiki翻译
@@ -16,7 +16,7 @@ aliases:
   - "/original/ow-infinity-dimensions"
 ---
 
-**无限维度（Infinity Dimensions）**是一种新的[维度](/player/original/ow-dimensions)：玩家在[打破无限](/player/original/ow-break-infinity)之后即可解锁第一个无限维度。达到对应维度的反物质需求后，点击顶部大坍缩按钮区域的解锁按钮即可解锁它。首次永恒之前，解锁第 1 无限维度还需要持有 e8 [无限点数](/player/original/ow-infinity)。普通大坍缩只清空产出中的数量，所有无限维度会在永恒时完整重置。与普通维度一样，无限维度也只有 8 个。
+**无限维度（Infinity Dimensions）**是一种新的[维度](/player/original/ow-dimensions)：玩家在[打破无限](/player/original/ow-break-infinity)之后即可解锁第一个无限维度。达到对应维度的反物质需求后，点击顶部大坍缩按钮区域的解锁按钮即可解锁它。首次永恒之前，解锁第 1 无限维度还需要持有 e8  [无限点数](/player/original/ow-infinity)。普通大坍缩只清空产出中的数量，所有无限维度会在永恒时完整重置。与普通维度一样，无限维度也只有 8 个。
 
 > 本页译自社区 Wiki 同名条目；原作标记该页仍需清理（Cleanup），译文保留原文信息。
 
@@ -34,7 +34,7 @@ aliases:
 
 与[反物质维度](/player/original/ow-antimatter-dimensions)不同，购买倍率不再对所有维度都相同。下表列出每个无限维度的成本、[反物质](/player/original/ow-antimatter-dimensions)需求与成本成长：
 
-| 无限维度 | 反物质需求 | 初始 [IP](/player/original/ow-infinity) 成本 | 成本成长 | 购买倍率 |
+| 无限维度 | 反物质需求 | 初始  [IP](/player/original/ow-infinity)  成本 | 成本成长 | 购买倍率 |
 | --- | --- | --- | --- | --- |
 | 1 | 1e1,100 | 1e8 | $\times 1\text{e}3$ | $\times 50$ |
 | 2 | 1e1,900 | 1e9 | $\times 1\text{e}6$ | $\times 30$ |
@@ -47,8 +47,8 @@ aliases:
 
 ## 来源与许可
 
-- 原文：[Infinity Dimensions](https://antimatterdimensions.wiki.gg/index.php?title=Infinity_Dimensions&oldid=3344)（修订 ID `3344`；最后编辑者 KrutarMarsons；抓取于 2026-11-15T21:45:00+08:00）
-- 源码核对：infinity-dimension.js（源码定位：IvarK/AntimatterDimensionsSourceCode@5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/dimensions/infinity-dimension.js；[固定提交 5409e32](https://github.com/IvarK/AntimatterDimensionsSourceCode/commit/5409e320cecef96a917cca1dfb68f1f183e499ca)；具体文件证据留在内部核验记录）（固定提交 `5409e32`；核对 e8 IP 门槛、重置范围、无限之力公式与基础产量）。
+- 原文：[Infinity Dimensions](https://antimatterdimensions.wiki.gg/index.php?title=Infinity_Dimensions&oldid=3344)（修订 ID `3344`；最后编辑者 KrutarMarsons）
+- 源码核对：infinity-dimension.js（源码定位：IvarK/AntimatterDimensionsSourceCode@5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/dimensions/infinity-dimension.js；具体文件证据留在内部核验记录）（固定提交 `5409e32`；核对 e8 IP 门槛、重置范围、无限之力公式与基础产量）。
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Infinity_Dimensions&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为**简体中文翻译（改编）**，已修改：翻译正文与表格、统一术语、移除导航模板与信息框、图片未转载；本页按相同许可共享。
 

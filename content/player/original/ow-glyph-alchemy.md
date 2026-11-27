@@ -1,5 +1,5 @@
 ---
-title: "符文炼金"
+title: "原版:符文炼金"
 description: "原版 Wiki《Glyph Alchemy》条目的简体中文翻译：21 种炼金资源、精炼规则、反应机制与全部效果公式"
 tags:
   - 原版Wiki翻译
@@ -91,7 +91,7 @@ $$V=\left(\frac{Level}{10000}\right)^3 \times 10000=\frac{Level^3}{10^8}$$
 
 ## 来源与许可
 
-- 原文：[Glyph Alchemy](https://antimatterdimensions.wiki.gg/index.php?title=Glyph_Alchemy&oldid=3388)（修订 ID 3388；抓取于 2026-11-15）
+- 原文：[Glyph Alchemy](https://antimatterdimensions.wiki.gg/index.php?title=Glyph_Alchemy&oldid=3388)（修订 ID 3388）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Glyph_Alchemy&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为简体中文翻译（改编），已修改：翻译正文与资源表、按游戏内中文统一资源名称、澄清精炼价值与实际上限、补充官方源码可确认的反应触发与结算边界、界面图与信息框未转载；本页按相同许可共享。
 - 原文图片未转载：原页含桌面版、满级版与移动版炼金界面截图（Cel5-alchemy-interface--*），此处仅保留文字说明。

@@ -1,5 +1,5 @@
 ---
-title: "从 DEX 到 Kotlin：混淆 Android 游戏的 ABI 适配"
+title: "DEX 接口"
 description: "从 DEX 寄存器与方法描述符出发，说明如何恢复混淆代码的语义，并把不稳定的宿主接口隔离在可维护的 Kotlin 适配层之后"
 tags:
   - 逆向
@@ -59,7 +59,7 @@ allow(Ljava/lang/String;)Z
 
 ## 为什么采用混合运行时
 
-### 直接把游戏 DEX 编译进 Kotlin 并不现实
+### DEX 与 Kotlin
 
 Kotlin 编译器需要可用的源码或编译期类型信息；宿主游戏类只存在于 APK 的 DEX 中，不能简单地把 DEX 当作 Kotlin 类路径来编译。项目曾考虑生成同名类型桩，也考虑过把游戏整体反编译成 Java 再编译，但这两条路都把问题扩大了：泛型擦除、内部类命名、继承树和数千个互相引用的类型，会制造一套需要长期同步的伪源码。
 
@@ -73,7 +73,7 @@ Kotlin 编译器需要可用的源码或编译期类型信息；宿主游戏类�
 
 这个策略同时避免两种坏结果：让一个版本不兼容直接崩溃，或让自动化悄悄停摆却没有线索。日志不是正文里的验收奖章，而是开发者排查时要关联到具体类、描述符和调用路径的证据。
 
-## 开发者如何定位一次 ABI 故障
+## 定位 ABI 故障
 
 先区分“找不到”与“找错了”。`ClassNotFoundException`、`NoSuchMethodException` 和 `NoSuchFieldException` 指向解析边界；`IllegalArgumentException`、`ClassCastException` 或返回值语义异常，则可能意味着描述符、所有者类或版本绑定错误。不要先改调用方的条件判断，先把日志中的语义名称还原成宿主 DEX 的完整描述符。
 
@@ -95,9 +95,9 @@ Kotlin 编译器需要可用的源码或编译期类型信息；宿主游戏类�
 
 - [Android 开发者：DEX 文件格式](https://source.android.com/docs/core/runtime/dex-format)：类、方法、字段及 DEX 数据结构的官方说明。
 - [Android 开发者：Dalvik 字节码](https://source.android.com/docs/core/runtime/dalvik-bytecode)：寄存器、指令与调用约定的官方参考。
-- Android 仓库 `GameApi.kt`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@fb1299a132f134eb4fab009643ee3fc3d6c57edf/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/GameApi.kt；[固定提交 fb1299a](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/commit/fb1299a132f134eb4fab009643ee3fc3d6c57edf)；具体文件证据留在内部核验记录）：当前缓存式反射适配层。
-- Android 仓库 `OrekiAutomationScheduler.kt`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@fb1299a132f134eb4fab009643ee3fc3d6c57edf/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiAutomationScheduler.kt；[固定提交 fb1299a](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/commit/fb1299a132f134eb4fab009643ee3fc3d6c57edf)；具体文件证据留在内部核验记录）：以 Kotlin 实现并保持旧静态调用契约的调度器。
-- 3.21 基线绑定规则（源码定位：OrekiDawson/AD-Oreki-Edition-Android@fb1299a132f134eb4fab009643ee3fc3d6c57edf/baseline/versions/3.21/bindings.json；[固定提交 fb1299a](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/commit/fb1299a132f134eb4fab009643ee3fc3d6c57edf)；具体文件证据留在内部核验记录） 与 第一方类索引（源码定位：OrekiDawson/AD-Oreki-Edition-Android@fb1299a132f134eb4fab009643ee3fc3d6c57edf/docs/deobfuscation/data/first-party-3.21-index.csv；[固定提交 fb1299a](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/commit/fb1299a132f134eb4fab009643ee3fc3d6c57edf)；具体文件证据留在内部核验记录）：历史映射和结构证据入口。
+- Android 仓库 `GameApi.kt`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@fb1299a132f134eb4fab009643ee3fc3d6c57edf/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/GameApi.kt；具体文件证据留在内部核验记录）：当前缓存式反射适配层。
+- Android 仓库 `OrekiAutomationScheduler.kt`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@fb1299a132f134eb4fab009643ee3fc3d6c57edf/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiAutomationScheduler.kt；具体文件证据留在内部核验记录）：以 Kotlin 实现并保持旧静态调用契约的调度器。
+- 3.21 基线绑定规则（源码定位：OrekiDawson/AD-Oreki-Edition-Android@fb1299a132f134eb4fab009643ee3fc3d6c57edf/baseline/versions/3.21/bindings.json；具体文件证据留在内部核验记录） 与 第一方类索引（源码定位：OrekiDawson/AD-Oreki-Edition-Android@fb1299a132f134eb4fab009643ee3fc3d6c57edf/docs/deobfuscation/data/first-party-3.21-index.csv；具体文件证据留在内部核验记录）：历史映射和结构证据入口。
 - [Android 仓库逆向资料目录](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/tree/fb1299a132f134eb4fab009643ee3fc3d6c57edf/docs/deobfuscation)：反编译、索引和版本迁移的历史证据；不等同于可直接编译的游戏源码。
 
 本页保留旧入口 `/reverse-engineering/dex-abi` 以兼容历史链接；正式导航应链接本页的新标题和所在专区路径。

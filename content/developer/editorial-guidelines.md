@@ -33,7 +33,7 @@ aliases:
 | 这个符号、字段或配置到底是什么意思？       | 稳定入口、语义、约束和版本边界       |
 | 代码为什么要这样组织？                     | 模块职责、调用链、数据流和设计取舍   |
 
-例如，[AGP 构建管线](/developer/build/agp)应解释源码如何经过变体、编译、R8、打包和签名成为 APK；[DEX 与 ABI](/developer/reverse-engineering/dex-abi)应解释寄存器、描述符和适配层怎样共同决定一次调用能否成立。PR 编号只能帮助读者回到证据，不能代替这些解释。
+例如，[AGP 构建管线](/developer/build/agp)应解释源码如何经过变体、编译、R8、打包和签名成为 APK；[DEX 与 ABI](/developer/reverse-engineering/dex-abi) 应解释寄存器、描述符和适配层怎样共同决定一次调用能否成立。PR 编号只能帮助读者回到证据，不能代替这些解释。
 
 ## 先读实现，再读结论
 
@@ -45,7 +45,7 @@ aliases:
 
 ## 让引用帮助读者复核
 
-关键陈述应紧挨可点击的固定来源。优先使用固定 Commit 的具体文件、官方规范和可复现报告；路径和符号要说明它们在论证中扮演的角色，而不是只堆一串链接。来源索引页提供了[Android/Web 的证据入口](/developer/references/source-index)，逆向专题提供了[从 DEX 到 ABI 的核对方法](/developer/reverse-engineering/)。
+关键陈述应紧挨可点击的固定来源。优先使用固定 Commit 的具体文件、官方规范和可复现报告；路径和符号要说明它们在论证中扮演的角色，而不是只堆一串链接。来源索引页提供了 [Android/Web 的证据入口](/developer/references/source-index)，逆向专题提供了[从 DEX 到 ABI 的核对方法](/developer/reverse-engineering/)。
 
 不要用以下写法制造“证据感”：只给一个短 SHA、把 CI 绿灯当成功能验证、把历史报告当当前实现、或者列出一串文件却不说明调用关系。行号会随编辑移动；固定提交、相对路径、符号名和适用版本通常更耐用。
 
@@ -68,4 +68,4 @@ aliases:
 - [逆向与语义映射](/developer/reverse-engineering/)：了解 DEX、描述符和 ABI 适配的阅读顺序。
 - [知识库规则](/wiki-rules)：全站的来源、版权、翻译和发布门禁。
 
-方法上的原始参照包括 [Android DEX 文件格式](https://source.android.com/docs/core/runtime/dex-format)、[Dalvik 字节码](https://source.android.com/docs/core/runtime/dalvik-bytecode) 和 [MDN：JavaScript 模块](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Modules)。这些资料解释平台机制；项目自身行为仍须回到固定版本的 Android/Web 源码和实际证据核对。
+方法上的原始参照包括  [Android DEX 文件格式](https://source.android.com/docs/core/runtime/dex-format)、[Dalvik 字节码](https://source.android.com/docs/core/runtime/dalvik-bytecode) 和  [MDN：JavaScript 模块](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Modules)。这些资料解释平台机制；项目自身行为仍须回到固定版本的 Android/Web 源码和实际证据核对。

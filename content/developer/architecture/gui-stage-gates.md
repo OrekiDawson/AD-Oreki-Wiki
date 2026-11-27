@@ -61,7 +61,7 @@ OrekiStageAuto 的阶段与目标选择
 
 `OrekiStageAuto` 在需要判断高层目标时应与 `OrekiGuiStage` 使用同一套真实结算语义。若自动化直接读一个旧字段，而 GUI 使用组合判据，就会出现“页面显示在无限，策略却认为已经永恒”的双重真相。反过来，GUI 使用缓存而自动化直读存档，也可能在结算后的一个 tick 内短暂分叉，因此刷新点和缓存失效必须明确。
 
-## 如何定位“提前开放”与“无法推进”
+## 定位阶段异常
 
 先保存三个对象：当前页签、阶段快照和存档字段。然后按下面的分叉判断：
 
@@ -80,7 +80,7 @@ OrekiStageAuto 的阶段与目标选择
 
 ## 来源与边界
 
-主要实现见 `OrekiGuiStage.kt`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiGuiStage.kt；[固定提交 9d8fc46](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/commit/9d8fc46ce99279720b5b3068027bb76bceb35756)；具体文件证据留在内部核验记录）、`OrekiStageAuto.kt`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiStageAuto.kt；[固定提交 9d8fc46](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/commit/9d8fc46ce99279720b5b3068027bb76bceb35756)；具体文件证据留在内部核验记录） 与 `GameApi.kt`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/GameApi.kt；[固定提交 9d8fc46](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/commit/9d8fc46ce99279720b5b3068027bb76bceb35756)；具体文件证据留在内部核验记录）（已用 GitHub API 核对，HTTP 200，核对日 2026-11-26）。玩家向说明见[阶段解锁与页面显示](/player/gameplay/stage-gates)。历史门禁证据仍可从[旧版事实记录](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/tree/3b2d8284f2aca7132168998ee32497b3c4c17b8e/reports/R101-p0-fix)追溯，但历史结果不等于当前候选 APK 的复验结果。
+主要实现见 `OrekiGuiStage.kt`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiGuiStage.kt；具体文件证据留在内部核验记录）、`OrekiStageAuto.kt`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiStageAuto.kt；具体文件证据留在内部核验记录）与 `GameApi.kt`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/GameApi.kt；具体文件证据留在内部核验记录）。玩家向说明见[阶段解锁与页面显示](/player/gameplay/stage-gates)。历史门禁证据仍可从[旧版事实记录](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/tree/3b2d8284f2aca7132168998ee32497b3c4c17b8e/reports/R101-p0-fix)追溯，但历史结果不等于当前候选 APK 的复验结果。
 
 ## 相关条目
 

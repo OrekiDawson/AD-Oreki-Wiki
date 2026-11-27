@@ -1,5 +1,5 @@
 ---
-title: "阶段解锁与排障：从页面显示到真实结算"
+title: "阶段解锁"
 description: "区分页面可见、按钮可用与真实结算，排查阶段提前出现、按钮灰掉和重置后的变化"
 tags:
   - 玩法
@@ -17,7 +17,7 @@ aliases:
 
 如果你还不熟悉新档的基本节奏，可先看[新手入门](/player/getting-started/)。阶段解锁和自动化相互影响时，再结合[自动购买器](/player/gameplay/automation)与[存档安全](/player/gameplay/saves)判断问题是在进度、资源还是存档状态。
 
-## 页面提前出现，不一定是进度提前了
+## 页面显示与进度
 
 如果第一次大坍缩后就看到了明显属于永恒、现实或天神的页面，先不要把它当成解锁证明。测试版本或 MOD 可能把导航入口提前渲染出来；真正的阶段仍应由对应重置的完成结果和保留资源确认。
 
@@ -52,10 +52,10 @@ aliases:
 
 不要直接编辑存档里的解锁标志，也不要为了验证入口而反复执行高层重置。这样可能把真正的条件问题变成存档损坏。仍无法判断时，可先查[常见问题](/player/faq/)和[挑战](/player/gameplay/challenges)，再对照[原版与 MOD 的差异](/player/gameplay/original-vs-mod)确认自己看的是否是同一套规则。
 
-开发者若需要追查界面为何提前显示，可阅读[GUI 阶段门禁](/developer/architecture/gui-stage-gates)；玩家判断仍应以当前可观察到的行为为主，不必把内部实现当成解锁条件。
+开发者若需要追查界面为何提前显示，可阅读 [GUI 阶段门禁](/developer/architecture/gui-stage-gates)；玩家判断仍应以当前可观察到的行为为主，不必把内部实现当成解锁条件。
 
 ## 相关条目
 
 [阶段进度](/player/gameplay/stage-progression) · [自动购买器](/player/gameplay/automation) · [存档安全](/player/gameplay/saves) · [玩家常见问题](/player/faq/)
 
-原版阶段条件可参阅[Antimatter Dimensions Wiki（修订 3325）](https://antimatterdimensions.wiki.gg/index.php?title=Antimatter_Dimensions&oldid=3325)；具体门槛以当前版本为准。
+原版阶段条件可参阅 [Antimatter Dimensions Wiki（修订 3325）](https://antimatterdimensions.wiki.gg/index.php?title=Antimatter_Dimensions&oldid=3325)；具体门槛以当前版本为准。

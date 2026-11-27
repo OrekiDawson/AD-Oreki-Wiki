@@ -1,5 +1,5 @@
 ---
-title: "永恒挑战"
+title: "原版:永恒挑战"
 description: "原版 Wiki《Eternity Challenges》条目的完整简体中文翻译：解锁、重置、12 关前置与各完成次数门槛"
 tags:
   - 原版Wiki翻译
@@ -83,11 +83,11 @@ aliases:
 
 ## 来源与许可
 
-- 原文：[Eternity Challenges](https://antimatterdimensions.wiki.gg/index.php?title=Eternity_Challenges&oldid=3347)（修订 ID `3347`；最后编辑者 KrutarMarsons；抓取于 2026-11-15）
+- 原文：[Eternity Challenges](https://antimatterdimensions.wiki.gg/index.php?title=Eternity_Challenges&oldid=3347)（修订 ID `3347`；最后编辑者 KrutarMarsons）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Eternity_Challenges&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为**简体中文翻译（改编）**，已修改：翻译正文与表格、统一术语、移除导航模板与信息框、图片未转载；本页按相同许可共享。
 - 原文以子模板嵌入完整挑战条件表与图标；本页保留主条目正文、前置条件与各完成次数门槛，完整挑战明细链接到已翻译子页。
-- 源码核对：`src/core/eternity-challenge.js`（源码定位：IvarK/AntimatterDimensionsSourceCode@5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/eternity-challenge.js；[固定提交 5409e32](https://github.com/IvarK/AntimatterDimensionsSourceCode/commit/5409e320cecef96a917cca1dfb68f1f183e499ca)；具体文件证据留在内部核验记录） 与 `src/core/secret-formula/challenges/eternity-challenges.js`（源码定位：IvarK/AntimatterDimensionsSourceCode@5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/secret-formula/challenges/eternity-challenges.js；[固定提交 5409e32](https://github.com/IvarK/AntimatterDimensionsSourceCode/commit/5409e320cecef96a917cca1dfb68f1f183e499ca)；具体文件证据留在内部核验记录）。
+- 源码核对：`src/core/eternity-challenge.js`（源码定位：IvarK/AntimatterDimensionsSourceCode@5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/eternity-challenge.js；具体文件证据留在内部核验记录） 与 `src/core/secret-formula/challenges/eternity-challenges.js`（源码定位：IvarK/AntimatterDimensionsSourceCode@5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/secret-formula/challenges/eternity-challenges.js；具体文件证据留在内部核验记录）。
 
 ## 相关条目
 

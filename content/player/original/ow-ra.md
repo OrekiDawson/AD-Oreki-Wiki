@@ -1,5 +1,5 @@
 ---
-title: "太阳神"
+title: "原版:太阳神"
 description: "原版 Wiki《Ra》条目的完整简体中文翻译：被遗忘之神太阳神的记忆碎片、四位天神的记忆升级、28 项里程碑与时间之理增益公式"
 tags:
   - 原版Wiki翻译
@@ -185,9 +185,9 @@ $$\left\lfloor\left({n+\frac{n^2}{10}}\right)^{5.52}*\left({1.5^{Max(0,n-15)}}\r
 - 太阳神对其他天神一无所知，因此请玩家帮忙「记住他们」以换取力量，却并不知道他们过去的所作所为正是导致自己遗忘一切的原因。（原文编辑注：此条暂列于琐事区。）
 - 在现实更新的开发过程中（2019 年前后的某个时间），无名氏曾有一个由太阳神解锁的机制，效果类似时间膨胀，名为「时间压缩（Time Compression）」。该机制最终因与其他内容的平衡性和可用性不兼容而被废弃[^ra-devlog12]。
 
-[^ra-name]: 原文参考资料：AD 开发日志第 4 篇 <https://cyip92.github.io/site/#/ADdevlog/4>（外部链接，未转载内容）。
+[^ra-name]: 原文参考资料：AD 开发日志第 4 篇 <0>（外部链接，未转载内容）。
 
-[^ra-devlog12]: 原文参考资料：AD 开发日志第 12 篇 <https://cyip92.github.io/site/#/ADdevlog/12>（外部链接，未转载内容）。
+[^ra-devlog12]: 原文参考资料：AD 开发日志第 12 篇 <0>（外部链接，未转载内容）。
 
 ### 脚注
 
@@ -199,7 +199,7 @@ $$\left\lfloor\left({n+\frac{n^2}{10}}\right)^{5.52}*\left({1.5^{Max(0,n-15)}}\r
 
 ## 来源与许可
 
-- 原文：[Ra](https://antimatterdimensions.wiki.gg/index.php?title=Ra&oldid=3387)（页面 ID 914；修订 ID 3387；最后编辑者 KrutarMarsons；抓取于 2026-11-15）
+- 原文：[Ra](https://antimatterdimensions.wiki.gg/index.php?title=Ra&oldid=3387)（页面 ID 914；修订 ID 3387；最后编辑者 KrutarMarsons）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Ra&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为**简体中文翻译（改编）**，已修改：翻译正文与全部表格，统一术语，把信息框内容改写为要点表，把模板内折叠块与 Tabber 内容展开为表格/列表、模板脚注改为页内脚注，用文字描述替代 FontAwesome 图标，移除导航模板与模板结构，图片未转载；本页按相同许可共享。
 - 原文图片未转载：原页含天神静态图（Cel5-runreality-static--desktop.png）、动画（Cel5-runreality-active--desktop.gif）、导航图（Cel5-navigation-complete--desktop.png）、界面图（Cel5-interface--darktheme-desktop.png）与被废弃功能的截图（Cel5-compression-scrapped--lightmode-desktop.png）。原图注含义：「身处太阳神的现实之中」「太阳神的完整界面」「开发日志中时间压缩功能的截图」。请到原页查看图片。

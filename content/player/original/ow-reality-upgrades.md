@@ -1,5 +1,5 @@
 ---
-title: "现实升级"
+title: "原版:现实升级"
 description: "原版 Wiki《Reality Upgrades》条目的完整简体中文翻译：可重复与不可重复升级、解锁条件、效果与内部 ID"
 tags:
   - 原版Wiki翻译
@@ -24,7 +24,7 @@ aliases:
 
 ## 可重复升级
 
-可无限重复购买，但每次购买都会提高成本。在某些成本区间，成本成长会变得更严厉——在 e30 与 1.80e308 [现实机器](/player/original/ow-reality)以上。
+可无限重复购买，但每次购买都会提高成本。在某些成本区间，成本成长会变得更严厉——在 e30 与 1.80e308  [现实机器](/player/original/ow-reality)以上。
 
 | 名称 | 初始 RM 成本 | 成本成长 | 在 1e30 RM 之后的成长 | 在 1.80e308 RM 之后的成长 | 效果 |
 | --- | --- | --- | --- | --- | --- |
@@ -53,7 +53,7 @@ aliases:
 | 名称 | 解锁条件 | 效果 | 检查事件 | 可锁定 | AP | 细节 |
 | --- | --- | --- | --- | --- | --- | --- |
 | 无垠涌动（The Boundless Flow） | 存入 1e12 无限次数 | 每秒获得正常无限化所得无限次数的 10% | （首次）解锁[现实](/player/original/ow-reality)；（之后）执行永恒 |  | 5 |  |
-| 先验存在（The Knowing Existence） | 在不完成[永恒挑战 1](/player/original/ow-eternity-challenges)的情况下，以 1e70 永恒点数完成永恒 | 永恒点数倍率基于现实次数和[时间之理](/player/original/ow-time-studies)数量 | （之后）执行永恒 | 是 |  | $\max(TT-1000,2)^{\log_2(\min(Realities,10^4))}$ |
+| 先验存在（The Knowing Existence） | 在不完成[永恒挑战 1](/player/original/ow-eternity-challenges) 的情况下，以 1e70 永恒点数完成永恒 | 永恒点数倍率基于现实次数和[时间之理](/player/original/ow-time-studies)数量 | （之后）执行永恒 | 是 |  | $\max(TT-1000,2)^{\log_2(\min(Realities,10^4))}$ |
 | 遥控律序（The Telemechanical Process） | 在未购买第 5～8 时间维度的情况下以 1e4000 永恒点数完成永恒 | 解锁时间维度与 ×5 永恒点数的自动购买器，并改进永恒自动购买器 | （之后）执行永恒 | 是 | 10 |  |
 | 永恒流转（The Eternal Flow） | 1e7 永恒次数 | 每秒获得等于现实次数的永恒次数 | （首次）解锁现实；（之后）执行永恒 |  | 5 | 与其他永恒倍率相乘 |
 | 永谜悖谬（The Paradoxical Forever） | 在未购买 ×5 永恒点数倍率时拥有 1e10 永恒点数 | 基于 ×5 永恒点数倍率提高超光速粒子获取 | （之后）执行永恒 | 是 |  | $\max\left(\frac{\sqrt{\log_{10}(epMult)}}{9},1\right)$ |
@@ -90,7 +90,7 @@ aliases:
 
 ## 来源与许可
 
-- 原文：[Reality Upgrades](https://antimatterdimensions.wiki.gg/index.php?title=Reality_Upgrades&oldid=3357)（修订 ID `3357`；最后编辑者 KrutarMarsons；抓取于 2026-11-15）
+- 原文：[Reality Upgrades](https://antimatterdimensions.wiki.gg/index.php?title=Reality_Upgrades&oldid=3357)（修订 ID `3357`；最后编辑者 KrutarMarsons）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Reality_Upgrades&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为**简体中文翻译（改编）**，已修改：翻译正文与表格、按行拆分合并表头为普通表格、统一术语、移除多页签模板与导航；图片未转载。
 - 说明：升级名称采用游戏内简体中文标签并附原站英文名；「Row 2/3/4/5」在移动版称为「Groups」，译文按桌面版表格的行组织并注明成本。

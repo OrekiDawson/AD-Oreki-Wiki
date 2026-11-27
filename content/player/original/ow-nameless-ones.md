@@ -1,5 +1,5 @@
 ---
-title: "无名氏"
+title: "原版:无名氏"
 description: "原版 Wiki《The Nameless Ones》条目的完整简体中文翻译：时间之神无名氏的黑洞放电、储存时间、两项升级、九项现实效果与超立方体数据表"
 tags:
   - 原版Wiki翻译
@@ -40,7 +40,7 @@ aliases:
 
 ### 储存的现实时间
 
-储存现实时间会把游戏速度设为零，实际上暂停游戏的 tick 速率[^footnote-1]，这意味着任何被动获得的东西——[维度](/player/original/ow-dimensions)产出、[复制器](/player/original/ow-replicanti) tick、以及像[时间研究 181](/player/original/ow-time-studies)的被动[无限点数](/player/original/ow-infinity)产出、[特蕾莎容器里程碑](/player/original/ow-teresa)之一的[永恒点数](/player/original/ow-eternity)产出——全部停止；只有符文挑选、购买/重置时间研究这类交互操作不会被禁用。
+储存现实时间会把游戏速度设为零，实际上暂停游戏的 tick 速率[^footnote-1]，这意味着任何被动获得的东西——[维度](/player/original/ow-dimensions)产出、[复制器](/player/original/ow-replicanti)  tick、以及像[时间研究 181](/player/original/ow-time-studies) 的被动[无限点数](/player/original/ow-infinity)产出、[特蕾莎容器里程碑](/player/original/ow-teresa)之一的[永恒点数](/player/original/ow-eternity)产出——全部停止；只有符文挑选、购买/重置时间研究这类交互操作不会被禁用。
 
 与储存「游戏」时间有 $100\%$ 转换效率不同；现实时间只有 $70\%$ 的效率——因此让游戏储存现实时间 100 秒，只会保留 70 秒的现实时间。储存的现实时间上限为 8 小时[^footnote-2]。
 
@@ -67,7 +67,7 @@ $$\max\left ( 1,~\frac{\left\lfloor RealTime_{\text{Stored}} \right\rfloor}{\max
 | FREE_TICKSPEED_SOFTCAP | 1e35          | 把[时间维度](/player/original/ow-time-dimensions)对[计数频率升级](https://antimatterdimensions.wiki.gg/wiki/Tickspeed)的软上限延后 100,000 |
 | RUN                    | 1e40          | 解锁[无名氏的现实](#现实)（需要等级 5,000 的符文与一个 $100\%$ 稀有度的符文）                                                              |
 
-[^id-naming]: 这里的命名方式与大多数其他 ID 不同，用的是常量的 SCREAMING_SNAKE_CASE 命名法，而不是变量常用的 camelCase。原因是无名氏的升级信息直接写在源代码中对应的文件（源码定位：IvarK/AntimatterDimensionsSourceCode@master/src/core/celestials/enslaved.js；具体文件证据留在内部核验记录）里，而不像通常那样放在外部委托文件（一般位于 secret-formula（源码定位：IvarK/AntimatterDimensionsSourceCode@master/src/core/secret-formula；具体文件证据留在内部核验记录）中。
+[^id-naming]: 这里的命名方式与大多数其他 ID 不同，用的是常量的 SCREAMING_SNAKE_CASE 命名法，而不是变量常用的 camelCase。原因是无名氏的升级信息直接写在源代码中对应的文件（源码定位：IvarK/AntimatterDimensionsSourceCode@master/src/core/celestials/enslaved.js；具体文件证据留在内部核验记录）里，而不像通常那样放在外部委托文件（一般位于 secret-formula（源码定位：IvarK/AntimatterDimensionsSourceCode@master/src/core/secret-formula；具体文件证据留在内部核验记录））中。
 
 第二项升级的额外要求必须同时满足，但可以用两个不同的符文分别达成。此外，这些要求只需满足一次。
 
@@ -104,7 +104,7 @@ $$\max\left ( 1,~\frac{\left\lfloor RealTime_{\text{Stored}} \right\rfloor}{\max
 
 ## 超立方体
 
-完成无名氏的现实后，玩家可以购买超立方体（Tesseracts），这种资源会永久提高[无限维度](/player/original/ow-infinity-dimensions) 1–7 的购买上限。超立方体的[无限点数](/player/original/ow-infinity)成本按超指数增长；作为补偿，每一个后续超立方体对无限维度购买上限的提升都更强。
+完成无名氏的现实后，玩家可以购买超立方体（Tesseracts），这种资源会永久提高[无限维度](/player/original/ow-infinity-dimensions)  1–7 的购买上限。超立方体的[无限点数](/player/original/ow-infinity)成本按超指数增长；作为补偿，每一个后续超立方体对无限维度购买上限的提升都更强。
 
 无限维度页签上有一个按钮，显示玩家拥有多少个超立方体、下一个超立方体对无限维度购买上限的提升量，以及下一个超立方体的价格。当可以购买超立方体时，该按钮的外观会变化。
 
@@ -134,9 +134,9 @@ $$\max\left ( 1,~\frac{\left\lfloor RealTime_{\text{Stored}} \right\rfloor}{\max
 - 最初他们的称号是「Enslaved」而不是「The Nameless Ones」[^cel-name-change]。这一命名最终因为明显的伦理问题被更改，但在游戏源代码中你仍会看到内部把无名氏称为「Enslaved」。
 - 无名氏代表整个测试团队，或者《反物质维度》的玩家群体[^cel-name-easter-egg]。这与他们最初的名字「Enslaved」相关，暗含一个玩笑：把「测试者」或「玩家」说成被困在 Hevipelle 地下室里、被迫玩他那邪恶游戏的人。
 
-[^cel-name-change]: 原文参考资料：AD 开发日志第 7 篇 <https://cyip92.github.io/site/#/ADdevlog/7>；以及上游 PR <https://github.com/IvarK/AntimatterDimensionsSourceCode/pull/2944>（外部链接，未转载内容）。
+[^cel-name-change]: 原文参考资料：AD 开发日志第 7 篇 <0>；以及上游 PR <1>（外部链接，未转载内容）。
 
-[^cel-name-easter-egg]: 原文参考资料：AD 开发日志第 4 篇 <https://cyip92.github.io/site/#/ADdevlog/4>（外部链接，未转载内容）。
+[^cel-name-easter-egg]: 原文参考资料：AD 开发日志第 4 篇 <0>（外部链接，未转载内容）。
 
 ### 脚注
 
@@ -148,7 +148,7 @@ $$\max\left ( 1,~\frac{\left\lfloor RealTime_{\text{Stored}} \right\rfloor}{\max
 
 ## 来源与许可
 
-- 原文：[The Nameless Ones](https://antimatterdimensions.wiki.gg/index.php?title=The_Nameless_Ones&oldid=3372)（页面 ID 380；修订 ID 3372；最后编辑者 KrutarMarsons；抓取于 2026-11-15）
+- 原文：[The Nameless Ones](https://antimatterdimensions.wiki.gg/index.php?title=The_Nameless_Ones&oldid=3372)（页面 ID 380；修订 ID 3372；最后编辑者 KrutarMarsons）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=The_Nameless_Ones&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为**简体中文翻译（改编）**，已修改：翻译正文与表格，统一术语，把信息框内容改写为要点表，把模板内脚注改为页内脚注，移除导航模板与模板结构，图片未转载；本页按相同许可共享。
 - 原文图片未转载：原页含天神动画（Cel3-runreality-static--desktop.gif、Cel3-runreality-active--desktop.gif）、导航图（Cel3-navigation-complete--desktop.png）、界面截图（Cel3-interface--darktheme-desktop.png）与超立方体按钮图（Cel3-tesseract-button--darktheme-modern-desktop.png、Cel3-tesseract-button-buyable--darktheme-modern-desktop.png）。原图注含义：「静止状态的无名氏符号，此处大约加速 60 倍」「无限维度页签上的新按钮」「可购买超立方体时按钮会变化」。请到原页查看图片。

@@ -1,5 +1,5 @@
 ---
-title: "Android GUI 同步桥：让游戏状态真正到达界面"
+title: "Android 界面同步"
 description: "从 GameApi、阶段快照和主线程队列理解 Android 自动化后的界面刷新、合并与排障"
 tags:
   - Android
@@ -10,7 +10,7 @@ tags:
 
 “游戏已经变了，但页面还没变”是 Android MOD 里很有迷惑性的故障。自动购买可能确实扣了资源，阶段判定也可能已经更新，屏幕却仍显示旧的按钮、旧的自动购买器设置或旧的侧栏。反过来，页面偶尔跳到新阶段，也不代表存档和游戏核心已经完成了对应结算。
 
-这不是简单的“多调用一次刷新”。界面同步要同时处理状态快照、Android 主线程、Activity 生命周期、请求合并和阶段导航。本文从固定的 Android 源码提交 [`1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/tree/1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545) 解释这条同步桥，并给出区分“核心状态没变”“刷新请求没送达”和“页面仍用旧投影”的排查方法。
+这不是简单的“多调用一次刷新”。界面同步要同时处理状态快照、Android 主线程、Activity 生命周期、请求合并和阶段导航。本文从固定的 Android 源码提交  [`1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/tree/1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545)  解释这条同步桥，并给出区分“核心状态没变”“刷新请求没送达”和“页面仍用旧投影”的排查方法。
 
 ## 界面不是游戏状态的真值
 
@@ -40,7 +40,7 @@ OrekiGuiStage 计算阶段快照
 
 ## 一次强制同步做了什么
 
-Android 的同步入口集中在 `GameApi.kt`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/GameApi.kt；[固定提交 1ec0c9c](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/commit/1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545)；具体文件证据留在内部核验记录）。`forceGuiTickSync(reason)` 的职责不是“让屏幕闪一下”，而是把一次游戏状态变化转换成可观察的 UI 更新：
+Android 的同步入口集中在 `GameApi.kt`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/GameApi.kt；具体文件证据留在内部核验记录）。`forceGuiTickSync(reason)` 的职责不是“让屏幕闪一下”，而是把一次游戏状态变化转换成可观察的 UI 更新：
 
 ```text
 失效原版缓存
@@ -71,7 +71,7 @@ Android 的同步入口集中在 `GameApi.kt`（源码定位：OrekiDawson/AD-Or
 
 这就是 `guiSyncPending` 存在的意义。它不是游戏进度，也不是“刷新失败后忽略”的标志，而是一个待提交的 UI 同步意图。
 
-## Activity 不可用时，为什么不能硬刷新
+## Activity 不可用
 
 Android Activity 可能正在销毁、尚未创建或暂时不在前台。此时直接持有旧 View 或强行调用页面更新，会把生命周期问题变成泄漏、异常甚至更新错误页面。源码选择登记待同步：
 
@@ -87,11 +87,11 @@ Android Activity 可能正在销毁、尚未创建或暂时不在前台。此时
                    forceGuiTickSync("pending-retry")
 ```
 
-`retryPendingGuiSync()`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/GameApi.kt；[固定提交 1ec0c9c](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/commit/1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545)；具体文件证据留在内部核验记录） 会在 Activity 可用且当前没有刷新请求排队时补一次完整同步。这个设计把“请求曾经发生过”和“View 现在可以安全更新”分开，避免在后台状态下不断重试同一个无效对象。
+`retryPendingGuiSync()`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/GameApi.kt；具体文件证据留在内部核验记录） 会在 Activity 可用且当前没有刷新请求排队时补一次完整同步。这个设计把“请求曾经发生过”和“View 现在可以安全更新”分开，避免在后台状态下不断重试同一个无效对象。
 
-## 阶段变化与普通数值变化不是同一条路
+## 阶段变化
 
-普通数值刷新通常只需要更新自动购买器、统计或文本控件；阶段变化还会影响导航可见性。`OrekiGuiStage.refresh()` 计算新快照后，若阶段真的改变，会请求 `OrekiNavRefresh`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiNavRefresh.kt；[固定提交 1ec0c9c](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/commit/1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545)；具体文件证据留在内部核验记录） 异步重算原版导航。
+普通数值刷新通常只需要更新自动购买器、统计或文本控件；阶段变化还会影响导航可见性。`OrekiGuiStage.refresh()` 计算新快照后，若阶段真的改变，会请求 `OrekiNavRefresh`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiNavRefresh.kt；具体文件证据留在内部核验记录） 异步重算原版导航。
 
 这里有两个不能互换的动作：
 
@@ -100,9 +100,9 @@ Android Activity 可能正在销毁、尚未创建或暂时不在前台。此时
 
 如果只更新阶段缓存而不刷新导航，合法存档加载后可能仍看不到新分组；如果只重建导航而不更新阶段真值，页面可能依据旧字段错误开放。`OrekiNavRefresh` 还需要在主线程和生命周期安全的上下文中工作，因此它不是一个可以在每个按钮点击处随手复制的工具函数。
 
-## 调度 tick 与 GUI tick 的关系
+## 调度与界面节拍
 
-`OrekiStageAuto.onAutoBuyerTick()`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiStageAuto.kt；[固定提交 1ec0c9c](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/commit/1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545)；具体文件证据留在内部核验记录） 在一帧开始后处理待同步请求，并在 GUI tick 到点时调用强制同步。这个顺序有意放在各类早退分支之前：本轮没有买到东西，不代表页面就不需要确认；自动化关闭、资源不足或挑战让路时，阶段和受管配置仍可能需要投影到界面。
+`OrekiStageAuto.onAutoBuyerTick()`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiStageAuto.kt；具体文件证据留在内部核验记录） 在一帧开始后处理待同步请求，并在 GUI tick 到点时调用强制同步。这个顺序有意放在各类早退分支之前：本轮没有买到东西，不代表页面就不需要确认；自动化关闭、资源不足或挑战让路时，阶段和受管配置仍可能需要投影到界面。
 
 但 GUI tick 不是购买决策。它不应占用调度器动作名额，也不应因为页面刷新失败就伪造 `acted`。把两者混在一起会产生两类错误：
 
@@ -111,7 +111,7 @@ Android Activity 可能正在销毁、尚未创建或暂时不在前台。此时
 
 调试日志中应分别记录“真实游戏动作”和“GUI 同步请求”，两者可以来自同一帧，但不是同一结果。
 
-## 按症状排查，而不是反复点刷新
+## 症状排查
 
 ### 数值不变，页面也不变
 
@@ -147,7 +147,7 @@ Android Activity 可能正在销毁、尚未创建或暂时不在前台。此时
 
 ## 来源与相关条目
 
-- Android 固定源码：GameApi.kt（源码定位：OrekiDawson/AD-Oreki-Edition-Android@1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/GameApi.kt；[固定提交 1ec0c9c](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/commit/1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545)；具体文件证据留在内部核验记录）、OrekiStageAuto.kt（源码定位：OrekiDawson/AD-Oreki-Edition-Android@1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiStageAuto.kt；[固定提交 1ec0c9c](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/commit/1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545)；具体文件证据留在内部核验记录）、OrekiGuiStage.kt（源码定位：OrekiDawson/AD-Oreki-Edition-Android@1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiGuiStage.kt；[固定提交 1ec0c9c](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/commit/1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545)；具体文件证据留在内部核验记录） 与 OrekiNavRefresh.kt（源码定位：OrekiDawson/AD-Oreki-Edition-Android@1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiNavRefresh.kt；[固定提交 1ec0c9c](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/commit/1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545)；具体文件证据留在内部核验记录）。
+- Android 固定源码：GameApi.kt（源码定位：OrekiDawson/AD-Oreki-Edition-Android@1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/GameApi.kt；具体文件证据留在内部核验记录）、OrekiStageAuto.kt（源码定位：OrekiDawson/AD-Oreki-Edition-Android@1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiStageAuto.kt；具体文件证据留在内部核验记录）、OrekiGuiStage.kt（源码定位：OrekiDawson/AD-Oreki-Edition-Android@1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiGuiStage.kt；具体文件证据留在内部核验记录） 与 OrekiNavRefresh.kt（源码定位：OrekiDawson/AD-Oreki-Edition-Android@1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiNavRefresh.kt；具体文件证据留在内部核验记录）。
 - [Android 阶段门禁与 GUI 判据](/developer/architecture/gui-stage-gates)：解释阶段真值和导航守卫；本文专注状态到 View 的同步桥。
 - [Android 架构](/developer/architecture/android)：查看 `GameApi`、自动化入口和构建边界。
 - [Kotlin 混合运行时](/developer/architecture/kotlin-runtime)：排查宿主 ABI、生命周期和线程边界。

@@ -13,7 +13,7 @@ APK 的签名不是发布前贴上的装饰章，而是 Android 判断“这是�
 
 ## 覆盖安装究竟在比较什么
 
-对 Oreki Edition，当前发布策略把应用身份集中在 `scripts/release-gate-policy.json`：包名为 `net.oreki.antimatterdimensions`，原版基线为 3.21.0，证书指纹和 `versionCode` 由策略文件与发布工件共同约束。包名改变会得到另一个应用；签名身份不兼容时，Android 不会把它当成原应用的升级；`versionCode` 不能重复或倒退，否则更新排序和门禁都会出问题。
+对 本 MOD，当前发布策略把应用身份集中在 `scripts/release-gate-policy.json`：包名为 `net.oreki.antimatterdimensions`，原版基线为 3.21.0，证书指纹和 `versionCode` 由策略文件与发布工件共同约束。包名改变会得到另一个应用；签名身份不兼容时，Android 不会把它当成原应用的升级；`versionCode` 不能重复或倒退，否则更新排序和门禁都会出问题。
 
 `versionName` 是给人看的版本标签，`versionCode` 是系统比较新旧的整数。当前策略中的 `30210002` 是开发中的候选身份，不能写成“已发布版本”；真正的发布上限应以已核验的公开 Release 和策略状态为准。
 
@@ -27,7 +27,7 @@ APK 本质上是一个 ZIP，但 Android 签名不只是给 ZIP 里的文件附�
 
 需要特别区分“工具支持的实验路径”和“当前 Release 配置”。当前 Android `app/build.gradle.kts` 的 Release 配置启用 V3、关闭 V1/V2/V4；因此现行候选的签名结论应以 `apksigner` 实际输出和该配置为准。项目中的混合签名脚本可以作为后量子或 V4 实验的证据入口，但 V3.2、PQC 或 `.idsig` 只有在对应候选明确启用、生成并完成版本兼容验收时才成立，不能从脚本存在推断为当前发布要求。没有相同的 APK 字节和对应的 `.idsig`，V4 侧车文件也没有意义。
 
-## 密钥轮换为什么不能只换一串密码
+## 密钥轮换
 
 密码只是打开密钥库的凭据，不是应用身份本身。真正的轮换要考虑证书谱系、旧设备支持的签名方案、更新链和回滚路径。Android 官方的应用签名文档区分上传密钥与应用签名密钥，并建议把签名信息从公开构建脚本中移出、妥善保管（[Sign your app](https://developer.android.com/studio/publish/app-signing)）。
 

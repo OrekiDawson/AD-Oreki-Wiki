@@ -1,5 +1,5 @@
 ---
-title: "反物质维度（游戏机制）"
+title: "原版:反物质维度（游戏机制）"
 description: "原版 Wiki《Antimatter Dimensions》条目的简体中文翻译：反物质维度的生产、价格成长与解锁方式"
 tags:
   - 原版Wiki翻译

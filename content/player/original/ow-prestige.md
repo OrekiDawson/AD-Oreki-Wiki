@@ -1,5 +1,5 @@
 ---
-title: "重置成长（威望）"
+title: "原版:重置成长（威望）"
 description: "原版 Wiki《Prestige》条目的简体中文翻译：威望与威望层的定义，以及游戏中的重置机制"
 tags:
   - 原版Wiki翻译
@@ -35,7 +35,7 @@ aliases:
 
 ## 来源与许可
 
-- 原文：[Prestige](https://antimatterdimensions.wiki.gg/index.php?title=Prestige&oldid=3398)（修订 ID `3398`；最后编辑者 Adf；首次抓取于 2026-11-15；本批于 2026-11-26 复核，固定链接与修订 ID 未变）
+- 原文：[Prestige](https://antimatterdimensions.wiki.gg/index.php?title=Prestige&oldid=3398)（修订 ID `3398`；最后编辑者 Adf）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Prestige&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为简体中文翻译（改编），已修改：翻译正文、统一术语并移除原页面板、信息框和导航模板；图片未转载，本页按相同许可共享。
 

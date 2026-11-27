@@ -1,5 +1,5 @@
 ---
-title: "成就"
+title: "原版:成就"
 description: "原版 Wiki《Achievements》条目的简体中文翻译：144 项成就的名称、条件、奖励与效果，以及成就乘数机制"
 tags:
   - 原版Wiki翻译
@@ -30,7 +30,7 @@ aliases:
 - [永恒升级 4](/player/original/ow-eternity-upgrades)：时间维度也吃成就乘数；
 - 现实升级「Paradoxically Attain」：按成就乘数提升超光速粒子；
 - 鹿颈长符文效果「成就乘数幂」：把成就乘数取幂；
-- [薇成就](/player/original/ow-v) 30 项里程碑：黑洞强度吃成就乘数（两个黑洞都算）；
+- [薇成就](/player/original/ow-v)  30 项里程碑：黑洞强度吃成就乘数（两个黑洞都算）；
 - [太阳神](/player/original/ow-ra) 的薇记忆 25 级里程碑：成就乘数再 ^1.5。
 
 ## 成就列表
@@ -198,7 +198,7 @@ aliases:
 
 ## 来源与许可
 
-- 原文：[Achievements](https://antimatterdimensions.wiki.gg/index.php?title=Achievements&oldid=3363)（修订 ID 3363；抓取于 2026-11-15）
+- 原文：[Achievements](https://antimatterdimensions.wiki.gg/index.php?title=Achievements&oldid=3363)（修订 ID 3363）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Achievements&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为简体中文翻译（改编），已修改：翻译全部 144 项成就的名称/条件/奖励、把图标列合并为文字说明、昵称保留英文原名、剧透折叠块按原文标注、图片未转载；本页按相同许可共享。
 - 原文图片未转载：原页含成就界面截图与每项成就的原始/手绘图标（共 288 张），此处仅保留文字。

@@ -1,5 +1,5 @@
 ---
-title: "永恒"
+title: "原版:永恒"
 description: "原版 Wiki《Eternity》条目的完整简体中文翻译：解锁条件、永恒点数公式、永恒次数与复位范围"
 tags:
   - 原版Wiki翻译
@@ -16,7 +16,7 @@ aliases:
   - "/original/ow-eternity"
 ---
 
-**永恒（Eternity）**是游戏的第二个重置层，在取得**无限值**（Infinity，即 1.80e308 [无限点数](/player/original/ow-infinity)，达到后显示为 ∞）之后抵达。
+**永恒（Eternity）**是游戏的第二个重置层，在取得**无限值**（Infinity，即 1.80e308  [无限点数](/player/original/ow-infinity)，达到后显示为 ∞）之后抵达。
 
 ## 机制
 
@@ -54,20 +54,20 @@ $$\left\lfloor EP_{mult} \times 5^{\frac{\log_{10}\left( IP_{\text{highest this 
 
 ## 永恒次数
 
-早期玩家每次重置只能获得 1 次永恒；大多数作用于永恒次数的乘数与现实相关内容绑定。玩家可以通过[现实升级](/player/original/ow-reality-upgrades)「Eternal Amplifier」（永恒增幅器）或[成就 113](/player/original/ow-achievements)等途径提高获得的**永恒次数**。
+早期玩家每次重置只能获得 1 次永恒；大多数作用于永恒次数的乘数与现实相关内容绑定。玩家可以通过[现实升级](/player/original/ow-reality-upgrades)「Eternal Amplifier」（永恒增幅器）或[成就 113](/player/original/ow-achievements) 等途径提高获得的**永恒次数**。
 
-**永恒次数**用于决定某些升级的强度（例如[永恒升级 2](/player/original/ow-eternity-upgrades)），也被用作推进门槛：例如解锁[永恒挑战 1](/player/original/ow-eternity-challenges)需要玩家拥有一定数量的**永恒次数**。
+**永恒次数**用于决定某些升级的强度（例如[永恒升级 2](/player/original/ow-eternity-upgrades)），也被用作推进门槛：例如解锁[永恒挑战 1](/player/original/ow-eternity-challenges) 需要玩家拥有一定数量的**永恒次数**。
 
 务必不要把**永恒点数**与**永恒次数**混淆——**永恒点数**是该层的主要货币，在游戏中大量使用；而**永恒次数**是一种重置货币，基本不能用于购买升级，只在特定场合使用。
 
 ## 来源与许可
 
-- 原文：[Eternity](https://antimatterdimensions.wiki.gg/index.php?title=Eternity&oldid=3118)（修订 ID 3118；最后编辑者 The1AndOnly6030；抓取于 2026-11-15）
+- 原文：[Eternity](https://antimatterdimensions.wiki.gg/index.php?title=Eternity&oldid=3118)（修订 ID 3118；最后编辑者 The1AndOnly6030）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Eternity&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为**简体中文翻译（改编）**，已修改：翻译正文与公式，统一术语，把原式中的中文变量名改为原文英文变量名并加中文解释，移除导航模板与信息框，图片未转载；本页按相同许可共享。
 - 原文图片未转载：原文该页不含图片或其它媒体，仅有文字与公式。
 - 原文存在两处拼写错误：公式里的 Eternnity 与正文的 Eterntiies，按上下文分别指「本次永恒」与「永恒次数」，译文已按原意处理并在本块注明。
-- 源码核对：`src/core/eternity.js`（源码定位：IvarK/AntimatterDimensionsSourceCode@5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/eternity.js；[固定提交 5409e32](https://github.com/IvarK/AntimatterDimensionsSourceCode/commit/5409e320cecef96a917cca1dfb68f1f183e499ca)；具体文件证据留在内部核验记录） 的奖励计算与重置范围，以及 `src/core/player.js`（源码定位：IvarK/AntimatterDimensionsSourceCode@5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/player.js；[固定提交 5409e32](https://github.com/IvarK/AntimatterDimensionsSourceCode/commit/5409e320cecef96a917cca1dfb68f1f183e499ca)；具体文件证据留在内部核验记录） 的永恒入口条件。
+- 源码核对：`src/core/eternity.js`（源码定位：IvarK/AntimatterDimensionsSourceCode@5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/eternity.js；具体文件证据留在内部核验记录） 的奖励计算与重置范围，以及 `src/core/player.js`（源码定位：IvarK/AntimatterDimensionsSourceCode@5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/player.js；具体文件证据留在内部核验记录） 的永恒入口条件。
 
 ## 相关条目
 

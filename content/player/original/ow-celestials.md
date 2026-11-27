@@ -1,5 +1,5 @@
 ---
-title: "天神"
+title: "原版:天神"
 description: "原版 Wiki《Celestials》条目的完整简体中文翻译：七位天神、无名氏设定、玩家身份与最终目标"
 tags:
   - 原版Wiki翻译
@@ -16,7 +16,7 @@ aliases:
   - "/original/ow-celestials"
 ---
 
-**天神（Celestials）**是游戏最后的主要功能，也是《反物质维度》的主要对立者。每位天神都有独特的机制、升级与性格。击败他们会奖励玩家强力加成、新功能或解锁其他天神。**击败全部 7 位天神是通关游戏的必要条件。** 购买全部[现实升级](/player/original/ow-reality-upgrades)会解锁[第一位天神](/player/original/ow-teresa)；[成就 147「Master of Reality」](https://antimatterdimensions.wiki.gg/wiki/Achievements)的奖励就是解锁特蕾莎。在网页版源码中，拥有该成就会让游戏自动解锁特蕾莎页签，无论玩家是否真的买齐了全部现实升级。
+**天神（Celestials）**是游戏最后的主要功能，也是《反物质维度》的主要对立者。每位天神都有独特的机制、升级与性格。击败他们会奖励玩家强力加成、新功能或解锁其他天神。**击败全部 7 位天神是通关游戏的必要条件。** 购买全部[现实升级](/player/original/ow-reality-upgrades)会解锁[第一位天神](/player/original/ow-teresa)；[成就 147「Master of Reality」](https://antimatterdimensions.wiki.gg/wiki/Achievements) 的奖励就是解锁特蕾莎。在网页版源码中，拥有该成就会让游戏自动解锁特蕾莎页签，无论玩家是否真的买齐了全部现实升级。
 
 所有天神都有自己的「天神现实」，但现实与每位天神以及游戏其余部分的关系取决于该天神。天神也是无时间的存在：除非另有说明，天神引入的新机制不受游戏速度倍率影响，而是以**真实时间**计算。
 
@@ -70,7 +70,7 @@ aliases:
 
 ## 来源与许可
 
-- 原文：[Celestials](https://antimatterdimensions.wiki.gg/index.php?title=Celestials&oldid=3187)（修订 ID `3187`；最后编辑者 KrutarMarsons；抓取于 2026-11-15）
+- 原文：[Celestials](https://antimatterdimensions.wiki.gg/index.php?title=Celestials&oldid=3187)（修订 ID `3187`；最后编辑者 KrutarMarsons）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Celestials&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为**简体中文翻译（改编）**，已修改：翻译正文、统一术语、移除页签图标/导航模板、图片未转载；本页按相同许可共享。
 - 说明：原文中的方括号占位（如 [Lesser/Deity/Monarch]、[False/Deity/Destroyer]）是游戏内随进度变化的称谓分支，译文保留原样未擅自选定其一。

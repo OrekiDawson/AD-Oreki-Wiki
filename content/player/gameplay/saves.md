@@ -1,5 +1,5 @@
 ---
-title: "存档安全：自动保存、备份与兼容导入"
+title: "存档"
 description: "从日常保存到跨版本迁移，保护进度并验证导入后的存档是否真的可用"
 tags:
   - 玩法
@@ -32,14 +32,14 @@ aliases:
 ## 更新或换平台前的验证流程
 
 1. **导出原档并保留原件。** 不要让测试版本覆盖唯一正常存档。
-2. **写清来源。** 记录 Android 还是 Web、原版还是 Oreki Edition、版本和导出时的阶段。
+2. **写清来源。** 记录 Android 还是 Web、原版还是 本 MOD、版本和导出时的阶段。
 3. **用副本导入目标版本。** 预发布版优先使用副本或新档。
 4. **检查读入结果。** 阶段和资源应处于预期位置，研究与解锁应成套，自动购买器和重置按钮应可用。
 5. **重新打开后再确认。** 正常保存、关闭并重新打开，观察刚才的状态能否再次读出；确认后才考虑迁移主档。
 
 ### 三种迁移不能混为一谈
 
-**Android 与 Web**：两个版本都叫 Oreki Edition，不代表共享全部字段、默认设置或行为。平台构建、游戏版本和新增字段可能不同，应以对应版本明确支持跨端为前提。
+**Android 与 Web**：两个版本都叫 本 MOD，不代表共享全部字段、默认设置或行为。平台构建、游戏版本和新增字段可能不同，应以对应版本明确支持跨端为前提。
 
 **原版与 MOD**：MOD 可能增加设置、自动化或进度字段。旧版本即使勉强打开，也可能在下一次保存时丢失无法理解的字段；不要把“能显示页面”当成完整兼容。
 
@@ -59,6 +59,6 @@ aliases:
 
 ## 相关条目
 
-[下载与版本](/player/download-and-version/) · [原版行为与 Oreki Edition 修改](/player/gameplay/original-vs-mod) · [阶段门禁](/player/gameplay/stage-gates) · [玩家常见问题](/player/faq/)
+[下载与版本](/player/download-and-version/) · [原版行为与 MOD 修改](/player/gameplay/original-vs-mod) · [阶段门禁](/player/gameplay/stage-gates) · [玩家常见问题](/player/faq/)
 
-原版导出入口可参阅[Antimatter Dimensions Wiki 的存档页面](https://antimatterdimensions.wiki.gg/wiki/Save)；平台实现和 MOD 行为可能不同，具体保留项以当前版本为准。
+原版导出入口可参阅 [Antimatter Dimensions Wiki 的存档页面](https://antimatterdimensions.wiki.gg/wiki/Save)；平台实现和 MOD 行为可能不同，具体保留项以当前版本为准。

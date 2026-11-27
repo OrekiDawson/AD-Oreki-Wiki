@@ -17,9 +17,9 @@ Android 构建页最容易让人迷路的地方，不是 Gradle 命令本身，�
 
 | 位置 | 作用 |
 | --- | --- |
-| 根 `settings.gradle.kts`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@9d8fc46ce99279720b5b3068027bb76bceb35756/settings.gradle.kts；[固定提交 9d8fc46](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/commit/9d8fc46ce99279720b5b3068027bb76bceb35756)；具体文件证据留在内部核验记录） | 注册唯一 Android 模块 `:app` |
-| 根 `build.gradle.kts`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@9d8fc46ce99279720b5b3068027bb76bceb35756/build.gradle.kts；[固定提交 9d8fc46](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/commit/9d8fc46ce99279720b5b3068027bb76bceb35756)；具体文件证据留在内部核验记录） | 声明 Android Gradle Plugin 9.5.2 |
-| `app/build.gradle.kts`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@9d8fc46ce99279720b5b3068027bb76bceb35756/app/build.gradle.kts；[固定提交 9d8fc46](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/commit/9d8fc46ce99279720b5b3068027bb76bceb35756)；具体文件证据留在内部核验记录） | 定义 SDK、ABI、source set、构建类型和签名入口 |
+| 根 `settings.gradle.kts`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@9d8fc46ce99279720b5b3068027bb76bceb35756/settings.gradle.kts；具体文件证据留在内部核验记录） | 注册唯一 Android 模块 `:app` |
+| 根 `build.gradle.kts`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@9d8fc46ce99279720b5b3068027bb76bceb35756/build.gradle.kts；具体文件证据留在内部核验记录） | 声明 Android Gradle Plugin 9.5.2 |
+| `app/build.gradle.kts`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@9d8fc46ce99279720b5b3068027bb76bceb35756/app/build.gradle.kts；具体文件证据留在内部核验记录） | 定义 SDK、ABI、source set、构建类型和签名入口 |
 | `build-logic/` | 准备完整游戏输入、元数据、资源和策略门禁 |
 | 根 `gradlew` / `gradlew.bat` | 从仓库根执行 Gradle |
 
@@ -65,7 +65,7 @@ Android 构建页最容易让人迷路的地方，不是 Gradle 命令本身，�
 - **配置阶段找不到完整游戏输入**：先检查 `oreki.fullGameStage` 的实际解析路径，再查阶段目录、`build/agp-generated-res`、`build/agp-fullgame-assets` 和 `scripts/payload/lib`。
 - **资源或 Manifest 阶段失败**：核对输入是否属于同一冻结基线，不要用旧缓存或同名 APK 代替来源不明的文件。
 - **Release 被签名门禁拒绝**：确认 `keys/oreki.jks` 和密码环境变量是否按仓库规则可用；不要把 unsigned 实验包上传为正式包。
-- **构建成功但游戏行为异常**：回到 [Android 架构](/developer/architecture/android)，分别检查 `GameApi`、自动化调度和阶段判定；构建绿灯不能证明这些运行时路径正确。
+- **构建成功但游戏行为异常**：回到  [Android 架构](/developer/architecture/android)，分别检查 `GameApi`、自动化调度和阶段判定；构建绿灯不能证明这些运行时路径正确。
 
 ## 相关条目
 
