@@ -13,6 +13,7 @@
 // 规则的权威文本在 content/wiki-rules.md；本脚本只覆盖可机器判断的部分。
 import fs from "node:fs"
 import path from "node:path"
+import { CATEGORY_DIRS, ORIGINAL_TRANSLATION_DIR, PLAYER_DIR } from "./wiki-paths.mjs"
 
 const ROOT = "content"
 const RULE_PAGE_TITLE = "反物质维度MOD Wiki:知识库规则"
@@ -20,26 +21,7 @@ const RULE_PAGE = "content/wiki-rules.md"
 const POLICY_PAGE = "content/wiki-not.md"
 const POLICY_PAGE_TITLE = "反物质维度MOD Wiki:本站不是什么"
 const DRAFT_DIR = "content/ai-drafts/"
-const PLAYER_DIR = "content/player/"
 const DEVELOPER_DIR = "content/developer/"
-const CATEGORY_DIRS = [
-  "content/player/",
-  "content/player/getting-started/",
-  "content/player/gameplay/",
-  "content/player/original/",
-  "content/player/mods/",
-  "content/player/download-and-version/",
-  "content/player/faq/",
-  "content/developer/",
-  "content/developer/architecture/",
-  "content/developer/reverse-engineering/",
-  "content/developer/build/",
-  "content/developer/current/",
-  "content/developer/troubleshooting/",
-  "content/developer/references/",
-  "content/developer/evidence/",
-  "content/developer/ai-summaries/",
-]
 const REQUIRED_TERMS = ["永恒挑战", "自动购买器", "AGP", "Kotlin", "Lai Tela", "build_mod.py"]
 const MIN_PAGES = 15
 const SECRET_PATTERNS = [

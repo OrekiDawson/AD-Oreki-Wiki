@@ -31,6 +31,10 @@ jobs:
         run: node scripts/check-fonts.mjs
       - name: Navigation coverage and public archive boundary
         run: node scripts/check-navigation.mjs
+      - name: Wiki path and title namespace regression tests
+        run: node --test scripts/tests/wiki-paths.test.mjs
+      - name: Title length and naming hard gate
+        run: node scripts/check-title-length.mjs
       - name: No page transition animation or progress bar
         run: node scripts/check-motion.mjs
       - name: Prepare Quartz 5 source (pinned)
@@ -53,6 +57,9 @@ jobs:
       - name: Built navigation DOM and empty-menu gate
         working-directory: .quartz-build
         run: node scripts/check-navigation.mjs --built public
+      - name: Built title length hard gate
+        working-directory: .quartz-build
+        run: node scripts/check-title-length.mjs --built public
       - name: Built font policy
         working-directory: .quartz-build
         run: node scripts/check-fonts.mjs --built public

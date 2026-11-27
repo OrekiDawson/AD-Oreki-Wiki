@@ -79,12 +79,16 @@ jobs:
         run: bash -n scripts/verify-https.sh
       - name: HTTPS monitor regression tests (Node 24, no network or API calls)
         run: node --test scripts/tests/https-监控.test.mjs
+      - name: Wiki path and title namespace regression tests
+        run: node --test scripts/tests/wiki-paths.test.mjs
       - name: Translation zone checks (manifest / license / attribution / status)
         run: node scripts/check-translation.mjs
       - name: System font policy
         run: node scripts/check-fonts.mjs
       - name: Navigation coverage and public archive boundary
         run: node scripts/check-navigation.mjs
+      - name: Title length and naming hard gate
+        run: node scripts/check-title-length.mjs
       - name: No page transition animation or progress bar
         run: node scripts/check-motion.mjs
       - run: bash scripts/bootstrap-quartz.sh .quartz-build
@@ -98,6 +102,9 @@ jobs:
         working-directory: .quartz-build
       - name: Built navigation DOM and empty-menu gate
         run: node scripts/check-navigation.mjs --built public
+        working-directory: .quartz-build
+      - name: Built title length hard gate
+        run: node scripts/check-title-length.mjs --built public
         working-directory: .quartz-build
       - name: Built font policy
         run: node scripts/check-fonts.mjs --built public
