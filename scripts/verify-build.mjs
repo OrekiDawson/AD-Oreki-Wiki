@@ -79,7 +79,7 @@ const CATEGORY_TITLES = {
   "player/mods": "MOD 介绍",
   "player/download-and-version": "下载与版本",
   "player/faq": "玩家常见问题",
-  "developer/architecture": "架构与运行时",
+  "developer/architecture": "架构",
   "developer/reverse-engineering": "逆向与语义映射",
   "developer/build": "构建与交付",
   "developer/current": "当前状态",
