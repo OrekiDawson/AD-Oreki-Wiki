@@ -8,7 +8,7 @@ aliases:
   - "/original"
 ---
 
-# 原版 Wiki 中文翻译
+# 原版译文
 
 这里是《反物质维度》原版 Wiki 的简体中文入口。栏目按原版 Wiki 的游戏阶段和知识分类组织，涵盖基础机制、无限、永恒、现实、天神、挑战与其他资料。本站只翻译原版知识；本 MOD 的改动请转到[原版与 MOD 的区别](/player/gameplay/original-vs-mod)。
 

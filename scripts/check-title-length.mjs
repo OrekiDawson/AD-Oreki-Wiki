@@ -95,6 +95,9 @@ if (builtOnly) {
   for (const file of htmlFiles) {
     const rel = path.relative(publicDir, file).replaceAll("\\", "/")
     const route = rel === "index.html" ? "/" : `/${rel.replace(/\/index\.html$/, "").replace(/\.html$/, "")}`
+    // 标签页保留 URL 和元数据，但属于 Quartz 自动生成的辅助索引；
+    // 不把其重复的文章标题当作公开条目的 H1-H4 违规。
+    if (route === "/tags" || route.startsWith("/tags/")) continue
     const html = fs.readFileSync(file, "utf8")
     for (const match of html.matchAll(/<h([1-4])\b[^>]*>([\s\S]*?)<\/h\1>/gi)) {
       const kind = `H${match[1]}`
