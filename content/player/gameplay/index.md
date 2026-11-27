@@ -33,4 +33,4 @@ aliases:
 - [生产链与重置](/player/antimatter-dimensions-core-loop)：理解维度生产链和多层重置如何接力。
 - [增长与重置决策](/player/antimatter-dimensions-decisions)：从收益、等待和限制判断下一步行动。
 
-原版机制以官方 3.21.0 基线与 Web 冻结上游的读码结果为准，社区 Wiki（[Antimatter Dimensions Wiki](https://antimatterdimensions.wiki.gg/wiki/Antimatter_Dimensions)）用于概念与分类参照。MOD 改过的阈值、倍率与自动化行为会在对应条目里单独标注；两端的集中对照见 [原版行为与 MOD 修改](/player/gameplay/original-vs-mod)。
+原版机制以官方 3.21.0 基线与 Web 冻结上游的读码结果为准，社区 Wiki（[Antimatter Dimensions Wiki](https://antimatterdimensions.wiki.gg/index.php?title=Antimatter_Dimensions&oldid=3325)，已用 MediaWiki API 核对标题、修订号与 HTTP 200；2026-11-27 复核）用于概念与分类参照。MOD 改过的阈值、倍率与自动化行为会在对应条目里单独标注；两端的集中对照见 [原版行为与 MOD 修改](/player/gameplay/original-vs-mod)。
