@@ -1,37 +1,69 @@
 ---
-title: "反物质维度：游戏总览与阅读路线"
-description: "从生产链、重置到挑战与自动化，快速找到《反物质维度》各类玩法的入口"
+title: "反物质维度"
+description: "理解八级维度、计数频率、早期重置和无限之前的成长节奏"
 tags:
-  - 游戏介绍
+  - 游戏机制
   - 反物质维度
-  - 玩法
+  - 重置
 aliases:
   - "/antimatter-dimensions"
 ---
 
-第一次打开《反物质维度》时，目标看起来很简单：让一个数字不断变大。玩下去才会发现，真正的主角不是反物质，而是**重置**——每次把短期积累归零，换来更快的生产、更高的上限，或一套新的规则。
+《反物质维度》最容易让人误会的地方，是它看起来只在把一个数字推高。实际上，数字只是生产链的仪表盘：你购买更高阶的维度，让低阶维度增长；低阶维度再把增长变成反物质。真正的节奏来自“什么时候把这一轮的积累换成下一轮的起点”。
 
-这篇页面只负责建立地图，不把所有机制挤在同一条长文里。按兴趣继续阅读：
+## 八级维度
 
-- [生产链与重置：反物质维度如何成长](/player/antimatter-dimensions-core-loop)：理解维度怎样互相生产，以及维度提升、星系、大坍缩、永恒和现实为何能接成一条成长链。
-- [增长为什么会停：从指数到重置的选择](/player/antimatter-dimensions-decisions)：理解数字变大后如何判断继续等待、购买升级、挑战或进行下一次重置。
-- [开始游玩](/player/getting-started/)：从第一次进入到第一次大坍缩，按实际操作顺序入门。
+游戏共有八级反物质维度。第一维度直接生产反物质；第二维度生产第一维度，依此向上，直到第八维度。高阶维度的产出沿链条向下传递，所以购买第八维度不会立刻在反物质数字上显出全部价值——它先增加第七维度，再经过多级传递回到第一维度。
 
-《反物质维度》是一款放置增量游戏。它把生产链、指数增长和多层威望机制组合在一起：低层系统负责产生数字，高层重置把这一轮的成果换成下一轮的优势。挑战和自动化则不断改变“怎样增长”与“什么时候结算”的答案。
+新档开始时通常只开放前四级，后续维度要靠维度提升逐步解锁。每级维度都有数量和倍率：数量决定有多少个生产者，倍率决定每个生产者的产出。基础规则下，每购买同一级维度十次，通常会触发一次倍率提升；因此“买得起就买”并不只是增加数量，也是在接近下一次整档增益。
 
-Oreki Edition 是基于原版制作的 MOD，不是原版的官方更新。Android 与 Web 的界面、版本和自动化实现可能不同；具体差异请阅读[原版与 Oreki Edition](/player/gameplay/original-vs-mod)，不要把原版攻略中的每个数字直接套用到 MOD。
+## 计数频率
+
+计数频率（Tickspeed）控制生产链更新的节奏。它不是某一级维度的专属倍率，而是会影响整条维度链；当维度等级逐渐提高后，降低一次计数间隔往往比把资源塞进单个低阶维度更能改善总产出。
+
+早期可以用一个简单问题判断购买方向：下一次维度购买是在补足生产链、触发十次倍率，还是只是把一个已经很贵的数量再抬高一点？如果后者需要等待很久，就该检查下一次维度提升或星系是否更接近。
+
+## 三种早期重置
+
+早期重置不是失败，而是把暂时资源换成更好的起跑线；但每种重置清掉的东西不同，不能把它们当成同一个按钮。
+
+- **维度献祭**：清除较低级维度的数量，换取第八维度倍率。它适合在低阶数量已经变得廉价、而高阶维度能迅速补回生产链时使用。
+- **维度提升**：清除维度和计数频率等当前积累，解锁新的维度或提高维度效果。它的价值首先在于打开生产链的更高一环，而不是眼前的数字是否变大。
+- **反物质星系**：清除维度提升带来的部分进度，换来更强的计数频率效果。星系通常是更重的一次交换，应该在新一轮能很快恢复时购买。
+
+每次按下重置前，先看“清掉什么”和“留下什么”。如果重置后只能回到原来的位置，却没有新的维度、倍率或更快的计数频率，说明当前收益还不足以抵消恢复成本。
+
+## 走向无限
+
+完成早期重置后，生产链会逐渐接近反物质的第一道数字天花板。原版基线通常在约 `1.80 × 10³⁰⁸` 反物质处开放大坍缩；它把这一轮的反物质进度换成无限点数（IP），并开启无限阶段。这个数值属于原版参考，不应直接当作 Oreki Edition 的 Android、Web 或未来版本承诺。
+
+大坍缩之后，游戏仍会回到维度界面，但 IP 升级会改变下一轮的速度。于是“当前反物质少了”不再是主要判断标准；应比较一轮生产、一次早期重置和一次大坍缩各自留下的长期收益。继续阅读[无限阶段](/player/gameplay/infinity)，可以看到 IP、打破无限和无限挑战如何接在这条生产链后面。
+
+## 读懂增长停滞
+
+当反物质增长变慢，按下面顺序检查通常比盲目等待有效：
+
+1. **链条是否完整**：高阶维度是否已解锁并实际购买，某一级是否因为价格或前置条件停在零。
+2. **倍率是否临界**：某一级是否只差几次购买就能触发下一次十次倍率，或者计数频率升级更值得。
+3. **重置是否划算**：维度提升、星系或大坍缩是否会留下新能力，而不是只清除当前资源。
+4. **版本是否一致**：原版 Wiki 的条件、MOD 的调整和当前游戏页面不是同一层证据，尤其不要把原版门槛当成 MOD 的保证。
+
+自动购买器可以代替重复购买，却不能替你理解重置的交换，也不能绕过尚未满足的解锁条件。若自动化“看起来在运行”但进度不动，先回到生产链、阶段门禁和合法结算检查，而不是把 tick 间隔无限调小。
+
+## 为什么这套循环耐玩
+
+它把同一件事不断换一种尺度重述：低层是“买十次得到倍率”，中层是“清掉一轮得到星系”，高层则是“舍弃熟悉的生产链得到新的资源”。玩家一直在做取舍，却不会永远停留在同一条升级表上。原版 Wiki 也把这种逐层展开的生产和多层 prestige 视为游戏的核心结构；Oreki Edition 的具体数值和自动化行为仍应按版本单独阅读。
 
 ## 继续阅读
 
-- [无限与永恒](/player/gameplay/progression-infinity-eternity)：按成长顺序理解前两层重置。
-- [现实与时间研究](/player/gameplay/reality-time-studies)：时间研究、时间膨胀和第一次现实。
-- [挑战与真实结算](/player/gameplay/challenges)：特殊限制和挑战奖励。
-- [智能自动购买器](/player/gameplay/automation)：把重复操作变成可调整的策略。
-- [存档安全](/player/gameplay/saves)：更新或换平台前保护进度。
+- [生产链与重置](/player/antimatter-dimensions-core-loop)：按机制解释维度生产和重置之间的接力关系。
+- [无限阶段](/player/gameplay/infinity)：从第一次大坍缩进入 IP、打破无限和无限挑战。
+- [开始游玩](/player/getting-started/)：按操作顺序完成第一次成长循环。
+- [原版与 MOD 差异](/player/gameplay/original-vs-mod)：核对原版、Android 和 Web 的版本边界。
 
 ## 参考资料
 
-- [Antimatter Dimensions Wiki：Antimatter Dimension](https://antimatterdimensions.wiki.gg/wiki/Antimatter_Dimension)
-- [Antimatter Dimensions Wiki：Eternity](https://antimatterdimensions.wiki.gg/wiki/Eternity)
-- [Antimatter Dimensions Wiki：Reality](https://antimatterdimensions.wiki.gg/wiki/Reality)
+- [Antimatter Dimensions Wiki：Antimatter Dimensions](https://antimatterdimensions.wiki.gg/wiki/Antimatter)
+- [Antimatter Dimensions Wiki：Dimensions](https://antimatterdimensions.wiki.gg/wiki/Dimensions)
+- [Antimatter Dimensions Wiki：Prestige](https://antimatterdimensions.wiki.gg/wiki/Prestige)
 - [Antimatter Dimensions 原版源码](https://github.com/IvarK/AntimatterDimensionsSourceCode)
