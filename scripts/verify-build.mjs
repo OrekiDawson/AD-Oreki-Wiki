@@ -141,6 +141,8 @@ const LEGACY_URLS = [
   "references/terminology",
   "troubleshooting/coroutine-abi",
   "troubleshooting/save-compatibility",
+  "player/gameplay/autosave",
+  "player/gameplay/save-compatibility",
 ]
 for (const slug of LEGACY_URLS) {
   const aliasFile = path.join(PUB, slug + ".html")
@@ -186,6 +188,8 @@ const LEGACY_URL_TARGETS = {
   "references/terminology": "player/terminology",
   "troubleshooting/coroutine-abi": "developer/troubleshooting/coroutine-abi",
   "troubleshooting/save-compatibility": "developer/troubleshooting/save-compatibility",
+  "player/gameplay/autosave": "player/gameplay/saves",
+  "player/gameplay/save-compatibility": "player/gameplay/saves",
 }
 for (const [legacy, target] of Object.entries(LEGACY_URL_TARGETS)) {
   const aliasFile = path.join(PUB, legacy + ".html")

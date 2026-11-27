@@ -12,7 +12,7 @@ tags:
 
 - **平台、版本和问题反馈**：先确认 Android、Web、Stable 与 Pre-release 的区别，再判断问题是否与版本有关。见[平台与版本](/player/faq/platform-and-version)。
 - **自动购买器和阶段入口**：处理自动化没有动作、设置被恢复、挑战或天神入口暂不可用等问题。见[自动化与阶段入口](/player/faq/automation-and-unlocks)。
-- **存档与跨版本操作**：处理现实后的进度变化、跨平台导入、更新和回退。见[存档与兼容性](/player/faq/saves-and-compatibility)。
+- **存档与跨版本操作**：处理现实后的进度变化、跨平台导入、更新和回退。见[存档安全](/player/gameplay/saves)。
 - **从头开始游玩**：第一次打开游戏和第一次大坍缩的操作路径分别见[开始游玩](/player/getting-started/)与[第一次大坍缩](/player/getting-started/first-crunch)。
 - **阶段推进与挑战**：按进度查看从新档到挑战、永恒和后续阶段的常见门槛，见[阶段与挑战 FAQ](/player/faq/progression)。
 
