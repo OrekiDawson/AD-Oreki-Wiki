@@ -25,7 +25,7 @@ aliases:
 | 名称 | 作者 | 内容 | 状态／备注 |
 | --- | --- | --- | --- |
 | [AD: Rewarded](https://rangaz.github.io/AntimatterDimensionsWithAchievementRewards/) | Rangazz | 为大量成就加入新的或强化的奖励，并附带其它改进 | 开发完成 |
-| [AD: Redemption Legacy](https://toilet45.github.io/ADRedemption/) | Royal 等 | 新增名为 Mending 的威望层与大量新功能，其中包括突破 $\text{e}9\text{e}15$ 反物质的能力 | 原本还有更多计划，留给它的 Break Eternity 移植版 |
+| [AD: Redemption Legacy](https://toilet45.github.io/ADRedemption/) | Royal 等 | 新增名为 Mending 的威望层与大量新功能，其中包括突破 e9e15 反物质的能力 | 原本还有更多计划，留给它的 Break Eternity 移植版 |
 
 原文表格另有一行空白占位。AD: Redemption Legacy 的作者栏原站注明「其他开发者：Amity、aswefljkd、cyxw、Hexa、incremental_gamer、sxy62146214、Wellington，以及致谢名单中的贡献者」。
 
@@ -53,8 +53,8 @@ aliases:
 ### AD: Smooth
 
 - 链接：<https://googolplexo.github.io/AntimatterDimensionsSmooth/>｜作者：Googolplex｜仓库：<https://github.com/Googolplexo/AntimatterDimensionsSmooth>｜状态：持续开发
-- 所有公式都改成平滑函数：软上限与（多数）硬上限被去掉或从开局就生效，因此整个游戏需要重新平衡，当前终局到 $\text{e}4000$。
-- 平衡范围：到 EC10 之前，或 $\text{e}100$ EP。
+- 所有公式都改成平滑函数：软上限与（多数）硬上限被去掉或从开局就生效，因此整个游戏需要重新平衡，当前终局到 e4000。
+- 平衡范围：到 EC10 之前，或 e100 EP。
 
 ### AD: Space
 

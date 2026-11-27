@@ -62,8 +62,13 @@ const walkMarkdown = (dir) => fs.readdirSync(dir, { withFileTypes: true }).forEa
   else if (entry.name.endsWith('.md')) sourceFiles.push(file)
 })
 walkMarkdown(path.join(root, 'content'))
+const plainScientific = /^(?:[\d.,]+|\\text\{e\}|\\mathrm\{e\}|e|\\,|~|\s)+$/
 for (const file of sourceFiles) {
   const text = fs.readFileSync(file, 'utf8')
+  for (const [, value] of text.matchAll(/(?<!\$)\$([^$\n]+)\$(?!\$)/g)) {
+    if (plainScientific.test(value))
+      errors.push(`纯科学记数法不得使用 KaTeX 衬线字体，请改为普通文本：${path.relative(root, file)}：${value}`)
+  }
   const numericCode = [...text.matchAll(/`([^`]+)`/g)].map((match) => match[1])
     .filter((value) => value.length <= 80 && /^[\s\d.eE+\-−×x^*/()→←=]+$/.test(value)
       && /(?:(?<![A-Za-z0-9])(?:\d{1,3}(?:\.\d+)?)\s*[eE][+-]?\d+(?![A-Za-z0-9])|(?<!\d)e\d{2,}|(?<![A-Za-z0-9])\d{1,3}(?:\.\d+)?\s*[×x]\s*10\^\d)/.test(value))

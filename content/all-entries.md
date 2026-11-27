@@ -1,12 +1,12 @@
 ---
 title: "全部条目"
-description: "按主题与中文标题浏览 反物质维度 MOD Wiki 的 149 个正式条目"
+description: "按主题与中文标题浏览 反物质维度 MOD Wiki 的 148 个正式条目"
 tags:
   - 导航
   - 索引
 ---
 
-这里列出当前公开发布的 **149** 个正式条目。草稿、内部归档、兼容入口和重定向不计入索引。
+这里列出当前公开发布的 **148** 个正式条目。草稿、内部归档、兼容入口和重定向不计入索引。
 
 ## 玩家专区
 
@@ -30,9 +30,8 @@ tags:
 - [计数频率](/player/original/ow-tickspeed)
 - [计数频率·星系数量明细（被毁灭的现实）](/player/original/ow-tickspeed-galaxy-breakdown-doomed)
 - [记数法](/player/original/ow-notations)
-- [阶段解锁：进度地图与排障入口](/player/gameplay/stage-gates)
+- [阶段解锁与排障：从页面显示到真实结算](/player/gameplay/stage-gates)
 - [阶段进度：从新档到天神](/player/gameplay/stage-progression)
-- [阶段门禁排障：页面提前出现、按钮灰掉与重置后变化](/player/gameplay/stage-gate-troubleshooting)
 - [开始游玩 Oreki Edition：入门阅读地图](/player/getting-started)
 - [快捷键](/player/original/ow-shortcuts)
 - [莱特拉](/player/original/ow-laitela)

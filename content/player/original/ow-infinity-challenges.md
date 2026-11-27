@@ -16,7 +16,7 @@ aliases:
   - "/original/ow-infinity-challenges"
 ---
 
-无限挑战是第二类[挑战](/player/original/ow-challenges)，[打破无限](/player/original/ow-break-infinity)之后解锁。它和[普通挑战](/player/original/ow-challenges)的区别在于难度：限制更狠、门槛更高，目标普遍超过无限值（$1.80\text{e}308$）反物质，且各关目标不同。
+无限挑战是第二类[挑战](/player/original/ow-challenges)，[打破无限](/player/original/ow-break-infinity)之后解锁。它和[普通挑战](/player/original/ow-challenges)的区别在于难度：限制更狠、门槛更高，目标普遍超过无限值（1.80e308）反物质，且各关目标不同。
 
 打完一个无限挑战，会以比较特别的方式强化某项产出——比如 IC2 直接送维度献祭自动购买器。无限挑战也可以反复重打，用来压缩它在挑战记录里的用时，那些记录会喂给特定升级与成就。
 

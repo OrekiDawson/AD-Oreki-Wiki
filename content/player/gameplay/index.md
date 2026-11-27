@@ -28,9 +28,8 @@ aliases:
 - [原版与 MOD 差异](/player/gameplay/original-vs-mod)：判断规则属于原版、MOD 还是平台差异。
 - [MOD 玩法改动](/player/gameplay/mod-changes)：已核对的数值、解锁和自动化改动。
 - [平台差异](/player/gameplay/platform-differences)：Android 与 Web 的行为边界。
-- [阶段门禁](/player/gameplay/stage-gates)：页面与功能的解锁检查、非法直达与恢复。
+- [阶段解锁与排障](/player/gameplay/stage-gates)：页面、按钮与真实结算的解锁检查。
 - [阶段进度](/player/gameplay/stage-progression)：从新档到无限、永恒、现实和天神的重置路线。
-- [阶段门禁排障](/player/gameplay/stage-gate-troubleshooting)：处理页面提前出现、按钮灰掉和重置后变化。
 - [生产链与重置](/player/antimatter-dimensions-core-loop)：理解维度生产链和多层重置如何接力。
 - [增长与重置决策](/player/antimatter-dimensions-decisions)：从收益、等待和限制判断下一步行动。
 

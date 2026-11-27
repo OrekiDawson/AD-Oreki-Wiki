@@ -15,7 +15,7 @@ tags:
 
 通常不是。现实是更高层的重置，会清除许多永恒阶段的临时进度和当前时间研究配置；现实机器、符文和复兴等奖励会成为下一轮成长的基础。
 
-真正需要警惕的是永久进度无故消失、存档反复回退，或重启后出现无法解释的资源变化。先保留备份，再按[存档兼容与自动保存](/player/gameplay/saves)排查；不要用唯一存档反复导入导出。
+真正需要警惕的是永久进度无故消失、存档反复回退，或重启后出现无法解释的资源变化。先保留备份，再按[存档安全](/player/gameplay/saves)排查；不要用唯一存档反复导入导出。
 
 ## Android 存档能直接导入 Web，或从新版退回旧版吗？
 
@@ -31,6 +31,6 @@ tags:
 
 ## 相关条目
 
-[存档兼容与自动保存](/player/gameplay/saves) · [下载与版本说明](/player/download-and-version/) · [平台与版本](/player/faq/platform-and-version) · [玩家常见问题](/player/faq/)
+[存档安全](/player/gameplay/saves) · [下载与版本说明](/player/download-and-version/) · [平台与版本](/player/faq/platform-and-version) · [玩家常见问题](/player/faq/)
 
 原版存档与现实机制的背景资料：[Save Bank](https://antimatterdimensions.wiki.gg/wiki/Save_Bank?oldid=3131) 与 [Reality](https://antimatterdimensions.wiki.gg/wiki/Reality?oldid=3235)。上述页面于 2026 年 11 月 27 日通过 MediaWiki API 核对标题、修订号及 HTTP 可达性；若原版页面后来改名或删除，应重新核验后再引用。
