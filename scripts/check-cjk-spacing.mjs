@@ -92,6 +92,7 @@ function removeElements(source, shouldRemove) {
     if (!selfClosing) stack.push({ remove });
   }
   if (!suppressed) output += source.slice(cursor);
+  if (suppressed) throw new Error('生成 HTML 的过滤容器未闭合，拒绝以截断文本通过混排检查');
   return output;
 }
 
