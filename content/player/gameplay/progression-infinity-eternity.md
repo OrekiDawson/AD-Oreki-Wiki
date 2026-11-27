@@ -25,7 +25,9 @@ aliases:
 
 重置不是把进度白白清掉，而是把当前层的尽头折叠成更高层的成长资源：大坍缩把反物质换成无限点数，永恒再把无限阶段的积累换成永恒点数。真正重要的是确认结算已经合法发生，而不是仅仅看见页面或按钮。
 
-如果你想了解自动化怎样配合这两层重置，读[智能自动购买器](/player/gameplay/automation)；如果遇到页面提前出现、重置后状态不一致或存档风险，读[阶段解锁与页面显示](/player/gameplay/stage-gates)和[存档兼容与自动保存](/player/gameplay/saves)。
+如果你想了解自动化怎样配合这两层重置，读[智能自动购买器](/player/gameplay/automation)；如果遇到页面提前出现、重置后状态不一致或存档风险，读[阶段解锁与页面显示](/player/gameplay/stage-gates)和[存档安全](/player/gameplay/saves)。
+
+两层重置的原版术语与阶段关系可对照 [Antimatter Dimensions Wiki](https://antimatterdimensions.wiki.gg/wiki/Antimatter_Dimensions)，本站页面另行说明 MOD 与平台边界。
 
 继续阅读：[现实与时间研究](/player/gameplay/reality-time-studies) · [挑战与真实结算](/player/gameplay/challenges) · [原版行为与 Oreki Edition 修改](/player/gameplay/original-vs-mod)
 

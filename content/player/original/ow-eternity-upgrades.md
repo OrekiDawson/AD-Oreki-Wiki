@@ -26,12 +26,12 @@ aliases:
 
 | ID | 成本（EP） | 效果 | 公式 |
 | --- | --- | --- | --- |
-| idMultEP | $5$ | 依据未花费的永恒点数提高无限维度乘数 | $ep+1$ |
-| idMultEternities | $5$ | 依据永恒次数提高无限维度乘数，在 $1\text{e}5$ 次永恒处软上限 | 见下方说明 |
+| idMultEP | 5 | 依据未花费的永恒点数提高无限维度乘数 | $ep+1$ |
+| idMultEternities | 5 | 依据永恒次数提高无限维度乘数，在 1e5 次永恒处软上限 | 见下方说明 |
 | idMultICRecords | $5\text{e}4~(50~\text{K})$ | 依据无限挑战用时总和提高无限维度乘数 | $\min\left(2^{\frac{30}{0.61}},~2^{\frac{30}{\max\left(0.1,~\text{TotalInfinityChallengeTimes}\right)}}\right)$ |
 | tdMultAchs | $1\text{e}16~(10~\text{Qa})$ | 成就加成作用于时间维度 | $\text{AchievementBonus}$ |
-| tdMultTheorems | $1\text{e}40$ | 时间维度乘以未花费的时间之理 | $\max\left(\text{TimeTheorems}, 1\right)$ |
-| tdMultRealTime | $1\text{e}50$ | 时间维度乘以已游玩天数 | $\max\left(\text{TimePlayed}_{\text{days}}, 1\right)$ |
+| tdMultTheorems | 1e40 | 时间维度乘以未花费的时间之理 | $\max\left(\text{TimeTheorems}, 1\right)$ |
+| tdMultRealTime | 1e50 | 时间维度乘以已游玩天数 | $\max\left(\text{TimePlayed}_{\text{days}}, 1\right)$ |
 
 idMultEternities 的完整公式：
 
@@ -39,16 +39,16 @@ $$\left(\left(1+\frac{\min\left(\text{Eternities}, 1\text{e}5\right)}{200}\right
 
 ## EP ×5 升级
 
-epMult 与无限层的 ipMult 一样可以无限重复购买，每买一次成本乘以 $50$。当永恒点数跨过几个节点后，成本成长还会继续加码：
+epMult 与无限层的 ipMult 一样可以无限重复购买，每买一次成本乘以 50。当永恒点数跨过几个节点后，成本成长还会继续加码：
 
-- 超过 $1\text{e}100$ EP：成长从 $\times 50$ 提到 $\times 100$；
-- 超过 $1.80\text{e}308$ EP：提到 $\times 500$；
-- 超过 $1\text{e}1300$ EP：提到 $\times 1000$；
-- 超过 $1\text{e}4000$ EP：改为 $\times 1000^{\text{count}+\max\left(\text{count}-1334, 0\right)^{1.2}}$。
+- 超过 1e100 EP：成长从 $\times 50$ 提到 $\times 100$；
+- 超过 1.80e308 EP：提到 $\times 500$；
+- 超过 1e1300 EP：提到 $\times 1000$；
+- 超过 1e4000 EP：改为 $\times 1000^{\text{count}+\max\left(\text{count}-1334, 0\right)^{1.2}}$。
 
 | ID | 成本（EP） | 效果 |
 | --- | --- | --- |
-| epMult | $500$ | 所有来源的永恒点数乘以 $\times5$ |
+| epMult | 500 | 所有来源的永恒点数乘以 $\times5$ |
 
 ## 来源与许可
 

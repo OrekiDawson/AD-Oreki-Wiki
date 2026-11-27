@@ -18,11 +18,9 @@ aliases:
 
 **反物质维度（Antimatter Dimensions）**是玩家最早接触的维度类型。它们生产反物质，而反物质正是游戏用来衡量进度的核心资源。
 
-> 本页译自社区 Wiki 的固定修订 `3325`。原文标记为需要清理（Cleanup）；译文保留原文的机制说明和价格表；图片未转载，信息框及导航模板也未转载。
-
 ## 机制
 
-每个反物质维度都有对应的倍率，以及表示当前拥有数量的数值。第 1 反物质维度的基础生产速度是每个已拥有维度每秒生产 $1$ 点反物质；之后每一级反物质维度，都会以每个已拥有维度每秒 $0.1$ 的基础速度生产上一级维度。
+每个反物质维度都有对应的倍率，以及表示当前拥有数量的数值。第 1 反物质维度的基础生产速度是每个已拥有维度每秒生产 1 点反物质；之后每一级反物质维度，都会以每个已拥有维度每秒 0.1 的基础速度生产上一级维度。
 
 维度倍率初始为 $\times1$，直接乘在该维度的生产速度上。提高倍率最基本的方法之一，是购买同一维度 10 次。购买按钮会显示该维度已经购买的次数，并间接显示距离下一次倍率提升还差多少次购买。在基础速率下，每购买 10 次，该维度的生产就会获得 $\times2$ 加成。
 
@@ -32,16 +30,16 @@ aliases:
 
 **反物质**是反物质维度生产的主要资源，也是衡量玩家进度的核心指标。它还有几项用途：
 
-- 反物质足够时，可以购买[反物质维度](/player/original/ow-antimatter-dimensions)和[计数频率](https://antimatterdimensions.wiki.gg/wiki/Tickspeed)升级；
-- 反物质达到 $1.80\text{e}308$ 时，可以执行[大坍缩](https://antimatterdimensions.wiki.gg/wiki/Big_Crunch)，从而看到更多升级并继续推进；
-- [打破无限](https://antimatterdimensions.wiki.gg/wiki/Breaking_Infinity)后，更多反物质还可以带来更多[无限点数](/player/original/ow-infinity)。
+- 反物质足够时，可以购买[反物质维度](/player/original/ow-antimatter-dimensions)和[计数频率](/player/original/ow-tickspeed)升级；
+- 反物质达到 1.80e308 时，可以执行[大坍缩](https://antimatterdimensions.wiki.gg/wiki/Big_Crunch)，从而看到更多升级并继续推进；
+- [打破无限](/player/original/ow-break-infinity)后，更多反物质还可以带来更多[无限点数](/player/original/ow-infinity)。
 
 ## 价格成长
 
 | 反物质维度 | 初始价格                      | 成长倍率                            |
 | ---------- | ----------------------------- | ----------------------------------- |
-| 1          | $10$                          | $\times\text{1e}3$（$1\text{K}$）   |
-| 2          | $100$                         | $\times\text{1e}4$（$10\text{K}$）  |
+| 1          | 10                          | $\times\text{1e}3$（$1\text{K}$）   |
+| 2          | 100                         | $\times\text{1e}4$（$10\text{K}$）  |
 | 3          | $\text{1e}4$（$10\text{K}$）  | $\times\text{1e}5$（$100\text{K}$） |
 | 4          | $\text{1e}6$（$1\text{M}$）   | $\times\text{1e}6$（$1\text{M}$）   |
 | 5          | $\text{1e}9$（$1\text{B}$）   | $\times\text{1e}8$（$100\text{M}$） |
@@ -53,7 +51,7 @@ aliases:
 
 ### 无限后的成长
 
-当价格超过 $1.80\text{e}308$ 反物质后，**成长倍率**本身也会开始增加：每次升级使它乘以 $10$。对应的[打破无限](/player/original/ow-break-infinity)升级可以降低这个数值，之后某项[永恒挑战](/player/original/ow-eternity-challenges)也能进一步降低它。
+当价格超过 1.80e308 反物质后，**成长倍率**本身也会开始增加：每次升级使它乘以 10。对应的[打破无限](/player/original/ow-break-infinity)升级可以降低这个数值，之后某项[永恒挑战](/player/original/ow-eternity-challenges)也能进一步降低它。
 
 ## 来源与许可
 

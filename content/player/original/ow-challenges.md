@@ -24,7 +24,7 @@ aliases:
 
 主条目：[普通挑战](/player/original/ow-challenges)
 
-玩家见到的第一组挑战，要求玩家在条件被修改的新[无限](/player/original/ow-infinity)中获得 1.80e308 反物质。第 1 至第 9 个挑战在玩家至少执行过一次[无限](/player/original/ow-infinity)后解锁；第 10、11、12 个挑战只在 $16$ 次[无限](/player/original/ow-infinity)之后解锁。
+玩家见到的第一组挑战，要求玩家在条件被修改的新[无限](/player/original/ow-infinity)中获得 1.80e308 反物质。第 1 至第 9 个挑战在玩家至少执行过一次[无限](/player/original/ow-infinity)后解锁；第 10、11、12 个挑战只在 16 次[无限](/player/original/ow-infinity)之后解锁。
 
 完成普通挑战可以让玩家解锁并强化基础[自动购买器](https://antimatterdimensions.wiki.gg/wiki/Automation#Pre-Infinity%20automation)——这些自动购买器是玩家在[无限](/player/original/ow-infinity)层开始时获得的。
 

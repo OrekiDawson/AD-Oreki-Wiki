@@ -13,7 +13,7 @@ aliases:
 
 ## 什么时候可以大坍缩
 
-游戏要求本次无限中的**最高反物质**达到约 `1.7976931348623157e308`，界面上常显示为 `1.80e308`。这必须由真实生产达到，不是修改资源或提前点按钮完成的阶段解锁。
+游戏要求本次无限中的**最高反物质**达到约 $1.7976931348623157 \times 10^{308}$，界面上常显示为 $1.80 \times 10^{308}$。这必须由真实生产达到，不是修改资源或提前点按钮完成的阶段解锁。
 
 门槛未满时，继续购买维度、提高计数频率并完成维度提升或星系；只盯着当前反物质而不投资生产，通常会更慢。
 
@@ -41,7 +41,7 @@ aliases:
 
 ## 相关条目
 
-[第一次进入与前几分钟](/player/getting-started/first-session) · [存档兼容与自动保存](/player/gameplay/saves) · [玩家常见问题](/player/faq/)
+[第一次进入与前几分钟](/player/getting-started/first-session) · [存档安全](/player/gameplay/saves) · [玩家常见问题](/player/faq/)
 
 原版无限入口可对照[Antimatter Dimensions Wiki 的无限页面（修订 3113）](https://antimatterdimensions.wiki.gg/wiki/Infinity?oldid=3113)；精确门槛和 MOD 调整以当前版本为准。Web 源码可进一步核对 [`Player.canCrunch`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/90d89de2048332f3c329ae6834ebee2675453a02/src/core/player.js) 与[`src/game.js`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/90d89de2048332f3c329ae6834ebee2675453a02/src/game.js)。
 

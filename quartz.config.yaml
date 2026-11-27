@@ -15,8 +15,8 @@ configuration:
     - "ai-drafts/**"
   theme:
     typography:
-      header: sans-serif
-      body: sans-serif
+      header: "system-ui, sans-serif"
+      body: "system-ui, sans-serif"
       code: ui-monospace
     colors:
       lightMode:
@@ -153,7 +153,7 @@ plugins:
       # 正式分类与条目默认完整展开；导航长度由语义排序、短标题和层级控制解决。
       folderDefaultState: open
       folderClickBehavior: link
-      useSavedState: false
+      useSavedState: true
     layout:
       position: left
       priority: 50

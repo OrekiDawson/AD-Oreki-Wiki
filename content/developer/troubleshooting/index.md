@@ -73,6 +73,7 @@ aliases:
 ## 相关入口
 
 - [协程 ABI 崩溃排查](/developer/troubleshooting/coroutine-abi)
+- [Web Pages 产物身份](/developer/troubleshooting/web-pages-artifact-integrity)：区分部署错版、资源缺失、缓存漂移与运行时故障。
 - [存档兼容排查](/developer/troubleshooting/save-compatibility)
 - [来源索引](/developer/references/source-index)
 - [架构与运行时](/developer/architecture)

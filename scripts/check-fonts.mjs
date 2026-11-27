@@ -3,12 +3,20 @@ import path from "node:path"
 
 const root = process.cwd()
 const errors = []
-const config = fs.readFileSync(path.join(root, "quartz.config.yaml"), "utf8")
+const configFiles = ["quartz.config.yaml"]
+  .map((file) => path.join(root, file))
+  .filter((file) => fs.existsSync(file))
+const configs = configFiles.map((file) => ({ file, text: fs.readFileSync(file, "utf8") }))
+const config = configs.find(({ file }) => path.basename(file) === "quartz.config.yaml")?.text || ""
 const packageJson = JSON.parse(fs.readFileSync(path.join(root, "package.json"), "utf8"))
 const deps = { ...(packageJson.dependencies || {}), ...(packageJson.devDependencies || {}) }
 
-if (/quartz-fonts|fontOrigin:\s*(?:googleFonts|local|selfHosted)/.test(config))
-  errors.push("Quartz 自定义网页字体插件或字体来源仍在配置中")
+for (const { file, text } of configs) {
+  if (/quartz-fonts|fontOrigin:\s*["']?(?:googleFonts|local|selfHosted)["']?/.test(text))
+    errors.push(`Quartz 自定义网页字体插件或字体来源仍在配置中：${path.basename(file)}`)
+  if (/Source Sans|Schibsted|IBM Plex|Google Sans|Roboto|Noto Sans|font-family:\s*["'][^"']+["']/i.test(text))
+    errors.push(`配置中重新引入了固定网页字体：${path.basename(file)}`)
+}
 if (process.argv[2] !== "--built" && deps["@quartz-community/quartz-fonts"])
   errors.push("package.json 仍依赖 @quartz-community/quartz-fonts")
 if (!/--headerFont:\s*(?:system-ui|sans-serif)/.test(fs.readFileSync(path.join(root, "quartz/styles/custom.scss"), "utf8")))
@@ -17,8 +25,55 @@ if (!/--bodyFont:\s*(?:system-ui|sans-serif)/.test(fs.readFileSync(path.join(roo
   errors.push("正文未绑定系统原生无衬线字体")
 if (!/--codeFont:\s*ui-monospace/.test(fs.readFileSync(path.join(root, "quartz/styles/custom.scss"), "utf8")))
   errors.push("代码未绑定系统原生等宽字体")
-if (/Source Sans|Schibsted|IBM Plex|Google Sans|Roboto|Noto Sans|font-family:\s*["'][^"']+["']/i.test(config))
-  errors.push("配置中重新引入了固定网页字体；普通文本必须使用系统字体")
+const styles = fs.readFileSync(path.join(root, "quartz/styles/custom.scss"), "utf8")
+if (!/:where\(body, body \*\)[\s\S]*?font-family:\s*var\(--bodyFont\)\s*!important/.test(styles))
+  errors.push("普通文本没有在叶子节点强制继承系统无衬线字体")
+if (!/:where\(pre, pre \*, code, code \*, kbd, kbd \*, samp, samp \*\)[\s\S]*?font-family:\s*var\(--codeFont\)\s*!important/.test(styles))
+  errors.push("程序代码没有明确绑定系统等宽字体")
+if (/fonts\.(googleapis|gstatic)\.com|use\.typekit\.net|@import\s+url\(/i.test(styles))
+  errors.push("自定义样式仍加载远程字体")
+
+// 本仓库维护的 Quartz 样式属于公开构建输入；.quartz-build 还包含上游
+// 未启用的字体加载分支，不能把那部分源码误当成本站的配置或构建输出。
+const walkSource = (dir) => fs.readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
+  const file = path.join(dir, entry.name)
+  return entry.isDirectory() ? walkSource(file) : [file]
+})
+const ownedStyleRoot = path.join(root, "quartz", "styles")
+for (const file of fs.existsSync(ownedStyleRoot) ? walkSource(ownedStyleRoot) : []) {
+  if (!/\.(css|scss|sass|ts|tsx|js|jsx)$/.test(file)) continue
+  const text = fs.readFileSync(file, "utf8")
+  if (/fonts\.(googleapis|gstatic)\.com|use\.typekit\.net|@import\s+url\(/i.test(text))
+    errors.push(`Quartz 源码仍加载远程字体：${path.relative(root, file)}`)
+  const fontValues = [...text.matchAll(/font-family\s*:\s*([^;{}]+)/gi)].map(([, value]) => value.trim())
+  for (const value of fontValues) {
+    if (/^var\(--(?:body|header|code)Font\)/i.test(value)) continue
+    const quotedFamilies = [...value.matchAll(/["']([^"']+)["']/g)].map(([, family]) => family)
+    if (quotedFamilies.some((family) => !/^KaTeX_/i.test(family))
+      || /Source Sans|Schibsted|IBM Plex|Google Sans|Roboto|Noto Sans|Inter|Open Sans|Lato|Poppins|Nunito/i.test(value))
+      errors.push(`Quartz 源码存在固定网页字体声明：${path.relative(root, file)}`)
+  }
+}
+
+const sourceFiles = []
+const walkMarkdown = (dir) => fs.readdirSync(dir, { withFileTypes: true }).forEach((entry) => {
+  const file = path.join(dir, entry.name)
+  if (entry.isDirectory()) walkMarkdown(file)
+  else if (entry.name.endsWith('.md')) sourceFiles.push(file)
+})
+walkMarkdown(path.join(root, 'content'))
+const plainScientific = /^(?:[\d.,]+|\\text\{e\}|\\mathrm\{e\}|e|\\,|~|\s)+$/
+for (const file of sourceFiles) {
+  const text = fs.readFileSync(file, 'utf8')
+  for (const [, value] of text.matchAll(/(?<!\$)\$([^$\n]+)\$(?!\$)/g)) {
+    if (plainScientific.test(value))
+      errors.push(`纯科学记数法不得使用 KaTeX 衬线字体，请改为普通文本：${path.relative(root, file)}：${value}`)
+  }
+  const numericCode = [...text.matchAll(/`([^`]+)`/g)].map((match) => match[1])
+    .filter((value) => value.length <= 80 && /^[\s\d.eE+\-−×x^*/()→←=]+$/.test(value)
+      && /(?:(?<![A-Za-z0-9])(?:\d{1,3}(?:\.\d+)?)\s*[eE][+-]?\d+(?![A-Za-z0-9])|(?<!\d)e\d{2,}|(?<![A-Za-z0-9])\d{1,3}(?:\.\d+)?\s*[×x]\s*10\^\d)/.test(value))
+  if (numericCode.length) errors.push(`科学记数法不得使用行内代码：${path.relative(root, file)}：${numericCode.join('|')}`)
+}
 
 if (process.argv[2] === "--built") {
   const publicDir = path.resolve(root, process.argv[3] || "public")
@@ -32,6 +87,8 @@ if (process.argv[2] === "--built") {
     const text = fs.readFileSync(file, "utf8")
     if (/fonts\.(googleapis|gstatic)\.com|use\.typekit\.net/i.test(text))
       errors.push(`构建产物仍请求第三方网页字体：${path.relative(publicDir, file)}`)
+    if (/font-family\s*:[^;]*(?:Source Sans|Schibsted|IBM Plex|Google Sans|Roboto|Inter|Open Sans|Lato|Poppins|Nunito)/i.test(text))
+      errors.push(`构建产物仍包含普通网页字体声明：${path.relative(publicDir, file)}`)
   }
 }
 

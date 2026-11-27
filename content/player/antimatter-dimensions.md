@@ -27,7 +27,7 @@ Oreki Edition 是基于原版制作的 MOD，不是原版的官方更新。Andro
 - [现实与时间研究](/player/gameplay/reality-time-studies)：时间研究、时间膨胀和第一次现实。
 - [挑战与真实结算](/player/gameplay/challenges)：特殊限制和挑战奖励。
 - [智能自动购买器](/player/gameplay/automation)：把重复操作变成可调整的策略。
-- [存档兼容与自动保存](/player/gameplay/saves)：更新或换平台前保护进度。
+- [存档安全](/player/gameplay/saves)：更新或换平台前保护进度。
 
 ## 参考资料
 

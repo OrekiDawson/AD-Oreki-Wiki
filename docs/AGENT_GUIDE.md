@@ -103,9 +103,13 @@
 ## README 与公开首页
 
 编辑 README.md 或 content/index.md 时，先把它们当作第一次到访的读者会看到的项目门面：说明这是什么、从哪里开始读、怎样贡献以及内容许可。不要把 Agent 工作流、Kody/CI/Pages/HTTPS 门禁、PR 历史、重构台账或管理员命令搬进公开页面；这些内容留在相应维护文档。开发者首页也应优先提供技术阅读路线，避免内部协调信息污染正文。完成后检查实际 HTML，而不只检查 Markdown 源文件。
+## 导航状态与空菜单门禁
+
+`ordered-explorer` 的正式分类首次加载必须完整展开；`useSavedState` 必须保持读者主动调整的目录状态，SPA 切换只展开当前页面祖先，不得重置其他目录。没有真实下级正式页面的节点必须降级为普通链接。`scripts/check-navigation.mjs` 同时检查源模型、全部条目索引和构建后的导航 DOM；失败时不得发布。
+
 ## 全站字体验收
 
-普通正文、标题、导航、搜索、表格、引用、链接及行内科学记数法统一继承系统无衬线字体；程序代码使用系统等宽字体，KaTeX 使用其功能性数学字体。不得引入 Google Fonts、Quartz 网页字体或其他固定网页字体。除 `check-fonts.mjs` 的源代码与构建产物门禁外，Lead 必须用 Playwright Android Chrome 视口读取实际 computed style，至少覆盖玩家、开发者、原版译文、表格、数学表达式和代码块，并查看修改前后截图；CI 通过不等于视觉验收通过。
+普通正文、标题、导航、搜索、表格、引用、链接及行内科学记数法统一继承系统无衬线字体；纯数字记数法（如 `1.80e308`）使用普通文本，含运算结构的真正数学公式才使用 KaTeX；程序代码使用系统等宽字体。不得引入 Google Fonts、Quartz 网页字体或其他固定网页字体。除 `check-fonts.mjs` 的源代码和构建产物门禁外，Lead 必须用 Playwright Android Chrome 视口读取实际 computed style，至少覆盖玩家、开发者、原版译文、表格、数学表达式和代码块，并查看修改前后截图；CI 通过不等于视觉验收通过。
 
 `scripts/acceptance-fonts.cjs` 会强制检查正文、标题、导航、搜索框、表格、代码块和数学表达式样本实际存在，验证每个样本的系统字体类别并断言 HTTP 200。默认目标是本地预览（`KB_URL=http://127.0.0.1:8080`）；完成部署后，只有明确设置 `KB_URL=https://wiki.oreki.net KB_ALLOW_PRODUCTION=1` 才能验收线上版本，避免把旧线上站点当作当前候选构建。
 
