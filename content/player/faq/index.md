@@ -18,7 +18,7 @@ tags:
 
 如果你还不确定问题属于哪一类，先记录平台、版本、当前阶段和最后一次成功操作；不要为了“试试看”覆盖唯一存档。
 
-## 怎样报告一个真正有用的问题？
+## 有效问题报告
 
 先保护存档，再写清平台与版本、发生阶段、操作过程、预期与实际结果四类信息；必要时附去除敏感信息的截图。Android 问题可发到 [Android Issues](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/issues)，Web 问题可发到 [Web Issues](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/issues)。不要公开账号令牌、私人文件路径或包含个人数据的存档。
 

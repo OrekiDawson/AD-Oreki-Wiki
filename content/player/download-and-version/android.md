@@ -18,7 +18,7 @@ Android 版本请从 [AD Oreki Edition Android Releases](https://github.com/Orek
 2. 记录当前版本、游戏阶段和导出时间，避免未来拿错副本。
 3. 如果要测试 Pre-release，先使用新档或备份副本，不要覆盖唯一主档。
 
-## 更新为什么可能无法覆盖安装
+## 覆盖安装
 
 系统是否允许覆盖安装，不只看版本号。包名、签名和版本条件必须满足升级关系；如果系统提示无法安装，不要立刻卸载旧版，因为卸载可能同时删除本地存档。需要理解证书与升级机制时，参见[APK 签名与升级兼容](/developer/build/apk-signing)。
 
