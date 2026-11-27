@@ -63,7 +63,7 @@ aliases:
 
 ## 来源与许可
 
-- 原文：[Black Hole](https://antimatterdimensions.wiki.gg/index.php?title=Black_Hole&oldid=3360)（修订 ID `3360`；最后编辑者 KrutarMarsons；抓取于 2026-11-15）
+- 原文：[Black Hole](https://antimatterdimensions.wiki.gg/index.php?title=Black_Hole&oldid=3360)（修订 ID `3360`；最后编辑者 KrutarMarsons）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Black_Hole&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为**简体中文翻译（改编）**，已修改：翻译正文与表格、统一术语、依据官方源码补齐首次加速、永久启动、黑洞 2 依赖和离线循环边界、移除导航模板与信息框、图片未转载；本页按相同许可共享。
 - 原站正文是维护标记为小作品的短条目，升级表也没有展开高成本阶段的说明；译文保留原表数值，并以源码可确认的规则补足阅读所需的机制。

@@ -57,7 +57,7 @@ aliases:
 
 ## 来源与许可
 
-- 原文：[Achievements/Secret Achievements](https://antimatterdimensions.wiki.gg/index.php?title=Achievements%2FSecret_Achievements&oldid=3364)（修订 ID 3364；抓取于 2026-11-15）
+- 原文：[Achievements/Secret Achievements](https://antimatterdimensions.wiki.gg/index.php?title=Achievements%2FSecret_Achievements&oldid=3364)（修订 ID 3364）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Achievements/Secret_Achievements&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为简体中文翻译（改编），已修改：翻译 32 项名称/条件/攻略、折叠表展开为普通表格、图标列改为文字说明、剧透折叠按原文标注、图片未转载；本页按相同许可共享。
 - 原文图片未转载：原页含桌面与移动版界面截图及 64 张成就图标，此处仅保留文字。

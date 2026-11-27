@@ -53,7 +53,7 @@ aliases:
 
 ## 来源与许可
 
-- 原文：[Time Dimensions](https://antimatterdimensions.wiki.gg/index.php?title=Time_Dimensions&oldid=3345)（修订 ID `3345`；最后编辑者 KrutarMarsons；首次抓取于 2026-11-15；本批于 2026-11-26 复核，修订 ID 未变）
+- 原文：[Time Dimensions](https://antimatterdimensions.wiki.gg/index.php?title=Time_Dimensions&oldid=3345)（修订 ID `3345`；最后编辑者 KrutarMarsons）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Time_Dimensions&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为**简体中文翻译（改编）**，已修改：翻译正文与表格、统一术语、移除导航模板与信息框、图片未转载；本页按相同许可共享。
 - 原文表格使用跨行/跨列合并；译文展开为普通列，所有数值与行完整保留。

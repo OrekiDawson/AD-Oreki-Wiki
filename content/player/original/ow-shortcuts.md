@@ -122,7 +122,7 @@ Alt 是另一个修饰键：与任意有对应自动购买器的按键同时按�
 
 ## 来源与许可
 
-- 原文：[Shortcuts](https://antimatterdimensions.wiki.gg/index.php?title=Shortcuts&oldid=3108)（修订 ID `3108`；最后编辑者 The1AndOnly6030；首次抓取于 2026-11-16；本批于 2026-11-26 复核，修订 ID 未变）
+- 原文：[Shortcuts](https://antimatterdimensions.wiki.gg/index.php?title=Shortcuts&oldid=3108)（修订 ID `3108`；最后编辑者 The1AndOnly6030）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Shortcuts&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为简体中文翻译（改编），已修改：翻译正文与全部按键表、图标改为文字描述、截图未转载；本页按相同许可共享。
 - 原文图片未转载：原页含热键列表弹窗与移动版底部按钮截图（Main-hotkeys-modal--darktheme-modern-desktop.png、Main-hotkeys-bottombutton--darktheme-mobile.png），此处仅保留文字说明。

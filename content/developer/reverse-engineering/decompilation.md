@@ -93,5 +93,5 @@ DEX 保存类、字段、方法、类型描述符和 Dalvik 字节码。Smali �
 
 - [Android 开源项目：DEX 文件格式](https://source.android.com/docs/core/runtime/dex-format)：DEX 结构与索引表的官方说明。
 - [Android 开源项目：Dalvik 字节码](https://source.android.com/docs/core/runtime/dalvik-bytecode)：寄存器、指令和调用约定。
-- [Android 开源项目：ART 与 Dalvik](https://source.android.com/docs/core/runtime)：Android 运行时及字节码执行背景；2026-11-27 核对 HTTP 200，页面标注最后更新为 2026-10-09 UTC。
+- [Android 开源项目：ART 与 Dalvik](https://source.android.com/docs/core/runtime)：Android 运行时及字节码执行背景，页面标注最后更新为 2026-10-09 UTC。
 - [Android 逆向资料目录](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/tree/fb1299a132f134eb4fab009643ee3fc3d6c57edf/docs/deobfuscation)：本项目固定版本的索引、绑定与调查资料；它们不是可直接编译的上游源码。

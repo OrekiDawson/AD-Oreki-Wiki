@@ -33,6 +33,8 @@ jobs:
         run: node scripts/check-navigation.mjs
       - name: Public link policy (source)
         run: node scripts/check-public-links.mjs
+      - name: Public audit-log separation (source)
+        run: node scripts/check-public-audit-leaks.mjs
       - name: MOD terminology policy (source)
         run: node scripts/check-mod-terminology.mjs
       - name: CJK spacing policy (source)
@@ -68,6 +70,9 @@ jobs:
       - name: Public link policy (built HTML)
         working-directory: .quartz-build
         run: node scripts/check-public-links.mjs --built public
+      - name: Public audit-log separation (built HTML)
+        working-directory: .quartz-build
+        run: node scripts/check-public-audit-leaks.mjs --built public
       - name: MOD terminology policy (built HTML)
         working-directory: .quartz-build
         run: node scripts/check-mod-terminology.mjs --built public

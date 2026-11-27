@@ -42,7 +42,7 @@ aliases:
 
 ## 来源与许可
 
-- 原文：[Infinity Upgrades/Upgrades (Charged)](https://antimatterdimensions.wiki.gg/index.php?title=Infinity_Upgrades%2FUpgrades_%28Charged%29&oldid=3386)（修订 ID 3386；抓取于 2026-11-15）
+- 原文：[Infinity Upgrades/Upgrades (Charged)](https://antimatterdimensions.wiki.gg/index.php?title=Infinity_Upgrades%2FUpgrades_%28Charged%29&oldid=3386)（修订 ID 3386）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Infinity_Upgrades/Upgrades_(Charged)&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为简体中文翻译（改编），已修改：翻译正文与 12 行升级表、统一术语、依据官方源码澄清普通效果与充能效果互斥、充能数量及时间单位、图片未转载；本页按相同许可共享。
 - 原文图片未转载：原页含充能界面截图（Cel5-chargedinfinityupgrades-interface--darktheme-desktop.png），此处仅保留文字说明。

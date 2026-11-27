@@ -56,7 +56,7 @@ aliases:
 
 ## 来源与许可
 
-- 原文：[Eternity Challenges/Challenges](https://antimatterdimensions.wiki.gg/index.php?title=Eternity_Challenges%2FChallenges&oldid=3157)（修订 ID 3157；抓取于 2026-11-15）
+- 原文：[Eternity Challenges/Challenges](https://antimatterdimensions.wiki.gg/index.php?title=Eternity_Challenges%2FChallenges&oldid=3157)（修订 ID 3157）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Eternity_Challenges/Challenges&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为简体中文翻译（改编），已修改：翻译两张表格与全部公式、统一术语、折叠表展开为普通表格、图片未转载；本页按相同许可共享。
 - 原文无图片媒体；脚注（游戏速度效果禁用、时限按游戏时间计）已并入表格细节。

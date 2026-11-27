@@ -112,8 +112,10 @@ function scan(text, file) {
   return violations;
 }
 
+// 标签页保留其 URL 与元数据，但属于 Quartz 自动生成的辅助索引，不是编辑正文；
+// 它们不应因机器生成的标签串污染正文混排门禁。
 const files = walk(root).filter((file) => built
-  ? file.endsWith('.html')
+  ? file.endsWith('.html') && !file.split(path.sep).includes('tags')
   : file.endsWith('.md') && !file.includes(`${path.sep}ai-drafts${path.sep}`));
 const violations = files.flatMap((file) => scan(
   built ? visibleHtml(fs.readFileSync(file, 'utf8')) : visibleMarkdown(fs.readFileSync(file, 'utf8')),

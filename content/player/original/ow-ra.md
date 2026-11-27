@@ -199,7 +199,7 @@ $$\left\lfloor\left({n+\frac{n^2}{10}}\right)^{5.52}*\left({1.5^{Max(0,n-15)}}\r
 
 ## 来源与许可
 
-- 原文：[Ra](https://antimatterdimensions.wiki.gg/index.php?title=Ra&oldid=3387)（页面 ID 914；修订 ID 3387；最后编辑者 KrutarMarsons；抓取于 2026-11-15）
+- 原文：[Ra](https://antimatterdimensions.wiki.gg/index.php?title=Ra&oldid=3387)（页面 ID 914；修订 ID 3387；最后编辑者 KrutarMarsons）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Ra&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为**简体中文翻译（改编）**，已修改：翻译正文与全部表格，统一术语，把信息框内容改写为要点表，把模板内折叠块与 Tabber 内容展开为表格/列表、模板脚注改为页内脚注，用文字描述替代 FontAwesome 图标，移除导航模板与模板结构，图片未转载；本页按相同许可共享。
 - 原文图片未转载：原页含天神静态图（Cel5-runreality-static--desktop.png）、动画（Cel5-runreality-active--desktop.gif）、导航图（Cel5-navigation-complete--desktop.png）、界面图（Cel5-interface--darktheme-desktop.png）与被废弃功能的截图（Cel5-compression-scrapped--lightmode-desktop.png）。原图注含义：「身处太阳神的现实之中」「太阳神的完整界面」「开发日志中时间压缩功能的截图」。请到原页查看图片。

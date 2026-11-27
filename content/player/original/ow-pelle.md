@@ -133,7 +133,7 @@ $$\frac{6^{6^{6^{\tfrac{DecayFactor+100}{1,000}}}}-6}{100,000}+10^{\tfrac{DecayF
 
 ## 来源与许可
 
-- 原文：[Pelle](https://antimatterdimensions.wiki.gg/index.php?title=Pelle&oldid=3433)（页面 ID 366；修订 ID 3433；最后编辑者 KrutarMarsons；抓取于 2026-11-26）
+- 原文：[Pelle](https://antimatterdimensions.wiki.gg/index.php?title=Pelle&oldid=3433)（页面 ID 366；修订 ID 3433；最后编辑者 KrutarMarsons）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Pelle&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为**简体中文翻译（改编）**，已修改：翻译正文与全部表格，统一术语，把信息框内容改写为要点表，把佩勒的「词形变换（wordshift）」多重写法译为「A/B/C」形式并保留英文原名，把模板脚注改为页内脚注，移除导航模板与模板结构，图片未转载；本页按相同许可共享。
 - 原文图片未转载：原页含天神静态图（Cel7-runreality-static--desktop.gif）与导航图（Cel7-navigation-complete--desktop.png）；原文界面图为空。请到原页查看图片。

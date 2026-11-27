@@ -9,7 +9,7 @@ aliases:
   - "/current/release-status"
 ---
 
-**最后核实：2026 年 11 月 26 日 17:22（UTC+8）。** 本页的当前版本身份取自 release-gate-policy.json（b0e0881b；已用 GitHub API 核对，HTTP 200，核对日 2026-11-26）（源码定位：OrekiDawson/AD-Oreki-Edition-Android@b0e0881b5eadabf40e2eb35ef8547e5aa56d40ae/scripts/release-gate-policy.json；具体文件证据留在内部核验记录）；“公开稳定 Release”指向  [Android 3.21.0（a12b5cd6）](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/releases/tag/android-update-3.21.0-a12b5cd6)。
+本页的当前版本身份取自 release-gate-policy.json（b0e0881b；源码定位：OrekiDawson/AD-Oreki-Edition-Android@b0e0881b5eadabf40e2eb35ef8547e5aa56d40ae/scripts/release-gate-policy.json；具体文件证据留在内部核验记录）；“公开稳定 Release”指向 [Android 3.21.0（a12b5cd6）](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/releases/tag/android-update-3.21.0-a12b5cd6)。
 
 “APK 能安装”不是“版本可以发布”。Android 交付链把一个候选包看成一组必须同时成立的关系：版本身份指向正确的基线，签名允许正确的安装/升级，产物内容与源码和工具一致，关键玩法与存档没有回归，最后同一个已核验的 APK 才能被复制到各个交付渠道。本页讲这套判定如何工作，不把某一轮发布过程改写成时间线。
 

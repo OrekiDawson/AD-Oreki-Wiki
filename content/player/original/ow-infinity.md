@@ -55,7 +55,7 @@ $IP_{Mult}$ 是各项无限点数倍率的乘积，$AM_{\text{highest this Infin
 
 ## 来源与许可
 
-- 原文：[Infinity](https://antimatterdimensions.wiki.gg/index.php?title=Infinity&oldid=3113)（修订 ID 3113；最后编辑者 The1AndOnly6030；抓取于 2026-11-15）
+- 原文：[Infinity](https://antimatterdimensions.wiki.gg/index.php?title=Infinity&oldid=3113)（修订 ID 3113；最后编辑者 The1AndOnly6030）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Infinity&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为简体中文翻译（改编），已修改：正文按中文习惯重写、统一术语、公式与数值保留原文、导航模板与信息框未转载、图片未转载；本页按相同许可共享。
 - 译者注：原文用可折叠模板给出公式的两种等价写法，这里合并成一条，并把变量名保持英文以便与源码对照；原文中「Infintiies」的拼写错误按上下文译为「无限次数」。

@@ -69,7 +69,7 @@ $$\frac{m^{0.05}}{n^{0.04}} \times j$$
 
 ## 来源与许可
 
-- 原文：[Dimensional Sacrifice](https://antimatterdimensions.wiki.gg/index.php?title=Dimensional_Sacrifice&oldid=3397)（修订 ID `3397`；最后编辑者 The1AndOnly6030；抓取于 2026-11-15）
+- 原文：[Dimensional Sacrifice](https://antimatterdimensions.wiki.gg/index.php?title=Dimensional_Sacrifice&oldid=3397)（修订 ID `3397`；最后编辑者 The1AndOnly6030）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Dimensional_Sacrifice&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为**简体中文翻译（改编）**，已修改：翻译正文与表格、统一术语、移除导航模板与信息框、图片未转载；本页按相同许可共享。
 - 原文按钮提示为游戏内英文文本，译文按游戏内简体中文习惯表述并保留关键条件；如需逐字对照请查原页。

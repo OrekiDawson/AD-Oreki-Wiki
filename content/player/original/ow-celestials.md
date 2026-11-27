@@ -70,7 +70,7 @@ aliases:
 
 ## 来源与许可
 
-- 原文：[Celestials](https://antimatterdimensions.wiki.gg/index.php?title=Celestials&oldid=3187)（修订 ID `3187`；最后编辑者 KrutarMarsons；抓取于 2026-11-15）
+- 原文：[Celestials](https://antimatterdimensions.wiki.gg/index.php?title=Celestials&oldid=3187)（修订 ID `3187`；最后编辑者 KrutarMarsons）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Celestials&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为**简体中文翻译（改编）**，已修改：翻译正文、统一术语、移除页签图标/导航模板、图片未转载；本页按相同许可共享。
 - 说明：原文中的方括号占位（如 [Lesser/Deity/Monarch]、[False/Deity/Destroyer]）是游戏内随进度变化的称谓分支，译文保留原样未擅自选定其一。

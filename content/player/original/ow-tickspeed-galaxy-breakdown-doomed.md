@@ -34,7 +34,7 @@ aliases:
 
 ## 来源与许可
 
-- 原文：[Tickspeed/Galaxy count breakdown (Doomed)](https://antimatterdimensions.wiki.gg/index.php?title=Tickspeed%2FGalaxy_count_breakdown_%28Doomed%29&oldid=3059)（修订 ID 3059；抓取于 2026-11-15）
+- 原文：[Tickspeed/Galaxy count breakdown (Doomed)](https://antimatterdimensions.wiki.gg/index.php?title=Tickspeed%2FGalaxy_count_breakdown_%28Doomed%29&oldid=3059)（修订 ID 3059）
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Tickspeed/Galaxy_count_breakdown_(Doomed)&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为简体中文翻译（改编），已修改：翻译表格与公式、统一术语、词形变换保留原文、模板表格转为 Markdown 表格；图片未转载；本页按相同许可共享。
 - 原文无图片媒体，仅一张表格。
