@@ -1,5 +1,5 @@
 ---
-title: "存档进度比较器：用阶段与近似值判断谁更靠前"
+title: "存档进度比较"
 description: "从 Web ProgressChecker 源码理解跨阶段存档比较、阶段内进度和时间回退判断，避免用单一资源覆盖玩家进度"
 tags:
   - Web

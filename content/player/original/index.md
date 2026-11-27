@@ -1,5 +1,5 @@
 ---
-title: "原版 Wiki 中文翻译"
+title: "原版译文"
 description: "按原版 Wiki 的游戏阶段与知识分类查阅《反物质维度》中文译文"
 tags:
   - 原版Wiki翻译

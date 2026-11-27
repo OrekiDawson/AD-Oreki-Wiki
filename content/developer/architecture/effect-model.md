@@ -1,5 +1,5 @@
 ---
-title: 效果对象与倍率组合：从一项奖励到完整公式
+title: "效果模型"
 description: 以 Web 端 Effect、GameMechanicState 和牺牲公式为例，说明条件效果、上限、动态值及效果叠加如何组成可维护的机制模型。
 tags:
   - 开发者

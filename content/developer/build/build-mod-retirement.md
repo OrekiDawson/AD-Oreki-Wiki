@@ -1,5 +1,5 @@
 ---
-title: "从脚本补丁到 AGP：为什么 build_mod.py 必须退役"
+title: "构建脚本退役"
 description: "从 APK 构建边界、源码接管和可复现性解释旧补丁脚本的退役路径，以及如何判断迁移是否真的安全"
 tags:
   - 构建

@@ -1,5 +1,5 @@
 ---
-title: "从 DEX 到 Kotlin：混淆 Android 游戏的 ABI 适配"
+title: "DEX ABI"
 description: "从 DEX 寄存器与方法描述符出发，说明如何恢复混淆代码的语义，并把不稳定的宿主接口隔离在可维护的 Kotlin 适配层之后"
 tags:
   - 逆向

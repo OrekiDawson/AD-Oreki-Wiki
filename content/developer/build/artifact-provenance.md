@@ -1,5 +1,5 @@
 ---
-title: "构建可追溯性：让 APK 对得上源码与输入"
+title: "构建溯源"
 description: "理解构建输入指纹、私有资源摘要和 APK provenance 如何把一个交付产物绑定回确定的源码"
 tags:
   - 构建

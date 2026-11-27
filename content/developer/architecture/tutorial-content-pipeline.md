@@ -1,5 +1,5 @@
 ---
-title: "教程内容管线：用一份数据驱动双端章节"
+title: "教程内容管线"
 description: "从教程 JSON、阶段派生和生成校验源码理解 Android/Web 共用内容如何保持结构一致"
 tags:
   - 架构

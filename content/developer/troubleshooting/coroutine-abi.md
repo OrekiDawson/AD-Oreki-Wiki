@@ -1,5 +1,5 @@
 ---
-title: "协程 ABI 崩溃排查：从 Continuation 到真实调用"
+title: "协程 ABI 排障"
 description: "理解 Kotlin suspend 方法在 DEX 中的形状，并用日志、字节码和调用路径定位混合运行时故障"
 tags:
   - 排查

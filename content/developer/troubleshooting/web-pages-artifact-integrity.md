@@ -1,5 +1,5 @@
 ---
-title: Web Pages 产物身份：如何证明线上不是另一份代码
+title: "Pages 产物校验"
 description: 从部署提交、静态资源和浏览器行为三个层面定位 Web Pages 的错版、缺文件与缓存问题。
 tags:
   - 开发者

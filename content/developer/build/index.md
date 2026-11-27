@@ -1,5 +1,5 @@
 ---
-title: "构建与交付：从源码到可交付产物"
+title: "构建与交付"
 description: "沿着输入、编译、签名、验证与发布门禁定位 Android/Web 的构建任务"
 tags:
   - 构建

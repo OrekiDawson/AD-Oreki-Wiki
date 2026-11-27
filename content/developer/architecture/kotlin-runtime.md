@@ -1,5 +1,5 @@
 ---
-title: "Kotlin 混合运行时：在混淆宿主上建立一条可靠的 ABI 边界"
+title: "Kotlin 运行时"
 description: "Android MOD 如何让 Kotlin 业务代码与原版混淆 DEX 共存，并在反射、静态桥、生命周期和线程之间保持可诊断"
 tags:
   - Android

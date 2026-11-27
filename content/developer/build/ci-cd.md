@@ -1,5 +1,5 @@
 ---
-title: "从源码到可发布 APK：CI/CD 的分层设计"
+title: "CI/CD"
 description: "用 Gradle、GitHub Actions 和受保护环境把公开检查、候选构建、验签与发布串成可追溯的交付链"
 tags:
   - CI

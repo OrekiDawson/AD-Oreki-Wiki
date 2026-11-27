@@ -1,5 +1,5 @@
 ---
-title: "DEX 泛型签名回填：让 Gson 看见存档里的真实类型"
+title: "DEX 签名回填"
 description: "解释 DEX 注解在转换链中丢失后为何会破坏 Gson 存档，以及如何在 D8 之前恢复并验证泛型 Signature"
 tags:
   - DEX

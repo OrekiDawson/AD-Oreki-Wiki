@@ -1,5 +1,5 @@
 ---
-title: 派生状态与缓存失效：重置之后为什么还要重新计算
+title: "派生状态"
 description: 以 Web 端 Lazy、GameCache 和永恒挑战入口为例，说明派生状态如何缓存、何时失效，以及如何排查旧值残留。
 tags:
   - 开发者

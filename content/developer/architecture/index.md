@@ -1,5 +1,5 @@
 ---
-title: "架构与运行时：从入口到运行时"
+title: "架构"
 description: "沿着 Android、Web 与双端行为契约定位开发任务"
 tags:
   - 架构
