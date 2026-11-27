@@ -100,6 +100,25 @@ const orderedExplorer = fs.readFileSync(
   path.join(root, "scripts/quartz-plugins/ordered-explorer/dist/index.js"),
   "utf8",
 )
+// 模型与浏览器端序列化排序函数保持一致，避免新增专题后两处配置分叉。
+const childOrderSource = orderedExplorer.match(/const CHILD_ORDER = \{([\s\S]*?)\n  \};/)?.[1] ?? ""
+const childRanks = new Map(
+  [...childOrderSource.matchAll(/"([^"]+)": (\d+),/g)].map((match) => [match[1], Number(match[2])]),
+)
+const childRoutes = new Set()
+for (const [parent, children] of Object.entries(navigationModel?.childOrder ?? {})) {
+  if (!formalRoutes.has("/" + parent)) errors.push(`导航排序分类不存在：${parent}`)
+  children.forEach((route, index) => {
+    if (!route.startsWith(parent + "/") || !formalRoutes.has("/" + route))
+      errors.push(`导航排序条目不存在或分类错误：${route}`)
+    if (childRoutes.has(route)) errors.push(`导航排序条目重复：${route}`)
+    childRoutes.add(route)
+    if (childRanks.get(route) !== index + 1) errors.push(`导航模型与 Explorer 排序不一致：${route}`)
+  })
+}
+for (const route of childRanks.keys())
+  if (!childRoutes.has(route)) errors.push(`Explorer 存在未登记的专题排序：${route}`)
+
 if (!orderedExplorer.includes("developer/architecture") || !orderedExplorer.includes("developer/references"))
   errors.push("开发者导航缺少语义分类排序")
 if (!orderedExplorer.includes("current-page-ancestors")) errors.push("导航缺少当前页面高亮定位标记")
