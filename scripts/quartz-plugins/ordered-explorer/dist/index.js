@@ -21,7 +21,7 @@ function clientNavigation(model) {
     } catch { return ""; }
   };
   const ownLink = li => li.querySelector(":scope > a[href], :scope > .folder-container a[href]");
-  const routeOf = li => normalize(ownLink(li)?.getAttribute("href") || "");
+  const routeOf = li => { const href = ownLink(li)?.getAttribute("href"); return href ? normalize(href) : ""; };
   const group = (list, definition) => {
     const keys = new Set(definition.entries);
     if (!list || [...list.children].some(li => li.dataset.wikiGroup === definition.label)) return;
@@ -49,13 +49,14 @@ function clientNavigation(model) {
     const explorer = document.querySelector(".explorer");
     const scroll = explorer?.querySelector(".explorer-content");
     const rootList = scroll?.querySelector("ul.explorer-ul");
-    if (!rootList) return;
+    if (!explorer) return;
     if (observed !== explorer) {
       observer?.disconnect();
       observed = explorer;
       observer = new MutationObserver(schedule);
       observer.observe(explorer, { childList: true, subtree: true });
     }
+    if (!rootList) return;
     if (panel !== scroll) {
       panel = scroll;
       panel.scrollTop = savedTop;
@@ -79,7 +80,10 @@ function clientNavigation(model) {
     }
     // 原有折叠记忆由 Explorer 管理。此处仅保存滚动位置并按需定位当前页。
     const article = document.querySelector("article");
-    if (!article || article.querySelector(".wiki-related-nav") || !active) return;
+    if (!article || !active) return;
+    const previousNav = article.querySelector(".wiki-related-nav");
+    if (previousNav?.dataset.route === current) return;
+    previousNav?.remove();
     const parent = current.slice(0, current.lastIndexOf("/"));
     const topic = model.topicGroups?.[parent]?.find(x => x.entries.includes(current));
     const siblings = topic?.entries || model.childOrder[parent] || [];
@@ -87,6 +91,7 @@ function clientNavigation(model) {
     if (i < 0) return;
     const nav = document.createElement("nav");
     nav.className = "wiki-related-nav";
+    nav.dataset.route = current;
     nav.setAttribute("aria-label", "同主题阅读");
     const heading = document.createElement("strong");
     heading.textContent = "继续阅读";
