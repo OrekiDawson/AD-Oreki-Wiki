@@ -4,6 +4,10 @@ import { execFileSync } from "node:child_process"
 
 const root = process.cwd()
 const contentRoot = path.join(root, "content")
+const navigationModel = JSON.parse(
+  fs.readFileSync(path.join(root, "scripts/navigation-model.json"), "utf8"),
+)
+const excludedRoutePrefixes = navigationModel.excludedRoutePrefixes ?? []
 const generated = new Set(["all-entries.md", "recent-updates.md"])
 const configText = fs.readFileSync(path.join(root, "quartz.config.yaml"), "utf8")
 const pageTitleMatch = configText.match(
@@ -61,9 +65,13 @@ function route(file) {
   return rel.endsWith("/index") ? `/${rel.slice(0, -6)}` : `/${rel}`
 }
 
+const isExcludedRoute = (route) =>
+  excludedRoutePrefixes.some((prefix) => route === `/${prefix}` || route.startsWith(`/${prefix}/`))
+
 const pages = walk(contentRoot)
   .filter((file) => !generated.has(path.basename(file)))
   .map((file) => ({ file, route: route(file), ...frontmatter(file) }))
+  .filter((page) => !isExcludedRoute(page.route))
   .sort((a, b) => a.title.localeCompare(b.title, "zh-CN", { numeric: true, sensitivity: "base" }))
 
 const groups = new Map([

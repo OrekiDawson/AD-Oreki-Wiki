@@ -1,0 +1,5 @@
+{
+  "excludedRoutePrefixes": ["tags"],
+  "allowedRootPrefixes": ["player", "developer"],
+  "stationRoutes": ["all-entries", "recent-updates", "wiki-rules", "wiki-not", "copyright", "how-to-use"]
+}

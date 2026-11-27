@@ -110,12 +110,19 @@ function mapNode(node) {
   return node;
 }
 
+function isExcludedAuxiliaryNode(node) {
+  const slug = String(node?.slug || "").replace(/^\/+|\/+$/g, "");
+  return slug === "tags" || slug.startsWith("tags/");
+}
+
 export function OrderedExplorer(opts = {}) {
   const explorer = Explorer({
     ...opts,
     sortFn: compare,
     mapFn: mapNode,
-    filterFn: (node) => !(node.isFolder && (!node.children || node.children.length === 0) && !node.data),
+    filterFn: (node) =>
+      !isExcludedAuxiliaryNode(node) &&
+      !(node.isFolder && (!node.children || node.children.length === 0) && !node.data),
   });
   const expandCurrent = `
 document.addEventListener("nav", () => {

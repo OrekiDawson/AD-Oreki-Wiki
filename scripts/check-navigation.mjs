@@ -5,6 +5,12 @@ import { execFileSync } from "node:child_process"
 const root = process.cwd()
 const content = path.join(root, "content")
 const errors = []
+const navigationModel = JSON.parse(
+  fs.readFileSync(path.join(root, "scripts/navigation-model.json"), "utf8"),
+)
+const excludedRoutePrefixes = navigationModel.excludedRoutePrefixes ?? []
+const isExcludedRoute = (route) =>
+  excludedRoutePrefixes.some((prefix) => route === `/${prefix}` || route.startsWith(`/${prefix}/`))
 const builtOnly = process.argv[2] === "--built"
 const gitTimes = new Map()
 try {
@@ -44,16 +50,17 @@ for (const alias of ["/history", "/developer/history"])
   if (!developerIndex.includes(`\"${alias}\"`))
     errors.push(`历史兼容入口缺少明确 alias：${alias}`)
 const allEntries = fs.readFileSync(path.join(content, "all-entries.md"), "utf8")
-const formal = files.filter(
-  (file) =>
-    !file.includes(`${path.sep}ai-drafts${path.sep}`) &&
-    !file.endsWith(`${path.sep}all-entries.md`) &&
-    !file.endsWith(`${path.sep}recent-updates.md`),
-)
 const routeFor = (file) => {
   const rel = path.relative(content, file).replaceAll("\\", "/").replace(/\.md$/, "")
   return rel.endsWith("/index") ? `/${rel.slice(0, -6)}` : `/${rel}`
 }
+const formal = files.filter(
+  (file) =>
+    !file.includes(`${path.sep}ai-drafts${path.sep}`) &&
+    !file.endsWith(`${path.sep}all-entries.md`) &&
+    !file.endsWith(`${path.sep}recent-updates.md`) &&
+    !isExcludedRoute(routeFor(file)),
+)
 for (const file of formal)
   if (!allEntries.includes(`](${routeFor(file)})`))
     errors.push(`正式页面未进入全部条目索引：${routeFor(file)}`)
@@ -135,6 +142,11 @@ if (!orderedExplorer.includes("node.children.length === 0") || !orderedExplorer.
   errors.push("导航未阻止空子菜单和空白虚拟分类")
 if (leafDirectoryCount > 0 && !orderedExplorer.includes("node.isFolder = false"))
   errors.push(`发现 ${leafDirectoryCount} 个无下级条目的目录，但插件未将其降级为普通链接`)
+for (const prefix of excludedRoutePrefixes) {
+  const routePrefix = `/${prefix}`
+  if (!orderedExplorer.includes(`slug === "${prefix}"`) || !orderedExplorer.includes(`startsWith("${prefix}/")`))
+    errors.push(`Explorer 未从主导航过滤辅助路径：${routePrefix}/`)
+}
 const assetManifestPath = path.join(root, "docs/translation/original-image-manifest.json")
 if (!fs.existsSync(assetManifestPath)) errors.push("缺少原版译文图片来源清单")
 else {
@@ -206,6 +218,8 @@ if (builtOnly) {
           const route = href.split("#")[0].replace(/\/$/, "") || "/"
           if (!htmlRoutes.has(route))
             errors.push(`构建导航链接无对应页面：${path.relative(publicDir, file)} -> ${href}`)
+          if (isExcludedRoute(route))
+            errors.push(`构建导航泄露辅助索引：${path.relative(publicDir, file)} -> ${href}`)
           if (/\/ai-drafts(?:\/|$)|\/history(?:\/|$)|\/redirect/i.test(route))
             errors.push(`构建导航泄露草稿、历史或废弃入口：${route}`)
         }
