@@ -8,25 +8,27 @@ tags:
 
 欢迎来到玩家专区。这里把《反物质维度》的资源、重置、挑战和后期系统写成可以直接阅读的中文条目；如果你玩的是本 MOD，涉及 MOD 差异的地方会单独说明，不把两套规则混在一起。
 
-## 先从你眼前的问题开始
+## 从新档开始
 
-| 你现在想做什么                     | 从这里开始                                                                                                                                                       |
-| ---------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 第一次打开游戏，不知道该点什么     | [开始游玩](/player/getting-started/)                                                                                                               |
-| 想确认下载的是哪个版本             | [下载与版本说明](/player/download-and-version/)                                                                                                                  |
-| 想知道一个资源或重置究竟改变了什么 | [玩法机制](/player/gameplay/) · [游戏总览](/player/antimatter-dimensions)                                                                                        |
-| 已经进入无限、永恒或现实阶段       | [无限与永恒](/player/gameplay/progression-infinity-eternity) · [现实与时间研究](/player/gameplay/reality-time-studies) · [天神系统](/player/gameplay/celestials) |
-| 按钮不可用、存档异常或更新后不放心 | [玩家常见问题](/player/faq/) · [存档安全](/player/gameplay/saves)                                                                                      |
-| 看不懂一个词                       | [术语表](/player/terminology)                                                                                                                                    |
-| 想核对原版规则                     | [原版 Wiki 中文翻译](/player/original/)                                                                                                                          |
+- [开始游玩](/player/getting-started/)：选择平台、认识数值，完成第一次购买。
+- [初始阶段](/player/getting-started/first-session)与[首次无限](/player/getting-started/first-crunch)：按实际游戏进度继续。
+- [下载与版本](/player/download-and-version/)：Android 安装、Web 入口及更新注意事项。
 
-## 一条循序渐进的阅读路线
+## 理解游戏
 
-新档最初的目标很朴素：让低阶维度产出反物质，再用反物质购买更高阶的维度。随着维度提升、维度献祭和反物质星系出现，游戏会不断让你把“这一轮积累”换成“下一轮更快的起点”。[游戏总览](/player/antimatter-dimensions)适合先建立这张地图，再回到具体机制页查公式和条件。
+先读[游戏总览](/player/antimatter-dimensions)，再看[生产机制](/player/antimatter-dimensions-core-loop)和[增长与重置](/player/antimatter-dimensions-decisions)。想查某个阶段的具体规则，从[玩法机制](/player/gameplay/)进入。
 
-第一次大坍缩后，可以沿着[无限与永恒](/player/gameplay/progression-infinity-eternity)阅读；进入时间研究与现实阶段后，再看[现实与时间研究](/player/gameplay/reality-time-studies)。[挑战与真实结算](/player/gameplay/challenges)解释那些会改变规则的特殊关卡，[智能自动购买器](/player/gameplay/automation)和[存档安全](/player/gameplay/saves)则负责把日常操作和存档风险讲清楚。你不必按顺序读完，知道自己正处在哪个阶段，就能从对应条目继续。
+| 游戏进程 | 阅读入口 |
+| --- | --- |
+| 无限 | [无限](/player/gameplay/infinity) · [无限与永恒](/player/gameplay/progression-infinity-eternity) |
+| 永恒 | [永恒](/player/gameplay/eternity) · [时间研究](/player/gameplay/time-studies) |
+| 现实 | [现实](/player/gameplay/reality) · [时间研究路线](/player/gameplay/reality-time-studies) |
+| 天神 | [天神](/player/gameplay/celestials) · [特殊现实](/player/gameplay/celestial-realities) |
+| 通用机制 | [挑战](/player/gameplay/challenges) · [自动购买器](/player/gameplay/automation) · [存档](/player/gameplay/saves) |
 
-如果你玩的是本 MOD，先读 [MOD 介绍](/player/mods/)和[原版与 MOD](/player/gameplay/original-vs-mod)。这两页帮助你判断：眼前的数值是原版设计、MOD 调整，还是某个版本的界面差异。
+## 本 MOD 与游玩问题
+
+[MOD 介绍](/player/mods/)及[原版与 MOD](/player/gameplay/original-vs-mod)帮助你分辨两套规则。[常见问题](/player/faq/)用于排查卡关、自动化、安装与存档问题；[术语表](/player/terminology)适合随手查阅。
 
 ## 原版译文与本站条目的边界
 
