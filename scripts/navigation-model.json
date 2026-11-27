@@ -1,0 +1,50 @@
+{
+  "categories": {
+    "root": [
+      { "key": "player", "route": "/player", "label": "玩家专区" },
+      { "key": "developer", "route": "/developer", "label": "开发者专区" },
+      { "key": "all-entries", "route": "/all-entries", "label": "全部条目" },
+      { "key": "recent-updates", "route": "/recent-updates", "label": "最近更新" },
+      { "key": "wiki-rules", "route": "/wiki-rules", "label": "知识库规则" },
+      { "key": "wiki-not", "route": "/wiki-not", "label": "本站不是什么" },
+      { "key": "copyright", "route": "/copyright", "label": "版权与许可" },
+      { "key": "how-to-use", "route": "/how-to-use", "label": "本站使用说明" }
+    ]
+  },
+  "folderLabels": {
+    "player": "玩家专区",
+    "developer": "开发者专区",
+    "wiki-rules": "知识库规则",
+    "wiki-not": "本站不是什么",
+    "copyright": "版权与许可",
+    "how-to-use": "本站使用说明",
+    "developer/first-contribution": "第一次改动",
+    "developer/project-overview": "项目概览",
+    "developer/architecture": "系统架构",
+    "developer/reverse-engineering": "源码与逆向",
+    "developer/build": "构建与发布",
+    "developer/troubleshooting": "故障排查",
+    "developer/current": "项目状态",
+    "developer/references": "参考资料",
+    "developer/evidence": "运行证据",
+    "developer/ai-summaries": "AI 摘要",
+    "developer/editorial-guidelines": "编辑指南",
+    "developer/architecture/android": "Android 架构",
+    "developer/architecture/web": "Web 架构",
+    "developer/architecture/parity": "双端一致性",
+    "developer/architecture/celestial-implementation": "天神实现",
+    "developer/architecture/numeric-model": "超大数值",
+    "developer/architecture/kotlin-runtime": "Kotlin 运行时",
+    "developer/reverse-engineering/dex-abi": "DEX 与 ABI",
+    "developer/build/agp": "AGP 构建",
+    "developer/build/r8": "R8",
+    "developer/build/apk-signing": "APK 签名",
+    "developer/build/ci-cd": "CI/CD",
+    "developer/troubleshooting/coroutine-abi": "协程 ABI",
+    "developer/troubleshooting/save-compatibility": "存档兼容",
+    "developer/current/known-issues": "已知问题",
+    "developer/current/project-status": "双端状态",
+    "developer/current/release-status": "发布资格",
+    "developer/references/source-index": "来源索引"
+  }
+}
