@@ -52,12 +52,6 @@ const NEW_PAGES = [
 ];
 const CATEGORY_LABELS = ['玩家专区', '开发者专区', '玩法机制', '架构与机制', '运行证据'];
 
-function weakMustSee(items) {
-  return ['玩家专区', '开发者专区'].some((label) => {
-    const item = items.find((i) => i.label === label);
-    return !item || item.inViewport !== true;
-  });
-}
 
 async function run() {
   const browser = await chromium.launch({ headless: true });
@@ -141,6 +135,15 @@ async function run() {
       });
     return { items, expanded: !document.querySelector('.explorer').classList.contains('collapsed'), groups: [...ul.querySelectorAll('.wiki-nav-group-label')].map(el => el.textContent), scrollable: ['auto', 'scroll'].includes(getComputedStyle(document.querySelector('.explorer-content')).overflowY) };
   });
+  if (sidebar) sidebar.scrollIndependent = await page.evaluate(() => {
+    const panel = document.querySelector('.explorer-content');
+    if (!panel || panel.scrollHeight <= panel.clientHeight) return false;
+    const before = window.scrollY, top = panel.scrollTop;
+    panel.scrollTop = Math.min(panel.scrollHeight - panel.clientHeight, top + 200);
+    const moved = panel.scrollTop !== top && window.scrollY === before;
+    panel.scrollTop = top;
+    return moved;
+  });
   results.mobile.sidebar = sidebar;
   if (!sidebar) results.errors.push('sidebar-missing');
   else {
@@ -173,11 +176,12 @@ async function run() {
   if (await toggle2.count()) { await toggle2.click({ force: true }).catch(() => {}); await page.waitForTimeout(600); }
   results.mobile.sidebarActive = await page.evaluate(() => {
     const links = [...document.querySelectorAll('.explorer-content a.active, .explorer-content a.is-active')];
-    return links.map((a) => a.getAttribute('href'));
+    return links.map((a) => a.pathname.replace(/\/$/, ''));
   });
   if (!results.mobile.sidebarActive.some(href => new URL(href, BASE).pathname.replace(/\/$/, '') === '/player/gameplay/challenges')) {
     results.errors.push('sidebar-active-highlight');
   }
+  results.mobile.relatedNav = await page.locator('article .wiki-related-nav a[href]').count();
   if (await toggle2.count()) { await toggle2.click({ force: true }).catch(() => {}); await page.waitForTimeout(400); }
 
   // 搜索
@@ -266,6 +270,8 @@ async function run() {
   const desktop = await browser.newContext({ viewport: { width: 1280, height: 900 } });
   const dpage = await desktop.newPage();
   await dpage.goto(BASE + '/', { waitUntil: 'load' });
+  await dpage.locator('.wiki-nav-group-label').first().waitFor({ state: 'attached', timeout: 10000 }).catch(() => {});
+  results.desktop.topicGroups = await dpage.locator('.wiki-nav-group-label').allTextContents();
   results.desktop.title = await dpage.title();
   results.desktop.overflow = await dpage.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
   results.desktop.hasSearch = (await dpage.locator('input[type="search"], input[placeholder]').count()) > 0;
@@ -290,11 +296,16 @@ async function run() {
     if (results.mobile.sidebar.items.map((i) => i.label).join('|') !== EXPECTED_SIDEBAR.join('|')) bad.push('sidebar-order');
     if (!results.mobile.sidebar.expanded) bad.push('sidebar-expanded');
     if (results.mobile.sidebar.items.some((i) => i.truncated)) bad.push('sidebar-truncated');
-    if (weakMustSee(results.mobile.sidebar.items)) bad.push('sidebar-visibility');
+    if (!results.mobile.sidebar.items.some(i => i.label === '玩家专区' && i.inViewport)) bad.push('sidebar-visibility');
+    if (!results.mobile.sidebar.scrollable || !results.mobile.sidebar.scrollIndependent) bad.push('sidebar-independent-scroll');
+    for (const label of ['站务', '双端共通机制', 'Android', 'Web', '基础机制', '天神与后期'])
+      if (!results.mobile.sidebar.groups.includes(label)) bad.push('missing-topic-group:' + label);
   }
   if (!results.mobile.sidebarCollapsed) bad.push('sidebar-collapse');
   if (!results.mobile.sidebarActive ||
     !results.mobile.sidebarActive.includes('/player/gameplay/challenges')) bad.push('sidebar-active');
+  if (!results.mobile.relatedNav) bad.push('related-navigation-missing');
+  if (!results.desktop.topicGroups.includes('双端共通机制') || !results.desktop.topicGroups.includes('站务')) bad.push('desktop-topic-groups');
   if (!results.mobile.darkmodeToggled) bad.push('darkmode');
   if (results.mobile.frontendContract.tagLinks || results.mobile.frontendContract.tagLabels) bad.push('tag-index-leaked-in-explorer');
   if (results.mobile.frontendContract.emptyFolders) bad.push('empty-explorer-folder');
