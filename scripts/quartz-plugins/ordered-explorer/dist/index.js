@@ -26,7 +26,8 @@ function clientNavigation(model) {
     const keys = new Set(definition.entries);
     if (!list || [...list.children].some(li => li.dataset.wikiGroup === definition.label)) return;
     const children = [...list.children].filter(li => keys.has(routeOf(li)));
-    if (!children.length) return;
+    // 等待 Explorer 完成该组全部真实链接的渲染，避免异步阶段只收进部分条目。
+    if (children.length !== keys.size) return;
     const item = document.createElement("li");
     item.className = "wiki-nav-group";
     item.dataset.wikiGroup = definition.label;
@@ -80,10 +81,11 @@ function clientNavigation(model) {
     }
     // 原有折叠记忆由 Explorer 管理。此处仅保存滚动位置并按需定位当前页。
     const article = document.querySelector("article");
-    if (!article || !active) return;
+    if (!article) return;
     const previousNav = article.querySelector(".wiki-related-nav");
     if (previousNav?.dataset.route === current) return;
     previousNav?.remove();
+    if (!active) return;
     const parent = current.slice(0, current.lastIndexOf("/"));
     const topic = model.topicGroups?.[parent]?.find(x => x.entries.includes(current));
     const siblings = topic?.entries || model.childOrder[parent] || [];
