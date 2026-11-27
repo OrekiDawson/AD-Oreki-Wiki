@@ -95,9 +95,9 @@ Kotlin 编译器需要可用的源码或编译期类型信息；宿主游戏类�
 
 - [Android 开发者：DEX 文件格式](https://source.android.com/docs/core/runtime/dex-format)：类、方法、字段及 DEX 数据结构的官方说明。
 - [Android 开发者：Dalvik 字节码](https://source.android.com/docs/core/runtime/dalvik-bytecode)：寄存器、指令与调用约定的官方参考。
-- [Android 仓库 `GameApi.kt`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/fb1299a132f134eb4fab009643ee3fc3d6c57edf/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/GameApi.kt)：当前缓存式反射适配层。
-- [Android 仓库 `OrekiAutomationScheduler.kt`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/fb1299a132f134eb4fab009643ee3fc3d6c57edf/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiAutomationScheduler.kt)：以 Kotlin 实现并保持旧静态调用契约的调度器。
-- [3.21 基线绑定规则](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/fb1299a132f134eb4fab009643ee3fc3d6c57edf/baseline/versions/3.21/bindings.json) 与 [第一方类索引](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/fb1299a132f134eb4fab009643ee3fc3d6c57edf/docs/deobfuscation/data/first-party-3.21-index.csv)：历史映射和结构证据入口。
+- Android 仓库 `GameApi.kt`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@fb1299a132f134eb4fab009643ee3fc3d6c57edf/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/GameApi.kt；[固定提交 fb1299a](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/commit/fb1299a132f134eb4fab009643ee3fc3d6c57edf)；具体文件证据留在内部核验记录）：当前缓存式反射适配层。
+- Android 仓库 `OrekiAutomationScheduler.kt`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@fb1299a132f134eb4fab009643ee3fc3d6c57edf/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiAutomationScheduler.kt；[固定提交 fb1299a](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/commit/fb1299a132f134eb4fab009643ee3fc3d6c57edf)；具体文件证据留在内部核验记录）：以 Kotlin 实现并保持旧静态调用契约的调度器。
+- 3.21 基线绑定规则（源码定位：OrekiDawson/AD-Oreki-Edition-Android@fb1299a132f134eb4fab009643ee3fc3d6c57edf/baseline/versions/3.21/bindings.json；[固定提交 fb1299a](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/commit/fb1299a132f134eb4fab009643ee3fc3d6c57edf)；具体文件证据留在内部核验记录） 与 第一方类索引（源码定位：OrekiDawson/AD-Oreki-Edition-Android@fb1299a132f134eb4fab009643ee3fc3d6c57edf/docs/deobfuscation/data/first-party-3.21-index.csv；[固定提交 fb1299a](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/commit/fb1299a132f134eb4fab009643ee3fc3d6c57edf)；具体文件证据留在内部核验记录）：历史映射和结构证据入口。
 - [Android 仓库逆向资料目录](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/tree/fb1299a132f134eb4fab009643ee3fc3d6c57edf/docs/deobfuscation)：反编译、索引和版本迁移的历史证据；不等同于可直接编译的游戏源码。
 
 本页保留旧入口 `/reverse-engineering/dex-abi` 以兼容历史链接；正式导航应链接本页的新标题和所在专区路径。

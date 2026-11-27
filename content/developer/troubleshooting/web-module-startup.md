@@ -14,7 +14,7 @@ Web 端的“白屏”常被归咎于某个组件或某个游戏机制，但很�
 
 ## 入口不是初始化本身
 
-`index.html` 只加载一个模块脚本：`./src/main.js`。[`src/main.js`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/main.js) 随后按顺序导入：
+`index.html` 只加载一个模块脚本：`./src/main.js`。`src/main.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/main.js；[固定提交 b28b231](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/commit/b28b231efa5b694ce1da8a1e508cfc3ecc099344)；具体文件证据留在内部核验记录） 随后按顺序导入：
 
 ```text
 speed-config
@@ -37,7 +37,7 @@ speed-config
 
 ## `shims` 是有意的运行时注入
 
-[`src/shims.js`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/shims.js) 从模块导入 CodeMirror、Decimal 和 Vue，然后把它们写入 `window`：
+`src/shims.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/shims.js；[固定提交 b28b231](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/commit/b28b231efa5b694ce1da8a1e508cfc3ecc099344)；具体文件证据留在内部核验记录） 从模块导入 CodeMirror、Decimal 和 Vue，然后把它们写入 `window`：
 
 ```js
 window.CodeMirror = CodeMirror;
@@ -56,7 +56,7 @@ window.Vue = Vue;
 
 ## `merge-globals` 如何处理遗留代码
 
-[`src/merge-globals.js`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/merge-globals.js) 使用 `mergeIntoGlobal()` 遍历模块的命名导出，把它们挂到 `window`。它有一个刻意严格的规则：如果目标名称已经存在，就直接抛错，而不是静默覆盖。
+`src/merge-globals.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/merge-globals.js；[固定提交 b28b231](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/commit/b28b231efa5b694ce1da8a1e508cfc3ecc099344)；具体文件证据留在内部核验记录） 使用 `mergeIntoGlobal()` 遍历模块的命名导出，把它们挂到 `window`。它有一个刻意严格的规则：如果目标名称已经存在，就直接抛错，而不是静默覆盖。
 
 ```js
 const existingValue = window[key];
@@ -72,7 +72,7 @@ window[key] = value;
 
 ## 为什么 `game.js` 不能随处直接 import
 
-全局桥的最后一步导入 `game.js`，再把它的导出合并到 `window`。看起来像是反向依赖，实际是为旧模块提供例如 `gainedInfinityPoints()` 这类运行时入口。[`src/core/oreki-smart-strategy.js`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/core/oreki-smart-strategy.js) 的源码注释给出了重要取舍：这个 MOD 策略模块直接调用全局函数，而不是重新 `import game.js`，以免形成这样的 ESM 环：
+全局桥的最后一步导入 `game.js`，再把它的导出合并到 `window`。看起来像是反向依赖，实际是为旧模块提供例如 `gainedInfinityPoints()` 这类运行时入口。`src/core/oreki-smart-strategy.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/core/oreki-smart-strategy.js；[固定提交 b28b231](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/commit/b28b231efa5b694ce1da8a1e508cfc3ecc099344)；具体文件证据留在内部核验记录） 的源码注释给出了重要取舍：这个 MOD 策略模块直接调用全局函数，而不是重新 `import game.js`，以免形成这样的 ESM 环：
 
 ```text
 game.js
@@ -87,7 +87,7 @@ ESM 循环依赖不一定立刻抛出清晰错误；更危险的情况是模块�
 
 ## 浏览器检查与游戏初始化是两个判据
 
-[`src/game.js`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/game.js) 的 `browserCheck()` 只负责判断用户代理是否属于支持范围。`init()` 还要继续完成运行环境、存档、自动化和界面相关的初始化。源码另有 `window.onload` 路径，会再次执行浏览器检查并设置 `GameUI.initialized`；这说明“支持的浏览器”和“UI 已经准备好”是两个状态，不应在排障中合并成一个布尔值。
+`src/game.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/game.js；[固定提交 b28b231](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/commit/b28b231efa5b694ce1da8a1e508cfc3ecc099344)；具体文件证据留在内部核验记录） 的 `browserCheck()` 只负责判断用户代理是否属于支持范围。`init()` 还要继续完成运行环境、存档、自动化和界面相关的初始化。源码另有 `window.onload` 路径，会再次执行浏览器检查并设置 `GameUI.initialized`；这说明“支持的浏览器”和“UI 已经准备好”是两个状态，不应在排障中合并成一个布尔值。
 
 因此，看到浏览器警告时先不要修改游戏机制；看到 `GameUI.initialized` 为假时也不要直接推断浏览器不支持。应该记录：
 
@@ -129,9 +129,9 @@ ESM 循环依赖不一定立刻抛出清晰错误；更危险的情况是模块�
 
 ## 相关源码
 
-- [入口 `src/main.js`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/main.js)：入口导入顺序与 `browserCheck()`/`init()` 调用。
-- [兼容注入 `src/shims.js`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/shims.js)：把第三方模块实例注入 `window`。
-- [全局桥 `src/merge-globals.js`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/merge-globals.js)：导出合并、冲突保护和遗留组件边界。
-- [游戏入口 `src/game.js`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/game.js)：浏览器检查、初始化和运行时入口。
-- [自动购买策略 `src/core/oreki-smart-strategy.js`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/core/oreki-smart-strategy.js)：避免直接导入 `game.js` 的策略模块边界。
+- 入口 `src/main.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/main.js；[固定提交 b28b231](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/commit/b28b231efa5b694ce1da8a1e508cfc3ecc099344)；具体文件证据留在内部核验记录）：入口导入顺序与 `browserCheck()`/`init()` 调用。
+- 兼容注入 `src/shims.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/shims.js；[固定提交 b28b231](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/commit/b28b231efa5b694ce1da8a1e508cfc3ecc099344)；具体文件证据留在内部核验记录）：把第三方模块实例注入 `window`。
+- 全局桥 `src/merge-globals.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/merge-globals.js；[固定提交 b28b231](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/commit/b28b231efa5b694ce1da8a1e508cfc3ecc099344)；具体文件证据留在内部核验记录）：导出合并、冲突保护和遗留组件边界。
+- 游戏入口 `src/game.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/game.js；[固定提交 b28b231](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/commit/b28b231efa5b694ce1da8a1e508cfc3ecc099344)；具体文件证据留在内部核验记录）：浏览器检查、初始化和运行时入口。
+- 自动购买策略 `src/core/oreki-smart-strategy.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/core/oreki-smart-strategy.js；[固定提交 b28b231](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/commit/b28b231efa5b694ce1da8a1e508cfc3ecc099344)；具体文件证据留在内部核验记录）：避免直接导入 `game.js` 的策略模块边界。
 - [Web 端架构](/developer/architecture/web)：沿启动、游戏循环和存档恢复继续阅读。

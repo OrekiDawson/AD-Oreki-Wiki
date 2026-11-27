@@ -116,7 +116,7 @@ tags:
 
 ## 来源与相关条目
 
-- Web 固定源码：[主循环 `src/game.js`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/e1c93caa758de6c39cf814582123d4a35319eb25/src/game.js)、[定时器 `src/core/intervals.js`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/e1c93caa758de6c39cf814582123d4a35319eb25/src/core/intervals.js)、[存档边界 `src/core/storage/storage.js`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/e1c93caa758de6c39cf814582123d4a35319eb25/src/core/storage/storage.js)。
+- Web 固定源码：主循环 `src/game.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@e1c93caa758de6c39cf814582123d4a35319eb25/src/game.js；[固定提交 e1c93ca](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/commit/e1c93caa758de6c39cf814582123d4a35319eb25)；具体文件证据留在内部核验记录）、定时器 `src/core/intervals.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@e1c93caa758de6c39cf814582123d4a35319eb25/src/core/intervals.js；[固定提交 e1c93ca](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/commit/e1c93caa758de6c39cf814582123d4a35319eb25)；具体文件证据留在内部核验记录）、存档边界 `src/core/storage/storage.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@e1c93caa758de6c39cf814582123d4a35319eb25/src/core/storage/storage.js；[固定提交 e1c93ca](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/commit/e1c93caa758de6c39cf814582123d4a35319eb25)；具体文件证据留在内部核验记录）。
 - [Web 端架构](/developer/architecture/web)：从启动入口和主循环理解模块接线。
 - [存档兼容排查](/developer/troubleshooting/save-compatibility)：处理编码、迁移和跨平台存档问题；本文专注时间与保存边界。
 - [双端行为一致性](/developer/architecture/parity)：比较 Android 与 Web 在时间和状态契约上的差异。

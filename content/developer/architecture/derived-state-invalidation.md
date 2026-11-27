@@ -24,7 +24,7 @@ tags:
 
 ## `Lazy` 做了什么，又没有做什么
 
-固定源码中的 `Lazy` 很小，却定义了整个约定：构造时保存计算函数，第一次读取 `value` 时计算并保存；之后的读取直接复用 `_value`；`invalidate()` 只负责清除答案，让下一次读取重新计算。[`src/core/cache.js`（commit `b28b231…`）](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/core/cache.js)
+固定源码中的 `Lazy` 很小，却定义了整个约定：构造时保存计算函数，第一次读取 `value` 时计算并保存；之后的读取直接复用 `_value`；`invalidate()` 只负责清除答案，让下一次读取重新计算。`src/core/cache.js`（commit `b28b231…`）（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/core/cache.js；[固定提交 b28b231](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/commit/b28b231efa5b694ce1da8a1e508cfc3ecc099344)；具体文件证据留在内部核验记录）
 
 ```js
 get value() {
@@ -52,7 +52,7 @@ invalidate() {
 
 ## 为什么重置与读档需要两层失效
 
-重置的危险在于：它通常一次性替换许多源状态，但缓存对象本身仍然活着。固定版本的现实重置流程在完成状态切换后调用 `Lazy.invalidateAll()`，随后专门调用 `ECTimeStudyState.invalidateCachedRequirements()`，最后才发出 `REALITY_RESET_AFTER` 事件。[`src/core/reality.js`（同一 commit）](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/core/reality.js)
+重置的危险在于：它通常一次性替换许多源状态，但缓存对象本身仍然活着。固定版本的现实重置流程在完成状态切换后调用 `Lazy.invalidateAll()`，随后专门调用 `ECTimeStudyState.invalidateCachedRequirements()`，最后才发出 `REALITY_RESET_AFTER` 事件。`src/core/reality.js`（同一 commit）（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/core/reality.js；[固定提交 b28b231](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/commit/b28b231efa5b694ce1da8a1e508cfc3ecc099344)；具体文件证据留在内部核验记录）
 
 这里有两个层次：
 
@@ -61,13 +61,13 @@ invalidate() {
 
 只做第一层并不够：不属于 `Lazy` 的缓存不会自动消失。反过来，所有地方都无条件全清也会丢掉局部更新的性能收益，所以普通购买路径仍应优先做定向失效。
 
-读档同样不能只把序列化数据写回 `player` 就结束。存储模块在装载存档、初始化自动化之后调用 `Lazy.invalidateAll()`；挑战入口的缓存也会单独清理。这样下一次读取派生值时，答案来自新存档，而不是来自读档前那一局游戏。[`src/core/storage/storage.js`（同一 commit）](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/core/storage/storage.js)
+读档同样不能只把序列化数据写回 `player` 就结束。存储模块在装载存档、初始化自动化之后调用 `Lazy.invalidateAll()`；挑战入口的缓存也会单独清理。这样下一次读取派生值时，答案来自新存档，而不是来自读档前那一局游戏。`src/core/storage/storage.js`（同一 commit）（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/core/storage/storage.js；[固定提交 b28b231](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/commit/b28b231efa5b694ce1da8a1e508cfc3ecc099344)；具体文件证据留在内部核验记录）
 
 ## 一个有代表性的峰值缓存：永恒挑战入口
 
 `ECTimeStudyState` 展示了“缓存的值并不等于当前值”。它的 `requirementCurrent` 读取当前资源；第一次读取时保存样本，之后只保留本次运行中更大的值。于是它表达的是“本轮见过的最高值”，而不是某一帧的瞬时资源。
 
-这正是设计取舍：入口条件可能要求玩家在一次运行中达到峰值，重置后却不能把上一轮的峰值带进来。`invalidateRequirement()` 把 `cachedCurrentRequirement` 设回未初始化状态，统一失效函数遍历所有挑战对象执行它。[`src/core/time-studies/ec-time-study.js`（同一 commit）](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/core/time-studies/ec-time-study.js)
+这正是设计取舍：入口条件可能要求玩家在一次运行中达到峰值，重置后却不能把上一轮的峰值带进来。`invalidateRequirement()` 把 `cachedCurrentRequirement` 设回未初始化状态，统一失效函数遍历所有挑战对象执行它。`src/core/time-studies/ec-time-study.js`（同一 commit）（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/core/time-studies/ec-time-study.js；[固定提交 b28b231](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/commit/b28b231efa5b694ce1da8a1e508cfc3ecc099344)；具体文件证据留在内部核验记录）
 
 这个例子也给出一个实用判断：如果某个入口在重置后立刻显示“已经达到”，不要先怀疑数值精度或界面；先确认 `requirementBits` 这类合法的持久标记与本轮峰值缓存是否被有意区分。前者表示曾经合法达成，后者表示当前运行中实际观察到的最大值，二者不能互相代替。
 

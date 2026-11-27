@@ -71,7 +71,7 @@ Web 的 `gameLoop(passDiff)` 会处理真实时间、游戏时间、后台休眠
 
 ## 来源与历史边界
 
-Android 当前实现可从 [`OrekiGuiStage.kt`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiGuiStage.kt)、[`OrekiStageAuto.kt`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiStageAuto.kt) 和 `GameApi.kt` 追踪；Web 可从 [`game.js`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/e1c93caa758de6c39cf814582123d4a35319eb25/src/game.js)、执行器和天神自动化模块追踪。Android/Web 的历史验收记录仍保留在各仓库报告中，但历史运行结果不自动代表当前候选构建。
+Android 当前实现可从 `OrekiGuiStage.kt`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiGuiStage.kt；[固定提交 9d8fc46](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/commit/9d8fc46ce99279720b5b3068027bb76bceb35756)；具体文件证据留在内部核验记录）、`OrekiStageAuto.kt`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiStageAuto.kt；[固定提交 9d8fc46](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/commit/9d8fc46ce99279720b5b3068027bb76bceb35756)；具体文件证据留在内部核验记录） 和 `GameApi.kt` 追踪；Web 可从 `game.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@e1c93caa758de6c39cf814582123d4a35319eb25/src/game.js；[固定提交 e1c93ca](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/commit/e1c93caa758de6c39cf814582123d4a35319eb25)；具体文件证据留在内部核验记录）、执行器和天神自动化模块追踪。Android/Web 的历史验收记录仍保留在各仓库报告中，但历史运行结果不自动代表当前候选构建。
 
 ## 相关条目
 

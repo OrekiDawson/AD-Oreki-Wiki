@@ -43,6 +43,6 @@ aliases:
 
 [第一次进入与前几分钟](/player/getting-started/first-session) · [存档安全](/player/gameplay/saves) · [玩家常见问题](/player/faq/)
 
-原版无限入口可对照[Antimatter Dimensions Wiki 的无限页面（修订 3113）](https://antimatterdimensions.wiki.gg/wiki/Infinity?oldid=3113)；精确门槛和 MOD 调整以当前版本为准。Web 源码可进一步核对 [`Player.canCrunch`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/90d89de2048332f3c329ae6834ebee2675453a02/src/core/player.js) 与[`src/game.js`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/90d89de2048332f3c329ae6834ebee2675453a02/src/game.js)。
+原版无限入口可对照[Antimatter Dimensions Wiki 的无限页面（修订 3113）](https://antimatterdimensions.wiki.gg/wiki/Infinity?oldid=3113)；精确门槛和 MOD 调整以当前版本为准。Web 源码可进一步核对 `Player.canCrunch`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@90d89de2048332f3c329ae6834ebee2675453a02/src/core/player.js；[固定提交 90d89de](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/commit/90d89de2048332f3c329ae6834ebee2675453a02)；具体文件证据留在内部核验记录） 与`src/game.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@90d89de2048332f3c329ae6834ebee2675453a02/src/game.js；[固定提交 90d89de](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/commit/90d89de2048332f3c329ae6834ebee2675453a02)；具体文件证据留在内部核验记录）。
 
 本文只完成了源码路径与公开页面的静态核对，未执行完整新档通关、跨平台导入或当前候选 APK 的真机验证；这些结果不能从页面说明推定。

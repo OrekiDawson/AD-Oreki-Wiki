@@ -68,6 +68,6 @@ aliases:
 ## 参考资料与相关条目
 
 - [Celestials](https://antimatterdimensions.wiki.gg/wiki/Celestials?oldid=3187)
-- [薇的原版门槛定义](https://github.com/IvarK/AntimatterDimensionsSourceCode/blob/5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/secret-formula/celestials/v.js)
+- 薇的原版门槛定义（源码定位：IvarK/AntimatterDimensionsSourceCode@5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/secret-formula/celestials/v.js；[固定提交 5409e32](https://github.com/IvarK/AntimatterDimensionsSourceCode/commit/5409e320cecef96a917cca1dfb68f1f183e499ca)；具体文件证据留在内部核验记录）
 
 [现实与时间研究](/player/gameplay/reality-time-studies) · [挑战与真实结算](/player/gameplay/challenges) · [智能自动购买器](/player/gameplay/automation) · [原版行为与 Oreki Edition 修改](/player/gameplay/original-vs-mod)

@@ -14,7 +14,7 @@ aliases:
 
 ## 一次调查从哪里开始
 
-先固定 Android 3.21 基线和待调查的行为，再从 DEX 或反编译结果找到类、方法、字段和调用点。接着用描述符确认参数与返回类型，用寄存器和控制流确认数据怎样流动，最后把结果与[3.21 绑定规则](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/fb1299a132f134eb4fab009643ee3fc3d6c57edf/baseline/versions/3.21/bindings.json)和[第一方类索引](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/fb1299a132f134eb4fab009643ee3fc3d6c57edf/docs/deobfuscation/data/first-party-3.21-index.csv)交叉核对。
+先固定 Android 3.21 基线和待调查的行为，再从 DEX 或反编译结果找到类、方法、字段和调用点。接着用描述符确认参数与返回类型，用寄存器和控制流确认数据怎样流动，最后把结果与3.21 绑定规则（源码定位：OrekiDawson/AD-Oreki-Edition-Android@fb1299a132f134eb4fab009643ee3fc3d6c57edf/baseline/versions/3.21/bindings.json；[固定提交 fb1299a](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/commit/fb1299a132f134eb4fab009643ee3fc3d6c57edf)；具体文件证据留在内部核验记录）和第一方类索引（源码定位：OrekiDawson/AD-Oreki-Edition-Android@fb1299a132f134eb4fab009643ee3fc3d6c57edf/docs/deobfuscation/data/first-party-3.21-index.csv；[固定提交 fb1299a](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/commit/fb1299a132f134eb4fab009643ee3fc3d6c57edf)；具体文件证据留在内部核验记录）交叉核对。
 
 这个顺序很重要。短类名只能告诉你“产物里有一个符号”，不能告诉你它是玩家状态、视图对象还是临时包装器；绑定表也只能说明某个版本的映射，不能承诺下一版仍然如此。
 
@@ -63,8 +63,8 @@ DEX 保存的是类、字段、方法和字节码等运行时结构，不是带�
 
 - [Android 开发者：DEX 文件格式](https://source.android.com/docs/core/runtime/dex-format)：DEX 的类、方法、字段和数据结构。
 - [Android 开发者：Dalvik 字节码](https://source.android.com/docs/core/runtime/dalvik-bytecode)：寄存器、指令和调用约定。
-- [Android `GameApi.kt`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/fb1299a132f134eb4fab009643ee3fc3d6c57edf/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/GameApi.kt)：集中式运行时适配入口。
-- [Android `OrekiAutomationScheduler.kt`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/fb1299a132f134eb4fab009643ee3fc3d6c57edf/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiAutomationScheduler.kt)：Kotlin 调度器与旧调用契约的结合点。
+- Android `GameApi.kt`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@fb1299a132f134eb4fab009643ee3fc3d6c57edf/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/GameApi.kt；[固定提交 fb1299a](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/commit/fb1299a132f134eb4fab009643ee3fc3d6c57edf)；具体文件证据留在内部核验记录）：集中式运行时适配入口。
+- Android `OrekiAutomationScheduler.kt`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@fb1299a132f134eb4fab009643ee3fc3d6c57edf/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiAutomationScheduler.kt；[固定提交 fb1299a](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/commit/fb1299a132f134eb4fab009643ee3fc3d6c57edf)；具体文件证据留在内部核验记录）：Kotlin 调度器与旧调用契约的结合点。
 - [Android 逆向资料目录](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/tree/fb1299a132f134eb4fab009643ee3fc3d6c57edf/docs/deobfuscation)：反编译、索引和版本迁移资料；不等同于可直接编译的游戏源码。
 
 返回[开发者参考](/developer/references/) · [架构与运行时](/developer/architecture/) · [构建与交付](/developer/build/)

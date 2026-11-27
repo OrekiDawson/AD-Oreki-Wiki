@@ -32,7 +32,7 @@ tags:
 - [记数法](/player/original/ow-notations)
 - [阶段解锁与排障：从页面显示到真实结算](/player/gameplay/stage-gates)
 - [阶段进度：从新档到天神](/player/gameplay/stage-progression)
-- [开始游玩 Oreki Edition：入门阅读地图](/player/getting-started)
+- [开始游玩](/player/getting-started)
 - [快捷键](/player/original/ow-shortcuts)
 - [莱特拉](/player/original/ow-laitela)
 - [莱特拉·引语](/player/original/ow-laitela-quotes)

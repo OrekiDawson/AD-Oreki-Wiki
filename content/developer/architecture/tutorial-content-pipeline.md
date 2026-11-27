@@ -37,7 +37,7 @@ JSON 正文
 
 ## Web 生成模块解决了什么问题
 
-浏览器端源码通过 `src/core/oreki-tutorial.js` 使用 `oreki-tutorial-data.gen.js`。生成脚本 [`scripts/gen_tutorial_module.mjs`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/b28b231efa5b694ce1da8a1e508cfc3ecc099344/scripts/gen_tutorial_module.mjs) 把 JSON 机械转换为 ESM 模块，生成文件顶部明确标记“自动生成，请勿手改”。
+浏览器端源码通过 `src/core/oreki-tutorial.js` 使用 `oreki-tutorial-data.gen.js`。生成脚本 `scripts/gen_tutorial_module.mjs`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/scripts/gen_tutorial_module.mjs；[固定提交 b28b231](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/commit/b28b231efa5b694ce1da8a1e508cfc3ecc099344)；具体文件证据留在内部核验记录） 把 JSON 机械转换为 ESM 模块，生成文件顶部明确标记“自动生成，请勿手改”。
 
 之所以保留这个中间层，是因为项目的浏览器兼容边界不保证直接使用 JSON module import。生成器让运行时只加载普通 JavaScript 模块，同时把源文件、生成命令和校验命令写进产物注释，降低“改了 JSON 但浏览器仍拿旧模块”的风险。
 
@@ -74,7 +74,7 @@ parse(JSON) → serialize(ESM)
 
 ## 校验器应该拦什么错误
 
-[`scripts/validate_tutorial.mjs`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/b28b231efa5b694ce1da8a1e508cfc3ecc099344/scripts/validate_tutorial.mjs) 的价值不在于生成一串绿色数字，而在于把“内容结构错误”尽早变成失败。至少应检查：
+`scripts/validate_tutorial.mjs`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/scripts/validate_tutorial.mjs；[固定提交 b28b231](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/commit/b28b231efa5b694ce1da8a1e508cfc3ecc099344)；具体文件证据留在内部核验记录） 的价值不在于生成一串绿色数字，而在于把“内容结构错误”尽早变成失败。至少应检查：
 
 - schema 版本是否是生成器支持的版本；
 - 章节是否存在、ID 是否重复或断裂；
@@ -128,7 +128,7 @@ parse(JSON) → serialize(ESM)
 
 ## 来源与相关条目
 
-- 固定源码：[教程读取与阶段派生 `src/core/oreki-tutorial.js`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/core/oreki-tutorial.js)、[唯一内容源 `src/core/oreki-tutorial-data.json`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/core/oreki-tutorial-data.json)、[生成器](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/b28b231efa5b694ce1da8a1e508cfc3ecc099344/scripts/gen_tutorial_module.mjs)、[结构校验器](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/b28b231efa5b694ce1da8a1e508cfc3ecc099344/scripts/validate_tutorial.mjs)。
+- 固定源码：教程读取与阶段派生 `src/core/oreki-tutorial.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/core/oreki-tutorial.js；[固定提交 b28b231](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/commit/b28b231efa5b694ce1da8a1e508cfc3ecc099344)；具体文件证据留在内部核验记录）、唯一内容源 `src/core/oreki-tutorial-data.json`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/core/oreki-tutorial-data.json；[固定提交 b28b231](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/commit/b28b231efa5b694ce1da8a1e508cfc3ecc099344)；具体文件证据留在内部核验记录）、生成器（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/scripts/gen_tutorial_module.mjs；[固定提交 b28b231](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/commit/b28b231efa5b694ce1da8a1e508cfc3ecc099344)；具体文件证据留在内部核验记录）、结构校验器（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/scripts/validate_tutorial.mjs；[固定提交 b28b231](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/commit/b28b231efa5b694ce1da8a1e508cfc3ecc099344)；具体文件证据留在内部核验记录）。
 - [Web UI 反应式更新](/developer/architecture/web-ui-reactivity)：解释组件如何消费已准备好的内容；本文聚焦内容源与生成边界。
 - [Web 端架构](/developer/architecture/web)：解释启动和主循环，不替代教程数据契约。
 - [存档兼容排查](/developer/troubleshooting/save-compatibility)：处理玩家存档迁移；教程内容数据不属于存档状态。

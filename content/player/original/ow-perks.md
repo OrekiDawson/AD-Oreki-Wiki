@@ -104,7 +104,7 @@ aliases:
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为简体中文翻译（改编），已修改：翻译正文与 48 行节点表、把节点图标改为中文节点名、依据官方源码澄清无向相邻关系与部分游戏内术语、图库改为图注列表、界面图未转载；本页按相同许可共享。
 - 原文图片未转载：原页含桌面深色/浅色与移动版复兴树截图、七种布局截图与两个主题截图，此处仅保留文字说明。
 - 原文脚注说明「七种布局中一种锁在隐藏主题后」；译注：桌面版的节点拖拽依赖 vis.js 实现。
-- 源码核对：[复兴树 vis-network 渲染入口](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/91d5bed01509cd730a3158075c9b05c19a7a3260/src/components/tabs/perks/PerksTab.js#L1)（提交 `91d5bed01509cd730a3158075c9b05c19a7a3260`，2026-11-24 核对）。
+- 源码核对：复兴树 vis-network 渲染入口（源码定位：OrekiDawson/AD-Oreki-Edition-Web@91d5bed01509cd730a3158075c9b05c19a7a3260/src/components/tabs/perks/PerksTab.js#L1；[固定提交 91d5bed](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/commit/91d5bed01509cd730a3158075c9b05c19a7a3260)；具体文件证据留在内部核验记录）（提交 `91d5bed01509cd730a3158075c9b05c19a7a3260`，2026-11-24 核对）。
 
 ## 相关条目
 

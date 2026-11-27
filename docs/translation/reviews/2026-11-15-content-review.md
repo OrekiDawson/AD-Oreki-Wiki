@@ -68,7 +68,7 @@ tags:
 
 此前把「只做过章节/表格计数」的页面标成 REVIEWED 是不成立的。本次调整：
 
-- **REVIEWED 0 篇、VERIFIED 0 篇**：按四级验收（见 content/wiki-rules.md「内容验收等级」），只有逐段语义审校才能记 REVIEWED，本 Agent 本轮只对 `Pelle`、`Eternity` 做了针对性的逐段对照修正，不构成完整语义审校。
+- **REVIEWED 0 篇、VERIFIED 0 篇**：按四级翻译状态（见 `docs/translation/POLICY.md`），只有逐段语义审校才能记 REVIEWED，本 Agent 本轮只对 `Pelle`、`Eternity` 做了针对性的逐段对照修正，不构成完整语义审校。
 - **全部 35 篇正文统一为 STRUCTURE CHECKED**（章节/表格/公式/来源字段结构与原站一致，**明确不算语义审校**），frontmatter 的 `review_status` 同步。
 - **已审校覆盖率 0/68（0.0%）、结构核对覆盖率 35/68（51.5%）**——这是诚实口径，不是内容回退。
 - `Pelle`、`Eternity` 保留页面级记录 `docs/translation/reviews/pelle.md`、`eternity.md`，供将来 REVIEWED 复核时复用。

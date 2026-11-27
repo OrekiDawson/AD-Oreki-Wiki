@@ -59,7 +59,7 @@ Oreki Edition 的统一调度节拍可以设为 **1～60 秒，默认 10 秒**�
 
 想让普通受管项目的行为持续改变，应当**调整调度器本身的目标、管理设置或总开关**（以当前版本的实际界面为准），而不是反复修改它管理的字段。**如果手动关闭自动永恒后它又在没有合理复位的情况下自行打开，请记录版本、操作与存档状态并反馈**，不要一概当作正常策略纠偏。
 
-这里有一个边界：**不是每个原版自动购买器的每个选项都被 MOD 托管；自动永恒的手动关闭保护也不是普通受管字段的下一 tick 恢复。** Android 具体依据见 [R120 受管字段清单](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/9d8fc46ce99279720b5b3068027bb76bceb35756/reports/R120-01/scheduler-managed-authority.md) 与 [自动永恒托管实现](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiAutoEternityAdoption.kt)。
+这里有一个边界：**不是每个原版自动购买器的每个选项都被 MOD 托管；自动永恒的手动关闭保护也不是普通受管字段的下一 tick 恢复。** Android 具体依据见 R120 受管字段清单（源码定位：OrekiDawson/AD-Oreki-Edition-Android@9d8fc46ce99279720b5b3068027bb76bceb35756/reports/R120-01/scheduler-managed-authority.md；[固定提交 9d8fc46](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/commit/9d8fc46ce99279720b5b3068027bb76bceb35756)；具体文件证据留在内部核验记录） 与 自动永恒托管实现（源码定位：OrekiDawson/AD-Oreki-Edition-Android@9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiAutoEternityAdoption.kt；[固定提交 9d8fc46](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/commit/9d8fc46ce99279720b5b3068027bb76bceb35756)；具体文件证据留在内部核验记录）。
 
 ## 自动化没有动作时，先看什么？
 

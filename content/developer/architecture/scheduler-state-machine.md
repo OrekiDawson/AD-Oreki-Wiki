@@ -33,7 +33,7 @@ tags:
 
 ## Android：一帧如何获得动作名额
 
-Android 的自动化入口是 [`OrekiStageAuto.onAutoBuyerTick()`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiStageAuto.kt)。它先开启一帧，再同步必要的游戏与界面状态，随后把受管任务交给 [`OrekiAutomationScheduler`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiAutomationScheduler.kt)。可以把这条链理解为：
+Android 的自动化入口是 `OrekiStageAuto.onAutoBuyerTick()`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiStageAuto.kt；[固定提交 1ec0c9c](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/commit/1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545)；具体文件证据留在内部核验记录）。它先开启一帧，再同步必要的游戏与界面状态，随后把受管任务交给 `OrekiAutomationScheduler`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiAutomationScheduler.kt；[固定提交 1ec0c9c](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/commit/1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545)；具体文件证据留在内部核验记录）。可以把这条链理解为：
 
 ```text
 onAutoBuyerTick
@@ -49,9 +49,9 @@ onAutoBuyerTick
 
 ## Web：策略先做选择，执行器再承担副作用
 
-Web 的主循环在 [`src/game.js`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/e1c93caa758de6c39cf814582123d4a35319eb25/src/game.js)。它先按游戏时间运行原版生产和自动购买器，再进入 MOD 的策略与执行层。这个顺序很重要：MOD 应该在原版状态已经推进后作决定，而不是另起一条生产循环，与原版同时争夺资源。
+Web 的主循环在 `src/game.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@e1c93caa758de6c39cf814582123d4a35319eb25/src/game.js；[固定提交 e1c93ca](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/commit/e1c93caa758de6c39cf814582123d4a35319eb25)；具体文件证据留在内部核验记录）。它先按游戏时间运行原版生产和自动购买器，再进入 MOD 的策略与执行层。这个顺序很重要：MOD 应该在原版状态已经推进后作决定，而不是另起一条生产循环，与原版同时争夺资源。
 
-在 [`oreki-smart-executor.js`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/e1c93caa758de6c39cf814582123d4a35319eb25/src/core/oreki-smart-executor.js) 中，策略数据提供候选路线，执行器负责间隔、阶段门、手动让路窗口和动作结果。一个健康的职责分界是：
+在 `oreki-smart-executor.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@e1c93caa758de6c39cf814582123d4a35319eb25/src/core/oreki-smart-executor.js；[固定提交 e1c93ca](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/commit/e1c93caa758de6c39cf814582123d4a35319eb25)；具体文件证据留在内部核验记录） 中，策略数据提供候选路线，执行器负责间隔、阶段门、手动让路窗口和动作结果。一个健康的职责分界是：
 
 ```text
 策略层：当前阶段的目标是什么？
@@ -89,7 +89,7 @@ otherwise                      → fail
 3. 等待原版结算清理当前资源、发放奖励并更新历史记录；
 4. 下一轮重新读取状态，再选择恢复、再积累或下一阶段动作。
 
-不要在自动化层直接把 `infinityCount`、货币或阶段字段写成目标值。这样虽然可能让页面暂时出现“已解锁”，却跳过了奖励、升级、挑战完成和存档序列化之间的约束。Android 的原版对象访问集中在 [`GameApi.kt`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/GameApi.kt)；Web 则应沿主循环和阶段模块调用的原版入口追踪。两端的实现名称可以不同，但“请求重置—由游戏结算—重新读状态”的边界必须相同。
+不要在自动化层直接把 `infinityCount`、货币或阶段字段写成目标值。这样虽然可能让页面暂时出现“已解锁”，却跳过了奖励、升级、挑战完成和存档序列化之间的约束。Android 的原版对象访问集中在 `GameApi.kt`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/GameApi.kt；[固定提交 1ec0c9c](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/commit/1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545)；具体文件证据留在内部核验记录）；Web 则应沿主循环和阶段模块调用的原版入口追踪。两端的实现名称可以不同，但“请求重置—由游戏结算—重新读状态”的边界必须相同。
 
 ## 进度死锁与普通等待的区别
 

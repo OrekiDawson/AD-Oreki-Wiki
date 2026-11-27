@@ -91,10 +91,10 @@ Web 源码 SHA ─────┼─> 构建输入与候选 Run ─> APK SHA-256
 
 ## 参考资料
 
-* [Android 构建脚本（固定提交）](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/b0e0881b5eadabf40e2eb35ef8547e5aa56d40ae/app/build.gradle.kts)
-* [发布门禁策略（固定提交）](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/b0e0881b5eadabf40e2eb35ef8547e5aa56d40ae/scripts/release-gate-policy.json)
-* [构建预算与输入指纹脚本（固定提交）](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/b0e0881b5eadabf40e2eb35ef8547e5aa56d40ae/scripts/release_budget.py)
-* [候选构建工作流（固定提交 1ec0c9ca）](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545/.github/workflows/candidate-unified.yml)
+* Android 构建脚本（固定提交）（源码定位：OrekiDawson/AD-Oreki-Edition-Android@b0e0881b5eadabf40e2eb35ef8547e5aa56d40ae/app/build.gradle.kts；[固定提交 b0e0881](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/commit/b0e0881b5eadabf40e2eb35ef8547e5aa56d40ae)；具体文件证据留在内部核验记录）
+* 发布门禁策略（固定提交）（源码定位：OrekiDawson/AD-Oreki-Edition-Android@b0e0881b5eadabf40e2eb35ef8547e5aa56d40ae/scripts/release-gate-policy.json；[固定提交 b0e0881](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/commit/b0e0881b5eadabf40e2eb35ef8547e5aa56d40ae)；具体文件证据留在内部核验记录）
+* 构建预算与输入指纹脚本（固定提交）（源码定位：OrekiDawson/AD-Oreki-Edition-Android@b0e0881b5eadabf40e2eb35ef8547e5aa56d40ae/scripts/release_budget.py；[固定提交 b0e0881](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/commit/b0e0881b5eadabf40e2eb35ef8547e5aa56d40ae)；具体文件证据留在内部核验记录）
+* 候选构建工作流（固定提交 1ec0c9ca）（源码定位：OrekiDawson/AD-Oreki-Edition-Android@1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545/.github/workflows/candidate-unified.yml；[固定提交 1ec0c9c](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/commit/1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545)；具体文件证据留在内部核验记录）
 
 ## 相关条目
 

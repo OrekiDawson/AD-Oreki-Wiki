@@ -17,9 +17,9 @@ Android 构建页最容易让人迷路的地方，不是 Gradle 命令本身，�
 
 | 位置 | 作用 |
 | --- | --- |
-| 根 [`settings.gradle.kts`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/9d8fc46ce99279720b5b3068027bb76bceb35756/settings.gradle.kts) | 注册唯一 Android 模块 `:app` |
-| 根 [`build.gradle.kts`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/9d8fc46ce99279720b5b3068027bb76bceb35756/build.gradle.kts) | 声明 Android Gradle Plugin 9.5.2 |
-| [`app/build.gradle.kts`](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/blob/9d8fc46ce99279720b5b3068027bb76bceb35756/app/build.gradle.kts) | 定义 SDK、ABI、source set、构建类型和签名入口 |
+| 根 `settings.gradle.kts`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@9d8fc46ce99279720b5b3068027bb76bceb35756/settings.gradle.kts；[固定提交 9d8fc46](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/commit/9d8fc46ce99279720b5b3068027bb76bceb35756)；具体文件证据留在内部核验记录） | 注册唯一 Android 模块 `:app` |
+| 根 `build.gradle.kts`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@9d8fc46ce99279720b5b3068027bb76bceb35756/build.gradle.kts；[固定提交 9d8fc46](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/commit/9d8fc46ce99279720b5b3068027bb76bceb35756)；具体文件证据留在内部核验记录） | 声明 Android Gradle Plugin 9.5.2 |
+| `app/build.gradle.kts`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@9d8fc46ce99279720b5b3068027bb76bceb35756/app/build.gradle.kts；[固定提交 9d8fc46](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/commit/9d8fc46ce99279720b5b3068027bb76bceb35756)；具体文件证据留在内部核验记录） | 定义 SDK、ABI、source set、构建类型和签名入口 |
 | `build-logic/` | 准备完整游戏输入、元数据、资源和策略门禁 |
 | 根 `gradlew` / `gradlew.bat` | 从仓库根执行 Gradle |
 

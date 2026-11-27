@@ -14,7 +14,7 @@ tags:
 
 ## `Effect` 的核心不是一个数字
 
-[`src/core/game-mechanics/effect.js`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/core/game-mechanics/effect.js) 的构造函数接受三个概念：效果值、上限和条件。效果值可以是常量，也可以是函数；上限同样可以动态计算；条件则决定这项效果此刻是否满足前提。
+`src/core/game-mechanics/effect.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/core/game-mechanics/effect.js；[固定提交 b28b231](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/commit/b28b231efa5b694ce1da8a1e508cfc3ecc099344)；具体文件证据留在内部核验记录） 的构造函数接受三个概念：效果值、上限和条件。效果值可以是常量，也可以是函数；上限同样可以动态计算；条件则决定这项效果此刻是否满足前提。
 
 因此一个效果对象至少有四种不同的观察方式：
 
@@ -62,7 +62,7 @@ applyEffect(applyFn) {
 
 ## `GameMechanicState` 如何把数据表变成效果对象
 
-[`src/core/game-mechanics/game-mechanic.js`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/core/game-mechanics/game-mechanic.js) 让具体机制继承 `Effect`。构造时，它保存原始配置；如果配置含有 `effects`，还会为每个嵌套键建立一个子 `Effect`，并把子效果的 `isEffectActive` 委托给父机制。
+`src/core/game-mechanics/game-mechanic.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/core/game-mechanics/game-mechanic.js；[固定提交 b28b231](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/commit/b28b231efa5b694ce1da8a1e508cfc3ecc099344)；具体文件证据留在内部核验记录） 让具体机制继承 `Effect`。构造时，它保存原始配置；如果配置含有 `effects`，还会为每个嵌套键建立一个子 `Effect`，并把子效果的 `isEffectActive` 委托给父机制。
 
 这意味着一个升级可以暴露多个语义明确的贡献，例如同时改变价格和倍率，而不需要让调用者知道配置对象长什么样。父机制被禁用时，子效果也一起失效；调用方不必在每个子字段旁重复写一份挑战判断。
 
@@ -70,7 +70,7 @@ applyEffect(applyFn) {
 
 ## 加法和乘法不是实现细节
 
-效果对象只提供贡献，不替调用者决定所有贡献如何合并。合并规则属于具体机制的数学语义。固定源码中的 [`src/core/sacrifice.js`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/core/sacrifice.js) 是一个很好的例子：牺牲指数先把成就 32、57 的效果用 `Effects.sum()` 聚合，再与成就 88 和时间研究 228 的另一组加成聚合，最后把这些组作为乘数相乘。
+效果对象只提供贡献，不替调用者决定所有贡献如何合并。合并规则属于具体机制的数学语义。固定源码中的 `src/core/sacrifice.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/core/sacrifice.js；[固定提交 b28b231](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/commit/b28b231efa5b694ce1da8a1e508cfc3ecc099344)；具体文件证据留在内部核验记录） 是一个很好的例子：牺牲指数先把成就 32、57 的效果用 `Effects.sum()` 聚合，再与成就 88 和时间研究 228 的另一组加成聚合，最后把这些组作为乘数相乘。
 
 抽象地写就是：
 
@@ -106,7 +106,7 @@ exponent = base × (1 + sum(pre-change effects)) × (1 + sum(post-change effects
 
 ## 相关源码
 
-- [效果基类 `effect.js`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/core/game-mechanics/effect.js)：条件、上限、动态 getter 与默认值。
-- [机制状态 `game-mechanic.js`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/core/game-mechanics/game-mechanic.js)：配置到机制对象、嵌套效果和访问器。
-- [牺牲公式 `sacrifice.js`](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/blob/b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/core/sacrifice.js)：效果分组与历史公式兼容。
+- 效果基类 `effect.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/core/game-mechanics/effect.js；[固定提交 b28b231](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/commit/b28b231efa5b694ce1da8a1e508cfc3ecc099344)；具体文件证据留在内部核验记录）：条件、上限、动态 getter 与默认值。
+- 机制状态 `game-mechanic.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/core/game-mechanics/game-mechanic.js；[固定提交 b28b231](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/commit/b28b231efa5b694ce1da8a1e508cfc3ecc099344)；具体文件证据留在内部核验记录）：配置到机制对象、嵌套效果和访问器。
+- 牺牲公式 `sacrifice.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@b28b231efa5b694ce1da8a1e508cfc3ecc099344/src/core/sacrifice.js；[固定提交 b28b231](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/commit/b28b231efa5b694ce1da8a1e508cfc3ecc099344)；具体文件证据留在内部核验记录）：效果分组与历史公式兼容。
 - 派生状态与缓存失效专题：效果依赖变化后如何让旧答案退出缓存。
