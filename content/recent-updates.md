@@ -8,7 +8,6 @@ tags:
 
 这里显示最近进入当前内容树的正式条目；文章的具体修订记录仍以页面正文与仓库历史为准。
 
-- [反编译与源码恢复](/developer/reverse-engineering/decompilation)
 - [复制器](/player/original/ow-replicanti)
 - [重置成长（威望）](/player/original/ow-prestige)
 - [反物质维度（游戏机制）](/player/original/ow-antimatter-dimensions)
@@ -18,6 +17,8 @@ tags:
 - [玩法机制](/player/gameplay)
 - [阶段解锁与排障：从页面显示到真实结算](/player/gameplay/stage-gates)
 - [阶段进度：从新档到天神](/player/gameplay/stage-progression)
+- [反编译与源码恢复](/developer/reverse-engineering/decompilation)
+- [逆向与语义映射](/developer/reverse-engineering)
 - [自动化与阶段入口](/player/faq/automation-and-unlocks)
 - [膨胀升级（被毁灭的现实）](/player/original/ow-dilation-upgrades-doomed)
 - [永恒挑战·挑战明细（被毁灭的现实）](/player/original/ow-eternity-challenges-challenges-pelle)
@@ -31,4 +32,3 @@ tags:
 - [生产链与重置：反物质维度如何成长](/player/antimatter-dimensions-core-loop)
 - [MOD 玩法改动：数值、解锁与自动化](/player/gameplay/mod-changes)
 - [第一次大坍缩与进入无限](/player/getting-started/first-crunch)
-- [自动化状态所有权：玩家意图、托管配置与执行闸门](/developer/architecture/automation-ownership)
