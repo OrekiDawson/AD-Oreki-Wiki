@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { LEGACY_MODS_INDEX_PATH, LEGACY_MOD_TAG, LEGACY_TAG_ROUTE } from './wiki-paths.mjs';
 
 const forbidden = /Oreki[\s_-]*Edition/gi;
 
@@ -13,18 +14,19 @@ function walk(dir) {
 function scan(file, label) {
   const lines = fs.readFileSync(file, 'utf8').split(/\r?\n/);
   const hits = [];
-  const legacyTagMetadata = /content[\\/]player[\\/]mods[\\/]index\.md$/i.test(label);
-  const legacyTagPage = /(?:^|[\\/])tags[\\/]OrekiEdition(?:[\\/]index)?\.html$/i.test(label)
-    || /(?:^|[\\/])tags[\\/]orekiedition(?:[\\/]index)?\.html$/i.test(label);
+  const normalizedLabel = label.replaceAll('\\', '/');
+  const legacyTagMetadata = normalizedLabel === LEGACY_MODS_INDEX_PATH;
+  const legacyTagPage = normalizedLabel.endsWith(`${LEGACY_TAG_ROUTE}.html`)
+    || normalizedLabel.endsWith(`${LEGACY_TAG_ROUTE}/index.html`);
   lines.forEach((line, index) => {
-    if (legacyTagMetadata && /^\s*-\s*OrekiEdition\s*$/.test(line)) return;
+    if (legacyTagMetadata && new RegExp(`^\\s*-\\s*${LEGACY_MOD_TAG}\\s*$`).test(line)) return;
     if (legacyTagPage) return;
     const visible = line
       .replace(/`[^`]*`/g, ' ')
       .replace(/https?:\/\/[^\s)>]+/gi, ' ')
       .replace(/OrekiDawson\/AD-Oreki-Edition-(?:Android|Web)/g, ' ')
       .replace(/AD-Oreki-Edition(?:-(?:Android|Web))?/g, ' ')
-      .replace(/\/tags\/orekiedition\b/gi, ' ')
+      .replace(new RegExp(`${LEGACY_TAG_ROUTE}`, 'gi'), ' ')
       .replace(/>\s*orekiedition\s*</gi, '><');
     if (forbidden.test(visible)) hits.push({ file: label, line: index + 1, text: line.trim() });
     forbidden.lastIndex = 0;

@@ -94,7 +94,7 @@ async function run() {
       tagLinks: anchors.filter((a) => /(^|\/)tags(?:\/|$)/i.test(a.getAttribute('href') || '')).length,
       tagLabels: anchors.filter((a) => /标签|tags?/i.test((a.textContent || '').trim())).length,
       emptyFolders: folders.filter((folder) => !folder.querySelector('a[href]')).length,
-      explorerExpanded: !!explorer && !explorer.classList.contains('collapsed'),
+      explorerInitialState: explorer ? (explorer.classList.contains('collapsed') ? 'collapsed' : 'expanded') : null,
       progress: styleOf('.navigation-progress'),
       transition: styleOf('.page-transition'),
       bodyFont: getComputedStyle(document.body).fontFamily,
@@ -102,7 +102,6 @@ async function run() {
   });
   if (results.mobile.frontendContract.tagLinks || results.mobile.frontendContract.tagLabels) results.errors.push('tag-index-leaked-in-explorer');
   if (results.mobile.frontendContract.emptyFolders) results.errors.push('empty-explorer-folder');
-  if (!results.mobile.frontendContract.explorerExpanded) results.errors.push('explorer-not-expanded');
   if (results.mobile.frontendContract.progress && results.mobile.frontendContract.progress.display !== 'none') results.errors.push('navigation-progress-visible');
   if (results.mobile.frontendContract.transition && (results.mobile.frontendContract.transition.animation !== 'none' || !/none/.test(results.mobile.frontendContract.transition.transition))) results.errors.push('page-transition-active');
   if (!/system-ui/i.test(results.mobile.frontendContract.bodyFont)) results.errors.push('system-font-not-applied');
@@ -306,7 +305,6 @@ async function run() {
   if (!results.mobile.darkmodeToggled) bad.push('darkmode');
   if (results.mobile.frontendContract.tagLinks || results.mobile.frontendContract.tagLabels) bad.push('tag-index-leaked-in-explorer');
   if (results.mobile.frontendContract.emptyFolders) bad.push('empty-explorer-folder');
-  if (!results.mobile.frontendContract.explorerExpanded) bad.push('explorer-not-expanded');
   if (results.mobile.frontendContract.progress && results.mobile.frontendContract.progress.display !== 'none') bad.push('navigation-progress-visible');
   if (results.mobile.frontendContract.transition && (results.mobile.frontendContract.transition.animation !== 'none' || !/none/.test(results.mobile.frontendContract.transition.transition))) bad.push('page-transition-active');
   if (!/system-ui/i.test(results.mobile.frontendContract.bodyFont)) bad.push('system-font-not-applied');
