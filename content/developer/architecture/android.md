@@ -14,7 +14,7 @@ Android 端不是从空白工程重写《反物质维度》。当前 Android 仓
 
 可以把这一套代码想成“两层合奏”：原版运行时负责真正改变游戏世界，Kotlin 层负责判断这一拍该不该尝试、尝试后发生了什么。调度器不是凭空制造资源的魔法棒；它更像交通指挥，能让动作错开、记录空转和失败，却不能把一辆没有油的车判成已经到站。这个比喻只帮助理解职责，具体边界仍以固定版本源码为准。
 
-## 功能入口：先找到真正负责这件事的代码
+## 功能入口
 
 仓库的 `settings.gradle.kts`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@9d8fc46ce99279720b5b3068027bb76bceb35756/settings.gradle.kts；具体文件证据留在内部核验记录） 把项目命名为 `oreki-antimatterdimensions`，并只声明 `:app` 模块。根 `build.gradle.kts`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@9d8fc46ce99279720b5b3068027bb76bceb35756/build.gradle.kts；具体文件证据留在内部核验记录） 为应用模块提供 Android Gradle Plugin 9.5.2；实际应用配置在 `app/build.gradle.kts`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@9d8fc46ce99279720b5b3068027bb76bceb35756/app/build.gradle.kts；具体文件证据留在内部核验记录）。生产业务源码则在标准的 `app/src/main/kotlin/` 下，另有构建时生成的绑定目录作为输入。
 
@@ -30,7 +30,7 @@ Android 端不是从空白工程重写《反物质维度》。当前 Android 仓
 
 Android 新增或修改的业务逻辑应写在 Kotlin 业务层。原版 DEX 的类名、方法签名和存档语义属于适配边界，不应为了绕过兼容问题，在业务模块里复制一套未经核对的反射或直接改写资源、结算字段。
 
-## 状态与调用链：一拍自动化到底做了什么
+## 状态调用链
 
 一次自动购买器 tick 从 `OrekiStageAuto.onAutoBuyerTick()`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiStageAuto.kt#L304-L341；具体文件证据留在内部核验记录） 开始。函数首先调用 `OrekiAutomationScheduler.beginFrame()`，清除上一帧的“已执行动作”占位，然后进行速度和界面同步检查；即使这一拍没有买到东西，也不能因此跳过 GUI 状态同步。
 
@@ -55,13 +55,13 @@ OrekiStageAuto.onAutoBuyerTick()
 
 `GameApi` 是原版对象的适配边界。它在 `GameApi.kt`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/GameApi.kt；具体文件证据留在内部核验记录） 中缓存类、字段和方法解析，并提供玩家状态、货币、重置及自动购买器相关的读取和调用。遇到 `canEternity()`、`crunchState()` 或自动购买器状态异常时，先核对适配层解析到的原版类和当前基线，再检查调用方的前置条件；不要在每个业务模块里复制一套混淆字段访问。
 
-## 阶段判定：页面显示依赖什么状态
+## 阶段判定
 
 `OrekiGuiStage`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiGuiStage.kt#L36-L59；具体文件证据留在内部核验记录） 暴露四个阶段码：尚未首次无限、无限、永恒和现实。它的 `compute()`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiGuiStage.kt#L132-L216；具体文件证据留在内部核验记录） 读取真实状态：是否有无限、永恒点数或大永恒记录、是否购买过永恒升级，以及现实或大现实记录。
 
 判定顺序是现实优先于永恒，永恒优先于无限。现实结算后低层计数可能被清零，因此 `realityReached` 本身也会使 `eternityReached` 成立；`eternities` 单一字段只用于诊断，不独自决定永恒阶段。读取异常按未达成处理，避免把未知状态当成解锁。若出现“刚完成大坍缩就看到后续页面”，应先查 `OrekiGuiStage.compute()` 使用的真实结算产物，再查页面刷新和导航调用方，而不是只隐藏一个按钮。
 
-## 构建与验证边界：当前入口是根 `:app`
+## 构建边界
 
 当前 `:app` 是完整游戏应用模块。`app/build.gradle.kts` 的 `fullGameStage` 通过 `local.properties` 中的 `oreki.fullGameStage` 指定，未指定时使用仓库内的 `build/agp-fullgame`；同一配置还把该阶段目录的 Manifest 和资源、`build/agp-generated-res`、`build/agp-fullgame-assets` 以及 `scripts/payload/lib` 加入 Android source set。也就是说，构建是否能继续不仅取决于 Kotlin 是否编译，还取决于构建逻辑准备的完整游戏输入是否存在且匹配。
 
@@ -75,7 +75,7 @@ OrekiStageAuto.onAutoBuyerTick()
 
 这是基于当前 Gradle 项目结构给出的操作入口，不是本次实测结果；缺少完整游戏阶段输入、Android SDK、构建缓存或其他受保护输入时，构建可能在配置或资源阶段失败。本文没有运行 Gradle、D8/R8、APK 安装、AVD、真机、存档读写或完整游戏长跑，均为 `NOT RUN`。即使构建成功，也只能说明对应构建任务和输入门禁通过，不能推出 GUI、自动化、存档兼容或真实结算已经通过。
 
-## 排障线索：按症状回到入口
+## 排障线索
 
 - **自动化完全没有动作**：先看 `OrekiAutomationScheduler.allow()` 的拒绝条件，尤其是调度器开关、原版自动购买器总开关、任务 ID、全局间隔和失败/无操作冷却；再确认 `onAutoBuyerTick()` 是否真的被调用。
 - **某任务反复尝试但资源不变**：检查动作返回值是否为 `false`。这应记为 `noteNoop()`，不能当作购买成功；同时查看是否因错误地推进节拍而饿死了其他任务。

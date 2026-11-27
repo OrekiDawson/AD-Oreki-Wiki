@@ -36,7 +36,7 @@ OrekiStageAuto → GameApi → 原版自动购买器
 
 因此，`mayTouchAutobuyers()`、`effectiveCrunchTarget()` 和 `allow()` 不能互相替代。它们分别属于意图、目标和执行三个问题。
 
-## 玩家意图不是一次点击，而是时间语义
+## 玩家意图
 
 `OrekiPlayerIntent.refresh()` 先检查 MOD 调度器是否开启，再读取原版自动购买器总开关。原版总开关为关闭时，它登记 `masterPlayerDisabled`；为开启时才清除这份玩家意图。`mayTouchAutobuyers()` 返回的只是“玩家是否明确关过”，并不表示当前一定可以接管。调用方仍需同时确认原版总开关现值和 MOD 总开关。
 
@@ -77,7 +77,7 @@ wantCrunch=true,  ownedByMod=false, pausedByStagePolicy=true  → false
 
 但得到 `true` 仍不等于可以调用原版写入入口。调用方还要确认这一拍是否是新的配置 tick、玩家是否已让路，以及执行闸门是否允许当前任务。
 
-## `allow()` 是执行闸门，不是所有权判定
+## `allow()` 执行闸门
 
 `OrekiAutomationScheduler.allow(taskId)` 的前置顺序体现了执行层的责任：MOD 未启用时拒绝；原版总开关关闭时拒绝；未知任务拒绝；随后再检查同帧名额、失败冷却、`no-op` 静默窗、全局节拍和任务预约。`beginFrame()` 会清掉上一帧的真执行名额并记录帧起点，`noteActed()`、`noteNoop()` 和 `noteFail()` 则必须释放预约并记录不同结果。
 

@@ -71,7 +71,7 @@ Android 的同步入口集中在 `GameApi.kt`（源码定位：OrekiDawson/AD-Or
 
 这就是 `guiSyncPending` 存在的意义。它不是游戏进度，也不是“刷新失败后忽略”的标志，而是一个待提交的 UI 同步意图。
 
-## Activity 不可用时，为什么不能硬刷新
+## Activity 不可用
 
 Android Activity 可能正在销毁、尚未创建或暂时不在前台。此时直接持有旧 View 或强行调用页面更新，会把生命周期问题变成泄漏、异常甚至更新错误页面。源码选择登记待同步：
 
@@ -89,7 +89,7 @@ Android Activity 可能正在销毁、尚未创建或暂时不在前台。此时
 
 `retryPendingGuiSync()`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/GameApi.kt；具体文件证据留在内部核验记录） 会在 Activity 可用且当前没有刷新请求排队时补一次完整同步。这个设计把“请求曾经发生过”和“View 现在可以安全更新”分开，避免在后台状态下不断重试同一个无效对象。
 
-## 阶段变化与普通数值变化不是同一条路
+## 阶段变化
 
 普通数值刷新通常只需要更新自动购买器、统计或文本控件；阶段变化还会影响导航可见性。`OrekiGuiStage.refresh()` 计算新快照后，若阶段真的改变，会请求 `OrekiNavRefresh`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiNavRefresh.kt；具体文件证据留在内部核验记录） 异步重算原版导航。
 
@@ -100,7 +100,7 @@ Android Activity 可能正在销毁、尚未创建或暂时不在前台。此时
 
 如果只更新阶段缓存而不刷新导航，合法存档加载后可能仍看不到新分组；如果只重建导航而不更新阶段真值，页面可能依据旧字段错误开放。`OrekiNavRefresh` 还需要在主线程和生命周期安全的上下文中工作，因此它不是一个可以在每个按钮点击处随手复制的工具函数。
 
-## 调度 tick 与 GUI tick 的关系
+## 调度与界面节拍
 
 `OrekiStageAuto.onAutoBuyerTick()`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiStageAuto.kt；具体文件证据留在内部核验记录） 在一帧开始后处理待同步请求，并在 GUI tick 到点时调用强制同步。这个顺序有意放在各类早退分支之前：本轮没有买到东西，不代表页面就不需要确认；自动化关闭、资源不足或挑战让路时，阶段和受管配置仍可能需要投影到界面。
 
@@ -111,7 +111,7 @@ Android Activity 可能正在销毁、尚未创建或暂时不在前台。此时
 
 调试日志中应分别记录“真实游戏动作”和“GUI 同步请求”，两者可以来自同一帧，但不是同一结果。
 
-## 按症状排查，而不是反复点刷新
+## 症状排查
 
 ### 数值不变，页面也不变
 
