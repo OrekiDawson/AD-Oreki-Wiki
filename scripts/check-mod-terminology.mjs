@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-const forbidden = /Oreki Edition/g;
+const forbidden = /Oreki[\s_-]*Edition/gi;
 
 function walk(dir) {
   return fs.readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
@@ -13,8 +13,17 @@ function walk(dir) {
 function scan(file, label) {
   const lines = fs.readFileSync(file, 'utf8').split(/\r?\n/);
   const hits = [];
+  const legacyTagMetadata = /content[\\/]player[\\/]mods[\\/]index\.md$/i.test(label);
+  const legacyTagPage = /(?:^|[\\/])tags[\\/]OrekiEdition(?:[\\/]index)?\.html$/i.test(label);
   lines.forEach((line, index) => {
-    if (forbidden.test(line)) hits.push({ file: label, line: index + 1, text: line.trim() });
+    if (legacyTagMetadata && /^\s*-\s*OrekiEdition\s*$/.test(line)) return;
+    if (legacyTagPage) return;
+    const visible = line
+      .replace(/`[^`]*`/g, ' ')
+      .replace(/https?:\/\/[^\s)>]+/gi, ' ')
+      .replace(/OrekiDawson\/AD-Oreki-Edition-(?:Android|Web)/g, ' ')
+      .replace(/AD-Oreki-Edition(?:-(?:Android|Web))?/g, ' ');
+    if (forbidden.test(visible)) hits.push({ file: label, line: index + 1, text: line.trim() });
     forbidden.lastIndex = 0;
   });
   return hits;
