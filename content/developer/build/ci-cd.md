@@ -1,5 +1,5 @@
 ---
-title: "CI/CD"
+title: "持续集成与交付"
 description: "用 Gradle、GitHub Actions 和受保护环境把公开检查、候选构建、验签与发布串成可追溯的交付链"
 tags:
   - CI

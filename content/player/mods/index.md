@@ -1,5 +1,5 @@
 ---
-title: "Oreki Edition"
+title: "MOD 介绍"
 description: "Oreki Edition 的产品目标、平台范围、自动化理念与同原版的关系"
 tags:
   - OrekiEdition

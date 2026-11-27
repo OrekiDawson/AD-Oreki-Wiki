@@ -1,5 +1,5 @@
 ---
-title: "原版：永恒挑战明细"
+title: "原版:永恒挑战明细"
 description: "原版 Wiki《Eternity Challenges/Challenges (Pelle)》子页面的简体中文翻译：佩勒中被上调的永恒挑战目标与专属改动"
 tags:
   - 原版Wiki翻译

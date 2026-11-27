@@ -1,6 +1,6 @@
 # 原版 Wiki 中文翻译：覆盖率与许可台账
 
-> 本页是只读汇总，由 docs/translation/source-manifest.json 与 content/player/original/ 生成；等级定义见 content/wiki-rules.md「内容验收等级」。由 wiki-editorial 维护，译文与 manifest 由 wiki-translation 维护。
+> 本页是只读汇总，由 docs/translation/source-manifest.json 与 content/player/original/ 生成；翻译状态等级以 [docs/translation/POLICY.md](translation/POLICY.md) 为准。由 wiki-editorial 维护，译文与 manifest 由 wiki-translation 维护。
 
 ## 覆盖总览（最后核对 2026-11-23；依据当前 `source-manifest.json` 与页面状态）
 
@@ -122,5 +122,5 @@
 - 2026-11-23：按当前 `source-manifest.json` 更新为 REVIEWED 3 篇、STRUCTURE CHECKED 57 篇；新增三篇基础机制的逐段审校记录与 60 篇固定来源 API 核对记录。
 - 2026-11-17：本表按 `docs/translation/source-manifest.json` 重新生成，补齐批次 16–21 的已结构核对页面与第十五批 5 篇引语页。
 - 时间线更正：此前「19:20 / 19:10」为误记；现改为依据提交 `2b8a717` 的清单状态记录，避免写入晚于提交时刻的时间。
-- 覆盖率口径与等级见 content/wiki-rules.md；只有 REVIEWED / VERIFIED AGAINST GAME 计入已审校覆盖率。
+- 覆盖率口径与等级见 [docs/translation/POLICY.md](translation/POLICY.md)；只有 `REVIEWED` / `VERIFIED AGAINST GAME` 计入已审校覆盖率。
 - 原文更新后由 scripts/translation/sync-original.mjs --check 比对修订，标记「待复核」；不得无条件覆盖人工校对结果。

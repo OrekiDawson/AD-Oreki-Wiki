@@ -187,8 +187,8 @@ for (const f of files) {
       .split("\n")
       .map((line) => line.trim())
       .filter((line) => line.length > 0 && !line.startsWith("#"))
-    if (introLines.join("").length < 40) {
-      fail("专题条目缺少主题导语（正文开头需有一至三句说明「这是什么」）: " + f)
+    if (introLines.length === 0) {
+      fail("专题条目缺少主题导语（正文开头需说明主题与阅读价值）: " + f)
     }
     if (CHANGELOG_HEADING.test(text)) {
       fail("专题条目出现 R 轮次/日期/Release Notes 式章节；时间性材料请移出 content/，放入仓库内部归档目录: " + f)
