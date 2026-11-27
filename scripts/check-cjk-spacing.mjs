@@ -49,7 +49,8 @@ function visibleHtml(source) {
     // 且其中的比较符号会干扰 HTML 标签过滤。
     .replace(/\sdata-quartz-[\w:-]+=("[\s\S]*?"|'[\s\S]*?')/gi, ' ')
     .replace(/https?:\/\/[^\s"'<]+/gi, ' ')
-    .replace(/<[^>]*>/g, ' ');
+    // 属性值可能包含字面 `>`；按引号边界匹配标签，避免把属性代码当成正文。
+    .replace(/<(?:[^>"']|"[^"]*"|'[^']*')*>/g, ' ');
 }
 
 function scan(text, file) {
