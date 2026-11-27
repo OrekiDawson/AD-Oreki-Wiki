@@ -4,13 +4,20 @@ import fs from "node:fs"
 const config = fs.readFileSync("quartz.config.yaml", "utf8")
 const styles = fs.readFileSync("quartz/styles/custom.scss", "utf8")
 const errors = []
+const cssBlock = (selector) => {
+  const escaped = selector.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
+  return styles.match(new RegExp(`${escaped}[^{}]*\\{([^{}]*)\\}`, "s"))?.[1] ?? ""
+}
 if (!/^\s*enableSPA:\s*true\s*$/m.test(config))
   errors.push("Quartz enableSPA 必须保持 true，以保留快速客户端导航")
-if (!/\.navigation-progress[\s\S]*?display:\s*none\s*!important/.test(styles))
+const progressBlock = cssBlock(".navigation-progress")
+const pageTransitionBlock = cssBlock(".page-transition")
+if (!/display:\s*none\s*!important/.test(progressBlock))
   errors.push("必须隐藏 .navigation-progress，不能显示页面加载进度条")
-if (!/\.page-transition[\s\S]*?animation:\s*none\s*!important/.test(styles))
+if (!/animation:\s*none\s*!important/.test(pageTransitionBlock) || !/transition:\s*none\s*!important/.test(pageTransitionBlock))
   errors.push("必须禁用页面切换动画")
-if (!/::view-transition-(?:group|old|new)\(root\)[\s\S]*?animation:\s*none\s*!important/.test(styles))
+const viewTransitionBlock = styles.match(/::view-transition-group\(root\),[\s\S]*?\{([^{}]*)\}/s)?.[1] ?? ""
+if (!/animation:\s*none\s*!important/.test(viewTransitionBlock) || !/transition:\s*none\s*!important/.test(viewTransitionBlock))
   errors.push("必须禁用 View Transition 页面动画")
 if (errors.length) {
   console.error(errors.join("\n"))

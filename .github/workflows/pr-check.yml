@@ -97,6 +97,8 @@ jobs:
         run: node scripts/check-title-length.mjs
       - name: No page transition animation or progress bar
         run: node scripts/check-motion.mjs
+      - name: Mobile and desktop acceptance script syntax
+        run: node --check scripts/acceptance.cjs
       - run: bash scripts/bootstrap-quartz.sh .quartz-build
       - run: npm ci
         working-directory: .quartz-build

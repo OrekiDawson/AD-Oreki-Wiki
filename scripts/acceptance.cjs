@@ -80,6 +80,32 @@ async function run() {
   results.mobile.title = await page.title();
   results.mobile.explorerLinks = await page.locator('a[href*="player"], a[href*="developer"]').count();
   results.mobile.overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
+  results.mobile.frontendContract = await page.evaluate(() => {
+    const explorer = document.querySelector('.explorer');
+    const anchors = [...document.querySelectorAll('.explorer a')];
+    const folders = [...document.querySelectorAll('.explorer .folder-outer')];
+    const styleOf = (selector) => {
+      const el = document.querySelector(selector);
+      if (!el) return null;
+      const style = getComputedStyle(el);
+      return { display: style.display, animation: style.animationName, transition: style.transitionProperty };
+    };
+    return {
+      tagLinks: anchors.filter((a) => /(^|\/)tags(?:\/|$)/i.test(a.getAttribute('href') || '')).length,
+      tagLabels: anchors.filter((a) => /标签|tags?/i.test((a.textContent || '').trim())).length,
+      emptyFolders: folders.filter((folder) => !folder.querySelector('a[href]')).length,
+      explorerExpanded: !!explorer && !explorer.classList.contains('collapsed'),
+      progress: styleOf('.navigation-progress'),
+      transition: styleOf('.page-transition'),
+      bodyFont: getComputedStyle(document.body).fontFamily,
+    };
+  });
+  if (results.mobile.frontendContract.tagLinks || results.mobile.frontendContract.tagLabels) results.errors.push('tag-index-leaked-in-explorer');
+  if (results.mobile.frontendContract.emptyFolders) results.errors.push('empty-explorer-folder');
+  if (!results.mobile.frontendContract.explorerExpanded) results.errors.push('explorer-not-expanded');
+  if (results.mobile.frontendContract.progress && results.mobile.frontendContract.progress.display !== 'none') results.errors.push('navigation-progress-visible');
+  if (results.mobile.frontendContract.transition && (results.mobile.frontendContract.transition.animation !== 'none' || !/none/.test(results.mobile.frontendContract.transition.transition))) results.errors.push('page-transition-active');
+  if (!/system-ui/i.test(results.mobile.frontendContract.bodyFont)) results.errors.push('system-font-not-applied');
 
   // 左侧目录的类目显示名应为中文
   const homeHtml = await page.content();
@@ -251,7 +277,7 @@ async function run() {
   results.desktop.title = await dpage.title();
   results.desktop.overflow = await dpage.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
   results.desktop.hasSearch = (await dpage.locator('input[type="search"], input[placeholder]').count()) > 0;
-  results.errors = consoleErrors;
+  results.errors.push(...consoleErrors);
 
   fs.mkdirSync(path.dirname(OUT), { recursive: true });
   fs.writeFileSync(OUT, JSON.stringify(results, null, 1));
@@ -278,6 +304,12 @@ async function run() {
   if (!results.mobile.sidebarActive ||
     !results.mobile.sidebarActive.includes('/player/gameplay/challenges')) bad.push('sidebar-active');
   if (!results.mobile.darkmodeToggled) bad.push('darkmode');
+  if (results.mobile.frontendContract.tagLinks || results.mobile.frontendContract.tagLabels) bad.push('tag-index-leaked-in-explorer');
+  if (results.mobile.frontendContract.emptyFolders) bad.push('empty-explorer-folder');
+  if (!results.mobile.frontendContract.explorerExpanded) bad.push('explorer-not-expanded');
+  if (results.mobile.frontendContract.progress && results.mobile.frontendContract.progress.display !== 'none') bad.push('navigation-progress-visible');
+  if (results.mobile.frontendContract.transition && (results.mobile.frontendContract.transition.animation !== 'none' || !/none/.test(results.mobile.frontendContract.transition.transition))) bad.push('page-transition-active');
+  if (!/system-ui/i.test(results.mobile.frontendContract.bodyFont)) bad.push('system-font-not-applied');
   if (results.errors.length > 3) bad.push('console-errors');
   console.log(JSON.stringify({ bad, results }, null, 1).slice(0, 6000));
   await browser.close();
