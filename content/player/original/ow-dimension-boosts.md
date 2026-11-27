@@ -18,8 +18,6 @@ aliases:
 
 **维度提升**（Dimension Boosts，有时简称 **Dimboosts**）是游戏中的第一个威望（Prestige）机制，为[反物质维度](/player/original/ow-antimatter-dimensions)提供加成并解锁新的维度。它们会被[无限](/player/original/ow-infinity)与[反物质星系](/player/original/ow-antimatter-galaxies)重置。
 
-原文此页包含桌面端和移动端维度提升界面图 `Antimatter-dimboost-interface--darktheme-desktop.png`、`Antimatter-dimboost-interface--darktheme-mobile.png`；本译文未转载这些图片，仅保留文字说明。
-
 ## 机制
 
 执行一次维度提升会重置反物质与[反物质维度](/player/original/ow-antimatter-dimensions)，换来若干收益：

@@ -18,12 +18,6 @@ aliases:
 
 **反物质星系**是游戏中的第二个威望（Prestige）机制——如果把可从游戏早期使用的[维度献祭](/player/original/ow-dimensional-sacrifice)也算作威望机制，则它是第三个。在获得 $80$ 个第 8 反物质维度之前，玩家无法与之交互。
 
-原文此页包含桌面端和移动端反物质星系界面图 `Antimatter-galaxies-interface--darktheme-desktop.png`、`Antimatter-galaxies-interface--darktheme-mobile.png`；本译文未转载这些图片，仅保留文字说明。
-
-![反物质维度生产反物质，并通过更高层重置推进到反物质星系的关系示意图](/images/player/original/antimatter-dimensions-galaxies-overview.svg)
-
-_图：本站原创示意图，CC BY-SA 4.0。它只帮助理解购买星系前后的成长关系，不是从原版 Wiki 转载的游戏截图。_
-
 购买一个反物质星系会重置[反物质维度](/player/original/ow-antimatter-dimensions)、[计数频率](/player/original/ow-tickspeed)、[维度献祭](/player/original/ow-dimensional-sacrifice)与[维度提升](/player/original/ow-dimension-boosts)，但会让所有计数频率升级的效果少量提高。
 
 ## 机制
@@ -62,10 +56,6 @@ _图：本站原创示意图，CC BY-SA 4.0。它只帮助理解购买星系前�
 - [永恒挑战 5](/player/original/ow-eternity-challenges)每完成一次把远距星系成长推迟 $5$，最多推迟 $25$；
 - [时间研究 223](/player/original/ow-time-studies)把远距星系成长推迟 $7$；
 - [时间研究 224](/player/original/ow-time-studies)按[维度提升](/player/original/ow-dimension-boosts)数量推迟远距星系成长，推迟量可变。
-
-## 琐事
-
-原文此节为空。
 
 ## 来源与许可
 
