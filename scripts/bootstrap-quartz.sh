@@ -29,6 +29,8 @@ if [ -d quartz/styles ]; then
 fi
 mkdir -p "$TARGET/scripts"
 cp -r scripts/. "$TARGET/scripts/"
+# 仅在构建副本中按当前正式内容树生成索引，不覆盖开发中的源文件。
+(cd "$TARGET" && node scripts/generate-navigation.mjs)
 cp README.md "$TARGET/README.md"
 # 将内容许可说明同步到临时构建目录，供内容审核脚本验证。
 cp LICENSE-CONTENT.md "$TARGET/LICENSE-CONTENT.md"
