@@ -1,4 +1,4 @@
-// 本地最小扩展：复用官方 @quartz-community/explorer，仅注入固定的一级目录语义顺序。
+// 本地最小扩展：复用官方 @quartz-community/explorer，注入固定的一级目录与开发专题语义顺序。
 // 目的：稳定语义顺序（玩家专区 → 开发者专区 → 站务），不移动文件、不改 URL、不做 DOM hack。
 // 说明：官方 Explorer 通过 options.sortFn / mapFn 支持自定义排序与显示名（见其 dist/index.d.ts），
 // 但 quartz.config.yaml 无法表达函数；因此以本地组件插件方式注入。未修改官方包。
@@ -42,9 +42,47 @@ function compare(a, b) {
     "developer/ai-summaries": 100,
     "developer/editorial-guidelines": 110,
   };
+  // 同一分类中按阅读路线排列，而非按中文标题排序。
+  const CHILD_ORDER = {
+    "developer/architecture/parity": 1,
+    "developer/architecture/numeric-model": 2,
+    "developer/architecture/save-progress-comparator": 3,
+    "developer/architecture/effect-model": 4,
+    "developer/architecture/derived-state-invalidation": 5,
+    "developer/architecture/scheduler-state-machine": 6,
+    "developer/architecture/automation-ownership": 7,
+    "developer/architecture/celestial-implementation": 8,
+    "developer/architecture/tutorial-content-pipeline": 9,
+    "developer/architecture/android": 10,
+    "developer/architecture/directory-migration": 11,
+    "developer/architecture/kotlin-runtime": 12,
+    "developer/architecture/gui-stage-gates": 13,
+    "developer/architecture/android-gui-sync": 14,
+    "developer/architecture/web": 15,
+    "developer/architecture/web-ui-reactivity": 16,
+    "developer/architecture/web-offline-simulation": 17,
+    "developer/reverse-engineering/decompilation": 1,
+    "developer/reverse-engineering/smali-recovery": 2,
+    "developer/reverse-engineering/dex-abi": 3,
+    "developer/build/agp": 1,
+    "developer/build/build-mod-retirement": 2,
+    "developer/build/r8": 3,
+    "developer/build/apk-signing": 4,
+    "developer/build/signature-backfill": 5,
+    "developer/build/artifact-provenance": 6,
+    "developer/build/ci-cd": 7,
+    "developer/troubleshooting/save-compatibility": 1,
+    "developer/troubleshooting/coroutine-abi": 2,
+    "developer/troubleshooting/web-module-startup": 3,
+    "developer/troubleshooting/web-pages-artifact-integrity": 4,
+    "developer/current/project-status": 1,
+    "developer/current/known-issues": 2,
+    "developer/current/release-status": 3,
+  };
   const rank = (node) => {
     if (!node || !node.slugSegment) return 100;
     const key = (node.slug || "").replace(/\/index$/, "");
+    if (CHILD_ORDER[key] !== undefined) return CHILD_ORDER[key];
     if (DEVELOPER_ORDER[key] !== undefined) return DEVELOPER_ORDER[key];
     if (STATION[node.slugSegment] !== undefined) return STATION[node.slugSegment];
     const idx = ROOT_ORDER.indexOf(node.slugSegment);
@@ -53,7 +91,7 @@ function compare(a, b) {
   const ra = rank(a);
   const rb = rank(b);
   if (ra !== rb) return ra - rb;
-  // 非一级节点沿用官方默认排序，避免改变既有子目录顺序。
+  // 未显式排序的节点仍按名称排列，新增条目不会被隐藏。
   return (a.displayName || "").localeCompare(b.displayName || "", undefined, {
     numeric: true,
     sensitivity: "base",
@@ -71,7 +109,7 @@ function mapNode(node) {
     "how-to-use": "本站使用说明",
     "developer/first-contribution": "第一次改动",
     "developer/project-overview": "项目概览",
-    "developer/architecture": "系统架构",
+    "developer/architecture": "架构与机制",
     "developer/reverse-engineering": "源码与逆向",
     "developer/build": "构建与发布",
     "developer/troubleshooting": "故障排查",
@@ -97,6 +135,24 @@ function mapNode(node) {
     "developer/current/project-status": "双端状态",
     "developer/current/release-status": "发布资格",
     "developer/references/source-index": "来源索引",
+    "developer/troubleshooting/web-pages-artifact-integrity": "Pages 产物校验",
+    "developer/troubleshooting/web-module-startup": "Web 启动链",
+    "developer/build/signature-backfill": "DEX 签名回填",
+    "developer/build/artifact-provenance": "构建溯源",
+    "developer/build/build-mod-retirement": "旧构建脚本退役",
+    "developer/reverse-engineering/decompilation": "反编译与源码恢复",
+    "developer/reverse-engineering/smali-recovery": "Smali 接口恢复",
+    "developer/architecture/web-offline-simulation": "Web 离线进度",
+    "developer/architecture/web-ui-reactivity": "Web 界面响应",
+    "developer/architecture/effect-model": "效果模型",
+    "developer/architecture/derived-state-invalidation": "派生状态",
+    "developer/architecture/android-gui-sync": "Android 界面同步",
+    "developer/architecture/gui-stage-gates": "Android 阶段门禁",
+    "developer/architecture/tutorial-content-pipeline": "教程管线",
+    "developer/architecture/automation-ownership": "自动化所有权",
+    "developer/architecture/scheduler-state-machine": "调度器状态机",
+    "developer/architecture/save-progress-comparator": "存档进度比较",
+    "developer/architecture/directory-migration": "Android 目录迁移",
   };
   // 只有存在真实下级页面的节点才是分类；仅有 index.md 的目录降级为普通链接。
   if (node && node.isFolder && (!node.children || node.children.length === 0) && node.data) {
