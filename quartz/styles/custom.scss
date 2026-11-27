@@ -194,3 +194,35 @@ body[data-slug="index"] {
   .infobox { float: none; width: auto; margin: 1rem 0; }
   .wikitable { display: block; overflow-x: auto; }
 }
+
+/* 正式条目的语义子列表：不是虚拟页面，不增加空分类或展开按钮。 */
+.explorer-content .wiki-nav-group { list-style: none; margin: 0.55rem 0; }
+.explorer-content .wiki-nav-group-label {
+  display: block;
+  color: var(--secondary);
+  font-size: 0.84rem;
+  font-weight: 650;
+  margin: 0.35rem 0 0.2rem;
+}
+.explorer-content .wiki-nav-group-list {
+  margin: 0 0 0 0.25rem;
+  padding-left: 0.6rem;
+  border-left: 1px solid var(--lightgray);
+}
+.wiki-related-nav {
+  margin-top: 2rem;
+  padding: 0.85rem 0;
+  border-top: 1px solid var(--lightgray);
+}
+.wiki-related-nav > div { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; margin-top: 0.5rem; }
+.wiki-related-nav a { overflow-wrap: anywhere; }
+@media all and ($mobile) {
+  .explorer-content {
+    max-height: 100vh;
+    max-height: 100dvh;
+    box-sizing: border-box;
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+}
