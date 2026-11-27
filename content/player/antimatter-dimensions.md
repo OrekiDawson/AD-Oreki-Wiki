@@ -9,15 +9,23 @@ aliases:
   - "/antimatter-dimensions"
 ---
 
-《反物质维度》（Antimatter Dimensions）是一款增量游戏。玩家从购买生产反物质的维度开始，逐步获得计数频率、维度提升和反物质星系等能力，继而进入无限、永恒和现实三个主要重置层。游戏的名称既指作品，也指其最早的一组生产单位；后者的详细规则见[反物质维度机制](/player/antimatter-dimensions-core-loop)。
+你买下第一台生产反物质的「机器」，很快便会遇见第二台。它的产品不是反物质，而是第一台机器。到了第八台，整个生产系统已经有八层。游戏甚至允许你把辛苦建成的系统全部拆掉，用这次重置换取下一轮更快的成长。
 
-游戏由 IvarK 等开发者制作。原版有[网页版](https://ivark.github.io/)、[Steam 版](https://store.steampowered.com/app/1399720/Antimatter_Dimensions/)和移动版；Oreki Edition 是基于原版的 MOD，集中改动见[原版与 MOD](/player/gameplay/original-vs-mod)。
+这就是《反物质维度》（Antimatter Dimensions），一款由 IvarK 等开发者制作的增量游戏。原版有[网页版](https://ivark.github.io/)、[Steam 版](https://store.steampowered.com/app/1399720/Antimatter_Dimensions/)和移动版。Oreki Edition 是本站介绍的 MOD；具体差异集中记录于[原版与 MOD](/player/gameplay/original-vs-mod)。
 
-## 玩法
+## 从十到无限
 
-第一反物质维度直接生产反物质，第二维度生产第一维度，以此类推，直至第八维度。反物质同时是购买维度及计数频率升级的货币。高阶维度生产出的低阶维度不必由玩家逐个购买，因此即使停止购买，整条生产链也能继续积累。
+游戏最初教给你的几乎只有一件事：花掉反物质，换取更多反物质。第二维度开始，生产对象却变成了维度本身。即使不再购买，第一维度的数量也会不断增加。八级维度全部投入生产后，增长已经不能简单用「每秒多赚多少」来描述；它是一条会逐级放大自身产出的生产链。
 
-游戏早期先解锁四阶以上的维度，再通过维度献祭和星系改变生产效率。此时每增加一个星系，不仅会加快生产，还会提高已有及今后获得的计数频率升级的效果。成长并非单纯扩大某个固定倍率，而是不断改变倍率之间的关系。
+每次维度提升都会开放或强化其中的一部分。星系更进一步：它改变计数频率升级的效果，而计数频率又影响整条生产链。想知道为什么一个看似不起眼的升级会在几分钟后产生巨大的差别，可以读[反物质维度机制](/player/antimatter-dimensions-core-loop)，那里有价格表和数学推导。
+
+第一次冲到约 1.80e308 反物质时，游戏会请你做一件似乎很不合理的事：大坍缩。刚刚攒出的生产系统消失了，账户里却多出一种以前没有的资源，无限点数。
+
+## 无限不是终点
+
+数学上的无穷大没有一个最大的有限值，《反物质维度》里的「无限」却有明确的数值。它来自双精度浮点数的最大有限值，约 $1.7976931348623157\times10^{308}$。计算机科学中的一道边界，就这样成了游戏中的第一座里程碑。
+
+接下来，你会打破无限，再遇见永恒，最后发现连永恒也可以被重置。
 
 | 阶段 | 新资源 | 代表机制 |
 | --- | --- | --- |
@@ -27,40 +35,34 @@ aliases:
 | [现实](/player/gameplay/reality) | 现实机器（RM） | 符文、复兴、黑洞、自动机 |
 | [天神](/player/gameplay/celestials) | 遗迹碎片、记忆等 | 特殊现实、暗物质、毁灭 |
 
-各层重置的影响范围不同。例如大坍缩清除普通生产链，却保留获得的无限点数；永恒会进一步清除大部分无限层资源。现实则连前十三行成就及其奖励也会重新取得，随后通过复兴和符文缩短再次抵达它们的过程。
+每次大的重置都会改变上一层资源的价值。大坍缩保留无限点数，永恒让原先珍贵的无限层资源变成可以重新取得的东西；到了现实，甚至连前十三行成就及其奖励也要重新挣得。相应的长期强化则让重复过程越来越不同。
 
-## 数字的规模
+数字最终会大到连指数本身也值得关注。1e4000 是 $10^{4000}$，不是 4,000。游戏提供多种[记数法](/player/original/ow-notations)，换一种写法并不会改变资源数量，但往往会彻底改变玩家看待这些数字的方式。
 
-游戏中的第一次「无限」不是数学意义上的无穷大，而是接近 IEEE 754 双精度浮点数的最大有限值，即约 $1.7976931348623157\times10^{308}$。一个普通计算器可能早已无法显示这个数，游戏却把它作为第一道重置门槛。
+## 第九维度在哪里？
 
-打破无限后，反物质可以越过这道上限。游戏采用支持大数的数值表示，并提供多种[记数法](/player/original/ow-notations)。科学记数法中的 1e4000 表示 $10^{4000}$，不是 4,000 个资源，也不是「无限」这个符号本身。更换记数法只会改变数字的显示方式。
+没有第九反物质维度。不过，游戏专门给它留了一个成就：恰好拥有 99 个第八维度，会获得「第 9 个维度是假的」及第八维度 10% 加成。
 
-游戏还以普通挑战、无限挑战和永恒挑战改变生产规则。比如普通挑战 12 让维度隔级生产，形成两条生产链；时间膨胀则压缩倍率的指数。详细规则见[挑战](/player/gameplay/challenges)。
+这种幽默贯穿游戏。拥有超过 1e150 个第一维度之后，再买一个，看起来实在毫无意义，游戏偏偏为此颁发成就 28，并奖励第一维度 10% 加成。连旁边的新闻滚动条也有自己的成就：看过 50 条不同的消息，便能获得「假新闻！」。
 
-## 游戏里的玩笑
+这些并非与游戏毫无关系的装饰。有的成就会让你重新审视购买、数量与倍率之间的关系；有的则纯粹邀请你在追逐数字之外四处看看。[成就](/player/original/ow-achievements)和[秘密成就](/player/original/ow-achievements-secret-achievements)收录了更多这样的设计，后者含剧透。
 
-游戏的成就名称经常把数值规则变成笑话。成就 23「第 9 个维度是假的」要求恰好拥有 99 个第八反物质维度，奖励也是第八维度的 10% 加成。第九维度并没有因此解锁。
+挑战也在不断打破习惯：普通挑战 12 让维度隔级生产，原来的生产链分裂成两条；时间膨胀更是直接对倍率的指数下手。详见[挑战](/player/gameplay/challenges)。
 
-成就 28「那么做毫无意义……」要求在已有超过 1e150 个第一维度时，再购买一个第一维度。这个微不足道的购买反而会带来第一维度 10% 的加成。与普通升级不同，一些成就鼓励玩家刻意做看起来不划算的事。
+## 四年半后的现实
 
-此外，阅读到 50 条不同的新闻消息也能获得成就「假新闻！」。新闻滚动条并不参与正常的维度生产，却是游戏幽默感的重要来源。更多例子见[原版成就](/player/original/ow-achievements)及[秘密成就](/player/original/ow-achievements-secret-achievements)。
+原版的现实更新经历约四年半开发，2022 年 12 月 17 日随 Steam 版同步推出，2024 年 4 月 1 日移植至 Android。老攻略所说的「维度跃迁」也在这次更新后统一为维度提升。
 
-## 发展历史
+现实更新不只是把原有终点向后挪了几千个数量级。符文使成长变成配装问题，黑洞让时间可以被管理，七位天神又带来各自的玩法与故事。至于游戏最终为何要走到毁灭，那是留给[天神](/player/gameplay/celestials)篇的故事。
 
-原版的现实更新经历约四年半开发，于 2022 年 12 月 17 日随 Steam 版同步推出，2024 年 4 月 1 日移植至 Android。这次更新加入第三个主要重置层及后期天神内容，也统一了早期「维度跃迁」与「维度提升」的名称。原来以永恒为末端的玩法由此延伸到完整的终局。
-
-## 相关条目
-
-[开始游玩](/player/getting-started/) · [反物质维度机制](/player/antimatter-dimensions-core-loop) · [成长策略](/player/antimatter-dimensions-decisions) · [存档](/player/gameplay/saves) · [原版 Wiki 译文](/player/original/)
+[开始游玩](/player/getting-started/) · [成长策略](/player/antimatter-dimensions-decisions) · [存档](/player/gameplay/saves) · [原版 Wiki 译文](/player/original/)
 
 ## 资料来源
-
 - [Antimatter Dimensions](https://antimatterdimensions.wiki.gg/index.php?title=Antimatter_Dimensions&oldid=3325)：生产机制。
 - [Reality](https://antimatterdimensions.wiki.gg/index.php?title=Reality&oldid=3235)：现实更新与重置范围。
 - [Dimension Boosts](https://antimatterdimensions.wiki.gg/index.php?title=Dimension_Boosts&oldid=3333)：旧名称。
 - [Normal Challenges](https://antimatterdimensions.wiki.gg/index.php?title=Normal_Challenges&oldid=3341)：挑战 12。
 - [原版游戏源码](https://github.com/IvarK/AntimatterDimensionsSourceCode/tree/5409e320cecef96a917cca1dfb68f1f183e499ca)。
-
 - [原版成就表](https://antimatterdimensions.wiki.gg/index.php?title=Achievements&oldid=3363)：成就 22、23、28。
 
 本文依据原版社区 Wiki 的资料独立编写，涉及其内容的改编按 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) 共享；原文贡献者见各固定修订的页面历史。
