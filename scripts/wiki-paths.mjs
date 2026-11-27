@@ -1,5 +1,6 @@
 export const PLAYER_DIR = "content/player/"
 export const ORIGINAL_TRANSLATION_DIR = PLAYER_DIR + "original/"
+export const ORIGINAL_TITLE_PREFIX = "原版:"
 
 export const CATEGORY_DIRS = [
   PLAYER_DIR,
@@ -16,7 +17,6 @@ export const CATEGORY_DIRS = [
   "content/developer/current/",
   "content/developer/troubleshooting/",
   "content/developer/references/",
-  "content/developer/history/",
   "content/developer/evidence/",
   "content/developer/ai-summaries/",
 ]
