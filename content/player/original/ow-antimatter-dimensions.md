@@ -30,9 +30,9 @@ aliases:
 
 **反物质**是反物质维度生产的主要资源，也是衡量玩家进度的核心指标。它还有几项用途：
 
-- 反物质足够时，可以购买[反物质维度](/player/original/ow-antimatter-dimensions)和[计数频率](https://antimatterdimensions.wiki.gg/wiki/Tickspeed)升级；
+- 反物质足够时，可以购买[反物质维度](/player/original/ow-antimatter-dimensions)和[计数频率](/player/original/ow-tickspeed)升级；
 - 反物质达到 $1.80\text{e}308$ 时，可以执行[大坍缩](https://antimatterdimensions.wiki.gg/wiki/Big_Crunch)，从而看到更多升级并继续推进；
-- [打破无限](https://antimatterdimensions.wiki.gg/wiki/Breaking_Infinity)后，更多反物质还可以带来更多[无限点数](/player/original/ow-infinity)。
+- [打破无限](/player/original/ow-break-infinity)后，更多反物质还可以带来更多[无限点数](/player/original/ow-infinity)。
 
 ## 价格成长
 
