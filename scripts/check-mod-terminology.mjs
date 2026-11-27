@@ -14,7 +14,8 @@ function scan(file, label) {
   const lines = fs.readFileSync(file, 'utf8').split(/\r?\n/);
   const hits = [];
   const legacyTagMetadata = /content[\\/]player[\\/]mods[\\/]index\.md$/i.test(label);
-  const legacyTagPage = /(?:^|[\\/])tags[\\/]OrekiEdition(?:[\\/]index)?\.html$/i.test(label);
+  const legacyTagPage = /(?:^|[\\/])tags[\\/]OrekiEdition(?:[\\/]index)?\.html$/i.test(label)
+    || /(?:^|[\\/])tags[\\/]orekiedition(?:[\\/]index)?\.html$/i.test(label);
   lines.forEach((line, index) => {
     if (legacyTagMetadata && /^\s*-\s*OrekiEdition\s*$/.test(line)) return;
     if (legacyTagPage) return;

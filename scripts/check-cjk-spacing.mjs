@@ -42,7 +42,7 @@ function visibleHtml(source) {
   const generatedClasses = new Set([
     'sidebar', 'page-header', 'page-footer', 'content-meta', 'breadcrumbs',
     'breadcrumb-container', 'explorer', 'toc', 'recent-notes',
-    'folder-container', 'section-ul', 'section', 'tags', 'meta', 'page-list',
+    'folder-container', 'page-listing', 'section-ul', 'section', 'tags', 'meta', 'page-list',
   ]);
   const withoutGeneratedChrome = removeElements(source, (tag, attrs) => {
     if (['nav', 'aside', 'footer', 'header'].includes(tag)) return true;
