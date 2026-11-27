@@ -28,7 +28,7 @@ tags:
 
 ## 本 MOD 与游玩问题
 
-[MOD 介绍](/player/mods/)及[原版与 MOD](/player/gameplay/original-vs-mod)帮助你分辨两套规则。[常见问题](/player/faq/)用于排查卡关、自动化、安装与存档问题；[术语表](/player/terminology)适合随手查阅。
+[MOD 介绍](/player/mods/)及[原版与 MOD](/player/gameplay/original-vs-mod) 帮助你分辨两套规则。[常见问题](/player/faq/)用于排查卡关、自动化、安装与存档问题；[术语表](/player/terminology)适合随手查阅。
 
 ## 原版译文与本站条目的边界
 
