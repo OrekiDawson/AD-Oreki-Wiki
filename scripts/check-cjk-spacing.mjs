@@ -49,7 +49,9 @@ function visibleHtml(source) {
     .replace(/<style\b[\s\S]*?<\/style>/gi, ' ')
     .replace(/<pre\b[\s\S]*?<\/pre>/gi, ' ')
     .replace(/<code\b[\s\S]*?<\/code>/gi, ' ')
-    .replace(/<math\b[\s\S]*?<\/math>/gi, ' ');
+    .replace(/<math\b[\s\S]*?<\/math>/gi, ' ')
+    // 先移除 data-* 属性，再解析 HTML 标签；属性值可能含有字面 `>`。
+    .replace(/\sdata-[\w:-]+=("[\s\S]*?"|'[\s\S]*?')/gi, ' ');
   const withoutGeneratedChrome = removeElements(sanitized, (tag, attrs) => {
     if (['nav', 'aside', 'footer', 'header'].includes(tag)) return true;
     const classes = attrs.match(/\bclass=["']([^"']*)["']/i)?.[1]?.split(/\s+/) ?? [];
@@ -58,7 +60,7 @@ function visibleHtml(source) {
   return withoutGeneratedChrome
     // Quartz 插件可能把函数序列化到 data 属性；属性不是读者可见正文，
     // 且其中的比较符号会干扰 HTML 标签过滤。
-    .replace(/\sdata-quartz-[\w:-]+=("[\s\S]*?"|'[\s\S]*?')/gi, ' ')
+    .replace(/\sdata-[\w:-]+=("[\s\S]*?"|'[\s\S]*?')/gi, ' ')
     .replace(/https?:\/\/[^\s"'<]+/gi, ' ')
     // 属性值可能包含字面 `>`；按引号边界匹配标签，避免把属性代码当成正文。
     .replace(/<(?:[^>"']|"[^"]*"|'[^']*')*>/g, ' ');

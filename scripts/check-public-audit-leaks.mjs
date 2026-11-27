@@ -18,9 +18,13 @@ function visibleMarkdown(line) {
 
 function visibleHtml(text) {
   return text
+    // 先移除 data-* 属性；Quartz 的序列化配置可能包含字面 `>` 和审计样式字符串。
+    .replace(/\sdata-[\w:-]+=("[\s\S]*?"|'[\s\S]*?')/gi, ' ')
     .replace(/<script\b[\s\S]*?<\/script>/gi, ' ')
     .replace(/<style\b[\s\S]*?<\/style>/gi, ' ')
     .replace(/<(?:pre|code)\b[\s\S]*?<\/(?:pre|code)>/gi, ' ')
+    // Quartz 将排序、过滤和插件配置序列化到 data-* 属性；属性不是读者可见正文。
+    .replace(/\sdata-[\w:-]+=("[\s\S]*?"|'[\s\S]*?')/gi, ' ')
     .replace(/<[^>]+>/g, ' ')
     .replace(/https?:\/\/[^\s"'<>]+/gi, ' ');
 }
