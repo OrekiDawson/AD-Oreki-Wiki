@@ -36,18 +36,20 @@ function frontmatter(file) {
     /^title:\s*(?:"([^"\r\n]*)"|'([^'\r\n]*)'|([^#\r\n]*?))\s*(?:#.*)?$/m,
   )
   const title = (titleMatch?.[1] ?? titleMatch?.[2] ?? titleMatch?.[3])?.trim()
-  return { title: title || path.basename(file, ".md"), text }
+  const archive = /^archive:\s*(?:true|"true"|'true')\s*(?:#.*)?$/mi.test(match?.[1] ?? "")
+  return { title: title || path.basename(file, ".md"), archive, text }
 }
 
 function route(file) {
   const rel = path.relative(contentRoot, file).replaceAll("\\", "/").replace(/\.md$/, "")
+  if (rel === "index") return "/"
   return rel.endsWith("/index") ? `/${rel.slice(0, -6)}` : `/${rel}`
 }
 
 const pages = walk(contentRoot)
   .filter((file) => !generated.has(path.basename(file)))
   .map((file) => ({ file, route: route(file), ...frontmatter(file) }))
-  .filter(page => filterNode({ slug: page.route.slice(1), data: {} }))
+  .filter(page => !page.archive && filterNode({ slug: page.route.slice(1), data: {} }))
   .sort((a, b) => comparePageRoutes(model, a, b))
 
 const groups = new Map([

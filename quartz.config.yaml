@@ -105,6 +105,11 @@ plugins:
     enabled: true
     options: {}
     order: 45
+  # 归档页在 Quartz 内容索引、页面、站点地图、RSS 和搜索之前统一过滤。
+  - source: "./scripts/quartz-plugins/archive-filter"
+    enabled: true
+    options: {}
+    order: 5
   - source: "@quartz-community/encrypted-pages"
     enabled: true
     options:

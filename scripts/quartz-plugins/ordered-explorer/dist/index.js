@@ -122,6 +122,14 @@ function clientNavigation(model) {
     nav.append(row);
     article.append(nav);
   }
+  const nativeScrollIntoView = Element.prototype.scrollIntoView;
+  Element.prototype.scrollIntoView = function(options) {
+    if (this.closest?.(".explorer")) {
+      const next = typeof options === "object" && options ? { ...options, behavior: "auto" } : { behavior: "auto" };
+      return nativeScrollIntoView.call(this, next);
+    }
+    return nativeScrollIntoView.call(this, options);
+  };
   document.addEventListener("nav", () => { pending = true; schedule(); }, { passive: true });
   document.addEventListener("click", event => {
     const target = event.target instanceof Element ? event.target : null;

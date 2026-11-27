@@ -2,6 +2,10 @@
 // 作为字面量编入独立函数，而不是引用浏览器不可访问的模块作用域。
 export function createNavigationCallbacks(model) {
   const roots = model.categories.root.map((entry) => entry.key)
+  const allowedRoutes = new Set([
+    ...model.categories.root.map((entry) => entry.route.replace(/^\/+/, "")),
+    ...Object.values(model.childOrder).flat(),
+  ])
   const ranks = Object.fromEntries(Object.values(model.childOrder).flatMap((routes) =>
     routes.map((route, index) => [route, index + 1])))
   const labels = model.folderLabels
@@ -20,14 +24,24 @@ export function createNavigationCallbacks(model) {
   const mapNode = new Function("node", `
     const labels = ${JSON.stringify(labels)};
     const key = String(node?.slug || "").replace(/\\/index$/, "");
+    if (node?.data?.slug) {
+      const normalized = String(node.data.slug).replace(/\\/index$/, "") || "/";
+      node.data.slug = normalized.startsWith("/") ? normalized : "/" + normalized;
+    }
     if (node && node.isFolder && (!node.children || node.children.length === 0) && node.data) node.isFolder = false;
     if (node && Object.hasOwn(labels, key)) node.displayName = labels[key];
     return node;
   `)
   const filterNode = new Function("node", `
     const excluded = ${JSON.stringify(excluded)};
+    const allowedRoutes = new Set(${JSON.stringify([...allowedRoutes])});
     const route = "/" + String(node?.slug || "").replace(/\\/index$/, "").replace(/^\\/+/, "");
     if (excluded.exact.includes(route) || excluded.prefixes.some(p => route === p.replace(/\\/$/, "") || route.startsWith(p))) return false;
+    const key = route.replace(/^\\/+/, "");
+    const allowed = allowedRoutes.has(key);
+    const hasAllowedDescendant = [...allowedRoutes].some(candidate => candidate.startsWith(key + "/"));
+    if (node?.data && !allowed) return false;
+    if (!node?.data && !allowed && !hasAllowedDescendant) return false;
     return !(node.isFolder && (!node.children || node.children.length === 0) && !node.data);
   `)
   return { compare, mapNode, filterNode }

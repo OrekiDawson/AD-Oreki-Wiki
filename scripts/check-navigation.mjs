@@ -27,10 +27,13 @@ const allEntries = fs.readFileSync(path.join(content, "all-entries.md"), "utf8")
 const formal = files.filter(
   (file) =>
     !file.includes(`${path.sep}ai-drafts${path.sep}`) &&
-    !file.endsWith(`${path.sep}all-entries.md`),
+    !file.endsWith(`${path.sep}all-entries.md`) &&
+    file !== path.join(content, "index.md") &&
+    !/^archive:\s*(?:true|"true"|'true')\s*(?:#.*)?$/mi.test(fs.readFileSync(file, "utf8")),
 )
 const routeFor = (file) => {
   const rel = path.relative(content, file).replaceAll("\\", "/").replace(/\.md$/, "")
+  if (rel === "index") return "/"
   return rel.endsWith("/index") ? `/${rel.slice(0, -6)}` : `/${rel}`
 }
 const titleFor = (file) => {

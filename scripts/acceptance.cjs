@@ -23,6 +23,26 @@ const NAVIGATION_MODEL = JSON.parse(
   fs.readFileSync(path.join(__dirname, 'navigation-model.json'), 'utf8'),
 );
 const EXPECTED_SIDEBAR = NAVIGATION_MODEL.categories.root.map((entry) => entry.label);
+const normalizeRoute = (value) => {
+  try { return new URL(value, BASE).pathname.replace(/\/$/, '') || '/'; }
+  catch { return String(value).split('#')[0].replace(/\/$/, '') || '/'; }
+};
+const archivedRoutes = new Set();
+function walkMarkdown(dir) {
+  return fs.readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
+    const full = path.join(dir, entry.name);
+    return entry.isDirectory() ? walkMarkdown(full) : [full];
+  });
+}
+if (fs.existsSync(path.join(__dirname, '..', 'content'))) {
+  for (const file of walkMarkdown(path.join(__dirname, '..', 'content'))) {
+    if (!file.endsWith('.md') || file.split(path.sep).includes('ai-drafts')) continue;
+    const text = fs.readFileSync(file, 'utf8');
+    if (!/^archive:\s*(?:true|"true"|'true')\s*(?:#.*)?$/mi.test(text)) continue;
+    const rel = path.relative(path.join(__dirname, '..', 'content'), file).replaceAll('\\', '/').replace(/\.md$/, '');
+    archivedRoutes.add(normalizeRoute('/' + (rel === 'index' ? '' : rel.endsWith('/index') ? rel.slice(0, -6) : rel)));
+  }
+}
 
 const SEARCH_TERMS = [
   ['永恒挑战', 'player/gameplay/challenges'],
@@ -91,6 +111,7 @@ async function run() {
     return {
       tagLinks: anchors.filter((a) => /(^|\/)tags(?:\/|$)/i.test(a.getAttribute('href') || '')).length,
       tagLabels: anchors.filter((a) => /标签|tags?/i.test((a.textContent || '').trim())).length,
+      archivedLinks: anchors.filter((a) => archivedRoutes.has((a.getAttribute('href') || '').split('#')[0].replace(/\/$/, '') || '/')).length,
       emptyFolders: folders.filter((folder) => !folder.querySelector('a[href]')).length,
       explorerInitialState: explorer ? (explorer.classList.contains('collapsed') ? 'collapsed' : 'expanded') : null,
       progress: styleOf('.navigation-progress'),
@@ -99,6 +120,7 @@ async function run() {
     };
   });
   if (results.mobile.frontendContract.tagLinks || results.mobile.frontendContract.tagLabels) results.errors.push('tag-index-leaked-in-explorer');
+  if (results.mobile.frontendContract.archivedLinks) results.errors.push('archived-entry-leaked-in-explorer');
   if (results.mobile.frontendContract.emptyFolders) results.errors.push('empty-explorer-folder');
   if (results.mobile.frontendContract.progress && results.mobile.frontendContract.progress.display !== 'none') results.errors.push('navigation-progress-visible');
   if (results.mobile.frontendContract.transition && (results.mobile.frontendContract.transition.animation !== 'none' || !/none/.test(results.mobile.frontendContract.transition.transition))) results.errors.push('page-transition-active');
@@ -228,6 +250,20 @@ async function run() {
     await motionLink.click();
     await page.waitForURL(url => url.pathname.replace(/\/$/, '') === target);
     results.mobile.motion = await page.evaluate(() => window.__wikiMotion || null);
+  }
+  results.mobile.archivedNavAfterSpa = await page.evaluate((routes) => {
+    const leaked = [...document.querySelectorAll('.explorer a[href]')]
+      .map((a) => (a.getAttribute('href') || '').split('#')[0].replace(/\/$/, '') || '/')
+      .filter((href) => routes.includes(href));
+    return [...new Set(leaked)];
+  }, [...archivedRoutes]);
+  if (results.mobile.archivedNavAfterSpa.length) results.errors.push('archived-entry-leaked-after-spa');
+  try {
+    const searchIndex = await page.evaluate(async () => fetch('/static/contentIndex.json').then((response) => response.json()));
+    results.mobile.archivedSearchEntries = [...archivedRoutes].filter((route) => Object.keys(searchIndex).some((key) => normalizeRoute(key) === route));
+    if (results.mobile.archivedSearchEntries.length) results.errors.push('archived-entry-leaked-in-search-index');
+  } catch (error) {
+    results.errors.push('archive-search-index-unreadable');
   }
   // 搜索
   const searchInput = page.locator('input.search-bar, input[name="search"], input[type="search"], input[placeholder]').first();

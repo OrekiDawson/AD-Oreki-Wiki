@@ -89,6 +89,8 @@ jobs:
         run: node scripts/generate-navigation.mjs
       - name: Navigation coverage and public archive boundary
         run: node scripts/check-navigation.mjs
+      - name: Archive frontmatter and public-boundary check (source)
+        run: node scripts/check-archive.mjs
       - name: Public link policy (source)
         run: node scripts/check-public-links.mjs
       - name: Public audit-log separation (source)
@@ -114,6 +116,9 @@ jobs:
         working-directory: .quartz-build
       - name: Built navigation DOM and empty-menu gate
         run: node scripts/check-navigation.mjs --built public
+        working-directory: .quartz-build
+      - name: Archive leakage regression (built output)
+        run: node scripts/check-archive.mjs --built public
         working-directory: .quartz-build
       - name: Public link policy (built HTML)
         run: node scripts/check-public-links.mjs --built public

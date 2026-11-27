@@ -33,6 +33,24 @@ html {
   scroll-behavior: auto !important;
 }
 
+// Quartz Explorer 和 SPA 的所有导航滚动、展开及页面位移动效都必须即时完成。
+// 保留 SPA 的预取与历史，不保留视觉过渡。
+.explorer,
+.explorer *,
+.page > #quartz-body,
+.page > #quartz-body > *,
+.page > #quartz-body.lock-scroll > * {
+  animation: none !important;
+  transition: none !important;
+}
+
+html,
+body,
+.explorer-content,
+.explorer-content .explorer-ul {
+  scroll-behavior: auto !important;
+}
+
 // 百科页面切换应立即显示目标内容；保留 Quartz enableSPA 的客户端导航，不显示进度条或过渡动画。
 .navigation-progress,
 .page-transition,
@@ -72,7 +90,8 @@ html {
   }
 
   .explorer .mobile-explorer,
-  .explorer .explorer-content a {
+  .explorer .explorer-content a,
+  .explorer .folder-icon {
     -webkit-tap-highlight-color: transparent;
     user-select: none;
   }

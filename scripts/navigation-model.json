@@ -352,6 +352,9 @@
       "developer/evidence",
       "developer/ai-summaries",
       "developer/editorial-guidelines"
+    ],
+    "developer/references": [
+      "developer/references/source-index"
     ]
   },
   "topicGroups": {
