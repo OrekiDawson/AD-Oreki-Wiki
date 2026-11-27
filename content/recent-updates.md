@@ -8,6 +8,12 @@ tags:
 
 这里显示最近进入当前内容树的正式条目；文章的具体修订记录仍以页面正文与仓库历史为准。
 
+- [自动化与阶段入口](/player/faq/automation-and-unlocks)
+- [平台与版本](/player/faq/platform-and-version)
+- [FAQ：入门、阶段与挑战](/player/faq/progression)
+- [存档与兼容性](/player/faq/saves-and-compatibility)
+- [原版:鹿颈长·引语](/player/original/ow-effarig-quotes)
+- [原版:莱特拉·引语](/player/original/ow-laitela-quotes)
 - [开发者专区](/developer)
 - [AI Summary 索引](/developer/ai-summaries)
 - [天神判据与跨端编码](/developer/architecture/celestial-implementation)
@@ -26,9 +32,3 @@ tags:
 - [下载与版本](/player/download-and-version)
 - [Android：Release、安装与升级](/player/download-and-version/android)
 - [Web：入口、缓存与版本识别](/player/download-and-version/web)
-- [自动化与阶段入口](/player/faq/automation-and-unlocks)
-- [FAQ：入门、阶段与挑战](/player/faq/progression)
-- [玩法机制](/player/gameplay)
-- [智能自动购买器](/player/gameplay/automation)
-- [特殊现实：准备、限制与排障](/player/gameplay/celestial-realities)
-- [挑战完成判定与卡关排障](/player/gameplay/challenge-troubleshooting)
