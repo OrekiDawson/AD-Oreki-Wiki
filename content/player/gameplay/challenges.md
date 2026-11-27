@@ -1,6 +1,6 @@
 ---
-title: "挑战：三种限制玩法的阅读地图"
-description: "认识普通挑战、无限挑战和永恒挑战各自的限制、目标与奖励，再进入完成判定排障指南"
+title: "挑战"
+description: "普通、无限和永恒挑战的限制、目标及代表性奖励。"
 tags:
   - 玩法
   - 挑战
@@ -8,47 +8,67 @@ aliases:
   - "/gameplay/challenges"
 ---
 
-挑战是《反物质维度》最有意思的“换题目考试”：熟悉的维度和重置仍在，但题目会临时拿走一两件你最依赖的工具。你不是把数字再堆大一点就结束，而是要看懂限制，换一条仍然成立的成长路线。
+**挑战**是临时改变游戏规则的关卡。与普通成长不同，玩家必须在额外限制下达到指定资源目标，再通过对应重置取得奖励。挑战分成普通挑战（NC）、无限挑战（IC）和永恒挑战（EC）。
 
-挑战分为普通挑战、无限挑战和永恒挑战。三者都要求游戏通过正常目标判定和重置结算来记录完成；进入页面、看见按钮或让自动购买器忙个不停，都不能代替这一步。
+## 挑战分类
 
-## 三种挑战有什么区别
+| 类别 | 数量 | 目标资源 | 完成次数 |
+| --- | ---: | --- | --- |
+| 普通挑战 | 12 | 反物质 | 一次奖励，之后可重打 |
+| 无限挑战 | 8 | 反物质 | 一次奖励，之后可重打 |
+| 永恒挑战 | 12 | 无限点数 | 每关最多五次 |
 
-### 普通挑战：第一次学会在缺工具时成长
+原版第一次大坍缩已经算作普通挑战 1 的完成，后 3 个普通挑战需要 16 次无限。无限挑战在打破无限后逐个开放。永恒挑战必须从研究树进入，具有 TT 成本、前置研究和额外解锁条件。
 
-第一次大坍缩后，普通挑战会成为最早接触的特殊玩法。原版共有 12 个普通挑战，后 3 个要累计完成 16 次无限后才开放。[普通挑战资料](https://antimatterdimensions.wiki.gg/wiki/Normal_Challenges?oldid=3341)
+## 普通挑战
 
-普通挑战把你送回接近无限前的成长段落，却换上一条限制：某类升级可能失效，某种维度可能不再按平时工作，或购买顺序变得重要。刚解锁时，不必把 12 个挑战排成必须照做的路线；先挑限制看得懂、当前生产力够用的挑战。
+普通挑战的奖励大多用于解锁或升级自动购买器，其中有些关卡专门颠覆玩家平日的购买习惯：
 
-### 无限挑战：把终点推到第一次无限之外
+| 编号 | 特殊规则 | 奖励 |
+| --- | --- | --- |
+| NC2 | 购买会中断产出，随后逐渐恢复 | 第二维度自动购买器可升级 |
+| NC5 | 计数频率基础效果减弱 | 第五维度自动购买器可升级 |
+| NC6 | 部分维度以低两阶维度为支付资源 | 第六维度自动购买器可升级 |
+| NC9 | 同价项目一起涨价 | 计数频率自动购买器可升级 |
+| NC10 | 仅有六级维度 | 维度提升自动购买器 |
+| NC11 | 正物质超过反物质时触发无收益重置 | 星系自动购买器 |
+| NC12 | 维度隔级生产 | 大坍缩自动购买器 |
 
-无限挑战（Infinity Challenges，IC）出现在打破无限之后。原版共有 8 个，每关有自己的开放条件与限制。[无限挑战资料](https://antimatterdimensions.wiki.gg/wiki/Infinity_Challenges?oldid=3359)
+NC12 尤其值得注意：第一、第二维度都直接生产反物质，第三维度生产第一维度，第四维度生产第二维度。这将正常的八级生产链拆为两条链。原版还提高第二、第四和第六维度的部分效果作为补偿。
 
-它们把目标推到第一次无限的舒适区之外。完成奖励会成为永久成长的一部分，因此某一关打不过时，通常应该先回到正常流程购买无限升级、无限维度或复制器，而不是更高频地重复尝试。
+## 无限挑战
 
-### 永恒挑战：研究路线本身就是钥匙
+无限挑战具有独立的反物质开放门槛及完成目标。有时进入挑战所需的普通反物质比挑战内的目标还高，因为挑战规则改变了生产能力。
 
-永恒挑战（Eternity Challenges，EC）在永恒阶段开放。原版有 12 关，每关最多完成 5 次；后续次数通常提高目标或附加条件。[永恒挑战资料](https://antimatterdimensions.wiki.gg/wiki/Eternity_Challenges?oldid=3347)
+| 编号 | 代表限制 | 奖励 |
+| --- | --- | --- |
+| IC1 | 多项普通挑战规则同时生效 | 每完成一个 IC，增强无限维度 |
+| IC2 | 自动执行维度献祭 | 献祭自动购买器、增强献祭 |
+| IC3 | 计数频率改为静态维度乘数 | 按星系及购买次数提供维度乘数 |
+| IC5 | 购买引起跨维度价格变化 | 星系增强、重置需求降低 |
+| IC7 | 禁用反物质星系 | 维度提升倍率增强 |
+| IC8 | 产量随时间快速衰减，购买恢复 | 基于首尾维度倍率强化中间维度 |
 
-进入一关往往同时需要足够的时间之理、研究树前置和挑战说明列出的额外条件。例如 EC9、EC10 的研究路径分别涉及第 151、181 号研究。[时间研究资料](https://antimatterdimensions.wiki.gg/wiki/Time_Studies?oldid=3343)
+IC1 奖励每完成一关 IC，使无限维度获得 ×1.3。八关全满时，总倍率为 $1.3^8\approx8.16$，显示时可能取近似值。
 
-EC 的目标资源是该关要求的 IP，而不是普通挑战里熟悉的“冲到无限上限”。完成一次后，先确认记录次数和新奖励，再决定是否挑战下一次。
+## 永恒挑战
 
-## 挑战的共同规律
+十二个永恒挑战各可完成五次，合计 60 次奖励。首次解锁 EC1 需要 20,000 次永恒，之后每次增加 20,000；EC4 则需要从 1e8 次无限开始，之后每次增加 2.5e7。通过研究树解锁不等于挑战已经完成。
 
-限制不是装饰文字，而是这关真正的玩法。先读限制拿走了什么，再判断当前仍然有效的生产、研究和自动购买器。Oreki Edition 可以减少重复点击，但不会制造挑战完成记录，也不会绕过真实结算。
+EC4 的特别之处在于，它在进入前要求大量无限次数，挑战中却限制可进行的无限次数。这一设计要求玩家在有限重置内完成目标，而不是继续无上限地刷无限次数。
 
-如果你只想知道某次挑战为什么没有记为完成，进入[挑战完成判定与卡关排障](/player/gameplay/challenge-troubleshooting)；如果想知道挑战如何影响研究路线，可继续读[现实与时间研究](/player/gameplay/reality-time-studies)。
+EC11 和 EC12 的研究分支条件有特殊限制，并与时间膨胀的后续解锁关系密切。各次目标、限制和完整奖励见[原版永恒挑战](/player/original/ow-eternity-challenges)。
 
-## 原版与 Oreki Edition
+## 历史
 
-本页先解释原版三类挑战的玩法结构。MOD 可能调整部分门槛、节奏或自动化行为，但挑战的真实条件和结算边界仍应以当前 Android 或 Web 版本的界面为准。两者差异集中见[原版行为与 Oreki Edition 修改](/player/gameplay/original-vs-mod)，不要把 MOD 的缩放数值反推成原版规则。
+现实更新以前的桌面版 NC7 曾让每十个维度的购买倍率随机变化；后来的版本改为由维度提升决定。历史挑战编号也发生过调整，旧攻略中的编号可能与现版不同。
 
-## 参考与相关条目
+有关挑战完成次数异常的处理见[挑战排障](/player/gameplay/challenge-troubleshooting)。Oreki Edition 的自动挑战策略与原版奖励应分开理解，参见[智能自动购买器](/player/gameplay/automation)。
 
-- [Challenges](https://antimatterdimensions.wiki.gg/wiki/Challenges?oldid=3106)
-- [Normal Challenges](https://antimatterdimensions.wiki.gg/wiki/Normal_Challenges?oldid=3341)
-- [Infinity Challenges](https://antimatterdimensions.wiki.gg/wiki/Infinity_Challenges?oldid=3359)
-- [Eternity Challenges](https://antimatterdimensions.wiki.gg/wiki/Eternity_Challenges?oldid=3347)
+## 资料来源
 
-[无限与永恒](/player/gameplay/progression-infinity-eternity) · [智能自动购买器](/player/gameplay/automation) · [挑战完成判定与卡关排障](/player/gameplay/challenge-troubleshooting)
+- [Normal Challenges](https://antimatterdimensions.wiki.gg/index.php?title=Normal_Challenges&oldid=3341)。
+- [Infinity Challenges](https://antimatterdimensions.wiki.gg/index.php?title=Infinity_Challenges&oldid=3359)。
+- [Eternity Challenges](https://antimatterdimensions.wiki.gg/index.php?title=Eternity_Challenges&oldid=3347)。
+
+本文依据原版社区 Wiki 的资料独立编写，涉及其内容的改编按 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) 共享；原文贡献者见各固定修订的页面历史。

@@ -1,6 +1,6 @@
 ---
-title: "永恒阶段：EP、时间研究与现实前置"
-description: "第一次永恒后如何使用永恒点数和时间研究，理解永恒挑战、时间膨胀与第一次现实"
+title: "永恒"
+description: "永恒点数、时间维度、里程碑及研究与现实的关系。"
 tags:
   - 玩法
   - 永恒
@@ -9,72 +9,56 @@ aliases:
   - "/gameplay/eternity"
 ---
 
-永恒（Eternity）不是“更大一次的大坍缩”。它会把无限阶段的大部分积累换成**永恒点数**（Eternity Points，EP），再用时间之理（Time Theorems，TT）重新安排成长路线。第一次永恒后的关键问题也从“下一轮能多快”变成了“有限的研究预算应该投向哪条路”。
+**永恒**（Eternity）是第二个主要重置层，将无限阶段的进展换成永恒点数（EP）和永恒次数。原版首次永恒的基本条件是达到约 1.80e308 IP，并解锁第八无限维度。它使用与第一次无限相似的数值界限，但单位已经换成 IP。
 
-## 第一次永恒会改变什么
+## 永恒重置
 
-第一次永恒会重置不少低层进度，同时开放永恒点数、时间研究和永恒挑战。不要被重置后的低数字吓到：无限阶段的反复成长现在变成赚取 EP、购买研究和打开更高层入口的基础。
+首次永恒前，原版第八无限维度的反物质解锁需求为 1e60000，成本为 1e280 IP。解锁后，原先用于开放无限维度的按钮转向提示永恒所需的 IP。
 
-原版的永恒条件以 IP 和前置内容为核心，常见提示会要求继续朝约 **1.80 × 10³⁰⁸ IP** 推进，并先完成第八无限维度等解锁；具体数值和 MOD 调整应以当前版本为准。[原版机制：永恒](https://antimatterdimensions.wiki.gg/wiki/Eternity?oldid=3118)
+| 项目 | 普通永恒的结果 |
+| --- | --- |
+| 反物质、维度、星系 | 重置 |
+| 无限点数、无限维度 | 重置 |
+| 复制器及其升级 | 重置 |
+| 普通及无限挑战 | 初期重置；后续里程碑改变保留方式 |
+| 永恒点数与永恒次数 | 累积 |
+| 时间之理、研究与时间维度 | 通常保留，研究重置是独立选项 |
+| 成就与通用统计 | 保留 |
 
-## 时间研究：把 TT 当作长期预算
+原版第一次永恒立即开放时间研究、永恒升级与永恒里程碑。后续永恒不会重复解锁同一功能，但会继续积累奖励。
 
-时间研究（Time Studies）是一棵带前置关系和分叉的研究树。TT 可以由反物质、IP 和 EP 等资源购买，并会跨越永恒保留；因此一次购买不只是改善当前循环，也是对后续路线的投资。
+## 永恒点数
 
-没有一条分支永远正确：
+基础 EP 换算与无限点数公式类似，却使用底数 5：
 
-- 频繁操作、集中推进某个挑战时，主动路线通常更容易体现价值；
-- 想让一轮稳定运行、减少反复点击时，被动或闲置方向更省心；
-- 还在补前置时，优先保证能连到下一项关键研究，不要为了一个看起来很大的倍率绕远路。
+$$EP=\left\lfloor M\,5^{\log_{10}(IP_{max})/308-0.7}\right\rfloor.$$
 
-研究树支持 Respec（重置研究配置）。它会退回已购买的 TT，让你换路线，不会凭空增加 TT。研究节点的具体价格、前置和当前版本变化，见[现实与时间研究](/player/gameplay/reality-time-studies)。
+$M$ 代表 EP 倍率，$IP_{max}$ 是本次永恒达到的最高 IP。原版无额外倍率时，1.80e308 IP 的基础收益取整前约为 1.62；IP 每增加 308 个十进制数量级，取整前的 EP 收益增加至五倍。
 
-## 永恒挑战：限制本身就是关卡
+永恒次数不是消费货币。它会影响部分升级，并作为永恒里程碑及挑战的前置；因此即使两次永恒获得相同 EP，累积次数仍有长期意义。
 
-永恒挑战（Eternity Challenges，EC）不是“再等一会儿”的普通按钮。进入后，生产链的某些优势会被拿走，玩家必须在限制下重新建立增长；部分研究路线还要求某个挑战完成一定次数。[永恒挑战资料](https://antimatterdimensions.wiki.gg/wiki/Eternity_Challenges?oldid=3347)
+## 时间维度
 
-遇到研究点不了或挑战打不过时，按顺序检查：
+永恒带来第三组维度。时间维度使用 EP 购买，第一时间维度生产时间碎片，高阶时间维度生产低阶时间维度。时间碎片会带来计数频率升级，使永恒层资源能反过来影响反物质生产。前四个时间维度与后四个的开放方式不同，后四个通过膨胀研究逐步解锁。
 
-1. 研究树的前置节点和当前分叉；
-2. 挑战按钮列出的进入条件；
-3. 挑战是否改变了自动购买器和资源保存顺序；
-4. 是否应该先离开挑战，积累 EP 或补一项研究再回来。
+这构成了三个互相连接的系统：时间维度产生时间碎片，计数频率加快反物质增长，反物质增长又支撑无限与永恒收益。
 
-自动购买器可以减少重复购买，但不会绕过挑战限制。若它只是在尝试而没有状态变化，先看[智能自动购买器](/player/gameplay/automation)对 no-op、阶段和合法重置的说明。
+## 研究与挑战
 
-## 时间膨胀：熟悉的倍率为什么突然变慢
+[时间之理](/player/gameplay/time-studies)可以用反物质、IP 和 EP 购买，并用于时间研究树。不同分叉影响反物质维度、无限维度、时间维度以及主动、被动或闲置玩法。研究配置可以重置并返还已投入的时间之理。
 
-时间膨胀（Time Dilation）是永恒阶段的转折点。原版要求大量 TT，并要求永恒挑战 11 和 12 各完成五次；解锁后会出现超光速粒子、膨胀时间、时间维度和膨胀升级。
+永恒挑战共有十二种，单关最多完成五次。前置条件不只看 EP，例如 EC1 要求永恒次数，EC4 要求无限次数。挑战目标通常以 IP 衡量，完成奖励能够持续强化普通玩法。详见[挑战](/player/gameplay/challenges)。
 
-进入膨胀后，形如 `10^x` 的倍率会按 `10^(x^0.75)` 处理。指数仍然很大，但指数本身被压低了；普通永恒里有效的倍率因此不一定继续有效。此时观察时间维度、膨胀升级和下一次现实所需的整体进度，比追求一次短暂的高 EP 峰值更有用。
+## 时间膨胀
 
-## 第一次现实前的检查
+在永恒后期，时间膨胀对大于 1 的有关倍率施加指数压缩。简化地说，倍率 $10^x$ 会变为 $10^{x^{0.75}}$。例如 1e16 在这种变换下成为 1e8，而不是把原倍率简单除以二。膨胀永恒产生超光速粒子，继而生成膨胀时间，供膨胀升级使用。
 
-现实（Reality）会重置永恒及以下的大部分内容，包括时间研究、永恒挑战完成数和低层资源；作为交换，你会获得现实机器、符文和其他更高层成长工具。看到现实研究不等于已经完成第一次现实，真正结算仍要经过合法入口。
+时间膨胀打开最后几个时间维度的研究，并通往[现实](/player/gameplay/reality)。
 
-第一次现实前建议确认：
+## 资料来源
 
-- 需要的时间研究和挑战奖励确实已经领取；
-- 当前存档有可恢复的备份；
-- 你知道现实后哪些按钮会重新锁上、哪些永久奖励会留下；
-- 当前版本是否对成就或挑战前置做了 MOD 调整。
+- [Eternity](https://antimatterdimensions.wiki.gg/index.php?title=Eternity&oldid=3118)、[永恒奖励与重置](https://github.com/IvarK/AntimatterDimensionsSourceCode/blob/5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/eternity.js)。
+- [Infinity Dimensions](https://antimatterdimensions.wiki.gg/index.php?title=Infinity_Dimensions&oldid=3344)、[Time Studies](https://antimatterdimensions.wiki.gg/index.php?title=Time_Studies&oldid=3343)、[Eternity Challenges](https://antimatterdimensions.wiki.gg/index.php?title=Eternity_Challenges&oldid=3347)。
+- [原版时间维度](/player/original/ow-time-dimensions) · [原版永恒里程碑](/player/original/ow-eternity-milestones) · [原版时间膨胀](/player/original/ow-dilation)。
 
-现实是成长层级的切换，不是“所有内容通关”。完成后可继续阅读[天神系统](/player/gameplay/celestials)，再根据当前天神的限制准备特殊现实。
-
-## 永恒阶段的常见排障
-
-- **研究节点无法购买**：沿树向上检查前置和分叉，再看 TT 是否真的足够。
-- **挑战入口不能用**：检查挑战条件和需要的研究，不要只等待资源增长。
-- **膨胀后增长像被压扁**：确认这是指数变换造成的规则变化，再调整时间维度和膨胀升级。
-- **现实按钮出现但不敢点**：先备份并确认重置范围；出现按钮不代表已经准备好。
-- **永恒后自动化不再推进**：先确认阶段已刷新、原版自动器仍开启，再按 no-op 与资源条件排查。
-
-## 参考与相关条目
-
-- [Eternity](https://antimatterdimensions.wiki.gg/wiki/Eternity?oldid=3118)
-- [Time Studies](https://antimatterdimensions.wiki.gg/wiki/Time_Studies)
-- [Eternity Challenges](https://antimatterdimensions.wiki.gg/wiki/Eternity_Challenges?oldid=3347)
-- [Dilated Time](https://antimatterdimensions.wiki.gg/wiki/Dilated_Time)
-- [Reality](https://antimatterdimensions.wiki.gg/wiki/Reality)
-
-[无限阶段：IP、打破无限与无限挑战](/player/gameplay/infinity) · [现实与时间研究](/player/gameplay/reality-time-studies) · [挑战与真实结算](/player/gameplay/challenges) · [存档安全](/player/gameplay/saves)
+本文依据原版社区 Wiki 的资料独立编写，涉及其内容的改编按 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) 共享；原文贡献者见各固定修订的页面历史。
