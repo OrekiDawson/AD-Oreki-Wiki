@@ -40,17 +40,14 @@ tags:
 
 <section class="home-section">
 <div class="home-section-heading">
-<p class="home-kicker">精选条目</p>
-<h2>从这里开始阅读</h2>
+<h2>精选条目</h2>
 </div>
 <div class="home-feature-grid">
-<a class="home-feature" href="/player/original/ow-time-dimensions"><strong>时间维度</strong><span>时间维度生产时间碎片，时间碎片又能加快反物质的生产。来看看第三条生产链是怎样运转的。</span></a>
-<a class="home-feature" href="/player/original/ow-reality"><strong>现实</strong><span>第一次现实连前十三行成就也会重置，但你会带着符文与现实机器重新出发。</span></a>
-<a class="home-feature" href="/player/original/ow-ra"><strong>太阳神</strong><span>记忆碎片会不断产生记忆，前四位天神的能力也随之得到强化。</span></a>
-<a class="home-feature" href="/developer/build/agp"><strong>AGP 构建管线</strong><span>从源码、变体和资源处理，到 R8、打包与签名，看看一份 Kotlin 如何变成可安装的 APK。</span></a>
-<a class="home-feature" href="/developer/reverse-engineering/dex-abi"><strong>DEX 与 ABI</strong><span>变量名消失之后，寄存器、描述符和调用约定仍然会留下线索。</span></a>
-<a class="home-feature" href="/developer/architecture/parity"><strong>双端一致性</strong><span>Android 与 Web 怎样表达同一个机制，又怎样诚实面对平台差异。</span></a>
+<a class="home-feature" href="/player/antimatter-dimensions-core-loop"><strong>反物质维度机制</strong><span>第八维度并不直接生产反物质。八级维度是怎样一步步把数字推向无限的？</span></a>
+<a class="home-feature" href="/player/gameplay/infinity"><strong>无限</strong><span>为什么游戏里的无限偏偏是 1.80e308？答案藏在计算机的浮点数里。</span></a>
+<a class="home-feature" href="/player/gameplay/celestials"><strong>七位天神</strong><span>从符文献祭到时间储存，再到最后的毁灭，每位天神都改变了一次游戏规则。</span></a>
 </div>
+<p>对游戏背后的代码感兴趣？下方的<a href="#home-tech-topics">技术专题</a>介绍构建、逆向分析与双端实现。</p>
 </section>
 
 <section class="home-section home-facts">
@@ -84,7 +81,7 @@ tags:
 <section class="home-section">
 <div class="home-section-heading">
 <p class="home-kicker">技术探索</p>
-<h2>技术专题</h2>
+<h2 id="home-tech-topics">技术专题</h2>
 </div>
 <div class="home-tech-grid">
 <a href="/developer/build/agp"><b>从 Kotlin 到 APK</b><span>编译、资源、变体、R8、签名：一条构建链如何把源码变成应用。</span></a>
