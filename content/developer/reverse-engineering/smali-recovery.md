@@ -89,13 +89,13 @@ object OrekiAutomationScheduler {
 
 `@JvmStatic` 让 Java/Smali 调用方能够看见静态入口；它解决的是“怎样调用 Kotlin 单例”，不解决“这个入口应该执行什么”。真正的兼容契约仍是生成后的所有者、方法名、参数描述符和返回类型。
 
-Android 当前调度器源码 [`OrekiAutomationScheduler.kt`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiAutomationScheduler.kt；具体文件证据留在内部核验记录） 采用 `object` 并暴露静态桥；它维护全局节拍、`beginFrame`、`allow`、`noteActed`、`noteNoop` 和 `noteFail`。因此逆向恢复不能只看“有一个 allow 函数”，还要确认调用方是否在真实动作后按结果通知调度器，避免把 no-op 或失败记成成功。
+Android 当前调度器源码 [`OrekiAutomationScheduler.kt`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiAutomationScheduler.kt；[固定提交 1ec0c9c](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/commit/1ec0c9cadd803f8f4e0e1c0e743c3557ab15a545)；具体文件证据留在内部核验记录） 采用 `object` 并暴露静态桥；它维护全局节拍、`beginFrame`、`allow`、`noteActed`、`noteNoop` 和 `noteFail`。因此逆向恢复不能只看“有一个 allow 函数”，还要确认调用方是否在真实动作后按结果通知调度器，避免把 no-op 或失败记成成功。
 
 协程方法则要额外注意 `Continuation` 参数、返回的挂起标记和生成的内部类。看到一个看似多余的对象参数时，先回到方法描述符与调用者，不要为了让 Kotlin 签名“变得好看”而删除它。
 
 ## 第四步：用固定证据排除错误绑定
 
-项目的 3.21 绑定表（源码定位：OrekiDawson/AD-Oreki-Edition-Android@fb1299a132f134eb4fab009643ee3fc3d6c57edf/baseline/versions/3.21/bindings.json；具体文件证据留在内部核验记录） 与第一方类索引（源码定位：OrekiDawson/AD-Oreki-Edition-Android@fb1299a132f134eb4fab009643ee3fc3d6c57edf/docs/deobfuscation/data/first-party-3.21-index.csv；具体文件证据留在内部核验记录）用于验证结构事实：类描述符、父类、方法/字段数量和映射状态应与目标 APK 属于同一基线。
+项目的 3.21 绑定表（源码定位：OrekiDawson/AD-Oreki-Edition-Android@fb1299a132f134eb4fab009643ee3fc3d6c57edf/baseline/versions/3.21/bindings.json；[固定提交 fb1299a](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/commit/fb1299a132f134eb4fab009643ee3fc3d6c57edf)；具体文件证据留在内部核验记录） 与第一方类索引（源码定位：OrekiDawson/AD-Oreki-Edition-Android@fb1299a132f134eb4fab009643ee3fc3d6c57edf/docs/deobfuscation/data/first-party-3.21-index.csv；[固定提交 fb1299a](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/commit/fb1299a132f134eb4fab009643ee3fc3d6c57edf)；具体文件证据留在内部核验记录）用于验证结构事实：类描述符、父类、方法/字段数量和映射状态应与目标 APK 属于同一基线。
 
 一个短类名匹配不够。至少要交叉检查：
 

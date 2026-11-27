@@ -27,7 +27,7 @@ tags:
 
 ## 原版 Wiki 译文
 
-**来源：[Antimatter Dimensions Wiki](https://antimatterdimensions.wiki.gg/)**
+**来源：[Antimatter Dimensions Wiki 主页面](https://antimatterdimensions.wiki.gg/wiki/Main_Page)**（已用 MediaWiki API 核对页面标题与许可声明；具体译文页的修订 ID 随对应页面署名保存）
 
 原版社区 Wiki 的译文是基于原文制作的改编作品，而不是本站自行创作的原版资料。社区 Wiki 的文字内容主要采用 CC BY-SA 4.0，具体以相应原文的许可为准。
 
@@ -39,9 +39,9 @@ tags:
 
 原版游戏、游戏截图、图标、Logo、插图和第三方视觉资源的版权归各自权利人。即使某篇文章采用 CC BY-SA 4.0，其中的图片也可能具有不同的权利来源。
 
-使用素材前应逐项核实来源、许可和署名。只有授权或其他合法使用依据允许时才复制或展示；许可不明的素材不发布。不得移除必要的版权标识、水印或擅自声称拥有第三方作品的版权。
+使用素材前应逐项核实来源、许可和署名。只有授权或其他合法使用依据允许时才复制或展示；许可不明的素材不发布。机器可读素材清单位于 `docs/translation/original-image-manifest.json`（源码定位：OrekiDawson/AD-Oreki-Wiki@main/docs/translation/original-image-manifest.json），记录来源页面、资源路径、许可证、署名和恢复状态；标记为“待核实”或 `INCOMPLETE` 的素材不得进入正式页面。不得移除必要的版权标识、水印或擅自声称拥有第三方作品的版权。
 
-本站的原创站点标识由本项目制作，不是原版游戏的官方 Logo。第三方图标及其他视觉资源仍遵循各自的许可与署名要求。本站普通界面文字使用系统字体，不加载普通第三方网页字体。
+本站的原创站点标识位于仓库 `static/icon.svg` 与 `static/icon.png`，由本项目制作，不是原版游戏的官方 Logo。第三方图标及其他视觉资源仍遵循各自的许可与署名要求。本站普通界面文字使用系统字体，不加载普通第三方网页字体。
 
 ## 网站软件与代码
 

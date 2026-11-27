@@ -8,7 +8,11 @@ tags:
 
 这里显示最近进入当前内容树的正式条目；文章的具体修订记录仍以页面正文与仓库历史为准。
 
+- [开始游玩](/player/getting-started)
+- [反物质维度 MOD Wiki](/index)
 - [版权与许可](/copyright)
+- [反物质维度MOD Wiki:本站不是什么](/wiki-not)
+- [反物质维度MOD Wiki:知识库规则](/wiki-rules)
 - [开发者专区](/developer)
 - [Android 架构](/developer/architecture/android)
 - [Android GUI 同步桥：让游戏状态真正到达界面](/developer/architecture/android-gui-sync)
@@ -28,7 +32,3 @@ tags:
 - [构建可追溯性：让 APK 对得上源码与输入](/developer/build/artifact-provenance)
 - [从脚本补丁到 AGP：为什么 build_mod.py 必须退役](/developer/build/build-mod-retirement)
 - [DEX 泛型签名回填：让 Gson 看见存档里的真实类型](/developer/build/signature-backfill)
-- [如何阅读双端项目状态](/developer/current/project-status)
-- [发布资格：从一个 APK 到可交付版本](/developer/current/release-status)
-- [第一次参与 Android 开发](/developer/first-contribution)
-- [Oreki Edition 项目地图](/developer/project-overview)

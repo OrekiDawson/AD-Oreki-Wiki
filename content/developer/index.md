@@ -19,9 +19,9 @@ Oreki Edition 有 Android 与 Web 两套实现，目标是保持玩家可见的�
 
 你会实际遇到三个文件：
 
-- `serve.mjs`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@90d89de2048332f3c329ae6834ebee2675453a02/serve.mjs；具体文件证据留在内部核验记录）：提供本地 HTTP 服务，让浏览器能加载 ES 模块。
-- `src/main.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@90d89de2048332f3c329ae6834ebee2675453a02/src/main.js；具体文件证据留在内部核验记录）：导入基础模块并在浏览器检查通过后调用 `init()`。
-- `src/game.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@90d89de2048332f3c329ae6834ebee2675453a02/src/game.js；具体文件证据留在内部核验记录）：游戏初始化、运行流程与部分 MOD 自动化的集成点。
+- `serve.mjs`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@90d89de2048332f3c329ae6834ebee2675453a02/serve.mjs；[固定提交 90d89de](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/commit/90d89de2048332f3c329ae6834ebee2675453a02)；具体文件证据留在内部核验记录）：提供本地 HTTP 服务，让浏览器能加载 ES 模块。
+- `src/main.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@90d89de2048332f3c329ae6834ebee2675453a02/src/main.js；[固定提交 90d89de](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/commit/90d89de2048332f3c329ae6834ebee2675453a02)；具体文件证据留在内部核验记录）：导入基础模块并在浏览器检查通过后调用 `init()`。
+- `src/game.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@90d89de2048332f3c329ae6834ebee2675453a02/src/game.js；[固定提交 90d89de](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/commit/90d89de2048332f3c329ae6834ebee2675453a02)；具体文件证据留在内部核验记录）：游戏初始化、运行流程与部分 MOD 自动化的集成点。
 
 这一小段足以让你了解“文件入口在哪里、如何运行、怎么验证一处改动”，之后再进入更复杂的业务模块。
 
@@ -44,7 +44,7 @@ Oreki Edition 有 Android 与 Web 两套实现，目标是保持玩家可见的�
 
 ## 两套代码在哪里？
 
-**Android**：[OrekiDawson/AD-Oreki-Edition-Android](https://github.com/OrekiDawson/AD-Oreki-Edition-Android)。当前仓库根目录的 `:app` 是 Android 应用模块，生产业务代码位于 `app/src/main/kotlin/`，构建输入和门禁由根 `app/build.gradle.kts` 与 `build-logic/` 共同准备。官方 3.21.0 DEX 属于冻结基线，不允许用新 Java/Smali 业务直接覆盖。源码阅读可从 `OrekiStageAuto.kt`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiStageAuto.kt；具体文件证据留在内部核验记录） 开始。
+**Android**：[OrekiDawson/AD-Oreki-Edition-Android](https://github.com/OrekiDawson/AD-Oreki-Edition-Android)。当前仓库根目录的 `:app` 是 Android 应用模块，生产业务代码位于 `app/src/main/kotlin/`，构建输入和门禁由根 `app/build.gradle.kts` 与 `build-logic/` 共同准备。官方 3.21.0 DEX 属于冻结基线，不允许用新 Java/Smali 业务直接覆盖。源码阅读可从 `OrekiStageAuto.kt`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiStageAuto.kt；[固定提交 9d8fc46](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/commit/9d8fc46ce99279720b5b3068027bb76bceb35756)；具体文件证据留在内部核验记录） 开始。
 
 **Web**：[OrekiDawson/AD-Oreki-Edition-Web](https://github.com/OrekiDawson/AD-Oreki-Edition-Web)。入口在 `src/`，核心机制与 MOD 扩展在 `src/core/`，浏览器组件在 `src/components/`。Web 基于冻结的上游快照，不可把 Android 中的混淆类名当作 Web 模块名。
 

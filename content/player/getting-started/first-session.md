@@ -52,4 +52,4 @@ Android 和 Web 的布局不同，但先看按钮上的价格、数量和加成�
 
 ## 参考资料与核验范围
 
-新档入口和生产链说明可对照 Web 的 `src/game.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@90d89de2048332f3c329ae6834ebee2675453a02/src/game.js；具体文件证据留在内部核验记录） 与 Android 的 `OrekiStageAuto.kt`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiStageAuto.kt；具体文件证据留在内部核验记录）。本文用于解释初次游玩的阅读顺序，未宣称完成 Android/Web 全平台安装、通关和存档迁移回归。
+新档入口和生产链说明可对照 Web 的 `src/game.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@90d89de2048332f3c329ae6834ebee2675453a02/src/game.js；[固定提交 90d89de](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/commit/90d89de2048332f3c329ae6834ebee2675453a02)；具体文件证据留在内部核验记录） 与 Android 的 `OrekiStageAuto.kt`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiStageAuto.kt；[固定提交 9d8fc46](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/commit/9d8fc46ce99279720b5b3068027bb76bceb35756)；具体文件证据留在内部核验记录）。本文用于解释初次游玩的阅读顺序，未宣称完成 Android/Web 全平台安装、通关和存档迁移回归。

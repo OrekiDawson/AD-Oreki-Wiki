@@ -74,7 +74,7 @@ $$Tachyons = TP_{Mult}\times\left(\frac{\log_{10}\left(AM_{\text{膨胀中最高
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Dilation&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为**简体中文翻译（改编）**，已修改：翻译正文与表格、统一术语、依据官方源码校正超光速星系阈值并补充现实重置边界、修复升级子页链接、移除导航模板与信息框、图片未转载；本页按相同许可共享。
 - 原页以子模板嵌入膨胀升级表；本页保留主条目正文、公式与相关成就，并链接本区现有的普通与被毁灭现实升级表。
-- 源码核对：时间膨胀研究解锁条件（源码定位：OrekiDawson/AD-Oreki-Edition-Web@91d5bed01509cd730a3158075c9b05c19a7a3260/src/core/secret-formula/eternity/time-studies/dilation-time-studies.js#L15；具体文件证据留在内部核验记录） 与 DILR 豁免定义（源码定位：OrekiDawson/AD-Oreki-Edition-Web@91d5bed01509cd730a3158075c9b05c19a7a3260/src/core/secret-formula/reality/perks.js#L215；具体文件证据留在内部核验记录）（提交 `91d5bed01509cd730a3158075c9b05c19a7a3260`，2026-11-24 核对）。
+- 源码核对：时间膨胀研究解锁条件（源码定位：OrekiDawson/AD-Oreki-Edition-Web@91d5bed01509cd730a3158075c9b05c19a7a3260/src/core/secret-formula/eternity/time-studies/dilation-time-studies.js#L15；[固定提交 91d5bed](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/commit/91d5bed01509cd730a3158075c9b05c19a7a3260)；具体文件证据留在内部核验记录） 与 DILR 豁免定义（源码定位：OrekiDawson/AD-Oreki-Edition-Web@91d5bed01509cd730a3158075c9b05c19a7a3260/src/core/secret-formula/reality/perks.js#L215；[固定提交 91d5bed](https://github.com/OrekiDawson/AD-Oreki-Edition-Web/commit/91d5bed01509cd730a3158075c9b05c19a7a3260)；具体文件证据留在内部核验记录）（提交 `91d5bed01509cd730a3158075c9b05c19a7a3260`，2026-11-24 核对）。
 
 ## 相关条目
 

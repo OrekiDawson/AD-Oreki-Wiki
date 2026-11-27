@@ -45,9 +45,9 @@ Oreki Edition 的改动大致分成两类：一类改变数字或解锁门槛，
 
 ## 参考来源
 
-- V 原版门槛（源码定位：IvarK/AntimatterDimensionsSourceCode@5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/secret-formula/celestials/v.js；具体文件证据留在内部核验记录）
-- 虚构升级原版门槛（源码定位：IvarK/AntimatterDimensionsSourceCode@5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/secret-formula/reality/imaginary-upgrades.js；具体文件证据留在内部核验记录）
-- 莱特拉原版实现（源码定位：IvarK/AntimatterDimensionsSourceCode@5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/celestials/laitela/laitela.js；具体文件证据留在内部核验记录）
+- V 原版门槛（源码定位：IvarK/AntimatterDimensionsSourceCode@5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/secret-formula/celestials/v.js；[固定提交 5409e32](https://github.com/IvarK/AntimatterDimensionsSourceCode/commit/5409e320cecef96a917cca1dfb68f1f183e499ca)；具体文件证据留在内部核验记录）
+- 虚构升级原版门槛（源码定位：IvarK/AntimatterDimensionsSourceCode@5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/secret-formula/reality/imaginary-upgrades.js；[固定提交 5409e32](https://github.com/IvarK/AntimatterDimensionsSourceCode/commit/5409e320cecef96a917cca1dfb68f1f183e499ca)；具体文件证据留在内部核验记录）
+- 莱特拉原版实现（源码定位：IvarK/AntimatterDimensionsSourceCode@5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/celestials/laitela/laitela.js；[固定提交 5409e32](https://github.com/IvarK/AntimatterDimensionsSourceCode/commit/5409e320cecef96a917cca1dfb68f1f183e499ca)；具体文件证据留在内部核验记录）
 - [原版社区 Wiki](https://antimatterdimensions.wiki.gg/wiki/Antimatter_Dimensions)
 
 继续阅读：[Android 与 Web：版本和行为差异](/player/gameplay/platform-differences) · [天神系统](/player/gameplay/celestials) · [原版玩法译文](/player/original/)

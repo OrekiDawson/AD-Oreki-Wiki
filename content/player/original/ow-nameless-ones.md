@@ -67,7 +67,7 @@ $$\max\left ( 1,~\frac{\left\lfloor RealTime_{\text{Stored}} \right\rfloor}{\max
 | FREE_TICKSPEED_SOFTCAP | 1e35          | 把[时间维度](/player/original/ow-time-dimensions)对[计数频率升级](https://antimatterdimensions.wiki.gg/wiki/Tickspeed)的软上限延后 100,000 |
 | RUN                    | 1e40          | 解锁[无名氏的现实](#现实)（需要等级 5,000 的符文与一个 $100\%$ 稀有度的符文）                                                              |
 
-[^id-naming]: 这里的命名方式与大多数其他 ID 不同，用的是常量的 SCREAMING_SNAKE_CASE 命名法，而不是变量常用的 camelCase。原因是无名氏的升级信息直接写在源代码中对应的文件（源码定位：IvarK/AntimatterDimensionsSourceCode@master/src/core/celestials/enslaved.js；具体文件证据留在内部核验记录）里，而不像通常那样放在外部委托文件（一般位于 secret-formula（源码定位：IvarK/AntimatterDimensionsSourceCode@master/src/core/secret-formula；具体文件证据留在内部核验记录））中。
+[^id-naming]: 这里的命名方式与大多数其他 ID 不同，用的是常量的 SCREAMING_SNAKE_CASE 命名法，而不是变量常用的 camelCase。原因是无名氏的升级信息直接写在源代码中对应的文件（源码定位：IvarK/AntimatterDimensionsSourceCode@master/src/core/celestials/enslaved.js；具体文件证据留在内部核验记录）里，而不像通常那样放在外部委托文件（一般位于 secret-formula（源码定位：IvarK/AntimatterDimensionsSourceCode@master/src/core/secret-formula；具体文件证据留在内部核验记录）中。
 
 第二项升级的额外要求必须同时满足，但可以用两个不同的符文分别达成。此外，这些要求只需满足一次。
 

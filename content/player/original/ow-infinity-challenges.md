@@ -56,7 +56,7 @@ aliases:
 
 - 原文：[Infinity Challenges](https://antimatterdimensions.wiki.gg/index.php?title=Infinity_Challenges&oldid=3359)（修订 ID 3359；最后编辑者 KrutarMarsons；抓取于 2026-11-16T00:10:00+08:00）
 - 来源访问说明：固定修订在 2026-11-23 复核时受 Cloudflare 403 限制；修订号与正文通过相邻修订、Internet Archive 快照、当前页面及上游源码交叉核对。
-- 源码核对：infinity-challenges.js（源码定位：IvarK/AntimatterDimensionsSourceCode@5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/infinity-challenges.js；具体文件证据留在内部核验记录）、挑战配置（源码定位：IvarK/AntimatterDimensionsSourceCode@5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/secret-formula/challenges/infinity-challenges.js；具体文件证据留在内部核验记录）（固定提交 `5409e32`；核对解锁阈值、目标、奖励、下降公式与倍率）。
+- 源码核对：infinity-challenges.js（源码定位：IvarK/AntimatterDimensionsSourceCode@5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/infinity-challenges.js；[固定提交 5409e32](https://github.com/IvarK/AntimatterDimensionsSourceCode/commit/5409e320cecef96a917cca1dfb68f1f183e499ca)；具体文件证据留在内部核验记录）、挑战配置（源码定位：IvarK/AntimatterDimensionsSourceCode@5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/secret-formula/challenges/infinity-challenges.js；[固定提交 5409e32](https://github.com/IvarK/AntimatterDimensionsSourceCode/commit/5409e320cecef96a917cca1dfb68f1f183e499ca)；具体文件证据留在内部核验记录）（固定提交 `5409e32`；核对解锁阈值、目标、奖励、下降公式与倍率）。
 - 原文贡献者与修订历史：[页面历史](https://antimatterdimensions.wiki.gg/index.php?title=Infinity_Challenges&action=history)
 - 许可：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。本页为简体中文翻译（改编），已修改：翻译正文与表格、统一术语、公式保留原式、界面图与信息框未转载；本页按相同许可共享。
 - 原文图片未转载：原页含桌面现代/经典与移动版界面截图（Break-infinitychallenges-interface--*），此处仅保留文字说明。
