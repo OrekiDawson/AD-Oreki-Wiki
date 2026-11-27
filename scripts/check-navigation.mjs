@@ -127,6 +127,11 @@ if (navigationModel) {
       if (childRoutes.has(route)) errors.push("导航条目重复：" + route)
       childRoutes.add(route)
     }
+    // 反向检查真实直接子页面，新增条目不能悄悄落到默认排序末尾。
+    for (const route of formalRoutes) {
+      if (route.startsWith('/' + parent + '/') && route.split('/').length === parent.split('/').length + 2 && !children.includes(route.slice(1)))
+        errors.push('正式子页面未登记语义排序：' + route)
+    }
     assertOrder(children, parent)
   }
   for (const [parent, groups] of Object.entries(navigationModel.topicGroups || {})) {
