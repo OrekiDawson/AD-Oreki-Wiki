@@ -214,7 +214,7 @@ for (const file of [playerHome, developerHome, rootHome]) {
 const aiIndex = "content/developer/ai-summaries/index.md"
 if (fs.existsSync(aiIndex)) {
   const text = fs.readFileSync(aiIndex, "utf8")
-  if (!text.includes("<details>") || !text.includes("审核日期")) {
+  if (!text.includes("<details>") || !/已审核摘要|审核状态|已审核/.test(text)) {
     fail("开发者 AI Summary 索引缺少默认折叠或审核标识: " + aiIndex)
   }
 }
