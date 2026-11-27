@@ -1,5 +1,6 @@
 import fs from "node:fs"
 import path from "node:path"
+import { ORIGINAL_NAMESPACE, ORIGINAL_ROUTE_PREFIX } from "./wiki-paths.mjs"
 
 const root = process.cwd()
 const contentRoot = path.join(root, "content")
@@ -33,7 +34,7 @@ const limitFor = (kind, route) => {
   if (kind === "H1") return categoryRoutes.has(route) ? 8 : isTask(route) ? 20 : 16
   return kind === "H2" ? 12 : 16
 }
-const bareOriginalTitle = (title, route) => route.startsWith("/player/original/") ? title.replace(/^原版:/, "") : title
+const bareOriginalTitle = (title, route) => route.startsWith(ORIGINAL_ROUTE_PREFIX) ? title.replace(/^原版:/, "") : title
 const record = ({ kind, route, file, line, title }) => {
   const actual = width(title)
   const limit = limitFor(kind, route)
@@ -47,7 +48,7 @@ const record = ({ kind, route, file, line, title }) => {
   if (kind === "H1") {
   // 原版译文拥有独立命名空间：其中文标题可以与玩家专区原创机制页相同，
   // 但同一命名空间内仍必须保持唯一，避免把命名空间例外变成重复标题豁免。
-  const duplicateKey = route.startsWith("/player/original/") ? `original:${title}` : title
+  const duplicateKey = route.startsWith(ORIGINAL_ROUTE_PREFIX) ? `${ORIGINAL_NAMESPACE}${title}` : title
   const owner = seen.get(duplicateKey)
   if (owner) violations.push({ kind: "DUPLICATE_H1", route, file, line, title, actual, limit, duplicate: owner })
   else seen.set(duplicateKey, route)

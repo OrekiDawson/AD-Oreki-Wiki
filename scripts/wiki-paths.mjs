@@ -1,6 +1,8 @@
 export const PLAYER_DIR = "content/player/"
 export const ORIGINAL_TRANSLATION_DIR = PLAYER_DIR + "original/"
 export const ORIGINAL_TITLE_PREFIX = "原版:"
+export const ORIGINAL_ROUTE_PREFIX = "/player/original/"
+export const ORIGINAL_NAMESPACE = "original:"
 export const RULE_PAGE_TITLE = "反物质维度 MOD：知识库规则"
 export const POLICY_PAGE_TITLE = "反物质维度 MOD：本站不是什么"
 
