@@ -89,10 +89,6 @@ $$V=\left(\frac{Level}{10000}\right)^3 \times 10000=\frac{Level^3}{10^8}$$
 
 主条目：[符文](https://antimatterdimensions.wiki.gg/wiki/Glyphs)（符文总览条目尚未翻译，可查看原站条目）。现实炼金反应达到 1 点后即可生成一枚现实符文；产物等级等于当时消耗完资源后的数量取整，稀有度固定为 100%。现实符文拥有独立效果，部分效果只在较高等级开放，并且同一时间只能装备一枚。
 
-## 琐事
-
-原文此节为空。
-
 ## 来源与许可
 
 - 原文：[Glyph Alchemy](https://antimatterdimensions.wiki.gg/index.php?title=Glyph_Alchemy&oldid=3388)（修订 ID 3388；抓取于 2026-11-15）
