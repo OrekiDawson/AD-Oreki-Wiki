@@ -1,17 +1,52 @@
 {
   "excludedFromExplorer": {
-    "exact": ["/tags"],
-    "prefixes": ["/tags/", "/ai-drafts/", "/developer/history/", "/redirect/"]
+    "exact": [
+      "/tags"
+    ],
+    "prefixes": [
+      "/tags/",
+      "/ai-drafts/",
+      "/developer/history/",
+      "/redirect/"
+    ]
   },
   "categories": {
     "root": [
-      { "key": "player", "route": "/player", "label": "玩家专区" },
-      { "key": "developer", "route": "/developer", "label": "开发者专区" },
-      { "key": "all-entries", "route": "/all-entries", "label": "全部条目" },
-      { "key": "wiki-rules", "route": "/wiki-rules", "label": "知识库规则" },
-      { "key": "wiki-not", "route": "/wiki-not", "label": "本站不是什么" },
-      { "key": "copyright", "route": "/copyright", "label": "版权与许可" },
-      { "key": "how-to-use", "route": "/how-to-use", "label": "本站使用说明" }
+      {
+        "key": "player",
+        "route": "/player",
+        "label": "玩家专区"
+      },
+      {
+        "key": "developer",
+        "route": "/developer",
+        "label": "开发者专区"
+      },
+      {
+        "key": "all-entries",
+        "route": "/all-entries",
+        "label": "全部条目"
+      },
+      {
+        "key": "wiki-rules",
+        "route": "/wiki-rules",
+        "label": "知识库规则"
+      },
+      {
+        "key": "wiki-not",
+        "route": "/wiki-not",
+        "label": "本站不是什么"
+      },
+      {
+        "key": "copyright",
+        "route": "/copyright",
+        "label": "版权与许可"
+      },
+      {
+        "key": "how-to-use",
+        "route": "/how-to-use",
+        "label": "本站使用说明"
+      }
     ]
   },
   "folderLabels": {
@@ -23,7 +58,7 @@
     "how-to-use": "本站使用说明",
     "developer/first-contribution": "第一次改动",
     "developer/project-overview": "项目概览",
-    "developer/architecture": "系统架构",
+    "developer/architecture": "架构与机制",
     "developer/reverse-engineering": "源码与逆向",
     "developer/build": "构建与发布",
     "developer/troubleshooting": "故障排查",
@@ -48,6 +83,70 @@
     "developer/current/known-issues": "已知问题",
     "developer/current/project-status": "双端状态",
     "developer/current/release-status": "发布资格",
-    "developer/references/source-index": "来源索引"
+    "developer/references/source-index": "来源索引",
+    "developer/architecture/directory-migration": "Android 目录迁移",
+    "developer/architecture/save-progress-comparator": "存档进度比较",
+    "developer/architecture/scheduler-state-machine": "调度器状态机",
+    "developer/architecture/automation-ownership": "自动化所有权",
+    "developer/architecture/tutorial-content-pipeline": "教程管线",
+    "developer/architecture/gui-stage-gates": "Android 阶段门禁",
+    "developer/architecture/android-gui-sync": "Android 界面同步",
+    "developer/architecture/derived-state-invalidation": "派生状态",
+    "developer/architecture/effect-model": "效果模型",
+    "developer/architecture/web-ui-reactivity": "Web 界面响应",
+    "developer/architecture/web-offline-simulation": "Web 离线进度",
+    "developer/reverse-engineering/smali-recovery": "Smali 接口恢复",
+    "developer/reverse-engineering/decompilation": "反编译与源码恢复",
+    "developer/build/build-mod-retirement": "旧构建脚本退役",
+    "developer/build/artifact-provenance": "构建溯源",
+    "developer/build/signature-backfill": "DEX 签名回填",
+    "developer/troubleshooting/web-module-startup": "Web 启动链",
+    "developer/troubleshooting/web-pages-artifact-integrity": "Pages 产物校验"
+  },
+  "childOrder": {
+    "developer/architecture": [
+      "developer/architecture/parity",
+      "developer/architecture/numeric-model",
+      "developer/architecture/save-progress-comparator",
+      "developer/architecture/effect-model",
+      "developer/architecture/derived-state-invalidation",
+      "developer/architecture/scheduler-state-machine",
+      "developer/architecture/automation-ownership",
+      "developer/architecture/celestial-implementation",
+      "developer/architecture/tutorial-content-pipeline",
+      "developer/architecture/android",
+      "developer/architecture/directory-migration",
+      "developer/architecture/kotlin-runtime",
+      "developer/architecture/gui-stage-gates",
+      "developer/architecture/android-gui-sync",
+      "developer/architecture/web",
+      "developer/architecture/web-ui-reactivity",
+      "developer/architecture/web-offline-simulation"
+    ],
+    "developer/reverse-engineering": [
+      "developer/reverse-engineering/decompilation",
+      "developer/reverse-engineering/smali-recovery",
+      "developer/reverse-engineering/dex-abi"
+    ],
+    "developer/build": [
+      "developer/build/agp",
+      "developer/build/build-mod-retirement",
+      "developer/build/r8",
+      "developer/build/apk-signing",
+      "developer/build/signature-backfill",
+      "developer/build/artifact-provenance",
+      "developer/build/ci-cd"
+    ],
+    "developer/troubleshooting": [
+      "developer/troubleshooting/save-compatibility",
+      "developer/troubleshooting/coroutine-abi",
+      "developer/troubleshooting/web-module-startup",
+      "developer/troubleshooting/web-pages-artifact-integrity"
+    ],
+    "developer/current": [
+      "developer/current/project-status",
+      "developer/current/known-issues",
+      "developer/current/release-status"
+    ]
   }
 }
