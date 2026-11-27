@@ -8,6 +8,11 @@ tags:
 
 这里显示最近进入当前内容树的正式条目；文章的具体修订记录仍以页面正文与仓库历史为准。
 
+- [玩法机制](/player/gameplay)
+- [符文炼金](/player/original/ow-glyph-alchemy)
+- [记数法](/player/original/ow-notations)
+- [薇](/player/original/ow-v)
+- [反物质维度（游戏机制）](/player/original/ow-antimatter-dimensions)
 - [反物质维度MOD Wiki:知识库规则](/wiki-rules)
 - [玩家专区](/player)
 - [反物质维度：游戏总览与阅读路线](/player/antimatter-dimensions)
@@ -15,7 +20,6 @@ tags:
 - [Android：Release、安装与升级](/player/download-and-version/android)
 - [Web：入口、缓存与版本识别](/player/download-and-version/web)
 - [存档与兼容性](/player/faq/saves-and-compatibility)
-- [玩法机制](/player/gameplay)
 - [智能自动购买器](/player/gameplay/automation)
 - [特殊现实：准备、限制与排障](/player/gameplay/celestial-realities)
 - [挑战完成判定与卡关排障](/player/gameplay/challenge-troubleshooting)
@@ -28,7 +32,3 @@ tags:
 - [时间研究与现实：后永恒阶段阅读地图](/player/gameplay/reality-time-studies)
 - [开始游玩 Oreki Edition：入门阅读地图](/player/getting-started)
 - [第一次大坍缩与进入无限](/player/getting-started/first-crunch)
-- [Oreki Edition 介绍](/player/mods)
-- [维度献祭](/player/original/ow-dimensional-sacrifice)
-- [复制器](/player/original/ow-replicanti)
-- [反物质维度（游戏机制）](/player/original/ow-antimatter-dimensions)
