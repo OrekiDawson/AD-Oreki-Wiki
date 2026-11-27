@@ -35,7 +35,7 @@ Vue 计算属性和 DOM 更新
 
 `EventHub` 的监听器还记录所属 `target`。组件销毁时，`EventHub.ui.offAll(this)` 会移除该组件的监听，避免弹窗关闭后仍收到更新。这个清理动作看似只是内存管理，实际上也保护了状态正确性：一个已经不存在的组件如果继续响应事件，可能读到新存档并操作旧引用，表现为偶发的重复弹窗或控制台异常。
 
-## `GameUI.flushEvents()` 延迟
+## `GameUI.flushEvents()`
 
 `src/core/ui.js` 中的 `GameUI.dispatch` 不会每次调用都立即遍历所有组件。它先去重同名事件；如果尚未安排 flush，就使用 `Promise.resolve().then(...)` 安排一次微任务。随后 `flushEvents()` 批量派发已收集的事件，最后统一发出 `GAME_EVENT.UPDATE`。
 

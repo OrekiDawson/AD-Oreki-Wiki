@@ -43,7 +43,7 @@ Release 构建默认要求 keys/oreki.jks 存在，并由 OREKI_KS_PASS 提供�
 
 这四层故意不合并成一个绿色按钮：签名正确不能证明存档正确，游戏跑通不能证明发布包来自当前源码，GitHub Release 存在也不能证明所有渠道都拿到了同一字节流。
 
-## 读懂当前公开版本与开发候选
+## 公开版本与候选
 
 Android 仓库当前公开的稳定 Release 是 [Android 3.21.0（a12b5cd6）](https://github.com/OrekiDawson/AD-Oreki-Edition-Android/releases/tag/android-update-3.21.0-a12b5cd6)。其 APK AD-Oreki-Edition-3.21.0.apk 的 SHA-256 为：
 

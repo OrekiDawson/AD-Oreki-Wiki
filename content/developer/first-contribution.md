@@ -35,7 +35,7 @@ python --version
 
 Windows PowerShell 使用 `./gradlew.bat --version`。项目的 Kotlin/Java 编译目标是 Java 17；`compileSdk`、`targetSdk`、`minSdk` 和 ABI 以当前 `app/build.gradle.kts` 为准，不要照抄旧文章里的数字。
 
-## 读一条比目录更有用的调用链
+## 调用链示例
 
 从 `OrekiStageAuto.kt`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiStageAuto.kt；具体文件证据留在内部核验记录） 的自动购买 tick 开始，关注三个问题：谁决定现在能不能动作，谁调用原版对象，谁把结果告诉下一次 tick。
 

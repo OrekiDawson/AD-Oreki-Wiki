@@ -33,7 +33,7 @@ Java 的字段描述符会把 `List<DarkMatterDimensionState>` 擦除成普通�
 
 项目中的 `scripts/agp/sig_backfill.py` 负责这一类元数据处理，`docs/AGP_SIGNATURE_BACKFILL.md` 记录了它接入 AGP 完整游戏链的背景和边界。脚本的价值在于把回填变成可重复的构建步骤，而不是把一次手工修 JAR 当作永久解决方案。
 
-## 如何验证，而不是只看编译成功
+## 验证签名回填
 
 编译成功只能证明 Java/Kotlin 语法和类引用成立，不能证明存档类型恢复。建议按三个层次验证：
 
