@@ -9,6 +9,18 @@ aliases:
   - "/gameplay/eternity"
 ---
 
+<table class="infobox">
+<caption>永恒 · 原版机制速查</caption>
+<tbody>
+<tr><th scope="row">英文名称</th><td>Eternity</td></tr>
+<tr><th scope="row">重置层级</th><td>第二层</td></tr>
+<tr><th scope="row">基础门槛</th><td>约 1.80e308 IP，并满足无限维度条件</td></tr>
+<tr><th scope="row">主要资源</th><td>永恒点数（EP）、永恒次数</td></tr>
+<tr><th scope="row">新系统</th><td>时间研究、永恒升级、里程碑</td></tr>
+<tr><th scope="row">后续阶段</th><td><a class="internal" href="/player/gameplay/reality">现实</a></td></tr>
+</tbody>
+</table>
+
 第一次无限时，1.80e308 是反物质的门槛；到了永恒之前，游戏要求你用无限阶段积累出同数量级的无限点数。这个重复不是把旧阶段原样再玩一遍：IP 已经从一次结算奖励变成下一层的生产预算，永恒会把预算和新的生产链连接起来。
 
 永恒（Eternity）是第二个主要重置层。你即将失去大半个无限阶段，却会拿到永恒点数（EP）与永恒次数。无限不再是最高层的成就，而成了永恒中的一段普通过程。
@@ -64,6 +76,11 @@ $$10^x\longmapsto10^{x^{0.75}}.$$
 原版首次开放膨胀通常要求累计 12,900 TT，完成 EC11、EC12 各五次，并支付 5,000 TT。膨胀永恒产生超光速粒子，粒子生产膨胀时间，再用于膨胀升级。粒子的数量取决于最高反物质和倍率，所以原地反复完成同样水平的膨胀永恒并不会持续产生新的粒子。
 
 最后几个时间维度在这条路上开放。永恒之后还有一个新的名字：[现实](/player/gameplay/reality)；而时间研究的互斥分叉与挑战入口，集中见[时间研究](/player/gameplay/time-studies)。
+
+<nav class="navbox" aria-label="成长阶段">
+<p class="navbox-title">成长阶段</p>
+<p><a class="internal" href="/player/gameplay/stage-progression">成长路线</a> · <a class="internal" href="/player/gameplay/infinity">无限</a> · <strong aria-current="page">永恒</strong> · <a class="internal" href="/player/gameplay/reality">现实</a> · <a class="internal" href="/player/gameplay/celestials">天神</a></p>
+</nav>
 
 ## 资料来源
 - [Eternity](https://antimatterdimensions.wiki.gg/index.php?title=Eternity&oldid=3118)、永恒奖励与重置（源码定位：IvarK/AntimatterDimensionsSourceCode@5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/eternity.js）。

@@ -16,18 +16,29 @@ tags:
 
 不要把一个布尔值 `enabled` 当成完整的自动化状态。一个可排查的调度周期至少有四步：
 
-```text
-读取快照 → 产生候选动作 → 通过合法性门 → 执行并记录结果
-    ↑                                               │
-    └────────────── 重置或状态变化后重新读取 ─────────┘
-```
+<figure class="navbox">
+<figcaption class="navbox-title">一次调度周期（概念模型）</figcaption>
+<ol>
+<li><strong>读取快照</strong>：阶段、资源、历史和受管状态。</li>
+<li><strong>产生候选</strong>：依据目标选择可能的操作。</li>
+<li><strong>合法性检查</strong>：通过资源、阶段、挑战及策略门。</li>
+<li><strong>执行与确认</strong>：调用游戏入口，核对真实状态变化并记录结果。</li>
+</ol>
+<p>↻ 状态变化或重置后，回到第一步重新读取；被门禁挡住的候选不执行。</p>
+</figure>
 
 候选动作只是“现在可能值得尝试”的想法，不是已经获得许可。比如“购买维度”“执行无限”“恢复自动器配置”都可能进入候选集合，但还要通过当前阶段、资源、挑战规则、自动化开关和动作冷却等条件。执行后也不能只记“调用过”：结果至少应区分：
 
-- `acted`：真实游戏状态发生了预期改变；
-- `no-op`：调用合法，但当前没有可改变的东西；
-- `fail`：调用遇到异常或适配边界拒绝；
-- `blocked`：在执行前被阶段、资源或策略门挡住。
+<table class="wikitable">
+<caption>调度结果与判定边界</caption>
+<thead><tr><th scope="col">结果</th><th scope="col">判定</th><th scope="col">含义</th></tr></thead>
+<tbody>
+<tr><th scope="row"><code>acted</code></th><td>预期状态真实改变</td><td>完成有效动作</td></tr>
+<tr><th scope="row"><code>no-op</code></th><td>合法调用，但状态未改变</td><td>不是进度</td></tr>
+<tr><th scope="row"><code>fail</code></th><td>异常或适配边界拒绝</td><td>需要诊断</td></tr>
+<tr><th scope="row"><code>blocked</code></th><td>执行前未通过门禁</td><td>不调用游戏操作</td></tr>
+</tbody>
+</table>
 
 这四种结果的后续节拍不同。把 `no-op` 当成成功，会让调度器以为自己在推进；把 `blocked` 当成异常，会把正常等待误报成崩溃；把 `fail` 当成资源不足，又会掩盖 ABI 或调用链问题。
 
