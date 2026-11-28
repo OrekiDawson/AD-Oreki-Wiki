@@ -64,7 +64,7 @@ Android 3.21 基线的 `BigDouble.smali`（源码定位：OrekiDawson/AD-Oreki-E
 
 最后一步不是排版，而是保证后续比较和显示都能假设尾数处在约定范围内。
 
-![尾数和指数的乘法及归一化过程](/static/wiki-mantissa-exponent.svg)
+![尾数和指数的乘法及归一化过程](/static/尾数与指数乘法归一化.svg)
 
 *图：上文乘法示例的可视化版本，演示规范化的数学思想，不代替实际大数库的精度规则。*
 

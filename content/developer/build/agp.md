@@ -38,7 +38,7 @@ Android 的构建不是“把 Kotlin 编译一下”。对本 MOD 来说，APK �
 
 可以把变体生命周期画成这样：
 
-![从 Gradle 配置到 APK 产物的构建流程](/static/wiki-agp-pipeline.svg)
+![从 Gradle 配置到 APK 产物的构建流程](/static/安卓应用构建流程.svg)
 
 *图：按本文固定源码基线抽象的构建流程，不代表当前提交的构建或签名验收结果。*
 
