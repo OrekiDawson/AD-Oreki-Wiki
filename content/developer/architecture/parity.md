@@ -13,7 +13,7 @@ Android 和 Web 不可能共享同一套对象：Web 在浏览器里维护 JavaS
 
 可以把它写成一个更实际的契约：
 
-![Android 和 Web 各自执行游戏循环并比较共同结算检查点](/static/wiki-parity-contract.svg)
+![Android 和 Web 各自执行游戏循环并比较共同结算检查点](/static/双端行为一致性契约.svg)
 
 *图：这是应达到的跨端行为契约，不代表某个版本已经通过双端测试。*
 
