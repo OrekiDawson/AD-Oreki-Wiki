@@ -39,7 +39,10 @@ const normalize = (value, base = siteBase) => {
   try {
     const url = new URL(value, base)
     if (url.origin !== siteBase.origin || !url.pathname.startsWith(siteBase.pathname)) return null
-    return "/" + decodeURI(url.pathname.slice(siteBase.pathname.length)).replace(/\/+$/, "")
+    const raw = url.pathname.slice(siteBase.pathname.length)
+    let decoded = raw
+    try { decoded = decodeURI(raw) } catch { /* retain malformed escapes for exact comparison */ }
+    return "/" + decoded.replace(/\/+$/, "")
   } catch { return null }
 }
 const normalizeSlug = slug => "/" + slug.replace(/^\/+/, "").replace(/(?:^|\/)index$/, "").replace(/\/+$/, "")
@@ -52,6 +55,8 @@ const probeUrl = new URL(probe, siteBase)
 if (normalize(probeUrl.href) !== probeRoute ||
     normalize(probe, siteBase) !== probeRoute ||
     normalizeSlug(probe) !== probeRoute ||
+    normalize("archive%broken", siteBase) !== "/archive%broken" ||
+    normalize("archive%E4", siteBase) !== "/archive%E4" ||
     normalize(new URL(probe + "/child", siteBase).href) === probeRoute ||
     normalize(new URL(probe, "https://example.invalid/").href) !== null)
   throw new Error("归档路由与 baseUrl 归一化一致性检查失败")

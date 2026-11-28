@@ -23,6 +23,7 @@ const NAVIGATION_MODEL = JSON.parse(
   fs.readFileSync(path.join(__dirname, 'navigation-model.json'), 'utf8'),
 );
 const EXPECTED_SIDEBAR = NAVIGATION_MODEL.categories.root.map((entry) => entry.label);
+const EXPECTED_GROUPS = [...new Set([NAVIGATION_MODEL.stationLabel, ...Object.values(NAVIGATION_MODEL.topicGroups).flatMap(groups => groups.map(group => group.label))])];
 const normalizeRoute = (value) => {
   try { return new URL(value, BASE).pathname.replace(/\/$/, '') || '/'; }
   catch { return String(value).split('#')[0].replace(/\/$/, '') || '/'; }
@@ -223,7 +224,7 @@ async function run() {
     if (!sidebar.scrollable) results.errors.push('sidebar-not-independently-scrollable');
     if (sidebar.duplicateGroups.length) results.errors.push('sidebar-redundant-groups:' + sidebar.duplicateGroups.join(','));
     if (sidebar.indentedGroups.length) results.errors.push('sidebar-extra-group-indent:' + sidebar.indentedGroups.join(','));
-    for (const label of ['站务', '双端共通机制', 'Android', 'Web', '基础机制', '天神与后期', '成长与重置', '挑战与通用系统', 'MOD 差异'])
+    for (const label of EXPECTED_GROUPS)
       if (!sidebar.groups.includes(label)) results.errors.push('missing-topic-group:' + label);
   }
 
@@ -417,7 +418,7 @@ async function run() {
     if (results.mobile.sidebar.items.some((i) => i.truncated)) bad.push('sidebar-truncated');
     if (!results.mobile.sidebar.items.some(i => i.label === '玩家专区' && i.inViewport)) bad.push('sidebar-visibility');
     if (!results.mobile.sidebar.scrollable || !results.mobile.sidebar.scrollIndependent) bad.push('sidebar-independent-scroll');
-    for (const label of ['站务', '双端共通机制', 'Android', 'Web', '基础机制', '天神与后期'])
+    for (const label of EXPECTED_GROUPS)
       if (!results.mobile.sidebar.groups.includes(label)) bad.push('missing-topic-group:' + label);
   }
   if (!results.mobile.sidebarCollapsed) bad.push('sidebar-collapse');
@@ -425,7 +426,7 @@ async function run() {
     !results.mobile.sidebarActive.includes('/player/gameplay/challenges')) bad.push('sidebar-active');
   if (!results.mobile.motion || results.mobile.motion.progress || results.mobile.motion.smooth !== 'auto') bad.push('real-navigation-motion');
   if (!results.mobile.relatedNav) bad.push('related-navigation-missing');
-  if (!results.desktop.topicGroups.includes('双端共通机制') || !results.desktop.topicGroups.includes('站务')) bad.push('desktop-topic-groups');
+  if (EXPECTED_GROUPS.some(label => !results.desktop.topicGroups.includes(label))) bad.push('desktop-topic-groups');
   if (!results.mobile.darkmodeToggled) bad.push('darkmode');
   if (results.mobile.frontendContract.tagLinks || results.mobile.frontendContract.tagLabels) bad.push('tag-index-leaked-in-explorer');
   if (results.mobile.frontendContract.emptyFolders) bad.push('empty-explorer-folder');

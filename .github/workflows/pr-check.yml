@@ -141,34 +141,60 @@ jobs:
       - run: node scripts/verify-build.mjs
         working-directory: .quartz-build
 
-      - name: Install pinned Playwright for browser acceptance
+      - name: Archive verified site for browser acceptance
+        run: tar -C .quartz-build -czf "$RUNNER_TEMP/wiki-public.tar.gz" public
+      - uses: actions/upload-artifact@v7
+        with:
+          name: wiki-verified-build
+          path: ${{ runner.temp }}/wiki-public.tar.gz
+          retention-days: 3
+          if-no-files-found: error
+
+  browser:
+    name: Wiki browser acceptance
+    needs: build
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+      - uses: actions/download-artifact@v4
+        with:
+          name: wiki-verified-build
+          path: ${{ runner.temp }}/wiki-build
+      - name: Extract verified site
+        run: tar -xzf "$RUNNER_TEMP/wiki-build/wiki-public.tar.gz" -C "$RUNNER_TEMP/wiki-build"
+      - name: Install pinned browser and static server
         run: |
-          npm install --prefix "$RUNNER_TEMP/wiki-playwright" --no-save --package-lock=false playwright@1.56.1
+          npm install --prefix "$RUNNER_TEMP/wiki-playwright" --no-save --package-lock=false playwright@1.56.1 serve@14.2.4
           "$RUNNER_TEMP/wiki-playwright/node_modules/.bin/playwright" install --with-deps chromium
       - name: Real mobile and desktop browser acceptance
-        working-directory: .quartz-build
         env:
           KB_URL: http://127.0.0.1:8081
           KB_OUT: evidence/playwright-mobile.json
         run: |
           set -euo pipefail
           export KB_PLAYWRIGHT="$RUNNER_TEMP/wiki-playwright/node_modules/playwright"
-          npx quartz build --serve --port 8081 > "$RUNNER_TEMP/wiki-serve.log" 2>&1 &
+          "$RUNNER_TEMP/wiki-playwright/node_modules/.bin/serve" "$RUNNER_TEMP/wiki-build/public" --listen tcp://127.0.0.1:8081 --no-clipboard > "$RUNNER_TEMP/wiki-serve.log" 2>&1 &
           server_pid=$!
           trap 'kill "$server_pid" 2>/dev/null || true' EXIT
-          for attempt in $(seq 1 90); do
+          for attempt in $(seq 1 30); do
             if curl --fail --silent "$KB_URL/" >/dev/null; then break; fi
             if ! kill -0 "$server_pid" 2>/dev/null; then cat "$RUNNER_TEMP/wiki-serve.log"; exit 1; fi
-            sleep 2
+            sleep 1
           done
           curl --fail --silent "$KB_URL/" >/dev/null || { cat "$RUNNER_TEMP/wiki-serve.log"; exit 1; }
-          node scripts/acceptance.cjs
+          node scripts/acceptance.cjs 2>&1 | tee "$RUNNER_TEMP/wiki-acceptance.log"
       - name: Retain browser acceptance evidence
         if: always()
         uses: actions/upload-artifact@v7
         with:
           name: wiki-browser-acceptance
           path: |
-            .quartz-build/evidence/playwright-mobile.json
+            evidence/playwright-mobile.json
             ${{ runner.temp }}/wiki-serve.log
+            ${{ runner.temp }}/wiki-acceptance.log
           if-no-files-found: warn
+          retention-days: 7
