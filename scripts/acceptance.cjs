@@ -77,11 +77,27 @@ const NEW_PAGES = [
 const CATEGORY_LABELS = ['玩家专区', '开发者专区', '玩法机制', '架构与机制', '运行证据'];
 const transitionsDisabled = (state) => {
   if (!state) return false;
-  const properties = String(state.transitionProperty || '').split(',').map((value) => value.trim());
-  const durations = String(state.transitionDuration || '').split(',').map((value) => Number.parseFloat(value) || 0);
-  return properties.length > 0 && properties.every((property) => property === 'none')
-    || durations.length > 0 && durations.every((duration) => duration === 0);
+  const properties = state.transitionProperty.split(',').map(value => value.trim());
+  const zeroTimes = value => value.split(',').every(time => Number.parseFloat(time) === 0);
+  return properties.every(property => property === 'none')
+    || (zeroTimes(state.transitionDuration) && zeroTimes(state.transitionDelay));
 };
+const readDrawer = page => page.evaluate(() => {
+  const drawer = document.querySelector('.explorer-content');
+  const explorer = document.querySelector('.explorer');
+  if (!drawer || !explorer) return null;
+  const style = getComputedStyle(drawer);
+  const matrix = new DOMMatrixReadOnly(style.transform === 'none' ? undefined : style.transform);
+  return {
+    transform: style.transform, x: matrix.m41, identity: matrix.isIdentity,
+    viewportWidth: window.innerWidth, right: drawer.getBoundingClientRect().right,
+    transitionProperty: style.transitionProperty, transitionDuration: style.transitionDuration,
+    transitionDelay: style.transitionDelay,
+    expanded: !explorer.classList.contains('collapsed'),
+    shiftedContent: [...document.querySelectorAll('.page > #quartz-body > :not(.sidebar.left:has(.explorer))')]
+      .some(el => !new DOMMatrixReadOnly(getComputedStyle(el).transform === 'none' ? undefined : getComputedStyle(el).transform).isIdentity),
+  };
+});
 
 
 async function run() {
@@ -105,7 +121,7 @@ async function run() {
   results.mobile.title = await page.title();
   results.mobile.explorerLinks = await page.locator('a[href*="player"], a[href*="developer"]').count();
   results.mobile.overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
-  results.mobile.frontendContract = await page.evaluate(() => {
+  results.mobile.frontendContract = await page.evaluate((routes) => {
     const explorer = document.querySelector('.explorer');
     const anchors = [...document.querySelectorAll('.explorer a')];
     const folders = [...document.querySelectorAll('.explorer .folder-outer')];
@@ -118,14 +134,14 @@ async function run() {
     return {
       tagLinks: anchors.filter((a) => /(^|\/)tags(?:\/|$)/i.test(a.getAttribute('href') || '')).length,
       tagLabels: anchors.filter((a) => /标签|tags?/i.test((a.textContent || '').trim())).length,
-      archivedLinks: anchors.filter((a) => archivedRoutes.has((a.getAttribute('href') || '').split('#')[0].replace(/\/$/, '') || '/')).length,
+      archivedLinks: anchors.filter((a) => a.origin === location.origin && routes.includes(a.pathname.replace(/\/+$/, '') || '/')).length,
       emptyFolders: folders.filter((folder) => !folder.querySelector('a[href]')).length,
       explorerInitialState: explorer ? (explorer.classList.contains('collapsed') ? 'collapsed' : 'expanded') : null,
       progress: styleOf('.navigation-progress'),
       transition: styleOf('.page-transition'),
       bodyFont: getComputedStyle(document.body).fontFamily,
     };
-  });
+  }, [...archivedRoutes]);
   if (results.mobile.frontendContract.tagLinks || results.mobile.frontendContract.tagLabels) results.errors.push('tag-index-leaked-in-explorer');
   if (results.mobile.frontendContract.archivedLinks) results.errors.push('archived-entry-leaked-in-explorer');
   if (results.mobile.frontendContract.emptyFolders) results.errors.push('empty-explorer-folder');
@@ -144,29 +160,16 @@ async function run() {
   // 移动端侧栏：真实 DOM 渲染顺序断言（不读配置文本）
   const sidebarToggle = page.locator('.explorer .explorer-toggle').first();
   if (await sidebarToggle.count()) {
-    const drawerBefore = await page.evaluate(() => {
-      const drawer = document.querySelector('.explorer-content');
-      if (!drawer) return null;
-      const style = getComputedStyle(drawer);
-      return { transform: style.transform, transition: style.transition };
-    });
-    await sidebarToggle.click({ force: true }).catch(() => {});
-    await page.waitForTimeout(50);
-    const drawerAfter = await page.evaluate(() => {
-      const drawer = document.querySelector('.explorer-content');
-      const explorer = document.querySelector('.explorer');
-      if (!drawer || !explorer) return null;
-      const style = getComputedStyle(drawer);
-      return {
-        transform: style.transform,
-        transition: style.transition,
-        transitionProperty: style.transitionProperty,
-        transitionDuration: style.transitionDuration,
-        expanded: !explorer.classList.contains('collapsed'),
-      };
-    });
+    const drawerBefore = await readDrawer(page);
+    await sidebarToggle.click();
+    const drawerAfter = await readDrawer(page);
     results.mobile.drawer = { before: drawerBefore, after: drawerAfter };
-    if (!drawerAfter?.expanded || !transitionsDisabled(drawerAfter)) results.errors.push('drawer-open-animation');
+    results.mobile.drawerInstant = drawerBefore?.expanded === false
+      && drawerBefore.x <= -drawerBefore.viewportWidth + 1 && drawerBefore.right <= 1
+      && drawerAfter?.expanded === true && drawerAfter.identity
+      && !drawerBefore.shiftedContent && !drawerAfter.shiftedContent
+      && transitionsDisabled(drawerBefore) && transitionsDisabled(drawerAfter);
+    if (!results.mobile.drawerInstant) results.errors.push('drawer-open-animation-or-content-shift');
   }
   const sidebar = await page.evaluate(() => {
     const ul = document.querySelector('.explorer-content ul.explorer-ul');
@@ -226,7 +229,9 @@ async function run() {
   await page.goto(BASE + '/player/gameplay/challenges', { waitUntil: 'load' });
   await page.waitForTimeout(900);
   const toggle2 = page.locator('.explorer .explorer-toggle').first();
-  if (await toggle2.count()) { await toggle2.click({ force: true }).catch(() => {}); await page.waitForTimeout(600); }
+  if (await toggle2.count() && (await readDrawer(page))?.expanded === false) {
+    await toggle2.click();
+  }
   results.mobile.sidebarActive = await page.evaluate(() => {
     const links = [...document.querySelectorAll('.explorer-content a.active, .explorer-content a.is-active')];
     return links.map((a) => a.pathname.replace(/\/$/, ''));
@@ -234,16 +239,18 @@ async function run() {
   if (!results.mobile.sidebarActive.some(href => new URL(href, BASE).pathname.replace(/\/$/, '') === '/player/gameplay/challenges')) {
     results.errors.push('sidebar-active-highlight');
   }
+  results.mobile.relatedNav = await page.locator('article .wiki-related-nav a[href]').count();
   const drawerLink = page.locator('.explorer-content a[href*="/player/"]').first();
   if (await drawerLink.count()) {
-    await drawerLink.click({ force: true }).catch(() => {});
-    await page.waitForTimeout(250);
-    const closedAfterLink = await page.evaluate(() => document.querySelector('.explorer')?.classList.contains('collapsed'));
-    results.mobile.drawerClosedAfterLink = closedAfterLink;
-    if (!closedAfterLink) results.errors.push('drawer-link-did-not-close');
+    const drawerTarget = await drawerLink.evaluate(a => a.pathname.replace(/\/+$/, '') || '/');
+    results.mobile.drawerLinkTarget = drawerTarget;
+    await drawerLink.click();
+    await page.waitForURL(url => (url.pathname.replace(/\/+$/, '') || '/') === drawerTarget);
+    const closedAfterLink = await readDrawer(page);
+    results.mobile.drawerClosedAfterLink = closedAfterLink?.expanded === false
+      && closedAfterLink.x <= -closedAfterLink.viewportWidth + 1 && closedAfterLink.right <= 1;
+    if (!results.mobile.drawerClosedAfterLink) results.errors.push('drawer-link-did-not-close');
   }
-  results.mobile.relatedNav = await page.locator('article .wiki-related-nav a[href]').count();
-  if (await toggle2.count()) { await toggle2.click({ force: true }).catch(() => {}); await page.waitForTimeout(400); }
 
   // 真实点击切页，观察加载条创建与滚动动画，不只检查静态 CSS。
   await page.goto(BASE + '/player/', { waitUntil: 'load' });
@@ -266,14 +273,15 @@ async function run() {
   }
   results.mobile.archivedNavAfterSpa = await page.evaluate((routes) => {
     const leaked = [...document.querySelectorAll('.explorer a[href]')]
-      .map((a) => (a.getAttribute('href') || '').split('#')[0].replace(/\/$/, '') || '/')
+      .filter(a => a.origin === location.origin)
+      .map(a => a.pathname.replace(/\/+$/, '') || '/')
       .filter((href) => routes.includes(href));
     return [...new Set(leaked)];
   }, [...archivedRoutes]);
   if (results.mobile.archivedNavAfterSpa.length) results.errors.push('archived-entry-leaked-after-spa');
   try {
     const searchIndex = await page.evaluate(async () => fetch('/static/contentIndex.json').then((response) => response.json()));
-    results.mobile.archivedSearchEntries = [...archivedRoutes].filter((route) => Object.keys(searchIndex).some((key) => normalizeRoute(key) === route));
+    results.mobile.archivedSearchEntries = [...archivedRoutes].filter((route) => Object.keys(searchIndex).some((key) => normalizeRoute('/' + key.replace(/^\/+/, '').replace(/(?:^|\/)index$/, '')) === route));
     if (results.mobile.archivedSearchEntries.length) results.errors.push('archived-entry-leaked-in-search-index');
   } catch (error) {
     results.errors.push('archive-search-index-unreadable');
@@ -371,15 +379,18 @@ async function run() {
   results.desktop.title = await dpage.title();
   results.desktop.overflow = await dpage.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
   results.desktop.hasSearch = (await dpage.locator('input[type="search"], input[placeholder]').count()) > 0;
+  const assertionErrors = [...results.errors];
   results.errors.push(...consoleErrors);
 
   fs.mkdirSync(path.dirname(OUT), { recursive: true });
   fs.writeFileSync(OUT, JSON.stringify(results, null, 1));
 
-  const bad = [];
+  const bad = [...assertionErrors];
+  if (!results.mobile.drawerInstant) bad.push('drawer-instant');
+  if (!results.mobile.drawerClosedAfterLink) bad.push('drawer-link-close');
   if (!results.mobile.title.includes('反物质维度')) bad.push('title');
   if (results.mobile.overflow > 2) bad.push('mobile-overflow:' + results.mobile.overflow);
-  if (!results.searches.length || results.searches.some((s) => s.hit === false)) bad.push('search');
+  if (!results.searches.length || results.searches.some((s) => s.hit !== true)) bad.push('search');
   if (results.categories.some((c) => !c.hit)) bad.push('category-labels');
   if (results.urls.some((u) => !u.ok)) bad.push('urls:' + results.urls.filter((u) => !u.ok).map((u) => u.url).join(','));
   if (results.mobile.aiDraftStatus !== 404) bad.push('ai-draft-public:' + results.mobile.aiDraftStatus);
@@ -409,7 +420,7 @@ async function run() {
   if (results.mobile.frontendContract.progress && results.mobile.frontendContract.progress.display !== 'none') bad.push('navigation-progress-visible');
   if (results.mobile.frontendContract.transition && (results.mobile.frontendContract.transition.animation !== 'none' || !/none/.test(results.mobile.frontendContract.transition.transition))) bad.push('page-transition-active');
   if (!/system-ui/i.test(results.mobile.frontendContract.bodyFont)) bad.push('system-font-not-applied');
-  if (results.errors.length > 3) bad.push('console-errors');
+  if (consoleErrors.length > 3) bad.push('console-errors');
   console.log(JSON.stringify({ bad, results }, null, 1).slice(0, 6000));
   await browser.close();
   process.exit(bad.length ? 1 : 0);

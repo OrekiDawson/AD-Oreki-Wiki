@@ -119,8 +119,11 @@ for (const f of files) {
   if (!fm.tags.length) fail("缺少 tags: " + f)
   if (fm.archive && fm.replacedBy && !/^\/?[\w/-]+$/.test(fm.replacedBy))
     fail("archive 页的 replaced_by 必须是站内规范路径: " + f)
-  if (fm.archive && fm.replacedBy === f.replace(/^content\//, "").replace(/\.md$/, ""))
-    fail("archive 页不得把自身作为 replaced_by: " + f)
+  if (fm.archive && fm.replacedBy) {
+    const self = f.replace(/^content\//, "").replace(/\.md$/, "").replace(/(?:^|\/)index$/, "")
+    const target = fm.replacedBy.replace(/^\/+|\/+$/g, "").replace(/(?:^|\/)index$/, "")
+    if (target === self) fail("archive 页不得把自身作为 replaced_by: " + f)
+  }
 
   // 标题与页面类型
   if (fm.title) {

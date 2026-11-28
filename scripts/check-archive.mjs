@@ -31,15 +31,25 @@ for (const file of contentFiles) {
   }
   archived.push({ file, route })
 }
-const normalize = (value) => {
-  try { return new URL(value, "https://wiki.oreki.net").pathname.replace(/\/$/, "") || "/" }
-  catch { return value.split("#")[0].replace(/\/$/, "") || "/" }
+const config = fs.readFileSync(path.join(root, "quartz.config.yaml"), "utf8")
+const configuredBase = scalar(config.split("\n").map(line => line.trimStart()).join("\n"), "baseUrl")
+if (!configuredBase) throw new Error("quartz.config.yaml 缺少 baseUrl")
+const siteBase = new URL("https://" + configuredBase.replace(/^https?:\/\//, "").replace(/\/+$/, "") + "/")
+const normalize = (value, base = siteBase) => {
+  try {
+    const url = new URL(value, base)
+    if (url.origin !== siteBase.origin || !url.pathname.startsWith(siteBase.pathname)) return null
+    return "/" + url.pathname.slice(siteBase.pathname.length).replace(/\/+$/, "")
+  } catch { return null }
 }
-const archivedRoutes = new Set(archived.map((item) => normalize(item.route)))
+const normalizeSlug = slug => "/" + slug.replace(/^\/+/, "").replace(/(?:^|\/)index$/, "").replace(/\/+$/, "")
+const xmlRoutes = text => [...text.matchAll(/<(loc|link|guid)(?:\s[^>]*)?>([^<]+)<\/\1>/gi)]
+  .map(([, , url]) => normalize(url.trim()))
+const archivedRoutes = new Set(archived.map(item => item.route))
 if (fs.existsSync(path.join(root, "content", "all-entries.md"))) {
   const indexText = fs.readFileSync(path.join(root, "content", "all-entries.md"), "utf8")
   for (const route of archivedRoutes)
-    if (indexText.split("\n").some((line) => normalize(line.match(/\]\((\/[^)#]+(?:#[^)]*)?)\)/)?.[1] || "") === route))
+    if ([...indexText.matchAll(/\]\((\/[^)#]+(?:#[^)]*)?)\)/g)].some(([, href]) => normalize(href, siteBase) === route))
       errors.push(`归档页面进入全部条目索引：${route}`)
 }
 if (built) {
@@ -47,19 +57,22 @@ if (built) {
   else {
     const htmlFiles = walk(publicDir).filter((file) => file.endsWith(".html"))
     for (const item of archived) {
-      const rel = item.route === "/" ? "index.html" : path.join(item.route.slice(1), "index.html")
-      if (fs.existsSync(path.join(publicDir, rel))) errors.push(`归档页面生成公开 HTML：${item.route}`)
+      const candidates = item.route === "/" ? ["index.html"] : [item.route.slice(1) + ".html", path.join(item.route.slice(1), "index.html")]
+      if (candidates.some(rel => fs.existsSync(path.join(publicDir, rel)))) errors.push(`归档页面生成公开 HTML：${item.route}`)
     }
     for (const file of [path.join(publicDir, "static", "contentIndex.json"), path.join(publicDir, "sitemap.xml"), path.join(publicDir, "index.xml"), path.join(publicDir, "rss.xml")]) if (fs.existsSync(file)) {
       const text = fs.readFileSync(file, "utf8")
-      for (const route of archivedRoutes) if (text.split(/\r?\n/).some((line) => normalize(line.match(/https?:\/\/[^<"']+|\/(?:[^\s<"']*)/i)?.[0] || "") === route))
+      const routes = new Set(file.endsWith(".json") ? Object.keys(JSON.parse(text)).map(normalizeSlug) : xmlRoutes(text))
+      for (const route of archivedRoutes) if (routes.has(route))
         errors.push(`归档页面进入公开索引：${route} -> ${path.relative(publicDir, file)}`)
     }
     for (const file of htmlFiles) {
       const text = fs.readFileSync(file, "utf8")
+      const rel = path.relative(publicDir, file).replaceAll("\\", "/")
+      const pageUrl = new URL(rel.replace(/(?:^|\/)index\.html$/, "/").replace(/^\//, "").replace(/\.html$/, ""), siteBase)
       for (const match of text.matchAll(/\bhref=(?:"([^"]+)"|'([^']+)')/gi)) {
         const href = match[1] ?? match[2]
-        if (archivedRoutes.has(normalize(href))) errors.push(`公开页面泄露归档入口：${path.relative(publicDir, file)} -> ${href}`)
+        if (archivedRoutes.has(normalize(href, pageUrl))) errors.push(`公开页面泄露归档入口：${path.relative(publicDir, file)} -> ${href}`)
       }
     }
   }

@@ -53,7 +53,7 @@ try {
     if (slug.includes("ai-drafts") || String(entry?.title ?? "").startsWith("AI 草稿：")) {
       fail("未审草稿出现在 Quartz 搜索索引中: " + slug)
     }
-    const route = "/" + slug.replace(/^\/+/, "").replace(/\/$/, "")
+    const route = "/" + slug.replace(/^\/+/, "").replace(/(?:^|\/)index$/, "").replace(/\/+$/, "")
     if (archivedRoutes.includes(route) || archivedRoutes.includes(route + "/"))
       fail("归档页面出现在 Quartz 搜索索引中: " + route)
   }
@@ -67,8 +67,12 @@ for (const route of archivedRoutes) {
 for (const file of [path.join(PUB, "sitemap.xml"), path.join(PUB, "index.xml"), path.join(PUB, "rss.xml")]) {
   if (!fs.existsSync(file)) continue
   const xml = fs.readFileSync(file, "utf8")
+  const routes = new Set([...xml.matchAll(/<(loc|link|guid)(?:\s[^>]*)?>([^<]+)<\/\1>/gi)].map(([, , url]) => {
+    try { return new URL(url.trim()).pathname.replace(/\/+$/, "") || "/" }
+    catch { return null }
+  }))
   for (const route of archivedRoutes)
-    if (xml.includes(route)) fail("归档页面仍出现在公开站点索引: " + route + " -> " + path.basename(file))
+    if (routes.has(route)) fail("归档页面仍出现在公开站点索引: " + route + " -> " + path.basename(file))
 }
 
 const home = fs.readFileSync(path.join(PUB, "index.html"), "utf8")

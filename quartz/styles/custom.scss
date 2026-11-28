@@ -81,6 +81,10 @@ body,
     transition: none !important;
   }
 
+  .page > #quartz-body.lock-scroll > :not(.sidebar.left:has(.explorer)) {
+    transform: none !important;
+  }
+
   .explorer.collapsed > .explorer-content {
     transform: translateX(-100vw) !important;
   }
