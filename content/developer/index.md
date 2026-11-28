@@ -9,69 +9,44 @@ tags:
   - 导航
 ---
 
-这里面向想要**读懂代码、完成一次修改或定位故障**的人。你不需要先读几十份 R 轮次报告。先选择一个具体任务，再去对应的源码和操作手册；历史构建与测试报告只在需要核验证据时阅读。
+想理解游戏背后的代码，或亲手修好一个问题？这里按开发任务组织知识，从第一次改动到两端的运行机制、构建和故障定位。
 
-本 MOD 有 Android 与 Web 两套实现，目标是保持玩家可见的成长规则一致，但两边的代码、构建工具和发布方式并不相同。请选择你准备修改的平台。
+## 开发入门
 
-## 最小开发路径
+- [项目概览](/developer/project-overview)：认识 Android 与 Web 两套实现、仓库及工程边界。
+- [第一次参与开发](/developer/first-contribution)：完成一次小而可验证的改动，熟悉运行与提交流程。
+- [编写指南](/developer/editorial-guidelines)：如何维护清晰、准确、可追溯的技术文档。
 
-从[第一次参与开发](/developer/first-contribution)开始。它选择 **Web 本地只读运行 → 跟踪启动入口 → 提交一次有来源的文档小改动**作为练习，避免上来就碰签名、官方 DEX 或真实存档。
+## 架构与实现
 
-你会实际遇到三个文件：
+[架构专题](/developer/architecture/)按以下三条路线组织：
 
-- `serve.mjs`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@90d89de2048332f3c329ae6834ebee2675453a02/serve.mjs）：提供本地 HTTP 服务，让浏览器能加载 ES 模块。
-- `src/main.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@90d89de2048332f3c329ae6834ebee2675453a02/src/main.js）：导入基础模块并在浏览器检查通过后调用 `init()`。
-- `src/game.js`（源码定位：OrekiDawson/AD-Oreki-Edition-Web@90d89de2048332f3c329ae6834ebee2675453a02/src/game.js）：游戏初始化、运行流程与部分 MOD 自动化的集成点。
+- **双端共通机制**：[双端一致性](/developer/architecture/parity)、[数值模型](/developer/architecture/numeric-model)、[调度器状态机](/developer/architecture/scheduler-state-machine)。
+- **Android**：[Android 架构](/developer/architecture/android)、[Kotlin 运行时](/developer/architecture/kotlin-runtime)、[界面与阶段门禁](/developer/architecture/gui-stage-gates)。
+- **Web**：[Web 架构](/developer/architecture/web)、[界面响应](/developer/architecture/web-ui-reactivity)、[离线进度](/developer/architecture/web-offline-simulation)。
 
-这一小段足以让你了解“文件入口在哪里、如何运行、怎么验证一处改动”，之后再进入更复杂的业务模块。
+## 源码与逆向
 
-## 按主题进入
+[源码与逆向](/developer/reverse-engineering/)介绍如何从字节码和调用关系恢复程序语义，包括[反编译与源码恢复](/developer/reverse-engineering/decompilation)、[Smali 接口恢复](/developer/reverse-engineering/smali-recovery)及[DEX 与 ABI](/developer/reverse-engineering/dex-abi)。
 
-| 现在要完成的任务 | 入口 | 下一步 |
-| --- | --- | --- |
-| 第一次改动 | [第一次参与开发](/developer/first-contribution) | 先完成 Web 最小闭环，再选择平台 |
-| 理解游戏共同机制 | [架构与机制](/developer/architecture/) | [双端一致性](/developer/architecture/parity)、[调度器状态机](/developer/architecture/scheduler-state-machine) |
-| 定位 Android 实现 | [Android 架构](/developer/architecture/android) | [Kotlin 运行时](/developer/architecture/kotlin-runtime)、[阶段门禁](/developer/architecture/gui-stage-gates) |
-| 定位 Web 实现 | [Web 架构](/developer/architecture/web) | [界面响应](/developer/architecture/web-ui-reactivity)、[离线进度](/developer/architecture/web-offline-simulation) |
-| 恢复混淆代码与接口 | [源码与逆向](/developer/reverse-engineering/) | [反编译与源码恢复](/developer/reverse-engineering/decompilation)、[DEX 与 ABI](/developer/reverse-engineering/dex-abi) |
-| 在本地构建并验证 Android | [构建与交付](/developer/build/) | [AGP 构建管线](/developer/build/agp)、[R8](/developer/build/r8)、[CI/CD](/developer/build/ci-cd) |
-| 对照两端行为 | [双端行为一致性](/developer/architecture/parity) | 逐项核对输入、资源变化、解锁与结算，不把目标当成实测结果 |
-| 根据症状缩小故障范围 | [故障排查](/developer/troubleshooting/) | [协程 ABI](/developer/troubleshooting/coroutine-abi)、[存档兼容](/developer/troubleshooting/save-compatibility) |
-| 查准确的文件、符号或字段 | [开发者参考](/developer/references/) | [源码索引](/developer/references/source-index) 与对应固定版本来源 |
+## 构建与发布
 
-**从仓库源码出发，而不是从历史结论倒推代码。** 例如想知道当前调度器是否会修改自动购买器的启用状态，应先看当前 Kotlin 或 JS 的受管状态实现，再核实具体游戏行为；不能仅凭早期报告中的一句“手动优先”判断所有版本。
+[构建与交付](/developer/build/)连接源码、构建产物和可验证的发行版本。可以从[AGP 构建](/developer/build/agp)、[R8](/developer/build/r8)、[APK 签名](/developer/build/apk-signing)或[持续集成与交付](/developer/build/ci-cd)进入。
 
-## 面向玩家的内容在哪里？
+## 故障排查
 
-本站分为两个入口：[开发者专区](/developer/) 保存实现、构建与问题定位方法；[玩家专区](/player/) 解释游戏机制、解锁和实际操作。如果你只是想了解某项游戏功能如何使用，应先读玩家版，再按需要回到这里查源码与验证证据。
+[故障排查](/developer/troubleshooting/)按照症状定位问题，而不是要求先熟悉完整工程。重点入口包括[存档兼容](/developer/troubleshooting/save-compatibility)、[协程 ABI](/developer/troubleshooting/coroutine-abi)和[Web 启动链](/developer/troubleshooting/web-module-startup)。
 
-## 两套代码在哪里？
+## 技术参考与证据
 
-**Android**：[OrekiDawson/AD-Oreki-Edition-Android](https://github.com/OrekiDawson/AD-Oreki-Edition-Android)。当前仓库根目录的 `:app` 是 Android 应用模块，生产业务代码位于 `app/src/main/kotlin/`，构建输入和门禁由根 `app/build.gradle.kts` 与 `build-logic/` 共同准备。官方 3.21.0 DEX 属于冻结基线，不允许用新 Java/Smali 业务直接覆盖。源码阅读可从 `OrekiStageAuto.kt`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@9d8fc46ce99279720b5b3068027bb76bceb35756/app/src/main/kotlin/kajfosz/antimatterdimensions/oreki/OrekiStageAuto.kt） 开始。
+这些页面用于查证技术结论，不是开发入门的必读章节：
 
-**Web**：[OrekiDawson/AD-Oreki-Edition-Web](https://github.com/OrekiDawson/AD-Oreki-Edition-Web)。入口在 `src/`，核心机制与 MOD 扩展在 `src/core/`，浏览器组件在 `src/components/`。Web 基于冻结的上游快照，不可把 Android 中的混淆类名当作 Web 模块名。
+- [参考资料](/developer/references/)与[源码索引](/developer/references/source-index)。
+- [项目状态与证据边界](/developer/current/)：理解源码、构建、行为和发布结论的区别。
+- [运行证据索引](/developer/evidence/)与[AI Summary 索引](/developer/ai-summaries/)：查找验证资料与已审核摘要。
 
-**两套代码各有自己的边界。** Android 与 Web 共享玩家可见的成长规则，但使用不同的语言、模块和构建工具；阅读源码时应以对应平台的入口、类型和调用链为准。
+## 源码仓库
 
-## 完成判据
+[Android](https://github.com/OrekiDawson/AD-Oreki-Edition-Android) · [Web](https://github.com/OrekiDawson/AD-Oreki-Edition-Web) · [Wiki](https://github.com/OrekiDawson/AD-Oreki-Wiki)
 
-开发文档里常见的几种“成功”其实是不同的层级：
-
-- **源码定位正确**：找到了真实文件、函数和调用关系。
-- **命令执行成功**：有对应环境、退出状态和实际输出。
-- **CI 通过**：对应 Commit 的检查符合它自己的检查范围。
-- **功能验证通过**：在匹配的设备、浏览器和游戏进度下观察到预期行为。
-- **允许发布**：还需满足对应发布规则、签名、存档与实际运行等门禁。
-
-这些层级回答的是不同问题：源码定位帮助你找到改动位置，命令输出说明工具是否按预期工作，功能验证则说明玩家实际看到的结果。不要把其中一个层级的证据误当成另一个层级的结论。
-
-## 附属资料与历史证据
-
-[项目与仓库概览](/developer/project-overview)解释工程目标和平台基线；[当前状态](/developer/current/project-status)与[已知问题](/developer/current/known-issues)记录候选阶段的事实；旧故障的原始报告保留在源码仓库和内部归档中，**不代替今天的源码**。
-
-[运行证据索引](/developer/evidence/)用于回到构建、测试或设备记录；[已审核 AI 摘要](/developer/ai-summaries/)只作为正文之后的辅助资料。它们不是入门路线，也不能替代源码、操作指南或故障排查正文。
-
----
-
-*本文中的 Android 源码定位基于 `9d8fc46ce99279720b5b3068027bb76bceb35756`，Web 入口仍基于 `90d89de2`。本页只进行了源码和链接路径阅读，未执行 APK 构建、设备操作或完整游戏验收。*
-
+如果你只是想知道如何游玩、重置或者解锁下一阶段，请前往[玩家专区](/player/)。

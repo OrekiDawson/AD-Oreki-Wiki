@@ -13,6 +13,12 @@ aliases:
 
 因此，原版攻略并不会因为换成 MOD 就全部失效，但也不能把原版页面上的每个数字直接套过来。遇到门槛、自动化或平台行为的差异，应转到 [原版与 MOD](/player/gameplay/original-vs-mod) 查看范围，再以当前版本的游戏提示为准。
 
+## 专题导航
+
+- [原版与 MOD](/player/gameplay/original-vs-mod)：明确两套规则的区别。
+- [MOD 玩法改动](/player/gameplay/mod-changes)：查阅数值、解锁与自动化调整。
+- [平台差异](/player/gameplay/platform-differences)：了解 Android 与 Web 的实际区别。
+
 ## MOD 改了什么
 
 ### 自动化仍受游戏规则约束
@@ -40,7 +46,7 @@ aliases:
 
 安装更新、换设备或尝试 Pre-release 前，先按[存档](/player/gameplay/saves)导出并保留独立备份。能打开导入窗口，只说明入口存在；导入后还要检查阶段、资源、研究和自动购买器，并重新打开确认状态仍然存在。跨平台或跨版本迁移没有经过当前版本确认时，不要拿唯一主档试验。
 
-## 从哪里继续
+## 游玩参考
 
 - 想知道具体的自动化动作和停滞原因，读[自动化](/player/gameplay/automation)。
 - 想判断某个按钮是否真的解锁，读[阶段解锁](/player/gameplay/stage-gates)。

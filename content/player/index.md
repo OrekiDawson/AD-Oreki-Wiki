@@ -6,32 +6,38 @@ tags:
   - 导航
 ---
 
-欢迎来到玩家专区。这里把《反物质维度》的资源、重置、挑战和后期系统写成可以直接阅读的中文条目；如果你玩的是本 MOD，涉及 MOD 差异的地方会单独说明，不把两套规则混在一起。
+这里是玩家的阅读地图。无论刚买下第一个维度，还是正在寻找下一层重置的路线，都可以从自己的进度出发，不必从头读完整部百科。
 
-## 从新档开始
+## 开始游玩
 
-- [开始游玩](/player/getting-started/)：选择平台、认识数值，完成第一次购买。
-- [初始阶段](/player/getting-started/first-session)与[首次无限](/player/getting-started/first-crunch)：按实际游戏进度继续。
-- [下载与版本](/player/download-and-version/)：Android 安装、Web 入口及更新注意事项。
+- [下载与版本](/player/download-and-version/)：选择 Android 或 Web，了解安装、更新和版本区别。
+- [开始游玩](/player/getting-started/)：认识界面、数值与最初的购买操作。
+- [初始阶段](/player/getting-started/first-session) → [首次无限](/player/getting-started/first-crunch)：沿着新档的实际成长顺序继续。
 
-## 理解游戏
+## 游戏机制
 
-先读[游戏总览](/player/antimatter-dimensions)，再看[生产机制](/player/antimatter-dimensions-core-loop)和[增长与重置](/player/antimatter-dimensions-decisions)。想查某个阶段的具体规则，从[玩法机制](/player/gameplay/)进入。
+[游戏总览](/player/antimatter-dimensions)介绍整部游戏；[反物质维度机制](/player/antimatter-dimensions-core-loop)解释生产链，[增长与重置](/player/antimatter-dimensions-decisions)讨论何时继续积累、何时换取长期成长。
 
-| 游戏进程 | 阅读入口 |
-| --- | --- |
-| 无限 | [无限](/player/gameplay/infinity) · [无限与永恒](/player/gameplay/progression-infinity-eternity) |
-| 永恒 | [永恒](/player/gameplay/eternity) · [时间研究](/player/gameplay/time-studies) |
-| 现实 | [现实](/player/gameplay/reality) · [时间研究路线](/player/gameplay/reality-time-studies) |
-| 天神 | [天神](/player/gameplay/celestials) · [特殊现实](/player/gameplay/celestial-realities) |
-| 通用机制 | [挑战](/player/gameplay/challenges) · [自动购买器](/player/gameplay/automation) · [存档](/player/gameplay/saves) |
+从[玩法机制](/player/gameplay/)进入完整的主题导航，或者直接选择当前阶段：
 
-## 本 MOD 与游玩问题
+- [无限](/player/gameplay/infinity)
+- [永恒](/player/gameplay/eternity)
+- [现实](/player/gameplay/reality)
+- [天神](/player/gameplay/celestials)
 
-[MOD 介绍](/player/mods/)及[原版与 MOD](/player/gameplay/original-vs-mod) 帮助你分辨两套规则。[常见问题](/player/faq/)用于排查卡关、自动化、安装与存档问题；[术语表](/player/terminology)适合随手查阅。
+还可以查阅[挑战](/player/gameplay/challenges)、[自动化](/player/gameplay/automation)、[阶段解锁](/player/gameplay/stage-gates)和[存档](/player/gameplay/saves)等跨阶段主题。
 
-## 原版译文与本站条目的边界
+## 本 MOD 专题
 
-[原版 Wiki 中文翻译](/player/original/)忠实呈现原版页面。译文保留原文的修订信息、贡献者与 CC BY-SA 4.0 许可说明；它不会为了迎合本站的 MOD 玩法而把原创解释混入译文正文。原版机制与本 MOD 的实际差异，请回到玩家专区的对应条目阅读。
+[MOD 介绍](/player/mods/)集中组织本 MOD 的玩法改动、原版差异和平台行为，不把这些差异混进原版译文。
 
-如果你还想阅读源码、构建项目或理解双端实现，可以转到[开发者专区](/developer/)。页面顶部的搜索可以查找具体名称；读到一个陌生机制时，也可以沿着正文中的链接继续探索。这里的目标不是把所有数字堆在一张表里，而是让你知道每次重置失去了什么、留下了什么，以及下一次为什么会更快。
+## 查找问题与术语
+
+- [玩家常见问题](/player/faq/)：卡关、自动化、安装和存档问题。
+- [玩家术语表](/player/terminology)：查阅游玩时遇到的缩写和概念。
+
+## 原版百科
+
+[原版 Wiki 中文译文](/player/original/)是独立的参考入口，按基础机制、无限、永恒、现实、天神及其他主题组织。译文保留原文来源、署名和许可；本站原创解释与 MOD 规则另行呈现。
+
+如果你想了解游戏如何实现，前往[开发者专区](/developer/)；如果已经知道要找的文章名称，也可以使用[全部条目](/all-entries)或站内搜索。

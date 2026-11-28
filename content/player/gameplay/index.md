@@ -8,27 +8,39 @@ aliases:
   - "/gameplay"
 ---
 
-
-这一部分讲《反物质维度》原版机制，以及 本 MOD 在哪些数值和自动化行为上做了调整。读完后应当能判断某个行为是原版设计、MOD 修改，还是验证中尚未确认的推断。
+反物质维度的成长并不是不断购买同一种升级：每次进入新的重置层，游戏都会改变资源和决策方式。这里按成长阶段组织原创机制解释，方便你在实际游玩时查阅。
 
 ## 成长路线
 
-- [阶段进度](/player/gameplay/stage-progression)：先建立从新档到天神的整体认识。
-- [无限](/player/gameplay/infinity)、[无限与永恒](/player/gameplay/progression-infinity-eternity)：理解最初两层重置。
-- [永恒](/player/gameplay/eternity)、[时间研究](/player/gameplay/time-studies)：查阅研究树、挑战及时间膨胀。
-- [时间研究路线](/player/gameplay/reality-time-studies)、[现实](/player/gameplay/reality)：准备进入现实并理解重置后的恢复。
-- [天神](/player/gameplay/celestials)、[特殊现实](/player/gameplay/celestial-realities)：阅读后期机制与限制。
+先看[阶段进度：从新档到天神](/player/gameplay/stage-progression)，了解各层重置的关系。刚进入游戏的玩家可以先读[开始游玩](/player/getting-started/)。
+
+### 无限
+
+- [无限](/player/gameplay/infinity)：第一次大坍缩及无限资源。
+- [无限与永恒](/player/gameplay/progression-infinity-eternity)：两层重置之间的关系。
+
+### 永恒
+
+- [永恒](/player/gameplay/eternity)：新的长期成长系统。
+- [时间研究](/player/gameplay/time-studies)：理解研究树和路线选择。
+- [时间研究路线](/player/gameplay/reality-time-studies)：从永恒走向现实。
+
+### 现实
+
+- [现实](/player/gameplay/reality)：认识现实后的成长与重置。
+
+### 天神
+
+- [天神](/player/gameplay/celestials)：了解后期各天神的主题与机制。
+- [特殊现实](/player/gameplay/celestial-realities)：查阅特殊限制与独立规则。
 
 ## 跨阶段机制
 
 - [挑战](/player/gameplay/challenges)与[挑战排障](/player/gameplay/challenge-troubleshooting)。
-- [智能自动购买器](/player/gameplay/automation)、[阶段解锁](/player/gameplay/stage-gates)与[存档](/player/gameplay/saves)。
-- [生产链与重置](/player/antimatter-dimensions-core-loop)与[增长与重置决策](/player/antimatter-dimensions-decisions)。
+- [自动化](/player/gameplay/automation)、[阶段解锁](/player/gameplay/stage-gates)及[存档](/player/gameplay/saves)。
 
-## 本 MOD 的差异
+## MOD 与原版
 
-- [原版与 MOD](/player/gameplay/original-vs-mod)
-- [MOD 玩法改动](/player/gameplay/mod-changes)
-- [平台差异](/player/gameplay/platform-differences)
+本栏目只在解释机制所需之处指出 MOD 差异。需要专门比较两套规则时，前往[MOD 专题](/player/mods/)；需要逐项核对原版资料时，前往[原版译文](/player/original/)。两者不是同一套攻略，也不能直接互换所有数值。
 
-原版机制以官方 3.21.0 基线与 Web 冻结上游的读码结果为准，社区 Wiki（[Antimatter Dimensions Wiki](https://antimatterdimensions.wiki.gg/index.php?title=Antimatter_Dimensions&oldid=3325)）用于概念与分类参照。MOD 改过的阈值、倍率与自动化行为会在对应条目里单独标注；两端的集中对照见 [原版行为与 MOD 修改](/player/gameplay/original-vs-mod)。
+返回[玩家专区](/player/)。
