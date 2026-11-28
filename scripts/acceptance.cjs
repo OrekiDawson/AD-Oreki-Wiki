@@ -201,11 +201,12 @@ async function run() {
       const list = group.querySelector(':scope > .wiki-nav-group-list');
       return !list || parseFloat(getComputedStyle(list).paddingLeft) > 1 || parseFloat(getComputedStyle(list).marginLeft) > 1;
     }).map(group => group.dataset.wikiGroup);
-    return { items, expanded: !document.querySelector('.explorer').classList.contains('collapsed'), groups: [...ul.querySelectorAll('.wiki-nav-group-label')].map(el => el.textContent), duplicateGroups, indentedGroups, scrollable: ['auto', 'scroll'].includes(getComputedStyle(ul).overflowY) };
+    const panel = document.querySelector('.explorer-content');
+    return { items, expanded: !document.querySelector('.explorer').classList.contains('collapsed'), groups: [...ul.querySelectorAll('.wiki-nav-group-label')].map(el => el.textContent), duplicateGroups, indentedGroups, scrollable: panel && ['auto', 'scroll'].includes(getComputedStyle(panel).overflowY) };
   });
   if (sidebar) sidebar.scrollIndependent = await page.evaluate(() => {
-    // Quartz keeps the fixed panel viewport-sized; the Explorer UL is its scroll owner.
-    const panel = document.querySelector('.explorer-content ul.explorer-ul');
+    // Quartz and ordered-explorer use .explorer-content as the actual scroll panel.
+    const panel = document.querySelector('.explorer-content');
     if (!panel || panel.scrollHeight <= panel.clientHeight) return false;
     const before = window.scrollY, top = panel.scrollTop;
     panel.scrollTop = Math.min(panel.scrollHeight - panel.clientHeight, top + 200);

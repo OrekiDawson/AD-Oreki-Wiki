@@ -248,6 +248,8 @@ body[data-slug="index"] {
   .explorer-content .folder-outer { visibility: visible; grid-template-rows: 1fr; }
   .infobox { float: none; width: auto; margin: 1rem 0; }
   .wikitable { display: block; overflow-x: auto; }
+  // 原版 Markdown 表格也应在自身滚动，不能把整页撑出手机视口。
+  .popover-hint table { display: block; width: 100%; max-width: 100%; overflow-x: auto; }
 }
 
 /* 正式条目的语义子列表：不是虚拟页面，不增加空分类或展开按钮。 */
