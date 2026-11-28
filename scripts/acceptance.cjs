@@ -207,10 +207,12 @@ async function run() {
   if (sidebar) sidebar.scrollIndependent = await page.evaluate(() => {
     // Quartz and ordered-explorer use .explorer-content as the actual scroll panel.
     const panel = document.querySelector('.explorer-content');
-    if (!panel || panel.scrollHeight <= panel.clientHeight) return false;
+    if (!panel) return false;
     const before = window.scrollY, top = panel.scrollTop;
-    panel.scrollTop = Math.min(panel.scrollHeight - panel.clientHeight, top + 200);
-    const moved = panel.scrollTop !== top && window.scrollY === before;
+    const maxScroll = panel.scrollHeight - panel.clientHeight;
+    panel.scrollTop = 0;
+    panel.scrollTop = Math.min(200, maxScroll);
+    const moved = maxScroll > 0 && panel.scrollTop > 0 && window.scrollY === before;
     panel.scrollTop = top;
     return moved;
   });
