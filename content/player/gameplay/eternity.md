@@ -14,7 +14,7 @@ aliases:
 <tbody>
 <tr><th scope="row">英文名称</th><td>Eternity</td></tr>
 <tr><th scope="row">重置层级</th><td>第二层</td></tr>
-<tr><th scope="row">基础门槛</th><td>首次：解锁第八无限维度后达到约 1.80e308 IP</td></tr>
+<tr><th scope="row">基础门槛</th><td>约 1.80e308 IP</td></tr>
 <tr><th scope="row">主要资源</th><td>永恒点数（EP）、永恒次数</td></tr>
 <tr><th scope="row">新系统</th><td>时间研究、永恒升级、里程碑</td></tr>
 <tr><th scope="row">后续阶段</th><td><a class="internal" href="/player/gameplay/reality">现实</a></td></tr>
