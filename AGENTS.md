@@ -9,6 +9,7 @@
 - AGENTS.md 目标 ≤100 行、≤8 KiB，按主题编号，仅写现行规则；事实入 FACTS，任务入 Issue，历史入 Git，流程入专项文档。禁止流水账。
 
 ## 2. 内容与编辑
+涉及正文、翻译、结构或编辑复审，须读取[内容与编辑细则](docs/Agent规则/01-内容与编辑.md)；该文件为强制规范，不是可选建议。
 ### 2.1 阅读用途与语言
 - 公开编辑方针：[Wiki 方针](content/wiki-rules.md)、[本站收录边界](content/wiki-not.md)；执行细节：[编写指引](docs/AGENT_GUIDE.md)、[文章样板](docs/ARTICLE_TEMPLATE.md)。依任务读取适用段落。
 - 双专区：玩家为机制、教程、攻略、FAQ、译文和下载；开发者为入门、操作、参考、原理、排障。共同规则及版权独立，事实单一来源，内链关联。
@@ -29,6 +30,7 @@
 - 实际内容缺陷或未完成必要复审记 EDITORIAL_BLOCKED；与 Kody/CI/Pages 独立。仅复审受影响内容及上下文。
 
 ## 3. 导航、视觉与公开边界
+涉及导航、主题、素材、归档或浏览器验收，须读取[导航与视觉细则](docs/Agent规则/02-导航与视觉.md)。
 ### 3.1 信息架构
 - 正式条目必须由双专区分类或自动生成的全部条目索引可达，覆盖率 100%；搜索、回链不替代导航。旧入口只保留兼容重定向，不公开展示；不得出现重复入口、空子菜单、标签泄露或孤立正式条目。
 - 使用 ordered-explorer，分类默认展开；桌面独立折叠且保存偏好，SPA 仅自动展开当前祖先；移动只切换整个面板。当前条目高亮、定位、独立滚动，短名称及浅层级优先。无子页的分类直接链接。CI 检查模型、索引及构建 DOM。
@@ -42,6 +44,7 @@
 - [版权页](content/copyright.md) 及 docs/translation/original-image-manifest.json 记录素材来源、权利人、许可、使用范围、改动和署名；不能把第三方素材自动归为本站许可。新增、替换、删除同步清单。已许可原版图文按实际需求维护，未核实素材不下载发布、不热链、不移除版权标识，不以虚构截图冒充游戏。CI 与实际深浅色、桌面/移动端检查有效资源及替代文本。
 
 ## 4. GitHub 与发布
+审查、合并、规则迁移及上线前须读取[审查与交付细则](docs/Agent规则/03-审查与交付.md)。
 - 遵守 [合并门禁](docs/GitHub合并门禁.md)、[维护说明](docs/MAINTENANCE.md) 与 Workspace。Wiki Kody 独立统计，仅 Balanced；Ready/new HEAD 原生自动审查，Draft 不提前触发；核实实际回执及授权后才手动兜底，同 HEAD/配置不重复。Skipped、NOT RUN、失败、等待均非 PASS。无实际文件改动及纯 AGENTS.md 官方确认规则 skipped 的例外按 Workspace 执行，不绕 Required Checks。
 - main 必须由 GitHub 原生保护要求 PR、唯一 Required Status Check Wiki PR CI（KB PR check）、全部 review threads 解决；合并前验证实际 API、HEAD、Diff、Reviews、Threads、审批、Ruleset、CI、Owner。保护缺失记 PROTECTION_BLOCKED，真实阻断修复或有充分反证。
 - REVIEW_BLOCKED 必须给具体原因、Owner、HEAD、CI/Review、额度/在途、阻断证据与下一动作；Kody 审查意见按事实修正，不将机器状态写入正文。全局审查标准归 Kody Global Rules，仓库执行标准归 AGENTS.md。
