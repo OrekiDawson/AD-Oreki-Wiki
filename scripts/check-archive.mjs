@@ -39,12 +39,22 @@ const normalize = (value, base = siteBase) => {
   try {
     const url = new URL(value, base)
     if (url.origin !== siteBase.origin || !url.pathname.startsWith(siteBase.pathname)) return null
-    return "/" + url.pathname.slice(siteBase.pathname.length).replace(/\/+$/, "")
+    return "/" + decodeURI(url.pathname.slice(siteBase.pathname.length)).replace(/\/+$/, "")
   } catch { return null }
 }
 const normalizeSlug = slug => "/" + slug.replace(/^\/+/, "").replace(/(?:^|\/)index$/, "").replace(/\/+$/, "")
 const xmlRoutes = text => [...text.matchAll(/<(loc|link|guid)(?:\s[^>]*)?>([^<]+)<\/\1>/gi)]
   .map(([, , url]) => normalize(url.trim()))
+// 同一归档路由在源文件、JSON slug 和 URL 中必须一致；不同站点及更长路由不能误判。
+const probe = "归档/中文条目"
+const probeRoute = "/" + probe
+const probeUrl = new URL(probe, siteBase)
+if (normalize(probeUrl.href) !== probeRoute ||
+    normalize(probe, siteBase) !== probeRoute ||
+    normalizeSlug(probe) !== probeRoute ||
+    normalize(new URL(probe + "/child", siteBase).href) === probeRoute ||
+    normalize(new URL(probe, "https://example.invalid/").href) !== null)
+  throw new Error("归档路由与 baseUrl 归一化一致性检查失败")
 const archivedRoutes = new Set(archived.map(item => item.route))
 if (fs.existsSync(path.join(root, "content", "all-entries.md"))) {
   const indexText = fs.readFileSync(path.join(root, "content", "all-entries.md"), "utf8")

@@ -68,7 +68,7 @@ for (const file of [path.join(PUB, "sitemap.xml"), path.join(PUB, "index.xml"), 
   if (!fs.existsSync(file)) continue
   const xml = fs.readFileSync(file, "utf8")
   const routes = new Set([...xml.matchAll(/<(loc|link|guid)(?:\s[^>]*)?>([^<]+)<\/\1>/gi)].map(([, , url]) => {
-    try { return new URL(url.trim()).pathname.replace(/\/+$/, "") || "/" }
+    try { return decodeURI(new URL(url.trim()).pathname).replace(/\/+$/, "") || "/" }
     catch { return null }
   }))
   for (const route of archivedRoutes)
