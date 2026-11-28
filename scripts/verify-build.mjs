@@ -11,6 +11,26 @@ const fail = (m) => {
 }
 const exists = (p) => fs.existsSync(path.join(PUB, p))
 const pageExists = (slug) => exists(slug + ".html") || exists(path.join(slug, "index.html"))
+const publicRouteFromUrl = (value) => {
+  const pathname = new URL(value.trim()).pathname
+  try { return decodeURI(pathname).replace(/\/+$/, "") || "/" }
+  catch { return pathname.replace(/\/+$/, "") || "/" }
+}
+
+function walkSource(dir) {
+  return fs.readdirSync(dir, { withFileTypes: true }).flatMap((e) => {
+    const p = path.join(dir, e.name)
+    return e.isDirectory() ? walkSource(p) : [p]
+  })
+}
+const archivedRoutes = walkSource("content")
+  .filter((file) => file.endsWith(".md"))
+  .filter((file) => /^archive:\s*(?:true|"true"|'true')\s*(?:#.*)?$/mi.test(fs.readFileSync(file, "utf8")))
+  .map((file) => {
+    const rel = path.relative("content", file).replaceAll("\\", "/").replace(/\.md$/, "")
+    if (rel === "index") return "/"
+    return "/" + (rel.endsWith("/index") ? rel.slice(0, -6) : rel)
+  })
 
 if (!exists("index.html")) fail("缺少 public/index.html")
 if (!fs.existsSync(path.join(PUB, "static"))) fail("缺少 public/static")
@@ -38,9 +58,26 @@ try {
     if (slug.includes("ai-drafts") || String(entry?.title ?? "").startsWith("AI 草稿：")) {
       fail("未审草稿出现在 Quartz 搜索索引中: " + slug)
     }
+    const route = "/" + slug.replace(/^\/+/, "").replace(/(?:^|\/)index$/, "").replace(/\/+$/, "")
+    if (archivedRoutes.includes(route) || archivedRoutes.includes(route + "/"))
+      fail("归档页面出现在 Quartz 搜索索引中: " + route)
   }
 } catch (error) {
   fail("无法可靠校验 Quartz 搜索索引: " + error.message)
+}
+
+for (const route of archivedRoutes) {
+  if (pageExists(route.replace(/^\//, ""))) fail("归档页面仍生成公开 HTML: " + route)
+}
+for (const file of [path.join(PUB, "sitemap.xml"), path.join(PUB, "index.xml"), path.join(PUB, "rss.xml")]) {
+  if (!fs.existsSync(file)) continue
+  const xml = fs.readFileSync(file, "utf8")
+  const routes = new Set([...xml.matchAll(/<(loc|link|guid)(?:\s[^>]*)?>([^<]+)<\/\1>/gi)].flatMap(([, , url]) => {
+    try { return [publicRouteFromUrl(url)] }
+    catch { return [] }
+  }))
+  for (const route of archivedRoutes)
+    if (routes.has(route)) fail("归档页面仍出现在公开站点索引: " + route + " -> " + path.basename(file))
 }
 
 const home = fs.readFileSync(path.join(PUB, "index.html"), "utf8")

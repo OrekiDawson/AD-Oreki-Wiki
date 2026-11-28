@@ -23,6 +23,27 @@ const NAVIGATION_MODEL = JSON.parse(
   fs.readFileSync(path.join(__dirname, 'navigation-model.json'), 'utf8'),
 );
 const EXPECTED_SIDEBAR = NAVIGATION_MODEL.categories.root.map((entry) => entry.label);
+const EXPECTED_GROUPS = [...new Set([NAVIGATION_MODEL.stationLabel, ...Object.values(NAVIGATION_MODEL.topicGroups).flatMap(groups => groups.map(group => group.label))])];
+const normalizeRoute = (value) => {
+  try { return new URL(value, BASE).pathname.replace(/\/$/, '') || '/'; }
+  catch { return String(value).split('#')[0].replace(/\/$/, '') || '/'; }
+};
+const archivedRoutes = new Set();
+function walkMarkdown(dir) {
+  return fs.readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
+    const full = path.join(dir, entry.name);
+    return entry.isDirectory() ? walkMarkdown(full) : [full];
+  });
+}
+if (fs.existsSync(path.join(__dirname, '..', 'content'))) {
+  for (const file of walkMarkdown(path.join(__dirname, '..', 'content'))) {
+    if (!file.endsWith('.md') || file.split(path.sep).includes('ai-drafts')) continue;
+    const text = fs.readFileSync(file, 'utf8');
+    if (!/^archive:\s*(?:true|"true"|'true')\s*(?:#.*)?$/mi.test(text)) continue;
+    const rel = path.relative(path.join(__dirname, '..', 'content'), file).replaceAll('\\', '/').replace(/\.md$/, '');
+    archivedRoutes.add(normalizeRoute('/' + (rel === 'index' ? '' : rel.endsWith('/index') ? rel.slice(0, -6) : rel)));
+  }
+}
 
 const SEARCH_TERMS = [
   ['永恒挑战', 'player/gameplay/challenges'],
@@ -34,6 +55,7 @@ const SEARCH_TERMS = [
 ];
 
 const OLD_URLS = ['/architecture/kotlin-runtime', '/architecture/android', '/gameplay/challenges', '/build/agp', '/current/project-status'];
+const ARCHIVED_URLS = ['/history/2026-11-15-r113-180min-fail', '/developer/history/2026-11-15-r113-180min-fail'];
 const NEW_PAGES = [
   '/',
   '/player/',
@@ -55,6 +77,29 @@ const NEW_PAGES = [
   '/developer/ai-summaries/',
 ];
 const CATEGORY_LABELS = ['玩家专区', '开发者专区', '玩法机制', '架构与机制', '运行证据'];
+const transitionsDisabled = (state) => {
+  if (!state) return false;
+  const properties = state.transitionProperty.split(',').map(value => value.trim());
+  const zeroTimes = value => value.split(',').every(time => Number.parseFloat(time) === 0);
+  return properties.every(property => property === 'none')
+    || (zeroTimes(state.transitionDuration) && zeroTimes(state.transitionDelay));
+};
+const readDrawer = page => page.evaluate(() => {
+  const drawer = document.querySelector('.explorer-content');
+  const explorer = document.querySelector('.explorer');
+  if (!drawer || !explorer) return null;
+  const style = getComputedStyle(drawer);
+  const matrix = new DOMMatrixReadOnly(style.transform === 'none' ? undefined : style.transform);
+  return {
+    transform: style.transform, x: matrix.m41, identity: matrix.isIdentity,
+    viewportWidth: window.innerWidth, right: drawer.getBoundingClientRect().right,
+    transitionProperty: style.transitionProperty, transitionDuration: style.transitionDuration,
+    transitionDelay: style.transitionDelay,
+    expanded: !explorer.classList.contains('collapsed'),
+    shiftedContent: [...document.querySelectorAll('.page > #quartz-body > :not(.sidebar.left:has(.explorer))')]
+      .some(el => !new DOMMatrixReadOnly(getComputedStyle(el).transform === 'none' ? undefined : getComputedStyle(el).transform).isIdentity),
+  };
+});
 
 
 async function run() {
@@ -78,7 +123,7 @@ async function run() {
   results.mobile.title = await page.title();
   results.mobile.explorerLinks = await page.locator('a[href*="player"], a[href*="developer"]').count();
   results.mobile.overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
-  results.mobile.frontendContract = await page.evaluate(() => {
+  results.mobile.frontendContract = await page.evaluate((routes) => {
     const explorer = document.querySelector('.explorer');
     const anchors = [...document.querySelectorAll('.explorer a')];
     const folders = [...document.querySelectorAll('.explorer .folder-outer')];
@@ -91,14 +136,16 @@ async function run() {
     return {
       tagLinks: anchors.filter((a) => /(^|\/)tags(?:\/|$)/i.test(a.getAttribute('href') || '')).length,
       tagLabels: anchors.filter((a) => /标签|tags?/i.test((a.textContent || '').trim())).length,
+      archivedLinks: anchors.filter((a) => a.origin === location.origin && routes.includes(a.pathname.replace(/\/+$/, '') || '/')).length,
       emptyFolders: folders.filter((folder) => !folder.querySelector('a[href]')).length,
       explorerInitialState: explorer ? (explorer.classList.contains('collapsed') ? 'collapsed' : 'expanded') : null,
       progress: styleOf('.navigation-progress'),
       transition: styleOf('.page-transition'),
       bodyFont: getComputedStyle(document.body).fontFamily,
     };
-  });
+  }, [...archivedRoutes]);
   if (results.mobile.frontendContract.tagLinks || results.mobile.frontendContract.tagLabels) results.errors.push('tag-index-leaked-in-explorer');
+  if (results.mobile.frontendContract.archivedLinks) results.errors.push('archived-entry-leaked-in-explorer');
   if (results.mobile.frontendContract.emptyFolders) results.errors.push('empty-explorer-folder');
   if (results.mobile.frontendContract.progress && results.mobile.frontendContract.progress.display !== 'none') results.errors.push('navigation-progress-visible');
   if (results.mobile.frontendContract.transition && (results.mobile.frontendContract.transition.animation !== 'none' || !/none/.test(results.mobile.frontendContract.transition.transition))) results.errors.push('page-transition-active');
@@ -115,8 +162,16 @@ async function run() {
   // 移动端侧栏：真实 DOM 渲染顺序断言（不读配置文本）
   const sidebarToggle = page.locator('.explorer .explorer-toggle').first();
   if (await sidebarToggle.count()) {
-    await sidebarToggle.click({ force: true }).catch(() => {});
-    await page.waitForTimeout(700);
+    const drawerBefore = await readDrawer(page);
+    await sidebarToggle.click();
+    const drawerAfter = await readDrawer(page);
+    results.mobile.drawer = { before: drawerBefore, after: drawerAfter };
+    results.mobile.drawerInstant = drawerBefore?.expanded === false
+      && drawerBefore.x <= -drawerBefore.viewportWidth + 1 && drawerBefore.right <= 1
+      && drawerAfter?.expanded === true && drawerAfter.identity
+      && !drawerBefore.shiftedContent && !drawerAfter.shiftedContent
+      && transitionsDisabled(drawerBefore) && transitionsDisabled(drawerAfter);
+    if (!results.mobile.drawerInstant) results.errors.push('drawer-open-animation-or-content-shift');
   }
   const sidebar = await page.evaluate(() => {
     const ul = document.querySelector('.explorer-content ul.explorer-ul');
@@ -136,14 +191,28 @@ async function run() {
           inViewport: box ? box.top >= 0 && box.top < window.innerHeight : false,
         };
       });
-    return { items, expanded: !document.querySelector('.explorer').classList.contains('collapsed'), groups: [...ul.querySelectorAll('.wiki-nav-group-label')].map(el => el.textContent), scrollable: ['auto', 'scroll'].includes(getComputedStyle(document.querySelector('.explorer-content')).overflowY) };
+    const groupNodes = [...ul.querySelectorAll('.wiki-nav-group')];
+    const duplicateGroups = groupNodes.filter(group => {
+      const label = group.querySelector(':scope > .wiki-nav-group-label')?.textContent.trim();
+      const links = [...group.querySelectorAll(':scope > .wiki-nav-group-list > li > a, :scope > .wiki-nav-group-list > li > .folder-container a')];
+      return links.length < 2 || links.some(a => a.textContent.trim() === label);
+    }).map(group => group.dataset.wikiGroup);
+    const indentedGroups = groupNodes.filter(group => {
+      const list = group.querySelector(':scope > .wiki-nav-group-list');
+      return !list || parseFloat(getComputedStyle(list).paddingLeft) > 1 || parseFloat(getComputedStyle(list).marginLeft) > 1;
+    }).map(group => group.dataset.wikiGroup);
+    const panel = document.querySelector('.explorer-content');
+    return { items, expanded: !document.querySelector('.explorer').classList.contains('collapsed'), groups: [...ul.querySelectorAll('.wiki-nav-group-label')].map(el => el.textContent), duplicateGroups, indentedGroups, scrollable: panel && ['auto', 'scroll'].includes(getComputedStyle(panel).overflowY) };
   });
   if (sidebar) sidebar.scrollIndependent = await page.evaluate(() => {
+    // Quartz and ordered-explorer use .explorer-content as the actual scroll panel.
     const panel = document.querySelector('.explorer-content');
-    if (!panel || panel.scrollHeight <= panel.clientHeight) return false;
+    if (!panel) return false;
     const before = window.scrollY, top = panel.scrollTop;
-    panel.scrollTop = Math.min(panel.scrollHeight - panel.clientHeight, top + 200);
-    const moved = panel.scrollTop !== top && window.scrollY === before;
+    const maxScroll = panel.scrollHeight - panel.clientHeight;
+    panel.scrollTop = 0;
+    panel.scrollTop = Math.min(200, maxScroll);
+    const moved = maxScroll > 0 && panel.scrollTop > 0 && window.scrollY === before;
     panel.scrollTop = top;
     return moved;
   });
@@ -158,7 +227,9 @@ async function run() {
     if (sidebar.items.some((i) => i.truncated)) results.errors.push('sidebar-truncated');
     if (!sidebar.items.some(i => i.label === '玩家专区' && i.inViewport)) results.errors.push('player-first-entry-not-visible');
     if (!sidebar.scrollable) results.errors.push('sidebar-not-independently-scrollable');
-    for (const label of ['站务', '双端共通机制', 'Android', 'Web', '基础机制', '天神与后期'])
+    if (sidebar.duplicateGroups.length) results.errors.push('sidebar-redundant-groups:' + sidebar.duplicateGroups.join(','));
+    if (sidebar.indentedGroups.length) results.errors.push('sidebar-extra-group-indent:' + sidebar.indentedGroups.join(','));
+    for (const label of EXPECTED_GROUPS)
       if (!sidebar.groups.includes(label)) results.errors.push('missing-topic-group:' + label);
   }
 
@@ -176,7 +247,9 @@ async function run() {
   await page.goto(BASE + '/player/gameplay/challenges', { waitUntil: 'load' });
   await page.waitForTimeout(900);
   const toggle2 = page.locator('.explorer .explorer-toggle').first();
-  if (await toggle2.count()) { await toggle2.click({ force: true }).catch(() => {}); await page.waitForTimeout(600); }
+  if (await toggle2.count() && (await readDrawer(page))?.expanded === false) {
+    await toggle2.click();
+  }
   results.mobile.sidebarActive = await page.evaluate(() => {
     const links = [...document.querySelectorAll('.explorer-content a.active, .explorer-content a.is-active')];
     return links.map((a) => a.pathname.replace(/\/$/, ''));
@@ -185,7 +258,17 @@ async function run() {
     results.errors.push('sidebar-active-highlight');
   }
   results.mobile.relatedNav = await page.locator('article .wiki-related-nav a[href]').count();
-  if (await toggle2.count()) { await toggle2.click({ force: true }).catch(() => {}); await page.waitForTimeout(400); }
+  const drawerLink = page.locator('.explorer-content a[href*="/player/"]').first();
+  if (await drawerLink.count()) {
+    const drawerTarget = await drawerLink.evaluate(a => a.pathname.replace(/\/+$/, '') || '/');
+    results.mobile.drawerLinkTarget = drawerTarget;
+    await drawerLink.click();
+    await page.waitForURL(url => (url.pathname.replace(/\/+$/, '') || '/') === drawerTarget);
+    const closedAfterLink = await readDrawer(page);
+    results.mobile.drawerClosedAfterLink = closedAfterLink?.expanded === false
+      && closedAfterLink.x <= -closedAfterLink.viewportWidth + 1 && closedAfterLink.right <= 1;
+    if (!results.mobile.drawerClosedAfterLink) results.errors.push('drawer-link-did-not-close');
+  }
 
   // 真实点击切页，观察加载条创建与滚动动画，不只检查静态 CSS。
   await page.goto(BASE + '/player/', { waitUntil: 'load' });
@@ -205,6 +288,21 @@ async function run() {
     await motionLink.click();
     await page.waitForURL(url => url.pathname.replace(/\/$/, '') === target);
     results.mobile.motion = await page.evaluate(() => window.__wikiMotion || null);
+  }
+  results.mobile.archivedNavAfterSpa = await page.evaluate((routes) => {
+    const leaked = [...document.querySelectorAll('.explorer a[href]')]
+      .filter(a => a.origin === location.origin)
+      .map(a => a.pathname.replace(/\/+$/, '') || '/')
+      .filter((href) => routes.includes(href));
+    return [...new Set(leaked)];
+  }, [...archivedRoutes]);
+  if (results.mobile.archivedNavAfterSpa.length) results.errors.push('archived-entry-leaked-after-spa');
+  try {
+    const searchIndex = await page.evaluate(async () => fetch('/static/contentIndex.json').then((response) => response.json()));
+    results.mobile.archivedSearchEntries = [...archivedRoutes].filter((route) => Object.keys(searchIndex).some((key) => normalizeRoute('/' + key.replace(/^\/+/, '').replace(/(?:^|\/)index$/, '')) === route));
+    if (results.mobile.archivedSearchEntries.length) results.errors.push('archived-entry-leaked-in-search-index');
+  } catch (error) {
+    results.errors.push('archive-search-index-unreadable');
   }
   // 搜索
   const searchInput = page.locator('input.search-bar, input[name="search"], input[type="search"], input[placeholder]').first();
@@ -233,12 +331,15 @@ async function run() {
     ...OLD_URLS,
     ...NEW_PAGES,
     '/history',
-    '/history/2026-11-15-r113-180min-fail',
     '/developer/history/',
-    '/developer/history/2026-11-15-r113-180min-fail',
   ]) {
     const resp = await page.goto(BASE + url, { waitUntil: 'load' }).catch(() => null);
     results.urls.push({ url, ok: !!resp && resp.status() === 200 });
+  }
+  results.archivedUrls = [];
+  for (const url of ARCHIVED_URLS) {
+    const resp = await page.request.get(BASE + url).catch(() => null);
+    results.archivedUrls.push({ url, excluded: !!resp && resp.status() === 404, status: resp?.status() ?? null });
   }
 
   // 未审核 AI 草稿不得公开
@@ -299,17 +400,21 @@ async function run() {
   results.desktop.title = await dpage.title();
   results.desktop.overflow = await dpage.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
   results.desktop.hasSearch = (await dpage.locator('input[type="search"], input[placeholder]').count()) > 0;
+  const assertionErrors = [...results.errors];
   results.errors.push(...consoleErrors);
 
   fs.mkdirSync(path.dirname(OUT), { recursive: true });
   fs.writeFileSync(OUT, JSON.stringify(results, null, 1));
 
-  const bad = [];
+  const bad = [...assertionErrors];
+  if (!results.mobile.drawerInstant) bad.push('drawer-instant');
+  if (!results.mobile.drawerClosedAfterLink) bad.push('drawer-link-close');
   if (!results.mobile.title.includes('反物质维度')) bad.push('title');
   if (results.mobile.overflow > 2) bad.push('mobile-overflow:' + results.mobile.overflow);
-  if (!results.searches.length || results.searches.some((s) => s.hit === false)) bad.push('search');
+  if (!results.searches.length || results.searches.some((s) => s.hit !== true)) bad.push('search');
   if (results.categories.some((c) => !c.hit)) bad.push('category-labels');
   if (results.urls.some((u) => !u.ok)) bad.push('urls:' + results.urls.filter((u) => !u.ok).map((u) => u.url).join(','));
+  if (results.archivedUrls.some((u) => !u.excluded)) bad.push('archived-url-leak:' + results.archivedUrls.filter((u) => !u.excluded).map((u) => `${u.url}=${u.status}`).join(','));
   if (results.mobile.aiDraftStatus !== 404) bad.push('ai-draft-public:' + results.mobile.aiDraftStatus);
   if (!results.mobile.translationHasLicense) bad.push('translation-license-block');
   if (!results.mobile.translationFolderListingHidden) bad.push('translation-folder-listing-visible');
@@ -322,7 +427,7 @@ async function run() {
     if (results.mobile.sidebar.items.some((i) => i.truncated)) bad.push('sidebar-truncated');
     if (!results.mobile.sidebar.items.some(i => i.label === '玩家专区' && i.inViewport)) bad.push('sidebar-visibility');
     if (!results.mobile.sidebar.scrollable || !results.mobile.sidebar.scrollIndependent) bad.push('sidebar-independent-scroll');
-    for (const label of ['站务', '双端共通机制', 'Android', 'Web', '基础机制', '天神与后期'])
+    for (const label of EXPECTED_GROUPS)
       if (!results.mobile.sidebar.groups.includes(label)) bad.push('missing-topic-group:' + label);
   }
   if (!results.mobile.sidebarCollapsed) bad.push('sidebar-collapse');
@@ -330,14 +435,14 @@ async function run() {
     !results.mobile.sidebarActive.includes('/player/gameplay/challenges')) bad.push('sidebar-active');
   if (!results.mobile.motion || results.mobile.motion.progress || results.mobile.motion.smooth !== 'auto') bad.push('real-navigation-motion');
   if (!results.mobile.relatedNav) bad.push('related-navigation-missing');
-  if (!results.desktop.topicGroups.includes('双端共通机制') || !results.desktop.topicGroups.includes('站务')) bad.push('desktop-topic-groups');
+  if (EXPECTED_GROUPS.some(label => !results.desktop.topicGroups.includes(label))) bad.push('desktop-topic-groups');
   if (!results.mobile.darkmodeToggled) bad.push('darkmode');
   if (results.mobile.frontendContract.tagLinks || results.mobile.frontendContract.tagLabels) bad.push('tag-index-leaked-in-explorer');
   if (results.mobile.frontendContract.emptyFolders) bad.push('empty-explorer-folder');
   if (results.mobile.frontendContract.progress && results.mobile.frontendContract.progress.display !== 'none') bad.push('navigation-progress-visible');
   if (results.mobile.frontendContract.transition && (results.mobile.frontendContract.transition.animation !== 'none' || !/none/.test(results.mobile.frontendContract.transition.transition))) bad.push('page-transition-active');
   if (!/system-ui/i.test(results.mobile.frontendContract.bodyFont)) bad.push('system-font-not-applied');
-  if (results.errors.length > 3) bad.push('console-errors');
+  if (consoleErrors.length > 3) bad.push('console-errors');
   console.log(JSON.stringify({ bad, results }, null, 1).slice(0, 6000));
   await browser.close();
   process.exit(bad.length ? 1 : 0);

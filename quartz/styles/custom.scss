@@ -33,6 +33,24 @@ html {
   scroll-behavior: auto !important;
 }
 
+// Quartz Explorer 和 SPA 的所有导航滚动、展开及页面位移动效都必须即时完成。
+// 保留 SPA 的预取与历史，不保留视觉过渡。
+.explorer,
+.explorer *,
+.page > #quartz-body,
+.page > #quartz-body > *,
+.page > #quartz-body.lock-scroll > * {
+  animation: none !important;
+  transition: none !important;
+}
+
+html,
+body,
+.explorer-content,
+.explorer-content .explorer-ul {
+  scroll-behavior: auto !important;
+}
+
 // 百科页面切换应立即显示目标内容；保留 Quartz enableSPA 的客户端导航，不显示进度条或过渡动画。
 .navigation-progress,
 .page-transition,
@@ -48,6 +66,38 @@ html {
     max-height: calc(100vh - 5.5rem);
     overflow-y: auto;
     overscroll-behavior: contain;
+  }
+}
+
+// 移动端 Explorer 是即时抽屉：导航展开/收起不能滑入滑出，也不能让正文跟着横移。
+// Quartz 默认 Explorer 的这组过渡只适用于其原始交互，本站保留 SPA，但禁用抽屉动效。
+@media all and ($mobile) {
+  .page > #quartz-body > :not(.sidebar.left:has(.explorer)),
+  .page > #quartz-body.lock-scroll > :not(.sidebar.left:has(.explorer)),
+  .explorer .explorer-content,
+  .explorer .explorer-content .folder-outer,
+  .explorer .folder-icon,
+  .explorer svg {
+    transition: none !important;
+  }
+
+  .page > #quartz-body.lock-scroll > :not(.sidebar.left:has(.explorer)) {
+    transform: none !important;
+  }
+
+  .explorer.collapsed > .explorer-content {
+    transform: translateX(-100vw) !important;
+  }
+
+  .explorer:not(.collapsed) > .explorer-content {
+    transform: translateX(0) !important;
+  }
+
+  .explorer .mobile-explorer,
+  .explorer .explorer-content a,
+  .explorer .folder-icon {
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
   }
 }
 
@@ -198,21 +248,24 @@ body[data-slug="index"] {
   .explorer-content .folder-outer { visibility: visible; grid-template-rows: 1fr; }
   .infobox { float: none; width: auto; margin: 1rem 0; }
   .wikitable { display: block; overflow-x: auto; }
+  // 原版 Markdown 表格也应在自身滚动，不能把整页撑出手机视口。
+  .popover-hint table { display: block; width: 100%; max-width: 100%; overflow-x: auto; }
 }
 
 /* 正式条目的语义子列表：不是虚拟页面，不增加空分类或展开按钮。 */
-.explorer-content .wiki-nav-group { list-style: none; margin: 0.55rem 0; }
+.explorer-content .wiki-nav-group { list-style: none; margin: 0.4rem 0; }
 .explorer-content .wiki-nav-group-label {
   display: block;
-  color: var(--secondary);
-  font-size: 0.84rem;
+  color: var(--gray);
+  font-size: 0.78rem;
   font-weight: 650;
   margin: 0.35rem 0 0.2rem;
 }
 .explorer-content .wiki-nav-group-list {
-  margin: 0 0 0 0.25rem;
-  padding-left: 0.6rem;
-  border-left: 1px solid var(--lightgray);
+  // 专题标题只用于分段，不是另一级可折叠目录。
+  margin: 0;
+  padding-left: 0;
+  border-left: 0;
 }
 .wiki-related-nav {
   margin-top: 2rem;
@@ -229,5 +282,11 @@ body[data-slug="index"] {
     overflow-y: auto;
     overscroll-behavior-y: contain;
     -webkit-overflow-scrolling: touch;
+  }
+  // Quartz 在长目录上给 UL 套了第二个滚动框；恢复父面板为唯一滚动所有者，
+  // 让 ordered-explorer 的当前页自动定位与用户手势作用于同一个容器。
+  .explorer-content > ul.explorer-ul {
+    height: auto !important;
+    overflow-y: visible !important;
   }
 }

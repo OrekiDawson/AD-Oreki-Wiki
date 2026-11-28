@@ -89,6 +89,8 @@ jobs:
         run: node scripts/generate-navigation.mjs
       - name: Navigation coverage and public archive boundary
         run: node scripts/check-navigation.mjs
+      - name: Archive frontmatter and public-boundary check (source)
+        run: node scripts/check-archive.mjs
       - name: Public link policy (source)
         run: node scripts/check-public-links.mjs
       - name: Public audit-log separation (source)
@@ -115,6 +117,9 @@ jobs:
       - name: Built navigation DOM and empty-menu gate
         run: node scripts/check-navigation.mjs --built public
         working-directory: .quartz-build
+      - name: Archive leakage regression (built output)
+        run: node scripts/check-archive.mjs --built public
+        working-directory: .quartz-build
       - name: Public link policy (built HTML)
         run: node scripts/check-public-links.mjs --built public
         working-directory: .quartz-build
@@ -135,3 +140,64 @@ jobs:
         working-directory: .quartz-build
       - run: node scripts/verify-build.mjs
         working-directory: .quartz-build
+
+      - name: Archive verified site for browser acceptance
+        run: tar -C .quartz-build -czf "$RUNNER_TEMP/wiki-public.tar.gz" public
+      - uses: actions/upload-artifact@v7
+        with:
+          name: wiki-verified-build
+          path: ${{ runner.temp }}/wiki-public.tar.gz
+          retention-days: 3
+          if-no-files-found: error
+
+  browser:
+    name: Wiki browser acceptance
+    needs: build
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+      - uses: actions/download-artifact@v7
+        with:
+          name: wiki-verified-build
+          path: ${{ runner.temp }}/wiki-build
+      - name: Extract verified site
+        run: tar -xzf "$RUNNER_TEMP/wiki-build/wiki-public.tar.gz" -C "$RUNNER_TEMP/wiki-build"
+      - name: Install pinned browser and static server
+        run: |
+          npm install --prefix "$RUNNER_TEMP/wiki-playwright" --no-save --package-lock=false playwright@1.56.1
+          "$RUNNER_TEMP/wiki-playwright/node_modules/.bin/playwright" install --with-deps chromium
+      - name: Real mobile and desktop browser acceptance
+        env:
+          KB_URL: http://127.0.0.1:8081
+          KB_OUT: ${{ runner.temp }}/wiki-evidence/playwright-mobile.json
+        run: |
+          set -euo pipefail
+          export KB_PLAYWRIGHT="$RUNNER_TEMP/wiki-playwright/node_modules/playwright"
+          node scripts/serve-wiki-build.mjs "$RUNNER_TEMP/wiki-build/public" 127.0.0.1 8081 > "$RUNNER_TEMP/wiki-serve.log" 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid" 2>/dev/null || true' EXIT
+          for attempt in $(seq 1 30); do
+            if curl --fail --silent "$KB_URL/" >/dev/null; then break; fi
+            if ! kill -0 "$server_pid" 2>/dev/null; then cat "$RUNNER_TEMP/wiki-serve.log"; exit 1; fi
+            sleep 1
+          done
+          curl --fail --silent "$KB_URL/" >/dev/null || { cat "$RUNNER_TEMP/wiki-serve.log"; exit 1; }
+          for route in /player/getting-started /player/getting-started/ /developer/; do
+            curl --fail --silent "$KB_URL$route" >/dev/null || { echo "clean-URL smoke failed: $route"; cat "$RUNNER_TEMP/wiki-serve.log"; exit 1; }
+          done
+          node scripts/acceptance.cjs 2>&1 | tee "$RUNNER_TEMP/wiki-acceptance.log"
+      - name: Retain browser acceptance evidence
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: wiki-browser-acceptance
+          path: |
+            ${{ runner.temp }}/wiki-evidence/playwright-mobile.json
+            ${{ runner.temp }}/wiki-serve.log
+            ${{ runner.temp }}/wiki-acceptance.log
+          if-no-files-found: warn
+          retention-days: 7

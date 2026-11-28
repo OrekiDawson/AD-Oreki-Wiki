@@ -20,6 +20,13 @@ function clientNavigation(model) {
       return decodeURI(url.pathname).replace(/^\/+|\/+$/g, "").replace(/\/index(?:\.html)?$/, "").replace(/\.html$/, "");
     } catch { return ""; }
   };
+  const closeMobileExplorer = () => {
+    const explorer = document.querySelector(".explorer");
+    if (!explorer || !window.matchMedia("(max-width: 800px)").matches) return;
+    explorer.classList.add("collapsed");
+    explorer.setAttribute("aria-expanded", "false");
+    document.documentElement.classList.remove("mobile-no-scroll");
+  };
   const ownLink = li => li.querySelector(":scope > a[href], :scope > .folder-container a[href]");
   const routeOf = li => { const href = ownLink(li)?.getAttribute("href"); return href ? normalize(href) : ""; };
   const group = (list, definition) => {
@@ -76,6 +83,15 @@ function clientNavigation(model) {
     const links = [...rootList.querySelectorAll("a[href]")];
     const current = normalize(location.href);
     const active = links.find(a => normalize(a.getAttribute("href")) === current);
+    // The official Explorer compares its route with data.slug. Our callback keeps that
+    // value root-relative for URL resolution, so restore the same active-page state here.
+    for (const link of links) {
+      const isCurrent = normalize(link.getAttribute("href")) === current;
+      link.classList.toggle("active", isCurrent);
+      link.classList.toggle("is-active", isCurrent);
+      if (isCurrent) link.setAttribute("aria-current", "page");
+      else link.removeAttribute("aria-current");
+    }
     if (active && pending && scroll.clientHeight && !explorer.classList.contains("collapsed")) {
       const frame = scroll.getBoundingClientRect(), rect = active.getBoundingClientRect();
       if (rect.height && (rect.top < frame.top || rect.bottom > frame.bottom))
@@ -115,10 +131,20 @@ function clientNavigation(model) {
     nav.append(row);
     article.append(nav);
   }
+  const nativeScrollIntoView = Element.prototype.scrollIntoView;
+  Element.prototype.scrollIntoView = function(options) {
+    if (this.closest?.(".explorer")) {
+      const next = typeof options === "object" && options ? { ...options, behavior: "auto" } : { behavior: "auto" };
+      return nativeScrollIntoView.call(this, next);
+    }
+    return nativeScrollIntoView.call(this, options);
+  };
   document.addEventListener("nav", () => { pending = true; schedule(); }, { passive: true });
   document.addEventListener("click", event => {
-    if (event.target.closest?.(".explorer-toggle")) { pending = true; schedule(); }
-  }, { passive: true });
+    const target = event.target instanceof Element ? event.target : null;
+    if (target?.closest(".explorer-content a")) closeMobileExplorer();
+    if (target?.closest(".explorer-toggle")) { pending = true; schedule(); }
+  }, { capture: true, passive: true });
   schedule();
 }
 

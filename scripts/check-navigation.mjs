@@ -27,10 +27,13 @@ const allEntries = fs.readFileSync(path.join(content, "all-entries.md"), "utf8")
 const formal = files.filter(
   (file) =>
     !file.includes(`${path.sep}ai-drafts${path.sep}`) &&
-    !file.endsWith(`${path.sep}all-entries.md`),
+    !file.endsWith(`${path.sep}all-entries.md`) &&
+    file !== path.join(content, "index.md") &&
+    !/^archive:\s*(?:true|"true"|'true')\s*(?:#.*)?$/mi.test(fs.readFileSync(file, "utf8")),
 )
 const routeFor = (file) => {
   const rel = path.relative(content, file).replaceAll("\\", "/").replace(/\.md$/, "")
+  if (rel === "index") return "/"
   return rel.endsWith("/index") ? `/${rel.slice(0, -6)}` : `/${rel}`
 }
 const titleFor = (file) => {
@@ -165,9 +168,15 @@ if (navigationModel) {
   }
   for (const [parent, groups] of Object.entries(navigationModel.topicGroups || {})) {
     const entries = groups.flatMap(group => group.entries)
-    if (groups.some(group => !group.label || !group.entries.length) ||
+    if (groups.some(group => !group.label || group.entries.length < 2) ||
         JSON.stringify(entries) !== JSON.stringify(navigationModel.childOrder[parent]))
-      errors.push("专题分组为空、遗漏或顺序不一致：" + parent)
+      errors.push("专题分组为空、仅含单条目、遗漏或顺序不一致：" + parent)
+    for (const group of groups)
+      for (const route of group.entries) {
+        const file = formal.find(file => routeFor(file) === "/" + route)
+        const label = navigationModel.folderLabels[route] || (file && titleFor(file))
+        if (label === group.label) errors.push("专题标题与条目重名：" + route)
+      }
   }
   for (const [slug, label] of Object.entries(navigationModel.folderLabels))
     if (mapNode(node(slug)).displayName !== label) errors.push("侧栏名称不一致：" + slug)
