@@ -251,18 +251,19 @@ body[data-slug="index"] {
 }
 
 /* 正式条目的语义子列表：不是虚拟页面，不增加空分类或展开按钮。 */
-.explorer-content .wiki-nav-group { list-style: none; margin: 0.55rem 0; }
+.explorer-content .wiki-nav-group { list-style: none; margin: 0.4rem 0; }
 .explorer-content .wiki-nav-group-label {
   display: block;
-  color: var(--secondary);
-  font-size: 0.84rem;
+  color: var(--gray);
+  font-size: 0.78rem;
   font-weight: 650;
   margin: 0.35rem 0 0.2rem;
 }
 .explorer-content .wiki-nav-group-list {
-  margin: 0 0 0 0.25rem;
-  padding-left: 0.6rem;
-  border-left: 1px solid var(--lightgray);
+  // 专题标题只用于分段，不是另一级可折叠目录。
+  margin: 0;
+  padding-left: 0;
+  border-left: 0;
 }
 .wiki-related-nav {
   margin-top: 2rem;

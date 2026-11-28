@@ -168,9 +168,15 @@ if (navigationModel) {
   }
   for (const [parent, groups] of Object.entries(navigationModel.topicGroups || {})) {
     const entries = groups.flatMap(group => group.entries)
-    if (groups.some(group => !group.label || !group.entries.length) ||
+    if (groups.some(group => !group.label || group.entries.length < 2) ||
         JSON.stringify(entries) !== JSON.stringify(navigationModel.childOrder[parent]))
-      errors.push("专题分组为空、遗漏或顺序不一致：" + parent)
+      errors.push("专题分组为空、仅含单条目、遗漏或顺序不一致：" + parent)
+    for (const group of groups)
+      for (const route of group.entries) {
+        const file = formal.find(file => routeFor(file) === "/" + route)
+        const label = navigationModel.folderLabels[route] || (file && titleFor(file))
+        if (label === group.label) errors.push("专题标题与条目重名：" + route)
+      }
   }
   for (const [slug, label] of Object.entries(navigationModel.folderLabels))
     if (mapNode(node(slug)).displayName !== label) errors.push("侧栏名称不一致：" + slug)

@@ -186,7 +186,11 @@
     "player/original/ow-eternity-challenges-challenges-pelle": "永恒挑战明细",
     "player/original/ow-prestige": "重置成长（威望）",
     "player/original/ow-automation": "自动化",
-    "player/original/ow-mods": "Mod 一览"
+    "player/original/ow-mods": "Mod 一览",
+    "player/gameplay/infinity": "无限",
+    "player/gameplay/eternity": "永恒",
+    "player/gameplay/reality": "现实",
+    "player/gameplay/celestials": "天神"
   },
   "childOrder": {
     "developer/architecture": [
@@ -360,41 +364,21 @@
   "topicGroups": {
     "player/gameplay": [
       {
-        "label": "成长路线",
+        "label": "成长与重置",
         "entries": [
-          "player/gameplay/stage-progression"
-        ]
-      },
-      {
-        "label": "无限",
-        "entries": [
+          "player/gameplay/stage-progression",
           "player/gameplay/infinity",
-          "player/gameplay/progression-infinity-eternity"
-        ]
-      },
-      {
-        "label": "永恒",
-        "entries": [
+          "player/gameplay/progression-infinity-eternity",
           "player/gameplay/eternity",
           "player/gameplay/time-studies",
-          "player/gameplay/reality-time-studies"
-        ]
-      },
-      {
-        "label": "现实",
-        "entries": [
-          "player/gameplay/reality"
-        ]
-      },
-      {
-        "label": "天神",
-        "entries": [
+          "player/gameplay/reality-time-studies",
+          "player/gameplay/reality",
           "player/gameplay/celestials",
           "player/gameplay/celestial-realities"
         ]
       },
       {
-        "label": "通用机制",
+        "label": "挑战与通用系统",
         "entries": [
           "player/gameplay/challenges",
           "player/gameplay/challenge-troubleshooting",
@@ -427,7 +411,7 @@
         ]
       },
       {
-        "label": "无限",
+        "label": "无限阶段",
         "entries": [
           "player/original/ow-infinity",
           "player/original/ow-infinity-upgrades",
@@ -453,7 +437,7 @@
         ]
       },
       {
-        "label": "现实",
+        "label": "现实阶段",
         "entries": [
           "player/original/ow-reality",
           "player/original/ow-reality-upgrades",

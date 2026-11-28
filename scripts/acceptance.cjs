@@ -189,7 +189,17 @@ async function run() {
           inViewport: box ? box.top >= 0 && box.top < window.innerHeight : false,
         };
       });
-    return { items, expanded: !document.querySelector('.explorer').classList.contains('collapsed'), groups: [...ul.querySelectorAll('.wiki-nav-group-label')].map(el => el.textContent), scrollable: ['auto', 'scroll'].includes(getComputedStyle(document.querySelector('.explorer-content')).overflowY) };
+    const groupNodes = [...ul.querySelectorAll('.wiki-nav-group')];
+    const duplicateGroups = groupNodes.filter(group => {
+      const label = group.querySelector(':scope > .wiki-nav-group-label')?.textContent.trim();
+      const links = [...group.querySelectorAll(':scope > .wiki-nav-group-list > li > a, :scope > .wiki-nav-group-list > li > .folder-container a')];
+      return links.length < 2 || links.some(a => a.textContent.trim() === label);
+    }).map(group => group.dataset.wikiGroup);
+    const indentedGroups = groupNodes.filter(group => {
+      const list = group.querySelector(':scope > .wiki-nav-group-list');
+      return !list || parseFloat(getComputedStyle(list).paddingLeft) > 1 || parseFloat(getComputedStyle(list).marginLeft) > 1;
+    }).map(group => group.dataset.wikiGroup);
+    return { items, expanded: !document.querySelector('.explorer').classList.contains('collapsed'), groups: [...ul.querySelectorAll('.wiki-nav-group-label')].map(el => el.textContent), duplicateGroups, indentedGroups, scrollable: ['auto', 'scroll'].includes(getComputedStyle(document.querySelector('.explorer-content')).overflowY) };
   });
   if (sidebar) sidebar.scrollIndependent = await page.evaluate(() => {
     const panel = document.querySelector('.explorer-content');
@@ -211,7 +221,9 @@ async function run() {
     if (sidebar.items.some((i) => i.truncated)) results.errors.push('sidebar-truncated');
     if (!sidebar.items.some(i => i.label === '玩家专区' && i.inViewport)) results.errors.push('player-first-entry-not-visible');
     if (!sidebar.scrollable) results.errors.push('sidebar-not-independently-scrollable');
-    for (const label of ['站务', '双端共通机制', 'Android', 'Web', '基础机制', '天神与后期'])
+    if (sidebar.duplicateGroups.length) results.errors.push('sidebar-redundant-groups:' + sidebar.duplicateGroups.join(','));
+    if (sidebar.indentedGroups.length) results.errors.push('sidebar-extra-group-indent:' + sidebar.indentedGroups.join(','));
+    for (const label of ['站务', '双端共通机制', 'Android', 'Web', '基础机制', '天神与后期', '成长与重置', '挑战与通用系统', 'MOD 差异'])
       if (!sidebar.groups.includes(label)) results.errors.push('missing-topic-group:' + label);
   }
 
