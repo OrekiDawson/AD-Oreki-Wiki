@@ -14,6 +14,10 @@ aliases:
 
 排查时先问“哪一个边界失败”，再决定读源码、看样本还是做设备验证。不要一上来修改 JSON；那往往会把原始证据和迁移前状态一起毁掉。
 
+![编解码、结构检查、字段迁移与运行时恢复四层诊断](/static/wiki-save-diagnosis.svg)
+
+*图：按失败所在层定位原因，不把外层可读当作真正兼容。*
+
 ## Android 与 Web 存档
 
 Android 与 Web 使用不同的外层格式。Android 工具 `savecodec-rs`（源码定位：OrekiDawson/AD-Oreki-Edition-Android@fb1299a132f134eb4fab009643ee3fc3d6c57edf/tools/savecodec-rs）处理的是 Android 文本存档：
