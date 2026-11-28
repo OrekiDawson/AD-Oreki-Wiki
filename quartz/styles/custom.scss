@@ -283,4 +283,10 @@ body[data-slug="index"] {
     overscroll-behavior-y: contain;
     -webkit-overflow-scrolling: touch;
   }
+  // Quartz 在长目录上给 UL 套了第二个滚动框；恢复父面板为唯一滚动所有者，
+  // 让 ordered-explorer 的当前页自动定位与用户手势作用于同一个容器。
+  .explorer-content > ul.explorer-ul {
+    height: auto !important;
+    overflow-y: visible !important;
+  }
 }
