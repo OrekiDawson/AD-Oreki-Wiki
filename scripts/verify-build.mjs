@@ -11,6 +11,11 @@ const fail = (m) => {
 }
 const exists = (p) => fs.existsSync(path.join(PUB, p))
 const pageExists = (slug) => exists(slug + ".html") || exists(path.join(slug, "index.html"))
+const publicRouteFromUrl = (value) => {
+  const pathname = new URL(value.trim()).pathname
+  try { return decodeURI(pathname).replace(/\/+$/, "") || "/" }
+  catch { return pathname.replace(/\/+$/, "") || "/" }
+}
 
 function walkSource(dir) {
   return fs.readdirSync(dir, { withFileTypes: true }).flatMap((e) => {
@@ -67,14 +72,9 @@ for (const route of archivedRoutes) {
 for (const file of [path.join(PUB, "sitemap.xml"), path.join(PUB, "index.xml"), path.join(PUB, "rss.xml")]) {
   if (!fs.existsSync(file)) continue
   const xml = fs.readFileSync(file, "utf8")
-  const routes = new Set([...xml.matchAll(/<(loc|link|guid)(?:\s[^>]*)?>([^<]+)<\/\1>/gi)].map(([, , url]) => {
-    try {
-      const raw = new URL(url.trim()).pathname
-      let decoded = raw
-      try { decoded = decodeURI(raw) } catch { /* retain malformed escapes for exact comparison */ }
-      return decoded.replace(/\/+$/, "") || "/"
-    }
-    catch { return null }
+  const routes = new Set([...xml.matchAll(/<(loc|link|guid)(?:\s[^>]*)?>([^<]+)<\/\1>/gi)].flatMap(([, , url]) => {
+    try { return [publicRouteFromUrl(url)] }
+    catch { return [] }
   }))
   for (const route of archivedRoutes)
     if (routes.has(route)) fail("归档页面仍出现在公开站点索引: " + route + " -> " + path.basename(file))

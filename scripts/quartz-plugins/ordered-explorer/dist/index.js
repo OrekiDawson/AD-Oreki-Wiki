@@ -83,6 +83,15 @@ function clientNavigation(model) {
     const links = [...rootList.querySelectorAll("a[href]")];
     const current = normalize(location.href);
     const active = links.find(a => normalize(a.getAttribute("href")) === current);
+    // The official Explorer compares its route with data.slug. Our callback keeps that
+    // value root-relative for URL resolution, so restore the same active-page state here.
+    for (const link of links) {
+      const isCurrent = normalize(link.getAttribute("href")) === current;
+      link.classList.toggle("active", isCurrent);
+      link.classList.toggle("is-active", isCurrent);
+      if (isCurrent) link.setAttribute("aria-current", "page");
+      else link.removeAttribute("aria-current");
+    }
     if (active && pending && scroll.clientHeight && !explorer.classList.contains("collapsed")) {
       const frame = scroll.getBoundingClientRect(), rect = active.getBoundingClientRect();
       if (rect.height && (rect.top < frame.top || rect.bottom > frame.bottom))

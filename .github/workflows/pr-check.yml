@@ -160,7 +160,7 @@ jobs:
       - uses: actions/setup-node@v7
         with:
           node-version: 24
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v7
         with:
           name: wiki-verified-build
           path: ${{ runner.temp }}/wiki-build
@@ -168,16 +168,16 @@ jobs:
         run: tar -xzf "$RUNNER_TEMP/wiki-build/wiki-public.tar.gz" -C "$RUNNER_TEMP/wiki-build"
       - name: Install pinned browser and static server
         run: |
-          npm install --prefix "$RUNNER_TEMP/wiki-playwright" --no-save --package-lock=false playwright@1.56.1 serve@14.2.4
+          npm install --prefix "$RUNNER_TEMP/wiki-playwright" --no-save --package-lock=false playwright@1.56.1
           "$RUNNER_TEMP/wiki-playwright/node_modules/.bin/playwright" install --with-deps chromium
       - name: Real mobile and desktop browser acceptance
         env:
           KB_URL: http://127.0.0.1:8081
-          KB_OUT: evidence/playwright-mobile.json
+          KB_OUT: ${{ runner.temp }}/wiki-evidence/playwright-mobile.json
         run: |
           set -euo pipefail
           export KB_PLAYWRIGHT="$RUNNER_TEMP/wiki-playwright/node_modules/playwright"
-          "$RUNNER_TEMP/wiki-playwright/node_modules/.bin/serve" "$RUNNER_TEMP/wiki-build/public" --listen tcp://127.0.0.1:8081 --no-clipboard > "$RUNNER_TEMP/wiki-serve.log" 2>&1 &
+          node scripts/serve-wiki-build.mjs "$RUNNER_TEMP/wiki-build/public" 127.0.0.1 8081 > "$RUNNER_TEMP/wiki-serve.log" 2>&1 &
           server_pid=$!
           trap 'kill "$server_pid" 2>/dev/null || true' EXIT
           for attempt in $(seq 1 30); do
@@ -186,6 +186,9 @@ jobs:
             sleep 1
           done
           curl --fail --silent "$KB_URL/" >/dev/null || { cat "$RUNNER_TEMP/wiki-serve.log"; exit 1; }
+          for route in /player/getting-started /player/getting-started/ /developer/; do
+            curl --fail --silent "$KB_URL$route" >/dev/null || { echo "clean-URL smoke failed: $route"; cat "$RUNNER_TEMP/wiki-serve.log"; exit 1; }
+          done
           node scripts/acceptance.cjs 2>&1 | tee "$RUNNER_TEMP/wiki-acceptance.log"
       - name: Retain browser acceptance evidence
         if: always()
@@ -193,7 +196,7 @@ jobs:
         with:
           name: wiki-browser-acceptance
           path: |
-            evidence/playwright-mobile.json
+            ${{ runner.temp }}/wiki-evidence/playwright-mobile.json
             ${{ runner.temp }}/wiki-serve.log
             ${{ runner.temp }}/wiki-acceptance.log
           if-no-files-found: warn

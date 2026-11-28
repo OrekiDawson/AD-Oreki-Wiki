@@ -55,6 +55,7 @@ const SEARCH_TERMS = [
 ];
 
 const OLD_URLS = ['/architecture/kotlin-runtime', '/architecture/android', '/gameplay/challenges', '/build/agp', '/current/project-status'];
+const ARCHIVED_URLS = ['/history/2026-11-15-r113-180min-fail', '/developer/history/2026-11-15-r113-180min-fail'];
 const NEW_PAGES = [
   '/',
   '/player/',
@@ -200,10 +201,11 @@ async function run() {
       const list = group.querySelector(':scope > .wiki-nav-group-list');
       return !list || parseFloat(getComputedStyle(list).paddingLeft) > 1 || parseFloat(getComputedStyle(list).marginLeft) > 1;
     }).map(group => group.dataset.wikiGroup);
-    return { items, expanded: !document.querySelector('.explorer').classList.contains('collapsed'), groups: [...ul.querySelectorAll('.wiki-nav-group-label')].map(el => el.textContent), duplicateGroups, indentedGroups, scrollable: ['auto', 'scroll'].includes(getComputedStyle(document.querySelector('.explorer-content')).overflowY) };
+    return { items, expanded: !document.querySelector('.explorer').classList.contains('collapsed'), groups: [...ul.querySelectorAll('.wiki-nav-group-label')].map(el => el.textContent), duplicateGroups, indentedGroups, scrollable: ['auto', 'scroll'].includes(getComputedStyle(ul).overflowY) };
   });
   if (sidebar) sidebar.scrollIndependent = await page.evaluate(() => {
-    const panel = document.querySelector('.explorer-content');
+    // Quartz keeps the fixed panel viewport-sized; the Explorer UL is its scroll owner.
+    const panel = document.querySelector('.explorer-content ul.explorer-ul');
     if (!panel || panel.scrollHeight <= panel.clientHeight) return false;
     const before = window.scrollY, top = panel.scrollTop;
     panel.scrollTop = Math.min(panel.scrollHeight - panel.clientHeight, top + 200);
@@ -326,12 +328,15 @@ async function run() {
     ...OLD_URLS,
     ...NEW_PAGES,
     '/history',
-    '/history/2026-11-15-r113-180min-fail',
     '/developer/history/',
-    '/developer/history/2026-11-15-r113-180min-fail',
   ]) {
     const resp = await page.goto(BASE + url, { waitUntil: 'load' }).catch(() => null);
     results.urls.push({ url, ok: !!resp && resp.status() === 200 });
+  }
+  results.archivedUrls = [];
+  for (const url of ARCHIVED_URLS) {
+    const resp = await page.request.get(BASE + url).catch(() => null);
+    results.archivedUrls.push({ url, excluded: !!resp && resp.status() === 404, status: resp?.status() ?? null });
   }
 
   // 未审核 AI 草稿不得公开
@@ -406,6 +411,7 @@ async function run() {
   if (!results.searches.length || results.searches.some((s) => s.hit !== true)) bad.push('search');
   if (results.categories.some((c) => !c.hit)) bad.push('category-labels');
   if (results.urls.some((u) => !u.ok)) bad.push('urls:' + results.urls.filter((u) => !u.ok).map((u) => u.url).join(','));
+  if (results.archivedUrls.some((u) => !u.excluded)) bad.push('archived-url-leak:' + results.archivedUrls.filter((u) => !u.excluded).map((u) => `${u.url}=${u.status}`).join(','));
   if (results.mobile.aiDraftStatus !== 404) bad.push('ai-draft-public:' + results.mobile.aiDraftStatus);
   if (!results.mobile.translationHasLicense) bad.push('translation-license-block');
   if (!results.mobile.translationFolderListingHidden) bad.push('translation-folder-listing-visible');
