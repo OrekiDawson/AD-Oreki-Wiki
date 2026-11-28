@@ -8,6 +8,18 @@ aliases:
   - "/gameplay/infinity"
 ---
 
+<table class="infobox">
+<caption>无限 · 原版机制速查</caption>
+<tbody>
+<tr><th scope="row">英文名称</th><td>Infinity</td></tr>
+<tr><th scope="row">重置层级</th><td>第一层</td></tr>
+<tr><th scope="row">基础门槛</th><td>约 1.80e308 反物质</td></tr>
+<tr><th scope="row">主要资源</th><td>无限点数（IP）</td></tr>
+<tr><th scope="row">首次奖励</th><td>1 IP、1 次无限</td></tr>
+<tr><th scope="row">后续阶段</th><td><a class="internal" href="/player/gameplay/eternity">永恒</a></td></tr>
+</tbody>
+</table>
+
 在数学中，无限没有一个确切的大小。在《反物质维度》中，它却有一个相当精确的门槛：约 1.80e308 点反物质。
 
 这道边界开启第一个主要重置层 Infinity。大坍缩不是“通关”按钮，而是把已经堆到极限的生产链换成一套能继续放大的货币、升级与挑战。
@@ -66,6 +78,11 @@ $M$ 是 IP 倍率，$AM_{max}$ 是本次无限达到过的最高反物质。成�
 终于，当 IP 本身达到约 1.80e308，并满足第八无限维度等前置条件，第一次[永恒](/player/gameplay/eternity)便在眼前。你曾经用来衡量终点的那个数字再度出现了，只是这次单位变成了无限点数。
 
 本 MOD 的实际数值和自动化差异见[原版与 MOD](/player/gameplay/original-vs-mod) 及[智能自动购买器](/player/gameplay/automation)。
+
+<nav class="navbox" aria-label="成长阶段">
+<p class="navbox-title">成长阶段</p>
+<p><a class="internal" href="/player/gameplay/stage-progression">成长路线</a> · <strong aria-current="page">无限</strong> · <a class="internal" href="/player/gameplay/eternity">永恒</a> · <a class="internal" href="/player/gameplay/reality">现实</a> · <a class="internal" href="/player/gameplay/celestials">天神</a></p>
+</nav>
 
 ## 资料来源
 - [Infinity](https://antimatterdimensions.wiki.gg/index.php?title=Infinity&oldid=3113)、[Break Infinity](https://antimatterdimensions.wiki.gg/index.php?title=Break_Infinity&oldid=3349)。

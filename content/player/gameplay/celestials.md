@@ -9,6 +9,17 @@ aliases:
   - "/gameplay/celestials"
 ---
 
+<table class="infobox">
+<caption>天神 · 原版机制速查</caption>
+<tbody>
+<tr><th scope="row">英文名称</th><td>Celestials</td></tr>
+<tr><th scope="row">数量</th><td>7 位</td></tr>
+<tr><th scope="row">首位</th><td>特蕾莎</td></tr>
+<tr><th scope="row">末位</th><td>佩勒</td></tr>
+<tr><th scope="row">机制</th><td>特殊现实、独立资源与限制</td></tr>
+</tbody>
+</table>
+
 当玩家终于学会在无限、永恒与现实之间不断重来，游戏才介绍七位新的对手。它们叫天神（Celestials），却并不都是要靠更高攻击力击败的敌人；每位掌管不同的成长机制，带来自己的规则、故事与限制。
 
 原版买齐现实升级后，第一位天神特蕾莎出现。接下来，玩家会发现符文可以献祭，时间能够储存，原本互斥的研究可以同时获得，甚至连维度的等效购买量也可以用非整数表示。许多天神专属机制按真实时间计算，不随普通游戏加速同步变化。
@@ -63,6 +74,11 @@ aliases:
 
 至于七位天神与玩家究竟是什么关系，游戏后期会用逐渐变化的称谓与文本给出答案。这里不提前揭开结局。
 
+<nav class="navbox" aria-label="七位天神 · 原版详细条目">
+<p class="navbox-title">七位天神 · 原版详细条目</p>
+<p><a class="internal" href="/player/original/ow-teresa">特蕾莎</a> · <a class="internal" href="/player/original/ow-effarig">鹿颈长</a> · <a class="internal" href="/player/original/ow-nameless-ones">无名氏</a> · <a class="internal" href="/player/original/ow-v">薇</a> · <a class="internal" href="/player/original/ow-ra">太阳神</a> · <a class="internal" href="/player/original/ow-laitela">莱特拉</a> · <a class="internal" href="/player/original/ow-pelle">佩勒</a></p>
+</nav>
+
 ## 七位天神速查
 
 | 天神 | 代表性机制 |
@@ -76,6 +92,11 @@ aliases:
 | 佩勒 | 毁灭、裂痕 |
 
 各天神的原版详细数值及故事见上面的独立条目，MOD 差异见 [MOD 改动](/player/gameplay/mod-changes)，特殊现实操作见[特殊现实](/player/gameplay/celestial-realities)。
+
+<nav class="navbox" aria-label="成长阶段">
+<p class="navbox-title">成长阶段</p>
+<p><a class="internal" href="/player/gameplay/stage-progression">成长路线</a> · <a class="internal" href="/player/gameplay/infinity">无限</a> · <a class="internal" href="/player/gameplay/eternity">永恒</a> · <a class="internal" href="/player/gameplay/reality">现实</a> · <strong aria-current="page">天神</strong></p>
+</nav>
 
 ## 资料来源
 - [Celestials](https://antimatterdimensions.wiki.gg/index.php?title=Celestials&oldid=3187)。

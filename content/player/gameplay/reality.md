@@ -9,6 +9,17 @@ aliases:
   - "/gameplay/reality"
 ---
 
+<table class="infobox">
+<caption>现实 · 原版机制速查</caption>
+<tbody>
+<tr><th scope="row">英文名称</th><td>Reality</td></tr>
+<tr><th scope="row">重置层级</th><td>第三层</td></tr>
+<tr><th scope="row">基础门槛</th><td>1e4000 EP，并满足现实研究前置</td></tr>
+<tr><th scope="row">主要奖励</th><td>现实机器（RM）、符文、复兴点</td></tr>
+<tr><th scope="row">后续内容</th><td><a class="internal" href="/player/gameplay/celestials">天神</a></td></tr>
+</tbody>
+</table>
+
 如果你在现实更新发布前游玩《反物质维度》，永恒就是最后的主要重置层。2022 年 12 月 17 日，经历约四年半开发的现实更新与 Steam 版同步推出；Android 玩家则在 2024 年 4 月 1 日迎来这一层。
 
 现实（Reality）改变了游戏的终点，也改变了玩家对“重新开始”的理解。以前的重置大多换取新的点数，现在则会得到现实机器、符文和复兴点，连游戏时间也将逐渐成为可以管理的资源。现实的核心不是把前几层再加一个倍率，而是让每次重置都同时决定长期配装、时间安排和自动化能力。
@@ -56,6 +67,11 @@ $$RM=\left\lfloor1000^{L/4000-1}\right\rfloor.$$
 Infinity Points、Eternity Points，下一层却不叫 Reality Points，而叫 Reality Machines。原版社区 Wiki 还记录过一个可能的命名线索：官方 Discord 在 2017 年 12 月已有 Reality Dimension 身份组，早于更新内容公布。两者之间的实际因果关系尚无确定依据。
 
 接下来见[天神](/player/gameplay/celestials)。首次现实的前置详见[时间研究](/player/gameplay/time-studies)，本 MOD 的条件变动见[原版与 MOD](/player/gameplay/original-vs-mod)。
+
+<nav class="navbox" aria-label="成长阶段">
+<p class="navbox-title">成长阶段</p>
+<p><a class="internal" href="/player/gameplay/stage-progression">成长路线</a> · <a class="internal" href="/player/gameplay/infinity">无限</a> · <a class="internal" href="/player/gameplay/eternity">永恒</a> · <strong aria-current="page">现实</strong> · <a class="internal" href="/player/gameplay/celestials">天神</a></p>
+</nav>
 
 ## 资料来源
 - [Reality](https://antimatterdimensions.wiki.gg/index.php?title=Reality&oldid=3235)、现实机器换算（源码定位：IvarK/AntimatterDimensionsSourceCode@5409e320cecef96a917cca1dfb68f1f183e499ca/src/core/machines.js）。

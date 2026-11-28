@@ -38,16 +38,9 @@ Android 的构建不是“把 Kotlin 编译一下”。对本 MOD 来说，APK �
 
 可以把变体生命周期画成这样：
 
-```text
-settings.gradle.kts
-        ↓ 发现 :app 与 build-logic
-app/build.gradle.kts
-        ↓ 解析版本、阶段输入、source set 与 build type
-源码 + 生成 Kotlin + res/assets/Manifest + JNI
-        ↓ Java/Kotlin 编译、资源处理、合并 Manifest、DEX 转换
-debug / release / r8 变体
-        ↓ package、校验签名处置、输出 APK
-```
+![从 Gradle 配置到 APK 产物的构建流程](/static/安卓应用构建流程.svg)
+
+*图：按本文固定源码基线抽象的构建流程，不代表当前提交的构建或签名验收结果。*
 
 AGP 的价值在于把这些输入映射到标准任务图，而不是替开发者维护一套手工 APK 拼装脚本。修改输入位置时，应先确认它属于源码、生成物、资源、assets 还是 JNI；把文件塞进“看起来能被找到”的目录，往往只会制造一个不稳定的隐式依赖。
 
